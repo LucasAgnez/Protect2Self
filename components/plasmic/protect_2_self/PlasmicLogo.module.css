@@ -1,0 +1,22 @@
+.root {
+  padding-top: 0px;
+  width: 326px;
+  height: 65px;
+  padding-right: 32px;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .root {
+    padding-right: 19px;
+    padding-left: 2px;
+    width: 136px;
+    height: 62px;
+  }
+}
+.text {
+  position: relative;
+  font-size: 50px;
+}

@@ -1,0 +1,53 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 66px;
+  justify-content: flex-start;
+  align-items: center;
+  background: #e5e5e5;
+  max-width: 197px;
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  min-width: 0;
+  border-radius: 33px;
+}
+.rootdesign_receivedBase {
+  background: #dcdcdc;
+}
+.freeBox__aEn8G {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+}
+.text__vNmKq {
+  padding-left: 16px;
+  padding-right: 30px;
+}
+.img__ywI0 {
+  position: relative;
+  object-fit: fill;
+  max-width: 100%;
+  height: 24px;
+}
+.img__ywI0 > picture > img {
+  object-fit: fill;
+}
+.img__ywI0 > :global(.__wab_img-spacer) > img {
+  object-fit: fill;
+}
+.freeBox__sbBU {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  padding-left: 14px;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+  border-radius: 0px;
+}
