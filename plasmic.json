@@ -178,7 +178,8 @@
           "name": "TableValue",
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerTable"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "szjgMQpPpxhmkjnaBvZQJG",
@@ -197,7 +198,8 @@
           "name": "Tilt",
           "componentImportPath": "@plasmicpkgs/react-parallax-tilt"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "7nJ7UcFmq9UzB6eXfC5z4a",
@@ -216,7 +218,8 @@
           "name": "NavigationBar",
           "componentImportPath": "@plasmicpkgs/plasmic-nav"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "8XuJZfnuNd7UvNkkshapC6",

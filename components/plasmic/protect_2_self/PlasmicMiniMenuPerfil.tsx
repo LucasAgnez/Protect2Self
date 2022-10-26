@@ -343,6 +343,7 @@ function PlasmicMiniMenuPerfil__RenderFunc(props: {
                         "__wab_instance",
                         sty.option___1X14E
                       )}
+                      value={"value3" as const}
                     >
                       {"Sair"}
                     </MiniMenuPerfil__Option>
@@ -390,6 +391,7 @@ function useBehavior<P extends pp.BaseSelectProps>(
 
           <MiniMenuPerfil__Option
             className={classNames("__wab_instance", sty.option___1X14E)}
+            value={"value3" as const}
           >
             {"Sair"}
           </MiniMenuPerfil__Option>
