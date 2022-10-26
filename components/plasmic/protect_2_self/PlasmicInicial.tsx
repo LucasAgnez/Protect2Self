@@ -343,6 +343,7 @@ function PlasmicInicial__RenderFunc(props: {
                           "__wab_instance",
                           sty.mainPageButton__cdYpZ
                         )}
+                        link={`/criacao-meta`}
                       >
                         <div
                           className={classNames(

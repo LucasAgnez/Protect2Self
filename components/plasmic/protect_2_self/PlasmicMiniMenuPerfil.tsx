@@ -325,7 +325,19 @@ function PlasmicMiniMenuPerfil__RenderFunc(props: {
                       )}
                       value={"value1" as const}
                     >
-                      {"Perfil"}
+                      <p.PlasmicLink
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          sty.link__nQOsO
+                        )}
+                        component={Link}
+                        href={`/perfil`}
+                        platform={"nextjs"}
+                      >
+                        {"Perfil"}
+                      </p.PlasmicLink>
                     </MiniMenuPerfil__Option>
 
                     <MiniMenuPerfil__Option
@@ -345,7 +357,19 @@ function PlasmicMiniMenuPerfil__RenderFunc(props: {
                       )}
                       value={"value3" as const}
                     >
-                      {"Sair"}
+                      <p.PlasmicLink
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          sty.link__ru3TT
+                        )}
+                        component={Link}
+                        href={`/`}
+                        platform={"nextjs"}
+                      >
+                        {"Sair"}
+                      </p.PlasmicLink>
                     </MiniMenuPerfil__Option>
                   </React.Fragment>
                 ),
@@ -379,7 +403,19 @@ function useBehavior<P extends pp.BaseSelectProps>(
             className={classNames("__wab_instance", sty.option__at7I4)}
             value={"value1" as const}
           >
-            {"Perfil"}
+            <p.PlasmicLink
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.link__nQOsO
+              )}
+              component={Link}
+              href={`/perfil`}
+              platform={"nextjs"}
+            >
+              {"Perfil"}
+            </p.PlasmicLink>
           </MiniMenuPerfil__Option>
 
           <MiniMenuPerfil__Option
@@ -393,7 +429,19 @@ function useBehavior<P extends pp.BaseSelectProps>(
             className={classNames("__wab_instance", sty.option___1X14E)}
             value={"value3" as const}
           >
-            {"Sair"}
+            <p.PlasmicLink
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.link__ru3TT
+              )}
+              component={Link}
+              href={`/`}
+              platform={"nextjs"}
+            >
+              {"Sair"}
+            </p.PlasmicLink>
           </MiniMenuPerfil__Option>
         </React.Fragment>
       )

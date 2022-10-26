@@ -54,14 +54,20 @@
 .img__eYa > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
-.option__uQgOf:global(.__wab_instance) {
+.option__czp8O:global(.__wab_instance) {
   position: relative;
 }
-.option__vVmeg:global(.__wab_instance) {
+.link___60Ew8 {
+  color: #d3d3d3;
+}
+.option__fIm76:global(.__wab_instance) {
   position: relative;
 }
-.option__z5FjV:global(.__wab_instance) {
+.option___8K9Xi:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   display: flex;
+}
+.link__yjjEz {
+  color: #d3d3d3;
 }

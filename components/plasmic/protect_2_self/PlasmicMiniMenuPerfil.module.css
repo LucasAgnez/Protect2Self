@@ -238,6 +238,9 @@
 .option__at7I4:global(.__wab_instance) {
   position: relative;
 }
+.link__nQOsO {
+  color: #d3d3d3;
+}
 .option__pUu8M:global(.__wab_instance) {
   position: relative;
 }
@@ -245,4 +248,7 @@
   max-width: 100%;
   position: relative;
   display: flex;
+}
+.link__ru3TT {
+  color: #d3d3d3;
 }
