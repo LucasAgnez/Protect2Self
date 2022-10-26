@@ -1,0 +1,246 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.root:focus-within {
+  outline: none;
+}
+.root___focusVisibleWithin {
+  outline: none;
+}
+.trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  border-radius: 6px;
+  padding: 8px 12px;
+  border: 1px solid #000000;
+}
+.triggershowPlaceholder {
+  padding: 0px;
+}
+.triggerisOpen {
+  background: #282826;
+}
+.root:focus-within .trigger {
+  box-shadow: 0px 0px 0px 3px #96c7f2;
+  outline: none;
+}
+.root .trigger___focusVisibleWithin {
+  box-shadow: 0px 0px 0px 3px #96c7f2;
+  outline: none;
+}
+.root .trigger:hover {
+  background: #282826;
+}
+.root .trigger:active {
+  background: #282826;
+}
+.contentContainer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+.root:focus-within .contentContainer {
+  outline: none;
+}
+.slotTargetSelectedContent {
+  white-space: pre;
+}
+.slotTargetSelectedContent > :global(.__wab_text),
+.slotTargetSelectedContent > :global(.__wab_slot-string-wrapper),
+.slotTargetSelectedContent > :global(.__wab_slot) > :global(.__wab_text),
+.slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > :global(.__wab_slot-string-wrapper),
+.slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_text),
+.slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot-string-wrapper),
+.slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_text),
+.slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot-string-wrapper) {
+  text-overflow: ellipsis;
+}
+.slotTargetSelectedContent > *,
+.slotTargetSelectedContent > :global(.__wab_slot) > *,
+.slotTargetSelectedContent > :global(.__wab_slot) > :global(.__wab_slot) > *,
+.slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > *,
+.slotTargetSelectedContent > picture > img,
+.slotTargetSelectedContent > :global(.__wab_slot) > picture > img,
+.slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > picture
+  > img,
+.slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  overflow: hidden;
+}
+.root:focus-within .slotTargetSelectedContent > *,
+.root:focus-within .slotTargetSelectedContent > :global(.__wab_slot) > *,
+.root:focus-within
+  .slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > *,
+.root:focus-within
+  .slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > *,
+.root:focus-within .slotTargetSelectedContent > picture > img,
+.root:focus-within
+  .slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > picture
+  > img,
+.root:focus-within
+  .slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > picture
+  > img,
+.root:focus-within
+  .slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  outline: none;
+}
+.slotTargetPlaceholder {
+  white-space: pre;
+  color: #706f6c;
+}
+.slotTargetPlaceholder > :global(.__wab_text),
+.slotTargetPlaceholder > :global(.__wab_slot-string-wrapper),
+.slotTargetPlaceholder > :global(.__wab_slot) > :global(.__wab_text),
+.slotTargetPlaceholder
+  > :global(.__wab_slot)
+  > :global(.__wab_slot-string-wrapper),
+.slotTargetPlaceholder
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_text),
+.slotTargetPlaceholder
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot-string-wrapper),
+.slotTargetPlaceholder
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_text),
+.slotTargetPlaceholder
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot-string-wrapper) {
+  text-overflow: ellipsis;
+}
+.slotTargetPlaceholder > *,
+.slotTargetPlaceholder > :global(.__wab_slot) > *,
+.slotTargetPlaceholder > :global(.__wab_slot) > :global(.__wab_slot) > *,
+.slotTargetPlaceholder
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > *,
+.slotTargetPlaceholder > picture > img,
+.slotTargetPlaceholder > :global(.__wab_slot) > picture > img,
+.slotTargetPlaceholder
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > picture
+  > img,
+.slotTargetPlaceholder
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  overflow: hidden;
+}
+.dropdownIcon {
+  position: relative;
+  object-fit: cover;
+  width: 20px;
+  height: 20px;
+  color: #90908c;
+  flex-shrink: 0;
+}
+.dropdownIconshowPlaceholder {
+  display: none;
+}
+.root:focus-within .dropdownIcon {
+  outline: none;
+}
+.root .dropdownIcon___focusVisibleWithin {
+  outline: none;
+}
+.img__iA6Su {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 50px;
+  flex-shrink: 0;
+}
+.img__iA6Su > picture > img {
+  object-fit: cover;
+}
+.img__iA6Su > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.overlay:global(.__wab_instance) {
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: 1000;
+}
+.optionsContainer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border: 1px solid #ffffff;
+}
+.slotTargetChildren {
+  text-transform: uppercase;
+  font-family: "Antic", sans-serif;
+}
+.option___62Qq7:global(.__wab_instance) {
+  position: relative;
+}

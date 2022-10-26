@@ -1,7 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C900&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C900&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C900&family=Antic%3Aital%2Cwght%400%2C400&display=swap");
+
+.plasmic_tokens {
+  --token-L370CzQRH: #ffffff;
+  --plasmic-token-unnamed-style-token: var(--token-L370CzQRH);
+}
 
 .plasmic_default_styles {
-  --mixin-oVN8Fldhrwi__font-family: "Inter";
+  --mixin-oVN8Fldhrwi__font-family: "Inter", sans-serif;
   --mixin-oVN8Fldhrwi__font-size: 16px;
   --mixin-oVN8Fldhrwi__font-weight: 400;
   --mixin-oVN8Fldhrwi__font-style: normal;
@@ -503,7 +508,7 @@
 :where(.root_reset .code),
 :where(.root_reset :global(.__wab_expr_html_text) code),
 :where(.root_reset.plasmic_default__code) {
-  background: var(--mixin-LCQxmsfX8-rG_background);
+  background: #f8f8f8;
   font-family: var(--mixin-LCQxmsfX8-rG_font-family);
   border-radius: var(--mixin-LCQxmsfX8-rG_border-top-left-radius)
     var(--mixin-LCQxmsfX8-rG_border-top-right-radius)
@@ -542,7 +547,7 @@
 :where(.root_reset .pre),
 :where(.root_reset :global(.__wab_expr_html_text) pre),
 :where(.root_reset.plasmic_default__pre) {
-  background: var(--mixin-uv2DN5GnCleh_background);
+  background: #f8f8f8;
   font-family: var(--mixin-uv2DN5GnCleh_font-family);
   border-radius: var(--mixin-uv2DN5GnCleh_border-top-left-radius)
     var(--mixin-uv2DN5GnCleh_border-top-right-radius)

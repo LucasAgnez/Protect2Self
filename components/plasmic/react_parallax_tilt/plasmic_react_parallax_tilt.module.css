@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700%3B0%2C900&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700%3B0%2C900&display=swap");
 
 .plasmic_default_styles {
-  --mixin-ggtG18404j_font-family: "Inter";
+  --mixin-ggtG18404j_font-family: "Inter", sans-serif;
   --mixin-ggtG18404j_font-size: 16px;
   --mixin-ggtG18404j_font-weight: 400;
   --mixin-ggtG18404j_font-style: normal;
@@ -14,14 +14,14 @@
   --mixin-ggtG18404j_user-select: text;
   --mixin-ggtG18404j_text-decoration-line: none;
   --mixin-ggtG18404j_text-overflow: clip;
-  --mixin-JGAyd_-Nq_font-family: "Inter";
+  --mixin-JGAyd_-Nq_font-family: "Inter", sans-serif;
   --mixin-JGAyd_-Nq_color: #000000;
   --mixin-JGAyd_-Nq_font-size: 72px;
   --mixin-JGAyd_-Nq_font-weight: 900;
   --mixin-JGAyd_-Nq_letter-spacing: -4px;
   --mixin-JGAyd_-Nq_line-height: 1;
   --mixin-JGAyd_-Nq_white-space: pre-wrap;
-  --mixin-cWKf87kvq1_font-family: "Inter";
+  --mixin-cWKf87kvq1_font-family: "Inter", sans-serif;
   --mixin-cWKf87kvq1_color: #000000;
   --mixin-cWKf87kvq1_font-size: 48px;
   --mixin-cWKf87kvq1_font-weight: 700;
@@ -30,14 +30,14 @@
   --mixin-cWKf87kvq1_white-space: pre-wrap;
   --mixin-qYKov25dy8_color: #0070f3;
   --mixin-qYKov25dy8_white-space: pre-wrap;
-  --mixin-taIHLdhE4n_font-family: "Inter";
+  --mixin-taIHLdhE4n_font-family: "Inter", sans-serif;
   --mixin-taIHLdhE4n_color: #000000;
   --mixin-taIHLdhE4n_font-size: 32px;
   --mixin-taIHLdhE4n_font-weight: 600;
   --mixin-taIHLdhE4n_letter-spacing: -0.8px;
   --mixin-taIHLdhE4n_line-height: 1.2;
   --mixin-taIHLdhE4n_white-space: pre-wrap;
-  --mixin-Sq38loeJ9S_font-family: "Inter";
+  --mixin-Sq38loeJ9S_font-family: "Inter", sans-serif;
   --mixin-Sq38loeJ9S_color: #000000;
   --mixin-Sq38loeJ9S_font-size: 24px;
   --mixin-Sq38loeJ9S_font-weight: 600;
@@ -67,14 +67,14 @@
   --mixin-gf7U7FL1B__padding-right: 4px;
   --mixin-gf7U7FL1B__padding-top: 1px;
   --mixin-gf7U7FL1B__white-space: pre-wrap;
-  --mixin-TuDOwMA5EE_font-family: "Inter";
+  --mixin-TuDOwMA5EE_font-family: "Inter", sans-serif;
   --mixin-TuDOwMA5EE_color: #000000;
   --mixin-TuDOwMA5EE_font-size: 20px;
   --mixin-TuDOwMA5EE_font-weight: 600;
   --mixin-TuDOwMA5EE_letter-spacing: -0.3px;
   --mixin-TuDOwMA5EE_line-height: 1.5;
   --mixin-TuDOwMA5EE_white-space: pre-wrap;
-  --mixin-GL6dVJimPl_font-family: "Inter";
+  --mixin-GL6dVJimPl_font-family: "Inter", sans-serif;
   --mixin-GL6dVJimPl_color: #000000;
   --mixin-GL6dVJimPl_font-size: 16px;
   --mixin-GL6dVJimPl_font-weight: 600;
@@ -511,7 +511,7 @@
 :where(.root_reset .code),
 :where(.root_reset :global(.__wab_expr_html_text) code),
 :where(.root_reset.plasmic_default__code) {
-  background: var(--mixin-gf7U7FL1B__background);
+  background: #f8f8f8;
   font-family: var(--mixin-gf7U7FL1B__font-family);
   border-radius: var(--mixin-gf7U7FL1B__border-top-left-radius)
     var(--mixin-gf7U7FL1B__border-top-right-radius)
@@ -579,7 +579,7 @@
 :where(.root_reset .pre),
 :where(.root_reset :global(.__wab_expr_html_text) pre),
 :where(.root_reset.plasmic_default__pre) {
-  background: var(--mixin-1QDF2iZ5q4_background);
+  background: #f8f8f8;
   font-family: var(--mixin-1QDF2iZ5q4_font-family);
   border-radius: var(--mixin-1QDF2iZ5q4_border-top-left-radius)
     var(--mixin-1QDF2iZ5q4_border-top-right-radius)

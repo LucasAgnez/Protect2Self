@@ -25,7 +25,10 @@ function Homepage() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   return (
-    <ph.PageParamsProvider params={useRouter().query} query={useRouter().query}>
+    <ph.PageParamsProvider
+      params={useRouter()?.query}
+      query={useRouter()?.query}
+    >
       <PlasmicHomepage />
     </ph.PageParamsProvider>
   );

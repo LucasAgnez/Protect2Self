@@ -40,20 +40,11 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import: 8XuJZfnuNd7UvNkkshapC6/projectcss
 import sty from "./PlasmicMessage.module.css"; // plasmic-import: stpzk0e4w8/css
 
-export type PlasmicMessage__VariantMembers = {
-  design: "receivedMod" | "receivedBase" | "sentMod" | "sentBase";
-};
+export type PlasmicMessage__VariantMembers = {};
 
-export type PlasmicMessage__VariantsArgs = {
-  design?: SingleChoiceArg<
-    "receivedMod" | "receivedBase" | "sentMod" | "sentBase"
-  >;
-};
-
+export type PlasmicMessage__VariantsArgs = {};
 type VariantPropType = keyof PlasmicMessage__VariantsArgs;
-export const PlasmicMessage__VariantProps = new Array<VariantPropType>(
-  "design"
-);
+export const PlasmicMessage__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicMessage__ArgsType = {
   children?: React.ReactNode;
@@ -70,15 +61,13 @@ export const PlasmicMessage__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicMessage__OverridesType = {
   root?: p.Flex<"div">;
+  freeBox?: p.Flex<"div">;
 };
 
 export interface DefaultMessageProps {
   children?: React.ReactNode;
   slot?: React.ReactNode;
   slot2?: React.ReactNode;
-  design?: SingleChoiceArg<
-    "receivedMod" | "receivedBase" | "sentMod" | "sentBase"
-  >;
   className?: string;
 }
 
@@ -118,17 +107,15 @@ function PlasmicMessage__RenderFunc(props: {
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
-        sty.root,
-        {
-          [sty.rootdesign_receivedBase]: hasVariant(
-            variants,
-            "design",
-            "receivedBase"
-          )
-        }
+        projectcss.plasmic_tokens,
+        sty.root
       )}
     >
-      <div className={classNames(projectcss.all, sty.freeBox__aEn8G)}>
+      <div
+        data-plasmic-name={"freeBox"}
+        data-plasmic-override={overrides.freeBox}
+        className={classNames(projectcss.all, sty.freeBox)}
+      >
         {p.renderPlasmicSlot({
           defaultContents: (
             <div
@@ -143,7 +130,7 @@ function PlasmicMessage__RenderFunc(props: {
                   className={"plasmic_default__all plasmic_default__span"}
                   style={{ fontWeight: 700 }}
                 >
-                  {"Author"}
+                  {"Amigo "}
                 </span>
               </React.Fragment>
             </div>
@@ -153,42 +140,13 @@ function PlasmicMessage__RenderFunc(props: {
         })}
 
         {p.renderPlasmicSlot({
-          defaultContents: (
-            <p.PlasmicImg
-              alt={""}
-              className={classNames(sty.img__ywI0)}
-              displayHeight={"24px" as const}
-              displayMaxHeight={"none" as const}
-              displayMaxWidth={"100%" as const}
-              displayMinHeight={"0" as const}
-              displayMinWidth={"0" as const}
-              displayWidth={"auto" as const}
-              loading={"lazy" as const}
-              src={{
-                src: "/plasmic/protect_2_self/images/badgeRemovebgPreviewpng.png",
-                fullWidth: 275,
-                fullHeight: 365,
-                aspectRatio: undefined
-              }}
-            />
-          ),
-
-          value: args.slot2
-        })}
-      </div>
-
-      <div
-        className={classNames(projectcss.all, sty.freeBox__sbBU, {
-          [sty.freeBoxdesign_receivedBase__sbBUj8Zki]: hasVariant(
-            variants,
-            "design",
-            "receivedBase"
-          )
-        })}
-      >
-        {p.renderPlasmicSlot({
-          defaultContents: "Some message",
+          defaultContents: "Atingiu a Marca de",
           value: args.slot
+        })}
+
+        {p.renderPlasmicSlot({
+          defaultContents: " *marca*",
+          value: args.slot2
         })}
       </div>
     </div>
@@ -196,13 +154,15 @@ function PlasmicMessage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "freeBox"],
+  freeBox: ["freeBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  freeBox: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -266,6 +226,7 @@ export const PlasmicMessage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicMessage
     internalVariantProps: PlasmicMessage__VariantProps,

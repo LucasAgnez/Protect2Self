@@ -1,0 +1,45 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  min-width: 0;
+  padding: 8px 8px 8px 1px;
+}
+.link__fteNu {
+  position: relative;
+  display: flex;
+}
+.signIn:global(.__wab_instance) {
+  max-width: 100%;
+  width: 360px;
+  flex-shrink: 0;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .signIn:global(.__wab_instance) {
+    width: 300px;
+    flex-shrink: 0;
+  }
+}
+.link__dj573 {
+  position: relative;
+  margin-top: 20px;
+  display: flex;
+  color: #172e47;
+}
+.signUp:global(.__wab_instance) {
+  max-width: 100%;
+  width: 360px;
+  flex-shrink: 0;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .signUp:global(.__wab_instance) {
+    width: 300px;
+    flex-shrink: 0;
+  }
+}

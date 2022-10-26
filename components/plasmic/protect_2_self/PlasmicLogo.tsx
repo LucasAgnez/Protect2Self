@@ -55,6 +55,7 @@ export const PlasmicLogo__ArgProps = new Array<ArgPropType>();
 export type PlasmicLogo__OverridesType = {
   root?: p.Flex<"h1">;
   text?: p.Flex<"div">;
+  h1?: p.Flex<"h1">;
 };
 
 export interface DefaultLogoProps {
@@ -103,6 +104,7 @@ function PlasmicLogo__RenderFunc(props: {
           projectcss.root_reset,
           projectcss.plasmic_default_styles,
           projectcss.plasmic_mixins,
+          projectcss.plasmic_tokens,
           sty.root
         )}
       >
@@ -117,26 +119,43 @@ function PlasmicLogo__RenderFunc(props: {
         >
           {hasVariant(globalVariants, "screen", "mobileOnly") ? (
             <React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ color: "#E5E5E5" }}
-              >
-                {"P"}
-              </span>
               <React.Fragment>{""}</React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ color: "#FFFF16" }}
-              >
-                {"2"}
-              </span>
+              {
+                <h1
+                  data-plasmic-name={"h1"}
+                  data-plasmic-override={overrides.h1}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h1,
+                    projectcss.__wab_text,
+                    sty.h1
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#E5E5E5" }}
+                    >
+                      {"P"}
+                    </span>
+                    <React.Fragment>{""}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#FFFF16" }}
+                    >
+                      {"2"}
+                    </span>
+                    <React.Fragment>{""}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#E5E5E5" }}
+                    >
+                      {"S"}
+                    </span>
+                  </React.Fragment>
+                </h1>
+              }
               <React.Fragment>{""}</React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ color: "#E5E5E5" }}
-              >
-                {"S"}
-              </span>
             </React.Fragment>
           ) : (
             <React.Fragment>
@@ -169,8 +188,9 @@ function PlasmicLogo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "text"],
-  text: ["text"]
+  root: ["root", "text", "h1"],
+  text: ["text", "h1"],
+  h1: ["h1"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -178,6 +198,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "h1";
   text: "div";
+  h1: "h1";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -242,6 +263,7 @@ export const PlasmicLogo = Object.assign(
   {
     // Helper components rendering sub-elements
     text: makeNodeComponent("text"),
+    h1: makeNodeComponent("h1"),
 
     // Metadata about props expected for PlasmicLogo
     internalVariantProps: PlasmicLogo__VariantProps,

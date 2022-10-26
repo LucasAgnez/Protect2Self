@@ -188,6 +188,7 @@ function PlasmicButton__RenderFunc(props: {
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
+        projectcss.plasmic_tokens,
         sty.root,
         {
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
@@ -258,7 +259,7 @@ function PlasmicButton__RenderFunc(props: {
       data-plasmic-trigger-props={[triggerRootFocusVisibleWithinProps]}
     >
       {(
-        hasVariant(variants, "showStartIcon", "showStartIcon") ? true : false
+        hasVariant(variants, "showStartIcon", "showStartIcon") ? true : true
       ) ? (
         <div
           data-plasmic-name={"startIconContainer"}

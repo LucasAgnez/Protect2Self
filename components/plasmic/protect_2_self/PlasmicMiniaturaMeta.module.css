@@ -1,0 +1,89 @@
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  background: #000000;
+  min-width: 0;
+  border-radius: 6px;
+  padding: 8px;
+  border: 1px solid #d3d3d3;
+}
+.freeBox__cowRf {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  min-width: 0;
+  border-radius: 6px;
+  padding: 10px;
+}
+.freeBox__noCej {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px 8px 0px;
+  border-bottom: 1px solid #ffffff;
+}
+.freeBox__mfpq {
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+}
+.img___5MP3M {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 34px;
+  flex-shrink: 0;
+}
+.img___5MP3M > picture > img {
+  object-fit: cover;
+}
+.img___5MP3M > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.freeBox___6ExQ {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+}
+.button:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 78px;
+  height: 48px;
+  flex-shrink: 0;
+}
+.svg__bwbxV {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__zu6Lk {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}

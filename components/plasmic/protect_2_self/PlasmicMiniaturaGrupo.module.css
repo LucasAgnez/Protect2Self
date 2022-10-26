@@ -1,0 +1,73 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 110px;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+  min-width: 0;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid #d3d3d3;
+}
+.freeBox__xvt3I {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px 8px 0px;
+  border-bottom: 1px solid #ffffff;
+}
+.freeBox__s0Mnq {
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  min-width: 0;
+}
+.img__kaDb {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 34px;
+  flex-shrink: 0;
+}
+.img__kaDb > picture > img {
+  object-fit: cover;
+}
+.img__kaDb > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.h4__vzOvD {
+  padding-left: 16px;
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.freeBox__dUsOl {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.freeBox__pMsdh {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+}

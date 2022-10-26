@@ -1,0 +1,66 @@
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0px;
+}
+.rootminiatura_unnamedVariant {
+  width: 78px;
+}
+.root:hover {
+  width: 330px;
+  justify-content: center;
+  align-items: center;
+}
+.rootminiatura_unnamedVariant:hover {
+  width: 77px;
+}
+.img {
+  object-fit: cover;
+  max-width: 100%;
+  width: 77px;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+.img > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.freeBox {
+  position: absolute;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  background: #212121;
+  box-shadow: 0px 4px 16px 0px #00000069;
+  left: 26px;
+  top: -14px;
+  right: auto;
+  overflow: visible;
+  display: none;
+  border-radius: 3px;
+  padding: 0px;
+  border: 1px solid #b3b3b3;
+}
+.root:hover .freeBox {
+  display: flex;
+}
+.rootminiatura_unnamedVariant:hover .freeBoxminiatura_unnamedVariant {
+  display: none;
+}
+.text__vuFop {
+  padding-right: 14px;
+  padding-left: 8px;
+}
+.text__qjYsr {
+  padding-left: 8px;
+}

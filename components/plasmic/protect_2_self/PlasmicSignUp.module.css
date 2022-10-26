@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  min-width: 62px;
+  max-width: 178px;
+  max-height: 39px;
+  margin-right: 0px;
+  background: #ffff16;
+  cursor: pointer;
+  min-height: 0;
+  border-radius: 15px;
+  padding: 2px;
+}
+.root:hover {
+  box-shadow: 0px 4px 12px 0px #afabab80;
+}
+.root:active {
+  background: #dfdf14;
+  box-shadow: 0px 4px 8px 0px #44444433;
+}
+.link {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 800px;
+}

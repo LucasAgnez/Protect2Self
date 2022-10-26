@@ -1,0 +1,24 @@
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.img__s8R5 {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 115px;
+}
+.img__s8R5 > picture > img {
+  object-fit: cover;
+}
+.img__s8R5 > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
