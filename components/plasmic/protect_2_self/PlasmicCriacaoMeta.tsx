@@ -551,6 +551,7 @@ function PlasmicCriacaoMeta__RenderFunc(props: {
                     <Select__Option
                       className={classNames("__wab_instance", sty.option__qWfq)}
                       color={"dark" as const}
+                      value={"value3" as const}
                     >
                       {"Mensal"}
                     </Select__Option>
