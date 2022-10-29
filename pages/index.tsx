@@ -25,17 +25,17 @@ function Homepage() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   
-  const [login, setLogin] = React.useState()
+  const [loginScreen, setLoginScreen] = React.useState()
   
   return (  
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-    <PlasmicHomepage entrar={{
-          props: { onClick: () => setLogin(true)}
-        }}
-        login={login}
+    <PlasmicHomepage 
+      entrar={{
+          props: { onClick: () => setLoginScreen(true)}
+      }} loginScreen={loginScreen}
     />
     </ph.PageParamsProvider>
   );
