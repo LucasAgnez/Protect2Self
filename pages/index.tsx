@@ -24,12 +24,19 @@ function Homepage() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  
+  const [login, setLogin] = useState()
+  
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicHomepage />
+      <PlasmicHomepage entrar={{
+        props: {
+          onClick: () => setLogin(true)}
+        } login={login}/>
+      
     </ph.PageParamsProvider>
   );
 }
