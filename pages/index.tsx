@@ -25,7 +25,7 @@ function Homepage() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   
-  const [loginScreen, setLoginScreen] = React.useState()
+  const [loginScreen, setLoginScreen] = React.useState<boolean>()
   
   return (  
     <ph.PageParamsProvider
