@@ -35,8 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: Cew9iEQBJMu/component
-import MiniMenuPerfil from "../../MiniMenuPerfil"; // plasmic-import: _P_S6-TKUW2/component
-import MiniMenuPerfil__Option from "../../MiniMenuPerfil__Option"; // plasmic-import: AKl1yzKVuPF/component
+import Menu from "../../Menu"; // plasmic-import: PZ7Wdg9iZJ/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
@@ -58,8 +57,7 @@ export const PlasmicHeaderLogged__ArgProps = new Array<ArgPropType>();
 export type PlasmicHeaderLogged__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
-  miniMenuPerfil?: p.Flex<typeof MiniMenuPerfil>;
-  img?: p.Flex<typeof p.PlasmicImg>;
+  menu?: p.Flex<typeof Menu>;
 };
 
 export interface DefaultHeaderLoggedProps {
@@ -116,37 +114,15 @@ function PlasmicHeaderLogged__RenderFunc(props: {
           data-plasmic-override={overrides.header}
           className={classNames("__wab_instance", sty.header)}
           line={"off" as const}
+          shortcut={
+            hasVariant(globalVariants, "screen", "tablet") ? true : undefined
+          }
         />
 
-        <MiniMenuPerfil
-          data-plasmic-name={"miniMenuPerfil"}
-          data-plasmic-override={overrides.miniMenuPerfil}
-          className={classNames("__wab_instance", sty.miniMenuPerfil)}
-          slot={
-            <p.PlasmicImg
-              data-plasmic-name={"img"}
-              data-plasmic-override={overrides.img}
-              alt={""}
-              className={classNames(sty.img)}
-              displayHeight={
-                hasVariant(globalVariants, "screen", "mobileOnly")
-                  ? ("auto" as const)
-                  : ("auto" as const)
-              }
-              displayMaxHeight={"none" as const}
-              displayMaxWidth={"100%" as const}
-              displayMinHeight={"0" as const}
-              displayMinWidth={"0" as const}
-              displayWidth={"50px" as const}
-              loading={"lazy" as const}
-              src={{
-                src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
-                fullWidth: 2048,
-                fullHeight: 2048,
-                aspectRatio: undefined
-              }}
-            />
-          }
+        <Menu
+          data-plasmic-name={"menu"}
+          data-plasmic-override={overrides.menu}
+          className={classNames("__wab_instance", sty.menu)}
         />
       </div>
     ) : null
@@ -154,10 +130,9 @@ function PlasmicHeaderLogged__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "miniMenuPerfil", "img"],
+  root: ["root", "header", "menu"],
   header: ["header"],
-  miniMenuPerfil: ["miniMenuPerfil", "img"],
-  img: ["img"]
+  menu: ["menu"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -165,8 +140,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
-  miniMenuPerfil: typeof MiniMenuPerfil;
-  img: typeof p.PlasmicImg;
+  menu: typeof Menu;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -231,8 +205,7 @@ export const PlasmicHeaderLogged = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    miniMenuPerfil: makeNodeComponent("miniMenuPerfil"),
-    img: makeNodeComponent("img"),
+    menu: makeNodeComponent("menu"),
 
     // Metadata about props expected for PlasmicHeaderLogged
     internalVariantProps: PlasmicHeaderLogged__VariantProps,

@@ -1031,7 +1031,30 @@ function PlasmicHomepage__RenderFunc(props: {
                         color={"white" as const}
                         shape={"rounded" as const}
                       >
-                        {"Entrar"}
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__wnB9I
+                          )}
+                        >
+                          <React.Fragment>
+                            <React.Fragment>{""}</React.Fragment>
+                            {
+                              <h3
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.h3,
+                                  projectcss.__wab_text,
+                                  sty.h3__bQXl
+                                )}
+                              >
+                                {"Entrar"}
+                              </h3>
+                            }
+                            <React.Fragment>{""}</React.Fragment>
+                          </React.Fragment>
+                        </div>
                       </Button>
 
                       <Button
@@ -1042,7 +1065,30 @@ function PlasmicHomepage__RenderFunc(props: {
                         link={`/criar-conta`}
                         shape={"rounded" as const}
                       >
-                        {"Registre-se"}
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__zqGRt
+                          )}
+                        >
+                          <React.Fragment>
+                            <React.Fragment>{""}</React.Fragment>
+                            {
+                              <h3
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.h3,
+                                  projectcss.__wab_text,
+                                  sty.h3___4Pf5Q
+                                )}
+                              >
+                                {"Registre-se"}
+                              </h3>
+                            }
+                            <React.Fragment>{""}</React.Fragment>
+                          </React.Fragment>
+                        </div>
                       </Button>
                     </div>
                   ) : null}

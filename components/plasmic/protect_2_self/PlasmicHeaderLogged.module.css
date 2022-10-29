@@ -38,41 +38,6 @@
     flex-shrink: 0;
   }
 }
-.miniMenuPerfil:global(.__wab_instance) {
-  max-width: 100%;
+.menu:global(.__wab_instance):global(.__wab_instance) {
   position: relative;
-}
-.img {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 50px;
-}
-.img > picture > img {
-  object-fit: cover;
-}
-.img > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .img {
-    height: auto;
-  }
-}
-.option__yCrG:global(.__wab_instance) {
-  width: 100%;
-  min-width: 0;
-}
-.option__gjC86:global(.__wab_instance) {
-  width: 100%;
-  min-width: 0;
-}
-.option__ccQo0:global(.__wab_instance) {
-  max-width: 100%;
-  width: 100%;
-  min-width: 0;
-  display: flex;
-}
-.link___0Xi8E {
-  color: #d3d3d3;
 }

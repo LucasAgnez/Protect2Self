@@ -49,14 +49,19 @@ import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3
 
 export type PlasmicHeader__VariantMembers = {
   line: "off" | "on";
+  shortcut: "shortcut";
 };
 
 export type PlasmicHeader__VariantsArgs = {
   line?: SingleChoiceArg<"off" | "on">;
+  shortcut?: SingleBooleanChoiceArg<"shortcut">;
 };
 
 type VariantPropType = keyof PlasmicHeader__VariantsArgs;
-export const PlasmicHeader__VariantProps = new Array<VariantPropType>("line");
+export const PlasmicHeader__VariantProps = new Array<VariantPropType>(
+  "line",
+  "shortcut"
+);
 
 export type PlasmicHeader__ArgsType = {};
 type ArgPropType = keyof PlasmicHeader__ArgsType;
@@ -66,12 +71,12 @@ export type PlasmicHeader__OverridesType = {
   root?: p.Flex<"div">;
   columns?: p.Flex<"div">;
   link?: p.Flex<"a"> & Partial<LinkProps>;
-  logo?: p.Flex<typeof Logo>;
   freeBox?: p.Flex<"div">;
 };
 
 export interface DefaultHeaderProps {
   line?: SingleChoiceArg<"off" | "on">;
+  shortcut?: SingleBooleanChoiceArg<"shortcut">;
   className?: string;
 }
 
@@ -132,31 +137,71 @@ function PlasmicHeader__RenderFunc(props: {
             {(
               hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
             ) ? (
-              <div className={classNames(projectcss.all, sty.column__s9Xot)}>
-                <p.PlasmicLink
-                  data-plasmic-name={"link"}
-                  data-plasmic-override={overrides.link}
-                  className={classNames(projectcss.all, projectcss.a, sty.link)}
-                  component={Link}
-                  href={
-                    hasVariant(globalVariants, "screen", "tablet")
-                      ? `/logged`
-                      : `/logged`
-                  }
-                  platform={"nextjs"}
-                >
+              <div
+                className={classNames(projectcss.all, sty.column__s9Xot, {
+                  [sty.columnshortcut__s9XotjkY5K]: hasVariant(
+                    variants,
+                    "shortcut",
+                    "shortcut"
+                  )
+                })}
+              >
+                {(
+                  hasVariant(variants, "shortcut", "shortcut") ? true : true
+                ) ? (
+                  <p.PlasmicLink
+                    data-plasmic-name={"link"}
+                    data-plasmic-override={overrides.link}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      sty.link,
+                      {
+                        [sty.linkshortcut]: hasVariant(
+                          variants,
+                          "shortcut",
+                          "shortcut"
+                        )
+                      }
+                    )}
+                    component={Link}
+                    href={
+                      hasVariant(variants, "shortcut", "shortcut")
+                        ? `/logged`
+                        : undefined
+                    }
+                    platform={"nextjs"}
+                  >
+                    <Logo className={classNames("__wab_instance")} />
+                  </p.PlasmicLink>
+                ) : null}
+                {(
+                  hasVariant(variants, "shortcut", "shortcut") ? true : true
+                ) ? (
                   <Logo
-                    data-plasmic-name={"logo"}
-                    data-plasmic-override={overrides.logo}
-                    className={classNames("__wab_instance", sty.logo)}
+                    className={classNames("__wab_instance", sty.logo___3IoIj, {
+                      [sty.logoshortcut___3IoIJjkY5K]: hasVariant(
+                        variants,
+                        "shortcut",
+                        "shortcut"
+                      )
+                    })}
                   />
-                </p.PlasmicLink>
+                ) : null}
               </div>
             ) : null}
             {(
               hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
             ) ? (
-              <div className={classNames(projectcss.all, sty.column__gAG1)}>
+              <div
+                className={classNames(projectcss.all, sty.column__gAG1, {
+                  [sty.columnshortcut__gAG1JkY5K]: hasVariant(
+                    variants,
+                    "shortcut",
+                    "shortcut"
+                  )
+                })}
+              >
                 {(
                   hasVariant(globalVariants, "screen", "mobileOnly")
                     ? true
@@ -304,10 +349,9 @@ function PlasmicHeader__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "columns", "link", "logo", "freeBox"],
-  columns: ["columns", "link", "logo", "freeBox"],
-  link: ["link", "logo"],
-  logo: ["logo"],
+  root: ["root", "columns", "link", "freeBox"],
+  columns: ["columns", "link", "freeBox"],
+  link: ["link"],
   freeBox: ["freeBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -317,7 +361,6 @@ type NodeDefaultElementType = {
   root: "div";
   columns: "div";
   link: "a";
-  logo: typeof Logo;
   freeBox: "div";
 };
 
@@ -384,7 +427,6 @@ export const PlasmicHeader = Object.assign(
     // Helper components rendering sub-elements
     columns: makeNodeComponent("columns"),
     link: makeNodeComponent("link"),
-    logo: makeNodeComponent("logo"),
     freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicHeader

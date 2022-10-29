@@ -118,19 +118,31 @@
   }
 }
 .link {
-  position: relative;
+  display: none;
+}
+.linkshortcut {
   display: flex;
 }
-.logo:global(.__wab_instance) {
-  max-width: 100%;
-  width: 306px;
+.logo__vCt2J:global(.__wab_instance) {
   flex-shrink: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .logo:global(.__wab_instance) {
+  .logo__vCt2J:global(.__wab_instance) {
     width: 171px;
     flex-shrink: 0;
   }
+}
+.logoshortcut__vCt2JjkY5K:global(.__wab_instance) {
+  flex-shrink: 0;
+}
+.logo___3IoIj:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+.logoshortcut___3IoIJjkY5K:global(.__wab_instance) {
+  flex-shrink: 0;
+  display: none;
 }
 .column__gAG1 {
   display: flex;

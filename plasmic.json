@@ -601,62 +601,6 @@
           "componentType": "component"
         },
         {
-          "id": "_P_S6-TKUW2",
-          "name": "MiniMenuPerfil",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicMiniMenuPerfil.tsx",
-          "importSpec": {
-            "modulePath": "MiniMenuPerfil.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicMiniMenuPerfil.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "select"
-        },
-        {
-          "id": "AKl1yzKVuPF",
-          "name": "MiniMenuPerfil__Option",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicMiniMenuPerfil__Option.tsx",
-          "importSpec": {
-            "modulePath": "MiniMenuPerfil__Option.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicMiniMenuPerfil__Option.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "select-option"
-        },
-        {
-          "id": "dXee78_yWhF",
-          "name": "MiniMenuPerfil__OptionGroup",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicMiniMenuPerfil__OptionGroup.tsx",
-          "importSpec": {
-            "modulePath": "MiniMenuPerfil__OptionGroup.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicMiniMenuPerfil__OptionGroup.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "select-option-group"
-        },
-        {
-          "id": "pmNlnD93qv-",
-          "name": "MiniMenuPerfil__Overlay",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicMiniMenuPerfil__Overlay.tsx",
-          "importSpec": {
-            "modulePath": "MiniMenuPerfil__Overlay.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicMiniMenuPerfil__Overlay.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "triggered-overlay"
-        },
-        {
           "id": "OOiN6jLpGW",
           "name": "Medalha",
           "type": "managed",
@@ -901,6 +845,19 @@
           "cssFilePath": "plasmic/protect_2_self/PlasmicCriacaoMetaVicio.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "PZ7Wdg9iZJ",
+          "name": "Menu",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicMenu.tsx",
+          "importSpec": {
+            "modulePath": "Menu.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicMenu.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
