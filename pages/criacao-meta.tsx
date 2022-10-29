@@ -32,11 +32,7 @@ function CriacaoMeta() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicCriacaoMeta 
-          opcaoHabito={{
-            props: { onClick: () => setHabito(true)}
-        }} habito={habito}
-      />
+      <PlasmicCriacaoMeta/>
     </ph.PageParamsProvider>
   );
 }
