@@ -24,12 +24,25 @@ function Inicial() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+
+  const [metas, setMetas] = React.useState<boolean>()
+
+  const [grupos, setGrupos] = React.useState<boolean>()
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicInicial />
+      <PlasmicInicial 
+      minhasMetas={{
+        props: { onClick: () => setMetas(true)} 
+      }}metas={metas}
+      meusGrupos={{
+        props: { onClick: () => setGrupos(true)}
+      }} grupos={grupos}
+      
+      />
     </ph.PageParamsProvider>
   );
 }

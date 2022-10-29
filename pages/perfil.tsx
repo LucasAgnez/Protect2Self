@@ -24,12 +24,19 @@ function Perfil() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  
+  const [editar, setEditar] = React.useState<boolean>()  
+  
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicPerfil />
+      <PlasmicPerfil 
+          botaoEditar={{
+            props: { onClick: () => setEditar(true)}
+        }} editar={editar}
+      />
     </ph.PageParamsProvider>
   );
 }
