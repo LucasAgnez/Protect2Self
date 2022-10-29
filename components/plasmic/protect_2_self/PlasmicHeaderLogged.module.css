@@ -42,32 +42,37 @@
   max-width: 100%;
   position: relative;
 }
-.img__eYa {
+.img {
   position: relative;
   object-fit: cover;
   max-width: 100%;
   width: 50px;
 }
-.img__eYa > picture > img {
+.img > picture > img {
   object-fit: cover;
 }
-.img__eYa > :global(.__wab_img-spacer) > img {
+.img > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
-.option__czp8O:global(.__wab_instance) {
-  position: relative;
+@media (min-width: 0px) and (max-width: 768px) {
+  .img {
+    height: auto;
+  }
 }
-.link___60Ew8 {
-  color: #d3d3d3;
+.option__yCrG:global(.__wab_instance) {
+  width: 100%;
+  min-width: 0;
 }
-.option__fIm76:global(.__wab_instance) {
-  position: relative;
+.option__gjC86:global(.__wab_instance) {
+  width: 100%;
+  min-width: 0;
 }
-.option___8K9Xi:global(.__wab_instance) {
+.option__ccQo0:global(.__wab_instance) {
   max-width: 100%;
-  position: relative;
+  width: 100%;
+  min-width: 0;
   display: flex;
 }
-.link__yjjEz {
+.link___0Xi8E {
   color: #d3d3d3;
 }

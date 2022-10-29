@@ -532,19 +532,6 @@
           "componentType": "component"
         },
         {
-          "id": "tRAjWGA5Mr",
-          "name": "SignInUp",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicSignInUp.tsx",
-          "importSpec": {
-            "modulePath": "SignInUp.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicSignInUp.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "LQeW26Vvq3",
           "name": "MiniaturaMeta",
           "type": "managed",
@@ -696,19 +683,6 @@
           "plumeType": "triggered-overlay"
         },
         {
-          "id": "7qo8OEgNT-g",
-          "name": "Homepage2",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicHomepage2.tsx",
-          "importSpec": {
-            "modulePath": "../pages/-2.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicHomepage2.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "OOiN6jLpGW",
           "name": "Medalha",
           "type": "managed",
@@ -733,19 +707,6 @@
           "cssFilePath": "plasmic/protect_2_self/PlasmicMiniaturaAmigo.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "Ju1A340bzB-",
-          "name": "PagineDeMedalhas",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicPagineDeMedalhas.tsx",
-          "importSpec": {
-            "modulePath": "../pages/pagina-de-medalhas.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicPagineDeMedalhas.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
         },
         {
           "id": "bfV7oLmQIs",
@@ -927,6 +888,19 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "triggered-overlay"
+        },
+        {
+          "id": "Ju1A340bzB-",
+          "name": "PaginaDeMedalhas",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicPaginaDeMedalhas.tsx",
+          "importSpec": {
+            "modulePath": "../pages/pagina-de-medalhas.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicPaginaDeMedalhas.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
@@ -1048,6 +1022,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.186",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.186/dist/plasmic.schema.json"
+  "cliVersion": "0.1.187",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.187/dist/plasmic.schema.json"
 }

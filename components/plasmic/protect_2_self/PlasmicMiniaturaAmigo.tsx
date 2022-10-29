@@ -34,13 +34,13 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Medalha from "../../Medalha"; // plasmic-import: OOiN6jLpGW/component
 import OpcoesMembro from "../../OpcoesMembro"; // plasmic-import: _FgEegp8IaS/component
 import OpcoesMembro__Option from "../../OpcoesMembro__Option"; // plasmic-import: UqHzbATt5ih/component
 import OpcoesAmigoPerfil from "../../OpcoesAmigoPerfil"; // plasmic-import: EANaH4iES2Y/component
 import OpcoesAmigoPerfil__Option from "../../OpcoesAmigoPerfil__Option"; // plasmic-import: rBcT3zXcB6X/component
 import OpcoesAdm from "../../OpcoesAdm"; // plasmic-import: d9qSkDAT15Y/component
 import OpcoesAdm__Option from "../../OpcoesAdm__Option"; // plasmic-import: BdQJvqA4IgO/component
+import Medalha from "../../Medalha"; // plasmic-import: OOiN6jLpGW/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -76,11 +76,11 @@ export const PlasmicMiniaturaAmigo__ArgProps = new Array<ArgPropType>(
 export type PlasmicMiniaturaAmigo__OverridesType = {
   root?: p.Flex<"div">;
   freeBox?: p.Flex<"div">;
-  medalha?: p.Flex<typeof Medalha>;
-  link?: p.Flex<"a"> & Partial<LinkProps>;
+  img?: p.Flex<typeof p.PlasmicImg>;
   opcoesMembro?: p.Flex<typeof OpcoesMembro>;
   opcoesAmigoPerfil?: p.Flex<typeof OpcoesAmigoPerfil>;
   opcoesAdm?: p.Flex<typeof OpcoesAdm>;
+  medalha?: p.Flex<typeof Medalha>;
 };
 
 export interface DefaultMiniaturaAmigoProps {
@@ -250,33 +250,13 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
         })}
       </div>
 
-      <Medalha
-        data-plasmic-name={"medalha"}
-        data-plasmic-override={overrides.medalha}
-        className={classNames("__wab_instance", sty.medalha, {
-          [sty.medalhaemGrupo_adm]: hasVariant(variants, "emGrupo", "adm"),
-          [sty.medalhaemGrupo_visaoDoAdm]: hasVariant(
-            variants,
-            "emGrupo",
-            "visaoDoAdm"
-          )
-        })}
-        miniatura={
-          hasVariant(variants, "emGrupo", "adm")
-            ? ("unnamedVariant" as const)
-            : undefined
-        }
-      />
-
       {(hasVariant(variants, "emGrupo", "adm") ? true : true) ? (
         <p.PlasmicImg
+          data-plasmic-name={"img"}
+          data-plasmic-override={overrides.img}
           alt={""}
-          className={classNames(sty.img__s86Ph, {
-            [sty.imgemGrupo_adm__s86PhTeBTm]: hasVariant(
-              variants,
-              "emGrupo",
-              "adm"
-            )
+          className={classNames(sty.img, {
+            [sty.imgemGrupo_adm]: hasVariant(variants, "emGrupo", "adm")
           })}
           displayHeight={"auto" as const}
           displayMaxHeight={"none" as const}
@@ -292,47 +272,6 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
             aspectRatio: undefined
           }}
         />
-      ) : null}
-      {(hasVariant(variants, "emGrupo", "visaoDoAdm") ? true : true) ? (
-        <p.PlasmicLink
-          data-plasmic-name={"link"}
-          data-plasmic-override={overrides.link}
-          className={classNames(projectcss.all, projectcss.a, sty.link, {
-            [sty.linkemGrupo_visaoDoAdm]: hasVariant(
-              variants,
-              "emGrupo",
-              "visaoDoAdm"
-            )
-          })}
-          component={Link}
-          platform={"nextjs"}
-        >
-          {(hasVariant(variants, "emGrupo", "visaoDoAdm") ? true : true) ? (
-            <p.PlasmicImg
-              alt={""}
-              className={classNames(sty.img__eeDfq, {
-                [sty.imgemGrupo_visaoDoAdm__eeDfqyP0Rr]: hasVariant(
-                  variants,
-                  "emGrupo",
-                  "visaoDoAdm"
-                )
-              })}
-              displayHeight={"34px" as const}
-              displayMaxHeight={"none" as const}
-              displayMaxWidth={"100%" as const}
-              displayMinHeight={"0" as const}
-              displayMinWidth={"0" as const}
-              displayWidth={"34px" as const}
-              loading={"lazy" as const}
-              src={{
-                src: "/plasmic/protect_2_self/images/image2Png.png",
-                fullWidth: 512,
-                fullHeight: 512,
-                aspectRatio: undefined
-              }}
-            />
-          ) : null}
-        </p.PlasmicLink>
       ) : null}
       {(
         hasVariant(variants, "emGrupo", "visaoMembros")
@@ -409,6 +348,19 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
           })}
         />
       ) : null}
+
+      <Medalha
+        data-plasmic-name={"medalha"}
+        data-plasmic-override={overrides.medalha}
+        className={classNames("__wab_instance", sty.medalha, {
+          [sty.medalhaemGrupo_adm]: hasVariant(variants, "emGrupo", "adm"),
+          [sty.medalhaemGrupo_visaoDoAdm]: hasVariant(
+            variants,
+            "emGrupo",
+            "visaoDoAdm"
+          )
+        })}
+      />
     </div>
   ) as React.ReactElement | null;
 }
@@ -417,18 +369,18 @@ const PlasmicDescendants = {
   root: [
     "root",
     "freeBox",
-    "medalha",
-    "link",
+    "img",
     "opcoesMembro",
     "opcoesAmigoPerfil",
-    "opcoesAdm"
+    "opcoesAdm",
+    "medalha"
   ],
   freeBox: ["freeBox"],
-  medalha: ["medalha"],
-  link: ["link"],
+  img: ["img"],
   opcoesMembro: ["opcoesMembro"],
   opcoesAmigoPerfil: ["opcoesAmigoPerfil"],
-  opcoesAdm: ["opcoesAdm"]
+  opcoesAdm: ["opcoesAdm"],
+  medalha: ["medalha"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -436,11 +388,11 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   freeBox: "div";
-  medalha: typeof Medalha;
-  link: "a";
+  img: typeof p.PlasmicImg;
   opcoesMembro: typeof OpcoesMembro;
   opcoesAmigoPerfil: typeof OpcoesAmigoPerfil;
   opcoesAdm: typeof OpcoesAdm;
+  medalha: typeof Medalha;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -505,11 +457,11 @@ export const PlasmicMiniaturaAmigo = Object.assign(
   {
     // Helper components rendering sub-elements
     freeBox: makeNodeComponent("freeBox"),
-    medalha: makeNodeComponent("medalha"),
-    link: makeNodeComponent("link"),
+    img: makeNodeComponent("img"),
     opcoesMembro: makeNodeComponent("opcoesMembro"),
     opcoesAmigoPerfil: makeNodeComponent("opcoesAmigoPerfil"),
     opcoesAdm: makeNodeComponent("opcoesAdm"),
+    medalha: makeNodeComponent("medalha"),
 
     // Metadata about props expected for PlasmicMiniaturaAmigo
     internalVariantProps: PlasmicMiniaturaAmigo__VariantProps,

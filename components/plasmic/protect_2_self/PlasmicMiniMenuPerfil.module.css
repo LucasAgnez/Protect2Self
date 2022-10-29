@@ -219,6 +219,10 @@
   left: 0px;
   top: 100%;
   z-index: 1000;
+  display: none;
+}
+.overlayisOpen:global(.__wab_instance) {
+  display: flex;
 }
 .optionsContainer {
   display: flex;
@@ -236,19 +240,19 @@
   font-family: "Antic", sans-serif;
 }
 .option__at7I4:global(.__wab_instance) {
-  position: relative;
-}
-.link__nQOsO {
-  color: #d3d3d3;
+  width: 100%;
+  min-width: 0;
 }
 .option__pUu8M:global(.__wab_instance) {
-  position: relative;
+  width: 100%;
+  min-width: 0;
 }
 .option___1X14E:global(.__wab_instance) {
   max-width: 100%;
-  position: relative;
+  width: 100%;
+  min-width: 0;
   display: flex;
 }
-.link__ru3TT {
+.link__iWnUv {
   color: #d3d3d3;
 }

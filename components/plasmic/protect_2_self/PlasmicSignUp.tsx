@@ -51,7 +51,7 @@ type ArgPropType = keyof PlasmicSignUp__ArgsType;
 export const PlasmicSignUp__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSignUp__OverridesType = {
-  root?: p.Flex<"div">;
+  root?: p.Flex<"a"> & Partial<LinkProps>;
   link?: p.Flex<"a"> & Partial<LinkProps>;
 };
 
@@ -85,19 +85,23 @@ function PlasmicSignUp__RenderFunc(props: {
   };
 
   return (
-    <div
+    <p.PlasmicLink
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
         projectcss.all,
+        projectcss.a,
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
         sty.root
       )}
+      component={Link}
+      href={`/criar-conta`}
+      platform={"nextjs"}
     >
       <p.PlasmicLink
         data-plasmic-name={"link"}
@@ -116,11 +120,11 @@ function PlasmicSignUp__RenderFunc(props: {
             className={"plasmic_default__all plasmic_default__span"}
             style={{ color: "#000000" }}
           >
-            {"Sign Up"}
+            {"Registre-se"}
           </span>
         </React.Fragment>
       </p.PlasmicLink>
-    </div>
+    </p.PlasmicLink>
   ) as React.ReactElement | null;
 }
 
@@ -132,7 +136,7 @@ type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
-  root: "div";
+  root: "a";
   link: "a";
 };
 

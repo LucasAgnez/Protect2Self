@@ -36,8 +36,9 @@ import {
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: Cew9iEQBJMu/component
 import HelpingHand from "../../HelpingHand"; // plasmic-import: 0GtKHl4SJA/component
-import SignInUp from "../../SignInUp"; // plasmic-import: tRAjWGA5Mr/component
 import Login from "../../Login"; // plasmic-import: rtdQhdscRZ1/component
+import SignIn from "../../SignIn"; // plasmic-import: qQDZACe0NE/component
+import SignUp from "../../SignUp"; // plasmic-import: 5zVsdLWHz-/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
@@ -69,8 +70,9 @@ export type PlasmicHomepage__OverridesType = {
   columns?: p.Flex<"div">;
   helpingHand?: p.Flex<typeof HelpingHand>;
   fraseMj?: p.Flex<"div">;
-  signInUp?: p.Flex<typeof SignInUp>;
   login?: p.Flex<typeof Login>;
+  entrar?: p.Flex<typeof SignIn>;
+  registrar?: p.Flex<typeof SignUp>;
 };
 
 export interface DefaultHomepageProps {}
@@ -979,26 +981,6 @@ function PlasmicHomepage__RenderFunc(props: {
                     )
                   })}
                 >
-                  {(
-                    hasVariant(variants, "login", "login") &&
-                    hasVariant(globalVariants, "screen", "tablet")
-                      ? true
-                      : hasVariant(variants, "login", "login")
-                      ? true
-                      : true
-                  ) ? (
-                    <SignInUp
-                      data-plasmic-name={"signInUp"}
-                      data-plasmic-override={overrides.signInUp}
-                      className={classNames("__wab_instance", sty.signInUp, {
-                        [sty.signInUplogin]: hasVariant(
-                          variants,
-                          "login",
-                          "login"
-                        )
-                      })}
-                    />
-                  ) : null}
                   {(hasVariant(variants, "login", "login") ? true : true) ? (
                     <Login
                       data-plasmic-name={"login"}
@@ -1007,6 +989,29 @@ function PlasmicHomepage__RenderFunc(props: {
                         [sty.loginlogin]: hasVariant(variants, "login", "login")
                       })}
                     />
+                  ) : null}
+                  {(hasVariant(variants, "login", "login") ? true : true) ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__vter, {
+                        [sty.freeBoxlogin__vter7UOhc]: hasVariant(
+                          variants,
+                          "login",
+                          "login"
+                        )
+                      })}
+                    >
+                      <SignIn
+                        data-plasmic-name={"entrar"}
+                        data-plasmic-override={overrides.entrar}
+                        className={classNames("__wab_instance", sty.entrar)}
+                      />
+
+                      <SignUp
+                        data-plasmic-name={"registrar"}
+                        data-plasmic-override={overrides.registrar}
+                        className={classNames("__wab_instance", sty.registrar)}
+                      />
+                    </div>
                   ) : null}
                 </div>
               </div>
@@ -1025,15 +1030,24 @@ const PlasmicDescendants = {
     "columns",
     "helpingHand",
     "fraseMj",
-    "signInUp",
-    "login"
+    "login",
+    "entrar",
+    "registrar"
   ],
   header: ["header"],
-  columns: ["columns", "helpingHand", "fraseMj", "signInUp", "login"],
+  columns: [
+    "columns",
+    "helpingHand",
+    "fraseMj",
+    "login",
+    "entrar",
+    "registrar"
+  ],
   helpingHand: ["helpingHand"],
   fraseMj: ["fraseMj"],
-  signInUp: ["signInUp"],
-  login: ["login"]
+  login: ["login"],
+  entrar: ["entrar"],
+  registrar: ["registrar"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1044,8 +1058,9 @@ type NodeDefaultElementType = {
   columns: "div";
   helpingHand: typeof HelpingHand;
   fraseMj: "div";
-  signInUp: typeof SignInUp;
   login: typeof Login;
+  entrar: typeof SignIn;
+  registrar: typeof SignUp;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1113,8 +1128,9 @@ export const PlasmicHomepage = Object.assign(
     columns: makeNodeComponent("columns"),
     helpingHand: makeNodeComponent("helpingHand"),
     fraseMj: makeNodeComponent("fraseMj"),
-    signInUp: makeNodeComponent("signInUp"),
     login: makeNodeComponent("login"),
+    entrar: makeNodeComponent("entrar"),
+    registrar: makeNodeComponent("registrar"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

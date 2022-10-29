@@ -295,7 +295,7 @@ function PlasmicMiniMenuPerfil__RenderFunc(props: {
           })}
         </button>
 
-        {(hasVariant(variants, "isOpen", "isOpen") ? true : false) ? (
+        {(hasVariant(variants, "isOpen", "isOpen") ? true : true) ? (
           <MiniMenuPerfil__Overlay
             data-plasmic-name={"overlay"}
             data-plasmic-override={overrides.overlay}
@@ -325,19 +325,7 @@ function PlasmicMiniMenuPerfil__RenderFunc(props: {
                       )}
                       value={"value1" as const}
                     >
-                      <p.PlasmicLink
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          sty.link__nQOsO
-                        )}
-                        component={Link}
-                        href={`/perfil`}
-                        platform={"nextjs"}
-                      >
-                        {"Perfil"}
-                      </p.PlasmicLink>
+                      {"Perfil"}
                     </MiniMenuPerfil__Option>
 
                     <MiniMenuPerfil__Option
@@ -362,7 +350,7 @@ function PlasmicMiniMenuPerfil__RenderFunc(props: {
                           projectcss.all,
                           projectcss.a,
                           projectcss.__wab_text,
-                          sty.link__ru3TT
+                          sty.link__iWnUv
                         )}
                         component={Link}
                         href={`/`}
@@ -403,19 +391,7 @@ function useBehavior<P extends pp.BaseSelectProps>(
             className={classNames("__wab_instance", sty.option__at7I4)}
             value={"value1" as const}
           >
-            <p.PlasmicLink
-              className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.__wab_text,
-                sty.link__nQOsO
-              )}
-              component={Link}
-              href={`/perfil`}
-              platform={"nextjs"}
-            >
-              {"Perfil"}
-            </p.PlasmicLink>
+            {"Perfil"}
           </MiniMenuPerfil__Option>
 
           <MiniMenuPerfil__Option
@@ -434,7 +410,7 @@ function useBehavior<P extends pp.BaseSelectProps>(
                 projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
-                sty.link__ru3TT
+                sty.link__iWnUv
               )}
               component={Link}
               href={`/`}

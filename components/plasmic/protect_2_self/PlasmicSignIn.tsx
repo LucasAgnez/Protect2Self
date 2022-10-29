@@ -111,7 +111,7 @@ function PlasmicSignIn__RenderFunc(props: {
         component={Link}
         platform={"nextjs"}
       >
-        {"Sign In"}
+        {"Entrar"}
       </p.PlasmicLink>
     </div>
   ) as React.ReactElement | null;

@@ -45,24 +45,7 @@
 .h4___62ARo {
   text-decoration-line: underline;
 }
-.medalha:global(.__wab_instance) {
-  position: relative;
-  width: 100%;
-  max-width: 34px;
-  align-self: flex-start;
-  min-width: 0;
-}
-.medalhaemGrupo_adm:global(.__wab_instance) {
-  flex-shrink: 0;
-}
-.text__uDlIv {
-  padding-left: 8px;
-}
-.text__zIf2C {
-  padding-right: 14px;
-  padding-left: 8px;
-}
-.img__s86Ph {
+.img {
   position: relative;
   object-fit: cover;
   max-width: 100%;
@@ -71,38 +54,13 @@
   flex-shrink: 0;
   display: none !important;
 }
-.img__s86Ph > picture > img {
+.img > picture > img {
   object-fit: cover;
 }
-.img__s86Ph > :global(.__wab_img-spacer) > img {
+.img > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
-.imgemGrupo_adm__s86PhTeBTm {
-  display: inline-block !important;
-}
-.link {
-  position: relative;
-  align-self: flex-start;
-  display: flex;
-}
-.linkemGrupo_visaoDoAdm {
-  display: none;
-}
-.img__eeDfq {
-  object-fit: cover;
-  max-width: 100%;
-  height: 34px;
-  width: 34px;
-  flex-shrink: 0;
-  display: none !important;
-}
-.img__eeDfq > picture > img {
-  object-fit: cover;
-}
-.img__eeDfq > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
-.imgemGrupo_visaoDoAdm__eeDfqyP0Rr {
+.imgemGrupo_adm {
   display: inline-block !important;
 }
 .opcoesMembro:global(.__wab_instance) {
@@ -201,4 +159,18 @@
 .option___68RR2:global(.__wab_instance) {
   position: relative;
   margin-bottom: 0px;
+}
+.medalha:global(.__wab_instance) {
+  position: relative;
+  width: 100%;
+  max-width: 34px;
+  align-self: flex-start;
+  min-width: 0;
+}
+.text__uDlIv {
+  padding-left: 8px;
+}
+.text__zIf2C {
+  padding-right: 14px;
+  padding-left: 8px;
 }

@@ -420,6 +420,7 @@ function PlasmicCriarConta__RenderFunc(props: {
                   <Button
                     className={classNames("__wab_instance", sty.button__pFfQ)}
                     color={"yellow" as const}
+                    link={`/`}
                   >
                     {"Criar Conta"}
                   </Button>
