@@ -204,7 +204,7 @@
   max-width: 52px;
   min-width: 0;
 }
-.mainPageButton__jqrpR:global(.__wab_instance) {
+.minhasMetas:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
@@ -223,7 +223,7 @@
   width: 1em;
   height: 1em;
 }
-.mainPageButton__ymdlW:global(.__wab_instance) {
+.meusGrupos:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
@@ -239,7 +239,7 @@
   width: 1em;
   height: 1em;
 }
-.mainPageButton__cdYpZ:global(.__wab_instance) {
+.criarMeta:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
@@ -258,12 +258,12 @@
   width: 1em;
   height: 1em;
 }
-.mainPageButton__m22Fi:global(.__wab_instance) {
+.criarGrupo:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .mainPageButton__m22Fi:global(.__wab_instance) {
+  .criarGrupo:global(.__wab_instance) {
     display: flex;
   }
 }
@@ -302,16 +302,21 @@
 .columngrupos__sPnqSmLdjO {
   display: flex;
 }
-.mainPageButton__euzl5:global(.__wab_instance) {
+.mainPageButton:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   display: none;
 }
-.mainPageButtonmetas__euzl5HKOvR:global(.__wab_instance) {
+.mainPageButtonmetas:global(.__wab_instance) {
   width: 323px;
   height: 50px;
   flex-shrink: 0;
-  display: flex;
+  display: none;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .mainPageButtonmetas:global(.__wab_instance) {
+    display: flex;
+  }
 }
 .svg__llNiW {
   position: relative;

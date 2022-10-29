@@ -387,7 +387,7 @@
   max-width: 100%;
   position: relative;
 }
-.option__a4ZR1:global(.__wab_instance) {
+.opcaoHabito:global(.__wab_instance) {
   position: relative;
   max-width: 143px;
   width: 100%;
@@ -476,6 +476,11 @@
   min-width: 100px;
   align-self: flex-start;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .button__j0F7X:global(.__wab_instance) {
+    width: 100px;
+  }
+}
 .svg__eGDkV {
   position: relative;
   object-fit: cover;
@@ -518,7 +523,6 @@
   height: 1em;
 }
 .frequenciaHabito {
-  display: flex;
   position: relative;
   width: 100%;
   height: auto;
@@ -529,6 +533,7 @@
   align-self: auto;
   max-width: 100%;
   min-width: 0;
+  display: none;
   padding: 8px 8px 8px 20px;
 }
 .frequenciaHabito > :nth-child(2n + 1) {

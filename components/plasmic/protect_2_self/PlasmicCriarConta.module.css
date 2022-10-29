@@ -75,6 +75,11 @@
   padding: 8px;
   border-right: 1px solid #ffffff;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox__lpKDx {
+    border-right-style: none;
+  }
+}
 .freeBox__pZ8Ln {
   display: flex;
   position: relative;

@@ -75,6 +75,7 @@ export type PlasmicCriacaoMeta__OverridesType = {
   nomeMeta?: p.Flex<"div">;
   descricao?: p.Flex<"div">;
   tipoMeta?: p.Flex<"div">;
+  opcaoHabito?: p.Flex<typeof Select__Option>;
   meta?: p.Flex<"div">;
   frequenciaHabito?: p.Flex<"div">;
   confirma?: p.Flex<typeof Button>;
@@ -385,7 +386,9 @@ function PlasmicCriacaoMeta__RenderFunc(props: {
                   color={"dark" as const}
                 >
                   <Select__Option
-                    className={classNames("__wab_instance", sty.option__a4ZR1)}
+                    data-plasmic-name={"opcaoHabito"}
+                    data-plasmic-override={overrides.opcaoHabito}
+                    className={classNames("__wab_instance", sty.opcaoHabito)}
                     color={"dark" as const}
                     value={"value1" as const}
                   >
@@ -592,6 +595,7 @@ const PlasmicDescendants = {
     "nomeMeta",
     "descricao",
     "tipoMeta",
+    "opcaoHabito",
     "meta",
     "frequenciaHabito",
     "confirma"
@@ -602,13 +606,15 @@ const PlasmicDescendants = {
     "nomeMeta",
     "descricao",
     "tipoMeta",
+    "opcaoHabito",
     "meta",
     "frequenciaHabito",
     "confirma"
   ],
   nomeMeta: ["nomeMeta"],
   descricao: ["descricao"],
-  tipoMeta: ["tipoMeta"],
+  tipoMeta: ["tipoMeta", "opcaoHabito"],
+  opcaoHabito: ["opcaoHabito"],
   meta: ["meta"],
   frequenciaHabito: ["frequenciaHabito"],
   confirma: ["confirma"]
@@ -623,6 +629,7 @@ type NodeDefaultElementType = {
   nomeMeta: "div";
   descricao: "div";
   tipoMeta: "div";
+  opcaoHabito: typeof Select__Option;
   meta: "div";
   frequenciaHabito: "div";
   confirma: typeof Button;
@@ -694,6 +701,7 @@ export const PlasmicCriacaoMeta = Object.assign(
     nomeMeta: makeNodeComponent("nomeMeta"),
     descricao: makeNodeComponent("descricao"),
     tipoMeta: makeNodeComponent("tipoMeta"),
+    opcaoHabito: makeNodeComponent("opcaoHabito"),
     meta: makeNodeComponent("meta"),
     frequenciaHabito: makeNodeComponent("frequenciaHabito"),
     confirma: makeNodeComponent("confirma"),

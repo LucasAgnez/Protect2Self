@@ -62,6 +62,7 @@ export type PlasmicLogin__OverridesType = {
   textInput?: p.Flex<typeof TextInput>;
   passwordInput?: p.Flex<typeof PasswordInput>;
   img?: p.Flex<typeof p.PlasmicImg>;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
   textbox?: p.Flex<typeof TextInput>;
 };
 
@@ -184,6 +185,56 @@ function PlasmicLogin__RenderFunc(props: {
               }}
             />
           </Button>
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__qsgD
+            )}
+          >
+            <React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ color: "#FFFFFF" }}
+              >
+                {"Ainda não tem conta? Registre-se "}
+              </span>
+              <React.Fragment>{""}</React.Fragment>
+              {
+                <p.PlasmicLink
+                  data-plasmic-name={"link"}
+                  data-plasmic-override={overrides.link}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    projectcss.plasmic_default__inline,
+                    sty.link
+                  )}
+                  component={Link}
+                  href={`/criar-conta`}
+                  platform={"nextjs"}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#00B5FF" }}
+                    >
+                      {"aqui"}
+                    </span>
+                  </React.Fragment>
+                </p.PlasmicLink>
+              }
+              <React.Fragment>{""}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ color: "#FFFFFF" }}
+              >
+                {"!"}
+              </span>
+            </React.Fragment>
+          </div>
         </div>
       ) : null}
     </div>
@@ -191,10 +242,11 @@ function PlasmicLogin__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "textInput", "textbox", "passwordInput", "img"],
+  root: ["root", "textInput", "textbox", "passwordInput", "img", "link"],
   textInput: ["textInput", "textbox"],
   passwordInput: ["passwordInput"],
-  img: ["img"]
+  img: ["img"],
+  link: ["link"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -204,6 +256,7 @@ type NodeDefaultElementType = {
   textInput: typeof TextInput;
   passwordInput: typeof PasswordInput;
   img: typeof p.PlasmicImg;
+  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -270,6 +323,7 @@ export const PlasmicLogin = Object.assign(
     textInput: makeNodeComponent("textInput"),
     passwordInput: makeNodeComponent("passwordInput"),
     img: makeNodeComponent("img"),
+    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicLogin
     internalVariantProps: PlasmicLogin__VariantProps,

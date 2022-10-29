@@ -74,7 +74,6 @@ export type PlasmicTelaGrupo__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
-  link?: p.Flex<"a"> & Partial<LinkProps>;
   img?: p.Flex<typeof p.PlasmicImg>;
   miniaturaAmigo?: p.Flex<typeof MiniaturaAmigo>;
 };
@@ -139,48 +138,58 @@ function PlasmicTelaGrupo__RenderFunc(props: {
           <HeaderLogged
             data-plasmic-name={"headerLogged"}
             data-plasmic-override={overrides.headerLogged}
-            className={classNames("__wab_instance", sty.headerLogged)}
+            className={classNames("__wab_instance", sty.headerLogged, {
+              [sty.headerLoggedtelaAdm]: hasVariant(
+                variants,
+                "telaAdm",
+                "telaAdm"
+              )
+            })}
           />
 
           <div
             data-plasmic-name={"columns"}
             data-plasmic-override={overrides.columns}
-            className={classNames(projectcss.all, sty.columns)}
+            className={classNames(projectcss.all, sty.columns, {
+              [sty.columnstelaAdm]: hasVariant(variants, "telaAdm", "telaAdm")
+            })}
           >
-            <div className={classNames(projectcss.all, sty.column__nqgca)}>
+            {(
+              hasVariant(variants, "telaAdm", "telaAdm") &&
+              hasVariant(globalVariants, "screen", "mobileOnly")
+                ? true
+                : true
+            ) ? (
               <div
-                className={classNames(projectcss.all, sty.freeBox__syvFn, {
-                  [sty.freeBoxtelaAdm__syvFnH6EUz]: hasVariant(
+                className={classNames(projectcss.all, sty.column__nqgca, {
+                  [sty.columntelaAdm__nqgcaH6EUz]: hasVariant(
                     variants,
                     "telaAdm",
                     "telaAdm"
                   )
                 })}
               >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___3Sqsa, {
-                    [sty.freeBoxtelaAdm___3SqsaH6EUz]: hasVariant(
-                      variants,
-                      "telaAdm",
-                      "telaAdm"
-                    )
-                  })}
-                >
-                  <UserPhoto
-                    data-plasmic-name={"userPhoto"}
-                    data-plasmic-override={overrides.userPhoto}
-                    className={classNames("__wab_instance", sty.userPhoto)}
-                  />
-
-                  {(
-                    hasVariant(variants, "telaAdm", "telaAdm") ? true : true
-                  ) ? (
-                    <Button
+                {(
+                  hasVariant(variants, "telaAdm", "telaAdm") &&
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : true
+                ) ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__syvFn, {
+                      [sty.freeBoxtelaAdm__syvFnH6EUz]: hasVariant(
+                        variants,
+                        "telaAdm",
+                        "telaAdm"
+                      )
+                    })}
+                  >
+                    <div
                       className={classNames(
-                        "__wab_instance",
-                        sty.button__gpQte,
+                        projectcss.all,
+                        sty.freeBox___3Sqsa,
                         {
-                          [sty.buttontelaAdm__gpQteh6EUz]: hasVariant(
+                          [sty.freeBoxtelaAdm___3SqsaH6EUz]: hasVariant(
                             variants,
                             "telaAdm",
                             "telaAdm"
@@ -188,185 +197,260 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                         }
                       )}
                     >
-                      {hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? "Editar Perfil"
-                        : "Editar Foto"}
-                    </Button>
-                  ) : null}
-                </div>
+                      <UserPhoto
+                        data-plasmic-name={"userPhoto"}
+                        data-plasmic-override={overrides.userPhoto}
+                        className={classNames("__wab_instance", sty.userPhoto)}
+                      />
 
-                {(hasVariant(variants, "telaAdm", "telaAdm") ? true : true) ? (
-                  <Button
-                    className={classNames("__wab_instance", sty.button__hjJrc, {
-                      [sty.buttontelaAdm__hjJrch6EUz]: hasVariant(
-                        variants,
-                        "telaAdm",
-                        "telaAdm"
-                      )
-                    })}
-                  >
-                    {"Adicionar Participante"}
-                  </Button>
-                ) : null}
-                {(hasVariant(variants, "telaAdm", "telaAdm") ? true : true) ? (
-                  <Button
-                    className={classNames("__wab_instance", sty.button__yr5PM, {
-                      [sty.buttontelaAdm__yr5PMh6EUz]: hasVariant(
-                        variants,
-                        "telaAdm",
-                        "telaAdm"
-                      )
-                    })}
-                  >
-                    {"Editar Meta"}
-                  </Button>
+                      {(
+                        hasVariant(variants, "telaAdm", "telaAdm") ? true : true
+                      ) ? (
+                        <Button
+                          className={classNames(
+                            "__wab_instance",
+                            sty.button__gpQte,
+                            {
+                              [sty.buttontelaAdm__gpQteh6EUz]: hasVariant(
+                                variants,
+                                "telaAdm",
+                                "telaAdm"
+                              )
+                            }
+                          )}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? "Editar Perfil"
+                            : "Editar Foto"}
+                        </Button>
+                      ) : null}
+                    </div>
+
+                    {(
+                      hasVariant(variants, "telaAdm", "telaAdm") ? true : true
+                    ) ? (
+                      <Button
+                        className={classNames(
+                          "__wab_instance",
+                          sty.button__hjJrc,
+                          {
+                            [sty.buttontelaAdm__hjJrch6EUz]: hasVariant(
+                              variants,
+                              "telaAdm",
+                              "telaAdm"
+                            )
+                          }
+                        )}
+                      >
+                        {"Adicionar Participante"}
+                      </Button>
+                    ) : null}
+                    {(
+                      hasVariant(variants, "telaAdm", "telaAdm") ? true : true
+                    ) ? (
+                      <Button
+                        className={classNames(
+                          "__wab_instance",
+                          sty.button__yr5PM,
+                          {
+                            [sty.buttontelaAdm__yr5PMh6EUz]: hasVariant(
+                              variants,
+                              "telaAdm",
+                              "telaAdm"
+                            )
+                          }
+                        )}
+                      >
+                        {"Editar Meta"}
+                      </Button>
+                    ) : null}
+                  </div>
                 ) : null}
               </div>
-            </div>
-
-            <div className={classNames(projectcss.all, sty.column___9Gy)}>
-              <div className={classNames(projectcss.all, sty.freeBox__mMjMk)}>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox__zRZbY, {
-                    [sty.freeBoxtelaAdm__zRZbYh6EUz]: hasVariant(
-                      variants,
-                      "telaAdm",
-                      "telaAdm"
-                    )
-                  })}
-                >
-                  {p.renderPlasmicSlot({
-                    defaultContents: (
+            ) : null}
+            {(
+              hasVariant(variants, "telaAdm", "telaAdm") &&
+              hasVariant(globalVariants, "screen", "mobileOnly")
+                ? true
+                : true
+            ) ? (
+              <div
+                className={classNames(projectcss.all, sty.column___9Gy, {
+                  [sty.columntelaAdm___9GyH6EUz]: hasVariant(
+                    variants,
+                    "telaAdm",
+                    "telaAdm"
+                  )
+                })}
+              >
+                {(
+                  hasVariant(variants, "telaAdm", "telaAdm") &&
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : true
+                ) ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__mMjMk, {
+                      [sty.freeBoxtelaAdm__mMjMkH6EUz]: hasVariant(
+                        variants,
+                        "telaAdm",
+                        "telaAdm"
+                      )
+                    })}
+                  >
+                    {(
+                      hasVariant(variants, "telaAdm", "telaAdm") &&
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___0TpaN
+                          sty.freeBox__zRZbY,
+                          {
+                            [sty.freeBoxtelaAdm__zRZbYh6EUz]: hasVariant(
+                              variants,
+                              "telaAdm",
+                              "telaAdm"
+                            )
+                          }
                         )}
                       >
-                        <React.Fragment>
-                          <React.Fragment>{""}</React.Fragment>
-                          {
-                            <h2
+                        {p.renderPlasmicSlot({
+                          defaultContents: (
+                            <div
                               className={classNames(
                                 projectcss.all,
-                                projectcss.h2,
                                 projectcss.__wab_text,
-                                sty.h2__xZnN
+                                sty.text___0TpaN
                               )}
                             >
                               <React.Fragment>
                                 <React.Fragment>{""}</React.Fragment>
                                 {
-                                  <h4
+                                  <h2
                                     className={classNames(
                                       projectcss.all,
-                                      projectcss.h4,
+                                      projectcss.h2,
                                       projectcss.__wab_text,
-                                      sty.h4__k9Mou
+                                      sty.h2__xZnN
                                     )}
                                   >
                                     <React.Fragment>
                                       <React.Fragment>{""}</React.Fragment>
                                       {
-                                        <h2
+                                        <h4
                                           className={classNames(
                                             projectcss.all,
-                                            projectcss.h2,
+                                            projectcss.h4,
                                             projectcss.__wab_text,
-                                            sty.h2__hwqQ2
+                                            sty.h4__k9Mou
                                           )}
                                         >
                                           <React.Fragment>
-                                            <span
-                                              className={
-                                                "plasmic_default__all plasmic_default__span"
-                                              }
-                                              style={{ color: "#FFFFFF" }}
-                                            >
-                                              {"Nome Do Grupo"}
-                                            </span>
+                                            <React.Fragment>
+                                              {""}
+                                            </React.Fragment>
+                                            {
+                                              <h2
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.h2,
+                                                  projectcss.__wab_text,
+                                                  sty.h2__hwqQ2
+                                                )}
+                                              >
+                                                <React.Fragment>
+                                                  <span
+                                                    className={
+                                                      "plasmic_default__all plasmic_default__span"
+                                                    }
+                                                    style={{ color: "#FFFFFF" }}
+                                                  >
+                                                    {"Nome Do Grupo"}
+                                                  </span>
+                                                </React.Fragment>
+                                              </h2>
+                                            }
+                                            <React.Fragment>
+                                              {""}
+                                            </React.Fragment>
                                           </React.Fragment>
-                                        </h2>
+                                        </h4>
                                       }
                                       <React.Fragment>{""}</React.Fragment>
                                     </React.Fragment>
-                                  </h4>
+                                  </h2>
                                 }
                                 <React.Fragment>{""}</React.Fragment>
                               </React.Fragment>
-                            </h2>
-                          }
-                          <React.Fragment>{""}</React.Fragment>
-                        </React.Fragment>
+                            </div>
+                          ),
+
+                          value: args.children
+                        })}
+
+                        <Button
+                          className={classNames(
+                            "__wab_instance",
+                            sty.button__dqFu5
+                          )}
+                          color={"clear" as const}
+                        >
+                          <p.PlasmicImg
+                            data-plasmic-name={"img"}
+                            data-plasmic-override={overrides.img}
+                            alt={""}
+                            className={classNames(sty.img)}
+                            displayHeight={"auto" as const}
+                            displayMaxHeight={"none" as const}
+                            displayMaxWidth={"100%" as const}
+                            displayMinHeight={"0" as const}
+                            displayMinWidth={"0" as const}
+                            displayWidth={"36px" as const}
+                            loading={"lazy" as const}
+                            src={{
+                              src: "/plasmic/protect_2_self/images/lapispng.png",
+                              fullWidth: 512,
+                              fullHeight: 512,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        </Button>
                       </div>
-                    ),
-
-                    value: args.children
-                  })}
-
-                  {(
-                    hasVariant(variants, "telaAdm", "telaAdm") ? true : true
-                  ) ? (
-                    <p.PlasmicLink
-                      data-plasmic-name={"link"}
-                      data-plasmic-override={overrides.link}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        sty.link,
-                        {
-                          [sty.linktelaAdm]: hasVariant(
-                            variants,
-                            "telaAdm",
-                            "telaAdm"
-                          )
+                    ) : null}
+                    {(
+                      hasVariant(variants, "telaAdm", "telaAdm") &&
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <MiniaturaAmigo
+                        data-plasmic-name={"miniaturaAmigo"}
+                        data-plasmic-override={overrides.miniaturaAmigo}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.miniaturaAmigo,
+                          {
+                            [sty.miniaturaAmigotelaAdm]: hasVariant(
+                              variants,
+                              "telaAdm",
+                              "telaAdm"
+                            )
+                          }
+                        )}
+                        emGrupo={
+                          hasVariant(variants, "telaAdm", "telaAdm")
+                            ? ("visaoDoAdm" as const)
+                            : ("visaoMembros" as const)
                         }
-                      )}
-                      component={Link}
-                      platform={"nextjs"}
-                    >
-                      <p.PlasmicImg
-                        data-plasmic-name={"img"}
-                        data-plasmic-override={overrides.img}
-                        alt={""}
-                        className={classNames(sty.img)}
-                        displayHeight={"auto" as const}
-                        displayMaxHeight={"none" as const}
-                        displayMaxWidth={"100%" as const}
-                        displayMinHeight={"0" as const}
-                        displayMinWidth={"0" as const}
-                        displayWidth={"36px" as const}
-                        loading={"lazy" as const}
-                        src={{
-                          src: "/plasmic/protect_2_self/images/lapispng.png",
-                          fullWidth: 512,
-                          fullHeight: 512,
-                          aspectRatio: undefined
-                        }}
                       />
-                    </p.PlasmicLink>
-                  ) : null}
-                </div>
-
-                <MiniaturaAmigo
-                  data-plasmic-name={"miniaturaAmigo"}
-                  data-plasmic-override={overrides.miniaturaAmigo}
-                  className={classNames("__wab_instance", sty.miniaturaAmigo, {
-                    [sty.miniaturaAmigotelaAdm]: hasVariant(
-                      variants,
-                      "telaAdm",
-                      "telaAdm"
-                    )
-                  })}
-                  emGrupo={
-                    hasVariant(variants, "telaAdm", "telaAdm")
-                      ? ("visaoDoAdm" as const)
-                      : ("visaoMembros" as const)
-                  }
-                />
+                    ) : null}
+                  </div>
+                ) : null}
               </div>
-            </div>
+            ) : null}
           </div>
         </div>
       </div>
@@ -380,14 +464,12 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "userPhoto",
-    "link",
     "img",
     "miniaturaAmigo"
   ],
   headerLogged: ["headerLogged"],
-  columns: ["columns", "userPhoto", "link", "img", "miniaturaAmigo"],
+  columns: ["columns", "userPhoto", "img", "miniaturaAmigo"],
   userPhoto: ["userPhoto"],
-  link: ["link", "img"],
   img: ["img"],
   miniaturaAmigo: ["miniaturaAmigo"]
 } as const;
@@ -399,7 +481,6 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   userPhoto: typeof UserPhoto;
-  link: "a";
   img: typeof p.PlasmicImg;
   miniaturaAmigo: typeof MiniaturaAmigo;
 };
@@ -468,7 +549,6 @@ export const PlasmicTelaGrupo = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     userPhoto: makeNodeComponent("userPhoto"),
-    link: makeNodeComponent("link"),
     img: makeNodeComponent("img"),
     miniaturaAmigo: makeNodeComponent("miniaturaAmigo"),
 
