@@ -32,11 +32,11 @@ function Homepage() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicHomepage entrar={{
-        props: {
-          onClick: () => setLogin(true)}
-        } login={login}/>
-      
+    <PlasmicHomepage entrar={{
+          props: { onClick: () => setLogin(true)}
+        }}
+        login={login}
+    />
     </ph.PageParamsProvider>
   );
 }
