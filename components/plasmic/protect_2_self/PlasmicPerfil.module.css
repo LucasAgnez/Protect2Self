@@ -236,6 +236,37 @@
   padding-left: 0px;
   margin-left: 0px;
 }
+.texteditar__uyTigb3QAt {
+  width: 100px;
+  flex-shrink: 0;
+}
+.textInput__yh73V:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 800px;
+  flex-shrink: 0;
+  display: none;
+}
+.textInputeditar__yh73Vb3QAt:global(.__wab_instance) {
+  display: flex;
+}
+@media (max-width: 1029px) {
+  .textInputeditar__yh73Vb3QAt:global(.__wab_instance) {
+    width: auto;
+  }
+}
+.svg__pTBkw {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__a0UfS {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
 .freeBox__nnxk3 {
   position: relative;
   width: 100%;
@@ -246,6 +277,9 @@
   flex-direction: row;
   padding-left: 16px;
   min-width: 0;
+}
+.freeBoxeditar__nnxk3B3QAt {
+  display: none;
 }
 .freeBox__j9MYh {
   display: flex;
@@ -279,6 +313,37 @@
   min-width: 0;
   padding: 0px 0px 0px 16px;
 }
+.texteditar__wjnOB3QAt {
+  display: none;
+}
+.textInput__noEqv:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 800px;
+  flex-shrink: 0;
+  display: none;
+}
+.textInputeditar__noEqvB3QAt:global(.__wab_instance) {
+  display: flex;
+}
+@media (max-width: 1029px) {
+  .textInputeditar__noEqvB3QAt:global(.__wab_instance) {
+    width: 100%;
+    min-width: 0;
+  }
+}
+.svg___5N2Lz {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__ak5Ps {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
 .freeBox___2Kc6M {
   display: flex;
   position: relative;
@@ -308,4 +373,46 @@
   background: #232320;
   min-width: 0;
   padding: 0px 0px 0px 16px;
+}
+.texteditar__oPsbUb3QAt {
+  display: none;
+}
+.passwordInput__dhFd:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 800px;
+  flex-shrink: 0;
+  display: none;
+}
+.passwordInputeditar__dhFdB3QAt:global(.__wab_instance) {
+  display: block;
+}
+.freeBox__uqWpR {
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  display: none;
+  padding: 8px 8px 8px 24px;
+}
+.freeBoxeditar__uqWpRb3QAt {
+  display: flex;
+}
+.text__s7Nrt {
+  position: relative;
+  width: 100px;
+  height: auto;
+  max-width: 800px;
+  padding-left: 0px;
+  flex-shrink: 0;
+}
+.passwordInput__wctSj:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 800px;
+  flex-shrink: 0;
 }

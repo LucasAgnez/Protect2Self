@@ -336,32 +336,6 @@
           "componentType": "page"
         },
         {
-          "id": "qQDZACe0NE",
-          "name": "SignIn",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicSignIn.tsx",
-          "importSpec": {
-            "modulePath": "SignIn.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicSignIn.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "5zVsdLWHz-",
-          "name": "SignUp",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicSignUp.tsx",
-          "importSpec": {
-            "modulePath": "SignUp.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicSignUp.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "0GtKHl4SJA",
           "name": "HelpingHand",
           "type": "managed",

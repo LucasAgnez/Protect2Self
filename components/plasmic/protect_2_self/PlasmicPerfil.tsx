@@ -37,6 +37,8 @@ import {
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
 import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
+import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
+import PasswordInput from "../../PasswordInput"; // plasmic-import: 7l13B_o70O/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
@@ -47,12 +49,18 @@ import sty from "./PlasmicPerfil.module.css"; // plasmic-import: zmhDGaogJf/css
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
+import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 
-export type PlasmicPerfil__VariantMembers = {};
+export type PlasmicPerfil__VariantMembers = {
+  editar: "editar";
+};
 
-export type PlasmicPerfil__VariantsArgs = {};
+export type PlasmicPerfil__VariantsArgs = {
+  editar?: SingleBooleanChoiceArg<"editar">;
+};
+
 type VariantPropType = keyof PlasmicPerfil__VariantsArgs;
-export const PlasmicPerfil__VariantProps = new Array<VariantPropType>();
+export const PlasmicPerfil__VariantProps = new Array<VariantPropType>("editar");
 
 export type PlasmicPerfil__ArgsType = {
   children?: React.ReactNode;
@@ -125,7 +133,8 @@ function PlasmicPerfil__RenderFunc(props: {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
-            sty.root
+            sty.root,
+            { [sty.rooteditar]: hasVariant(variants, "editar", "editar") }
           )}
         >
           <HeaderLogged
@@ -167,6 +176,7 @@ function PlasmicPerfil__RenderFunc(props: {
 
                 <Button
                   className={classNames("__wab_instance", sty.button__hFbzL)}
+                  link={`/pagina-de-medalhas`}
                 >
                   {"Medalhas"}
                 </Button>
@@ -179,8 +189,24 @@ function PlasmicPerfil__RenderFunc(props: {
                 </Button>
               </div>
 
-              <div className={classNames(projectcss.all, sty.freeBox__i8Yc)}>
-                <div className={classNames(projectcss.all, sty.freeBox__bLytP)}>
+              <div
+                className={classNames(projectcss.all, sty.freeBox__i8Yc, {
+                  [sty.freeBoxeditar__i8Ycb3QAt]: hasVariant(
+                    variants,
+                    "editar",
+                    "editar"
+                  )
+                })}
+              >
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__bLytP, {
+                    [sty.freeBoxeditar__bLytPb3QAt]: hasVariant(
+                      variants,
+                      "editar",
+                      "editar"
+                    )
+                  })}
+                >
                   {p.renderPlasmicSlot({
                     defaultContents: (
                       <div
@@ -258,13 +284,26 @@ function PlasmicPerfil__RenderFunc(props: {
                 </div>
 
                 <div
-                  className={classNames(projectcss.all, sty.freeBox___00FjY)}
+                  className={classNames(projectcss.all, sty.freeBox___00FjY, {
+                    [sty.freeBoxeditar___00FjYb3QAt]: hasVariant(
+                      variants,
+                      "editar",
+                      "editar"
+                    )
+                  })}
                 >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__uyTig
+                      sty.text__uyTig,
+                      {
+                        [sty.texteditar__uyTigb3QAt]: hasVariant(
+                          variants,
+                          "editar",
+                          "editar"
+                        )
+                      }
                     )}
                   >
                     <React.Fragment>
@@ -277,42 +316,85 @@ function PlasmicPerfil__RenderFunc(props: {
                     </React.Fragment>
                   </div>
 
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__nnxk3)}
-                  >
-                    {p.renderPlasmicSlot({
-                      defaultContents: (
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__iYnfr
-                          )}
-                        >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "#FFFFFF" }}
-                            >
-                              {"nomesobrenome@email.com"}
-                            </span>
-                          </React.Fragment>
-                        </div>
-                      ),
+                  {(hasVariant(variants, "editar", "editar") ? true : true) ? (
+                    <TextInput
+                      className={classNames(
+                        "__wab_instance",
+                        sty.textInput__yh73V,
+                        {
+                          [sty.textInputeditar__yh73Vb3QAt]: hasVariant(
+                            variants,
+                            "editar",
+                            "editar"
+                          )
+                        }
+                      )}
+                      color={"dark" as const}
+                    />
+                  ) : null}
+                  {(hasVariant(variants, "editar", "editar") ? true : true) ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox__nnxk3,
+                        {
+                          [sty.freeBoxeditar__nnxk3B3QAt]: hasVariant(
+                            variants,
+                            "editar",
+                            "editar"
+                          )
+                        }
+                      )}
+                    >
+                      {p.renderPlasmicSlot({
+                        defaultContents: (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__iYnfr
+                            )}
+                          >
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ color: "#FFFFFF" }}
+                              >
+                                {"nomesobrenome@email.com"}
+                              </span>
+                            </React.Fragment>
+                          </div>
+                        ),
 
-                      value: args.slot
-                    })}
-                  </div>
+                        value: args.slot
+                      })}
+                    </div>
+                  ) : null}
                 </div>
 
-                <div className={classNames(projectcss.all, sty.freeBox__j9MYh)}>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__j9MYh, {
+                    [sty.freeBoxeditar__j9MYhB3QAt]: hasVariant(
+                      variants,
+                      "editar",
+                      "editar"
+                    )
+                  })}
+                >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__dpHsU
+                      sty.text__dpHsU,
+                      {
+                        [sty.texteditar__dpHsUb3QAt]: hasVariant(
+                          variants,
+                          "editar",
+                          "editar"
+                        )
+                      }
                     )}
                   >
                     <React.Fragment>
@@ -325,32 +407,72 @@ function PlasmicPerfil__RenderFunc(props: {
                     </React.Fragment>
                   </div>
 
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wjnO
-                    )}
-                  >
-                    <React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ color: "#FFFFFF" }}
-                      >
-                        {"(00) 99999 - 9999"}
-                      </span>
-                    </React.Fragment>
-                  </div>
+                  {(hasVariant(variants, "editar", "editar") ? true : true) ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__wjnO,
+                        {
+                          [sty.texteditar__wjnOB3QAt]: hasVariant(
+                            variants,
+                            "editar",
+                            "editar"
+                          )
+                        }
+                      )}
+                    >
+                      <React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ color: "#FFFFFF" }}
+                        >
+                          {"(00) 99999 - 9999"}
+                        </span>
+                      </React.Fragment>
+                    </div>
+                  ) : null}
+                  {(hasVariant(variants, "editar", "editar") ? true : true) ? (
+                    <TextInput
+                      className={classNames(
+                        "__wab_instance",
+                        sty.textInput__noEqv,
+                        {
+                          [sty.textInputeditar__noEqvB3QAt]: hasVariant(
+                            variants,
+                            "editar",
+                            "editar"
+                          )
+                        }
+                      )}
+                      color={"dark" as const}
+                    />
+                  ) : null}
                 </div>
 
                 <div
-                  className={classNames(projectcss.all, sty.freeBox___2Kc6M)}
+                  className={classNames(projectcss.all, sty.freeBox___2Kc6M, {
+                    [sty.freeBoxeditar___2Kc6MB3QAt]: hasVariant(
+                      variants,
+                      "editar",
+                      "editar"
+                    )
+                  })}
                 >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__gPjWa
+                      sty.text__gPjWa,
+                      {
+                        [sty.texteditar__gPjWaB3QAt]: hasVariant(
+                          variants,
+                          "editar",
+                          "editar"
+                        )
+                      }
                     )}
                   >
                     <React.Fragment>
@@ -363,23 +485,110 @@ function PlasmicPerfil__RenderFunc(props: {
                     </React.Fragment>
                   </div>
 
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__oPsbU
-                    )}
-                  >
-                    <React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ color: "#FFFFFF" }}
-                      >
-                        {"**********"}
-                      </span>
-                    </React.Fragment>
-                  </div>
+                  {(hasVariant(variants, "editar", "editar") ? true : true) ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__oPsbU,
+                        {
+                          [sty.texteditar__oPsbUb3QAt]: hasVariant(
+                            variants,
+                            "editar",
+                            "editar"
+                          )
+                        }
+                      )}
+                    >
+                      <React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ color: "#FFFFFF" }}
+                        >
+                          {"**********"}
+                        </span>
+                      </React.Fragment>
+                    </div>
+                  ) : null}
+                  {(hasVariant(variants, "editar", "editar") ? true : true) ? (
+                    <PasswordInput
+                      className={classNames(
+                        "__wab_instance",
+                        sty.passwordInput__dhFd,
+                        {
+                          [sty.passwordInputeditar__dhFdB3QAt]: hasVariant(
+                            variants,
+                            "editar",
+                            "editar"
+                          )
+                        }
+                      )}
+                    />
+                  ) : null}
                 </div>
+
+                {(hasVariant(variants, "editar", "editar") ? true : true) ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__uqWpR, {
+                      [sty.freeBoxeditar__uqWpRb3QAt]: hasVariant(
+                        variants,
+                        "editar",
+                        "editar"
+                      )
+                    })}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__s7Nrt,
+                        {
+                          [sty.texteditar__s7NrtB3QAt]: hasVariant(
+                            variants,
+                            "editar",
+                            "editar"
+                          )
+                        }
+                      )}
+                    >
+                      <React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ color: "#F7F7F7" }}
+                        >
+                          {"Confirme a "}
+                        </span>
+                        <React.Fragment>{"\n"}</React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ color: "#F7F7F7" }}
+                        >
+                          {"senha"}
+                        </span>
+                      </React.Fragment>
+                    </div>
+
+                    <PasswordInput
+                      className={classNames(
+                        "__wab_instance",
+                        sty.passwordInput__wctSj,
+                        {
+                          [sty.passwordInputeditar__wctSjb3QAt]: hasVariant(
+                            variants,
+                            "editar",
+                            "editar"
+                          )
+                        }
+                      )}
+                    />
+                  </div>
+                ) : null}
               </div>
             </div>
           ) : null}

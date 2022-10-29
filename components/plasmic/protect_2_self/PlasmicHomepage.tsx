@@ -37,8 +37,7 @@ import {
 import Header from "../../Header"; // plasmic-import: Cew9iEQBJMu/component
 import HelpingHand from "../../HelpingHand"; // plasmic-import: 0GtKHl4SJA/component
 import Login from "../../Login"; // plasmic-import: rtdQhdscRZ1/component
-import SignIn from "../../SignIn"; // plasmic-import: qQDZACe0NE/component
-import SignUp from "../../SignUp"; // plasmic-import: 5zVsdLWHz-/component
+import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
@@ -46,6 +45,9 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import: 8XuJZfnuNd7UvNkkshapC6/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: cHNTWN6IIi/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
 export type PlasmicHomepage__VariantMembers = {
   login: "login";
@@ -71,8 +73,6 @@ export type PlasmicHomepage__OverridesType = {
   helpingHand?: p.Flex<typeof HelpingHand>;
   fraseMj?: p.Flex<"div">;
   login?: p.Flex<typeof Login>;
-  entrar?: p.Flex<typeof SignIn>;
-  registrar?: p.Flex<typeof SignUp>;
 };
 
 export interface DefaultHomepageProps {}
@@ -1000,17 +1000,28 @@ function PlasmicHomepage__RenderFunc(props: {
                         )
                       })}
                     >
-                      <SignIn
-                        data-plasmic-name={"entrar"}
-                        data-plasmic-override={overrides.entrar}
-                        className={classNames("__wab_instance", sty.entrar)}
-                      />
+                      <Button
+                        className={classNames(
+                          "__wab_instance",
+                          sty.button___8D1K6
+                        )}
+                        color={"white" as const}
+                        shape={"rounded" as const}
+                      >
+                        {"Entrar"}
+                      </Button>
 
-                      <SignUp
-                        data-plasmic-name={"registrar"}
-                        data-plasmic-override={overrides.registrar}
-                        className={classNames("__wab_instance", sty.registrar)}
-                      />
+                      <Button
+                        className={classNames(
+                          "__wab_instance",
+                          sty.button__mauDn
+                        )}
+                        color={"yellow" as const}
+                        link={`/criar-conta`}
+                        shape={"rounded" as const}
+                      >
+                        {"Registre-se"}
+                      </Button>
                     </div>
                   ) : null}
                 </div>
@@ -1024,30 +1035,12 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "header",
-    "columns",
-    "helpingHand",
-    "fraseMj",
-    "login",
-    "entrar",
-    "registrar"
-  ],
+  root: ["root", "header", "columns", "helpingHand", "fraseMj", "login"],
   header: ["header"],
-  columns: [
-    "columns",
-    "helpingHand",
-    "fraseMj",
-    "login",
-    "entrar",
-    "registrar"
-  ],
+  columns: ["columns", "helpingHand", "fraseMj", "login"],
   helpingHand: ["helpingHand"],
   fraseMj: ["fraseMj"],
-  login: ["login"],
-  entrar: ["entrar"],
-  registrar: ["registrar"]
+  login: ["login"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1059,8 +1052,6 @@ type NodeDefaultElementType = {
   helpingHand: typeof HelpingHand;
   fraseMj: "div";
   login: typeof Login;
-  entrar: typeof SignIn;
-  registrar: typeof SignUp;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1129,8 +1120,6 @@ export const PlasmicHomepage = Object.assign(
     helpingHand: makeNodeComponent("helpingHand"),
     fraseMj: makeNodeComponent("fraseMj"),
     login: makeNodeComponent("login"),
-    entrar: makeNodeComponent("entrar"),
-    registrar: makeNodeComponent("registrar"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
