@@ -875,6 +875,32 @@
           "cssFilePath": "plasmic/protect_2_self/PlasmicPaginaDeMedalhas.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "pJ5H5bIW9Pq",
+          "name": "CriacaoMetaHabito",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicCriacaoMetaHabito.tsx",
+          "importSpec": {
+            "modulePath": "../pages/criacao-meta-habito.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicCriacaoMetaHabito.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "pXV_I6jM5lc",
+          "name": "CriacaoMetaVicio",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicCriacaoMetaVicio.tsx",
+          "importSpec": {
+            "modulePath": "../pages/criacao-meta-vicio.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicCriacaoMetaVicio.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
