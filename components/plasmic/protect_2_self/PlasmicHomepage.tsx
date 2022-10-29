@@ -73,6 +73,8 @@ export type PlasmicHomepage__OverridesType = {
   helpingHand?: p.Flex<typeof HelpingHand>;
   fraseMj?: p.Flex<"div">;
   login?: p.Flex<typeof Login>;
+  entrar?: p.Flex<typeof Button>;
+  button?: p.Flex<typeof Button>;
 };
 
 export interface DefaultHomepageProps {}
@@ -1001,10 +1003,9 @@ function PlasmicHomepage__RenderFunc(props: {
                       })}
                     >
                       <Button
-                        className={classNames(
-                          "__wab_instance",
-                          sty.button___8D1K6
-                        )}
+                        data-plasmic-name={"entrar"}
+                        data-plasmic-override={overrides.entrar}
+                        className={classNames("__wab_instance", sty.entrar)}
                         color={"white" as const}
                         shape={"rounded" as const}
                       >
@@ -1012,10 +1013,9 @@ function PlasmicHomepage__RenderFunc(props: {
                       </Button>
 
                       <Button
-                        className={classNames(
-                          "__wab_instance",
-                          sty.button__mauDn
-                        )}
+                        data-plasmic-name={"button"}
+                        data-plasmic-override={overrides.button}
+                        className={classNames("__wab_instance", sty.button)}
                         color={"yellow" as const}
                         link={`/criar-conta`}
                         shape={"rounded" as const}
@@ -1035,12 +1035,23 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "columns", "helpingHand", "fraseMj", "login"],
+  root: [
+    "root",
+    "header",
+    "columns",
+    "helpingHand",
+    "fraseMj",
+    "login",
+    "entrar",
+    "button"
+  ],
   header: ["header"],
-  columns: ["columns", "helpingHand", "fraseMj", "login"],
+  columns: ["columns", "helpingHand", "fraseMj", "login", "entrar", "button"],
   helpingHand: ["helpingHand"],
   fraseMj: ["fraseMj"],
-  login: ["login"]
+  login: ["login"],
+  entrar: ["entrar"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1052,6 +1063,8 @@ type NodeDefaultElementType = {
   helpingHand: typeof HelpingHand;
   fraseMj: "div";
   login: typeof Login;
+  entrar: typeof Button;
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1120,6 +1133,8 @@ export const PlasmicHomepage = Object.assign(
     helpingHand: makeNodeComponent("helpingHand"),
     fraseMj: makeNodeComponent("fraseMj"),
     login: makeNodeComponent("login"),
+    entrar: makeNodeComponent("entrar"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
