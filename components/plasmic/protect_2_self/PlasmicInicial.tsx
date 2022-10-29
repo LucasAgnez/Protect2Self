@@ -75,6 +75,11 @@ export type PlasmicInicial__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   sinoNotificacao?: p.Flex<typeof SinoNotificacao>;
+  minhasMetas?: p.Flex<typeof MainPageButton>;
+  meusGrupos?: p.Flex<typeof MainPageButton>;
+  criarMeta?: p.Flex<typeof MainPageButton>;
+  criarGrupo?: p.Flex<typeof MainPageButton>;
+  mainPageButton?: p.Flex<typeof MainPageButton>;
 };
 
 export interface DefaultInicialProps {}
@@ -220,11 +225,13 @@ function PlasmicInicial__RenderFunc(props: {
                       ) : null}
 
                       <MainPageButton
+                        data-plasmic-name={"minhasMetas"}
+                        data-plasmic-override={overrides.minhasMetas}
                         className={classNames(
                           "__wab_instance",
-                          sty.mainPageButton__jqrpR,
+                          sty.minhasMetas,
                           {
-                            [sty.mainPageButtonmetas__jqrpRhKOvR]: hasVariant(
+                            [sty.minhasMetasmetas]: hasVariant(
                               variants,
                               "metas",
                               "metas"
@@ -283,10 +290,9 @@ function PlasmicInicial__RenderFunc(props: {
                       </MainPageButton>
 
                       <MainPageButton
-                        className={classNames(
-                          "__wab_instance",
-                          sty.mainPageButton__ymdlW
-                        )}
+                        data-plasmic-name={"meusGrupos"}
+                        data-plasmic-override={overrides.meusGrupos}
+                        className={classNames("__wab_instance", sty.meusGrupos)}
                       >
                         <div
                           className={classNames(
@@ -339,10 +345,9 @@ function PlasmicInicial__RenderFunc(props: {
                       </MainPageButton>
 
                       <MainPageButton
-                        className={classNames(
-                          "__wab_instance",
-                          sty.mainPageButton__cdYpZ
-                        )}
+                        data-plasmic-name={"criarMeta"}
+                        data-plasmic-override={overrides.criarMeta}
+                        className={classNames("__wab_instance", sty.criarMeta)}
                         link={`/criacao-meta`}
                       >
                         <div
@@ -401,9 +406,11 @@ function PlasmicInicial__RenderFunc(props: {
                           : true
                       ) ? (
                         <MainPageButton
+                          data-plasmic-name={"criarGrupo"}
+                          data-plasmic-override={overrides.criarGrupo}
                           className={classNames(
                             "__wab_instance",
-                            sty.mainPageButton__m22Fi
+                            sty.criarGrupo
                           )}
                           link={`/criacao-grupo`}
                         >
@@ -483,13 +490,22 @@ function PlasmicInicial__RenderFunc(props: {
                       )
                     })}
                   >
-                    {(hasVariant(variants, "metas", "metas") ? true : true) ? (
+                    {(
+                      hasVariant(variants, "metas", "metas") &&
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : hasVariant(variants, "metas", "metas")
+                        ? true
+                        : true
+                    ) ? (
                       <MainPageButton
+                        data-plasmic-name={"mainPageButton"}
+                        data-plasmic-override={overrides.mainPageButton}
                         className={classNames(
                           "__wab_instance",
-                          sty.mainPageButton__euzl5,
+                          sty.mainPageButton,
                           {
-                            [sty.mainPageButtonmetas__euzl5HKOvR]: hasVariant(
+                            [sty.mainPageButtonmetas]: hasVariant(
                               variants,
                               "metas",
                               "metas"
@@ -717,10 +733,33 @@ function PlasmicInicial__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "headerLogged", "columns", "sinoNotificacao"],
+  root: [
+    "root",
+    "headerLogged",
+    "columns",
+    "sinoNotificacao",
+    "minhasMetas",
+    "meusGrupos",
+    "criarMeta",
+    "criarGrupo",
+    "mainPageButton"
+  ],
   headerLogged: ["headerLogged"],
-  columns: ["columns", "sinoNotificacao"],
-  sinoNotificacao: ["sinoNotificacao"]
+  columns: [
+    "columns",
+    "sinoNotificacao",
+    "minhasMetas",
+    "meusGrupos",
+    "criarMeta",
+    "criarGrupo",
+    "mainPageButton"
+  ],
+  sinoNotificacao: ["sinoNotificacao"],
+  minhasMetas: ["minhasMetas"],
+  meusGrupos: ["meusGrupos"],
+  criarMeta: ["criarMeta"],
+  criarGrupo: ["criarGrupo"],
+  mainPageButton: ["mainPageButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -730,6 +769,11 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   sinoNotificacao: typeof SinoNotificacao;
+  minhasMetas: typeof MainPageButton;
+  meusGrupos: typeof MainPageButton;
+  criarMeta: typeof MainPageButton;
+  criarGrupo: typeof MainPageButton;
+  mainPageButton: typeof MainPageButton;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -796,6 +840,11 @@ export const PlasmicInicial = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     sinoNotificacao: makeNodeComponent("sinoNotificacao"),
+    minhasMetas: makeNodeComponent("minhasMetas"),
+    meusGrupos: makeNodeComponent("meusGrupos"),
+    criarMeta: makeNodeComponent("criarMeta"),
+    criarGrupo: makeNodeComponent("criarGrupo"),
+    mainPageButton: makeNodeComponent("mainPageButton"),
 
     // Metadata about props expected for PlasmicInicial
     internalVariantProps: PlasmicInicial__VariantProps,

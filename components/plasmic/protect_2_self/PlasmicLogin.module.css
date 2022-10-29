@@ -129,3 +129,16 @@
   width: 1em;
   height: 1em;
 }
+.text__qsgD {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  text-align: center;
+  margin-top: 20px;
+  min-width: 0;
+}
+.link {
+  color: #0076ff;
+  text-decoration-line: underline;
+}
