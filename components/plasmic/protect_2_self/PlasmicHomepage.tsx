@@ -50,16 +50,16 @@ import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1G
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
 export type PlasmicHomepage__VariantMembers = {
-  login: "login";
+  loginScreen: "loginScreen";
 };
 
 export type PlasmicHomepage__VariantsArgs = {
-  login?: SingleBooleanChoiceArg<"login">;
+  loginScreen?: SingleBooleanChoiceArg<"loginScreen">;
 };
 
 type VariantPropType = keyof PlasmicHomepage__VariantsArgs;
 export const PlasmicHomepage__VariantProps = new Array<VariantPropType>(
-  "login"
+  "loginScreen"
 );
 
 export type PlasmicHomepage__ArgsType = {};
@@ -131,15 +131,21 @@ function PlasmicHomepage__RenderFunc(props: {
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
             sty.root,
-            { [sty.rootlogin]: hasVariant(variants, "login", "login") }
+            {
+              [sty.rootloginScreen]: hasVariant(
+                variants,
+                "loginScreen",
+                "loginScreen"
+              )
+            }
           )}
         >
           <div
             className={classNames(projectcss.all, sty.freeBox__pjoUe, {
-              [sty.freeBoxlogin__pjoUe7UOhc]: hasVariant(
+              [sty.freeBoxloginScreen__pjoUe7UOhc]: hasVariant(
                 variants,
-                "login",
-                "login"
+                "loginScreen",
+                "loginScreen"
               )
             })}
           >
@@ -156,15 +162,19 @@ function PlasmicHomepage__RenderFunc(props: {
                 data-plasmic-name={"columns"}
                 data-plasmic-override={overrides.columns}
                 className={classNames(projectcss.all, sty.columns, {
-                  [sty.columnslogin]: hasVariant(variants, "login", "login")
+                  [sty.columnsloginScreen]: hasVariant(
+                    variants,
+                    "loginScreen",
+                    "loginScreen"
+                  )
                 })}
               >
                 <div
                   className={classNames(projectcss.all, sty.column__pFFvJ, {
-                    [sty.columnlogin__pFFvJ7UOhc]: hasVariant(
+                    [sty.columnloginScreen__pFFvJ7UOhc]: hasVariant(
                       variants,
-                      "login",
-                      "login"
+                      "loginScreen",
+                      "loginScreen"
                     )
                   })}
                 >
@@ -187,10 +197,10 @@ function PlasmicHomepage__RenderFunc(props: {
                             projectcss.all,
                             sty.freeBox__ksUMr,
                             {
-                              [sty.freeBoxlogin__ksUMr7UOhc]: hasVariant(
+                              [sty.freeBoxloginScreen__ksUMr7UOhc]: hasVariant(
                                 variants,
-                                "login",
-                                "login"
+                                "loginScreen",
+                                "loginScreen"
                               )
                             }
                           )}
@@ -203,10 +213,10 @@ function PlasmicHomepage__RenderFunc(props: {
                               projectcss.__wab_text,
                               sty.fraseMj,
                               {
-                                [sty.fraseMjlogin]: hasVariant(
+                                [sty.fraseMjloginScreen]: hasVariant(
                                   variants,
-                                  "login",
-                                  "login"
+                                  "loginScreen",
+                                  "loginScreen"
                                 )
                               }
                             )}
@@ -232,11 +242,11 @@ function PlasmicHomepage__RenderFunc(props: {
                                           projectcss.__wab_text,
                                           sty.h2__unPmu,
                                           {
-                                            [sty.h2login__unPmu7UOhc]:
+                                            [sty.h2loginScreen__unPmu7UOhc]:
                                               hasVariant(
                                                 variants,
-                                                "login",
-                                                "login"
+                                                "loginScreen",
+                                                "loginScreen"
                                               )
                                           }
                                         )}
@@ -261,19 +271,19 @@ function PlasmicHomepage__RenderFunc(props: {
                                                 projectcss.__wab_text,
                                                 sty.h1__sIcty,
                                                 {
-                                                  [sty.h1login__sIcty7UOhc]:
+                                                  [sty.h1loginScreen__sIcty7UOhc]:
                                                     hasVariant(
                                                       variants,
-                                                      "login",
-                                                      "login"
+                                                      "loginScreen",
+                                                      "loginScreen"
                                                     )
                                                 }
                                               )}
                                             >
                                               {hasVariant(
                                                 variants,
-                                                "login",
-                                                "login"
+                                                "loginScreen",
+                                                "loginScreen"
                                               ) ? (
                                                 <React.Fragment>
                                                   <React.Fragment>
@@ -287,19 +297,19 @@ function PlasmicHomepage__RenderFunc(props: {
                                                         projectcss.__wab_text,
                                                         sty.h1___2GWsC,
                                                         {
-                                                          [sty.h1login___2GWsC7UOhc]:
+                                                          [sty.h1loginScreen___2GWsC7UOhc]:
                                                             hasVariant(
                                                               variants,
-                                                              "login",
-                                                              "login"
+                                                              "loginScreen",
+                                                              "loginScreen"
                                                             )
                                                         }
                                                       )}
                                                     >
                                                       {hasVariant(
                                                         variants,
-                                                        "login",
-                                                        "login"
+                                                        "loginScreen",
+                                                        "loginScreen"
                                                       ) ? (
                                                         <React.Fragment>
                                                           <React.Fragment>
@@ -313,19 +323,19 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                 projectcss.__wab_text,
                                                                 sty.h2___9GsgP,
                                                                 {
-                                                                  [sty.h2login___9GsgP7UOhc]:
+                                                                  [sty.h2loginScreen___9GsgP7UOhc]:
                                                                     hasVariant(
                                                                       variants,
-                                                                      "login",
-                                                                      "login"
+                                                                      "loginScreen",
+                                                                      "loginScreen"
                                                                     )
                                                                 }
                                                               )}
                                                             >
                                                               {hasVariant(
                                                                 variants,
-                                                                "login",
-                                                                "login"
+                                                                "loginScreen",
+                                                                "loginScreen"
                                                               ) ? (
                                                                 <React.Fragment>
                                                                   <React.Fragment>
@@ -339,19 +349,19 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                         projectcss.__wab_text,
                                                                         sty.h1__cbqH,
                                                                         {
-                                                                          [sty.h1login__cbqH7UOhc]:
+                                                                          [sty.h1loginScreen__cbqH7UOhc]:
                                                                             hasVariant(
                                                                               variants,
-                                                                              "login",
-                                                                              "login"
+                                                                              "loginScreen",
+                                                                              "loginScreen"
                                                                             )
                                                                         }
                                                                       )}
                                                                     >
                                                                       {hasVariant(
                                                                         variants,
-                                                                        "login",
-                                                                        "login"
+                                                                        "loginScreen",
+                                                                        "loginScreen"
                                                                       ) &&
                                                                       hasVariant(
                                                                         globalVariants,
@@ -370,19 +380,19 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                                 projectcss.__wab_text,
                                                                                 sty.h2__pNo9E,
                                                                                 {
-                                                                                  [sty.h2login__pNo9E7UOhc]:
+                                                                                  [sty.h2loginScreen__pNo9E7UOhc]:
                                                                                     hasVariant(
                                                                                       variants,
-                                                                                      "login",
-                                                                                      "login"
+                                                                                      "loginScreen",
+                                                                                      "loginScreen"
                                                                                     )
                                                                                 }
                                                                               )}
                                                                             >
                                                                               {hasVariant(
                                                                                 variants,
-                                                                                "login",
-                                                                                "login"
+                                                                                "loginScreen",
+                                                                                "loginScreen"
                                                                               ) &&
                                                                               hasVariant(
                                                                                 globalVariants,
@@ -407,8 +417,8 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                                 </React.Fragment>
                                                                               ) : hasVariant(
                                                                                   variants,
-                                                                                  "login",
-                                                                                  "login"
+                                                                                  "loginScreen",
+                                                                                  "loginScreen"
                                                                                 ) &&
                                                                                 hasVariant(
                                                                                   globalVariants,
@@ -484,19 +494,19 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                         projectcss.__wab_text,
                                                                         sty.h4__kQDk1,
                                                                         {
-                                                                          [sty.h4login__kQDk17UOhc]:
+                                                                          [sty.h4loginScreen__kQDk17UOhc]:
                                                                             hasVariant(
                                                                               variants,
-                                                                              "login",
-                                                                              "login"
+                                                                              "loginScreen",
+                                                                              "loginScreen"
                                                                             )
                                                                         }
                                                                       )}
                                                                     >
                                                                       {hasVariant(
                                                                         variants,
-                                                                        "login",
-                                                                        "login"
+                                                                        "loginScreen",
+                                                                        "loginScreen"
                                                                       ) ? (
                                                                         <React.Fragment>
                                                                           <React.Fragment>
@@ -510,19 +520,19 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                                 projectcss.__wab_text,
                                                                                 sty.h3__yjYb8,
                                                                                 {
-                                                                                  [sty.h3login__yjYb87UOhc]:
+                                                                                  [sty.h3loginScreen__yjYb87UOhc]:
                                                                                     hasVariant(
                                                                                       variants,
-                                                                                      "login",
-                                                                                      "login"
+                                                                                      "loginScreen",
+                                                                                      "loginScreen"
                                                                                     )
                                                                                 }
                                                                               )}
                                                                             >
                                                                               {hasVariant(
                                                                                 variants,
-                                                                                "login",
-                                                                                "login"
+                                                                                "loginScreen",
+                                                                                "loginScreen"
                                                                               ) ? (
                                                                                 <React.Fragment>
                                                                                   <span
@@ -575,19 +585,19 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                                 projectcss.__wab_text,
                                                                                 sty.h3__yjYb8,
                                                                                 {
-                                                                                  [sty.h3login__yjYb87UOhc]:
+                                                                                  [sty.h3loginScreen__yjYb87UOhc]:
                                                                                     hasVariant(
                                                                                       variants,
-                                                                                      "login",
-                                                                                      "login"
+                                                                                      "loginScreen",
+                                                                                      "loginScreen"
                                                                                     )
                                                                                 }
                                                                               )}
                                                                             >
                                                                               {hasVariant(
                                                                                 variants,
-                                                                                "login",
-                                                                                "login"
+                                                                                "loginScreen",
+                                                                                "loginScreen"
                                                                               ) ? (
                                                                                 <React.Fragment>
                                                                                   <span
@@ -660,19 +670,19 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                         projectcss.__wab_text,
                                                                         sty.h4__kQDk1,
                                                                         {
-                                                                          [sty.h4login__kQDk17UOhc]:
+                                                                          [sty.h4loginScreen__kQDk17UOhc]:
                                                                             hasVariant(
                                                                               variants,
-                                                                              "login",
-                                                                              "login"
+                                                                              "loginScreen",
+                                                                              "loginScreen"
                                                                             )
                                                                         }
                                                                       )}
                                                                     >
                                                                       {hasVariant(
                                                                         variants,
-                                                                        "login",
-                                                                        "login"
+                                                                        "loginScreen",
+                                                                        "loginScreen"
                                                                       ) ? (
                                                                         <React.Fragment>
                                                                           <React.Fragment>
@@ -686,19 +696,19 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                                 projectcss.__wab_text,
                                                                                 sty.h3__yjYb8,
                                                                                 {
-                                                                                  [sty.h3login__yjYb87UOhc]:
+                                                                                  [sty.h3loginScreen__yjYb87UOhc]:
                                                                                     hasVariant(
                                                                                       variants,
-                                                                                      "login",
-                                                                                      "login"
+                                                                                      "loginScreen",
+                                                                                      "loginScreen"
                                                                                     )
                                                                                 }
                                                                               )}
                                                                             >
                                                                               {hasVariant(
                                                                                 variants,
-                                                                                "login",
-                                                                                "login"
+                                                                                "loginScreen",
+                                                                                "loginScreen"
                                                                               ) ? (
                                                                                 <React.Fragment>
                                                                                   <span
@@ -751,19 +761,19 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                                 projectcss.__wab_text,
                                                                                 sty.h3__yjYb8,
                                                                                 {
-                                                                                  [sty.h3login__yjYb87UOhc]:
+                                                                                  [sty.h3loginScreen__yjYb87UOhc]:
                                                                                     hasVariant(
                                                                                       variants,
-                                                                                      "login",
-                                                                                      "login"
+                                                                                      "loginScreen",
+                                                                                      "loginScreen"
                                                                                     )
                                                                                 }
                                                                               )}
                                                                             >
                                                                               {hasVariant(
                                                                                 variants,
-                                                                                "login",
-                                                                                "login"
+                                                                                "loginScreen",
+                                                                                "loginScreen"
                                                                               ) ? (
                                                                                 <React.Fragment>
                                                                                   <span
@@ -976,29 +986,41 @@ function PlasmicHomepage__RenderFunc(props: {
 
                 <div
                   className={classNames(projectcss.all, sty.column__qfE1, {
-                    [sty.columnlogin__qfE17UOhc]: hasVariant(
+                    [sty.columnloginScreen__qfE17UOhc]: hasVariant(
                       variants,
-                      "login",
-                      "login"
+                      "loginScreen",
+                      "loginScreen"
                     )
                   })}
                 >
-                  {(hasVariant(variants, "login", "login") ? true : true) ? (
+                  {(
+                    hasVariant(variants, "loginScreen", "loginScreen")
+                      ? true
+                      : true
+                  ) ? (
                     <Login
                       data-plasmic-name={"login"}
                       data-plasmic-override={overrides.login}
                       className={classNames("__wab_instance", sty.login, {
-                        [sty.loginlogin]: hasVariant(variants, "login", "login")
+                        [sty.loginloginScreen]: hasVariant(
+                          variants,
+                          "loginScreen",
+                          "loginScreen"
+                        )
                       })}
                     />
                   ) : null}
-                  {(hasVariant(variants, "login", "login") ? true : true) ? (
+                  {(
+                    hasVariant(variants, "loginScreen", "loginScreen")
+                      ? true
+                      : true
+                  ) ? (
                     <div
                       className={classNames(projectcss.all, sty.freeBox__vter, {
-                        [sty.freeBoxlogin__vter7UOhc]: hasVariant(
+                        [sty.freeBoxloginScreen__vter7UOhc]: hasVariant(
                           variants,
-                          "login",
-                          "login"
+                          "loginScreen",
+                          "loginScreen"
                         )
                       })}
                     >
