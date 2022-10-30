@@ -2,7 +2,7 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/host";
-import * as axios from "axios";
+import axios from "axios";
 import * as ReactDOM from 'react-dom';
 
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
@@ -30,11 +30,11 @@ function CriarConta() {
   function createUser() {
     axios
       .post("localhost:8080/usuario/save", {
-        nome: document.getElementById("nomeCompleto").value,
-        username: document.getElementById("nomeUsuario").value,
-        telefone: document.getElementById("telefone").value,
-        senha: document.getElementById("senha").value,
-        email:document.getElementById("email").value,
+        nome: (document.getElementById("nomeCompleto") as any).value,
+        username: (document.getElementById("nomeUsuario")as any).value,
+        telefone: (document.getElementById("telefone")as any).value,
+        senha: (document.getElementById("senha")as any).value,
+        email:(document.getElementById("email")as any).value,
       })
       .then((response) => {
         console.log(JSON.stringify(response));
