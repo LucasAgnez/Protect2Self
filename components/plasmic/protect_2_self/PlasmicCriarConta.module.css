@@ -110,7 +110,7 @@
 .img__l8A3D > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
-.button__maiMk:global(.__wab_instance) {
+.button:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin: 35px 0px 0px;
@@ -217,7 +217,7 @@
   min-width: 0;
   padding: 8px;
 }
-.textInput__ldXjM:global(.__wab_instance) {
+.nomeCompleto:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   width: 780px;
@@ -643,7 +643,7 @@
   position: relative;
   width: 780px;
 }
-.button__pFfQ:global(.__wab_instance) {
+.criarConta:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin: 25px;

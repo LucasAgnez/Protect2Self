@@ -46,15 +46,19 @@ export type PlasmicPasswordInput__VariantsArgs = {};
 type VariantPropType = keyof PlasmicPasswordInput__VariantsArgs;
 export const PlasmicPasswordInput__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicPasswordInput__ArgsType = {};
+export type PlasmicPasswordInput__ArgsType = {
+  id?: string;
+};
+
 type ArgPropType = keyof PlasmicPasswordInput__ArgsType;
-export const PlasmicPasswordInput__ArgProps = new Array<ArgPropType>();
+export const PlasmicPasswordInput__ArgProps = new Array<ArgPropType>("id");
 
 export type PlasmicPasswordInput__OverridesType = {
   root?: p.Flex<"input">;
 };
 
 export interface DefaultPasswordInputProps {
+  id?: string;
   className?: string;
 }
 

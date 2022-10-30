@@ -74,6 +74,7 @@ export type PlasmicTextInput__ArgsType = {
   required?: boolean;
   "aria-label"?: string;
   "aria-labelledby"?: string;
+  id?: string;
 };
 
 type ArgPropType = keyof PlasmicTextInput__ArgsType;
@@ -85,7 +86,8 @@ export const PlasmicTextInput__ArgProps = new Array<ArgPropType>(
   "name",
   "required",
   "aria-label",
-  "aria-labelledby"
+  "aria-labelledby",
+  "id"
 );
 
 export type PlasmicTextInput__OverridesType = {
@@ -102,6 +104,7 @@ export interface DefaultTextInputProps extends pp.BaseTextInputProps {
   required?: boolean;
   "aria-label"?: string;
   "aria-labelledby"?: string;
+  id?: string;
   color?: SingleChoiceArg<"dark">;
 }
 
@@ -243,6 +246,7 @@ function PlasmicTextInput__RenderFunc(props: {
         disabled={
           hasVariant(variants, "isDisabled", "isDisabled") ? true : undefined
         }
+        id={args.id}
         name={args.name}
         placeholder={args.placeholder}
         required={args.required}
