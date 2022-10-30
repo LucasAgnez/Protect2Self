@@ -432,7 +432,6 @@ function PlasmicCriarConta__RenderFunc(props: {
                     data-plasmic-override={overrides.criarConta}
                     className={classNames("__wab_instance", sty.criarConta)}
                     color={"yellow" as const}
-                    link={`/`}
                   >
                     {"Criar Conta"}
                   </Button>

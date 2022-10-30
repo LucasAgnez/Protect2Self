@@ -394,7 +394,6 @@ function PlasmicCriacaoMetaHabito__RenderFunc(props: {
               data-plasmic-override={overrides.confirma}
               className={classNames("__wab_instance", sty.confirma)}
               color={"yellow" as const}
-              link={`/logged`}
             >
               <div
                 className={classNames(
