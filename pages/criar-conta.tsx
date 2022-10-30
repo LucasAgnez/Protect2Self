@@ -48,7 +48,7 @@ function CriarConta() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicCriarConta criarConta={{
+      <PlasmicCriarConta confirma={{
           props: { onClick: () => criaUsuario()}
       }} 
       />
