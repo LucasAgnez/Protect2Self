@@ -67,7 +67,7 @@ export type PlasmicCriarConta__OverridesType = {
   button?: p.Flex<typeof Button>;
   dadosCadastro?: p.Flex<"div">;
   nomeCompleto?: p.Flex<typeof TextInput>;
-  criarConta?: p.Flex<typeof Button>;
+  confirma?: p.Flex<typeof Button>;
 };
 
 export interface DefaultCriarContaProps {}
@@ -201,6 +201,7 @@ function PlasmicCriarConta__RenderFunc(props: {
                         )}
                         color={"dark" as const}
                         id={"nomeCompleto" as const}
+                        name={"nome" as const}
                         placeholder={"ex. Joao Silva de Lima" as const}
                         required={true}
                       />
@@ -252,6 +253,7 @@ function PlasmicCriarConta__RenderFunc(props: {
                         )}
                         color={"dark" as const}
                         id={"nomeUsuario" as const}
+                        name={"username" as const}
                         placeholder={"ex. JoaoSilva" as const}
                         required={true}
                       />
@@ -300,6 +302,7 @@ function PlasmicCriarConta__RenderFunc(props: {
                           )}
                           color={"dark" as const}
                           id={"email" as const}
+                          name={"email" as const}
                           placeholder={"ex. joaosilva@email.com" as const}
                           required={true}
                         />
@@ -343,6 +346,7 @@ function PlasmicCriarConta__RenderFunc(props: {
                         )}
                         color={"dark" as const}
                         id={"telefone" as const}
+                        name={"telefone" as const}
                         placeholder={"(00) 99999-9999" as const}
                         required={true}
                       />
@@ -428,9 +432,9 @@ function PlasmicCriarConta__RenderFunc(props: {
                   </div>
 
                   <Button
-                    data-plasmic-name={"criarConta"}
-                    data-plasmic-override={overrides.criarConta}
-                    className={classNames("__wab_instance", sty.criarConta)}
+                    data-plasmic-name={"confirma"}
+                    data-plasmic-override={overrides.confirma}
+                    className={classNames("__wab_instance", sty.confirma)}
                     color={"yellow" as const}
                   >
                     {"Criar Conta"}
@@ -454,15 +458,15 @@ const PlasmicDescendants = {
     "button",
     "dadosCadastro",
     "nomeCompleto",
-    "criarConta"
+    "confirma"
   ],
   header: ["header"],
   colunaFoto: ["colunaFoto", "userPhoto", "button"],
   userPhoto: ["userPhoto"],
   button: ["button"],
-  dadosCadastro: ["dadosCadastro", "nomeCompleto", "criarConta"],
+  dadosCadastro: ["dadosCadastro", "nomeCompleto", "confirma"],
   nomeCompleto: ["nomeCompleto"],
-  criarConta: ["criarConta"]
+  confirma: ["confirma"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -475,7 +479,7 @@ type NodeDefaultElementType = {
   button: typeof Button;
   dadosCadastro: "div";
   nomeCompleto: typeof TextInput;
-  criarConta: typeof Button;
+  confirma: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -545,7 +549,7 @@ export const PlasmicCriarConta = Object.assign(
     button: makeNodeComponent("button"),
     dadosCadastro: makeNodeComponent("dadosCadastro"),
     nomeCompleto: makeNodeComponent("nomeCompleto"),
-    criarConta: makeNodeComponent("criarConta"),
+    confirma: makeNodeComponent("confirma"),
 
     // Metadata about props expected for PlasmicCriarConta
     internalVariantProps: PlasmicCriarConta__VariantProps,
