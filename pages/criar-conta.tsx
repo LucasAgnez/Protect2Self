@@ -2,6 +2,8 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/host";
+import * as axios from "axios";
+import * as ReactDOM from 'react-dom';
 
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicCriarConta } from "../components/plasmic/protect_2_self/PlasmicCriarConta";
@@ -24,12 +26,30 @@ function CriarConta() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  
+  function createUser() {
+    axios
+      .post("localhost:8080/usuario/save", {
+        nome: document.getElementById("nomeCompleto").value,
+        username: document.getElementById("nomeUsuario").value,
+        telefone: document.getElementById("telefone").value,
+        senha: document.getElementById("senha").value,
+        email:document.getElementById("email").value,
+      })
+      .then((response) => {
+        console.log(JSON.stringify(response));
+      });
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicCriarConta />
+      <PlasmicCriarConta criarConta={{
+          props: { onClick: () => createUser()}
+      }} 
+      />
     </ph.PageParamsProvider>
   );
 }

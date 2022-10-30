@@ -24,8 +24,6 @@ function CriacaoMeta() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
- 
-  const [habito, setHabito] = React.useState<boolean>()
   
   return (
     <ph.PageParamsProvider

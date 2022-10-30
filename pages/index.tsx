@@ -26,7 +26,7 @@ function Homepage() {
   // (https://nextjs.org/docs/advanced-features/custom-app).
   
   const [loginScreen, setLoginScreen] = React.useState<boolean>()
-  
+
   return (  
     <ph.PageParamsProvider
       params={useRouter()?.query}
