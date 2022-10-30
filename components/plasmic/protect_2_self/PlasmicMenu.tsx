@@ -125,12 +125,12 @@ function PlasmicMenu__RenderFunc(props: {
               data-plasmic-override={overrides.img}
               alt={""}
               className={classNames(sty.img)}
-              displayHeight={"82px" as const}
+              displayHeight={"40px" as const}
               displayMaxHeight={"none" as const}
               displayMaxWidth={"100%" as const}
               displayMinHeight={"0" as const}
               displayMinWidth={"0" as const}
-              displayWidth={"49px" as const}
+              displayWidth={"40px" as const}
               loading={"lazy" as const}
               src={{
                 src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",

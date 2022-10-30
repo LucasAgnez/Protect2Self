@@ -115,7 +115,7 @@ function PlasmicHeaderLogged__RenderFunc(props: {
           className={classNames("__wab_instance", sty.header)}
           line={"off" as const}
           shortcut={
-            hasVariant(globalVariants, "screen", "tablet") ? true : undefined
+            hasVariant(globalVariants, "screen", "tablet") ? true : true
           }
         />
 

@@ -24,8 +24,8 @@
 .img {
   object-fit: cover;
   max-width: 100%;
-  width: 49px;
-  height: 82px;
+  width: 40px;
+  height: 40px;
 }
 .img > picture > img {
   object-fit: cover;
