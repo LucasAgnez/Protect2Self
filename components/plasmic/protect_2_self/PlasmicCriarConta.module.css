@@ -643,7 +643,7 @@
   position: relative;
   width: 780px;
 }
-.criarConta:global(.__wab_instance) {
+.confirma:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin: 25px;
