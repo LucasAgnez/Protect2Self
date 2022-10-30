@@ -40,7 +40,6 @@ function CriarConta() {
       .then((response) => {
         console.log(JSON.stringify(response));
       });
-    //router.push('/')
   }
 
   return (
@@ -49,7 +48,7 @@ function CriarConta() {
       query={useRouter()?.query}
     >
       <PlasmicCriarConta confirma={{
-          props: { onClick: () => criaUsuario()}
+          props: { onClick: () => (criaUsuario() , router.push('/'))}
       }} 
       />
     </ph.PageParamsProvider>
