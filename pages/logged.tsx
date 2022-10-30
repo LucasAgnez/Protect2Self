@@ -36,12 +36,12 @@ function Inicial() {
     >
       <PlasmicInicial 
       minhasMetas={{
-        props: { onClick: () => setMetas(true)} 
-      }}metas={metas}
+        props: { onClick: () => (setMetas(true), setGrupos(false))} 
+      }}
       meusGrupos={{
-        props: { onClick: () => setGrupos(true)}
-      }} grupos={grupos}
-      
+        props: { onClick: () => (setMetas(false), setGrupos(true))}
+      }}
+      grupos={grupos} metas={metas} 
       />
     </ph.PageParamsProvider>
   );
