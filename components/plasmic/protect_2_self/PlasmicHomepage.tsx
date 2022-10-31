@@ -75,12 +75,11 @@ export type PlasmicHomepage__OverridesType = {
   helpingHand?: p.Flex<typeof HelpingHand>;
   fraseMj?: p.Flex<"div">;
   entrar?: p.Flex<typeof Button>;
-  button?: p.Flex<typeof Button>;
   textInput?: p.Flex<typeof TextInput>;
   passwordInput?: p.Flex<typeof PasswordInput>;
-  logar?: p.Flex<typeof Button>;
+  confirma?: p.Flex<typeof Button>;
+  entraComGoogle?: p.Flex<typeof Button>;
   logarComGoogle?: p.Flex<typeof Button>;
-  img?: p.Flex<typeof p.PlasmicImg>;
   link?: p.Flex<"a"> & Partial<LinkProps>;
   textbox?: p.Flex<typeof TextInput>;
 };
@@ -1049,9 +1048,10 @@ function PlasmicHomepage__RenderFunc(props: {
                       </Button>
 
                       <Button
-                        data-plasmic-name={"button"}
-                        data-plasmic-override={overrides.button}
-                        className={classNames("__wab_instance", sty.button)}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.button__mauDn
+                        )}
                         color={"yellow" as const}
                         link={`/criar-conta`}
                         shape={"rounded" as const}
@@ -1163,32 +1163,58 @@ function PlasmicHomepage__RenderFunc(props: {
                           />
 
                           <Button
-                            data-plasmic-name={"logar"}
-                            data-plasmic-override={overrides.logar}
-                            className={classNames("__wab_instance", sty.logar, {
-                              [sty.logarloginScreen]: hasVariant(
-                                variants,
-                                "loginScreen",
-                                "loginScreen"
-                              )
-                            })}
-                            color={"yellow" as const}
+                            data-plasmic-name={"confirma"}
+                            data-plasmic-override={overrides.confirma}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.confirma,
+                              {
+                                [sty.confirmaloginScreen]: hasVariant(
+                                  variants,
+                                  "loginScreen",
+                                  "loginScreen"
+                                )
+                              }
+                            )}
+                            color={
+                              hasVariant(variants, "loginScreen", "loginScreen")
+                                ? ("yellow" as const)
+                                : undefined
+                            }
                           >
-                            {"Entrar"}
+                            {hasVariant(variants, "loginScreen", "loginScreen")
+                              ? "Entrar"
+                              : "Button"}
                           </Button>
 
                           {true ? (
                             <div
                               className={classNames(
                                 projectcss.all,
-                                sty.freeBox__rIql9
+                                sty.freeBox__rIql9,
+                                {
+                                  [sty.freeBoxloginScreen__rIql97UOhc]:
+                                    hasVariant(
+                                      variants,
+                                      "loginScreen",
+                                      "loginScreen"
+                                    )
+                                }
                               )}
                             >
                               <div
                                 className={classNames(
                                   projectcss.all,
                                   projectcss.__wab_text,
-                                  sty.text__adYZj
+                                  sty.text__adYZj,
+                                  {
+                                    [sty.textloginScreen__adYZj7UOhc]:
+                                      hasVariant(
+                                        variants,
+                                        "loginScreen",
+                                        "loginScreen"
+                                      )
+                                  }
                                 )}
                               >
                                 <React.Fragment>
@@ -1202,17 +1228,51 @@ function PlasmicHomepage__RenderFunc(props: {
                                   </span>
                                 </React.Fragment>
                               </div>
+
+                              {(
+                                hasVariant(
+                                  variants,
+                                  "loginScreen",
+                                  "loginScreen"
+                                )
+                                  ? true
+                                  : true
+                              ) ? (
+                                <Button
+                                  className={classNames(
+                                    "__wab_instance",
+                                    sty.button__xMm3,
+                                    {
+                                      [sty.buttonloginScreen__xMm37UOhc]:
+                                        hasVariant(
+                                          variants,
+                                          "loginScreen",
+                                          "loginScreen"
+                                        )
+                                    }
+                                  )}
+                                  color={
+                                    hasVariant(
+                                      variants,
+                                      "loginScreen",
+                                      "loginScreen"
+                                    )
+                                      ? ("yellow" as const)
+                                      : undefined
+                                  }
+                                />
+                              ) : null}
                             </div>
                           ) : null}
 
                           <Button
-                            data-plasmic-name={"logarComGoogle"}
-                            data-plasmic-override={overrides.logarComGoogle}
+                            data-plasmic-name={"entraComGoogle"}
+                            data-plasmic-override={overrides.entraComGoogle}
                             className={classNames(
                               "__wab_instance",
-                              sty.logarComGoogle,
+                              sty.entraComGoogle,
                               {
-                                [sty.logarComGoogleloginScreen]: hasVariant(
+                                [sty.entraComGoogleloginScreen]: hasVariant(
                                   variants,
                                   "loginScreen",
                                   "loginScreen"
@@ -1224,38 +1284,148 @@ function PlasmicHomepage__RenderFunc(props: {
                               className={classNames(
                                 projectcss.all,
                                 projectcss.__wab_text,
-                                sty.text__hDd67
+                                sty.text__vhOuQ,
+                                {
+                                  [sty.textloginScreen__vhOuQ7UOhc]: hasVariant(
+                                    variants,
+                                    "loginScreen",
+                                    "loginScreen"
+                                  )
+                                }
                               )}
                             >
-                              {"Entre com "}
+                              {hasVariant(
+                                variants,
+                                "loginScreen",
+                                "loginScreen"
+                              )
+                                ? "Entrar com  "
+                                : "Button"}
                             </div>
 
                             <p.PlasmicImg
-                              data-plasmic-name={"img"}
-                              data-plasmic-override={overrides.img}
                               alt={""}
-                              className={classNames(sty.img)}
-                              displayHeight={"23px" as const}
+                              className={classNames(sty.img__r75K, {
+                                [sty.imgloginScreen__r75K7UOhc]: hasVariant(
+                                  variants,
+                                  "loginScreen",
+                                  "loginScreen"
+                                )
+                              })}
+                              displayHeight={"auto" as const}
                               displayMaxHeight={"none" as const}
                               displayMaxWidth={"100%" as const}
                               displayMinHeight={"0" as const}
                               displayMinWidth={"0" as const}
-                              displayWidth={"auto" as const}
+                              displayWidth={
+                                hasVariant(
+                                  variants,
+                                  "loginScreen",
+                                  "loginScreen"
+                                )
+                                  ? ("26px" as const)
+                                  : ("auto" as const)
+                              }
                               loading={"lazy" as const}
-                              src={{
-                                src: "/plasmic/protect_2_self/images/googleGLogosvgpng.png",
-                                fullWidth: 768,
-                                fullHeight: 768,
-                                aspectRatio: undefined
-                              }}
+                              src={
+                                hasVariant(
+                                  variants,
+                                  "loginScreen",
+                                  "loginScreen"
+                                )
+                                  ? {
+                                      src: "/plasmic/protect_2_self/images/googleGLogosvgpng.png",
+                                      fullWidth: 768,
+                                      fullHeight: 768,
+                                      aspectRatio: undefined
+                                    }
+                                  : undefined
+                              }
                             />
                           </Button>
+
+                          {(
+                            hasVariant(variants, "loginScreen", "loginScreen")
+                              ? true
+                              : true
+                          ) ? (
+                            <Button
+                              data-plasmic-name={"logarComGoogle"}
+                              data-plasmic-override={overrides.logarComGoogle}
+                              className={classNames(
+                                "__wab_instance",
+                                sty.logarComGoogle,
+                                {
+                                  [sty.logarComGoogleloginScreen]: hasVariant(
+                                    variants,
+                                    "loginScreen",
+                                    "loginScreen"
+                                  )
+                                }
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__hDd67,
+                                  {
+                                    [sty.textloginScreen__hDd677UOhc]:
+                                      hasVariant(
+                                        variants,
+                                        "loginScreen",
+                                        "loginScreen"
+                                      )
+                                  }
+                                )}
+                              >
+                                {hasVariant(
+                                  variants,
+                                  "loginScreen",
+                                  "loginScreen"
+                                )
+                                  ? "Entre com "
+                                  : "Entre com "}
+                              </div>
+
+                              <p.PlasmicImg
+                                alt={""}
+                                className={classNames(sty.img__pXUl, {
+                                  [sty.imgloginScreen__pXUl7UOhc]: hasVariant(
+                                    variants,
+                                    "loginScreen",
+                                    "loginScreen"
+                                  )
+                                })}
+                                displayHeight={"23px" as const}
+                                displayMaxHeight={"none" as const}
+                                displayMaxWidth={"100%" as const}
+                                displayMinHeight={"0" as const}
+                                displayMinWidth={"0" as const}
+                                displayWidth={"auto" as const}
+                                loading={"lazy" as const}
+                                src={{
+                                  src: "/plasmic/protect_2_self/images/googleGLogosvgpng.png",
+                                  fullWidth: 768,
+                                  fullHeight: 768,
+                                  aspectRatio: undefined
+                                }}
+                              />
+                            </Button>
+                          ) : null}
 
                           <div
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__rzLjS
+                              sty.text__rzLjS,
+                              {
+                                [sty.textloginScreen__rzLjS7UOhc]: hasVariant(
+                                  variants,
+                                  "loginScreen",
+                                  "loginScreen"
+                                )
+                              }
                             )}
                           >
                             <React.Fragment>
@@ -1328,13 +1498,12 @@ const PlasmicDescendants = {
     "helpingHand",
     "fraseMj",
     "entrar",
-    "button",
     "textInput",
     "textbox",
     "passwordInput",
-    "logar",
+    "confirma",
+    "entraComGoogle",
     "logarComGoogle",
-    "img",
     "link"
   ],
   header: ["header"],
@@ -1343,24 +1512,22 @@ const PlasmicDescendants = {
     "helpingHand",
     "fraseMj",
     "entrar",
-    "button",
     "textInput",
     "textbox",
     "passwordInput",
-    "logar",
+    "confirma",
+    "entraComGoogle",
     "logarComGoogle",
-    "img",
     "link"
   ],
   helpingHand: ["helpingHand"],
   fraseMj: ["fraseMj"],
   entrar: ["entrar"],
-  button: ["button"],
   textInput: ["textInput", "textbox"],
   passwordInput: ["passwordInput"],
-  logar: ["logar"],
-  logarComGoogle: ["logarComGoogle", "img"],
-  img: ["img"],
+  confirma: ["confirma"],
+  entraComGoogle: ["entraComGoogle"],
+  logarComGoogle: ["logarComGoogle"],
   link: ["link"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1373,12 +1540,11 @@ type NodeDefaultElementType = {
   helpingHand: typeof HelpingHand;
   fraseMj: "div";
   entrar: typeof Button;
-  button: typeof Button;
   textInput: typeof TextInput;
   passwordInput: typeof PasswordInput;
-  logar: typeof Button;
+  confirma: typeof Button;
+  entraComGoogle: typeof Button;
   logarComGoogle: typeof Button;
-  img: typeof p.PlasmicImg;
   link: "a";
 };
 
@@ -1448,12 +1614,11 @@ export const PlasmicHomepage = Object.assign(
     helpingHand: makeNodeComponent("helpingHand"),
     fraseMj: makeNodeComponent("fraseMj"),
     entrar: makeNodeComponent("entrar"),
-    button: makeNodeComponent("button"),
     textInput: makeNodeComponent("textInput"),
     passwordInput: makeNodeComponent("passwordInput"),
-    logar: makeNodeComponent("logar"),
+    confirma: makeNodeComponent("confirma"),
+    entraComGoogle: makeNodeComponent("entraComGoogle"),
     logarComGoogle: makeNodeComponent("logarComGoogle"),
-    img: makeNodeComponent("img"),
     link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicHomepage
