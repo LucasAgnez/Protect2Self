@@ -66,7 +66,6 @@ export type PlasmicCriacaoMetaVicio__OverridesType = {
   dados?: p.Flex<"div">;
   nomeMeta?: p.Flex<"div">;
   descricao?: p.Flex<"div">;
-  meta?: p.Flex<"div">;
   confirma?: p.Flex<typeof Button>;
 };
 
@@ -250,64 +249,6 @@ function PlasmicCriacaoMetaVicio__RenderFunc(props: {
               </div>
             </div>
 
-            <div
-              data-plasmic-name={"meta"}
-              data-plasmic-override={overrides.meta}
-              className={classNames(projectcss.all, sty.meta)}
-            >
-              <div className={classNames(projectcss.all, sty.column__aEmQe)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__vZfYd
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <h3
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h3,
-                          projectcss.__wab_text,
-                          sty.h3___01N8
-                        )}
-                      >
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ color: "#FFFFFF" }}
-                          >
-                            {"Meta:"}
-                          </span>
-                        </React.Fragment>
-                      </h3>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                </div>
-              </div>
-
-              <div className={classNames(projectcss.all, sty.column__sE20H)}>
-                <Button
-                  className={classNames("__wab_instance", sty.button__cIfOm)}
-                >
-                  {"Criar"}
-                </Button>
-              </div>
-
-              <div className={classNames(projectcss.all, sty.column__wvXeo)}>
-                <Button
-                  className={classNames("__wab_instance", sty.button__roBp)}
-                >
-                  {"Importar"}
-                </Button>
-              </div>
-            </div>
-
             <Button
               data-plasmic-name={"confirma"}
               data-plasmic-override={overrides.confirma}
@@ -332,20 +273,11 @@ function PlasmicCriacaoMetaVicio__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "headerLogged",
-    "dados",
-    "nomeMeta",
-    "descricao",
-    "meta",
-    "confirma"
-  ],
+  root: ["root", "headerLogged", "dados", "nomeMeta", "descricao", "confirma"],
   headerLogged: ["headerLogged"],
-  dados: ["dados", "nomeMeta", "descricao", "meta", "confirma"],
+  dados: ["dados", "nomeMeta", "descricao", "confirma"],
   nomeMeta: ["nomeMeta"],
   descricao: ["descricao"],
-  meta: ["meta"],
   confirma: ["confirma"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -357,7 +289,6 @@ type NodeDefaultElementType = {
   dados: "div";
   nomeMeta: "div";
   descricao: "div";
-  meta: "div";
   confirma: typeof Button;
 };
 
@@ -426,7 +357,6 @@ export const PlasmicCriacaoMetaVicio = Object.assign(
     dados: makeNodeComponent("dados"),
     nomeMeta: makeNodeComponent("nomeMeta"),
     descricao: makeNodeComponent("descricao"),
-    meta: makeNodeComponent("meta"),
     confirma: makeNodeComponent("confirma"),
 
     // Metadata about props expected for PlasmicCriacaoMetaVicio

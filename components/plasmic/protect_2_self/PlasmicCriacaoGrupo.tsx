@@ -70,6 +70,8 @@ export type PlasmicCriacaoGrupo__OverridesType = {
   h2?: p.Flex<"h2">;
   descricao?: p.Flex<"div">;
   meta?: p.Flex<"div">;
+  criar?: p.Flex<typeof Button>;
+  button?: p.Flex<typeof Button>;
   confirma?: p.Flex<typeof Button>;
 };
 
@@ -211,6 +213,7 @@ function PlasmicCriacaoGrupo__RenderFunc(props: {
                       sty.textInput___0UW9
                     )}
                     color={"dark" as const}
+                    id={"nome" as const}
                     placeholder={"Digite o nome do Grupo" as const}
                   />
                 </div>
@@ -268,6 +271,7 @@ function PlasmicCriacaoGrupo__RenderFunc(props: {
                       sty.textInput__ufJw1
                     )}
                     color={"dark" as const}
+                    id={"descricao" as const}
                     placeholder={"Digite aqui uma descrição do grupo" as const}
                     required={false}
                   />
@@ -318,7 +322,9 @@ function PlasmicCriacaoGrupo__RenderFunc(props: {
 
               <div className={classNames(projectcss.all, sty.column__aqtie)}>
                 <Button
-                  className={classNames("__wab_instance", sty.button__t5CS1)}
+                  data-plasmic-name={"criar"}
+                  data-plasmic-override={overrides.criar}
+                  className={classNames("__wab_instance", sty.criar)}
                 >
                   {"Criar"}
                 </Button>
@@ -326,7 +332,9 @@ function PlasmicCriacaoGrupo__RenderFunc(props: {
 
               <div className={classNames(projectcss.all, sty.column__fqr4)}>
                 <Button
-                  className={classNames("__wab_instance", sty.button__jod3F)}
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  className={classNames("__wab_instance", sty.button)}
                 >
                   {"Importar"}
                 </Button>
@@ -365,14 +373,27 @@ const PlasmicDescendants = {
     "h2",
     "descricao",
     "meta",
+    "criar",
+    "button",
     "confirma"
   ],
   headerLogged: ["headerLogged"],
-  dados: ["dados", "nomeGrupo", "h2", "descricao", "meta", "confirma"],
+  dados: [
+    "dados",
+    "nomeGrupo",
+    "h2",
+    "descricao",
+    "meta",
+    "criar",
+    "button",
+    "confirma"
+  ],
   nomeGrupo: ["nomeGrupo", "h2"],
   h2: ["h2"],
   descricao: ["descricao"],
-  meta: ["meta"],
+  meta: ["meta", "criar", "button"],
+  criar: ["criar"],
+  button: ["button"],
   confirma: ["confirma"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -386,6 +407,8 @@ type NodeDefaultElementType = {
   h2: "h2";
   descricao: "div";
   meta: "div";
+  criar: typeof Button;
+  button: typeof Button;
   confirma: typeof Button;
 };
 
@@ -456,6 +479,8 @@ export const PlasmicCriacaoGrupo = Object.assign(
     h2: makeNodeComponent("h2"),
     descricao: makeNodeComponent("descricao"),
     meta: makeNodeComponent("meta"),
+    criar: makeNodeComponent("criar"),
+    button: makeNodeComponent("button"),
     confirma: makeNodeComponent("confirma"),
 
     // Metadata about props expected for PlasmicCriacaoGrupo

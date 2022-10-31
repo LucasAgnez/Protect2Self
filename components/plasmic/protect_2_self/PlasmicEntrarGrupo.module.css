@@ -97,17 +97,15 @@
   flex-shrink: 1;
   flex-wrap: nowrap;
   align-self: flex-start;
+  margin-top: 20px;
   min-width: 0;
   padding: 8px 8px 8px 40px;
 }
-.columns > :nth-child(3n + 1) {
-  width: calc((100% - 3 * 0px) * 2 / 12);
+.columns > :nth-child(2n + 1) {
+  width: calc((100% - 2 * 0px) * 5 / 12);
 }
-.columns > :nth-child(3n + 2) {
-  width: calc((100% - 3 * 0px) * 3 / 12);
-}
-.columns > :nth-child(3n + 3) {
-  width: calc((100% - 3 * 0px) * 7 / 12);
+.columns > :nth-child(2n + 2) {
+  width: calc((100% - 2 * 0px) * 7 / 12);
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .columns {
@@ -157,70 +155,20 @@
   min-width: 0;
   padding: 8px;
 }
-.button___4660O:global(.__wab_instance) {
-  max-width: 100%;
-  min-width: 200px;
-  width: 200px;
-  margin: 0px 0px 0px 12px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .button___4660O:global(.__wab_instance) {
-    width: 200px;
-    margin-left: 0px;
-  }
-}
-.svg__k2ZDo {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__cKbSo {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.column__eTo85 {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: center;
-  align-items: flex-start;
-  min-width: 0;
-  padding: 8px;
-}
-.button__tOijN:global(.__wab_instance) {
-  max-width: 200px;
-  position: relative;
-  min-width: 200px;
-  width: 200px;
-  margin: 0px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .button__tOijN:global(.__wab_instance) {
-    margin-left: 0px;
-  }
-}
-.svg__cSjw4 {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__rItol {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.button___8P5Rd:global(.__wab_instance) {
+.select:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
-  margin-top: 70px;
+}
+.option__iqmOo:global(.__wab_instance) {
+  position: relative;
+}
+.option___3Jswb:global(.__wab_instance) {
+  position: relative;
+}
+.button:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  margin-top: 80px;
   width: 210px;
 }
 .svg__gipPr {

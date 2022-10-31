@@ -35,6 +35,8 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
+import Select from "../../Select"; // plasmic-import: JvLnzcKYZbb/component
+import Select__Option from "../../Select__Option"; // plasmic-import: MXYniCeie3G/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -71,6 +73,8 @@ export type PlasmicEntrarGrupo__OverridesType = {
   freeBox?: p.Flex<"div">;
   columns?: p.Flex<"div">;
   h3?: p.Flex<"h3">;
+  select?: p.Flex<typeof Select>;
+  button?: p.Flex<typeof Button>;
 };
 
 export interface DefaultEntrarGrupoProps {}
@@ -256,24 +260,35 @@ function PlasmicEntrarGrupo__RenderFunc(props: {
               </div>
 
               <div className={classNames(projectcss.all, sty.column__m6UJd)}>
-                <Button
-                  className={classNames("__wab_instance", sty.button___4660O)}
+                <Select
+                  data-plasmic-name={"select"}
+                  data-plasmic-override={overrides.select}
+                  className={classNames("__wab_instance", sty.select)}
+                  color={"dark" as const}
                 >
-                  {"Usar Meta do Grupo"}
-                </Button>
-              </div>
+                  <Select__Option
+                    className={classNames("__wab_instance", sty.option__iqmOo)}
+                    color={"dark" as const}
+                    value={"value1" as const}
+                  >
+                    {"Importar Meta Pessoal"}
+                  </Select__Option>
 
-              <div className={classNames(projectcss.all, sty.column__eTo85)}>
-                <Button
-                  className={classNames("__wab_instance", sty.button__tOijN)}
-                >
-                  {"Importar Meta Pessoal"}
-                </Button>
+                  <Select__Option
+                    className={classNames("__wab_instance", sty.option___3Jswb)}
+                    color={"dark" as const}
+                    value={"value2" as const}
+                  >
+                    {"Usar Meta do Grupo"}
+                  </Select__Option>
+                </Select>
               </div>
             </div>
 
             <Button
-              className={classNames("__wab_instance", sty.button___8P5Rd)}
+              data-plasmic-name={"button"}
+              data-plasmic-override={overrides.button}
+              className={classNames("__wab_instance", sty.button)}
               color={"yellow" as const}
             >
               <div
@@ -294,12 +309,23 @@ function PlasmicEntrarGrupo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "headerLogged", "dados", "freeBox", "columns", "h3"],
+  root: [
+    "root",
+    "headerLogged",
+    "dados",
+    "freeBox",
+    "columns",
+    "h3",
+    "select",
+    "button"
+  ],
   headerLogged: ["headerLogged"],
-  dados: ["dados", "freeBox", "columns", "h3"],
+  dados: ["dados", "freeBox", "columns", "h3", "select", "button"],
   freeBox: ["freeBox"],
-  columns: ["columns", "h3"],
-  h3: ["h3"]
+  columns: ["columns", "h3", "select"],
+  h3: ["h3"],
+  select: ["select"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -311,6 +337,8 @@ type NodeDefaultElementType = {
   freeBox: "div";
   columns: "div";
   h3: "h3";
+  select: typeof Select;
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -379,6 +407,8 @@ export const PlasmicEntrarGrupo = Object.assign(
     freeBox: makeNodeComponent("freeBox"),
     columns: makeNodeComponent("columns"),
     h3: makeNodeComponent("h3"),
+    select: makeNodeComponent("select"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicEntrarGrupo
     internalVariantProps: PlasmicEntrarGrupo__VariantProps,

@@ -36,9 +36,9 @@ import {
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
 import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
-import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 import Select from "../../Select"; // plasmic-import: JvLnzcKYZbb/component
 import Select__Option from "../../Select__Option"; // plasmic-import: MXYniCeie3G/component
+import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
@@ -68,7 +68,6 @@ export type PlasmicCriacaoMetaHabito__OverridesType = {
   dados?: p.Flex<"div">;
   nomeMeta?: p.Flex<"div">;
   descricao?: p.Flex<"div">;
-  meta?: p.Flex<"div">;
   frequenciaHabito?: p.Flex<"div">;
   select?: p.Flex<typeof Select>;
   confirma?: p.Flex<typeof Button>;
@@ -190,6 +189,7 @@ function PlasmicCriacaoMetaHabito__RenderFunc(props: {
                       sty.textInput__xHcft
                     )}
                     color={"dark" as const}
+                    id={"nome" as const}
                     placeholder={"Digite o nome da Meta" as const}
                   />
                 </div>
@@ -247,68 +247,11 @@ function PlasmicCriacaoMetaHabito__RenderFunc(props: {
                       sty.textInput___1PX88
                     )}
                     color={"dark" as const}
+                    id={"descricao" as const}
                     placeholder={"Digite aqui uma descrição da Meta" as const}
                     required={false}
                   />
                 ) : null}
-              </div>
-            </div>
-
-            <div
-              data-plasmic-name={"meta"}
-              data-plasmic-override={overrides.meta}
-              className={classNames(projectcss.all, sty.meta)}
-            >
-              <div className={classNames(projectcss.all, sty.column__oWo8Z)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___8J5Gg
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <h3
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h3,
-                          projectcss.__wab_text,
-                          sty.h3___9Sc6R
-                        )}
-                      >
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ color: "#FFFFFF" }}
-                          >
-                            {"Meta:"}
-                          </span>
-                        </React.Fragment>
-                      </h3>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                </div>
-              </div>
-
-              <div className={classNames(projectcss.all, sty.column__tRfXk)}>
-                <Button
-                  className={classNames("__wab_instance", sty.button___9VL0V)}
-                >
-                  {"Criar"}
-                </Button>
-              </div>
-
-              <div className={classNames(projectcss.all, sty.column__iavnB)}>
-                <Button
-                  className={classNames("__wab_instance", sty.button__jvpR7)}
-                >
-                  {"Importar"}
-                </Button>
               </div>
             </div>
 
@@ -419,7 +362,6 @@ const PlasmicDescendants = {
     "dados",
     "nomeMeta",
     "descricao",
-    "meta",
     "frequenciaHabito",
     "select",
     "confirma"
@@ -429,14 +371,12 @@ const PlasmicDescendants = {
     "dados",
     "nomeMeta",
     "descricao",
-    "meta",
     "frequenciaHabito",
     "select",
     "confirma"
   ],
   nomeMeta: ["nomeMeta"],
   descricao: ["descricao"],
-  meta: ["meta"],
   frequenciaHabito: ["frequenciaHabito", "select"],
   select: ["select"],
   confirma: ["confirma"]
@@ -450,7 +390,6 @@ type NodeDefaultElementType = {
   dados: "div";
   nomeMeta: "div";
   descricao: "div";
-  meta: "div";
   frequenciaHabito: "div";
   select: typeof Select;
   confirma: typeof Button;
@@ -521,7 +460,6 @@ export const PlasmicCriacaoMetaHabito = Object.assign(
     dados: makeNodeComponent("dados"),
     nomeMeta: makeNodeComponent("nomeMeta"),
     descricao: makeNodeComponent("descricao"),
-    meta: makeNodeComponent("meta"),
     frequenciaHabito: makeNodeComponent("frequenciaHabito"),
     select: makeNodeComponent("select"),
     confirma: makeNodeComponent("confirma"),
