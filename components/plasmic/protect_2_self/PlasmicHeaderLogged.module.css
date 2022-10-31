@@ -38,6 +38,18 @@
     flex-shrink: 0;
   }
 }
-.menu:global(.__wab_instance):global(.__wab_instance) {
+.menu:global(.__wab_instance) {
   position: relative;
+}
+.img__xkTv1 {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  height: 70px;
+}
+.img__xkTv1 > picture > img {
+  object-fit: cover;
+}
+.img__xkTv1 > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
 }

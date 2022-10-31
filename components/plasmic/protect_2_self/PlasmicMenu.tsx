@@ -49,17 +49,22 @@ export type PlasmicMenu__VariantsArgs = {};
 type VariantPropType = keyof PlasmicMenu__VariantsArgs;
 export const PlasmicMenu__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicMenu__ArgsType = {};
+export type PlasmicMenu__ArgsType = {
+  children?: React.ReactNode;
+};
+
 type ArgPropType = keyof PlasmicMenu__ArgsType;
-export const PlasmicMenu__ArgProps = new Array<ArgPropType>();
+export const PlasmicMenu__ArgProps = new Array<ArgPropType>("children");
 
 export type PlasmicMenu__OverridesType = {
-  root?: p.Flex<typeof Menu>;
+  root?: p.Flex<"div">;
+  antdMenu?: p.Flex<typeof Menu>;
   antdSubMenu?: p.Flex<typeof SubMenu>;
-  img?: p.Flex<typeof p.PlasmicImg>;
+  text?: p.Flex<"div">;
 };
 
 export interface DefaultMenuProps {
+  children?: React.ReactNode;
   className?: string;
 }
 
@@ -89,49 +94,32 @@ function PlasmicMenu__RenderFunc(props: {
   };
 
   return (
-    <Menu
-      data-plasmic-name={"root"}
-      data-plasmic-override={overrides.root}
-      data-plasmic-root={true}
-      data-plasmic-for-node={forNode}
-      className={classNames("__wab_instance", sty.root)}
-      mode={"vertical" as const}
-      theme={"dark" as const}
-    >
-      {true ? (
-        <MenuItem
-          className={classNames("__wab_instance", sty.antdMenuItem___4QAV)}
-          key={"menuItemKey" as const}
-        >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__ribud
-            )}
-          >
-            {"Option"}
-          </div>
-        </MenuItem>
-      ) : null}
-      {true ? (
-        <SubMenu
-          data-plasmic-name={"antdSubMenu"}
-          data-plasmic-override={overrides.antdSubMenu}
-          className={classNames("__wab_instance", sty.antdSubMenu)}
-          key={"subMenuKey" as const}
-          title={
+    true ? (
+      <div
+        data-plasmic-name={"root"}
+        data-plasmic-override={overrides.root}
+        data-plasmic-root={true}
+        data-plasmic-for-node={forNode}
+        className={classNames(
+          projectcss.all,
+          projectcss.root_reset,
+          projectcss.plasmic_default_styles,
+          projectcss.plasmic_mixins,
+          projectcss.plasmic_tokens,
+          sty.root
+        )}
+      >
+        {p.renderPlasmicSlot({
+          defaultContents: (
             <p.PlasmicImg
-              data-plasmic-name={"img"}
-              data-plasmic-override={overrides.img}
               alt={""}
-              className={classNames(sty.img)}
-              displayHeight={"40px" as const}
+              className={classNames(sty.img___31CLa)}
+              displayHeight={"70px" as const}
               displayMaxHeight={"none" as const}
               displayMaxWidth={"100%" as const}
               displayMinHeight={"0" as const}
               displayMinWidth={"0" as const}
-              displayWidth={"19px" as const}
+              displayWidth={"auto" as const}
               loading={"lazy" as const}
               src={{
                 src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
@@ -140,83 +128,113 @@ function PlasmicMenu__RenderFunc(props: {
                 aspectRatio: undefined
               }}
             />
-          }
-        >
-          <p.PlasmicLink
-            className={classNames(
-              projectcss.all,
-              projectcss.a,
-              sty.link__pmTRm
-            )}
-            component={Link}
-            href={`/perfil`}
-            platform={"nextjs"}
-          >
-            {true ? (
-              <MenuItem
-                className={classNames(
-                  "__wab_instance",
-                  sty.antdMenuItem__tlEIm
-                )}
-                key={"Perfil" as const}
-                title={"Perfil" as const}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__x3H0G
-                  )}
-                >
-                  {"Sub-menu item 1"}
-                </div>
-              </MenuItem>
-            ) : null}
-          </p.PlasmicLink>
+          ),
 
-          <p.PlasmicLink
-            className={classNames(
-              projectcss.all,
-              projectcss.a,
-              sty.link__jbLXp
-            )}
-            component={Link}
-            href={`/`}
-            platform={"nextjs"}
-          >
+          value: args.children
+        })}
+
+        <Menu
+          data-plasmic-name={"antdMenu"}
+          data-plasmic-override={overrides.antdMenu}
+          className={classNames("__wab_instance", sty.antdMenu)}
+          theme={"dark" as const}
+        >
+          {true ? (
             <MenuItem
-              className={classNames("__wab_instance", sty.antdMenuItem__at6G3)}
-              key={"subMenuItemKey2" as const}
+              className={classNames("__wab_instance", sty.antdMenuItem___5DrMq)}
+              key={"menuItemKey" as const}
             >
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__a0Joy
+                  sty.text__n5VvU
                 )}
               >
-                {"Sub-menu item 2"}
+                {"Option"}
               </div>
             </MenuItem>
-          </p.PlasmicLink>
-        </SubMenu>
-      ) : null}
-    </Menu>
+          ) : null}
+
+          <SubMenu
+            data-plasmic-name={"antdSubMenu"}
+            data-plasmic-override={overrides.antdSubMenu}
+            className={classNames("__wab_instance", sty.antdSubMenu)}
+            key={"subMenuKey" as const}
+            title={
+              true ? (
+                <div
+                  data-plasmic-name={"text"}
+                  data-plasmic-override={overrides.text}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text
+                  )}
+                >
+                  {"Sub-menu"}
+                </div>
+              ) : null
+            }
+          >
+            <MenuItem
+              className={classNames("__wab_instance", sty.antdMenuItem__rmfin)}
+              key={"subMenuItemKey1" as const}
+            >
+              <p.PlasmicLink
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link__dehA0
+                )}
+                component={Link}
+                href={`/perfil`}
+                platform={"nextjs"}
+              >
+                {"Sub-menu item 1"}
+              </p.PlasmicLink>
+            </MenuItem>
+
+            <MenuItem
+              className={classNames("__wab_instance", sty.antdMenuItem__teXUf)}
+              key={"subMenuItemKey2" as const}
+            >
+              <p.PlasmicLink
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link__gmb8H
+                )}
+                component={Link}
+                href={`/`}
+                platform={"nextjs"}
+              >
+                {"Sub-menu item 2"}
+              </p.PlasmicLink>
+            </MenuItem>
+          </SubMenu>
+        </Menu>
+      </div>
+    ) : null
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "antdSubMenu", "img"],
-  antdSubMenu: ["antdSubMenu", "img"],
-  img: ["img"]
+  root: ["root", "antdMenu", "antdSubMenu", "text"],
+  antdMenu: ["antdMenu", "antdSubMenu", "text"],
+  antdSubMenu: ["antdSubMenu", "text"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
-  root: typeof Menu;
+  root: "div";
+  antdMenu: typeof Menu;
   antdSubMenu: typeof SubMenu;
-  img: typeof p.PlasmicImg;
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -280,8 +298,9 @@ export const PlasmicMenu = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    antdMenu: makeNodeComponent("antdMenu"),
     antdSubMenu: makeNodeComponent("antdSubMenu"),
-    img: makeNodeComponent("img"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicMenu
     internalVariantProps: PlasmicMenu__VariantProps,
