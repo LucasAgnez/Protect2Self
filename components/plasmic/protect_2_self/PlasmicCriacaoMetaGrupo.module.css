@@ -15,7 +15,7 @@
   position: relative;
   flex-shrink: 0;
 }
-.freeBox__mWOS {
+.freeBox__ednkn {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -28,7 +28,7 @@
   min-height: 0;
   padding: 8px;
 }
-.freeBox__x0Ogq {
+.freeBox___6Vzrn {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -40,20 +40,20 @@
   min-width: 0;
   padding: 8px;
 }
-.text__rxXox {
+.text__bBiaA {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 800px;
   min-width: 0;
 }
-.text__yqEcu {
+.text__wOnIg {
   width: 100%;
   height: auto;
   max-width: 800px;
   min-width: 0;
 }
-.h3__vjfn8 {
+.h3__qrhnY {
   text-align: center;
 }
 .dados {
@@ -72,7 +72,7 @@
   padding: 8px;
   border-left: 1px solid #ffffff;
 }
-.button___8EBi:global(.__wab_instance) {
+.button__q1SB7:global(.__wab_instance) {
   position: relative;
   min-width: 100px;
   align-self: auto;
@@ -83,27 +83,24 @@
   flex-shrink: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .button___8EBi:global(.__wab_instance) {
+  .button__q1SB7:global(.__wab_instance) {
     width: 100%;
     min-width: 0;
   }
 }
-.svg__p2AXp {
+.svg__divTp {
   position: relative;
   object-fit: cover;
   width: 1em;
   height: 1em;
 }
-.h3__pgdb {
-  height: auto;
-}
-.svg__x3Q23 {
+.svg__vb5Wz {
   position: relative;
   object-fit: cover;
   width: 1em;
   height: 1em;
 }
-.button__zpw4A:global(.__wab_instance) {
+.button___0RPtd:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin-left: 0px;
@@ -116,18 +113,18 @@
   flex-shrink: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .button__zpw4A:global(.__wab_instance) {
+  .button___0RPtd:global(.__wab_instance) {
     width: 100%;
     min-width: 0;
   }
 }
-.svg___0Jdtd {
+.svg___88IR2 {
   position: relative;
   object-fit: cover;
   width: 1em;
   height: 1em;
 }
-.svg__gSjE {
+.svg__dUt3N {
   position: relative;
   object-fit: cover;
   width: 1em;

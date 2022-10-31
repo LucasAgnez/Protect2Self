@@ -61,6 +61,8 @@ export type PlasmicLogin__OverridesType = {
   root?: p.Flex<"div">;
   textInput?: p.Flex<typeof TextInput>;
   passwordInput?: p.Flex<typeof PasswordInput>;
+  logar?: p.Flex<typeof Button>;
+  logarComGoogle?: p.Flex<typeof Button>;
   img?: p.Flex<typeof p.PlasmicImg>;
   link?: p.Flex<"a"> & Partial<LinkProps>;
   textbox?: p.Flex<typeof TextInput>;
@@ -116,6 +118,7 @@ function PlasmicLogin__RenderFunc(props: {
             data-plasmic-name={"textInput"}
             data-plasmic-override={overrides.textInput}
             className={classNames("__wab_instance", sty.textInput)}
+            id={"nome" as const}
             placeholder={" Nome de Usuário ou e-mail" as const}
           />
 
@@ -124,12 +127,14 @@ function PlasmicLogin__RenderFunc(props: {
             data-plasmic-override={overrides.passwordInput}
             className={classNames("__wab_instance", sty.passwordInput)}
             color={"dark" as const}
+            id={"senha" as const}
           />
 
           <Button
-            className={classNames("__wab_instance", sty.button___2HVi5)}
+            data-plasmic-name={"logar"}
+            data-plasmic-override={overrides.logar}
+            className={classNames("__wab_instance", sty.logar)}
             color={"yellow" as const}
-            link={`/logged`}
           >
             {"Entrar"}
           </Button>
@@ -155,7 +160,11 @@ function PlasmicLogin__RenderFunc(props: {
             </div>
           ) : null}
 
-          <Button className={classNames("__wab_instance", sty.button___459Gb)}>
+          <Button
+            data-plasmic-name={"logarComGoogle"}
+            data-plasmic-override={overrides.logarComGoogle}
+            className={classNames("__wab_instance", sty.logarComGoogle)}
+          >
             <div
               className={classNames(
                 projectcss.all,
@@ -243,9 +252,20 @@ function PlasmicLogin__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "textInput", "textbox", "passwordInput", "img", "link"],
+  root: [
+    "root",
+    "textInput",
+    "textbox",
+    "passwordInput",
+    "logar",
+    "logarComGoogle",
+    "img",
+    "link"
+  ],
   textInput: ["textInput", "textbox"],
   passwordInput: ["passwordInput"],
+  logar: ["logar"],
+  logarComGoogle: ["logarComGoogle", "img"],
   img: ["img"],
   link: ["link"]
 } as const;
@@ -256,6 +276,8 @@ type NodeDefaultElementType = {
   root: "div";
   textInput: typeof TextInput;
   passwordInput: typeof PasswordInput;
+  logar: typeof Button;
+  logarComGoogle: typeof Button;
   img: typeof p.PlasmicImg;
   link: "a";
 };
@@ -323,6 +345,8 @@ export const PlasmicLogin = Object.assign(
     // Helper components rendering sub-elements
     textInput: makeNodeComponent("textInput"),
     passwordInput: makeNodeComponent("passwordInput"),
+    logar: makeNodeComponent("logar"),
+    logarComGoogle: makeNodeComponent("logarComGoogle"),
     img: makeNodeComponent("img"),
     link: makeNodeComponent("link"),
 

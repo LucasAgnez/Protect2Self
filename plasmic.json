@@ -362,19 +362,6 @@
           "componentType": "component"
         },
         {
-          "id": "NajtjOtX04",
-          "name": "CriacaoGrupo",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicCriacaoGrupo.tsx",
-          "importSpec": {
-            "modulePath": "../pages/criacao-grupo.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicCriacaoGrupo.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "hXP-9YKRw2",
           "name": "ListaDeAmigos",
           "type": "managed",
@@ -859,6 +846,71 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "text-input"
+        },
+        {
+          "id": "lUEHQykv526",
+          "name": "CriacaoGrupo",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicCriacaoGrupo.tsx",
+          "importSpec": {
+            "modulePath": "../pages/criacao-grupo.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicCriacaoGrupo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "Bmg8wAZSTr2",
+          "name": "CriacaoGrupoImportar",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicCriacaoGrupoImportar.tsx",
+          "importSpec": {
+            "modulePath": "../pages/criacao-grupo-importar.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicCriacaoGrupoImportar.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "3dfd-KHP3iP",
+          "name": "CriacaoMetaGrupo",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicCriacaoMetaGrupo.tsx",
+          "importSpec": {
+            "modulePath": "../pages/criacao-meta-grupo.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicCriacaoMetaGrupo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "RPXnndImEa1",
+          "name": "CriacaoMetaHabitoGrupo",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicCriacaoMetaHabitoGrupo.tsx",
+          "importSpec": {
+            "modulePath": "../pages/criacao-meta-habito-grupo.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicCriacaoMetaHabitoGrupo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "0gwx988VBe2",
+          "name": "CriacaoMetaVicioGrupo",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicCriacaoMetaVicioGrupo.tsx",
+          "importSpec": {
+            "modulePath": "../pages/criacao-meta-vicio-grupo.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicCriacaoMetaVicioGrupo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
