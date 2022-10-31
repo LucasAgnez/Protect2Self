@@ -29,17 +29,17 @@ function CriarConta() {
   const router = useRouter()
 
   function criaUsuario() {
-    axios
-      .post("localhost:8080/usuario/save", {
-        nome: (document.getElementById("nomeCompleto") as any).value,
-        username: (document.getElementById("nomeUsuario")as any).value,
-        telefone: (document.getElementById("telefone")as any).value,
-        senha: (document.getElementById("senha")as any).value,
-        email:(document.getElementById("email")as any).value,
-      })
-      .then((response) => {
-        console.log(JSON.stringify(response));
-      });
+    axios.post
+    ("localhost:8080/usuario/save", {
+      nome: (document.getElementById("nomeCompleto") as any).value,
+      username: (document.getElementById("nomeUsuario")as any).value,
+      telefone: (document.getElementById("telefone")as any).value,
+      senha: (document.getElementById("senha")as any).value,
+      email:(document.getElementById("email")as any).value,
+    })
+    .then((response) => {
+      console.log(JSON.stringify(response));
+    });
   }
 
   return (
