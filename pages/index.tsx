@@ -2,6 +2,7 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/host";
+import axios from 'axios'
 
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicHomepage } from "../components/plasmic/protect_2_self/PlasmicHomepage";
@@ -27,15 +28,30 @@ function Homepage() {
   
   const [loginScreen, setLoginScreen] = React.useState<boolean>()
 
+  function logaUsuario() {
+    /* axios.post
+    ("http://localhost:8080/", {
+      nome: (document.getElementById("nome") as any).value,
+      senha: (document.getElementById("senha")as any).value,
+    })
+    .then((response) => {
+      console.log(JSON.stringify(response));
+    }); */
+  }
+
   return (  
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
     <PlasmicHomepage 
+      /* confirma={{
+        props: { onClick: () => logaUsuario()} 
+      }} */
       entrar={{
-          props: { onClick: () => setLoginScreen(true)}
-      }} loginScreen={loginScreen}
+        props: { onClick: () => setLoginScreen(true)}
+      }}
+      loginScreen={loginScreen}
     />
     </ph.PageParamsProvider>
   );

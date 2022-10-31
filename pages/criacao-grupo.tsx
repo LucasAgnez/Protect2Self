@@ -2,6 +2,7 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/host";
+import axios from "axios";
 
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicCriacaoGrupo } from "../components/plasmic/protect_2_self/PlasmicCriacaoGrupo";
@@ -24,12 +25,19 @@ function CriacaoGrupo() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  
+  const router = useRouter()
+
+  const [criaMeta, setCriaMeta] = React.useState()
+
+  const [importaMeta, setImportaMeta] = React.useState()
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicCriacaoGrupo />
+      <PlasmicCriacaoGrupo/>
     </ph.PageParamsProvider>
   );
 }
