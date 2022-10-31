@@ -24,7 +24,7 @@
 .img {
   object-fit: cover;
   max-width: 100%;
-  width: 40px;
+  width: 19px;
   height: 40px;
 }
 .img > picture > img {

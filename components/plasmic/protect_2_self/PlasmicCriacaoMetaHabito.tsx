@@ -191,6 +191,7 @@ function PlasmicCriacaoMetaHabito__RenderFunc(props: {
                     color={"dark" as const}
                     id={"nome" as const}
                     placeholder={"Digite o nome da Meta" as const}
+                    required={true}
                   />
                 </div>
               </div>

@@ -95,6 +95,7 @@ function PlasmicMenu__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames("__wab_instance", sty.root)}
+      mode={"vertical" as const}
       theme={"dark" as const}
     >
       {true ? (
@@ -130,7 +131,7 @@ function PlasmicMenu__RenderFunc(props: {
               displayMaxWidth={"100%" as const}
               displayMinHeight={"0" as const}
               displayMinWidth={"0" as const}
-              displayWidth={"40px" as const}
+              displayWidth={"19px" as const}
               loading={"lazy" as const}
               src={{
                 src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
