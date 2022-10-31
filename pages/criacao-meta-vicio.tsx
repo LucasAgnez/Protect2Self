@@ -30,7 +30,7 @@ function CriacaoMetaVicio() {
 
   function criaMetaVicio() {
     axios.post
-    ("http://localhost:8080/grupo/save", {
+    ("http://localhost:8080/meta/save", {
       nome: (document.getElementById("nome") as any).value,
       descricao: (document.getElementById("descricao")as any).value,
     })

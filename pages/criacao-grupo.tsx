@@ -28,10 +28,6 @@ function CriacaoGrupo() {
   
   const router = useRouter()
 
-  const [criaMeta, setCriaMeta] = React.useState()
-
-  const [importaMeta, setImportaMeta] = React.useState()
-
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
