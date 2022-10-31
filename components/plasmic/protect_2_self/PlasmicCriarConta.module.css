@@ -568,9 +568,21 @@
   min-width: 0;
   padding: 8px;
 }
-.passwordInput__o4Nl7:global(.__wab_instance) {
+.passwordInput__os9Be:global(.__wab_instance) {
+  max-width: 100%;
   position: relative;
-  width: 780px;
+}
+.svg__eFdJ {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__pc2Ai {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
 }
 .columns__ixTGi {
   display: flex;
@@ -638,10 +650,21 @@
   min-width: 0;
   padding: 8px;
 }
-.passwordInput__j7Z9A:global(.__wab_instance) {
+.passwordInput__cOfim:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
-  width: 780px;
+}
+.svg__qv814 {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg___1PSRa {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
 }
 .confirma:global(.__wab_instance) {
   max-width: 100%;

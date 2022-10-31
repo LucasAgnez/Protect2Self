@@ -38,7 +38,7 @@ import Header from "../../Header"; // plasmic-import: Cew9iEQBJMu/component
 import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
-import PasswordInput from "../../PasswordInput"; // plasmic-import: 7l13B_o70O/component
+import PasswordInput from "../../PasswordInput"; // plasmic-import: s963UX2uFqp/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -385,9 +385,11 @@ function PlasmicCriarConta__RenderFunc(props: {
                       <PasswordInput
                         className={classNames(
                           "__wab_instance",
-                          sty.passwordInput__o4Nl7
+                          sty.passwordInput__os9Be
                         )}
+                        color={"dark" as const}
                         id={"senha" as const}
+                        placeholder={"" as const}
                       />
                     </div>
                   </div>
@@ -424,9 +426,11 @@ function PlasmicCriarConta__RenderFunc(props: {
                       <PasswordInput
                         className={classNames(
                           "__wab_instance",
-                          sty.passwordInput__j7Z9A
+                          sty.passwordInput__cOfim
                         )}
-                        id={"confirmaSenha" as const}
+                        color={"dark" as const}
+                        id={"confirmarSenha" as const}
+                        placeholder={"" as const}
                       />
                     </div>
                   </div>

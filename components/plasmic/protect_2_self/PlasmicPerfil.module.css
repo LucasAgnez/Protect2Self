@@ -492,40 +492,21 @@
   min-height: 30px;
   max-height: 30px;
 }
-.text__oPsbU {
-  position: relative;
-  width: 100%;
-  height: auto;
+.passwordInput__hSFs5:global(.__wab_instance) {
   max-width: 800px;
-  background: #232320;
-  min-width: 0;
-  padding: 0px 0px 0px 16px;
-}
-.texteditar__oPsbUb3QAt {
-  display: none;
-}
-.passwordInput__dhFd:global(.__wab_instance) {
-  max-width: 100%;
   position: relative;
-  width: 800px;
-  flex-shrink: 0;
-  display: none;
 }
-.passwordInputeditar__dhFdB3QAt:global(.__wab_instance) {
-  display: block;
+.svg__m67Xq {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
 }
-@media (max-width: 1029px) {
-  .passwordInputeditar__dhFdB3QAt:global(.__wab_instance) {
-    width: 100%;
-    max-width: 800px;
-    min-width: 0;
-  }
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .passwordInputeditar__dhFdB3QAt:global(.__wab_instance) {
-    width: 176px;
-    flex-shrink: 0;
-  }
+.svg__ydHg {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
 }
 .freeBox__uqWpR {
   position: relative;
@@ -550,24 +531,21 @@
   padding-left: 0px;
   flex-shrink: 0;
 }
-.passwordInput__wctSj:global(.__wab_instance) {
-  max-width: 100%;
+.passwordInput__jwLw9:global(.__wab_instance) {
+  max-width: 800px;
   position: relative;
-  width: 800px;
-  flex-shrink: 0;
 }
-@media (max-width: 1029px) {
-  .passwordInputeditar__wctSjb3QAt:global(.__wab_instance) {
-    width: 100%;
-    max-width: 800px;
-    min-width: 0;
-  }
+.svg__um667 {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
 }
-@media (min-width: 0px) and (max-width: 768px) {
-  .passwordInputeditar__wctSjb3QAt:global(.__wab_instance) {
-    width: 176px;
-    flex-shrink: 0;
-  }
+.svg__vbxcq {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
 }
 .freeBox__w7KJl {
   display: flex;

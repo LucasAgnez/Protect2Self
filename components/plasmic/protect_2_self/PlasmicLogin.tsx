@@ -35,7 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
-import PasswordInput from "../../PasswordInput"; // plasmic-import: 7l13B_o70O/component
+import PasswordInput from "../../PasswordInput"; // plasmic-import: s963UX2uFqp/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -123,6 +123,7 @@ function PlasmicLogin__RenderFunc(props: {
             data-plasmic-name={"passwordInput"}
             data-plasmic-override={overrides.passwordInput}
             className={classNames("__wab_instance", sty.passwordInput)}
+            color={"dark" as const}
           />
 
           <Button

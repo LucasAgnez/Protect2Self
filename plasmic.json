@@ -480,19 +480,6 @@
           "componentType": "page"
         },
         {
-          "id": "7l13B_o70O",
-          "name": "PasswordInput",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicPasswordInput.tsx",
-          "importSpec": {
-            "modulePath": "PasswordInput.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicPasswordInput.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "rtdQhdscRZ1",
           "name": "Login",
           "type": "managed",
@@ -858,6 +845,20 @@
           "cssFilePath": "plasmic/protect_2_self/PlasmicMenu.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "s963UX2uFqp",
+          "name": "PasswordInput",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicPasswordInput.tsx",
+          "importSpec": {
+            "modulePath": "PasswordInput.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicPasswordInput.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "text-input"
         }
       ],
       "icons": [

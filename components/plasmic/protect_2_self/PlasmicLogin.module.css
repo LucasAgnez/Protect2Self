@@ -37,6 +37,7 @@
 .textInput:global(.__wab_instance) {
   max-width: 100%;
   width: 600px;
+  margin-bottom: 30px;
 }
 .svg__nbcmC {
   position: relative;
@@ -52,8 +53,19 @@
 }
 .passwordInput:global(.__wab_instance) {
   max-width: 100%;
-  margin-top: 40px;
-  width: 600px;
+  position: relative;
+}
+.svg__lVkfb {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__xzjMj {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
 }
 .button___2HVi5:global(.__wab_instance) {
   max-width: 100%;

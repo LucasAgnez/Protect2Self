@@ -38,7 +38,7 @@ import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/com
 import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
-import PasswordInput from "../../PasswordInput"; // plasmic-import: 7l13B_o70O/component
+import PasswordInput from "../../PasswordInput"; // plasmic-import: s963UX2uFqp/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
@@ -593,48 +593,13 @@ function PlasmicPerfil__RenderFunc(props: {
                     </React.Fragment>
                   </div>
 
-                  {(hasVariant(variants, "editar", "editar") ? true : true) ? (
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__oPsbU,
-                        {
-                          [sty.texteditar__oPsbUb3QAt]: hasVariant(
-                            variants,
-                            "editar",
-                            "editar"
-                          )
-                        }
-                      )}
-                    >
-                      <React.Fragment>
-                        <span
-                          className={
-                            "plasmic_default__all plasmic_default__span"
-                          }
-                          style={{ color: "#FFFFFF" }}
-                        >
-                          {"**********"}
-                        </span>
-                      </React.Fragment>
-                    </div>
-                  ) : null}
-                  {(hasVariant(variants, "editar", "editar") ? true : true) ? (
-                    <PasswordInput
-                      className={classNames(
-                        "__wab_instance",
-                        sty.passwordInput__dhFd,
-                        {
-                          [sty.passwordInputeditar__dhFdB3QAt]: hasVariant(
-                            variants,
-                            "editar",
-                            "editar"
-                          )
-                        }
-                      )}
-                    />
-                  ) : null}
+                  <PasswordInput
+                    className={classNames(
+                      "__wab_instance",
+                      sty.passwordInput__hSFs5
+                    )}
+                    color={"dark" as const}
+                  />
                 </div>
 
                 {(hasVariant(variants, "editar", "editar") ? true : true) ? (
@@ -685,15 +650,9 @@ function PlasmicPerfil__RenderFunc(props: {
                     <PasswordInput
                       className={classNames(
                         "__wab_instance",
-                        sty.passwordInput__wctSj,
-                        {
-                          [sty.passwordInputeditar__wctSjb3QAt]: hasVariant(
-                            variants,
-                            "editar",
-                            "editar"
-                          )
-                        }
+                        sty.passwordInput__jwLw9
                       )}
+                      color={"dark" as const}
                     />
                   </div>
                 ) : null}
