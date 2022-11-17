@@ -89,6 +89,8 @@ function PlasmicHeaderLogged__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantswwY5HaVRu8X4()
   });

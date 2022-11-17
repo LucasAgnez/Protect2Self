@@ -106,6 +106,8 @@ function PlasmicMedalha__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
   const [isRootHover, triggerRootHoverProps] = useTrigger("useHover", {});
   const triggers = {
     hover_root: isRootHover

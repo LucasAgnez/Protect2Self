@@ -98,6 +98,8 @@ function PlasmicMiniaturaGrupo__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
   return (
     <p.PlasmicLink
       data-plasmic-name={"root"}

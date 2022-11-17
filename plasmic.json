@@ -911,6 +911,45 @@
           "cssFilePath": "plasmic/protect_2_self/PlasmicCriacaoMetaVicioGrupo.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "S7kg1gcj7-v",
+          "name": "MeusGrupos",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicMeusGrupos.tsx",
+          "importSpec": {
+            "modulePath": "../pages/grupos.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicMeusGrupos.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "-mHekhvq3AY",
+          "name": "MinhasMetas",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicMinhasMetas.tsx",
+          "importSpec": {
+            "modulePath": "../pages/metas.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicMinhasMetas.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "8PboOpLyrBm",
+          "name": "BotoesMenuPrincipal",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicBotoesMenuPrincipal.tsx",
+          "importSpec": {
+            "modulePath": "BotoesMenuPrincipal.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicBotoesMenuPrincipal.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

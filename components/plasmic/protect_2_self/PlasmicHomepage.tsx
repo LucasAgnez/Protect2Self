@@ -111,6 +111,8 @@ function PlasmicHomepage__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantswwY5HaVRu8X4()
   });
@@ -1390,8 +1392,8 @@ function PlasmicHomepage__RenderFunc(props: {
 
                               <p.PlasmicImg
                                 alt={""}
-                                className={classNames(sty.img__pXUl, {
-                                  [sty.imgloginScreen__pXUl7UOhc]: hasVariant(
+                                className={classNames(sty.img__ldPjc, {
+                                  [sty.imgloginScreen__ldPjc7UOhc]: hasVariant(
                                     variants,
                                     "loginScreen",
                                     "loginScreen"

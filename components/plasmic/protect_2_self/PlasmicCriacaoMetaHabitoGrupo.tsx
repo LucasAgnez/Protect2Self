@@ -103,6 +103,8 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantswwY5HaVRu8X4()
   });
@@ -454,7 +456,10 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
                     </Select__Option>
 
                     <Select__Option
-                      className={classNames("__wab_instance", sty.option__qHaT)}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.option___3PSUr
+                      )}
                       color={"dark" as const}
                       value={"value2" as const}
                     >
@@ -462,7 +467,7 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
                     </Select__Option>
 
                     <Select__Option
-                      className={classNames("__wab_instance", sty.option__qWfq)}
+                      className={classNames("__wab_instance", sty.option__rpOJ)}
                       color={"dark" as const}
                       value={"value3" as const}
                     >

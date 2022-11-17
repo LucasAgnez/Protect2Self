@@ -11,7 +11,7 @@
   "dependencies": {
     "@plasmicapp/cli": "^0.1.187",
     "@plasmicapp/host": "^1.0.79",
-    "@plasmicapp/react-web": "^0.2.110",
+    "@plasmicapp/react-web": "^0.2.122",
     "@plasmicpkgs/antd": "^0.0.94",
     "@plasmicpkgs/plasmic-nav": "^0.0.49",
     "@plasmicpkgs/react-parallax-tilt": "^0.0.77",

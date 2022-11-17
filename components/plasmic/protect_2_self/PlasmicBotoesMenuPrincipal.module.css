@@ -1,0 +1,121 @@
+.root {
+  flex-direction: column;
+  display: flex;
+  width: 328px;
+  height: 374px;
+  max-width: 100%;
+  overflow: auto;
+  background: #000000;
+  position: relative;
+  padding: 21px 8px 8px;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: calc(0px - 10px);
+  height: calc(100% + 10px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-top: 10px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .root {
+    height: 362px;
+  }
+}
+.freeBox {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.sinoNotificacao:global(.__wab_instance) {
+  width: 100%;
+  max-width: 52px;
+  min-width: 0;
+}
+.minhasMetas:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__hvzwZ {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.h4__yxPOo {
+  height: auto;
+}
+.svg__irXc3 {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.meusGrupos:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__u3As {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__m665O {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.criarMeta:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__mGbLb {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.h4__yl4Gk {
+  height: auto;
+}
+.svg__wp5Ul {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.criarGrupo:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .criarGrupo:global(.__wab_instance) {
+    display: flex;
+  }
+}
+.svg__wn28 {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__mFbHn {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
