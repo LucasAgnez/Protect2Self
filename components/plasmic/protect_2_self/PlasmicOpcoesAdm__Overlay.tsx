@@ -103,6 +103,8 @@ function PlasmicOpcoesAdm__Overlay__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
   const superContexts = {
     OpcoesAdm: React.useContext(SUPER__PlasmicOpcoesAdm.Context)
   };

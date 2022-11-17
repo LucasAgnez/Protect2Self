@@ -104,6 +104,8 @@ function PlasmicSelect__Overlay__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
   const superContexts = {
     Select: React.useContext(SUPER__PlasmicSelect.Context)
   };

@@ -105,6 +105,8 @@ function PlasmicOpcoesAmigoPerfil__OptionGroup__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
   const superContexts = {
     OpcoesAmigoPerfil: React.useContext(SUPER__PlasmicOpcoesAmigoPerfil.Context)
   };

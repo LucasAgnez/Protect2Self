@@ -557,6 +557,29 @@
     lodash "^4.17.19"
     prettier "^2.0.5"
 
+"@plasmicapp/data-sources-context@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@plasmicapp/data-sources-context/-/data-sources-context-0.1.2.tgz#4041a9f2b854af36595824c95347c08739763aaa"
+  integrity sha512-N48qP44AFkQMpcLbBBDHbWxMYZKGcjxrb5qNne2765NZoGixEwbwlI9wjoe7Onal0Ctk4v0V2ritYFmwG3BSXg==
+
+"@plasmicapp/data-sources@0.1.12":
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/@plasmicapp/data-sources/-/data-sources-0.1.12.tgz#ead673f60fff48e86c57a2218b8ae192278d1f7d"
+  integrity sha512-Isl+dbncjqsrxwOG5vP/JXkqOZwEzz788MJblPRXYf+j9ovHkEVXQXxjMYzAkcAg9Ad1OKaoZqqmT4i0YTA4Qw==
+  dependencies:
+    "@plasmicapp/data-sources-context" "0.1.2"
+    "@plasmicapp/host" "1.0.83"
+    "@plasmicapp/query" "0.1.55"
+    isomorphic-unfetch "^3.1.0"
+
+"@plasmicapp/host@1.0.83":
+  version "1.0.83"
+  resolved "https://registry.yarnpkg.com/@plasmicapp/host/-/host-1.0.83.tgz#e5a8381ec412622aa4361b71ea7c44dda2ad238d"
+  integrity sha512-fyv4lIbkCyD6Ko92nlYm76v9fuyVT/w6Vir94STqRY2T0OOTAruaXf0qjY29RdljFPWrUZrwwDZ1KQe1l8QfBQ==
+  dependencies:
+    "@plasmicapp/query" "^0.1.55"
+    window-or-global "^1.0.1"
+
 "@plasmicapp/host@^1.0.79":
   version "1.0.79"
   resolved "https://registry.npmjs.org/@plasmicapp/host/-/host-1.0.79.tgz"
@@ -564,11 +587,23 @@
   dependencies:
     window-or-global "^1.0.1"
 
-"@plasmicapp/react-web@^0.2.110":
-  version "0.2.110"
-  resolved "https://registry.npmjs.org/@plasmicapp/react-web/-/react-web-0.2.110.tgz"
-  integrity sha512-KZo17ZDvpYFmF7K1ryzy80YSz9yQph7eKzT0JXtDZo3ZVXGKAkove5mrn6DQRE27scK9riU3paOZ90LwqFTQaQ==
+"@plasmicapp/query@0.1.55", "@plasmicapp/query@^0.1.55":
+  version "0.1.55"
+  resolved "https://registry.yarnpkg.com/@plasmicapp/query/-/query-0.1.55.tgz#2a43ffa38ad3970a6b7db74a670b832630d531dd"
+  integrity sha512-a6qVRU6pmkFVCZLN20TOn4qAzN98ylUjeZMGSSt/vDSv7QDNLIqJgpWfgCTUbCXrGKjzwOGu70WLtTD7YRVmaA==
   dependencies:
+    react-ssr-prepass "^1.4.0"
+    swr ">1.0.0"
+
+"@plasmicapp/react-web@^0.2.122":
+  version "0.2.122"
+  resolved "https://registry.yarnpkg.com/@plasmicapp/react-web/-/react-web-0.2.122.tgz#0f7f91843b9d1449712ef20f23e12781dc0a9c20"
+  integrity sha512-/CGMVF9XuoP49zUQsr3MafzuBVdRuIC7VnlRBVtBUb6qKpCE1TSfOTIp8gR9XHU8TTSmVEqZbxYbO7JoHvF3Ew==
+  dependencies:
+    "@plasmicapp/data-sources" "0.1.12"
+    "@plasmicapp/data-sources-context" "0.1.2"
+    "@plasmicapp/host" "1.0.83"
+    "@plasmicapp/query" "0.1.55"
     "@react-aria/checkbox" "^3.5.0"
     "@react-aria/focus" "^3.7.0"
     "@react-aria/interactions" "^3.10.0"
@@ -590,6 +625,8 @@
     classnames "^2.2.6"
     dlv "^1.1.3"
     dset "^3.1.2"
+    fast-deep-equal "^3.1.3"
+    valtio "^1.6.3"
 
 "@plasmicpkgs/antd@^0.0.94":
   version "0.0.94"
@@ -2805,6 +2842,14 @@ isexe@^2.0.0:
   resolved "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz"
   integrity sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==
 
+isomorphic-unfetch@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/isomorphic-unfetch/-/isomorphic-unfetch-3.1.0.tgz#87341d5f4f7b63843d468438128cb087b7c3e98f"
+  integrity sha512-geDJjpoZ8N0kWexiwkX8F9NkTsXhetLPVbZFQ+JTW239QNOwvB0gniuR1Wc6f0AMTn7/mFGyXvHTifrCp/GH8Q==
+  dependencies:
+    node-fetch "^2.6.1"
+    unfetch "^4.2.0"
+
 js-sdsl@^4.1.4:
   version "4.1.4"
   resolved "https://registry.npmjs.org/js-sdsl/-/js-sdsl-4.1.4.tgz"
@@ -3074,6 +3119,13 @@ next@^12.3.1:
     "@next/swc-win32-arm64-msvc" "12.3.1"
     "@next/swc-win32-ia32-msvc" "12.3.1"
     "@next/swc-win32-x64-msvc" "12.3.1"
+
+node-fetch@^2.6.1:
+  version "2.6.7"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
+  integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
+  dependencies:
+    whatwg-url "^5.0.0"
 
 node-releases@^2.0.6:
   version "2.0.6"
@@ -3347,6 +3399,11 @@ prop-types@^15.8.1:
     loose-envify "^1.4.0"
     object-assign "^4.1.1"
     react-is "^16.13.1"
+
+proxy-compare@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/proxy-compare/-/proxy-compare-2.3.0.tgz#ac9633ae52918ff9c9fcc54dfe6316c7a02d20ee"
+  integrity sha512-c3L2CcAi7f7pvlD0D7xsF+2CQIW8C3HaYx2Pfgq8eA4HAl3GAH6/dVYsyBbYF/0XJs2ziGLrzmz5fmzPm6A0pQ==
 
 pump@^3.0.0:
   version "3.0.0"
@@ -3770,6 +3827,11 @@ react-parallax-tilt@^1.5.74:
   resolved "https://registry.npmjs.org/react-parallax-tilt/-/react-parallax-tilt-1.7.67.tgz"
   integrity sha512-r4Tdqa3DltRMnsfJYscnmqU2wnIrq6DOS+1SCY/+wmIS5bYu+t+wqAHz94BHKRvQ8GCFmHONWgTM0ps9pYihsA==
 
+react-ssr-prepass@^1.4.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/react-ssr-prepass/-/react-ssr-prepass-1.5.0.tgz#bc4ca7fcb52365e6aea11cc254a3d1bdcbd030c5"
+  integrity sha512-yFNHrlVEReVYKsLI5lF05tZoHveA5pGzjFbFJY/3pOqqjGOmMmqx83N4hIjN2n6E1AOa+eQEUxs3CgRnPmT0RQ==
+
 react@18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
@@ -4152,6 +4214,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
+swr@>1.0.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-1.3.0.tgz#c6531866a35b4db37b38b72c45a63171faf9f4e8"
+  integrity sha512-dkghQrOl2ORX9HYrMDtPa7LTVHJjCTeZoB1dqTbnnEDlSvN8JEKpYIYurDfvbQFUUS8Cg8PceFVZNkW0KNNYPw==
+
 term-size@^2.1.0:
   version "2.2.1"
   resolved "https://registry.npmjs.org/term-size/-/term-size-2.2.1.tgz"
@@ -4200,6 +4267,11 @@ toggle-selection@^1.0.6:
   version "1.0.6"
   resolved "https://registry.npmjs.org/toggle-selection/-/toggle-selection-1.0.6.tgz"
   integrity sha512-BiZS+C1OS8g/q2RRbJmy59xpyghNBqrr6k5L/uKBGRsTfxmu3ffiRnd8mlGPUVayg8pvfi5urfnu8TU7DVOkLQ==
+
+tr46@~0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
+  integrity sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==
 
 triple-beam@^1.3.0:
   version "1.3.0"
@@ -4282,6 +4354,11 @@ unbox-primitive@^1.0.2:
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
 
+unfetch@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/unfetch/-/unfetch-4.2.0.tgz#7e21b0ef7d363d8d9af0fb929a5555f6ef97a3be"
+  integrity sha512-F9p7yYCn6cIW9El1zi0HI6vqpeIvBsr3dSuRO6Xuppb1u5rXpCPmMvLSyECLhybr9isec8Ohl0hPekMVrEinDA==
+
 unique-string@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/unique-string/-/unique-string-2.0.0.tgz"
@@ -4362,10 +4439,31 @@ uuid@^8.3.1:
   resolved "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
+valtio@^1.6.3:
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/valtio/-/valtio-1.7.5.tgz#02a3ee207b4c7552294bbccb68d5f73c9f60302f"
+  integrity sha512-YGgYA1fkjDWIJuI2Z178GWxocd7f+AGfwe7vSL9+WKWfQuzWBEMqIIZ2UnEuy58DpEOYFSQTLfxQGOFIatEpmQ==
+  dependencies:
+    proxy-compare "2.3.0"
+    use-sync-external-store "1.2.0"
+
 vary@^1:
   version "1.1.2"
   resolved "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
+
+webidl-conversions@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
+  integrity sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==
+
+whatwg-url@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/whatwg-url/-/whatwg-url-5.0.0.tgz#966454e8765462e37644d3626f6742ce8b70965d"
+  integrity sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==
+  dependencies:
+    tr46 "~0.0.3"
+    webidl-conversions "^3.0.0"
 
 which-boxed-primitive@^1.0.2:
   version "1.0.2"

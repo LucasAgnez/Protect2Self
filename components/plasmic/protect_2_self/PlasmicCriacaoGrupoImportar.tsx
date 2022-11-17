@@ -104,6 +104,8 @@ function PlasmicCriacaoGrupoImportar__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
   return (
     <React.Fragment>
       <Head></Head>
