@@ -28,15 +28,17 @@ function Homepage() {
   
   const [loginScreen, setLoginScreen] = React.useState<boolean>()
 
+  const router = useRouter()
+
   function logaUsuario() {
-    /* axios.post
+    axios.post
     ("http://localhost:8080/", {
       nome: (document.getElementById("nome") as any).value,
       senha: (document.getElementById("senha")as any).value,
     })
     .then((response) => {
       console.log(JSON.stringify(response));
-    }); */
+    }); 
   }
 
   return (  
@@ -45,9 +47,9 @@ function Homepage() {
       query={useRouter()?.query}
     >
     <PlasmicHomepage 
-      /* confirma={{
-        props: { onClick: () => logaUsuario()} 
-      }} */
+      confirma={{
+        props: { onClick: () => (logaUsuario(), router.push('/logged'))} 
+      }} 
       entrar={{
         props: { onClick: () => setLoginScreen(true)}
       }}
