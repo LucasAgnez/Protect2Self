@@ -194,7 +194,7 @@ function PlasmicMenu__RenderFunc(props: {
                 href={`/perfil`}
                 platform={"nextjs"}
               >
-                {"Sub-menu item 1"}
+                {"Perfil"}
               </p.PlasmicLink>
             </MenuItem>
 
@@ -213,7 +213,7 @@ function PlasmicMenu__RenderFunc(props: {
                 href={`/`}
                 platform={"nextjs"}
               >
-                {"Sub-menu item 2"}
+                {"Sair"}
               </p.PlasmicLink>
             </MenuItem>
           </SubMenu>

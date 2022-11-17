@@ -124,13 +124,18 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .column__mMmO6 {
-    display: none;
+    display: flex;
   }
 }
 .mainPageButton:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   display: none;
+}
+@media (max-width: 1029px) {
+  .mainPageButton:global(.__wab_instance) {
+    display: none;
+  }
 }
 .svg__eVhiN {
   position: relative;
@@ -161,6 +166,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .container {
+    height: auto;
     display: flex;
     padding: 18px 0px 38px;
   }

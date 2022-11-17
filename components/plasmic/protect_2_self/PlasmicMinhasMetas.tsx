@@ -176,7 +176,11 @@ function PlasmicMinhasMetas__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.column__mMmO6)}
                   >
-                    {true ? (
+                    {(
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? true
+                        : true
+                    ) ? (
                       <MainPageButton
                         data-plasmic-name={"mainPageButton"}
                         data-plasmic-override={overrides.mainPageButton}
