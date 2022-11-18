@@ -327,6 +327,7 @@ function PlasmicSelect__RenderFunc(props: {
             hasVariant($state, "isDisabled", "isDisabled") ? true : undefined
           }
           id={args.id}
+          value={args.value}
         >
           <div
             data-plasmic-name={"contentContainer"}
