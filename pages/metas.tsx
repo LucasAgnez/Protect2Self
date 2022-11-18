@@ -29,7 +29,9 @@ function MinhasMetas() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicMinhasMetas />
+      <PlasmicMinhasMetas 
+        //container = {{children: () => MiniaturaGrupo[] }}
+      />
     </ph.PageParamsProvider>
   );
 }

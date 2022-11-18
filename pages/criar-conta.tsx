@@ -30,7 +30,7 @@ function CriarConta() {
 
   function criaUsuario() {
     axios.post
-    ("http://localhost:8080/usuario/save", {
+    ("http://localhost:8080/usuario/save  ", {
       nome: (document.getElementById("nomeCompleto") as any).value,
       username: (document.getElementById("nomeUsuario")as any).value,
       telefone: (document.getElementById("telefone")as any).value,

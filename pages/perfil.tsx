@@ -25,18 +25,13 @@ function Perfil() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   
-  const [editar, setEditar] = React.useState<boolean>()  
   
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicPerfil 
-          botaoEditar={{
-            props: { onClick: () => setEditar(true)}
-        }} editar={editar}
-      />
+      <PlasmicPerfil/>
     </ph.PageParamsProvider>
   );
 }

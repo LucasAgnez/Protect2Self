@@ -38,7 +38,7 @@ function Homepage() {
     })
     .then((response) => {
       console.log(JSON.stringify(response));
-    }); 
+    });
   }
 
   return (  
