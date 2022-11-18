@@ -2,6 +2,7 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/host";
+import axios from "axios";
 
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicCriacaoGrupoImportar } from "../components/plasmic/protect_2_self/PlasmicCriacaoGrupoImportar";
@@ -24,12 +25,28 @@ function CriacaoGrupoImportar() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  
+  const router = useRouter()
+
+  function criaGrupo() {
+    axios.post
+    ("http://localhost:8080/grupo/save/" + localStorage.getItem('userId'), {
+      nome: (document.getElementById("nomeGrupo") as any).value,
+      descricao: (document.getElementById("descricao")as any).value,
+    })
+    .then((response) => {
+      console.log(JSON.stringify(response));
+    });
+  }
+  
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicCriacaoGrupoImportar />
+      <PlasmicCriacaoGrupoImportar confirma={{
+          props: { onClick: () => (criaGrupo() , router.push('/logged'))}
+      }} />
     </ph.PageParamsProvider>
   );
 }
