@@ -98,6 +98,7 @@ export type PlasmicSelect__ArgsType = {
   name?: string;
   "aria-label"?: string;
   "aria-labelledby"?: string;
+  id?: string;
 };
 
 type ArgPropType = keyof PlasmicSelect__ArgsType;
@@ -108,7 +109,8 @@ export const PlasmicSelect__ArgProps = new Array<ArgPropType>(
   "value",
   "name",
   "aria-label",
-  "aria-labelledby"
+  "aria-labelledby",
+  "id"
 );
 
 export type PlasmicSelect__OverridesType = {
@@ -123,6 +125,7 @@ export type PlasmicSelect__OverridesType = {
 export interface DefaultSelectProps extends pp.BaseSelectProps {
   "aria-label"?: string;
   "aria-labelledby"?: string;
+  id?: string;
   color?: SingleChoiceArg<
     | "softBlue"
     | "softCyan"
@@ -323,6 +326,7 @@ function PlasmicSelect__RenderFunc(props: {
           disabled={
             hasVariant($state, "isDisabled", "isDisabled") ? true : undefined
           }
+          id={args.id}
         >
           <div
             data-plasmic-name={"contentContainer"}
