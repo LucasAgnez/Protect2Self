@@ -134,6 +134,31 @@ function PlasmicOpcoesAmigoPerfil__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "showPlaceholder",
+        type: "private",
+        initFunc: ($props, $state) => $props["showPlaceholder"]
+      },
+
+      {
+        path: "isOpen",
+        type: "private",
+        initFunc: ($props, $state) => $props["isOpen"]
+      },
+
+      {
+        path: "isDisabled",
+        type: "private",
+        initFunc: ($props, $state) => $props["isDisabled"]
+      }
+    ],
+
+    [$props]
+  );
+  const $state = p.useDollarState(stateSpecs, $props);
+
   const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
     useTrigger("useFocusVisibleWithin", {
       isTextInput: false
@@ -159,7 +184,7 @@ function PlasmicOpcoesAmigoPerfil__RenderFunc(props: {
           sty.root,
           {
             [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
-            [sty.rootisOpen]: hasVariant(variants, "isOpen", "isOpen")
+            [sty.rootisOpen]: hasVariant($state, "isOpen", "isOpen")
           }
         )}
         data-plasmic-trigger-props={[triggerRootFocusVisibleWithinProps]}
@@ -175,20 +200,20 @@ function PlasmicOpcoesAmigoPerfil__RenderFunc(props: {
               [sty.trigger___focusVisibleWithin]:
                 triggers.focusVisibleWithin_root,
               [sty.triggerisDisabled]: hasVariant(
-                variants,
+                $state,
                 "isDisabled",
                 "isDisabled"
               ),
-              [sty.triggerisOpen]: hasVariant(variants, "isOpen", "isOpen"),
+              [sty.triggerisOpen]: hasVariant($state, "isOpen", "isOpen"),
               [sty.triggershowPlaceholder]: hasVariant(
-                variants,
+                $state,
                 "showPlaceholder",
                 "showPlaceholder"
               )
             }
           )}
           disabled={
-            hasVariant(variants, "isDisabled", "isDisabled") ? true : undefined
+            hasVariant($state, "isDisabled", "isDisabled") ? true : undefined
           }
         >
           <div
@@ -196,19 +221,19 @@ function PlasmicOpcoesAmigoPerfil__RenderFunc(props: {
             data-plasmic-override={overrides.contentContainer}
             className={classNames(projectcss.all, sty.contentContainer, {
               [sty.contentContainerisDisabled]: hasVariant(
-                variants,
+                $state,
                 "isDisabled",
                 "isDisabled"
               ),
               [sty.contentContainershowPlaceholder]: hasVariant(
-                variants,
+                $state,
                 "showPlaceholder",
                 "showPlaceholder"
               )
             })}
           >
             {(
-              hasVariant(variants, "showPlaceholder", "showPlaceholder")
+              hasVariant($state, "showPlaceholder", "showPlaceholder")
                 ? false
                 : false
             )
@@ -217,17 +242,17 @@ function PlasmicOpcoesAmigoPerfil__RenderFunc(props: {
                   value: args.selectedContent,
                   className: classNames(sty.slotTargetSelectedContent, {
                     [sty.slotTargetSelectedContentisDisabled]: hasVariant(
-                      variants,
+                      $state,
                       "isDisabled",
                       "isDisabled"
                     ),
                     [sty.slotTargetSelectedContentisOpen]: hasVariant(
-                      variants,
+                      $state,
                       "isOpen",
                       "isOpen"
                     ),
                     [sty.slotTargetSelectedContentshowPlaceholder]: hasVariant(
-                      variants,
+                      $state,
                       "showPlaceholder",
                       "showPlaceholder"
                     )
@@ -235,7 +260,7 @@ function PlasmicOpcoesAmigoPerfil__RenderFunc(props: {
                 })
               : null}
             {(
-              hasVariant(variants, "showPlaceholder", "showPlaceholder")
+              hasVariant($state, "showPlaceholder", "showPlaceholder")
                 ? true
                 : false
             )
@@ -244,7 +269,7 @@ function PlasmicOpcoesAmigoPerfil__RenderFunc(props: {
                   value: args.placeholder,
                   className: classNames(sty.slotTargetPlaceholder, {
                     [sty.slotTargetPlaceholdershowPlaceholder]: hasVariant(
-                      variants,
+                      $state,
                       "showPlaceholder",
                       "showPlaceholder"
                     )
@@ -254,7 +279,7 @@ function PlasmicOpcoesAmigoPerfil__RenderFunc(props: {
           </div>
 
           {(
-            hasVariant(variants, "showPlaceholder", "showPlaceholder")
+            hasVariant($state, "showPlaceholder", "showPlaceholder")
               ? true
               : true
           ) ? (
@@ -262,7 +287,7 @@ function PlasmicOpcoesAmigoPerfil__RenderFunc(props: {
               data-plasmic-name={"dropdownIcon"}
               data-plasmic-override={overrides.dropdownIcon}
               PlasmicIconType={
-                hasVariant(variants, "isOpen", "isOpen")
+                hasVariant($state, "isOpen", "isOpen")
                   ? ChevronUpsvgIcon
                   : ChevronDownsvgIcon
               }
@@ -270,17 +295,17 @@ function PlasmicOpcoesAmigoPerfil__RenderFunc(props: {
                 [sty.dropdownIcon___focusVisibleWithin]:
                   triggers.focusVisibleWithin_root,
                 [sty.dropdownIconisDisabled]: hasVariant(
-                  variants,
+                  $state,
                   "isDisabled",
                   "isDisabled"
                 ),
                 [sty.dropdownIconisOpen]: hasVariant(
-                  variants,
+                  $state,
                   "isOpen",
                   "isOpen"
                 ),
                 [sty.dropdownIconshowPlaceholder]: hasVariant(
-                  variants,
+                  $state,
                   "showPlaceholder",
                   "showPlaceholder"
                 )
@@ -313,12 +338,12 @@ function PlasmicOpcoesAmigoPerfil__RenderFunc(props: {
           })}
         </button>
 
-        {(hasVariant(variants, "isOpen", "isOpen") ? true : false) ? (
+        {(hasVariant($state, "isOpen", "isOpen") ? true : false) ? (
           <OpcoesAmigoPerfil__Overlay
             data-plasmic-name={"overlay"}
             data-plasmic-override={overrides.overlay}
             className={classNames("__wab_instance", sty.overlay, {
-              [sty.overlayisOpen]: hasVariant(variants, "isOpen", "isOpen")
+              [sty.overlayisOpen]: hasVariant($state, "isOpen", "isOpen")
             })}
             relativePlacement={"bottom" as const}
           >
@@ -327,7 +352,7 @@ function PlasmicOpcoesAmigoPerfil__RenderFunc(props: {
               data-plasmic-override={overrides.optionsContainer}
               className={classNames(projectcss.all, sty.optionsContainer, {
                 [sty.optionsContainerisOpen]: hasVariant(
-                  variants,
+                  $state,
                   "isOpen",
                   "isOpen"
                 )
@@ -346,7 +371,7 @@ function PlasmicOpcoesAmigoPerfil__RenderFunc(props: {
                 value: args.children,
                 className: classNames(sty.slotTargetChildren, {
                   [sty.slotTargetChildrenisOpen]: hasVariant(
-                    variants,
+                    $state,
                     "isOpen",
                     "isOpen"
                   )

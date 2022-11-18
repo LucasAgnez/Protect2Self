@@ -131,7 +131,7 @@
     justify-content: flex-start;
   }
 }
-.textInput___64IK3:global(.__wab_instance) {
+.nome:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin-top: 81px;
@@ -140,7 +140,7 @@
   margin-left: 0px;
 }
 @media (max-width: 1029px) {
-  .textInput___64IK3:global(.__wab_instance) {
+  .nome:global(.__wab_instance) {
     margin-top: 0px;
     width: 100%;
     min-width: 0;
@@ -266,7 +266,7 @@
     justify-content: flex-start;
   }
 }
-.textInput__onIhe:global(.__wab_instance) {
+.descricaoMeta:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   width: 534px;
@@ -277,7 +277,7 @@
   display: flex;
 }
 @media (max-width: 1029px) {
-  .textInput__onIhe:global(.__wab_instance) {
+  .descricaoMeta:global(.__wab_instance) {
     align-self: auto;
     width: 100%;
     min-width: 0;

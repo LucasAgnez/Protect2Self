@@ -301,11 +301,11 @@
     top: auto;
   }
 }
-.textInput:global(.__wab_instance) {
+.email:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
-.textInputloginScreen:global(.__wab_instance) {
+.emailloginScreen:global(.__wab_instance) {
   margin-bottom: 30px;
 }
 .svg__cFv6U {
@@ -320,7 +320,7 @@
   width: 1em;
   height: 1em;
 }
-.passwordInput:global(.__wab_instance) {
+.senha:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }

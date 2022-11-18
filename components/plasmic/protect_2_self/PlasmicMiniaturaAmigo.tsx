@@ -118,6 +118,19 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "emGrupo",
+        type: "private",
+        initFunc: ($props, $state) => $props["emGrupo"]
+      }
+    ],
+
+    [$props]
+  );
+  const $state = p.useDollarState(stateSpecs, $props);
+
   return (
     <div
       data-plasmic-name={"root"}
@@ -132,14 +145,14 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
         projectcss.plasmic_tokens,
         sty.root,
         {
-          [sty.rootemGrupo_adm]: hasVariant(variants, "emGrupo", "adm"),
+          [sty.rootemGrupo_adm]: hasVariant($state, "emGrupo", "adm"),
           [sty.rootemGrupo_visaoDoAdm]: hasVariant(
-            variants,
+            $state,
             "emGrupo",
             "visaoDoAdm"
           ),
           [sty.rootemGrupo_visaoMembros]: hasVariant(
-            variants,
+            $state,
             "emGrupo",
             "visaoMembros"
           )
@@ -252,13 +265,13 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
         })}
       </div>
 
-      {(hasVariant(variants, "emGrupo", "adm") ? true : true) ? (
+      {(hasVariant($state, "emGrupo", "adm") ? true : true) ? (
         <p.PlasmicImg
           data-plasmic-name={"img"}
           data-plasmic-override={overrides.img}
           alt={""}
           className={classNames(sty.img, {
-            [sty.imgemGrupo_adm]: hasVariant(variants, "emGrupo", "adm")
+            [sty.imgemGrupo_adm]: hasVariant($state, "emGrupo", "adm")
           })}
           displayHeight={"auto" as const}
           displayMaxHeight={"none" as const}
@@ -276,11 +289,11 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
         />
       ) : null}
       {(
-        hasVariant(variants, "emGrupo", "visaoMembros")
+        hasVariant($state, "emGrupo", "visaoMembros")
           ? true
-          : hasVariant(variants, "emGrupo", "visaoDoAdm")
+          : hasVariant($state, "emGrupo", "visaoDoAdm")
           ? true
-          : hasVariant(variants, "emGrupo", "adm")
+          : hasVariant($state, "emGrupo", "adm")
           ? true
           : true
       ) ? (
@@ -288,18 +301,14 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
           data-plasmic-name={"opcoesMembro"}
           data-plasmic-override={overrides.opcoesMembro}
           className={classNames("__wab_instance", sty.opcoesMembro, {
-            [sty.opcoesMembroemGrupo_adm]: hasVariant(
-              variants,
-              "emGrupo",
-              "adm"
-            ),
+            [sty.opcoesMembroemGrupo_adm]: hasVariant($state, "emGrupo", "adm"),
             [sty.opcoesMembroemGrupo_visaoDoAdm]: hasVariant(
-              variants,
+              $state,
               "emGrupo",
               "visaoDoAdm"
             ),
             [sty.opcoesMembroemGrupo_visaoMembros]: hasVariant(
-              variants,
+              $state,
               "emGrupo",
               "visaoMembros"
             )
@@ -307,11 +316,11 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
         />
       ) : null}
       {(
-        hasVariant(variants, "emGrupo", "visaoMembros")
+        hasVariant($state, "emGrupo", "visaoMembros")
           ? true
-          : hasVariant(variants, "emGrupo", "visaoDoAdm")
+          : hasVariant($state, "emGrupo", "visaoDoAdm")
           ? true
-          : hasVariant(variants, "emGrupo", "adm")
+          : hasVariant($state, "emGrupo", "adm")
           ? true
           : true
       ) ? (
@@ -320,30 +329,30 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
           data-plasmic-override={overrides.opcoesAmigoPerfil}
           className={classNames("__wab_instance", sty.opcoesAmigoPerfil, {
             [sty.opcoesAmigoPerfilemGrupo_adm]: hasVariant(
-              variants,
+              $state,
               "emGrupo",
               "adm"
             ),
             [sty.opcoesAmigoPerfilemGrupo_visaoDoAdm]: hasVariant(
-              variants,
+              $state,
               "emGrupo",
               "visaoDoAdm"
             ),
             [sty.opcoesAmigoPerfilemGrupo_visaoMembros]: hasVariant(
-              variants,
+              $state,
               "emGrupo",
               "visaoMembros"
             )
           })}
         />
       ) : null}
-      {(hasVariant(variants, "emGrupo", "visaoDoAdm") ? true : true) ? (
+      {(hasVariant($state, "emGrupo", "visaoDoAdm") ? true : true) ? (
         <OpcoesAdm
           data-plasmic-name={"opcoesAdm"}
           data-plasmic-override={overrides.opcoesAdm}
           className={classNames("__wab_instance", sty.opcoesAdm, {
             [sty.opcoesAdmemGrupo_visaoDoAdm]: hasVariant(
-              variants,
+              $state,
               "emGrupo",
               "visaoDoAdm"
             )
@@ -355,9 +364,9 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
         data-plasmic-name={"medalha"}
         data-plasmic-override={overrides.medalha}
         className={classNames("__wab_instance", sty.medalha, {
-          [sty.medalhaemGrupo_adm]: hasVariant(variants, "emGrupo", "adm"),
+          [sty.medalhaemGrupo_adm]: hasVariant($state, "emGrupo", "adm"),
           [sty.medalhaemGrupo_visaoDoAdm]: hasVariant(
-            variants,
+            $state,
             "emGrupo",
             "visaoDoAdm"
           )

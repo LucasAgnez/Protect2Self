@@ -69,11 +69,13 @@ export type PlasmicCriacaoGrupoImportar__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   dados?: p.Flex<"div">;
-  nomeGrupo?: p.Flex<"div">;
+  colunaNome?: p.Flex<"div">;
   h2?: p.Flex<"h2">;
-  descricao?: p.Flex<"div">;
-  meta?: p.Flex<"div">;
-  select?: p.Flex<typeof Select>;
+  nomeGrupo?: p.Flex<typeof TextInput>;
+  colunaDescricao?: p.Flex<"div">;
+  descricao?: p.Flex<typeof TextInput>;
+  colunaMeta?: p.Flex<"div">;
+  meta?: p.Flex<typeof Select>;
   confirma?: p.Flex<typeof Button>;
 };
 
@@ -168,9 +170,9 @@ function PlasmicCriacaoGrupoImportar__RenderFunc(props: {
 
             {true ? (
               <div
-                data-plasmic-name={"nomeGrupo"}
-                data-plasmic-override={overrides.nomeGrupo}
-                className={classNames(projectcss.all, sty.nomeGrupo)}
+                data-plasmic-name={"colunaNome"}
+                data-plasmic-override={overrides.colunaNome}
+                className={classNames(projectcss.all, sty.colunaNome)}
               >
                 <div className={classNames(projectcss.all, sty.column___7Yfn)}>
                   <div
@@ -212,10 +214,9 @@ function PlasmicCriacaoGrupoImportar__RenderFunc(props: {
 
                 <div className={classNames(projectcss.all, sty.column__fHy2T)}>
                   <TextInput
-                    className={classNames(
-                      "__wab_instance",
-                      sty.textInput__ti0Dp
-                    )}
+                    data-plasmic-name={"nomeGrupo"}
+                    data-plasmic-override={overrides.nomeGrupo}
+                    className={classNames("__wab_instance", sty.nomeGrupo)}
                     color={"dark" as const}
                     id={"nome" as const}
                     placeholder={"Digite o nome do Grupo" as const}
@@ -225,9 +226,9 @@ function PlasmicCriacaoGrupoImportar__RenderFunc(props: {
             ) : null}
 
             <div
-              data-plasmic-name={"descricao"}
-              data-plasmic-override={overrides.descricao}
-              className={classNames(projectcss.all, sty.descricao)}
+              data-plasmic-name={"colunaDescricao"}
+              data-plasmic-override={overrides.colunaDescricao}
+              className={classNames(projectcss.all, sty.colunaDescricao)}
             >
               <div className={classNames(projectcss.all, sty.column__yVpec)}>
                 {true ? (
@@ -270,10 +271,9 @@ function PlasmicCriacaoGrupoImportar__RenderFunc(props: {
               <div className={classNames(projectcss.all, sty.column__bwEwd)}>
                 {true ? (
                   <TextInput
-                    className={classNames(
-                      "__wab_instance",
-                      sty.textInput__hL3Vq
-                    )}
+                    data-plasmic-name={"descricao"}
+                    data-plasmic-override={overrides.descricao}
+                    className={classNames("__wab_instance", sty.descricao)}
                     color={"dark" as const}
                     id={"descricao" as const}
                     placeholder={"Digite aqui uma descrição do grupo" as const}
@@ -284,9 +284,9 @@ function PlasmicCriacaoGrupoImportar__RenderFunc(props: {
             </div>
 
             <div
-              data-plasmic-name={"meta"}
-              data-plasmic-override={overrides.meta}
-              className={classNames(projectcss.all, sty.meta)}
+              data-plasmic-name={"colunaMeta"}
+              data-plasmic-override={overrides.colunaMeta}
+              className={classNames(projectcss.all, sty.colunaMeta)}
             >
               <div className={classNames(projectcss.all, sty.column__oiaD)}>
                 <div
@@ -326,9 +326,9 @@ function PlasmicCriacaoGrupoImportar__RenderFunc(props: {
 
               <div className={classNames(projectcss.all, sty.column__fq2T4)}>
                 <Select
-                  data-plasmic-name={"select"}
-                  data-plasmic-override={overrides.select}
-                  className={classNames("__wab_instance", sty.select)}
+                  data-plasmic-name={"meta"}
+                  data-plasmic-override={overrides.meta}
+                  className={classNames("__wab_instance", sty.meta)}
                   color={"dark" as const}
                 >
                   <Select__Option
@@ -378,28 +378,34 @@ const PlasmicDescendants = {
     "root",
     "headerLogged",
     "dados",
-    "nomeGrupo",
+    "colunaNome",
     "h2",
+    "nomeGrupo",
+    "colunaDescricao",
     "descricao",
+    "colunaMeta",
     "meta",
-    "select",
     "confirma"
   ],
   headerLogged: ["headerLogged"],
   dados: [
     "dados",
-    "nomeGrupo",
+    "colunaNome",
     "h2",
+    "nomeGrupo",
+    "colunaDescricao",
     "descricao",
+    "colunaMeta",
     "meta",
-    "select",
     "confirma"
   ],
-  nomeGrupo: ["nomeGrupo", "h2"],
+  colunaNome: ["colunaNome", "h2", "nomeGrupo"],
   h2: ["h2"],
+  nomeGrupo: ["nomeGrupo"],
+  colunaDescricao: ["colunaDescricao", "descricao"],
   descricao: ["descricao"],
-  meta: ["meta", "select"],
-  select: ["select"],
+  colunaMeta: ["colunaMeta", "meta"],
+  meta: ["meta"],
   confirma: ["confirma"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -409,11 +415,13 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   dados: "div";
-  nomeGrupo: "div";
+  colunaNome: "div";
   h2: "h2";
-  descricao: "div";
-  meta: "div";
-  select: typeof Select;
+  nomeGrupo: typeof TextInput;
+  colunaDescricao: "div";
+  descricao: typeof TextInput;
+  colunaMeta: "div";
+  meta: typeof Select;
   confirma: typeof Button;
 };
 
@@ -480,11 +488,13 @@ export const PlasmicCriacaoGrupoImportar = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     dados: makeNodeComponent("dados"),
-    nomeGrupo: makeNodeComponent("nomeGrupo"),
+    colunaNome: makeNodeComponent("colunaNome"),
     h2: makeNodeComponent("h2"),
+    nomeGrupo: makeNodeComponent("nomeGrupo"),
+    colunaDescricao: makeNodeComponent("colunaDescricao"),
     descricao: makeNodeComponent("descricao"),
+    colunaMeta: makeNodeComponent("colunaMeta"),
     meta: makeNodeComponent("meta"),
-    select: makeNodeComponent("select"),
     confirma: makeNodeComponent("confirma"),
 
     // Metadata about props expected for PlasmicCriacaoGrupoImportar

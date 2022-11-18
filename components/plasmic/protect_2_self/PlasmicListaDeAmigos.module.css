@@ -16,7 +16,7 @@
   position: relative;
   flex-shrink: 0;
 }
-.freeBox {
+.container {
   display: flex;
   position: relative;
   flex-direction: column;

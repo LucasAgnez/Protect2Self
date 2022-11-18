@@ -55,7 +55,7 @@ export const PlasmicListaDeAmigos__ArgProps = new Array<ArgPropType>();
 export type PlasmicListaDeAmigos__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
-  freeBox?: p.Flex<"div">;
+  container?: p.Flex<"div">;
 };
 
 export interface DefaultListaDeAmigosProps {}
@@ -119,9 +119,9 @@ function PlasmicListaDeAmigos__RenderFunc(props: {
           />
 
           <div
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
+            data-plasmic-name={"container"}
+            data-plasmic-override={overrides.container}
+            className={classNames(projectcss.all, sty.container)}
           >
             <MiniaturaAmigo
               className={classNames("__wab_instance", sty.miniaturaAmigo__hgvh)}
@@ -141,9 +141,9 @@ function PlasmicListaDeAmigos__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "headerLogged", "freeBox"],
+  root: ["root", "headerLogged", "container"],
   headerLogged: ["headerLogged"],
-  freeBox: ["freeBox"]
+  container: ["container"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -151,7 +151,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
-  freeBox: "div";
+  container: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -216,7 +216,7 @@ export const PlasmicListaDeAmigos = Object.assign(
   {
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
-    freeBox: makeNodeComponent("freeBox"),
+    container: makeNodeComponent("container"),
 
     // Metadata about props expected for PlasmicListaDeAmigos
     internalVariantProps: PlasmicListaDeAmigos__VariantProps,

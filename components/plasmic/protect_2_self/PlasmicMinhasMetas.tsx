@@ -37,6 +37,7 @@ import {
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
 import BotoesMenuPrincipal from "../../BotoesMenuPrincipal"; // plasmic-import: 8PboOpLyrBm/component
 import MainPageButton from "../../MainPageButton"; // plasmic-import: hF66z6g8PUp/component
+import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
@@ -47,6 +48,7 @@ import sty from "./PlasmicMinhasMetas.module.css"; // plasmic-import: -mHekhvq3A
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
+import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 
 export type PlasmicMinhasMetas__VariantMembers = {};
 
@@ -67,6 +69,7 @@ export type PlasmicMinhasMetas__OverridesType = {
   text?: p.Flex<"div">;
   h5?: p.Flex<"h5">;
   h4?: p.Flex<"h4">;
+  buscaMeta?: p.Flex<typeof TextInput>;
   container?: p.Flex<"div">;
 };
 
@@ -245,6 +248,14 @@ function PlasmicMinhasMetas__RenderFunc(props: {
                         </div>
                       </MainPageButton>
                     ) : null}
+
+                    <TextInput
+                      data-plasmic-name={"buscaMeta"}
+                      data-plasmic-override={overrides.buscaMeta}
+                      className={classNames("__wab_instance", sty.buscaMeta)}
+                      showStartIcon={true}
+                    />
+
                     {(
                       hasVariant(globalVariants, "screen", "mobileOnly")
                         ? true
@@ -277,6 +288,7 @@ const PlasmicDescendants = {
     "text",
     "h5",
     "h4",
+    "buscaMeta",
     "container"
   ],
   headerLogged: ["headerLogged"],
@@ -287,6 +299,7 @@ const PlasmicDescendants = {
     "text",
     "h5",
     "h4",
+    "buscaMeta",
     "container"
   ],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
@@ -294,6 +307,7 @@ const PlasmicDescendants = {
   text: ["text", "h5", "h4"],
   h5: ["h5", "h4"],
   h4: ["h4"],
+  buscaMeta: ["buscaMeta"],
   container: ["container"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -308,6 +322,7 @@ type NodeDefaultElementType = {
   text: "div";
   h5: "h5";
   h4: "h4";
+  buscaMeta: typeof TextInput;
   container: "div";
 };
 
@@ -379,6 +394,7 @@ export const PlasmicMinhasMetas = Object.assign(
     text: makeNodeComponent("text"),
     h5: makeNodeComponent("h5"),
     h4: makeNodeComponent("h4"),
+    buscaMeta: makeNodeComponent("buscaMeta"),
     container: makeNodeComponent("container"),
 
     // Metadata about props expected for PlasmicMinhasMetas

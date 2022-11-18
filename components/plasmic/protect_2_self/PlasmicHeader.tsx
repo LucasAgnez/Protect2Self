@@ -107,6 +107,25 @@ function PlasmicHeader__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "line",
+        type: "private",
+        initFunc: ($props, $state) => $props["line"]
+      },
+
+      {
+        path: "shortcut",
+        type: "private",
+        initFunc: ($props, $state) => $props["shortcut"]
+      }
+    ],
+
+    [$props]
+  );
+  const $state = p.useDollarState(stateSpecs, $props);
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantswwY5HaVRu8X4()
   });
@@ -125,7 +144,7 @@ function PlasmicHeader__RenderFunc(props: {
           projectcss.plasmic_mixins,
           projectcss.plasmic_tokens,
           sty.root,
-          { [sty.rootline_on]: hasVariant(variants, "line", "on") }
+          { [sty.rootline_on]: hasVariant($state, "line", "on") }
         )}
       >
         {true ? (
@@ -142,15 +161,13 @@ function PlasmicHeader__RenderFunc(props: {
               <div
                 className={classNames(projectcss.all, sty.column__s9Xot, {
                   [sty.columnshortcut__s9XotjkY5K]: hasVariant(
-                    variants,
+                    $state,
                     "shortcut",
                     "shortcut"
                   )
                 })}
               >
-                {(
-                  hasVariant(variants, "shortcut", "shortcut") ? true : true
-                ) ? (
+                {(hasVariant($state, "shortcut", "shortcut") ? true : true) ? (
                   <p.PlasmicLink
                     data-plasmic-name={"link"}
                     data-plasmic-override={overrides.link}
@@ -160,7 +177,7 @@ function PlasmicHeader__RenderFunc(props: {
                       sty.link,
                       {
                         [sty.linkshortcut]: hasVariant(
-                          variants,
+                          $state,
                           "shortcut",
                           "shortcut"
                         )
@@ -168,7 +185,7 @@ function PlasmicHeader__RenderFunc(props: {
                     )}
                     component={Link}
                     href={
-                      hasVariant(variants, "shortcut", "shortcut")
+                      hasVariant($state, "shortcut", "shortcut")
                         ? `/logged`
                         : undefined
                     }
@@ -177,13 +194,11 @@ function PlasmicHeader__RenderFunc(props: {
                     <Logo className={classNames("__wab_instance")} />
                   </p.PlasmicLink>
                 ) : null}
-                {(
-                  hasVariant(variants, "shortcut", "shortcut") ? true : true
-                ) ? (
+                {(hasVariant($state, "shortcut", "shortcut") ? true : true) ? (
                   <Logo
                     className={classNames("__wab_instance", sty.logo___3IoIj, {
                       [sty.logoshortcut___3IoIJjkY5K]: hasVariant(
-                        variants,
+                        $state,
                         "shortcut",
                         "shortcut"
                       )
@@ -198,7 +213,7 @@ function PlasmicHeader__RenderFunc(props: {
               <div
                 className={classNames(projectcss.all, sty.column__gAG1, {
                   [sty.columnshortcut__gAG1JkY5K]: hasVariant(
-                    variants,
+                    $state,
                     "shortcut",
                     "shortcut"
                   )

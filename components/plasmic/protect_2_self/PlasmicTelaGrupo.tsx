@@ -107,6 +107,19 @@ function PlasmicTelaGrupo__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "telaAdm",
+        type: "private",
+        initFunc: ($props, $state) => $props["telaAdm"]
+      }
+    ],
+
+    [$props]
+  );
+  const $state = p.useDollarState(stateSpecs, $props);
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantswwY5HaVRu8X4()
   });
@@ -134,7 +147,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
             sty.root,
-            { [sty.roottelaAdm]: hasVariant(variants, "telaAdm", "telaAdm") }
+            { [sty.roottelaAdm]: hasVariant($state, "telaAdm", "telaAdm") }
           )}
         >
           <HeaderLogged
@@ -142,7 +155,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
             data-plasmic-override={overrides.headerLogged}
             className={classNames("__wab_instance", sty.headerLogged, {
               [sty.headerLoggedtelaAdm]: hasVariant(
-                variants,
+                $state,
                 "telaAdm",
                 "telaAdm"
               )
@@ -153,11 +166,11 @@ function PlasmicTelaGrupo__RenderFunc(props: {
             data-plasmic-name={"columns"}
             data-plasmic-override={overrides.columns}
             className={classNames(projectcss.all, sty.columns, {
-              [sty.columnstelaAdm]: hasVariant(variants, "telaAdm", "telaAdm")
+              [sty.columnstelaAdm]: hasVariant($state, "telaAdm", "telaAdm")
             })}
           >
             {(
-              hasVariant(variants, "telaAdm", "telaAdm") &&
+              hasVariant($state, "telaAdm", "telaAdm") &&
               hasVariant(globalVariants, "screen", "mobileOnly")
                 ? true
                 : true
@@ -165,14 +178,14 @@ function PlasmicTelaGrupo__RenderFunc(props: {
               <div
                 className={classNames(projectcss.all, sty.column__nqgca, {
                   [sty.columntelaAdm__nqgcaH6EUz]: hasVariant(
-                    variants,
+                    $state,
                     "telaAdm",
                     "telaAdm"
                   )
                 })}
               >
                 {(
-                  hasVariant(variants, "telaAdm", "telaAdm") &&
+                  hasVariant($state, "telaAdm", "telaAdm") &&
                   hasVariant(globalVariants, "screen", "mobileOnly")
                     ? true
                     : true
@@ -180,7 +193,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__syvFn, {
                       [sty.freeBoxtelaAdm__syvFnH6EUz]: hasVariant(
-                        variants,
+                        $state,
                         "telaAdm",
                         "telaAdm"
                       )
@@ -192,7 +205,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                         sty.freeBox___3Sqsa,
                         {
                           [sty.freeBoxtelaAdm___3SqsaH6EUz]: hasVariant(
-                            variants,
+                            $state,
                             "telaAdm",
                             "telaAdm"
                           )
@@ -206,7 +219,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                       />
 
                       {(
-                        hasVariant(variants, "telaAdm", "telaAdm") ? true : true
+                        hasVariant($state, "telaAdm", "telaAdm") ? true : true
                       ) ? (
                         <Button
                           className={classNames(
@@ -214,22 +227,25 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                             sty.button__gpQte,
                             {
                               [sty.buttontelaAdm__gpQteh6EUz]: hasVariant(
-                                variants,
+                                $state,
                                 "telaAdm",
                                 "telaAdm"
                               )
                             }
                           )}
                         >
-                          {hasVariant(globalVariants, "screen", "mobileOnly")
+                          {hasVariant($state, "telaAdm", "telaAdm") &&
+                          hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? "Editar Icone"
+                            : hasVariant(globalVariants, "screen", "mobileOnly")
                             ? "Editar Perfil"
-                            : "Editar Foto"}
+                            : "Editar Icone"}
                         </Button>
                       ) : null}
                     </div>
 
                     {(
-                      hasVariant(variants, "telaAdm", "telaAdm") ? true : true
+                      hasVariant($state, "telaAdm", "telaAdm") ? true : true
                     ) ? (
                       <Button
                         className={classNames(
@@ -237,7 +253,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                           sty.button__hjJrc,
                           {
                             [sty.buttontelaAdm__hjJrch6EUz]: hasVariant(
-                              variants,
+                              $state,
                               "telaAdm",
                               "telaAdm"
                             )
@@ -248,7 +264,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                       </Button>
                     ) : null}
                     {(
-                      hasVariant(variants, "telaAdm", "telaAdm") ? true : true
+                      hasVariant($state, "telaAdm", "telaAdm") ? true : true
                     ) ? (
                       <Button
                         className={classNames(
@@ -256,7 +272,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                           sty.button__yr5PM,
                           {
                             [sty.buttontelaAdm__yr5PMh6EUz]: hasVariant(
-                              variants,
+                              $state,
                               "telaAdm",
                               "telaAdm"
                             )
@@ -271,7 +287,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
               </div>
             ) : null}
             {(
-              hasVariant(variants, "telaAdm", "telaAdm") &&
+              hasVariant($state, "telaAdm", "telaAdm") &&
               hasVariant(globalVariants, "screen", "mobileOnly")
                 ? true
                 : true
@@ -279,14 +295,14 @@ function PlasmicTelaGrupo__RenderFunc(props: {
               <div
                 className={classNames(projectcss.all, sty.column___9Gy, {
                   [sty.columntelaAdm___9GyH6EUz]: hasVariant(
-                    variants,
+                    $state,
                     "telaAdm",
                     "telaAdm"
                   )
                 })}
               >
                 {(
-                  hasVariant(variants, "telaAdm", "telaAdm") &&
+                  hasVariant($state, "telaAdm", "telaAdm") &&
                   hasVariant(globalVariants, "screen", "mobileOnly")
                     ? true
                     : true
@@ -294,14 +310,14 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__mMjMk, {
                       [sty.freeBoxtelaAdm__mMjMkH6EUz]: hasVariant(
-                        variants,
+                        $state,
                         "telaAdm",
                         "telaAdm"
                       )
                     })}
                   >
                     {(
-                      hasVariant(variants, "telaAdm", "telaAdm") &&
+                      hasVariant($state, "telaAdm", "telaAdm") &&
                       hasVariant(globalVariants, "screen", "mobileOnly")
                         ? true
                         : true
@@ -312,7 +328,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                           sty.freeBox__zRZbY,
                           {
                             [sty.freeBoxtelaAdm__zRZbYh6EUz]: hasVariant(
-                              variants,
+                              $state,
                               "telaAdm",
                               "telaAdm"
                             )
@@ -423,7 +439,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                       </div>
                     ) : null}
                     {(
-                      hasVariant(variants, "telaAdm", "telaAdm") &&
+                      hasVariant($state, "telaAdm", "telaAdm") &&
                       hasVariant(globalVariants, "screen", "mobileOnly")
                         ? true
                         : true
@@ -436,14 +452,14 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                           sty.miniaturaAmigo,
                           {
                             [sty.miniaturaAmigotelaAdm]: hasVariant(
-                              variants,
+                              $state,
                               "telaAdm",
                               "telaAdm"
                             )
                           }
                         )}
                         emGrupo={
-                          hasVariant(variants, "telaAdm", "telaAdm")
+                          hasVariant($state, "telaAdm", "telaAdm")
                             ? ("visaoDoAdm" as const)
                             : ("visaoMembros" as const)
                         }

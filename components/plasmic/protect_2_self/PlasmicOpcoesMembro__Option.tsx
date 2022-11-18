@@ -106,6 +106,31 @@ function PlasmicOpcoesMembro__Option__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "isSelected",
+        type: "private",
+        initFunc: ($props, $state) => $props["isSelected"]
+      },
+
+      {
+        path: "isHighlighted",
+        type: "private",
+        initFunc: ($props, $state) => $props["isHighlighted"]
+      },
+
+      {
+        path: "isDisabled",
+        type: "private",
+        initFunc: ($props, $state) => $props["isDisabled"]
+      }
+    ],
+
+    [$props]
+  );
+  const $state = p.useDollarState(stateSpecs, $props);
+
   const superContexts = {
     OpcoesMembro: React.useContext(SUPER__PlasmicOpcoesMembro.Context)
   };
@@ -124,17 +149,13 @@ function PlasmicOpcoesMembro__Option__RenderFunc(props: {
         projectcss.plasmic_tokens,
         sty.root,
         {
-          [sty.rootisDisabled]: hasVariant(
-            variants,
-            "isDisabled",
-            "isDisabled"
-          ),
+          [sty.rootisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
           [sty.rootisHighlighted]: hasVariant(
-            variants,
+            $state,
             "isHighlighted",
             "isHighlighted"
           ),
-          [sty.rootisSelected]: hasVariant(variants, "isSelected", "isSelected")
+          [sty.rootisSelected]: hasVariant($state, "isSelected", "isSelected")
         }
       )}
     >
@@ -148,12 +169,12 @@ function PlasmicOpcoesMembro__Option__RenderFunc(props: {
           value: args.children,
           className: classNames(sty.slotTargetChildren, {
             [sty.slotTargetChildrenisHighlighted]: hasVariant(
-              variants,
+              $state,
               "isHighlighted",
               "isHighlighted"
             ),
             [sty.slotTargetChildrenisSelected]: hasVariant(
-              variants,
+              $state,
               "isSelected",
               "isSelected"
             )

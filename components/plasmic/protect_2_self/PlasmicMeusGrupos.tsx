@@ -37,6 +37,7 @@ import {
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
 import BotoesMenuPrincipal from "../../BotoesMenuPrincipal"; // plasmic-import: 8PboOpLyrBm/component
 import MainPageButton from "../../MainPageButton"; // plasmic-import: hF66z6g8PUp/component
+import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
@@ -47,6 +48,7 @@ import sty from "./PlasmicMeusGrupos.module.css"; // plasmic-import: S7kg1gcj7-v
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
+import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 
 export type PlasmicMeusGrupos__VariantMembers = {};
 
@@ -67,6 +69,7 @@ export type PlasmicMeusGrupos__OverridesType = {
   text?: p.Flex<"div">;
   h5?: p.Flex<"h5">;
   h4?: p.Flex<"h4">;
+  buscaGrupo?: p.Flex<typeof TextInput>;
   container?: p.Flex<"div">;
 };
 
@@ -241,6 +244,14 @@ function PlasmicMeusGrupos__RenderFunc(props: {
                         </div>
                       </MainPageButton>
                     ) : null}
+
+                    <TextInput
+                      data-plasmic-name={"buscaGrupo"}
+                      data-plasmic-override={overrides.buscaGrupo}
+                      className={classNames("__wab_instance", sty.buscaGrupo)}
+                      showStartIcon={true}
+                    />
+
                     {(
                       hasVariant(globalVariants, "screen", "mobileOnly")
                         ? true
@@ -273,6 +284,7 @@ const PlasmicDescendants = {
     "text",
     "h5",
     "h4",
+    "buscaGrupo",
     "container"
   ],
   headerLogged: ["headerLogged"],
@@ -283,6 +295,7 @@ const PlasmicDescendants = {
     "text",
     "h5",
     "h4",
+    "buscaGrupo",
     "container"
   ],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
@@ -290,6 +303,7 @@ const PlasmicDescendants = {
   text: ["text", "h5", "h4"],
   h5: ["h5", "h4"],
   h4: ["h4"],
+  buscaGrupo: ["buscaGrupo"],
   container: ["container"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -304,6 +318,7 @@ type NodeDefaultElementType = {
   text: "div";
   h5: "h5";
   h4: "h4";
+  buscaGrupo: typeof TextInput;
   container: "div";
 };
 
@@ -375,6 +390,7 @@ export const PlasmicMeusGrupos = Object.assign(
     text: makeNodeComponent("text"),
     h5: makeNodeComponent("h5"),
     h4: makeNodeComponent("h4"),
+    buscaGrupo: makeNodeComponent("buscaGrupo"),
     container: makeNodeComponent("container"),
 
     // Metadata about props expected for PlasmicMeusGrupos

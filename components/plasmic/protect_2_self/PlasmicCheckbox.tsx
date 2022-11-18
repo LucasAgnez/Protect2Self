@@ -122,6 +122,37 @@ function PlasmicCheckbox__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "noLabel",
+        type: "private",
+        initFunc: ($props, $state) => $props["noLabel"]
+      },
+
+      {
+        path: "isDisabled",
+        type: "private",
+        initFunc: ($props, $state) => $props["isDisabled"]
+      },
+
+      {
+        path: "isChecked",
+        type: "private",
+        initFunc: ($props, $state) => $props["isChecked"]
+      },
+
+      {
+        path: "isIndeterminate",
+        type: "private",
+        initFunc: ($props, $state) => $props["isIndeterminate"]
+      }
+    ],
+
+    [$props]
+  );
+  const $state = p.useDollarState(stateSpecs, $props);
+
   const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
     useTrigger("useFocusVisibleWithin", {
       isTextInput: false
@@ -148,18 +179,14 @@ function PlasmicCheckbox__RenderFunc(props: {
         sty.root,
         {
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
-          [sty.rootisChecked]: hasVariant(variants, "isChecked", "isChecked"),
-          [sty.rootisDisabled]: hasVariant(
-            variants,
-            "isDisabled",
-            "isDisabled"
-          ),
+          [sty.rootisChecked]: hasVariant($state, "isChecked", "isChecked"),
+          [sty.rootisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
           [sty.rootisIndeterminate]: hasVariant(
-            variants,
+            $state,
             "isIndeterminate",
             "isIndeterminate"
           ),
-          [sty.rootnoLabel]: hasVariant(variants, "noLabel", "noLabel")
+          [sty.rootnoLabel]: hasVariant($state, "noLabel", "noLabel")
         }
       )}
       data-plasmic-trigger-props={[triggerRootFocusVisibleWithinProps]}
@@ -169,28 +196,24 @@ function PlasmicCheckbox__RenderFunc(props: {
         data-plasmic-override={overrides.freeBox}
         className={classNames(projectcss.all, sty.freeBox, {
           [sty.freeBox___focusVisibleWithin]: triggers.focusVisibleWithin_root,
-          [sty.freeBoxisChecked]: hasVariant(
-            variants,
-            "isChecked",
-            "isChecked"
-          ),
+          [sty.freeBoxisChecked]: hasVariant($state, "isChecked", "isChecked"),
           [sty.freeBoxisDisabled]: hasVariant(
-            variants,
+            $state,
             "isDisabled",
             "isDisabled"
           ),
           [sty.freeBoxisIndeterminate]: hasVariant(
-            variants,
+            $state,
             "isIndeterminate",
             "isIndeterminate"
           ),
-          [sty.freeBoxnoLabel]: hasVariant(variants, "noLabel", "noLabel")
+          [sty.freeBoxnoLabel]: hasVariant($state, "noLabel", "noLabel")
         })}
       >
         {(
-          hasVariant(variants, "isIndeterminate", "isIndeterminate")
+          hasVariant($state, "isIndeterminate", "isIndeterminate")
             ? true
-            : hasVariant(variants, "isChecked", "isChecked")
+            : hasVariant($state, "isChecked", "isChecked")
             ? true
             : true
         ) ? (
@@ -198,37 +221,33 @@ function PlasmicCheckbox__RenderFunc(props: {
             data-plasmic-name={"svg"}
             data-plasmic-override={overrides.svg}
             PlasmicIconType={
-              hasVariant(variants, "isIndeterminate", "isIndeterminate")
+              hasVariant($state, "isIndeterminate", "isIndeterminate")
                 ? SquareMinussvgIcon
-                : hasVariant(variants, "isChecked", "isChecked")
+                : hasVariant($state, "isChecked", "isChecked")
                 ? SquareCheckFilledsvgIcon
                 : SquaresvgIcon
             }
             className={classNames(projectcss.all, sty.svg, {
               [sty.svg___focusVisibleWithin]: triggers.focusVisibleWithin_root,
-              [sty.svgisChecked]: hasVariant(
-                variants,
-                "isChecked",
-                "isChecked"
-              ),
+              [sty.svgisChecked]: hasVariant($state, "isChecked", "isChecked"),
               [sty.svgisDisabled]: hasVariant(
-                variants,
+                $state,
                 "isDisabled",
                 "isDisabled"
               ),
               [sty.svgisIndeterminate]: hasVariant(
-                variants,
+                $state,
                 "isIndeterminate",
                 "isIndeterminate"
               ),
-              [sty.svgnoLabel]: hasVariant(variants, "noLabel", "noLabel")
+              [sty.svgnoLabel]: hasVariant($state, "noLabel", "noLabel")
             })}
             role={"img"}
           />
         ) : null}
       </div>
 
-      {(hasVariant(variants, "noLabel", "noLabel") ? false : true) ? (
+      {(hasVariant($state, "noLabel", "noLabel") ? false : true) ? (
         <div
           data-plasmic-name={"labelContainer"}
           data-plasmic-override={overrides.labelContainer}
@@ -236,12 +255,12 @@ function PlasmicCheckbox__RenderFunc(props: {
             [sty.labelContainer___focusVisibleWithin]:
               triggers.focusVisibleWithin_root,
             [sty.labelContainerisDisabled]: hasVariant(
-              variants,
+              $state,
               "isDisabled",
               "isDisabled"
             ),
             [sty.labelContainernoLabel]: hasVariant(
-              variants,
+              $state,
               "noLabel",
               "noLabel"
             )
@@ -254,22 +273,22 @@ function PlasmicCheckbox__RenderFunc(props: {
               [sty.slotTargetChildren___focusVisibleWithin]:
                 triggers.focusVisibleWithin_root,
               [sty.slotTargetChildrenisChecked]: hasVariant(
-                variants,
+                $state,
                 "isChecked",
                 "isChecked"
               ),
               [sty.slotTargetChildrenisDisabled]: hasVariant(
-                variants,
+                $state,
                 "isDisabled",
                 "isDisabled"
               ),
               [sty.slotTargetChildrenisIndeterminate]: hasVariant(
-                variants,
+                $state,
                 "isIndeterminate",
                 "isIndeterminate"
               ),
               [sty.slotTargetChildrennoLabel]: hasVariant(
-                variants,
+                $state,
                 "noLabel",
                 "noLabel"
               )

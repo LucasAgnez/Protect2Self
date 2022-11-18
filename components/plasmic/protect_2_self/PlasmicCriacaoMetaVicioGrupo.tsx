@@ -67,10 +67,14 @@ export type PlasmicCriacaoMetaVicioGrupo__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   dados?: p.Flex<"div">;
-  nomeMeta2?: p.Flex<"div">;
+  colunaNomeGrupo?: p.Flex<"div">;
+  nomeGrupo?: p.Flex<typeof TextInput>;
   descricao2?: p.Flex<"div">;
-  nomeMeta?: p.Flex<"div">;
+  descricaoGrupo?: p.Flex<typeof TextInput>;
+  colunaNomeMeta?: p.Flex<"div">;
+  nomeMeta?: p.Flex<typeof TextInput>;
   descricao?: p.Flex<"div">;
+  descricaoMeta?: p.Flex<typeof TextInput>;
   confirma?: p.Flex<typeof Button>;
 };
 
@@ -165,9 +169,9 @@ function PlasmicCriacaoMetaVicioGrupo__RenderFunc(props: {
 
             {true ? (
               <div
-                data-plasmic-name={"nomeMeta2"}
-                data-plasmic-override={overrides.nomeMeta2}
-                className={classNames(projectcss.all, sty.nomeMeta2)}
+                data-plasmic-name={"colunaNomeGrupo"}
+                data-plasmic-override={overrides.colunaNomeGrupo}
+                className={classNames(projectcss.all, sty.colunaNomeGrupo)}
               >
                 <div className={classNames(projectcss.all, sty.column__viNqh)}>
                   <div
@@ -207,10 +211,9 @@ function PlasmicCriacaoMetaVicioGrupo__RenderFunc(props: {
 
                 <div className={classNames(projectcss.all, sty.column__w0VOn)}>
                   <TextInput
-                    className={classNames(
-                      "__wab_instance",
-                      sty.textInput__tnDtz
-                    )}
+                    data-plasmic-name={"nomeGrupo"}
+                    data-plasmic-override={overrides.nomeGrupo}
+                    className={classNames("__wab_instance", sty.nomeGrupo)}
                     color={"dark" as const}
                     id={"nome" as const}
                     placeholder={"Digite o nome do Grupo" as const}
@@ -265,10 +268,9 @@ function PlasmicCriacaoMetaVicioGrupo__RenderFunc(props: {
               <div className={classNames(projectcss.all, sty.column__xJiC)}>
                 {true ? (
                   <TextInput
-                    className={classNames(
-                      "__wab_instance",
-                      sty.textInput__vpbb7
-                    )}
+                    data-plasmic-name={"descricaoGrupo"}
+                    data-plasmic-override={overrides.descricaoGrupo}
+                    className={classNames("__wab_instance", sty.descricaoGrupo)}
                     color={"dark" as const}
                     id={"descricao" as const}
                     placeholder={"Digite aqui uma descrição do Grupo" as const}
@@ -280,9 +282,9 @@ function PlasmicCriacaoMetaVicioGrupo__RenderFunc(props: {
 
             {true ? (
               <div
-                data-plasmic-name={"nomeMeta"}
-                data-plasmic-override={overrides.nomeMeta}
-                className={classNames(projectcss.all, sty.nomeMeta)}
+                data-plasmic-name={"colunaNomeMeta"}
+                data-plasmic-override={overrides.colunaNomeMeta}
+                className={classNames(projectcss.all, sty.colunaNomeMeta)}
               >
                 <div className={classNames(projectcss.all, sty.column__l8Mq7)}>
                   <div
@@ -322,10 +324,9 @@ function PlasmicCriacaoMetaVicioGrupo__RenderFunc(props: {
 
                 <div className={classNames(projectcss.all, sty.column__njkiw)}>
                   <TextInput
-                    className={classNames(
-                      "__wab_instance",
-                      sty.textInput__iLlRn
-                    )}
+                    data-plasmic-name={"nomeMeta"}
+                    data-plasmic-override={overrides.nomeMeta}
+                    className={classNames("__wab_instance", sty.nomeMeta)}
                     color={"dark" as const}
                     id={"nome" as const}
                     placeholder={"Digite o nome da Meta" as const}
@@ -380,10 +381,9 @@ function PlasmicCriacaoMetaVicioGrupo__RenderFunc(props: {
               <div className={classNames(projectcss.all, sty.column__kwe1V)}>
                 {true ? (
                   <TextInput
-                    className={classNames(
-                      "__wab_instance",
-                      sty.textInput__uxIwv
-                    )}
+                    data-plasmic-name={"descricaoMeta"}
+                    data-plasmic-override={overrides.descricaoMeta}
+                    className={classNames("__wab_instance", sty.descricaoMeta)}
                     color={"dark" as const}
                     id={"descricao" as const}
                     placeholder={"Digite aqui uma descrição da Meta" as const}
@@ -421,25 +421,37 @@ const PlasmicDescendants = {
     "root",
     "headerLogged",
     "dados",
-    "nomeMeta2",
+    "colunaNomeGrupo",
+    "nomeGrupo",
     "descricao2",
+    "descricaoGrupo",
+    "colunaNomeMeta",
     "nomeMeta",
     "descricao",
+    "descricaoMeta",
     "confirma"
   ],
   headerLogged: ["headerLogged"],
   dados: [
     "dados",
-    "nomeMeta2",
+    "colunaNomeGrupo",
+    "nomeGrupo",
     "descricao2",
+    "descricaoGrupo",
+    "colunaNomeMeta",
     "nomeMeta",
     "descricao",
+    "descricaoMeta",
     "confirma"
   ],
-  nomeMeta2: ["nomeMeta2"],
-  descricao2: ["descricao2"],
+  colunaNomeGrupo: ["colunaNomeGrupo", "nomeGrupo"],
+  nomeGrupo: ["nomeGrupo"],
+  descricao2: ["descricao2", "descricaoGrupo"],
+  descricaoGrupo: ["descricaoGrupo"],
+  colunaNomeMeta: ["colunaNomeMeta", "nomeMeta"],
   nomeMeta: ["nomeMeta"],
-  descricao: ["descricao"],
+  descricao: ["descricao", "descricaoMeta"],
+  descricaoMeta: ["descricaoMeta"],
   confirma: ["confirma"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -449,10 +461,14 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   dados: "div";
-  nomeMeta2: "div";
+  colunaNomeGrupo: "div";
+  nomeGrupo: typeof TextInput;
   descricao2: "div";
-  nomeMeta: "div";
+  descricaoGrupo: typeof TextInput;
+  colunaNomeMeta: "div";
+  nomeMeta: typeof TextInput;
   descricao: "div";
+  descricaoMeta: typeof TextInput;
   confirma: typeof Button;
 };
 
@@ -519,10 +535,14 @@ export const PlasmicCriacaoMetaVicioGrupo = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     dados: makeNodeComponent("dados"),
-    nomeMeta2: makeNodeComponent("nomeMeta2"),
+    colunaNomeGrupo: makeNodeComponent("colunaNomeGrupo"),
+    nomeGrupo: makeNodeComponent("nomeGrupo"),
     descricao2: makeNodeComponent("descricao2"),
+    descricaoGrupo: makeNodeComponent("descricaoGrupo"),
+    colunaNomeMeta: makeNodeComponent("colunaNomeMeta"),
     nomeMeta: makeNodeComponent("nomeMeta"),
     descricao: makeNodeComponent("descricao"),
+    descricaoMeta: makeNodeComponent("descricaoMeta"),
     confirma: makeNodeComponent("confirma"),
 
     // Metadata about props expected for PlasmicCriacaoMetaVicioGrupo

@@ -65,7 +65,9 @@ export type PlasmicCriacaoMetaVicio__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   dados?: p.Flex<"div">;
   nomeMeta?: p.Flex<"div">;
+  nome?: p.Flex<typeof TextInput>;
   descricao?: p.Flex<"div">;
+  descricaoMeta?: p.Flex<typeof TextInput>;
   confirma?: p.Flex<typeof Button>;
 };
 
@@ -182,10 +184,9 @@ function PlasmicCriacaoMetaVicio__RenderFunc(props: {
 
                 <div className={classNames(projectcss.all, sty.column__tawmf)}>
                   <TextInput
-                    className={classNames(
-                      "__wab_instance",
-                      sty.textInput___64IK3
-                    )}
+                    data-plasmic-name={"nome"}
+                    data-plasmic-override={overrides.nome}
+                    className={classNames("__wab_instance", sty.nome)}
                     color={"dark" as const}
                     placeholder={"Digite o nome da Meta" as const}
                   />
@@ -239,10 +240,9 @@ function PlasmicCriacaoMetaVicio__RenderFunc(props: {
               <div className={classNames(projectcss.all, sty.column__xip1C)}>
                 {true ? (
                   <TextInput
-                    className={classNames(
-                      "__wab_instance",
-                      sty.textInput__onIhe
-                    )}
+                    data-plasmic-name={"descricaoMeta"}
+                    data-plasmic-override={overrides.descricaoMeta}
+                    className={classNames("__wab_instance", sty.descricaoMeta)}
                     color={"dark" as const}
                     placeholder={"Digite aqui uma descrição da Meta" as const}
                     required={false}
@@ -275,11 +275,29 @@ function PlasmicCriacaoMetaVicio__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "headerLogged", "dados", "nomeMeta", "descricao", "confirma"],
+  root: [
+    "root",
+    "headerLogged",
+    "dados",
+    "nomeMeta",
+    "nome",
+    "descricao",
+    "descricaoMeta",
+    "confirma"
+  ],
   headerLogged: ["headerLogged"],
-  dados: ["dados", "nomeMeta", "descricao", "confirma"],
-  nomeMeta: ["nomeMeta"],
-  descricao: ["descricao"],
+  dados: [
+    "dados",
+    "nomeMeta",
+    "nome",
+    "descricao",
+    "descricaoMeta",
+    "confirma"
+  ],
+  nomeMeta: ["nomeMeta", "nome"],
+  nome: ["nome"],
+  descricao: ["descricao", "descricaoMeta"],
+  descricaoMeta: ["descricaoMeta"],
   confirma: ["confirma"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -290,7 +308,9 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   dados: "div";
   nomeMeta: "div";
+  nome: typeof TextInput;
   descricao: "div";
+  descricaoMeta: typeof TextInput;
   confirma: typeof Button;
 };
 
@@ -358,7 +378,9 @@ export const PlasmicCriacaoMetaVicio = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     dados: makeNodeComponent("dados"),
     nomeMeta: makeNodeComponent("nomeMeta"),
+    nome: makeNodeComponent("nome"),
     descricao: makeNodeComponent("descricao"),
+    descricaoMeta: makeNodeComponent("descricaoMeta"),
     confirma: makeNodeComponent("confirma"),
 
     // Metadata about props expected for PlasmicCriacaoMetaVicio

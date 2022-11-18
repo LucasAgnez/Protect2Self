@@ -35,8 +35,6 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import Select from "../../Select"; // plasmic-import: JvLnzcKYZbb/component
-import Select__Option from "../../Select__Option"; // plasmic-import: MXYniCeie3G/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -71,10 +69,8 @@ export type PlasmicEntrarGrupo__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   dados?: p.Flex<"div">;
   freeBox?: p.Flex<"div">;
-  columns?: p.Flex<"div">;
-  h3?: p.Flex<"h3">;
-  select?: p.Flex<typeof Select>;
-  button?: p.Flex<typeof Button>;
+  entrar?: p.Flex<typeof Button>;
+  text?: p.Flex<"div">;
 };
 
 export interface DefaultEntrarGrupoProps {}
@@ -218,86 +214,19 @@ function PlasmicEntrarGrupo__RenderFunc(props: {
               })}
             </div>
 
-            <div
-              data-plasmic-name={"columns"}
-              data-plasmic-override={overrides.columns}
-              className={classNames(projectcss.all, sty.columns)}
-            >
-              <div className={classNames(projectcss.all, sty.column___6RHkZ)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__d4Emu
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <h3
-                        data-plasmic-name={"h3"}
-                        data-plasmic-override={overrides.h3}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h3,
-                          projectcss.__wab_text,
-                          sty.h3
-                        )}
-                      >
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ color: "#FFFFFF" }}
-                          >
-                            {"Meta:"}
-                          </span>
-                        </React.Fragment>
-                      </h3>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                </div>
-              </div>
-
-              <div className={classNames(projectcss.all, sty.column__m6UJd)}>
-                <Select
-                  data-plasmic-name={"select"}
-                  data-plasmic-override={overrides.select}
-                  className={classNames("__wab_instance", sty.select)}
-                  color={"dark" as const}
-                >
-                  <Select__Option
-                    className={classNames("__wab_instance", sty.option__iqmOo)}
-                    color={"dark" as const}
-                    value={"value1" as const}
-                  >
-                    {"Importar Meta Pessoal"}
-                  </Select__Option>
-
-                  <Select__Option
-                    className={classNames("__wab_instance", sty.option___3Jswb)}
-                    color={"dark" as const}
-                    value={"value2" as const}
-                  >
-                    {"Usar Meta do Grupo"}
-                  </Select__Option>
-                </Select>
-              </div>
-            </div>
-
             <Button
-              data-plasmic-name={"button"}
-              data-plasmic-override={overrides.button}
-              className={classNames("__wab_instance", sty.button)}
+              data-plasmic-name={"entrar"}
+              data-plasmic-override={overrides.entrar}
+              className={classNames("__wab_instance", sty.entrar)}
               color={"yellow" as const}
             >
               <div
+                data-plasmic-name={"text"}
+                data-plasmic-override={overrides.text}
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__pl9Ka
+                  sty.text
                 )}
               >
                 {"ENTRAR"}
@@ -311,23 +240,12 @@ function PlasmicEntrarGrupo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "headerLogged",
-    "dados",
-    "freeBox",
-    "columns",
-    "h3",
-    "select",
-    "button"
-  ],
+  root: ["root", "headerLogged", "dados", "freeBox", "entrar", "text"],
   headerLogged: ["headerLogged"],
-  dados: ["dados", "freeBox", "columns", "h3", "select", "button"],
+  dados: ["dados", "freeBox", "entrar", "text"],
   freeBox: ["freeBox"],
-  columns: ["columns", "h3", "select"],
-  h3: ["h3"],
-  select: ["select"],
-  button: ["button"]
+  entrar: ["entrar", "text"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -337,10 +255,8 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   dados: "div";
   freeBox: "div";
-  columns: "div";
-  h3: "h3";
-  select: typeof Select;
-  button: typeof Button;
+  entrar: typeof Button;
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -407,10 +323,8 @@ export const PlasmicEntrarGrupo = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     dados: makeNodeComponent("dados"),
     freeBox: makeNodeComponent("freeBox"),
-    columns: makeNodeComponent("columns"),
-    h3: makeNodeComponent("h3"),
-    select: makeNodeComponent("select"),
-    button: makeNodeComponent("button"),
+    entrar: makeNodeComponent("entrar"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicEntrarGrupo
     internalVariantProps: PlasmicEntrarGrupo__VariantProps,

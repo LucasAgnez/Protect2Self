@@ -113,6 +113,37 @@ function PlasmicSelect__Option__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "isSelected",
+        type: "private",
+        initFunc: ($props, $state) => $props["isSelected"]
+      },
+
+      {
+        path: "isHighlighted",
+        type: "private",
+        initFunc: ($props, $state) => $props["isHighlighted"]
+      },
+
+      {
+        path: "isDisabled",
+        type: "private",
+        initFunc: ($props, $state) => $props["isDisabled"]
+      },
+
+      {
+        path: "color",
+        type: "private",
+        initFunc: ($props, $state) => $props["color"]
+      }
+    ],
+
+    [$props]
+  );
+  const $state = p.useDollarState(stateSpecs, $props);
+
   const superContexts = {
     Select: React.useContext(SUPER__PlasmicSelect.Context)
   };
@@ -131,19 +162,15 @@ function PlasmicSelect__Option__RenderFunc(props: {
         projectcss.plasmic_tokens,
         sty.root,
         {
-          [sty.rootcolor_black]: hasVariant(variants, "color", "black"),
-          [sty.rootcolor_dark]: hasVariant(variants, "color", "dark"),
-          [sty.rootisDisabled]: hasVariant(
-            variants,
-            "isDisabled",
-            "isDisabled"
-          ),
+          [sty.rootcolor_black]: hasVariant($state, "color", "black"),
+          [sty.rootcolor_dark]: hasVariant($state, "color", "dark"),
+          [sty.rootisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
           [sty.rootisHighlighted]: hasVariant(
-            variants,
+            $state,
             "isHighlighted",
             "isHighlighted"
           ),
-          [sty.rootisSelected]: hasVariant(variants, "isSelected", "isSelected")
+          [sty.rootisSelected]: hasVariant($state, "isSelected", "isSelected")
         }
       )}
     >
@@ -175,22 +202,22 @@ function PlasmicSelect__Option__RenderFunc(props: {
           value: args.children,
           className: classNames(sty.slotTargetChildren, {
             [sty.slotTargetChildrencolor_black]: hasVariant(
-              variants,
+              $state,
               "color",
               "black"
             ),
             [sty.slotTargetChildrencolor_dark]: hasVariant(
-              variants,
+              $state,
               "color",
               "dark"
             ),
             [sty.slotTargetChildrenisHighlighted]: hasVariant(
-              variants,
+              $state,
               "isHighlighted",
               "isHighlighted"
             ),
             [sty.slotTargetChildrenisSelected]: hasVariant(
-              variants,
+              $state,
               "isSelected",
               "isSelected"
             )

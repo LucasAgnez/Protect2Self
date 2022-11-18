@@ -44,7 +44,7 @@
 .img > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
-.nomeMeta2 {
+.colunaNomeGrupo {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -59,25 +59,25 @@
   min-width: 0;
   padding: 8px 8px 8px 18px;
 }
-.nomeMeta2 > :nth-child(2n + 1) {
+.colunaNomeGrupo > :nth-child(2n + 1) {
   width: calc((100% - 2 * 0px) * 4 / 12);
 }
-.nomeMeta2 > :nth-child(2n + 2) {
+.colunaNomeGrupo > :nth-child(2n + 2) {
   width: calc((100% - 2 * 0px) * 8 / 12);
 }
 @media (max-width: 1029px) {
-  .nomeMeta2 {
+  .colunaNomeGrupo {
     flex-direction: row;
     flex-wrap: wrap;
   }
 }
 @media (max-width: 1029px) {
-  .nomeMeta2 > :nth-child(1n + 1) {
+  .colunaNomeGrupo > :nth-child(1n + 1) {
     width: calc((100% - 1 * 0px) * 12 / 12);
   }
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .nomeMeta2 {
+  .colunaNomeGrupo {
     width: 100%;
     height: auto;
     flex-direction: row;
@@ -86,7 +86,7 @@
   }
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .nomeMeta2 > :nth-child(1n + 1) {
+  .colunaNomeGrupo > :nth-child(1n + 1) {
     width: calc((100% - 1 * 0px) * 12 / 12);
   }
 }
@@ -145,7 +145,7 @@
     justify-content: flex-start;
   }
 }
-.textInput__iYqGw:global(.__wab_instance) {
+.nomeGrupo:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin-top: 81px;
@@ -154,7 +154,7 @@
   margin-left: 0px;
 }
 @media (max-width: 1029px) {
-  .textInput__iYqGw:global(.__wab_instance) {
+  .nomeGrupo:global(.__wab_instance) {
     margin-top: 0px;
     width: 100%;
     min-width: 0;
@@ -280,7 +280,7 @@
     justify-content: flex-start;
   }
 }
-.textInput__qq98K:global(.__wab_instance) {
+.descricaoGrupo:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   width: 534px;
@@ -291,7 +291,7 @@
   display: flex;
 }
 @media (max-width: 1029px) {
-  .textInput__qq98K:global(.__wab_instance) {
+  .descricaoGrupo:global(.__wab_instance) {
     align-self: auto;
     width: 100%;
     min-width: 0;
@@ -309,7 +309,7 @@
   width: 1em;
   height: 1em;
 }
-.nomeMeta {
+.colunaNomeMeta {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -324,25 +324,25 @@
   min-width: 0;
   padding: 8px 8px 8px 18px;
 }
-.nomeMeta > :nth-child(2n + 1) {
+.colunaNomeMeta > :nth-child(2n + 1) {
   width: calc((100% - 2 * 0px) * 4 / 12);
 }
-.nomeMeta > :nth-child(2n + 2) {
+.colunaNomeMeta > :nth-child(2n + 2) {
   width: calc((100% - 2 * 0px) * 8 / 12);
 }
 @media (max-width: 1029px) {
-  .nomeMeta {
+  .colunaNomeMeta {
     flex-direction: row;
     flex-wrap: wrap;
   }
 }
 @media (max-width: 1029px) {
-  .nomeMeta > :nth-child(1n + 1) {
+  .colunaNomeMeta > :nth-child(1n + 1) {
     width: calc((100% - 1 * 0px) * 12 / 12);
   }
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .nomeMeta {
+  .colunaNomeMeta {
     width: 100%;
     height: auto;
     flex-direction: row;
@@ -351,7 +351,7 @@
   }
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .nomeMeta > :nth-child(1n + 1) {
+  .colunaNomeMeta > :nth-child(1n + 1) {
     width: calc((100% - 1 * 0px) * 12 / 12);
   }
 }
@@ -410,7 +410,7 @@
     justify-content: flex-start;
   }
 }
-.textInput__cQebz:global(.__wab_instance) {
+.nomeMeta:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin-top: 81px;
@@ -419,7 +419,7 @@
   margin-left: 0px;
 }
 @media (max-width: 1029px) {
-  .textInput__cQebz:global(.__wab_instance) {
+  .nomeMeta:global(.__wab_instance) {
     margin-top: 0px;
     width: 100%;
     min-width: 0;
@@ -545,7 +545,7 @@
     justify-content: flex-start;
   }
 }
-.textInput__qPcjI:global(.__wab_instance) {
+.descricaoMeta:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   width: 534px;
@@ -556,7 +556,7 @@
   display: flex;
 }
 @media (max-width: 1029px) {
-  .textInput__qPcjI:global(.__wab_instance) {
+  .descricaoMeta:global(.__wab_instance) {
     align-self: auto;
     width: 100%;
     min-width: 0;
@@ -644,7 +644,7 @@
   min-width: 0;
   padding: 8px;
 }
-.select:global(.__wab_instance) {
+.frequencia:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }

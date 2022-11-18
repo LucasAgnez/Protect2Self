@@ -75,13 +75,12 @@ export type PlasmicHomepage__OverridesType = {
   helpingHand?: p.Flex<typeof HelpingHand>;
   fraseMj?: p.Flex<"div">;
   entrar?: p.Flex<typeof Button>;
-  textInput?: p.Flex<typeof TextInput>;
-  passwordInput?: p.Flex<typeof PasswordInput>;
+  email?: p.Flex<typeof TextInput>;
+  senha?: p.Flex<typeof PasswordInput>;
   confirma?: p.Flex<typeof Button>;
   entraComGoogle?: p.Flex<typeof Button>;
   logarComGoogle?: p.Flex<typeof Button>;
   link?: p.Flex<"a"> & Partial<LinkProps>;
-  textbox?: p.Flex<typeof TextInput>;
 };
 
 export interface DefaultHomepageProps {}
@@ -113,6 +112,19 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "loginScreen",
+        type: "private",
+        initFunc: ($props, $state) => $props["loginScreen"]
+      }
+    ],
+
+    [$props]
+  );
+  const $state = p.useDollarState(stateSpecs, $props);
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantswwY5HaVRu8X4()
   });
@@ -142,7 +154,7 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root,
             {
               [sty.rootloginScreen]: hasVariant(
-                variants,
+                $state,
                 "loginScreen",
                 "loginScreen"
               )
@@ -152,7 +164,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <div
             className={classNames(projectcss.all, sty.freeBox__pjoUe, {
               [sty.freeBoxloginScreen__pjoUe7UOhc]: hasVariant(
-                variants,
+                $state,
                 "loginScreen",
                 "loginScreen"
               )
@@ -172,7 +184,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 data-plasmic-override={overrides.columns}
                 className={classNames(projectcss.all, sty.columns, {
                   [sty.columnsloginScreen]: hasVariant(
-                    variants,
+                    $state,
                     "loginScreen",
                     "loginScreen"
                   )
@@ -181,7 +193,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 <div
                   className={classNames(projectcss.all, sty.column__pFFvJ, {
                     [sty.columnloginScreen__pFFvJ7UOhc]: hasVariant(
-                      variants,
+                      $state,
                       "loginScreen",
                       "loginScreen"
                     )
@@ -207,7 +219,7 @@ function PlasmicHomepage__RenderFunc(props: {
                             sty.freeBox__ksUMr,
                             {
                               [sty.freeBoxloginScreen__ksUMr7UOhc]: hasVariant(
-                                variants,
+                                $state,
                                 "loginScreen",
                                 "loginScreen"
                               )
@@ -223,7 +235,7 @@ function PlasmicHomepage__RenderFunc(props: {
                               sty.fraseMj,
                               {
                                 [sty.fraseMjloginScreen]: hasVariant(
-                                  variants,
+                                  $state,
                                   "loginScreen",
                                   "loginScreen"
                                 )
@@ -253,7 +265,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                           {
                                             [sty.h2loginScreen__unPmu7UOhc]:
                                               hasVariant(
-                                                variants,
+                                                $state,
                                                 "loginScreen",
                                                 "loginScreen"
                                               )
@@ -282,7 +294,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                 {
                                                   [sty.h1loginScreen__sIcty7UOhc]:
                                                     hasVariant(
-                                                      variants,
+                                                      $state,
                                                       "loginScreen",
                                                       "loginScreen"
                                                     )
@@ -290,7 +302,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                               )}
                                             >
                                               {hasVariant(
-                                                variants,
+                                                $state,
                                                 "loginScreen",
                                                 "loginScreen"
                                               ) ? (
@@ -308,7 +320,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                         {
                                                           [sty.h1loginScreen___2GWsC7UOhc]:
                                                             hasVariant(
-                                                              variants,
+                                                              $state,
                                                               "loginScreen",
                                                               "loginScreen"
                                                             )
@@ -316,7 +328,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                       )}
                                                     >
                                                       {hasVariant(
-                                                        variants,
+                                                        $state,
                                                         "loginScreen",
                                                         "loginScreen"
                                                       ) ? (
@@ -334,7 +346,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                 {
                                                                   [sty.h2loginScreen___9GsgP7UOhc]:
                                                                     hasVariant(
-                                                                      variants,
+                                                                      $state,
                                                                       "loginScreen",
                                                                       "loginScreen"
                                                                     )
@@ -342,7 +354,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                               )}
                                                             >
                                                               {hasVariant(
-                                                                variants,
+                                                                $state,
                                                                 "loginScreen",
                                                                 "loginScreen"
                                                               ) ? (
@@ -360,7 +372,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                         {
                                                                           [sty.h1loginScreen__cbqH7UOhc]:
                                                                             hasVariant(
-                                                                              variants,
+                                                                              $state,
                                                                               "loginScreen",
                                                                               "loginScreen"
                                                                             )
@@ -368,7 +380,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                       )}
                                                                     >
                                                                       {hasVariant(
-                                                                        variants,
+                                                                        $state,
                                                                         "loginScreen",
                                                                         "loginScreen"
                                                                       ) &&
@@ -391,7 +403,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                                 {
                                                                                   [sty.h2loginScreen__pNo9E7UOhc]:
                                                                                     hasVariant(
-                                                                                      variants,
+                                                                                      $state,
                                                                                       "loginScreen",
                                                                                       "loginScreen"
                                                                                     )
@@ -399,7 +411,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                               )}
                                                                             >
                                                                               {hasVariant(
-                                                                                variants,
+                                                                                $state,
                                                                                 "loginScreen",
                                                                                 "loginScreen"
                                                                               ) &&
@@ -425,7 +437,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                                   </span>
                                                                                 </React.Fragment>
                                                                               ) : hasVariant(
-                                                                                  variants,
+                                                                                  $state,
                                                                                   "loginScreen",
                                                                                   "loginScreen"
                                                                                 ) &&
@@ -505,7 +517,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                         {
                                                                           [sty.h4loginScreen__kQDk17UOhc]:
                                                                             hasVariant(
-                                                                              variants,
+                                                                              $state,
                                                                               "loginScreen",
                                                                               "loginScreen"
                                                                             )
@@ -513,7 +525,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                       )}
                                                                     >
                                                                       {hasVariant(
-                                                                        variants,
+                                                                        $state,
                                                                         "loginScreen",
                                                                         "loginScreen"
                                                                       ) ? (
@@ -531,7 +543,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                                 {
                                                                                   [sty.h3loginScreen__yjYb87UOhc]:
                                                                                     hasVariant(
-                                                                                      variants,
+                                                                                      $state,
                                                                                       "loginScreen",
                                                                                       "loginScreen"
                                                                                     )
@@ -539,7 +551,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                               )}
                                                                             >
                                                                               {hasVariant(
-                                                                                variants,
+                                                                                $state,
                                                                                 "loginScreen",
                                                                                 "loginScreen"
                                                                               ) ? (
@@ -596,7 +608,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                                 {
                                                                                   [sty.h3loginScreen__yjYb87UOhc]:
                                                                                     hasVariant(
-                                                                                      variants,
+                                                                                      $state,
                                                                                       "loginScreen",
                                                                                       "loginScreen"
                                                                                     )
@@ -604,7 +616,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                               )}
                                                                             >
                                                                               {hasVariant(
-                                                                                variants,
+                                                                                $state,
                                                                                 "loginScreen",
                                                                                 "loginScreen"
                                                                               ) ? (
@@ -681,7 +693,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                         {
                                                                           [sty.h4loginScreen__kQDk17UOhc]:
                                                                             hasVariant(
-                                                                              variants,
+                                                                              $state,
                                                                               "loginScreen",
                                                                               "loginScreen"
                                                                             )
@@ -689,7 +701,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                       )}
                                                                     >
                                                                       {hasVariant(
-                                                                        variants,
+                                                                        $state,
                                                                         "loginScreen",
                                                                         "loginScreen"
                                                                       ) ? (
@@ -707,7 +719,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                                 {
                                                                                   [sty.h3loginScreen__yjYb87UOhc]:
                                                                                     hasVariant(
-                                                                                      variants,
+                                                                                      $state,
                                                                                       "loginScreen",
                                                                                       "loginScreen"
                                                                                     )
@@ -715,7 +727,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                               )}
                                                                             >
                                                                               {hasVariant(
-                                                                                variants,
+                                                                                $state,
                                                                                 "loginScreen",
                                                                                 "loginScreen"
                                                                               ) ? (
@@ -772,7 +784,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                                 {
                                                                                   [sty.h3loginScreen__yjYb87UOhc]:
                                                                                     hasVariant(
-                                                                                      variants,
+                                                                                      $state,
                                                                                       "loginScreen",
                                                                                       "loginScreen"
                                                                                     )
@@ -780,7 +792,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                                                               )}
                                                                             >
                                                                               {hasVariant(
-                                                                                variants,
+                                                                                $state,
                                                                                 "loginScreen",
                                                                                 "loginScreen"
                                                                               ) ? (
@@ -996,21 +1008,21 @@ function PlasmicHomepage__RenderFunc(props: {
                 <div
                   className={classNames(projectcss.all, sty.column__qfE1, {
                     [sty.columnloginScreen__qfE17UOhc]: hasVariant(
-                      variants,
+                      $state,
                       "loginScreen",
                       "loginScreen"
                     )
                   })}
                 >
                   {(
-                    hasVariant(variants, "loginScreen", "loginScreen")
+                    hasVariant($state, "loginScreen", "loginScreen")
                       ? true
                       : true
                   ) ? (
                     <div
                       className={classNames(projectcss.all, sty.freeBox__vter, {
                         [sty.freeBoxloginScreen__vter7UOhc]: hasVariant(
-                          variants,
+                          $state,
                           "loginScreen",
                           "loginScreen"
                         )
@@ -1086,7 +1098,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     </div>
                   ) : null}
                   {(
-                    hasVariant(variants, "loginScreen", "loginScreen")
+                    hasVariant($state, "loginScreen", "loginScreen")
                       ? true
                       : false
                   ) ? (
@@ -1096,7 +1108,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         sty.freeBox__noxk4,
                         {
                           [sty.freeBoxloginScreen__noxk47UOhc]: hasVariant(
-                            variants,
+                            $state,
                             "loginScreen",
                             "loginScreen"
                           )
@@ -1110,7 +1122,7 @@ function PlasmicHomepage__RenderFunc(props: {
                             sty.freeBox__dsZke,
                             {
                               [sty.freeBoxloginScreen__dsZke7UOhc]: hasVariant(
-                                variants,
+                                $state,
                                 "loginScreen",
                                 "loginScreen"
                               )
@@ -1118,47 +1130,39 @@ function PlasmicHomepage__RenderFunc(props: {
                           )}
                         >
                           <TextInput
-                            data-plasmic-name={"textInput"}
-                            data-plasmic-override={overrides.textInput}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.textInput,
-                              {
-                                [sty.textInputloginScreen]: hasVariant(
-                                  variants,
-                                  "loginScreen",
-                                  "loginScreen"
-                                )
-                              }
-                            )}
+                            data-plasmic-name={"email"}
+                            data-plasmic-override={overrides.email}
+                            className={classNames("__wab_instance", sty.email, {
+                              [sty.emailloginScreen]: hasVariant(
+                                $state,
+                                "loginScreen",
+                                "loginScreen"
+                              )
+                            })}
                             id={
-                              hasVariant(variants, "loginScreen", "loginScreen")
+                              hasVariant($state, "loginScreen", "loginScreen")
                                 ? ("nome" as const)
                                 : undefined
                             }
                           />
 
                           <PasswordInput
-                            data-plasmic-name={"passwordInput"}
-                            data-plasmic-override={overrides.passwordInput}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.passwordInput,
-                              {
-                                [sty.passwordInputloginScreen]: hasVariant(
-                                  variants,
-                                  "loginScreen",
-                                  "loginScreen"
-                                )
-                              }
-                            )}
+                            data-plasmic-name={"senha"}
+                            data-plasmic-override={overrides.senha}
+                            className={classNames("__wab_instance", sty.senha, {
+                              [sty.senhaloginScreen]: hasVariant(
+                                $state,
+                                "loginScreen",
+                                "loginScreen"
+                              )
+                            })}
                             color={
-                              hasVariant(variants, "loginScreen", "loginScreen")
+                              hasVariant($state, "loginScreen", "loginScreen")
                                 ? ("dark" as const)
                                 : undefined
                             }
                             id={
-                              hasVariant(variants, "loginScreen", "loginScreen")
+                              hasVariant($state, "loginScreen", "loginScreen")
                                 ? ("senha" as const)
                                 : undefined
                             }
@@ -1172,19 +1176,19 @@ function PlasmicHomepage__RenderFunc(props: {
                               sty.confirma,
                               {
                                 [sty.confirmaloginScreen]: hasVariant(
-                                  variants,
+                                  $state,
                                   "loginScreen",
                                   "loginScreen"
                                 )
                               }
                             )}
                             color={
-                              hasVariant(variants, "loginScreen", "loginScreen")
+                              hasVariant($state, "loginScreen", "loginScreen")
                                 ? ("yellow" as const)
                                 : undefined
                             }
                           >
-                            {hasVariant(variants, "loginScreen", "loginScreen")
+                            {hasVariant($state, "loginScreen", "loginScreen")
                               ? "Entrar"
                               : "Button"}
                           </Button>
@@ -1197,7 +1201,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                 {
                                   [sty.freeBoxloginScreen__rIql97UOhc]:
                                     hasVariant(
-                                      variants,
+                                      $state,
                                       "loginScreen",
                                       "loginScreen"
                                     )
@@ -1212,7 +1216,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                   {
                                     [sty.textloginScreen__adYZj7UOhc]:
                                       hasVariant(
-                                        variants,
+                                        $state,
                                         "loginScreen",
                                         "loginScreen"
                                       )
@@ -1232,11 +1236,7 @@ function PlasmicHomepage__RenderFunc(props: {
                               </div>
 
                               {(
-                                hasVariant(
-                                  variants,
-                                  "loginScreen",
-                                  "loginScreen"
-                                )
+                                hasVariant($state, "loginScreen", "loginScreen")
                                   ? true
                                   : true
                               ) ? (
@@ -1247,7 +1247,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                     {
                                       [sty.buttonloginScreen__xMm37UOhc]:
                                         hasVariant(
-                                          variants,
+                                          $state,
                                           "loginScreen",
                                           "loginScreen"
                                         )
@@ -1255,7 +1255,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                   )}
                                   color={
                                     hasVariant(
-                                      variants,
+                                      $state,
                                       "loginScreen",
                                       "loginScreen"
                                     )
@@ -1275,7 +1275,7 @@ function PlasmicHomepage__RenderFunc(props: {
                               sty.entraComGoogle,
                               {
                                 [sty.entraComGoogleloginScreen]: hasVariant(
-                                  variants,
+                                  $state,
                                   "loginScreen",
                                   "loginScreen"
                                 )
@@ -1289,18 +1289,14 @@ function PlasmicHomepage__RenderFunc(props: {
                                 sty.text__vhOuQ,
                                 {
                                   [sty.textloginScreen__vhOuQ7UOhc]: hasVariant(
-                                    variants,
+                                    $state,
                                     "loginScreen",
                                     "loginScreen"
                                   )
                                 }
                               )}
                             >
-                              {hasVariant(
-                                variants,
-                                "loginScreen",
-                                "loginScreen"
-                              )
+                              {hasVariant($state, "loginScreen", "loginScreen")
                                 ? "Entrar com  "
                                 : "Button"}
                             </div>
@@ -1309,7 +1305,7 @@ function PlasmicHomepage__RenderFunc(props: {
                               alt={""}
                               className={classNames(sty.img__r75K, {
                                 [sty.imgloginScreen__r75K7UOhc]: hasVariant(
-                                  variants,
+                                  $state,
                                   "loginScreen",
                                   "loginScreen"
                                 )
@@ -1320,21 +1316,13 @@ function PlasmicHomepage__RenderFunc(props: {
                               displayMinHeight={"0" as const}
                               displayMinWidth={"0" as const}
                               displayWidth={
-                                hasVariant(
-                                  variants,
-                                  "loginScreen",
-                                  "loginScreen"
-                                )
+                                hasVariant($state, "loginScreen", "loginScreen")
                                   ? ("26px" as const)
                                   : ("auto" as const)
                               }
                               loading={"lazy" as const}
                               src={
-                                hasVariant(
-                                  variants,
-                                  "loginScreen",
-                                  "loginScreen"
-                                )
+                                hasVariant($state, "loginScreen", "loginScreen")
                                   ? {
                                       src: "/plasmic/protect_2_self/images/googleGLogosvgpng.png",
                                       fullWidth: 768,
@@ -1347,7 +1335,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           </Button>
 
                           {(
-                            hasVariant(variants, "loginScreen", "loginScreen")
+                            hasVariant($state, "loginScreen", "loginScreen")
                               ? true
                               : true
                           ) ? (
@@ -1359,7 +1347,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                 sty.logarComGoogle,
                                 {
                                   [sty.logarComGoogleloginScreen]: hasVariant(
-                                    variants,
+                                    $state,
                                     "loginScreen",
                                     "loginScreen"
                                   )
@@ -1374,7 +1362,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                   {
                                     [sty.textloginScreen__hDd677UOhc]:
                                       hasVariant(
-                                        variants,
+                                        $state,
                                         "loginScreen",
                                         "loginScreen"
                                       )
@@ -1382,7 +1370,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                 )}
                               >
                                 {hasVariant(
-                                  variants,
+                                  $state,
                                   "loginScreen",
                                   "loginScreen"
                                 )
@@ -1394,7 +1382,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                 alt={""}
                                 className={classNames(sty.img__ldPjc, {
                                   [sty.imgloginScreen__ldPjc7UOhc]: hasVariant(
-                                    variants,
+                                    $state,
                                     "loginScreen",
                                     "loginScreen"
                                   )
@@ -1423,7 +1411,7 @@ function PlasmicHomepage__RenderFunc(props: {
                               sty.text__rzLjS,
                               {
                                 [sty.textloginScreen__rzLjS7UOhc]: hasVariant(
-                                  variants,
+                                  $state,
                                   "loginScreen",
                                   "loginScreen"
                                 )
@@ -1500,9 +1488,8 @@ const PlasmicDescendants = {
     "helpingHand",
     "fraseMj",
     "entrar",
-    "textInput",
-    "textbox",
-    "passwordInput",
+    "email",
+    "senha",
     "confirma",
     "entraComGoogle",
     "logarComGoogle",
@@ -1514,9 +1501,8 @@ const PlasmicDescendants = {
     "helpingHand",
     "fraseMj",
     "entrar",
-    "textInput",
-    "textbox",
-    "passwordInput",
+    "email",
+    "senha",
     "confirma",
     "entraComGoogle",
     "logarComGoogle",
@@ -1525,8 +1511,8 @@ const PlasmicDescendants = {
   helpingHand: ["helpingHand"],
   fraseMj: ["fraseMj"],
   entrar: ["entrar"],
-  textInput: ["textInput", "textbox"],
-  passwordInput: ["passwordInput"],
+  email: ["email"],
+  senha: ["senha"],
   confirma: ["confirma"],
   entraComGoogle: ["entraComGoogle"],
   logarComGoogle: ["logarComGoogle"],
@@ -1542,8 +1528,8 @@ type NodeDefaultElementType = {
   helpingHand: typeof HelpingHand;
   fraseMj: "div";
   entrar: typeof Button;
-  textInput: typeof TextInput;
-  passwordInput: typeof PasswordInput;
+  email: typeof TextInput;
+  senha: typeof PasswordInput;
   confirma: typeof Button;
   entraComGoogle: typeof Button;
   logarComGoogle: typeof Button;
@@ -1616,8 +1602,8 @@ export const PlasmicHomepage = Object.assign(
     helpingHand: makeNodeComponent("helpingHand"),
     fraseMj: makeNodeComponent("fraseMj"),
     entrar: makeNodeComponent("entrar"),
-    textInput: makeNodeComponent("textInput"),
-    passwordInput: makeNodeComponent("passwordInput"),
+    email: makeNodeComponent("email"),
+    senha: makeNodeComponent("senha"),
     confirma: makeNodeComponent("confirma"),
     entraComGoogle: makeNodeComponent("entraComGoogle"),
     logarComGoogle: makeNodeComponent("logarComGoogle"),

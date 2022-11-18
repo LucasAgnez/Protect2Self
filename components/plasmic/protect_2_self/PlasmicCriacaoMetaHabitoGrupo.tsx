@@ -67,12 +67,16 @@ export type PlasmicCriacaoMetaHabitoGrupo__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   dados?: p.Flex<"div">;
   img?: p.Flex<typeof p.PlasmicImg>;
-  nomeMeta2?: p.Flex<"div">;
+  colunaNomeGrupo?: p.Flex<"div">;
+  nomeGrupo?: p.Flex<typeof TextInput>;
   descricao2?: p.Flex<"div">;
-  nomeMeta?: p.Flex<"div">;
+  descricaoGrupo?: p.Flex<typeof TextInput>;
+  colunaNomeMeta?: p.Flex<"div">;
+  nomeMeta?: p.Flex<typeof TextInput>;
   descricao?: p.Flex<"div">;
+  descricaoMeta?: p.Flex<typeof TextInput>;
   frequenciaHabito?: p.Flex<"div">;
-  select?: p.Flex<typeof Select>;
+  frequencia?: p.Flex<typeof Select>;
   confirma?: p.Flex<typeof Button>;
 };
 
@@ -167,9 +171,9 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
 
             {true ? (
               <div
-                data-plasmic-name={"nomeMeta2"}
-                data-plasmic-override={overrides.nomeMeta2}
-                className={classNames(projectcss.all, sty.nomeMeta2)}
+                data-plasmic-name={"colunaNomeGrupo"}
+                data-plasmic-override={overrides.colunaNomeGrupo}
+                className={classNames(projectcss.all, sty.colunaNomeGrupo)}
               >
                 <div className={classNames(projectcss.all, sty.column__kGrc7)}>
                   <div
@@ -209,10 +213,9 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
 
                 <div className={classNames(projectcss.all, sty.column__uRvY)}>
                   <TextInput
-                    className={classNames(
-                      "__wab_instance",
-                      sty.textInput__iYqGw
-                    )}
+                    data-plasmic-name={"nomeGrupo"}
+                    data-plasmic-override={overrides.nomeGrupo}
+                    className={classNames("__wab_instance", sty.nomeGrupo)}
                     color={"dark" as const}
                     id={"nome" as const}
                     placeholder={"Digite o nome do Grupo" as const}
@@ -267,10 +270,9 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
               <div className={classNames(projectcss.all, sty.column__mMTl)}>
                 {true ? (
                   <TextInput
-                    className={classNames(
-                      "__wab_instance",
-                      sty.textInput__qq98K
-                    )}
+                    data-plasmic-name={"descricaoGrupo"}
+                    data-plasmic-override={overrides.descricaoGrupo}
+                    className={classNames("__wab_instance", sty.descricaoGrupo)}
                     color={"dark" as const}
                     id={"descricao" as const}
                     placeholder={"Digite aqui uma descrição do Grupo" as const}
@@ -282,9 +284,9 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
 
             {true ? (
               <div
-                data-plasmic-name={"nomeMeta"}
-                data-plasmic-override={overrides.nomeMeta}
-                className={classNames(projectcss.all, sty.nomeMeta)}
+                data-plasmic-name={"colunaNomeMeta"}
+                data-plasmic-override={overrides.colunaNomeMeta}
+                className={classNames(projectcss.all, sty.colunaNomeMeta)}
               >
                 <div className={classNames(projectcss.all, sty.column__nRCe0)}>
                   <div
@@ -324,10 +326,9 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
 
                 <div className={classNames(projectcss.all, sty.column__cUxXe)}>
                   <TextInput
-                    className={classNames(
-                      "__wab_instance",
-                      sty.textInput__cQebz
-                    )}
+                    data-plasmic-name={"nomeMeta"}
+                    data-plasmic-override={overrides.nomeMeta}
+                    className={classNames("__wab_instance", sty.nomeMeta)}
                     color={"dark" as const}
                     id={"nome" as const}
                     placeholder={"Digite o nome da Meta" as const}
@@ -382,10 +383,9 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
               <div className={classNames(projectcss.all, sty.column__sYcbS)}>
                 {true ? (
                   <TextInput
-                    className={classNames(
-                      "__wab_instance",
-                      sty.textInput__qPcjI
-                    )}
+                    data-plasmic-name={"descricaoMeta"}
+                    data-plasmic-override={overrides.descricaoMeta}
+                    className={classNames("__wab_instance", sty.descricaoMeta)}
                     color={"dark" as const}
                     id={"descricao" as const}
                     placeholder={"Digite aqui uma descrição da Meta" as const}
@@ -439,9 +439,9 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
 
                 <div className={classNames(projectcss.all, sty.column__x01U)}>
                   <Select
-                    data-plasmic-name={"select"}
-                    data-plasmic-override={overrides.select}
-                    className={classNames("__wab_instance", sty.select)}
+                    data-plasmic-name={"frequencia"}
+                    data-plasmic-override={overrides.frequencia}
+                    className={classNames("__wab_instance", sty.frequencia)}
                     color={"dark" as const}
                   >
                     <Select__Option
@@ -507,33 +507,45 @@ const PlasmicDescendants = {
     "headerLogged",
     "dados",
     "img",
-    "nomeMeta2",
+    "colunaNomeGrupo",
+    "nomeGrupo",
     "descricao2",
+    "descricaoGrupo",
+    "colunaNomeMeta",
     "nomeMeta",
     "descricao",
+    "descricaoMeta",
     "frequenciaHabito",
-    "select",
+    "frequencia",
     "confirma"
   ],
   headerLogged: ["headerLogged"],
   dados: [
     "dados",
     "img",
-    "nomeMeta2",
+    "colunaNomeGrupo",
+    "nomeGrupo",
     "descricao2",
+    "descricaoGrupo",
+    "colunaNomeMeta",
     "nomeMeta",
     "descricao",
+    "descricaoMeta",
     "frequenciaHabito",
-    "select",
+    "frequencia",
     "confirma"
   ],
   img: ["img"],
-  nomeMeta2: ["nomeMeta2"],
-  descricao2: ["descricao2"],
+  colunaNomeGrupo: ["colunaNomeGrupo", "nomeGrupo"],
+  nomeGrupo: ["nomeGrupo"],
+  descricao2: ["descricao2", "descricaoGrupo"],
+  descricaoGrupo: ["descricaoGrupo"],
+  colunaNomeMeta: ["colunaNomeMeta", "nomeMeta"],
   nomeMeta: ["nomeMeta"],
-  descricao: ["descricao"],
-  frequenciaHabito: ["frequenciaHabito", "select"],
-  select: ["select"],
+  descricao: ["descricao", "descricaoMeta"],
+  descricaoMeta: ["descricaoMeta"],
+  frequenciaHabito: ["frequenciaHabito", "frequencia"],
+  frequencia: ["frequencia"],
   confirma: ["confirma"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -544,12 +556,16 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   dados: "div";
   img: typeof p.PlasmicImg;
-  nomeMeta2: "div";
+  colunaNomeGrupo: "div";
+  nomeGrupo: typeof TextInput;
   descricao2: "div";
-  nomeMeta: "div";
+  descricaoGrupo: typeof TextInput;
+  colunaNomeMeta: "div";
+  nomeMeta: typeof TextInput;
   descricao: "div";
+  descricaoMeta: typeof TextInput;
   frequenciaHabito: "div";
-  select: typeof Select;
+  frequencia: typeof Select;
   confirma: typeof Button;
 };
 
@@ -617,12 +633,16 @@ export const PlasmicCriacaoMetaHabitoGrupo = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     dados: makeNodeComponent("dados"),
     img: makeNodeComponent("img"),
-    nomeMeta2: makeNodeComponent("nomeMeta2"),
+    colunaNomeGrupo: makeNodeComponent("colunaNomeGrupo"),
+    nomeGrupo: makeNodeComponent("nomeGrupo"),
     descricao2: makeNodeComponent("descricao2"),
+    descricaoGrupo: makeNodeComponent("descricaoGrupo"),
+    colunaNomeMeta: makeNodeComponent("colunaNomeMeta"),
     nomeMeta: makeNodeComponent("nomeMeta"),
     descricao: makeNodeComponent("descricao"),
+    descricaoMeta: makeNodeComponent("descricaoMeta"),
     frequenciaHabito: makeNodeComponent("frequenciaHabito"),
-    select: makeNodeComponent("select"),
+    frequencia: makeNodeComponent("frequencia"),
     confirma: makeNodeComponent("confirma"),
 
     // Metadata about props expected for PlasmicCriacaoMetaHabitoGrupo

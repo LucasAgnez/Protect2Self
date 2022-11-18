@@ -106,6 +106,19 @@ function PlasmicSelect__Overlay__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "relativePlacement",
+        type: "private",
+        initFunc: ($props, $state) => $props["relativePlacement"]
+      }
+    ],
+
+    [$props]
+  );
+  const $state = p.useDollarState(stateSpecs, $props);
+
   const superContexts = {
     Select: React.useContext(SUPER__PlasmicSelect.Context)
   };
@@ -125,13 +138,13 @@ function PlasmicSelect__Overlay__RenderFunc(props: {
         sty.root
       )}
     >
-      {(hasVariant(variants, "relativePlacement", "bottom") ? true : false) ? (
+      {(hasVariant($state, "relativePlacement", "bottom") ? true : false) ? (
         <div
           data-plasmic-name={"top"}
           data-plasmic-override={overrides.top}
           className={classNames(projectcss.all, sty.top, {
             [sty.toprelativePlacement_bottom]: hasVariant(
-              variants,
+              $state,
               "relativePlacement",
               "bottom"
             )
@@ -144,13 +157,13 @@ function PlasmicSelect__Overlay__RenderFunc(props: {
         data-plasmic-override={overrides.middle}
         className={classNames(projectcss.all, sty.middle)}
       >
-        {(hasVariant(variants, "relativePlacement", "right") ? true : false) ? (
+        {(hasVariant($state, "relativePlacement", "right") ? true : false) ? (
           <div
             data-plasmic-name={"left"}
             data-plasmic-override={overrides.left}
             className={classNames(projectcss.all, sty.left, {
               [sty.leftrelativePlacement_right]: hasVariant(
-                variants,
+                $state,
                 "relativePlacement",
                 "right"
               )
@@ -169,13 +182,13 @@ function PlasmicSelect__Overlay__RenderFunc(props: {
           })}
         </div>
 
-        {(hasVariant(variants, "relativePlacement", "left") ? true : false) ? (
+        {(hasVariant($state, "relativePlacement", "left") ? true : false) ? (
           <div
             data-plasmic-name={"right"}
             data-plasmic-override={overrides.right}
             className={classNames(projectcss.all, sty.right, {
               [sty.rightrelativePlacement_left]: hasVariant(
-                variants,
+                $state,
                 "relativePlacement",
                 "left"
               )
@@ -184,13 +197,13 @@ function PlasmicSelect__Overlay__RenderFunc(props: {
         ) : null}
       </div>
 
-      {(hasVariant(variants, "relativePlacement", "top") ? true : false) ? (
+      {(hasVariant($state, "relativePlacement", "top") ? true : false) ? (
         <div
           data-plasmic-name={"bottom"}
           data-plasmic-override={overrides.bottom}
           className={classNames(projectcss.all, sty.bottom, {
             [sty.bottomrelativePlacement_top]: hasVariant(
-              variants,
+              $state,
               "relativePlacement",
               "top"
             )

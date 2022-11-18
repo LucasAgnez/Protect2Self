@@ -950,6 +950,19 @@
           "cssFilePath": "plasmic/protect_2_self/PlasmicBotoesMenuPrincipal.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "9uhOKoIKliE",
+          "name": "EditarPerfil",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicEditarPerfil.tsx",
+          "importSpec": {
+            "modulePath": "../pages/editar-perfil.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicEditarPerfil.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [

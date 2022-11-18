@@ -108,6 +108,25 @@ function PlasmicMedalha__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "miniatura",
+        type: "private",
+        initFunc: ($props, $state) => $props["miniatura"]
+      },
+
+      {
+        path: "cor",
+        type: "private",
+        initFunc: ($props, $state) => $props["cor"]
+      }
+    ],
+
+    [$props]
+  );
+  const $state = p.useDollarState(stateSpecs, $props);
+
   const [isRootHover, triggerRootHoverProps] = useTrigger("useHover", {});
   const triggers = {
     hover_root: isRootHover
@@ -129,7 +148,7 @@ function PlasmicMedalha__RenderFunc(props: {
           sty.root,
           {
             [sty.rootminiatura_unnamedVariant]: hasVariant(
-              variants,
+              $state,
               "miniatura",
               "unnamedVariant"
             )
@@ -158,7 +177,7 @@ function PlasmicMedalha__RenderFunc(props: {
         />
 
         {(
-          hasVariant(variants, "miniatura", "unnamedVariant") &&
+          hasVariant($state, "miniatura", "unnamedVariant") &&
           triggers.hover_root
             ? true
             : triggers.hover_root
@@ -170,7 +189,7 @@ function PlasmicMedalha__RenderFunc(props: {
             data-plasmic-override={overrides.freeBox}
             className={classNames(projectcss.all, sty.freeBox, {
               [sty.freeBoxminiatura_unnamedVariant]: hasVariant(
-                variants,
+                $state,
                 "miniatura",
                 "unnamedVariant"
               )

@@ -149,6 +149,24 @@
   width: 1em;
   height: 1em;
 }
+.buscaMeta:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 80%;
+  margin: 20px 40px;
+}
+.svg___6Za4K {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__fcj2 {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
 .container {
   display: flex;
   position: relative;
