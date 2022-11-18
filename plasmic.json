@@ -963,6 +963,19 @@
           "cssFilePath": "plasmic/protect_2_self/PlasmicEditarPerfil.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "8WUOyU1T46J",
+          "name": "LoginScreen",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicLoginScreen.tsx",
+          "importSpec": {
+            "modulePath": "../pages/loginScreen.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicLoginScreen.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
