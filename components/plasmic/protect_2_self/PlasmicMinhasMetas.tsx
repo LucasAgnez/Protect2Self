@@ -253,6 +253,7 @@ function PlasmicMinhasMetas__RenderFunc(props: {
                       data-plasmic-name={"buscaMeta"}
                       data-plasmic-override={overrides.buscaMeta}
                       className={classNames("__wab_instance", sty.buscaMeta)}
+                      id={"buscaMeta" as const}
                       showStartIcon={true}
                     />
 

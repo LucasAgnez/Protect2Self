@@ -249,6 +249,7 @@ function PlasmicMeusGrupos__RenderFunc(props: {
                       data-plasmic-name={"buscaGrupo"}
                       data-plasmic-override={overrides.buscaGrupo}
                       className={classNames("__wab_instance", sty.buscaGrupo)}
+                      id={"buscaGrupo" as const}
                       showStartIcon={true}
                     />
 

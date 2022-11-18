@@ -215,7 +215,7 @@ function PlasmicCriacaoMetaVicioGrupo__RenderFunc(props: {
                     data-plasmic-override={overrides.nomeGrupo}
                     className={classNames("__wab_instance", sty.nomeGrupo)}
                     color={"dark" as const}
-                    id={"nome" as const}
+                    id={"nomeGrupo" as const}
                     placeholder={"Digite o nome do Grupo" as const}
                   />
                 </div>
@@ -272,7 +272,7 @@ function PlasmicCriacaoMetaVicioGrupo__RenderFunc(props: {
                     data-plasmic-override={overrides.descricaoGrupo}
                     className={classNames("__wab_instance", sty.descricaoGrupo)}
                     color={"dark" as const}
-                    id={"descricao" as const}
+                    id={"descricaoGrupo" as const}
                     placeholder={"Digite aqui uma descrição do Grupo" as const}
                     required={false}
                   />
@@ -328,7 +328,7 @@ function PlasmicCriacaoMetaVicioGrupo__RenderFunc(props: {
                     data-plasmic-override={overrides.nomeMeta}
                     className={classNames("__wab_instance", sty.nomeMeta)}
                     color={"dark" as const}
-                    id={"nome" as const}
+                    id={"nomeMeta" as const}
                     placeholder={"Digite o nome da Meta" as const}
                   />
                 </div>
@@ -385,7 +385,7 @@ function PlasmicCriacaoMetaVicioGrupo__RenderFunc(props: {
                     data-plasmic-override={overrides.descricaoMeta}
                     className={classNames("__wab_instance", sty.descricaoMeta)}
                     color={"dark" as const}
-                    id={"descricao" as const}
+                    id={"descricaoMeta" as const}
                     placeholder={"Digite aqui uma descrição da Meta" as const}
                     required={false}
                   />

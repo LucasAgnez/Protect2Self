@@ -67,6 +67,7 @@ export type PlasmicEditarPerfil__OverridesType = {
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
   button?: p.Flex<typeof Button>;
+  textInput?: p.Flex<typeof TextInput>;
   nome?: p.Flex<typeof TextInput>;
   email?: p.Flex<typeof TextInput>;
   telefone?: p.Flex<typeof TextInput>;
@@ -74,6 +75,7 @@ export type PlasmicEditarPerfil__OverridesType = {
   confirmaSenha?: p.Flex<typeof PasswordInput>;
   confirma?: p.Flex<typeof Button>;
   cancela?: p.Flex<typeof Button>;
+  textbox?: p.Flex<typeof TextInput>;
 };
 
 export interface DefaultEditarPerfilProps {}
@@ -178,6 +180,37 @@ function PlasmicEditarPerfil__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__vR8Y)}
                   >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__miQL)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___4Lwfi
+                        )}
+                      >
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ color: "#FFFFFF" }}
+                          >
+                            {"Nome de Usuário"}
+                          </span>
+                        </React.Fragment>
+                      </div>
+
+                      <TextInput
+                        data-plasmic-name={"textInput"}
+                        data-plasmic-override={overrides.textInput}
+                        className={classNames("__wab_instance", sty.textInput)}
+                        color={"dark" as const}
+                        id={"userName" as const}
+                      />
+                    </div>
+
                     {true ? (
                       <div
                         className={classNames(
@@ -209,6 +242,7 @@ function PlasmicEditarPerfil__RenderFunc(props: {
                           data-plasmic-override={overrides.nome}
                           className={classNames("__wab_instance", sty.nome)}
                           color={"dark" as const}
+                          id={"nome" as const}
                         />
                       </div>
                     ) : null}
@@ -244,6 +278,7 @@ function PlasmicEditarPerfil__RenderFunc(props: {
                             data-plasmic-override={overrides.email}
                             className={classNames("__wab_instance", sty.email)}
                             color={"dark" as const}
+                            id={"email" as const}
                           />
                         ) : null}
                       </div>
@@ -277,6 +312,7 @@ function PlasmicEditarPerfil__RenderFunc(props: {
                           data-plasmic-override={overrides.telefone}
                           className={classNames("__wab_instance", sty.telefone)}
                           color={"dark" as const}
+                          id={"telefone" as const}
                         />
                       ) : null}
                     </div>
@@ -309,6 +345,7 @@ function PlasmicEditarPerfil__RenderFunc(props: {
                           data-plasmic-override={overrides.senha}
                           className={classNames("__wab_instance", sty.senha)}
                           color={"dark" as const}
+                          id={"senha" as const}
                         />
                       ) : null}
                     </div>
@@ -356,6 +393,7 @@ function PlasmicEditarPerfil__RenderFunc(props: {
                             sty.confirmaSenha
                           )}
                           color={"dark" as const}
+                          id={"confirmaSenha" as const}
                         />
                       </div>
                     ) : null}
@@ -412,6 +450,8 @@ const PlasmicDescendants = {
     "columns",
     "userPhoto",
     "button",
+    "textInput",
+    "textbox",
     "nome",
     "email",
     "telefone",
@@ -425,6 +465,8 @@ const PlasmicDescendants = {
     "columns",
     "userPhoto",
     "button",
+    "textInput",
+    "textbox",
     "nome",
     "email",
     "telefone",
@@ -435,6 +477,7 @@ const PlasmicDescendants = {
   ],
   userPhoto: ["userPhoto"],
   button: ["button"],
+  textInput: ["textInput", "textbox"],
   nome: ["nome"],
   email: ["email"],
   telefone: ["telefone"],
@@ -452,6 +495,7 @@ type NodeDefaultElementType = {
   columns: "div";
   userPhoto: typeof UserPhoto;
   button: typeof Button;
+  textInput: typeof TextInput;
   nome: typeof TextInput;
   email: typeof TextInput;
   telefone: typeof TextInput;
@@ -526,6 +570,7 @@ export const PlasmicEditarPerfil = Object.assign(
     columns: makeNodeComponent("columns"),
     userPhoto: makeNodeComponent("userPhoto"),
     button: makeNodeComponent("button"),
+    textInput: makeNodeComponent("textInput"),
     nome: makeNodeComponent("nome"),
     email: makeNodeComponent("email"),
     telefone: makeNodeComponent("telefone"),

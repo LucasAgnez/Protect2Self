@@ -188,6 +188,7 @@ function PlasmicCriacaoMetaVicio__RenderFunc(props: {
                     data-plasmic-override={overrides.nome}
                     className={classNames("__wab_instance", sty.nome)}
                     color={"dark" as const}
+                    id={"nome" as const}
                     placeholder={"Digite o nome da Meta" as const}
                   />
                 </div>
@@ -244,6 +245,7 @@ function PlasmicCriacaoMetaVicio__RenderFunc(props: {
                     data-plasmic-override={overrides.descricaoMeta}
                     className={classNames("__wab_instance", sty.descricaoMeta)}
                     color={"dark" as const}
+                    id={"descricao" as const}
                     placeholder={"Digite aqui uma descrição da Meta" as const}
                     required={false}
                   />

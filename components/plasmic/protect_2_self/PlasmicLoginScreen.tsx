@@ -386,6 +386,7 @@ function PlasmicLoginScreen__RenderFunc(props: {
                             data-plasmic-name={"email"}
                             data-plasmic-override={overrides.email}
                             className={classNames("__wab_instance", sty.email)}
+                            id={"email" as const}
                           />
 
                           <PasswordInput
@@ -393,6 +394,7 @@ function PlasmicLoginScreen__RenderFunc(props: {
                             data-plasmic-override={overrides.senha}
                             className={classNames("__wab_instance", sty.senha)}
                             color={"dark" as const}
+                            id={"senha" as const}
                           />
 
                           {true ? (
