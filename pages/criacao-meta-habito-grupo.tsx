@@ -29,21 +29,18 @@ function CriacaoMetaHabitoGrupo() {
 
   function criaGrupoHabito() {
     axios.post
-    ("http://localhost:8080/grupo/save/meta/" + localStorage.getItem('userId'), {
-      grupo: {
-        nome: (document.getElementById("nomeGrupo") as any).value,
-        descricao: (document.getElementById("descricaoGrupo")as any).value,
-        meta: {
-          nome: (document.getElementById("nomeMeta") as any).value,
-          descricao: (document.getElementById("descricaoMeta")as any).value,
-          tipo: "HABITO",
-          //frequencia: (document.getElementById("frequencia") as any).value,
-        }
-      },
+    ("http://localhost:8080/meta/save/",{
+        nome: (document.getElementById("nomeMeta") as any).value,
+        descricao: (document.getElementById("descricaoMeta")as any).value,
       /*
       */
     })
     .then((response) => {
+      axios.post
+      ("http://localhost:8080/grupo/save/meta/" + localStorage.getItem('userId') + "/" + response.data.id, {
+          nome: (document.getElementById("nomeGrupo") as any).value,
+          descricao: (document.getElementById("descricaoGrupo")as any).value,
+      })
       console.log(JSON.stringify(response));
       router.push('/logged');
     });

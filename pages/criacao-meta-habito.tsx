@@ -37,6 +37,8 @@ function CriacaoMetaHabito() {
       //frequencia: (document.getElementById("frequencia")as any).value,
     })
     .then((response) => {
+      axios.put("http://localhost:8080/usuario/addMeta/" + localStorage.getItem('userId') + "/" + response.data.id ,{
+      })
       console.log(JSON.stringify(response));
       router.push('/logged');
     });
