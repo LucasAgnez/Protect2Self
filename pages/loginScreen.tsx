@@ -2,6 +2,7 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/host";
+import axios from 'axios'
 
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicLoginScreen } from "../components/plasmic/protect_2_self/PlasmicLoginScreen";
@@ -24,12 +25,38 @@ function LoginScreen() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+
+  const router = useRouter()
+
+  function logaUsuario() {
+    axios.post
+    ("http://localhost:8080/usuario/login/"
+    /*
+    + (String((document.getElementById("email") as any).value)+ "/" + 
+    String((document.getElementById("senha") as any).value)) 
+     */
+    ,{
+      /* 
+      */
+      senha: (document.getElementById("senha")as any).value,
+      email:(document.getElementById("email")as any).value,
+    }).then((response) => {
+      console.log(response);
+      localStorage.setItem('userId', response.data);
+      router.push('/logged');
+    });
+
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicLoginScreen />
+      <PlasmicLoginScreen       confirma={{
+        props: { onClick: () => (logaUsuario())} 
+      }} 
+      />
     </ph.PageParamsProvider>
   );
 }

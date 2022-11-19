@@ -32,11 +32,7 @@ function Perfil() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicPerfil 
-          /* botaoEditar={{
-            props: { onClick: () => setEditar(true)}
-        }} editar={editar} */
-      />
+      <PlasmicPerfil/>
     </ph.PageParamsProvider>
   );
 }

@@ -33,9 +33,12 @@ function CriacaoMetaHabito() {
     ("http://localhost:8080/meta/save", {
       nome: (document.getElementById("nome") as any).value,
       descricao: (document.getElementById("descricao")as any).value,
+      tipo: "HABITO",
+      //frequencia: (document.getElementById("frequencia")as any).value,
     })
     .then((response) => {
       console.log(JSON.stringify(response));
+      router.push('/logged');
     });
   }
 
@@ -45,7 +48,7 @@ function CriacaoMetaHabito() {
       query={useRouter()?.query}
     >
       <PlasmicCriacaoMetaHabito confirma={{
-          props: { onClick: () => (criaMetaHabito() , router.push('/logged'))}
+          props: { onClick: () => (criaMetaHabito())}
       }} 
       />
     </ph.PageParamsProvider>

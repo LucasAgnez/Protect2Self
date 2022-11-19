@@ -30,12 +30,14 @@ function CriacaoMetaVicio() {
 
   function criaMetaVicio() {
     axios.post
-    ("http://localhost:8080/meta/save", {
+    ("http://localhost:8080/meta/save/", {
       nome: (document.getElementById("nome") as any).value,
       descricao: (document.getElementById("descricao")as any).value,
+      tipo: "VICIO"
     })
     .then((response) => {
       console.log(JSON.stringify(response));
+      router.push('/logged');
     });
   }
 
@@ -45,7 +47,7 @@ function CriacaoMetaVicio() {
       query={useRouter()?.query}
     >
       <PlasmicCriacaoMetaVicio confirma={{
-          props: { onClick: () => (criaMetaVicio() , router.push('/logged'))}
+          props: { onClick: () => (criaMetaVicio())}
       }} 
       />
     </ph.PageParamsProvider>
