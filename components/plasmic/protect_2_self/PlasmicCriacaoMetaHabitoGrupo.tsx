@@ -443,6 +443,7 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
                     data-plasmic-override={overrides.frequencia}
                     className={classNames("__wab_instance", sty.frequencia)}
                     color={"dark" as const}
+                    id={"frequencia" as const}
                   >
                     <Select__Option
                       className={classNames(
