@@ -68,9 +68,9 @@ export type PlasmicEntrarGrupo__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   dados?: p.Flex<"div">;
-  freeBox?: p.Flex<"div">;
   entrar?: p.Flex<typeof Button>;
   text?: p.Flex<"div">;
+  rejeitar?: p.Flex<typeof Button>;
 };
 
 export interface DefaultEntrarGrupoProps {}
@@ -202,11 +202,7 @@ function PlasmicEntrarGrupo__RenderFunc(props: {
               value: args.slot
             })}
 
-            <div
-              data-plasmic-name={"freeBox"}
-              data-plasmic-override={overrides.freeBox}
-              className={classNames(projectcss.all, sty.freeBox)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__wuykD)}>
               {p.renderPlasmicSlot({
                 defaultContents: "Descricao do grupo",
                 value: args.slot2,
@@ -214,24 +210,36 @@ function PlasmicEntrarGrupo__RenderFunc(props: {
               })}
             </div>
 
-            <Button
-              data-plasmic-name={"entrar"}
-              data-plasmic-override={overrides.entrar}
-              className={classNames("__wab_instance", sty.entrar)}
-              color={"yellow" as const}
-            >
-              <div
-                data-plasmic-name={"text"}
-                data-plasmic-override={overrides.text}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text
-                )}
-              >
-                {"ENTRAR"}
+            {true ? (
+              <div className={classNames(projectcss.all, sty.freeBox__kFFsR)}>
+                <Button
+                  data-plasmic-name={"entrar"}
+                  data-plasmic-override={overrides.entrar}
+                  className={classNames("__wab_instance", sty.entrar)}
+                  color={"yellow" as const}
+                >
+                  <div
+                    data-plasmic-name={"text"}
+                    data-plasmic-override={overrides.text}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text
+                    )}
+                  >
+                    {"Entrar"}
+                  </div>
+                </Button>
+
+                <Button
+                  data-plasmic-name={"rejeitar"}
+                  data-plasmic-override={overrides.rejeitar}
+                  className={classNames("__wab_instance", sty.rejeitar)}
+                >
+                  {"Rejeitar"}
+                </Button>
               </div>
-            </Button>
+            ) : null}
           </div>
         </div>
       </div>
@@ -240,12 +248,12 @@ function PlasmicEntrarGrupo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "headerLogged", "dados", "freeBox", "entrar", "text"],
+  root: ["root", "headerLogged", "dados", "entrar", "text", "rejeitar"],
   headerLogged: ["headerLogged"],
-  dados: ["dados", "freeBox", "entrar", "text"],
-  freeBox: ["freeBox"],
+  dados: ["dados", "entrar", "text", "rejeitar"],
   entrar: ["entrar", "text"],
-  text: ["text"]
+  text: ["text"],
+  rejeitar: ["rejeitar"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -254,9 +262,9 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   dados: "div";
-  freeBox: "div";
   entrar: typeof Button;
   text: "div";
+  rejeitar: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -322,9 +330,9 @@ export const PlasmicEntrarGrupo = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     dados: makeNodeComponent("dados"),
-    freeBox: makeNodeComponent("freeBox"),
     entrar: makeNodeComponent("entrar"),
     text: makeNodeComponent("text"),
+    rejeitar: makeNodeComponent("rejeitar"),
 
     // Metadata about props expected for PlasmicEntrarGrupo
     internalVariantProps: PlasmicEntrarGrupo__VariantProps,

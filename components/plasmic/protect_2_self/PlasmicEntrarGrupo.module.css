@@ -59,7 +59,7 @@
   padding: 8px;
   margin: 7px 0px 30px;
 }
-.freeBox {
+.freeBox__wuykD {
   position: relative;
   width: 100%;
   height: auto;
@@ -77,7 +77,7 @@
   border: 1px solid #fffee7;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .freeBox {
+  .freeBox__wuykD {
     min-width: 270px;
     max-width: 250px;
   }
@@ -85,13 +85,25 @@
 .slotTargetSlot2 {
   color: #d3d3d3;
 }
+.freeBox__kFFsR {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-top: 80px;
+  min-width: 0;
+  padding: 8px;
+}
 .entrar:global(.__wab_instance) {
   max-width: 100%;
-  position: relative;
-  margin-top: 80px;
   width: 210px;
+  flex-shrink: 0;
 }
-.svg__gipPr {
+.svg__fZfS {
   position: relative;
   object-fit: cover;
   width: 1em;
@@ -100,7 +112,27 @@
 .text {
   color: #000000;
 }
-.svg__rgX63 {
+.svg__rVgJv {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.rejeitar:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  margin-top: 0px;
+  width: 210px;
+  margin-left: 100px;
+  flex-shrink: 0;
+}
+.svg__f4EhP {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__t2V3B {
   position: relative;
   object-fit: cover;
   width: 1em;
