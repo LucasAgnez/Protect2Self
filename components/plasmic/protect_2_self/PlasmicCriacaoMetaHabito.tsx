@@ -306,7 +306,6 @@ function PlasmicCriacaoMetaHabito__RenderFunc(props: {
                     data-plasmic-override={overrides.frequencia}
                     className={classNames("__wab_instance", sty.frequencia)}
                     color={"dark" as const}
-                    defaultValue={"MENSAL" as const}
                     id={"frequencia" as const}
                   >
                     <Select__Option
