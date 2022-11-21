@@ -64,7 +64,8 @@ export type PlasmicLoginScreen__OverridesType = {
   header?: p.Flex<typeof Header>;
   columns?: p.Flex<"div">;
   helpingHand?: p.Flex<typeof HelpingHand>;
-  fraseMj?: p.Flex<"div">;
+  h2?: p.Flex<"h2">;
+  h1?: p.Flex<"h1">;
   entrar?: p.Flex<typeof Button>;
   button?: p.Flex<typeof Button>;
   email?: p.Flex<typeof TextInput>;
@@ -162,132 +163,110 @@ function PlasmicLoginScreen__RenderFunc(props: {
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__ujlpj
+                            sty.freeBox__ecuMz
                           )}
                         >
                           <div
-                            data-plasmic-name={"fraseMj"}
-                            data-plasmic-override={overrides.fraseMj}
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.fraseMj
+                              sty.text__qiixT
+                            )}
+                          >
+                            <React.Fragment>
+                              <React.Fragment>{""}</React.Fragment>
+                              {
+                                <h2
+                                  data-plasmic-name={"h2"}
+                                  data-plasmic-override={overrides.h2}
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.h2,
+                                    projectcss.__wab_text,
+                                    sty.h2
+                                  )}
+                                >
+                                  <React.Fragment>
+                                    <span
+                                      className={
+                                        "plasmic_default__all plasmic_default__span"
+                                      }
+                                      style={{ color: "#FFFCFC" }}
+                                    >
+                                      {"O talento vence jogos, mas só o"}
+                                    </span>
+                                  </React.Fragment>
+                                </h2>
+                              }
+                              <React.Fragment>{""}</React.Fragment>
+                            </React.Fragment>
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__p62Fe
                             )}
                           >
                             <React.Fragment>
                               <React.Fragment>{""}</React.Fragment>
                               {
                                 <h1
+                                  data-plasmic-name={"h1"}
+                                  data-plasmic-override={overrides.h1}
                                   className={classNames(
                                     projectcss.all,
                                     projectcss.h1,
                                     projectcss.__wab_text,
-                                    sty.h1__a9Rf
+                                    sty.h1
                                   )}
                                 >
                                   <React.Fragment>
-                                    <React.Fragment>{""}</React.Fragment>
-                                    {
-                                      <h2
-                                        className={classNames(
-                                          projectcss.all,
-                                          projectcss.h2,
-                                          projectcss.__wab_text,
-                                          sty.h2__pPt4Z
-                                        )}
-                                      >
-                                        <React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span"
-                                            }
-                                            style={{ color: "#FFFCFC" }}
-                                          >
-                                            {"O talento vence jogos, mas só o"}
-                                          </span>
-                                          <React.Fragment>
-                                            {"\n"}
-                                          </React.Fragment>
-                                          {
-                                            <h1
-                                              className={classNames(
-                                                projectcss.all,
-                                                projectcss.h1,
-                                                projectcss.__wab_text,
-                                                sty.h1__oEJa4
-                                              )}
-                                            >
-                                              <React.Fragment>
-                                                <span
-                                                  className={
-                                                    "plasmic_default__all plasmic_default__span"
-                                                  }
-                                                  style={{ color: "#FFFCFC" }}
-                                                >
-                                                  {
-                                                    "trabalho em equipe ganha campeonatos."
-                                                  }
-                                                </span>
-                                                <React.Fragment>
-                                                  {"\n"}
-                                                </React.Fragment>
-                                                {
-                                                  <h4
-                                                    className={classNames(
-                                                      projectcss.all,
-                                                      projectcss.h4,
-                                                      projectcss.__wab_text,
-                                                      sty.h4__scmpa
-                                                    )}
-                                                  >
-                                                    <React.Fragment>
-                                                      <React.Fragment>
-                                                        {""}
-                                                      </React.Fragment>
-                                                      {
-                                                        <h3
-                                                          className={classNames(
-                                                            projectcss.all,
-                                                            projectcss.h3,
-                                                            projectcss.__wab_text,
-                                                            sty.h3__vnpM
-                                                          )}
-                                                        >
-                                                          <React.Fragment>
-                                                            <span
-                                                              className={
-                                                                "plasmic_default__all plasmic_default__span"
-                                                              }
-                                                              style={{
-                                                                color: "#FFFCFC"
-                                                              }}
-                                                            >
-                                                              {
-                                                                "-Michael Jordan"
-                                                              }
-                                                            </span>
-                                                          </React.Fragment>
-                                                        </h3>
-                                                      }
-                                                      <React.Fragment>
-                                                        {""}
-                                                      </React.Fragment>
-                                                    </React.Fragment>
-                                                  </h4>
-                                                }
-                                                <React.Fragment>
-                                                  {""}
-                                                </React.Fragment>
-                                              </React.Fragment>
-                                            </h1>
-                                          }
-                                          <React.Fragment>{""}</React.Fragment>
-                                        </React.Fragment>
-                                      </h2>
-                                    }
-                                    <React.Fragment>{""}</React.Fragment>
+                                    <span
+                                      className={
+                                        "plasmic_default__all plasmic_default__span"
+                                      }
+                                      style={{ color: "#FFFCFC" }}
+                                    >
+                                      {"trabalho em equipe ganha campeonatos."}
+                                    </span>
                                   </React.Fragment>
                                 </h1>
+                              }
+                              <React.Fragment>{""}</React.Fragment>
+                            </React.Fragment>
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__yHse2
+                            )}
+                          >
+                            <React.Fragment>
+                              <React.Fragment>{""}</React.Fragment>
+                              {
+                                <h3
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.h3,
+                                    projectcss.__wab_text,
+                                    sty.h3__qwEjt
+                                  )}
+                                >
+                                  <React.Fragment>
+                                    <span
+                                      className={
+                                        "plasmic_default__all plasmic_default__span"
+                                      }
+                                      style={{ color: "#FFFCFC" }}
+                                    >
+                                      {"-Michael Jordan"}
+                                    </span>
+                                  </React.Fragment>
+                                </h3>
                               }
                               <React.Fragment>{""}</React.Fragment>
                             </React.Fragment>
@@ -553,7 +532,8 @@ const PlasmicDescendants = {
     "header",
     "columns",
     "helpingHand",
-    "fraseMj",
+    "h2",
+    "h1",
     "entrar",
     "button",
     "email",
@@ -567,7 +547,8 @@ const PlasmicDescendants = {
   columns: [
     "columns",
     "helpingHand",
-    "fraseMj",
+    "h2",
+    "h1",
     "entrar",
     "button",
     "email",
@@ -578,7 +559,8 @@ const PlasmicDescendants = {
     "link"
   ],
   helpingHand: ["helpingHand"],
-  fraseMj: ["fraseMj"],
+  h2: ["h2"],
+  h1: ["h1"],
   entrar: ["entrar"],
   button: ["button"],
   email: ["email"],
@@ -596,7 +578,8 @@ type NodeDefaultElementType = {
   header: typeof Header;
   columns: "div";
   helpingHand: typeof HelpingHand;
-  fraseMj: "div";
+  h2: "h2";
+  h1: "h1";
   entrar: typeof Button;
   button: typeof Button;
   email: typeof TextInput;
@@ -671,7 +654,8 @@ export const PlasmicLoginScreen = Object.assign(
     header: makeNodeComponent("header"),
     columns: makeNodeComponent("columns"),
     helpingHand: makeNodeComponent("helpingHand"),
-    fraseMj: makeNodeComponent("fraseMj"),
+    h2: makeNodeComponent("h2"),
+    h1: makeNodeComponent("h1"),
     entrar: makeNodeComponent("entrar"),
     button: makeNodeComponent("button"),
     email: makeNodeComponent("email"),

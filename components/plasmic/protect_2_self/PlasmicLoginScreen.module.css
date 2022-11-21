@@ -107,10 +107,10 @@
   max-width: 100%;
   width: 499px;
 }
-.freeBox__ujlpj {
+.freeBox__ecuMz {
   display: flex;
   position: relative;
-  flex-direction: row;
+  flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
   width: 100%;
@@ -120,21 +120,26 @@
   min-width: 0;
   padding: 8px;
 }
-.fraseMj {
+.text__qiixT {
+  position: relative;
   width: 100%;
   height: auto;
   max-width: 800px;
-  padding-bottom: 0px;
   min-width: 0;
 }
-.h2__pPt4Z {
-  padding-bottom: 11px;
-}
-.h1__oEJa4 {
-  height: 269px;
-}
-.h3__vnpM {
+.text__p62Fe {
+  position: relative;
+  width: 100%;
   height: auto;
+  max-width: 800px;
+  min-width: 0;
+}
+.text__yHse2 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
 }
 .column__zAoFt {
   display: flex;
