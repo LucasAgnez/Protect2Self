@@ -443,6 +443,7 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
                     data-plasmic-override={overrides.frequencia}
                     className={classNames("__wab_instance", sty.frequencia)}
                     color={"dark" as const}
+                    defaultValue={"value1" as const}
                     id={"frequencia" as const}
                   >
                     <Select__Option
@@ -451,7 +452,7 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
                         sty.option__eobbL
                       )}
                       color={"dark" as const}
-                      value={"value1" as const}
+                      value={"Diario" as const}
                     >
                       {"Diário"}
                     </Select__Option>
@@ -462,7 +463,7 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
                         sty.option___3PSUr
                       )}
                       color={"dark" as const}
-                      value={"value2" as const}
+                      value={"Semanal" as const}
                     >
                       {"Semanal"}
                     </Select__Option>
@@ -470,7 +471,7 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
                     <Select__Option
                       className={classNames("__wab_instance", sty.option__rpOJ)}
                       color={"dark" as const}
-                      value={"value3" as const}
+                      value={"Mensal" as const}
                     >
                       {"Mensal"}
                     </Select__Option>
