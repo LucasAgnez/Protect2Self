@@ -140,54 +140,39 @@ function PlasmicBotoesMenuPrincipal__RenderFunc(props: {
         className={classNames("__wab_instance", sty.minhasMetas)}
         link={`/metas`}
       >
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__r7J4P
-          )}
-        >
-          <React.Fragment>
-            <React.Fragment>{""}</React.Fragment>
-            {
-              <h5
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h5,
-                  projectcss.__wab_text,
-                  sty.h5___5CkcD
-                )}
-              >
-                <React.Fragment>
-                  <React.Fragment>{""}</React.Fragment>
-                  {
-                    <h4
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h4,
-                        projectcss.__wab_text,
-                        sty.h4__yxPOo
-                      )}
+        {(hasVariant(globalVariants, "screen", "tablet") ? true : true) ? (
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__iDdFs
+            )}
+          >
+            <React.Fragment>
+              <React.Fragment>{""}</React.Fragment>
+              {
+                <h4
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h4,
+                    projectcss.__wab_text,
+                    sty.h4__d3FfY
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#FFFFFF" }}
                     >
-                      <React.Fragment>
-                        <span
-                          className={
-                            "plasmic_default__all plasmic_default__span"
-                          }
-                          style={{ color: "#FFFFFF" }}
-                        >
-                          {"Minhas Metas"}
-                        </span>
-                      </React.Fragment>
-                    </h4>
-                  }
-                  <React.Fragment>{""}</React.Fragment>
-                </React.Fragment>
-              </h5>
-            }
-            <React.Fragment>{""}</React.Fragment>
-          </React.Fragment>
-        </div>
+                      {"Minhas Metas"}
+                    </span>
+                  </React.Fragment>
+                </h4>
+              }
+              <React.Fragment>{""}</React.Fragment>
+            </React.Fragment>
+          </div>
+        ) : null}
       </MainPageButton>
 
       <MainPageButton
@@ -196,54 +181,39 @@ function PlasmicBotoesMenuPrincipal__RenderFunc(props: {
         className={classNames("__wab_instance", sty.meusGrupos)}
         link={`/grupos`}
       >
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__kBwaW
-          )}
-        >
-          <React.Fragment>
-            <React.Fragment>{""}</React.Fragment>
-            {
-              <h5
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h5,
-                  projectcss.__wab_text,
-                  sty.h5__zx8Sv
-                )}
-              >
-                <React.Fragment>
-                  <React.Fragment>{""}</React.Fragment>
-                  {
-                    <h4
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h4,
-                        projectcss.__wab_text,
-                        sty.h4__ptZbl
-                      )}
+        {(hasVariant(globalVariants, "screen", "tablet") ? true : true) ? (
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__djHid
+            )}
+          >
+            <React.Fragment>
+              <React.Fragment>{""}</React.Fragment>
+              {
+                <h4
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h4,
+                    projectcss.__wab_text,
+                    sty.h4__ihrVo
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#FFFFFF" }}
                     >
-                      <React.Fragment>
-                        <span
-                          className={
-                            "plasmic_default__all plasmic_default__span"
-                          }
-                          style={{ color: "#FFFFFF" }}
-                        >
-                          {"Meus Grupos"}
-                        </span>
-                      </React.Fragment>
-                    </h4>
-                  }
-                  <React.Fragment>{""}</React.Fragment>
-                </React.Fragment>
-              </h5>
-            }
-            <React.Fragment>{""}</React.Fragment>
-          </React.Fragment>
-        </div>
+                      {"Meus Grupos"}
+                    </span>
+                  </React.Fragment>
+                </h4>
+              }
+              <React.Fragment>{""}</React.Fragment>
+            </React.Fragment>
+          </div>
+        ) : null}
       </MainPageButton>
 
       <MainPageButton
@@ -252,54 +222,39 @@ function PlasmicBotoesMenuPrincipal__RenderFunc(props: {
         className={classNames("__wab_instance", sty.criarMeta)}
         link={`/criacao-meta`}
       >
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__jvvdj
-          )}
-        >
-          <React.Fragment>
-            <React.Fragment>{""}</React.Fragment>
-            {
-              <h5
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h5,
-                  projectcss.__wab_text,
-                  sty.h5__fSxuk
-                )}
-              >
-                <React.Fragment>
-                  <React.Fragment>{""}</React.Fragment>
-                  {
-                    <h4
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h4,
-                        projectcss.__wab_text,
-                        sty.h4__yl4Gk
-                      )}
+        {(hasVariant(globalVariants, "screen", "tablet") ? true : true) ? (
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text___8Ob54
+            )}
+          >
+            <React.Fragment>
+              <React.Fragment>{""}</React.Fragment>
+              {
+                <h4
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h4,
+                    projectcss.__wab_text,
+                    sty.h4__xnXxu
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#FFFFFF" }}
                     >
-                      <React.Fragment>
-                        <span
-                          className={
-                            "plasmic_default__all plasmic_default__span"
-                          }
-                          style={{ color: "#FFFFFF" }}
-                        >
-                          {"Criar Meta"}
-                        </span>
-                      </React.Fragment>
-                    </h4>
-                  }
-                  <React.Fragment>{""}</React.Fragment>
-                </React.Fragment>
-              </h5>
-            }
-            <React.Fragment>{""}</React.Fragment>
-          </React.Fragment>
-        </div>
+                      {"Criar Meta"}
+                    </span>
+                  </React.Fragment>
+                </h4>
+              }
+              <React.Fragment>{""}</React.Fragment>
+            </React.Fragment>
+          </div>
+        ) : null}
       </MainPageButton>
 
       {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
@@ -309,54 +264,39 @@ function PlasmicBotoesMenuPrincipal__RenderFunc(props: {
           className={classNames("__wab_instance", sty.criarGrupo)}
           link={`/criacao-grupo`}
         >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__iWq57
-            )}
-          >
-            <React.Fragment>
-              <React.Fragment>{""}</React.Fragment>
-              {
-                <h5
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h5,
-                    projectcss.__wab_text,
-                    sty.h5__dqwO6
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <h4
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h4,
-                          projectcss.__wab_text,
-                          sty.h4__calxr
-                        )}
+          {(hasVariant(globalVariants, "screen", "tablet") ? true : true) ? (
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__xMaz
+              )}
+            >
+              <React.Fragment>
+                <React.Fragment>{""}</React.Fragment>
+                {
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4__l47N
+                    )}
+                  >
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#FFFFFF" }}
                       >
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ color: "#FFFFFF" }}
-                          >
-                            {"Criar Grupo"}
-                          </span>
-                        </React.Fragment>
-                      </h4>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                </h5>
-              }
-              <React.Fragment>{""}</React.Fragment>
-            </React.Fragment>
-          </div>
+                        {"Criar Grupo"}
+                      </span>
+                    </React.Fragment>
+                  </h4>
+                }
+                <React.Fragment>{""}</React.Fragment>
+              </React.Fragment>
+            </div>
+          ) : null}
         </MainPageButton>
       ) : null}
     </p.Stack>

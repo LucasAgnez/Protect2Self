@@ -37,8 +37,6 @@ import {
 import Header from "../../Header"; // plasmic-import: Cew9iEQBJMu/component
 import HelpingHand from "../../HelpingHand"; // plasmic-import: 0GtKHl4SJA/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
-import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
-import PasswordInput from "../../PasswordInput"; // plasmic-import: s963UX2uFqp/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -47,7 +45,6 @@ import sty from "./PlasmicHomepage.module.css"; // plasmic-import: cHNTWN6IIi/cs
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 
 export type PlasmicHomepage__VariantMembers = {};
 
@@ -64,14 +61,10 @@ export type PlasmicHomepage__OverridesType = {
   header?: p.Flex<typeof Header>;
   columns?: p.Flex<"div">;
   helpingHand?: p.Flex<typeof HelpingHand>;
-  fraseMj?: p.Flex<"div">;
+  h2?: p.Flex<"h2">;
+  h1?: p.Flex<"h1">;
   entrar?: p.Flex<typeof Button>;
-  email?: p.Flex<typeof TextInput>;
-  senha?: p.Flex<typeof PasswordInput>;
-  confirma?: p.Flex<typeof Button>;
-  entraComGoogle?: p.Flex<typeof Button>;
-  logarComGoogle?: p.Flex<typeof Button>;
-  link?: p.Flex<"a"> & Partial<LinkProps>;
+  button?: p.Flex<typeof Button>;
 };
 
 export interface DefaultHomepageProps {}
@@ -165,128 +158,106 @@ function PlasmicHomepage__RenderFunc(props: {
                           )}
                         >
                           <div
-                            data-plasmic-name={"fraseMj"}
-                            data-plasmic-override={overrides.fraseMj}
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.fraseMj
+                              sty.text__dGMtC
+                            )}
+                          >
+                            <React.Fragment>
+                              <React.Fragment>{""}</React.Fragment>
+                              {
+                                <h2
+                                  data-plasmic-name={"h2"}
+                                  data-plasmic-override={overrides.h2}
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.h2,
+                                    projectcss.__wab_text,
+                                    sty.h2
+                                  )}
+                                >
+                                  <React.Fragment>
+                                    <span
+                                      className={
+                                        "plasmic_default__all plasmic_default__span"
+                                      }
+                                      style={{ color: "#FFFCFC" }}
+                                    >
+                                      {"O talento vence jogos, mas só o"}
+                                    </span>
+                                  </React.Fragment>
+                                </h2>
+                              }
+                              <React.Fragment>{""}</React.Fragment>
+                            </React.Fragment>
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__afMnV
                             )}
                           >
                             <React.Fragment>
                               <React.Fragment>{""}</React.Fragment>
                               {
                                 <h1
+                                  data-plasmic-name={"h1"}
+                                  data-plasmic-override={overrides.h1}
                                   className={classNames(
                                     projectcss.all,
                                     projectcss.h1,
                                     projectcss.__wab_text,
-                                    sty.h1__jVhzB
+                                    sty.h1
                                   )}
                                 >
                                   <React.Fragment>
-                                    <React.Fragment>{""}</React.Fragment>
-                                    {
-                                      <h2
-                                        className={classNames(
-                                          projectcss.all,
-                                          projectcss.h2,
-                                          projectcss.__wab_text,
-                                          sty.h2__unPmu
-                                        )}
-                                      >
-                                        <React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span"
-                                            }
-                                            style={{ color: "#FFFCFC" }}
-                                          >
-                                            {"O talento vence jogos, mas só o"}
-                                          </span>
-                                          <React.Fragment>
-                                            {"\n"}
-                                          </React.Fragment>
-                                          {
-                                            <h1
-                                              className={classNames(
-                                                projectcss.all,
-                                                projectcss.h1,
-                                                projectcss.__wab_text,
-                                                sty.h1__sIcty
-                                              )}
-                                            >
-                                              <React.Fragment>
-                                                <span
-                                                  className={
-                                                    "plasmic_default__all plasmic_default__span"
-                                                  }
-                                                  style={{ color: "#FFFCFC" }}
-                                                >
-                                                  {
-                                                    "trabalho em equipe ganha campeonatos."
-                                                  }
-                                                </span>
-                                                <React.Fragment>
-                                                  {"\n"}
-                                                </React.Fragment>
-                                                {
-                                                  <h4
-                                                    className={classNames(
-                                                      projectcss.all,
-                                                      projectcss.h4,
-                                                      projectcss.__wab_text,
-                                                      sty.h4__enfjC
-                                                    )}
-                                                  >
-                                                    <React.Fragment>
-                                                      <React.Fragment>
-                                                        {""}
-                                                      </React.Fragment>
-                                                      {
-                                                        <h3
-                                                          className={classNames(
-                                                            projectcss.all,
-                                                            projectcss.h3,
-                                                            projectcss.__wab_text,
-                                                            sty.h3__cuPtL
-                                                          )}
-                                                        >
-                                                          <React.Fragment>
-                                                            <span
-                                                              className={
-                                                                "plasmic_default__all plasmic_default__span"
-                                                              }
-                                                              style={{
-                                                                color: "#FFFCFC"
-                                                              }}
-                                                            >
-                                                              {
-                                                                "-Michael Jordan"
-                                                              }
-                                                            </span>
-                                                          </React.Fragment>
-                                                        </h3>
-                                                      }
-                                                      <React.Fragment>
-                                                        {""}
-                                                      </React.Fragment>
-                                                    </React.Fragment>
-                                                  </h4>
-                                                }
-                                                <React.Fragment>
-                                                  {""}
-                                                </React.Fragment>
-                                              </React.Fragment>
-                                            </h1>
-                                          }
-                                          <React.Fragment>{""}</React.Fragment>
-                                        </React.Fragment>
-                                      </h2>
-                                    }
-                                    <React.Fragment>{""}</React.Fragment>
+                                    <span
+                                      className={
+                                        "plasmic_default__all plasmic_default__span"
+                                      }
+                                      style={{ color: "#FFFCFC" }}
+                                    >
+                                      {"trabalho em equipe ganha campeonatos."}
+                                    </span>
                                   </React.Fragment>
                                 </h1>
+                              }
+                              <React.Fragment>{""}</React.Fragment>
+                            </React.Fragment>
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___1Ps6D
+                            )}
+                          >
+                            <React.Fragment>
+                              <React.Fragment>{""}</React.Fragment>
+                              {
+                                <h3
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.h3,
+                                    projectcss.__wab_text,
+                                    sty.h3___3WTzt
+                                  )}
+                                >
+                                  <React.Fragment>
+                                    <span
+                                      className={
+                                        "plasmic_default__all plasmic_default__span"
+                                      }
+                                      style={{ color: "#FFFCFC" }}
+                                    >
+                                      {"-Michael Jordan"}
+                                    </span>
+                                  </React.Fragment>
+                                </h3>
                               }
                               <React.Fragment>{""}</React.Fragment>
                             </React.Fragment>
@@ -336,10 +307,9 @@ function PlasmicHomepage__RenderFunc(props: {
                     </Button>
 
                     <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__mauDn
-                      )}
+                      data-plasmic-name={"button"}
+                      data-plasmic-override={overrides.button}
+                      className={classNames("__wab_instance", sty.button)}
                       color={"yellow" as const}
                       link={`/criar-conta`}
                       shape={"rounded" as const}
@@ -370,203 +340,6 @@ function PlasmicHomepage__RenderFunc(props: {
                       </div>
                     </Button>
                   </div>
-
-                  {false ? (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__noxk4)}
-                    >
-                      {true ? (
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__dsZke
-                          )}
-                        >
-                          <TextInput
-                            data-plasmic-name={"email"}
-                            data-plasmic-override={overrides.email}
-                            className={classNames("__wab_instance", sty.email)}
-                          />
-
-                          <PasswordInput
-                            data-plasmic-name={"senha"}
-                            data-plasmic-override={overrides.senha}
-                            className={classNames("__wab_instance", sty.senha)}
-                          />
-
-                          <Button
-                            data-plasmic-name={"confirma"}
-                            data-plasmic-override={overrides.confirma}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.confirma
-                            )}
-                          >
-                            {"Button"}
-                          </Button>
-
-                          {true ? (
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__rIql9
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__adYZj
-                                )}
-                              >
-                                <React.Fragment>
-                                  <span
-                                    className={
-                                      "plasmic_default__all plasmic_default__span"
-                                    }
-                                    style={{ color: "#FFFFFF" }}
-                                  >
-                                    {"Ou"}
-                                  </span>
-                                </React.Fragment>
-                              </div>
-
-                              <Button
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.button__xMm3
-                                )}
-                              />
-                            </div>
-                          ) : null}
-
-                          <Button
-                            data-plasmic-name={"entraComGoogle"}
-                            data-plasmic-override={overrides.entraComGoogle}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.entraComGoogle
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__vhOuQ
-                              )}
-                            >
-                              {"Button"}
-                            </div>
-
-                            <p.PlasmicImg
-                              alt={""}
-                              className={classNames(sty.img__r75K)}
-                              displayHeight={"auto" as const}
-                              displayMaxHeight={"none" as const}
-                              displayMaxWidth={"100%" as const}
-                              displayMinHeight={"0" as const}
-                              displayMinWidth={"0" as const}
-                              displayWidth={"auto" as const}
-                              loading={"lazy" as const}
-                            />
-                          </Button>
-
-                          <Button
-                            data-plasmic-name={"logarComGoogle"}
-                            data-plasmic-override={overrides.logarComGoogle}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.logarComGoogle
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__hDd67
-                              )}
-                            >
-                              {"Entre com "}
-                            </div>
-
-                            <p.PlasmicImg
-                              alt={""}
-                              className={classNames(sty.img__ldPjc)}
-                              displayHeight={"23px" as const}
-                              displayMaxHeight={"none" as const}
-                              displayMaxWidth={"100%" as const}
-                              displayMinHeight={"0" as const}
-                              displayMinWidth={"0" as const}
-                              displayWidth={"auto" as const}
-                              loading={"lazy" as const}
-                              src={{
-                                src: "/plasmic/protect_2_self/images/googleGLogosvgpng.png",
-                                fullWidth: 768,
-                                fullHeight: 768,
-                                aspectRatio: undefined
-                              }}
-                            />
-                          </Button>
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__rzLjS
-                            )}
-                          >
-                            <React.Fragment>
-                              <span
-                                className={
-                                  "plasmic_default__all plasmic_default__span"
-                                }
-                                style={{ color: "#FFFFFF" }}
-                              >
-                                {"Ainda não tem conta? Registre-se "}
-                              </span>
-                              <React.Fragment>{""}</React.Fragment>
-                              {
-                                <p.PlasmicLink
-                                  data-plasmic-name={"link"}
-                                  data-plasmic-override={overrides.link}
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.a,
-                                    projectcss.__wab_text,
-                                    projectcss.plasmic_default__inline,
-                                    sty.link
-                                  )}
-                                  component={Link}
-                                  href={`/criar-conta`}
-                                  platform={"nextjs"}
-                                >
-                                  <React.Fragment>
-                                    <span
-                                      className={
-                                        "plasmic_default__all plasmic_default__span"
-                                      }
-                                      style={{ color: "#00B5FF" }}
-                                    >
-                                      {"aqui"}
-                                    </span>
-                                  </React.Fragment>
-                                </p.PlasmicLink>
-                              }
-                              <React.Fragment>{""}</React.Fragment>
-                              <span
-                                className={
-                                  "plasmic_default__all plasmic_default__span"
-                                }
-                                style={{ color: "#FFFFFF" }}
-                              >
-                                {"!"}
-                              </span>
-                            </React.Fragment>
-                          </div>
-                        </div>
-                      ) : null}
-                    </div>
-                  ) : null}
                 </div>
               </div>
             ) : null}
@@ -583,37 +356,18 @@ const PlasmicDescendants = {
     "header",
     "columns",
     "helpingHand",
-    "fraseMj",
+    "h2",
+    "h1",
     "entrar",
-    "email",
-    "senha",
-    "confirma",
-    "entraComGoogle",
-    "logarComGoogle",
-    "link"
+    "button"
   ],
   header: ["header"],
-  columns: [
-    "columns",
-    "helpingHand",
-    "fraseMj",
-    "entrar",
-    "email",
-    "senha",
-    "confirma",
-    "entraComGoogle",
-    "logarComGoogle",
-    "link"
-  ],
+  columns: ["columns", "helpingHand", "h2", "h1", "entrar", "button"],
   helpingHand: ["helpingHand"],
-  fraseMj: ["fraseMj"],
+  h2: ["h2"],
+  h1: ["h1"],
   entrar: ["entrar"],
-  email: ["email"],
-  senha: ["senha"],
-  confirma: ["confirma"],
-  entraComGoogle: ["entraComGoogle"],
-  logarComGoogle: ["logarComGoogle"],
-  link: ["link"]
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -623,14 +377,10 @@ type NodeDefaultElementType = {
   header: typeof Header;
   columns: "div";
   helpingHand: typeof HelpingHand;
-  fraseMj: "div";
+  h2: "h2";
+  h1: "h1";
   entrar: typeof Button;
-  email: typeof TextInput;
-  senha: typeof PasswordInput;
-  confirma: typeof Button;
-  entraComGoogle: typeof Button;
-  logarComGoogle: typeof Button;
-  link: "a";
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -697,14 +447,10 @@ export const PlasmicHomepage = Object.assign(
     header: makeNodeComponent("header"),
     columns: makeNodeComponent("columns"),
     helpingHand: makeNodeComponent("helpingHand"),
-    fraseMj: makeNodeComponent("fraseMj"),
+    h2: makeNodeComponent("h2"),
+    h1: makeNodeComponent("h1"),
     entrar: makeNodeComponent("entrar"),
-    email: makeNodeComponent("email"),
-    senha: makeNodeComponent("senha"),
-    confirma: makeNodeComponent("confirma"),
-    entraComGoogle: makeNodeComponent("entraComGoogle"),
-    logarComGoogle: makeNodeComponent("logarComGoogle"),
-    link: makeNodeComponent("link"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

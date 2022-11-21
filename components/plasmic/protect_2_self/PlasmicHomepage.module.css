@@ -110,7 +110,7 @@
 .freeBox__ksUMr {
   display: flex;
   position: relative;
-  flex-direction: row;
+  flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
   width: 100%;
@@ -120,21 +120,26 @@
   min-width: 0;
   padding: 8px;
 }
-.fraseMj {
+.text__dGMtC {
+  position: relative;
   width: 100%;
   height: auto;
   max-width: 800px;
-  padding-bottom: 0px;
   min-width: 0;
 }
-.h2__unPmu {
-  padding-bottom: 11px;
-}
-.h1__sIcty {
-  height: 269px;
-}
-.h3__cuPtL {
+.text__afMnV {
+  position: relative;
+  width: 100%;
   height: auto;
+  max-width: 800px;
+  min-width: 0;
+}
+.text___1Ps6D {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
 }
 .column__qfE1 {
   display: flex;
@@ -185,7 +190,7 @@
   width: 1em;
   height: 1em;
 }
-.button__mauDn:global(.__wab_instance) {
+.button:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin-top: 40px;
@@ -205,197 +210,4 @@
   object-fit: cover;
   width: 1em;
   height: 1em;
-}
-.freeBox__noxk4 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: auto;
-  height: auto;
-  justify-content: flex-start;
-  align-items: center;
-  background: #000000;
-  border-radius: 5px;
-  padding: 50px;
-  border: 1px solid #ffffff;
-}
-.freeBox__dsZke {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  margin-left: 4px;
-  flex-shrink: 0;
-  left: auto;
-  top: auto;
-  align-self: stretch;
-  min-width: 0;
-  padding: 8px 8px 8px 1px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .freeBox__dsZke {
-    left: auto;
-    top: auto;
-  }
-}
-.email:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-}
-.svg__cFv6U {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__x47V {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.senha:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-}
-.svg__r7Kno {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__xoRkY {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.confirma:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-}
-.svg__uUsLx {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__nssQh {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.freeBox__rIql9 {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-  padding: 8px;
-}
-.text__adYZj {
-  width: auto;
-  height: auto;
-  max-width: 54px;
-}
-.button__xMm3:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-}
-.svg__nL70 {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__iMnSg {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.entraComGoogle:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-}
-.svg__mWp6C {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.img__r75K {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-}
-.img__r75K > picture > img {
-  object-fit: cover;
-}
-.img__r75K > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
-.svg__jqyOa {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.logarComGoogle:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  width: 200px;
-  height: 70px;
-  flex-shrink: 0;
-  margin: 15px 0px 0px;
-}
-.svg__tzi34 {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.text__hDd67 {
-  height: 25px;
-}
-.img__ldPjc {
-  position: relative;
-  object-fit: contain;
-  max-width: 100%;
-  height: 23px;
-  margin-left: 4px;
-}
-.img__ldPjc > picture > img {
-  object-fit: contain;
-}
-.img__ldPjc > :global(.__wab_img-spacer) > img {
-  object-fit: contain;
-}
-.svg__duWf {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.text__rzLjS {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 800px;
-  text-align: center;
-  margin-top: 20px;
-  min-width: 0;
-}
-.link {
-  color: #0076ff;
-  text-decoration-line: underline;
 }
