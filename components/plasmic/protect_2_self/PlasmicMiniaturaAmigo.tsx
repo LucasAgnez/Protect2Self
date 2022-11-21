@@ -123,7 +123,7 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
       {
         path: "emGrupo",
         type: "private",
-        initFunc: ($props, $state) => $props["emGrupo"]
+        initFunc: ($props, $state) => $props.emGrupo
       }
     ],
 

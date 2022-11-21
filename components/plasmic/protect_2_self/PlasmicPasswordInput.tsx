@@ -141,25 +141,25 @@ function PlasmicPasswordInput__RenderFunc(props: {
       {
         path: "showStartIcon",
         type: "private",
-        initFunc: ($props, $state) => $props["showStartIcon"]
+        initFunc: ($props, $state) => $props.showStartIcon
       },
 
       {
         path: "showEndIcon",
         type: "private",
-        initFunc: ($props, $state) => $props["showEndIcon"]
+        initFunc: ($props, $state) => $props.showEndIcon
       },
 
       {
         path: "isDisabled",
         type: "private",
-        initFunc: ($props, $state) => $props["isDisabled"]
+        initFunc: ($props, $state) => $props.isDisabled
       },
 
       {
         path: "color",
         type: "private",
-        initFunc: ($props, $state) => $props["color"]
+        initFunc: ($props, $state) => $props.color
       }
     ],
 

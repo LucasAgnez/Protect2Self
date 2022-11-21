@@ -112,13 +112,13 @@ function PlasmicHeader__RenderFunc(props: {
       {
         path: "line",
         type: "private",
-        initFunc: ($props, $state) => $props["line"]
+        initFunc: ($props, $state) => $props.line
       },
 
       {
         path: "shortcut",
         type: "private",
-        initFunc: ($props, $state) => $props["shortcut"]
+        initFunc: ($props, $state) => $props.shortcut
       }
     ],
 

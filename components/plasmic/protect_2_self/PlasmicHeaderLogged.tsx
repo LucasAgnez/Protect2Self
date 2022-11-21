@@ -121,11 +121,13 @@ function PlasmicHeaderLogged__RenderFunc(props: {
           }
         />
 
-        <Menu
-          data-plasmic-name={"menu"}
-          data-plasmic-override={overrides.menu}
-          className={classNames("__wab_instance", sty.menu)}
-        />
+        {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
+          <Menu
+            data-plasmic-name={"menu"}
+            data-plasmic-override={overrides.menu}
+            className={classNames("__wab_instance", sty.menu)}
+          />
+        ) : null}
       </div>
     ) : null
   ) as React.ReactElement | null;

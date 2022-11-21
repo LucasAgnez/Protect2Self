@@ -142,19 +142,19 @@ function PlasmicOpcoesMembro__RenderFunc(props: {
       {
         path: "showPlaceholder",
         type: "private",
-        initFunc: ($props, $state) => $props["showPlaceholder"]
+        initFunc: ($props, $state) => $props.showPlaceholder
       },
 
       {
         path: "isOpen",
         type: "private",
-        initFunc: ($props, $state) => $props["isOpen"]
+        initFunc: ($props, $state) => $props.isOpen
       },
 
       {
         path: "isDisabled",
         type: "private",
-        initFunc: ($props, $state) => $props["isDisabled"]
+        initFunc: ($props, $state) => $props.isDisabled
       }
     ],
 

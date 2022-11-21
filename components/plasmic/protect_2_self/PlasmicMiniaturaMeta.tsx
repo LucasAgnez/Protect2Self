@@ -115,7 +115,7 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
       {
         path: "tipoMeta",
         type: "private",
-        initFunc: ($props, $state) => $props["tipoMeta"]
+        initFunc: ($props, $state) => $props.tipoMeta
       }
     ],
 

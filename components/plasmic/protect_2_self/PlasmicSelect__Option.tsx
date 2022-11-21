@@ -118,25 +118,25 @@ function PlasmicSelect__Option__RenderFunc(props: {
       {
         path: "isSelected",
         type: "private",
-        initFunc: ($props, $state) => $props["isSelected"]
+        initFunc: ($props, $state) => $props.isSelected
       },
 
       {
         path: "isHighlighted",
         type: "private",
-        initFunc: ($props, $state) => $props["isHighlighted"]
+        initFunc: ($props, $state) => $props.isHighlighted
       },
 
       {
         path: "isDisabled",
         type: "private",
-        initFunc: ($props, $state) => $props["isDisabled"]
+        initFunc: ($props, $state) => $props.isDisabled
       },
 
       {
         path: "color",
         type: "private",
-        initFunc: ($props, $state) => $props["color"]
+        initFunc: ($props, $state) => $props.color
       }
     ],
 

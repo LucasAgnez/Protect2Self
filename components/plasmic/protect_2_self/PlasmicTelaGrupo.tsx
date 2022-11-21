@@ -112,7 +112,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
       {
         path: "telaAdm",
         type: "private",
-        initFunc: ($props, $state) => $props["telaAdm"]
+        initFunc: ($props, $state) => $props.telaAdm
       }
     ],
 

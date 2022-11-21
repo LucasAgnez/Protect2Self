@@ -113,13 +113,13 @@ function PlasmicMedalha__RenderFunc(props: {
       {
         path: "miniatura",
         type: "private",
-        initFunc: ($props, $state) => $props["miniatura"]
+        initFunc: ($props, $state) => $props.miniatura
       },
 
       {
         path: "cor",
         type: "private",
-        initFunc: ($props, $state) => $props["cor"]
+        initFunc: ($props, $state) => $props.cor
       }
     ],
 

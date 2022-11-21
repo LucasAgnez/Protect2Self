@@ -28,6 +28,8 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .headerLogged:global(.__wab_instance) {
+    width: 100%;
+    min-width: 0;
     flex-shrink: 0;
   }
 }

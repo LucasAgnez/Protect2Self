@@ -110,7 +110,7 @@ function PlasmicOpcoesAdm__Overlay__RenderFunc(props: {
       {
         path: "relativePlacement",
         type: "private",
-        initFunc: ($props, $state) => $props["relativePlacement"]
+        initFunc: ($props, $state) => $props.relativePlacement
       }
     ],
 
