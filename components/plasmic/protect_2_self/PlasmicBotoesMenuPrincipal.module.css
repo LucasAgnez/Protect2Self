@@ -28,7 +28,6 @@
   }
 }
 .freeBox {
-  display: flex;
   position: relative;
   flex-direction: row;
   align-items: center;
@@ -37,6 +36,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .sinoNotificacao:global(.__wab_instance) {
@@ -89,7 +89,7 @@
   height: auto;
   max-width: 800px;
   min-width: 0;
-  display: none;
+  display: block;
 }
 @media (max-width: 1029px) {
   .text__djHid {
@@ -118,7 +118,7 @@
   height: auto;
   max-width: 800px;
   min-width: 0;
-  display: none;
+  display: block;
 }
 @media (max-width: 1029px) {
   .text___8Ob54 {
@@ -152,7 +152,7 @@
   height: auto;
   max-width: 800px;
   min-width: 0;
-  display: none;
+  display: block;
 }
 @media (max-width: 1029px) {
   .text__xMaz {

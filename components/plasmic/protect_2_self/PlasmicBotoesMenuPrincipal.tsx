@@ -104,172 +104,49 @@ function PlasmicBotoesMenuPrincipal__RenderFunc(props: {
   });
 
   return (
-    <p.Stack
-      as={"div"}
-      data-plasmic-name={"root"}
-      data-plasmic-override={overrides.root}
-      data-plasmic-root={true}
-      data-plasmic-for-node={forNode}
-      hasGap={true}
-      className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
-        projectcss.plasmic_tokens,
-        sty.root
-      )}
-    >
-      {true ? (
-        <div
-          data-plasmic-name={"freeBox"}
-          data-plasmic-override={overrides.freeBox}
-          className={classNames(projectcss.all, sty.freeBox)}
-        >
-          <SinoNotificacao
-            data-plasmic-name={"sinoNotificacao"}
-            data-plasmic-override={overrides.sinoNotificacao}
-            className={classNames("__wab_instance", sty.sinoNotificacao)}
-          />
-        </div>
-      ) : null}
-
-      <MainPageButton
-        data-plasmic-name={"minhasMetas"}
-        data-plasmic-override={overrides.minhasMetas}
-        className={classNames("__wab_instance", sty.minhasMetas)}
-        link={`/metas`}
+    true ? (
+      <p.Stack
+        as={"div"}
+        data-plasmic-name={"root"}
+        data-plasmic-override={overrides.root}
+        data-plasmic-root={true}
+        data-plasmic-for-node={forNode}
+        hasGap={true}
+        className={classNames(
+          projectcss.all,
+          projectcss.root_reset,
+          projectcss.plasmic_default_styles,
+          projectcss.plasmic_mixins,
+          projectcss.plasmic_tokens,
+          sty.root
+        )}
       >
-        {(hasVariant(globalVariants, "screen", "tablet") ? true : true) ? (
+        {true ? (
           <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__iDdFs
-            )}
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
           >
-            <React.Fragment>
-              <React.Fragment>{""}</React.Fragment>
-              {
-                <h4
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h4,
-                    projectcss.__wab_text,
-                    sty.h4__d3FfY
-                  )}
-                >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "#FFFFFF" }}
-                    >
-                      {"Minhas Metas"}
-                    </span>
-                  </React.Fragment>
-                </h4>
-              }
-              <React.Fragment>{""}</React.Fragment>
-            </React.Fragment>
+            <SinoNotificacao
+              data-plasmic-name={"sinoNotificacao"}
+              data-plasmic-override={overrides.sinoNotificacao}
+              className={classNames("__wab_instance", sty.sinoNotificacao)}
+            />
           </div>
         ) : null}
-      </MainPageButton>
 
-      <MainPageButton
-        data-plasmic-name={"meusGrupos"}
-        data-plasmic-override={overrides.meusGrupos}
-        className={classNames("__wab_instance", sty.meusGrupos)}
-        link={`/grupos`}
-      >
-        {(hasVariant(globalVariants, "screen", "tablet") ? true : true) ? (
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__djHid
-            )}
-          >
-            <React.Fragment>
-              <React.Fragment>{""}</React.Fragment>
-              {
-                <h4
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h4,
-                    projectcss.__wab_text,
-                    sty.h4__ihrVo
-                  )}
-                >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "#FFFFFF" }}
-                    >
-                      {"Meus Grupos"}
-                    </span>
-                  </React.Fragment>
-                </h4>
-              }
-              <React.Fragment>{""}</React.Fragment>
-            </React.Fragment>
-          </div>
-        ) : null}
-      </MainPageButton>
-
-      <MainPageButton
-        data-plasmic-name={"criarMeta"}
-        data-plasmic-override={overrides.criarMeta}
-        className={classNames("__wab_instance", sty.criarMeta)}
-        link={`/criacao-meta`}
-      >
-        {(hasVariant(globalVariants, "screen", "tablet") ? true : true) ? (
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text___8Ob54
-            )}
-          >
-            <React.Fragment>
-              <React.Fragment>{""}</React.Fragment>
-              {
-                <h4
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h4,
-                    projectcss.__wab_text,
-                    sty.h4__xnXxu
-                  )}
-                >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "#FFFFFF" }}
-                    >
-                      {"Criar Meta"}
-                    </span>
-                  </React.Fragment>
-                </h4>
-              }
-              <React.Fragment>{""}</React.Fragment>
-            </React.Fragment>
-          </div>
-        ) : null}
-      </MainPageButton>
-
-      {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
         <MainPageButton
-          data-plasmic-name={"criarGrupo"}
-          data-plasmic-override={overrides.criarGrupo}
-          className={classNames("__wab_instance", sty.criarGrupo)}
-          link={`/criacao-grupo`}
+          data-plasmic-name={"minhasMetas"}
+          data-plasmic-override={overrides.minhasMetas}
+          className={classNames("__wab_instance", sty.minhasMetas)}
+          link={`/metas`}
         >
           {(hasVariant(globalVariants, "screen", "tablet") ? true : true) ? (
             <div
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__xMaz
+                sty.text__iDdFs
               )}
             >
               <React.Fragment>
@@ -280,7 +157,7 @@ function PlasmicBotoesMenuPrincipal__RenderFunc(props: {
                       projectcss.all,
                       projectcss.h4,
                       projectcss.__wab_text,
-                      sty.h4__l47N
+                      sty.h4__d3FfY
                     )}
                   >
                     <React.Fragment>
@@ -288,7 +165,7 @@ function PlasmicBotoesMenuPrincipal__RenderFunc(props: {
                         className={"plasmic_default__all plasmic_default__span"}
                         style={{ color: "#FFFFFF" }}
                       >
-                        {"Criar Grupo"}
+                        {"Minhas Metas"}
                       </span>
                     </React.Fragment>
                   </h4>
@@ -298,8 +175,135 @@ function PlasmicBotoesMenuPrincipal__RenderFunc(props: {
             </div>
           ) : null}
         </MainPageButton>
-      ) : null}
-    </p.Stack>
+
+        <MainPageButton
+          data-plasmic-name={"meusGrupos"}
+          data-plasmic-override={overrides.meusGrupos}
+          className={classNames("__wab_instance", sty.meusGrupos)}
+          link={`/grupos`}
+        >
+          {(hasVariant(globalVariants, "screen", "tablet") ? true : true) ? (
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__djHid
+              )}
+            >
+              <React.Fragment>
+                <React.Fragment>{""}</React.Fragment>
+                {
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4__ihrVo
+                    )}
+                  >
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#FFFFFF" }}
+                      >
+                        {"Meus Grupos"}
+                      </span>
+                    </React.Fragment>
+                  </h4>
+                }
+                <React.Fragment>{""}</React.Fragment>
+              </React.Fragment>
+            </div>
+          ) : null}
+        </MainPageButton>
+
+        <MainPageButton
+          data-plasmic-name={"criarMeta"}
+          data-plasmic-override={overrides.criarMeta}
+          className={classNames("__wab_instance", sty.criarMeta)}
+          link={`/criacao-meta`}
+        >
+          {(hasVariant(globalVariants, "screen", "tablet") ? true : true) ? (
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___8Ob54
+              )}
+            >
+              <React.Fragment>
+                <React.Fragment>{""}</React.Fragment>
+                {
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4__xnXxu
+                    )}
+                  >
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#FFFFFF" }}
+                      >
+                        {"Criar Meta"}
+                      </span>
+                    </React.Fragment>
+                  </h4>
+                }
+                <React.Fragment>{""}</React.Fragment>
+              </React.Fragment>
+            </div>
+          ) : null}
+        </MainPageButton>
+
+        {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
+          <MainPageButton
+            data-plasmic-name={"criarGrupo"}
+            data-plasmic-override={overrides.criarGrupo}
+            className={classNames("__wab_instance", sty.criarGrupo)}
+            link={`/criacao-grupo`}
+          >
+            {(hasVariant(globalVariants, "screen", "tablet") ? true : true) ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__xMaz
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <h4
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h4,
+                        projectcss.__wab_text,
+                        sty.h4__l47N
+                      )}
+                    >
+                      <React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ color: "#FFFFFF" }}
+                        >
+                          {"Criar Grupo"}
+                        </span>
+                      </React.Fragment>
+                    </h4>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
+            ) : null}
+          </MainPageButton>
+        ) : null}
+      </p.Stack>
+    ) : null
   ) as React.ReactElement | null;
 }
 

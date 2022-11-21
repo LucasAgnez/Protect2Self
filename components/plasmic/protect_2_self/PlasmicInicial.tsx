@@ -36,7 +36,6 @@ import {
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
 import BotoesMenuPrincipal from "../../BotoesMenuPrincipal"; // plasmic-import: 8PboOpLyrBm/component
-import MainPageButton from "../../MainPageButton"; // plasmic-import: hF66z6g8PUp/component
 import MiniaturaMeta from "../../MiniaturaMeta"; // plasmic-import: LQeW26Vvq3/component
 import MiniaturaGrupo from "../../MiniaturaGrupo"; // plasmic-import: QylFKCNC0eW/component
 
@@ -46,9 +45,6 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import: 8XuJZfnuNd7UvNkkshapC6/projectcss
 import sty from "./PlasmicInicial.module.css"; // plasmic-import: Cwcul4UrW6HS/css
-
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
 export type PlasmicInicial__VariantMembers = {};
 
@@ -65,10 +61,8 @@ export type PlasmicInicial__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
-  mainPageButton?: p.Flex<typeof MainPageButton>;
-  h5?: p.Flex<"h5">;
-  h4?: p.Flex<"h4">;
   freeBox?: p.Flex<"div">;
+  text?: p.Flex<"div">;
 };
 
 export interface DefaultInicialProps {}
@@ -177,69 +171,6 @@ function PlasmicInicial__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.column__sPnqS)}
                   >
-                    {true ? (
-                      <MainPageButton
-                        data-plasmic-name={"mainPageButton"}
-                        data-plasmic-override={overrides.mainPageButton}
-                        className={classNames(
-                          "__wab_instance",
-                          sty.mainPageButton
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__aAc4G
-                          )}
-                        >
-                          <React.Fragment>
-                            <React.Fragment>{""}</React.Fragment>
-                            {
-                              <h5
-                                data-plasmic-name={"h5"}
-                                data-plasmic-override={overrides.h5}
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.h5,
-                                  projectcss.__wab_text,
-                                  sty.h5
-                                )}
-                              >
-                                <React.Fragment>
-                                  <React.Fragment>{""}</React.Fragment>
-                                  {
-                                    <h4
-                                      data-plasmic-name={"h4"}
-                                      data-plasmic-override={overrides.h4}
-                                      className={classNames(
-                                        projectcss.all,
-                                        projectcss.h4,
-                                        projectcss.__wab_text,
-                                        sty.h4
-                                      )}
-                                    >
-                                      <React.Fragment>
-                                        <span
-                                          className={
-                                            "plasmic_default__all plasmic_default__span"
-                                          }
-                                          style={{ color: "#FFFFFF" }}
-                                        >
-                                          {"Button"}
-                                        </span>
-                                      </React.Fragment>
-                                    </h4>
-                                  }
-                                  <React.Fragment>{""}</React.Fragment>
-                                </React.Fragment>
-                              </h5>
-                            }
-                            <React.Fragment>{""}</React.Fragment>
-                          </React.Fragment>
-                        </div>
-                      </MainPageButton>
-                    ) : null}
                     {(
                       hasVariant(globalVariants, "screen", "mobileOnly")
                         ? true
@@ -298,10 +229,12 @@ function PlasmicInicial__RenderFunc(props: {
                             )}
                             slot2={
                               <div
+                                data-plasmic-name={"text"}
+                                data-plasmic-override={overrides.text}
                                 className={classNames(
                                   projectcss.all,
                                   projectcss.__wab_text,
-                                  sty.text___5H43O
+                                  sty.text
                                 )}
                               >
                                 <React.Fragment>
@@ -337,25 +270,14 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "botoesMenuPrincipal",
-    "mainPageButton",
-    "h5",
-    "h4",
-    "freeBox"
+    "freeBox",
+    "text"
   ],
   headerLogged: ["headerLogged"],
-  columns: [
-    "columns",
-    "botoesMenuPrincipal",
-    "mainPageButton",
-    "h5",
-    "h4",
-    "freeBox"
-  ],
+  columns: ["columns", "botoesMenuPrincipal", "freeBox", "text"],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
-  mainPageButton: ["mainPageButton", "h5", "h4"],
-  h5: ["h5", "h4"],
-  h4: ["h4"],
-  freeBox: ["freeBox"]
+  freeBox: ["freeBox", "text"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -365,10 +287,8 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
-  mainPageButton: typeof MainPageButton;
-  h5: "h5";
-  h4: "h4";
   freeBox: "div";
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -435,10 +355,8 @@ export const PlasmicInicial = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
-    mainPageButton: makeNodeComponent("mainPageButton"),
-    h5: makeNodeComponent("h5"),
-    h4: makeNodeComponent("h4"),
     freeBox: makeNodeComponent("freeBox"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicInicial
     internalVariantProps: PlasmicInicial__VariantProps,

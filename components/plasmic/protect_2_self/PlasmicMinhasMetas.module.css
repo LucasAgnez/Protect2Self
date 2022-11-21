@@ -127,28 +127,6 @@
     display: flex;
   }
 }
-.mainPageButton:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  display: none;
-}
-@media (max-width: 1029px) {
-  .mainPageButton:global(.__wab_instance) {
-    display: none;
-  }
-}
-.svg__eVhiN {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__akqoJ {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
 .buscaMeta:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
