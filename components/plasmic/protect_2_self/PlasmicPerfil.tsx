@@ -74,9 +74,12 @@ export type PlasmicPerfil__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
-  username?: p.Flex<"div">;
+  campoUsername?: p.Flex<"div">;
   botaoEditar?: p.Flex<typeof Button>;
   iconEditar?: p.Flex<typeof p.PlasmicImg>;
+  campoNome?: p.Flex<"div">;
+  campoEmail?: p.Flex<"div">;
+  campoTelefone?: p.Flex<"div">;
 };
 
 export interface DefaultPerfilProps {}
@@ -221,9 +224,9 @@ function PlasmicPerfil__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.freeBox__i8Yc)}
                   >
                     <div
-                      data-plasmic-name={"username"}
-                      data-plasmic-override={overrides.username}
-                      className={classNames(projectcss.all, sty.username)}
+                      data-plasmic-name={"campoUsername"}
+                      data-plasmic-override={overrides.campoUsername}
+                      className={classNames(projectcss.all, sty.campoUsername)}
                     >
                       {p.renderPlasmicSlot({
                         defaultContents: (
@@ -333,10 +336,9 @@ function PlasmicPerfil__RenderFunc(props: {
                         </div>
 
                         <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__tcJcs
-                          )}
+                          data-plasmic-name={"campoNome"}
+                          data-plasmic-override={overrides.campoNome}
+                          className={classNames(projectcss.all, sty.campoNome)}
                         >
                           {p.renderPlasmicSlot({
                             defaultContents: (
@@ -392,10 +394,9 @@ function PlasmicPerfil__RenderFunc(props: {
                       </div>
 
                       <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__nnxk3
-                        )}
+                        data-plasmic-name={"campoEmail"}
+                        data-plasmic-override={overrides.campoEmail}
+                        className={classNames(projectcss.all, sty.campoEmail)}
                       >
                         {p.renderPlasmicSlot({
                           defaultContents: (
@@ -446,46 +447,39 @@ function PlasmicPerfil__RenderFunc(props: {
                         </React.Fragment>
                       </div>
 
-                      {true ? (
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__bw86P
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__wjnO
-                            )}
-                          >
-                            {p.renderPlasmicSlot({
-                              defaultContents: (
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text___1K9Ao
-                                  )}
+                      <div
+                        data-plasmic-name={"campoTelefone"}
+                        data-plasmic-override={overrides.campoTelefone}
+                        className={classNames(
+                          projectcss.all,
+                          sty.campoTelefone
+                        )}
+                      >
+                        {p.renderPlasmicSlot({
+                          defaultContents: (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text___1K9Ao
+                              )}
+                            >
+                              <React.Fragment>
+                                <span
+                                  className={
+                                    "plasmic_default__all plasmic_default__span"
+                                  }
+                                  style={{ color: "#FFFFFF" }}
                                 >
-                                  <React.Fragment>
-                                    <span
-                                      className={
-                                        "plasmic_default__all plasmic_default__span"
-                                      }
-                                      style={{ color: "#FFFFFF" }}
-                                    >
-                                      {"(00) 99999 - 9999"}
-                                    </span>
-                                  </React.Fragment>
-                                </div>
-                              ),
+                                  {"(00) 99999 - 9999"}
+                                </span>
+                              </React.Fragment>
+                            </div>
+                          ),
 
-                              value: args.slot2
-                            })}
-                          </div>
-                        </div>
-                      ) : null}
+                          value: args.slot2
+                        })}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -504,16 +498,31 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "userPhoto",
-    "username",
+    "campoUsername",
     "botaoEditar",
-    "iconEditar"
+    "iconEditar",
+    "campoNome",
+    "campoEmail",
+    "campoTelefone"
   ],
   headerLogged: ["headerLogged"],
-  columns: ["columns", "userPhoto", "username", "botaoEditar", "iconEditar"],
+  columns: [
+    "columns",
+    "userPhoto",
+    "campoUsername",
+    "botaoEditar",
+    "iconEditar",
+    "campoNome",
+    "campoEmail",
+    "campoTelefone"
+  ],
   userPhoto: ["userPhoto"],
-  username: ["username", "botaoEditar", "iconEditar"],
+  campoUsername: ["campoUsername", "botaoEditar", "iconEditar"],
   botaoEditar: ["botaoEditar", "iconEditar"],
-  iconEditar: ["iconEditar"]
+  iconEditar: ["iconEditar"],
+  campoNome: ["campoNome"],
+  campoEmail: ["campoEmail"],
+  campoTelefone: ["campoTelefone"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -523,9 +532,12 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   userPhoto: typeof UserPhoto;
-  username: "div";
+  campoUsername: "div";
   botaoEditar: typeof Button;
   iconEditar: typeof p.PlasmicImg;
+  campoNome: "div";
+  campoEmail: "div";
+  campoTelefone: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -592,9 +604,12 @@ export const PlasmicPerfil = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     userPhoto: makeNodeComponent("userPhoto"),
-    username: makeNodeComponent("username"),
+    campoUsername: makeNodeComponent("campoUsername"),
     botaoEditar: makeNodeComponent("botaoEditar"),
     iconEditar: makeNodeComponent("iconEditar"),
+    campoNome: makeNodeComponent("campoNome"),
+    campoEmail: makeNodeComponent("campoEmail"),
+    campoTelefone: makeNodeComponent("campoTelefone"),
 
     // Metadata about props expected for PlasmicPerfil
     internalVariantProps: PlasmicPerfil__VariantProps,

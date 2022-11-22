@@ -250,7 +250,7 @@
   min-width: 0;
   padding: 8px;
 }
-.username {
+.campoUsername {
   position: relative;
   width: 100%;
   height: auto;
@@ -323,7 +323,7 @@
   max-width: 800px;
   flex-shrink: 0;
 }
-.freeBox__tcJcs {
+.campoNome {
   position: relative;
   width: 100%;
   height: auto;
@@ -362,7 +362,7 @@
   padding-left: 0px;
   margin-left: 0px;
 }
-.freeBox__nnxk3 {
+.campoEmail {
   position: relative;
   width: 100%;
   height: auto;
@@ -400,20 +400,7 @@
   max-height: 30px;
   padding-left: 1px;
 }
-.freeBox__bw86P {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: flex-start;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  margin-left: 0px;
-  min-width: 0;
-  padding: 0px;
-}
-.freeBox__wjnO {
+.campoTelefone {
   width: 100%;
   height: auto;
   max-width: 800px;
