@@ -37,8 +37,6 @@ import {
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
 import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
-import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
-import PasswordInput from "../../PasswordInput"; // plasmic-import: s963UX2uFqp/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
@@ -49,7 +47,6 @@ import sty from "./PlasmicPerfil.module.css"; // plasmic-import: zmhDGaogJf/css
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 
 export type PlasmicPerfil__VariantMembers = {};
 
@@ -61,13 +58,15 @@ export type PlasmicPerfil__ArgsType = {
   children?: React.ReactNode;
   slot?: React.ReactNode;
   slot2?: React.ReactNode;
+  slot3?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicPerfil__ArgsType;
 export const PlasmicPerfil__ArgProps = new Array<ArgPropType>(
   "children",
   "slot",
-  "slot2"
+  "slot2",
+  "slot3"
 );
 
 export type PlasmicPerfil__OverridesType = {
@@ -75,15 +74,9 @@ export type PlasmicPerfil__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
+  username?: p.Flex<"div">;
   botaoEditar?: p.Flex<typeof Button>;
   iconEditar?: p.Flex<typeof p.PlasmicImg>;
-  nome?: p.Flex<typeof TextInput>;
-  email?: p.Flex<typeof TextInput>;
-  telefone?: p.Flex<typeof TextInput>;
-  senha?: p.Flex<typeof PasswordInput>;
-  confirmaSenha?: p.Flex<typeof PasswordInput>;
-  confirma?: p.Flex<typeof Button>;
-  cancela?: p.Flex<typeof Button>;
 };
 
 export interface DefaultPerfilProps {}
@@ -228,7 +221,9 @@ function PlasmicPerfil__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.freeBox__i8Yc)}
                   >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__bLytP)}
+                      data-plasmic-name={"username"}
+                      data-plasmic-override={overrides.username}
+                      className={classNames(projectcss.all, sty.username)}
                     >
                       {p.renderPlasmicSlot({
                         defaultContents: (
@@ -236,46 +231,31 @@ function PlasmicPerfil__RenderFunc(props: {
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__vz1WE
+                              sty.text__m79Nb
                             )}
                           >
                             <React.Fragment>
                               <React.Fragment>{""}</React.Fragment>
                               {
-                                <h2
+                                <h4
                                   className={classNames(
                                     projectcss.all,
-                                    projectcss.h2,
+                                    projectcss.h4,
                                     projectcss.__wab_text,
-                                    sty.h2__jkm0I
+                                    sty.h4__k2At
                                   )}
                                 >
                                   <React.Fragment>
-                                    <React.Fragment>{""}</React.Fragment>
-                                    {
-                                      <h4
-                                        className={classNames(
-                                          projectcss.all,
-                                          projectcss.h4,
-                                          projectcss.__wab_text,
-                                          sty.h4___5HlXf
-                                        )}
-                                      >
-                                        <React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span"
-                                            }
-                                            style={{ color: "#FFFFFF" }}
-                                          >
-                                            {"Nome De Usuário"}
-                                          </span>
-                                        </React.Fragment>
-                                      </h4>
-                                    }
-                                    <React.Fragment>{""}</React.Fragment>
+                                    <span
+                                      className={
+                                        "plasmic_default__all plasmic_default__span"
+                                      }
+                                      style={{ color: "#FFFFFF" }}
+                                    >
+                                      {"Nome Usuario"}
+                                    </span>
                                   </React.Fragment>
-                                </h2>
+                                </h4>
                               }
                               <React.Fragment>{""}</React.Fragment>
                             </React.Fragment>
@@ -331,14 +311,58 @@ function PlasmicPerfil__RenderFunc(props: {
                             sty.text__w6Ilt
                           )}
                         >
-                          {"Enter some text"}
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "#FFFFFF" }}
+                            >
+                              {"Nome "}
+                            </span>
+                            <React.Fragment>{"\n"}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "#FFFFFF" }}
+                            >
+                              {"completo"}
+                            </span>
+                          </React.Fragment>
                         </div>
 
-                        <TextInput
-                          data-plasmic-name={"nome"}
-                          data-plasmic-override={overrides.nome}
-                          className={classNames("__wab_instance", sty.nome)}
-                        />
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__tcJcs
+                          )}
+                        >
+                          {p.renderPlasmicSlot({
+                            defaultContents: (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___7Mu8Q
+                                )}
+                              >
+                                <React.Fragment>
+                                  <span
+                                    className={
+                                      "plasmic_default__all plasmic_default__span"
+                                    }
+                                    style={{ color: "#FFFFFF" }}
+                                  >
+                                    {"nome completo"}
+                                  </span>
+                                </React.Fragment>
+                              </div>
+                            ),
+
+                            value: args.slot3
+                          })}
+                        </div>
                       </div>
                     ) : null}
 
@@ -366,15 +390,6 @@ function PlasmicPerfil__RenderFunc(props: {
                           </span>
                         </React.Fragment>
                       </div>
-
-                      {true ? (
-                        <TextInput
-                          data-plasmic-name={"email"}
-                          data-plasmic-override={overrides.email}
-                          className={classNames("__wab_instance", sty.email)}
-                          color={"dark" as const}
-                        />
-                      ) : null}
 
                       <div
                         className={classNames(
@@ -471,149 +486,7 @@ function PlasmicPerfil__RenderFunc(props: {
                           </div>
                         </div>
                       ) : null}
-                      {true ? (
-                        <TextInput
-                          data-plasmic-name={"telefone"}
-                          data-plasmic-override={overrides.telefone}
-                          className={classNames("__wab_instance", sty.telefone)}
-                          color={"dark" as const}
-                        />
-                      ) : null}
                     </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___2Kc6M
-                      )}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__gPjWa
-                        )}
-                      >
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ color: "#FFFFFF" }}
-                          >
-                            {"Senha"}
-                          </span>
-                        </React.Fragment>
-                      </div>
-
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__z3M3E
-                        )}
-                      >
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ color: "#FFFFFF" }}
-                          >
-                            {"************"}
-                          </span>
-                        </React.Fragment>
-                      </div>
-
-                      {true ? (
-                        <PasswordInput
-                          data-plasmic-name={"senha"}
-                          data-plasmic-override={overrides.senha}
-                          className={classNames("__wab_instance", sty.senha)}
-                          color={"dark" as const}
-                        />
-                      ) : null}
-                    </div>
-
-                    {true ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__uqWpR
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__s7Nrt
-                          )}
-                        >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "#F7F7F7" }}
-                            >
-                              {"Confirme a "}
-                            </span>
-                            <React.Fragment>{"\n"}</React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "#F7F7F7" }}
-                            >
-                              {"senha"}
-                            </span>
-                          </React.Fragment>
-                        </div>
-
-                        <PasswordInput
-                          data-plasmic-name={"confirmaSenha"}
-                          data-plasmic-override={overrides.confirmaSenha}
-                          className={classNames(
-                            "__wab_instance",
-                            sty.confirmaSenha
-                          )}
-                          color={"dark" as const}
-                        />
-                      </div>
-                    ) : null}
-                    {true ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__w7KJl
-                        )}
-                      >
-                        {true ? (
-                          <Button
-                            data-plasmic-name={"confirma"}
-                            data-plasmic-override={overrides.confirma}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.confirma
-                            )}
-                          >
-                            {"Button"}
-                          </Button>
-                        ) : null}
-                        {true ? (
-                          <Button
-                            data-plasmic-name={"cancela"}
-                            data-plasmic-override={overrides.cancela}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.cancela
-                            )}
-                          >
-                            {"Button"}
-                          </Button>
-                        ) : null}
-                      </div>
-                    ) : null}
                   </div>
                 </div>
               ) : null}
@@ -631,40 +504,16 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "userPhoto",
+    "username",
     "botaoEditar",
-    "iconEditar",
-    "nome",
-    "email",
-    "telefone",
-    "senha",
-    "confirmaSenha",
-    "confirma",
-    "cancela"
+    "iconEditar"
   ],
   headerLogged: ["headerLogged"],
-  columns: [
-    "columns",
-    "userPhoto",
-    "botaoEditar",
-    "iconEditar",
-    "nome",
-    "email",
-    "telefone",
-    "senha",
-    "confirmaSenha",
-    "confirma",
-    "cancela"
-  ],
+  columns: ["columns", "userPhoto", "username", "botaoEditar", "iconEditar"],
   userPhoto: ["userPhoto"],
+  username: ["username", "botaoEditar", "iconEditar"],
   botaoEditar: ["botaoEditar", "iconEditar"],
-  iconEditar: ["iconEditar"],
-  nome: ["nome"],
-  email: ["email"],
-  telefone: ["telefone"],
-  senha: ["senha"],
-  confirmaSenha: ["confirmaSenha"],
-  confirma: ["confirma"],
-  cancela: ["cancela"]
+  iconEditar: ["iconEditar"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -674,15 +523,9 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   userPhoto: typeof UserPhoto;
+  username: "div";
   botaoEditar: typeof Button;
   iconEditar: typeof p.PlasmicImg;
-  nome: typeof TextInput;
-  email: typeof TextInput;
-  telefone: typeof TextInput;
-  senha: typeof PasswordInput;
-  confirmaSenha: typeof PasswordInput;
-  confirma: typeof Button;
-  cancela: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -749,15 +592,9 @@ export const PlasmicPerfil = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     userPhoto: makeNodeComponent("userPhoto"),
+    username: makeNodeComponent("username"),
     botaoEditar: makeNodeComponent("botaoEditar"),
     iconEditar: makeNodeComponent("iconEditar"),
-    nome: makeNodeComponent("nome"),
-    email: makeNodeComponent("email"),
-    telefone: makeNodeComponent("telefone"),
-    senha: makeNodeComponent("senha"),
-    confirmaSenha: makeNodeComponent("confirmaSenha"),
-    confirma: makeNodeComponent("confirma"),
-    cancela: makeNodeComponent("cancela"),
 
     // Metadata about props expected for PlasmicPerfil
     internalVariantProps: PlasmicPerfil__VariantProps,
