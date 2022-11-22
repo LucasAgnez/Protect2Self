@@ -6,6 +6,9 @@ import * as ph from "@plasmicapp/host";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicMeusGrupos } from "../components/plasmic/protect_2_self/PlasmicMeusGrupos";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import MiniaturaGrupo from "../components/MiniaturaGrupo";
 
 function MeusGrupos() {
   // Use PlasmicMeusGrupos to render this component as it was
@@ -24,12 +27,46 @@ function MeusGrupos() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+
+  const [dados, setDados] = useState<any[]>();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error>();
+
+  //const data = [{nome: "Lusca"}, {nome: "Agnaldo"}];
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/usuario/getGrupos/" + localStorage.getItem('userId')
+        );
+        setDados(response.data);
+        setError(undefined);
+        console.log(dados);
+      } catch (err) {
+        setError((err as any).message);
+        setDados([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+
+	if (error) {
+		return <div>Error: {error.message}</div>
+	}
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicMeusGrupos />
+      <PlasmicMeusGrupos 
+      container = {(loading || !dados) ? {} :{ 
+        children: dados.map(entry => <MiniaturaGrupo slot={String(entry.nome)} slot2={String(entry.sequencia)} />) 
+      }}
+      />
     </ph.PageParamsProvider>
   );
 }

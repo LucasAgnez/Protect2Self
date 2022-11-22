@@ -66,11 +66,12 @@ function EditarPerfil() {
   function atualizaPerfil(){
     axios.put
     ("http://localhost:8080/usuario/update/",{
+			id: localStorage.getItem('userId'),
 			nome: (document.getElementById("nome") as any).value,
       username: (document.getElementById("username")as any).value,
       telefone: (document.getElementById("telefone")as any).value,
-      senha: (document.getElementById("senha")as any).value,
       email:(document.getElementById("email")as any).value,
+      senha: (document.getElementById("senha")as any).value,
     })
     .then((response) => {
       console.log(JSON.stringify(response));

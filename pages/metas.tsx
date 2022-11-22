@@ -28,11 +28,11 @@ function MinhasMetas() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   
-  const [dados, setDados] = useState(null);
+  const [dados, setDados] = useState<any[]>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error>();
 
-  const data = [{nome: "Lusca"}, {nome: "Agnaldo"}];
+  //const data = [{nome: "Lusca"}, {nome: "Agnaldo"}];
 
   useEffect(() => {
     const getData = async () => {
@@ -45,7 +45,7 @@ function MinhasMetas() {
         console.log(dados);
       } catch (err) {
         setError((err as any).message);
-        setDados(null);
+        setDados([]);
       } finally {
         setLoading(false);
       }
@@ -64,7 +64,7 @@ function MinhasMetas() {
     >
       <PlasmicMinhasMetas 
       container = {(loading || !dados) ? {} :{ 
-        //children: (dados as any).map((entry) => <MiniaturaMeta slot={entry.nome as any}) 
+        children: dados.map(entry => <MiniaturaMeta slot={String(entry.nome)} slot2={String(entry.sequencia)} />) 
       }}
       />
     </ph.PageParamsProvider>
