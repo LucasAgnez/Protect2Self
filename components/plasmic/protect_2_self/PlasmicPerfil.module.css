@@ -261,13 +261,13 @@
   justify-content: flex-start;
   min-width: 0;
 }
-.text__m79Nb {
+.username {
   position: relative;
   width: auto;
   height: auto;
   max-width: 800px;
 }
-.h4__k2At {
+.h4 {
   width: auto;
 }
 .botaoEditar:global(.__wab_instance) {
@@ -334,7 +334,7 @@
   padding-left: 16px;
   min-width: 0;
 }
-.text___7Mu8Q {
+.nome {
   white-space: pre;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -373,7 +373,7 @@
   padding-left: 16px;
   min-width: 0;
 }
-.text__iYnfr {
+.email {
   white-space: pre;
   text-overflow: ellipsis;
   overflow: hidden;
