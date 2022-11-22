@@ -28,41 +28,6 @@ function EditarPerfil() {
   // (https://nextjs.org/docs/advanced-features/custom-app).
   const router = useRouter()
 
-  /*
-  function getNome(){
-			return axios.get("http://localhost:8080/usuario/findById/" + localStorage.getItem('userId'))
-			.then((response) => {
-				console.log(JSON.stringify(response.data.nome));
-				return(String(response.data.nome))
-			});
-  }
-  
-  function getUsername(){
-    return axios.get("http://localhost:8080/usuario/findById/" + localStorage.getItem('userId'))
-    .then((response) => {
-      console.log(JSON.stringify(response.data.username));
-      return(String(response.data.username))
-    });
-  }
-
-  function getEmail(){
-    return axios.get("http://localhost:8080/usuario/findById/" + localStorage.getItem('userId'))
-    .then((response) => {
-      console.log(JSON.stringify(response.data.email));
-      return(String(response.data.email))
-    });
-  }
-  
-	function getTelefone(){
-    return axios.get("http://localhost:8080/usuario/findById/" + localStorage.getItem('userId'))
-    .then((response) => {
-      console.log(JSON.stringify(response.data.telefone));
-      return(String(response.data.telefone))
-    });
-  }
-  */
-
-
   function atualizaPerfil(){
     axios.put
     ("http://localhost:8080/usuario/update/",{
