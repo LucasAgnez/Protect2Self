@@ -64,8 +64,7 @@ export type PlasmicPerfil__OverridesType = {
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
   campoUsername?: p.Flex<"div">;
-  username?: p.Flex<"div">;
-  h4?: p.Flex<"h4">;
+  username?: p.Flex<"h4">;
   botaoEditar?: p.Flex<typeof Button>;
   iconEditar?: p.Flex<typeof p.PlasmicImg>;
   campoNome?: p.Flex<"div">;
@@ -223,25 +222,23 @@ function PlasmicPerfil__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.campoUsername)}
                     >
                       <div
-                        data-plasmic-name={"username"}
-                        data-plasmic-override={overrides.username}
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.username
+                          sty.text__m79Nb
                         )}
                       >
                         <React.Fragment>
                           <React.Fragment>{""}</React.Fragment>
                           {
                             <h4
-                              data-plasmic-name={"h4"}
-                              data-plasmic-override={overrides.h4}
+                              data-plasmic-name={"username"}
+                              data-plasmic-override={overrides.username}
                               className={classNames(
                                 projectcss.all,
                                 projectcss.h4,
                                 projectcss.__wab_text,
-                                sty.h4
+                                sty.username
                               )}
                             >
                               <React.Fragment>
@@ -480,7 +477,6 @@ const PlasmicDescendants = {
     "userPhoto",
     "campoUsername",
     "username",
-    "h4",
     "botaoEditar",
     "iconEditar",
     "campoNome",
@@ -496,7 +492,6 @@ const PlasmicDescendants = {
     "userPhoto",
     "campoUsername",
     "username",
-    "h4",
     "botaoEditar",
     "iconEditar",
     "campoNome",
@@ -507,15 +502,8 @@ const PlasmicDescendants = {
     "telefone"
   ],
   userPhoto: ["userPhoto"],
-  campoUsername: [
-    "campoUsername",
-    "username",
-    "h4",
-    "botaoEditar",
-    "iconEditar"
-  ],
-  username: ["username", "h4"],
-  h4: ["h4"],
+  campoUsername: ["campoUsername", "username", "botaoEditar", "iconEditar"],
+  username: ["username"],
   botaoEditar: ["botaoEditar", "iconEditar"],
   iconEditar: ["iconEditar"],
   campoNome: ["campoNome", "nome"],
@@ -534,8 +522,7 @@ type NodeDefaultElementType = {
   columns: "div";
   userPhoto: typeof UserPhoto;
   campoUsername: "div";
-  username: "div";
-  h4: "h4";
+  username: "h4";
   botaoEditar: typeof Button;
   iconEditar: typeof p.PlasmicImg;
   campoNome: "div";
@@ -612,7 +599,6 @@ export const PlasmicPerfil = Object.assign(
     userPhoto: makeNodeComponent("userPhoto"),
     campoUsername: makeNodeComponent("campoUsername"),
     username: makeNodeComponent("username"),
-    h4: makeNodeComponent("h4"),
     botaoEditar: makeNodeComponent("botaoEditar"),
     iconEditar: makeNodeComponent("iconEditar"),
     campoNome: makeNodeComponent("campoNome"),

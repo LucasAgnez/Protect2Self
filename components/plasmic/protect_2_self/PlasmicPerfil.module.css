@@ -261,14 +261,15 @@
   justify-content: flex-start;
   min-width: 0;
 }
-.username {
+.text__m79Nb {
   position: relative;
   width: auto;
   height: auto;
   max-width: 800px;
 }
-.h4 {
+.username {
   width: auto;
+  color: #ffffff;
 }
 .botaoEditar:global(.__wab_instance) {
   max-width: 100%;
@@ -414,4 +415,7 @@
 }
 .telefone {
   color: #ffffff;
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
