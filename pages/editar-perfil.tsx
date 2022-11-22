@@ -2,10 +2,12 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/host";
+import axios from "axios";
 
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicEditarPerfil } from "../components/plasmic/protect_2_self/PlasmicEditarPerfil";
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 function EditarPerfil() {
   // Use PlasmicEditarPerfil to render this component as it was
@@ -24,12 +26,114 @@ function EditarPerfil() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  const router = useRouter()
+
+  /*
+  function getNome(){
+			return axios.get("http://localhost:8080/usuario/findById/" + localStorage.getItem('userId'))
+			.then((response) => {
+				console.log(JSON.stringify(response.data.nome));
+				return(String(response.data.nome))
+			});
+  }
+  
+  function getUsername(){
+    return axios.get("http://localhost:8080/usuario/findById/" + localStorage.getItem('userId'))
+    .then((response) => {
+      console.log(JSON.stringify(response.data.username));
+      return(String(response.data.username))
+    });
+  }
+
+  function getEmail(){
+    return axios.get("http://localhost:8080/usuario/findById/" + localStorage.getItem('userId'))
+    .then((response) => {
+      console.log(JSON.stringify(response.data.email));
+      return(String(response.data.email))
+    });
+  }
+  
+	function getTelefone(){
+    return axios.get("http://localhost:8080/usuario/findById/" + localStorage.getItem('userId'))
+    .then((response) => {
+      console.log(JSON.stringify(response.data.telefone));
+      return(String(response.data.telefone))
+    });
+  }
+  */
+
+
+  function atualizaPerfil(){
+    axios.put
+    ("http://localhost:8080/usuario/update/",{
+			nome: (document.getElementById("nome") as any).value,
+      username: (document.getElementById("username")as any).value,
+      telefone: (document.getElementById("telefone")as any).value,
+      senha: (document.getElementById("senha")as any).value,
+      email:(document.getElementById("email")as any).value,
+    })
+    .then((response) => {
+      console.log(JSON.stringify(response));
+      router.push('/perfil');
+    });
+  }
+
+  const [dados, setDados] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error>();
+ 
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/usuario/findById/" + localStorage.getItem('userId')
+        );
+        setDados(response.data);
+        setError(undefined);
+        console.log(dados);
+      } catch (err) {
+        setError((err as any).message);
+        setDados(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+
+	if (error) {
+		return <div>Error: {error.message}</div>
+	}
+
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicEditarPerfil />
+
+      <PlasmicEditarPerfil 
+			nome={{
+				props: (loading || !dados) ? {} : { value: String((dados as any).nome), onChange: (e) => setDados({...dados, nome: e.target.value})} 
+			}}
+			username={{
+				props: (loading || !dados) ? {} : { value: String((dados as any).username), onChange: (e) => setDados({...dados, username: e.target.value})}
+			}}
+			email={{
+				props: (loading || !dados) ? {} : { value: String((dados as any).email), onChange: (e) => setDados({...dados, email: e.target.value})}
+			}}
+			telefone={{
+				props: (loading || !dados) ? {} : { value: String((dados as any).telefone), onChange: (e) => setDados({...dados, telefone: e.target.value})}
+			}}
+			/*
+			*/
+        confirma={{
+          props: { onClick: () => atualizaPerfil()}
+        }}
+        cancela={{
+          props: { onClick: () => router.push('/perfil')}
+        }}
+      />
     </ph.PageParamsProvider>
   );
 }

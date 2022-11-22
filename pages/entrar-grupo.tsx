@@ -2,6 +2,8 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/host";
+import axios from "axios";
+
 
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicEntrarGrupo } from "../components/plasmic/protect_2_self/PlasmicEntrarGrupo";
@@ -24,12 +26,31 @@ function EntrarGrupo() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  const router = useRouter()
+
+  function entraGrupo() {
+    axios.put
+    ("http://localhost:8080/grupo/addUser/" + /* grupoId + "/" +*/ localStorage.getItem('userId'),{
+    })
+    .then((response) => {
+      console.log(JSON.stringify(response));
+      router.push('/logged');
+    });
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicEntrarGrupo />
+      <PlasmicEntrarGrupo 
+      entrar={{
+        props: { onClick: () => entraGrupo()}
+      }}
+      rejeitar={{
+        props: { onClick: () => (console.log("rejeitou o convite"), router.push('/logged'))}
+      }}
+      />
     </ph.PageParamsProvider>
   );
 }

@@ -6,6 +6,8 @@ import * as ph from "@plasmicapp/host";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicPerfil } from "../components/plasmic/protect_2_self/PlasmicPerfil";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Perfil() {
   // Use PlasmicPerfil to render this component as it was
@@ -25,14 +27,52 @@ function Perfil() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   
-  //const [editar, setEditar] = React.useState<boolean>()  
+  const [dados, setDados] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error>();
+ 
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/usuario/findById/" + localStorage.getItem('userId')
+        );
+        setDados(response.data);
+        setError(undefined);
+        console.log(dados);
+      } catch (err) {
+        setError((err as any).message);
+        setDados(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+
+	if (error) {
+		return <div>Error: {error.message}</div>
+	}
   
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicPerfil/>
+      <PlasmicPerfil
+      			nome={(loading || !dados) ? {} : {
+              render: (props, Comp) => <Comp {...props}>{dados.nome}</Comp>,
+            }}
+            username={(loading || !dados) ? {} : {
+              render: (props, Comp) => <Comp {...props}>{dados.username}</Comp>,
+            }}
+            campoEmail={(loading || !dados) ? {} : {
+              render: (props, Comp) => <Comp {...props}>{dados.email}</Comp>,
+            }}
+            campoTelefone={(loading || !dados) ? {} : {
+              render: (props, Comp) => <Comp {...props}>{dados.telefone}</Comp>,
+            }}
+      />
     </ph.PageParamsProvider>
   );
 }

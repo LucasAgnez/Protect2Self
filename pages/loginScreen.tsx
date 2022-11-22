@@ -30,14 +30,7 @@ function LoginScreen() {
 
   function logaUsuario() {
     axios.post
-    ("http://localhost:8080/usuario/login/"
-    /*
-    + (String((document.getElementById("email") as any).value)+ "/" + 
-    String((document.getElementById("senha") as any).value)) 
-     */
-    ,{
-      /* 
-      */
+    ("http://localhost:8080/usuario/login/",{
       senha: (document.getElementById("senha")as any).value,
       email:(document.getElementById("email")as any).value,
     }).then((response) => {

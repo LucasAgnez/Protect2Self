@@ -6,6 +6,9 @@ import * as ph from "@plasmicapp/host";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicMinhasMetas } from "../components/plasmic/protect_2_self/PlasmicMinhasMetas";
 import { useRouter } from "next/router";
+import MiniaturaMeta from "../components/MiniaturaMeta";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function MinhasMetas() {
   // Use PlasmicMinhasMetas to render this component as it was
@@ -24,13 +27,45 @@ function MinhasMetas() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  
+  const [dados, setDados] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error>();
+
+  const data = [{nome: "Lusca"}, {nome: "Agnaldo"}];
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/usuario/getMetas/" + localStorage.getItem('userId')
+        );
+        setDados(response.data);
+        setError(undefined);
+        console.log(dados);
+      } catch (err) {
+        setError((err as any).message);
+        setDados(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+
+	if (error) {
+		return <div>Error: {error.message}</div>
+	}
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
       <PlasmicMinhasMetas 
-        //container = {{children: () => MiniaturaGrupo[] }}
+      container = {(loading || !dados) ? {} :{ 
+        //children: (dados as any).map((entry) => <MiniaturaMeta slot={entry.nome as any}) 
+      }}
       />
     </ph.PageParamsProvider>
   );

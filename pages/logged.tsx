@@ -25,33 +25,12 @@ function Inicial() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
 
-  //const [metas, setMetas] = React.useState<boolean>()
-
-  //const [grupos, setGrupos] = React.useState<boolean>()
-/*
-  function mostrarGrupos(){
-    container = children MiniaturaGrupo[]
-  }
-
-  function mostrarMetas(){
-    container = children MiniaturaMeta[]
-  }
-*/
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-    <PlasmicInicial 
-/*      minhasMetas={{
-        props: { onClick: () => (setMetas(true), setGrupos(false))} 
-      }}
-      meusGrupos={{
-        props: { onClick: () => (setMetas(false), setGrupos(true))}
-      }}
-      grupos={grupos} metas={metas}
-*/
-    />
+    <PlasmicInicial />
     </ph.PageParamsProvider>
   );
 }

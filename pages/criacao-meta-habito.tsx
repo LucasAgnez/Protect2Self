@@ -7,6 +7,7 @@ import axios from "axios";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicCriacaoMetaHabito } from "../components/plasmic/protect_2_self/PlasmicCriacaoMetaHabito";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 function CriacaoMetaHabito() {
   // Use PlasmicCriacaoMetaHabito to render this component as it was
@@ -27,6 +28,7 @@ function CriacaoMetaHabito() {
   // (https://nextjs.org/docs/advanced-features/custom-app).
 
   const router = useRouter()
+  const [frequencia, setFrequencia] = useState<string>()
 
   function criaMetaHabito() {
     axios.post
@@ -34,7 +36,7 @@ function CriacaoMetaHabito() {
       nome: (document.getElementById("nome") as any).value,
       descricao: (document.getElementById("descricao")as any).value,
       tipo: "HABITO",
-      //frequencia: (document.getElementById("frequencia")as any).value,
+      frequencia,
     })
     .then((response) => {
       axios.put("http://localhost:8080/usuario/addMeta/" + localStorage.getItem('userId') + "/" + response.data.id ,{

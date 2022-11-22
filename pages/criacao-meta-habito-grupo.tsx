@@ -7,6 +7,7 @@ import axios from "axios";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicCriacaoMetaHabitoGrupo } from "../components/plasmic/protect_2_self/PlasmicCriacaoMetaHabitoGrupo";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 function CriacaoMetaHabitoGrupo() {
   // Use PlasmicCriacaoMetaHabitoGrupo to render this component as it was
@@ -26,16 +27,19 @@ function CriacaoMetaHabitoGrupo() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   const router = useRouter()
+  const [frequencia, setFrequencia] = useState<string>()
 
   function criaGrupoHabito() {
     axios.post
     ("http://localhost:8080/meta/save/",{
         nome: (document.getElementById("nomeMeta") as any).value,
         descricao: (document.getElementById("descricaoMeta")as any).value,
-      /*
-      */
+        tipo: "HABITO",
+        frequencia
     })
     .then((response) => {
+      axios.put("http://localhost:8080/usuario/addMeta/" + localStorage.getItem('userId') + "/" + response.data.id ,{
+      })
       axios.post
       ("http://localhost:8080/grupo/save/meta/" + localStorage.getItem('userId') + "/" + response.data.id, {
           nome: (document.getElementById("nomeGrupo") as any).value,
@@ -53,7 +57,7 @@ function CriacaoMetaHabitoGrupo() {
     >
       <PlasmicCriacaoMetaHabitoGrupo 
               confirma={{
-                props: { onClick: () => (criaGrupoHabito())}
+                props: { onClick: () => criaGrupoHabito()}
               }}
       />
     </ph.PageParamsProvider>

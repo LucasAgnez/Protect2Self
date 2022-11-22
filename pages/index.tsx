@@ -32,15 +32,7 @@ function Homepage() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-    <PlasmicHomepage /*
-      confirma={{
-        props: { onClick: () => (logaUsuario(), router.push('/logged'))} 
-      }} 
-      entrar={{
-        props: { onClick: () => setLoginScreen(true)}
-      }}
-      loginScreen={loginScreen} */
-    />
+    <PlasmicHomepage />
     </ph.PageParamsProvider>
   );
 }

@@ -30,12 +30,14 @@ function CriacaoMetaVicio() {
 
   function criaMetaVicio() {
     axios.post
-    ("http://localhost:8080/meta/save/", {
+    ("http://localhost:8080/meta/save", {
       nome: (document.getElementById("nome") as any).value,
       descricao: (document.getElementById("descricao")as any).value,
-      tipo: "VICIO"
+      tipo: "VICIO",
     })
     .then((response) => {
+      axios.put("http://localhost:8080/usuario/addMeta/" + localStorage.getItem('userId') + "/" + response.data.id ,{
+      })
       console.log(JSON.stringify(response));
       router.push('/logged');
     });

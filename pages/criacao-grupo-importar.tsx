@@ -30,12 +30,13 @@ function CriacaoGrupoImportar() {
 
   function criaGrupo() {
     axios.post
-    ("http://localhost:8080/grupo/save/" + localStorage.getItem('userId'), {
+    ("http://localhost:8080/grupo/save/meta/" + localStorage.getItem('userId') + "/" + (document.getElementById("idMeta") as any).value, {
       nome: (document.getElementById("nomeGrupo") as any).value,
-      descricao: (document.getElementById("descricao")as any).value,
-    })
+      descricao: (document.getElementById("descricaoGrupo")as any).value,
+  })
     .then((response) => {
       console.log(JSON.stringify(response));
+      router.push('/logged');
     });
   }
   
@@ -45,7 +46,7 @@ function CriacaoGrupoImportar() {
       query={useRouter()?.query}
     >
       <PlasmicCriacaoGrupoImportar confirma={{
-          props: { onClick: () => (criaGrupo() , router.push('/logged'))}
+          props: { onClick: () => criaGrupo()}
       }} />
     </ph.PageParamsProvider>
   );
