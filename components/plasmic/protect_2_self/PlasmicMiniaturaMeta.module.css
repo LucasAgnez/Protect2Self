@@ -69,7 +69,7 @@
   flex-direction: row;
   min-width: 0;
 }
-.button:global(.__wab_instance) {
+.registra:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   width: 78px;
