@@ -28,7 +28,7 @@ function CriacaoMetaHabito() {
   // (https://nextjs.org/docs/advanced-features/custom-app).
 
   const router = useRouter()
-  const [frequencia, setFrequencia] = useState<string>()
+  const [frequencia, setFrequencia] = useState()
 
   function criaMetaHabito() {
     axios.post
@@ -41,6 +41,7 @@ function CriacaoMetaHabito() {
     .then((response) => {
       axios.put("http://localhost:8080/usuario/addMeta/" + localStorage.getItem('userId') + "/" + response.data.id ,{
       })
+      console.log(frequencia);
       console.log(JSON.stringify(response));
       router.push('/logged');
     });

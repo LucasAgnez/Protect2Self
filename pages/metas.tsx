@@ -64,7 +64,7 @@ function MinhasMetas() {
     >
       <PlasmicMinhasMetas 
       container = {(loading || !dados) ? {} :{ 
-        children: dados.map(entry => <MiniaturaMeta slot={String(entry.nome)} slot2={String(entry.sequencia)} />) 
+        children: dados.map(entry => <MiniaturaMeta slot={String(entry.nome)} slot2={"Atual sequência: " + String(entry.recorde)} />) 
       }}
       />
     </ph.PageParamsProvider>
