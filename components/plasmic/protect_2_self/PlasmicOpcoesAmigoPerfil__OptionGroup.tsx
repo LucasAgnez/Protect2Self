@@ -17,6 +17,7 @@ import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
+
 import * as pp from "@plasmicapp/react-web";
 import {
   hasVariant,
@@ -47,12 +48,10 @@ export type PlasmicOpcoesAmigoPerfil__OptionGroup__VariantMembers = {
   noTitle: "noTitle";
   isFirst: "isFirst";
 };
-
 export type PlasmicOpcoesAmigoPerfil__OptionGroup__VariantsArgs = {
   noTitle?: SingleBooleanChoiceArg<"noTitle">;
   isFirst?: SingleBooleanChoiceArg<"isFirst">;
 };
-
 type VariantPropType =
   keyof PlasmicOpcoesAmigoPerfil__OptionGroup__VariantsArgs;
 export const PlasmicOpcoesAmigoPerfil__OptionGroup__VariantProps =
@@ -62,7 +61,6 @@ export type PlasmicOpcoesAmigoPerfil__OptionGroup__ArgsType = {
   children?: React.ReactNode;
   title?: React.ReactNode;
 };
-
 type ArgPropType = keyof PlasmicOpcoesAmigoPerfil__OptionGroup__ArgsType;
 export const PlasmicOpcoesAmigoPerfil__OptionGroup__ArgProps =
   new Array<ArgPropType>("children", "title");
@@ -90,15 +88,7 @@ function PlasmicOpcoesAmigoPerfil__OptionGroup__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -114,14 +104,12 @@ function PlasmicOpcoesAmigoPerfil__OptionGroup__RenderFunc(props: {
         type: "private",
         initFunc: ($props, $state) => $props.noTitle
       },
-
       {
         path: "isFirst",
         type: "private",
         initFunc: ($props, $state) => $props.isFirst
       }
     ],
-
     [$props]
   );
   const $state = p.useDollarState(stateSpecs, $props);
@@ -248,15 +236,15 @@ type NodeComponentProps<T extends NodeNameType> =
     PlasmicOpcoesAmigoPerfil__OptionGroup__VariantsArgs,
     ReservedPropsType
   > &
-    // Specify args directly as props
-    Omit<PlasmicOpcoesAmigoPerfil__OptionGroup__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicOpcoesAmigoPerfil__OptionGroup__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

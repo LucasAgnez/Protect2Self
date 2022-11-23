@@ -52,7 +52,6 @@ import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3
 import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 
 export type PlasmicEditarPerfil__VariantMembers = {};
-
 export type PlasmicEditarPerfil__VariantsArgs = {};
 type VariantPropType = keyof PlasmicEditarPerfil__VariantsArgs;
 export const PlasmicEditarPerfil__VariantProps = new Array<VariantPropType>();
@@ -89,15 +88,7 @@ function PlasmicEditarPerfil__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -346,6 +337,7 @@ function PlasmicEditarPerfil__RenderFunc(props: {
                           className={classNames("__wab_instance", sty.senha)}
                           color={"dark" as const}
                           id={"senha" as const}
+                          placeholder={"Digite sua senha" as const}
                         />
                       ) : null}
                     </div>
@@ -515,15 +507,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicEditarPerfil__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicEditarPerfil__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicEditarPerfil__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicEditarPerfil__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

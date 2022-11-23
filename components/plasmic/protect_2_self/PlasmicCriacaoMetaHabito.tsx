@@ -52,7 +52,6 @@ import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1G
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
 export type PlasmicCriacaoMetaHabito__VariantMembers = {};
-
 export type PlasmicCriacaoMetaHabito__VariantsArgs = {};
 type VariantPropType = keyof PlasmicCriacaoMetaHabito__VariantsArgs;
 export const PlasmicCriacaoMetaHabito__VariantProps =
@@ -87,15 +86,7 @@ function PlasmicCriacaoMetaHabito__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -312,7 +303,7 @@ function PlasmicCriacaoMetaHabito__RenderFunc(props: {
                       className={classNames("__wab_instance", sty.option__qCcN)}
                       color={"dark" as const}
                       textValue={"DIARIO" as const}
-                      value={"DIARIO" as const}
+                      value={"0" as const}
                     >
                       {"Diário"}
                     </Select__Option>
@@ -321,7 +312,7 @@ function PlasmicCriacaoMetaHabito__RenderFunc(props: {
                       className={classNames("__wab_instance", sty.option__qHaT)}
                       color={"dark" as const}
                       textValue={"SEMANAL" as const}
-                      value={"SEMANAL" as const}
+                      value={"1" as const}
                     >
                       {"Semanal"}
                     </Select__Option>
@@ -330,7 +321,7 @@ function PlasmicCriacaoMetaHabito__RenderFunc(props: {
                       className={classNames("__wab_instance", sty.option__qWfq)}
                       color={"dark" as const}
                       textValue={"MENSAL" as const}
-                      value={"MENSAL" as const}
+                      value={"2" as const}
                     >
                       {"Mensal"}
                     </Select__Option>
@@ -422,15 +413,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicCriacaoMetaHabito__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicCriacaoMetaHabito__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicCriacaoMetaHabito__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicCriacaoMetaHabito__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

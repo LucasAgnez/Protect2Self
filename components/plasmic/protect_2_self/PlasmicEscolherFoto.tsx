@@ -42,7 +42,6 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicEscolherFoto.module.css"; // plasmic-import: 7ZZm-pBIrx/css
 
 export type PlasmicEscolherFoto__VariantMembers = {};
-
 export type PlasmicEscolherFoto__VariantsArgs = {};
 type VariantPropType = keyof PlasmicEscolherFoto__VariantsArgs;
 export const PlasmicEscolherFoto__VariantProps = new Array<VariantPropType>();
@@ -50,7 +49,6 @@ export const PlasmicEscolherFoto__VariantProps = new Array<VariantPropType>();
 export type PlasmicEscolherFoto__ArgsType = {
   children?: React.ReactNode;
 };
-
 type ArgPropType = keyof PlasmicEscolherFoto__ArgsType;
 export const PlasmicEscolherFoto__ArgProps = new Array<ArgPropType>("children");
 
@@ -78,15 +76,7 @@ function PlasmicEscolherFoto__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -310,15 +300,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicEscolherFoto__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicEscolherFoto__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicEscolherFoto__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicEscolherFoto__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

@@ -44,7 +44,6 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicMenu.module.css"; // plasmic-import: PZ7Wdg9iZJ/css
 
 export type PlasmicMenu__VariantMembers = {};
-
 export type PlasmicMenu__VariantsArgs = {};
 type VariantPropType = keyof PlasmicMenu__VariantsArgs;
 export const PlasmicMenu__VariantProps = new Array<VariantPropType>();
@@ -52,7 +51,6 @@ export const PlasmicMenu__VariantProps = new Array<VariantPropType>();
 export type PlasmicMenu__ArgsType = {
   children?: React.ReactNode;
 };
-
 type ArgPropType = keyof PlasmicMenu__ArgsType;
 export const PlasmicMenu__ArgProps = new Array<ArgPropType>("children");
 
@@ -78,15 +76,7 @@ function PlasmicMenu__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -251,15 +241,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicMenu__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicMenu__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicMenu__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicMenu__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

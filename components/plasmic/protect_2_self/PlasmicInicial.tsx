@@ -47,7 +47,6 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicInicial.module.css"; // plasmic-import: Cwcul4UrW6HS/css
 
 export type PlasmicInicial__VariantMembers = {};
-
 export type PlasmicInicial__VariantsArgs = {};
 type VariantPropType = keyof PlasmicInicial__VariantsArgs;
 export const PlasmicInicial__VariantProps = new Array<VariantPropType>();
@@ -77,15 +76,7 @@ function PlasmicInicial__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -303,15 +294,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicInicial__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicInicial__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicInicial__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicInicial__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

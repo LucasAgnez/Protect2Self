@@ -17,6 +17,7 @@ import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
+
 import * as pp from "@plasmicapp/react-web";
 import {
   hasVariant,
@@ -48,14 +49,12 @@ export type PlasmicSelect__Option__VariantMembers = {
   isDisabled: "isDisabled";
   color: "dark" | "clear" | "black";
 };
-
 export type PlasmicSelect__Option__VariantsArgs = {
   isSelected?: SingleBooleanChoiceArg<"isSelected">;
   isHighlighted?: SingleBooleanChoiceArg<"isHighlighted">;
   isDisabled?: SingleBooleanChoiceArg<"isDisabled">;
   color?: SingleChoiceArg<"dark" | "clear" | "black">;
 };
-
 type VariantPropType = keyof PlasmicSelect__Option__VariantsArgs;
 export const PlasmicSelect__Option__VariantProps = new Array<VariantPropType>(
   "isSelected",
@@ -69,7 +68,6 @@ export type PlasmicSelect__Option__ArgsType = {
   value?: string;
   textValue?: string;
 };
-
 type ArgPropType = keyof PlasmicSelect__Option__ArgsType;
 export const PlasmicSelect__Option__ArgProps = new Array<ArgPropType>(
   "children",
@@ -96,15 +94,7 @@ function PlasmicSelect__Option__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -120,26 +110,22 @@ function PlasmicSelect__Option__RenderFunc(props: {
         type: "private",
         initFunc: ($props, $state) => $props.isSelected
       },
-
       {
         path: "isHighlighted",
         type: "private",
         initFunc: ($props, $state) => $props.isHighlighted
       },
-
       {
         path: "isDisabled",
         type: "private",
         initFunc: ($props, $state) => $props.isDisabled
       },
-
       {
         path: "color",
         type: "private",
         initFunc: ($props, $state) => $props.color
       }
     ],
-
     [$props]
   );
   const $state = p.useDollarState(stateSpecs, $props);
@@ -274,15 +260,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicSelect__Option__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicSelect__Option__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicSelect__Option__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicSelect__Option__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

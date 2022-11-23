@@ -17,6 +17,7 @@ import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
+
 import * as pp from "@plasmicapp/react-web";
 import {
   hasVariant,
@@ -47,13 +48,11 @@ export type PlasmicOpcoesAdm__Option__VariantMembers = {
   isHighlighted: "isHighlighted";
   isDisabled: "isDisabled";
 };
-
 export type PlasmicOpcoesAdm__Option__VariantsArgs = {
   isSelected?: SingleBooleanChoiceArg<"isSelected">;
   isHighlighted?: SingleBooleanChoiceArg<"isHighlighted">;
   isDisabled?: SingleBooleanChoiceArg<"isDisabled">;
 };
-
 type VariantPropType = keyof PlasmicOpcoesAdm__Option__VariantsArgs;
 export const PlasmicOpcoesAdm__Option__VariantProps =
   new Array<VariantPropType>("isSelected", "isHighlighted", "isDisabled");
@@ -63,7 +62,6 @@ export type PlasmicOpcoesAdm__Option__ArgsType = {
   value?: string;
   textValue?: string;
 };
-
 type ArgPropType = keyof PlasmicOpcoesAdm__Option__ArgsType;
 export const PlasmicOpcoesAdm__Option__ArgProps = new Array<ArgPropType>(
   "children",
@@ -89,15 +87,7 @@ function PlasmicOpcoesAdm__Option__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -113,20 +103,17 @@ function PlasmicOpcoesAdm__Option__RenderFunc(props: {
         type: "private",
         initFunc: ($props, $state) => $props.isSelected
       },
-
       {
         path: "isHighlighted",
         type: "private",
         initFunc: ($props, $state) => $props.isHighlighted
       },
-
       {
         path: "isDisabled",
         type: "private",
         initFunc: ($props, $state) => $props.isDisabled
       }
     ],
-
     [$props]
   );
   const $state = p.useDollarState(stateSpecs, $props);
@@ -231,15 +218,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicOpcoesAdm__Option__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicOpcoesAdm__Option__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicOpcoesAdm__Option__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicOpcoesAdm__Option__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

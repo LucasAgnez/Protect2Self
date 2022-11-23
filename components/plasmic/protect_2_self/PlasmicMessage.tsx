@@ -41,7 +41,6 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicMessage.module.css"; // plasmic-import: stpzk0e4w8/css
 
 export type PlasmicMessage__VariantMembers = {};
-
 export type PlasmicMessage__VariantsArgs = {};
 type VariantPropType = keyof PlasmicMessage__VariantsArgs;
 export const PlasmicMessage__VariantProps = new Array<VariantPropType>();
@@ -51,7 +50,6 @@ export type PlasmicMessage__ArgsType = {
   slot?: React.ReactNode;
   slot2?: React.ReactNode;
 };
-
 type ArgPropType = keyof PlasmicMessage__ArgsType;
 export const PlasmicMessage__ArgProps = new Array<ArgPropType>(
   "children",
@@ -81,15 +79,7 @@ function PlasmicMessage__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -140,12 +130,10 @@ function PlasmicMessage__RenderFunc(props: {
 
           value: args.children
         })}
-
         {p.renderPlasmicSlot({
           defaultContents: "Atingiu a Marca de",
           value: args.slot
         })}
-
         {p.renderPlasmicSlot({
           defaultContents: " *marca*",
           value: args.slot2
@@ -179,15 +167,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicMessage__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicMessage__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicMessage__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicMessage__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

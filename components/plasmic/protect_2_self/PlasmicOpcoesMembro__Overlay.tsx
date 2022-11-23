@@ -17,6 +17,7 @@ import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
+
 import * as pp from "@plasmicapp/react-web";
 import {
   hasVariant,
@@ -45,11 +46,9 @@ import SUPER__PlasmicOpcoesMembro from "./PlasmicOpcoesMembro"; // plasmic-impor
 export type PlasmicOpcoesMembro__Overlay__VariantMembers = {
   relativePlacement: "top" | "bottom" | "left" | "right";
 };
-
 export type PlasmicOpcoesMembro__Overlay__VariantsArgs = {
   relativePlacement?: SingleChoiceArg<"top" | "bottom" | "left" | "right">;
 };
-
 type VariantPropType = keyof PlasmicOpcoesMembro__Overlay__VariantsArgs;
 export const PlasmicOpcoesMembro__Overlay__VariantProps =
   new Array<VariantPropType>("relativePlacement");
@@ -57,7 +56,6 @@ export const PlasmicOpcoesMembro__Overlay__VariantProps =
 export type PlasmicOpcoesMembro__Overlay__ArgsType = {
   children?: React.ReactNode;
 };
-
 type ArgPropType = keyof PlasmicOpcoesMembro__Overlay__ArgsType;
 export const PlasmicOpcoesMembro__Overlay__ArgProps = new Array<ArgPropType>(
   "children"
@@ -88,15 +86,7 @@ function PlasmicOpcoesMembro__Overlay__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -113,7 +103,6 @@ function PlasmicOpcoesMembro__Overlay__RenderFunc(props: {
         initFunc: ($props, $state) => $props.relativePlacement
       }
     ],
-
     [$props]
   );
   const $state = p.useDollarState(stateSpecs, $props);
@@ -266,15 +255,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicOpcoesMembro__Overlay__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicOpcoesMembro__Overlay__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicOpcoesMembro__Overlay__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicOpcoesMembro__Overlay__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

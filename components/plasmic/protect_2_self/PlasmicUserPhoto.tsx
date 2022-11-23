@@ -41,7 +41,6 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicUserPhoto.module.css"; // plasmic-import: iFRyT7eXLH/css
 
 export type PlasmicUserPhoto__VariantMembers = {};
-
 export type PlasmicUserPhoto__VariantsArgs = {};
 type VariantPropType = keyof PlasmicUserPhoto__VariantsArgs;
 export const PlasmicUserPhoto__VariantProps = new Array<VariantPropType>();
@@ -49,7 +48,6 @@ export const PlasmicUserPhoto__VariantProps = new Array<VariantPropType>();
 export type PlasmicUserPhoto__ArgsType = {
   children?: React.ReactNode;
 };
-
 type ArgPropType = keyof PlasmicUserPhoto__ArgsType;
 export const PlasmicUserPhoto__ArgProps = new Array<ArgPropType>("children");
 
@@ -72,15 +70,7 @@ function PlasmicUserPhoto__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -155,15 +145,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicUserPhoto__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicUserPhoto__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicUserPhoto__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicUserPhoto__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

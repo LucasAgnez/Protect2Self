@@ -51,12 +51,10 @@ export type PlasmicHeader__VariantMembers = {
   line: "off" | "on";
   shortcut: "shortcut";
 };
-
 export type PlasmicHeader__VariantsArgs = {
   line?: SingleChoiceArg<"off" | "on">;
   shortcut?: SingleBooleanChoiceArg<"shortcut">;
 };
-
 type VariantPropType = keyof PlasmicHeader__VariantsArgs;
 export const PlasmicHeader__VariantProps = new Array<VariantPropType>(
   "line",
@@ -90,15 +88,7 @@ function PlasmicHeader__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -114,14 +104,12 @@ function PlasmicHeader__RenderFunc(props: {
         type: "private",
         initFunc: ($props, $state) => $props.line
       },
-
       {
         path: "shortcut",
         type: "private",
         initFunc: ($props, $state) => $props.shortcut
       }
     ],
-
     [$props]
   );
   const $state = p.useDollarState(stateSpecs, $props);
@@ -393,15 +381,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicHeader__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicHeader__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicHeader__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicHeader__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

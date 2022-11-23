@@ -371,7 +371,6 @@
   height: 1em;
 }
 .freeBox__vQazt {
-  display: flex;
   position: relative;
   flex-direction: row;
   align-items: stretch;
@@ -380,6 +379,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
+  display: none;
   padding: 8px 8px 8px 24px;
 }
 .text__pYbRq {

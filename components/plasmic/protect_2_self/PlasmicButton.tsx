@@ -17,6 +17,7 @@ import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
+
 import * as pp from "@plasmicapp/react-web";
 import {
   hasVariant,
@@ -64,7 +65,6 @@ export type PlasmicButton__VariantMembers = {
     | "clear"
     | "link";
 };
-
 export type PlasmicButton__VariantsArgs = {
   showStartIcon?: SingleBooleanChoiceArg<"showStartIcon">;
   showEndIcon?: SingleBooleanChoiceArg<"showEndIcon">;
@@ -87,7 +87,6 @@ export type PlasmicButton__VariantsArgs = {
     | "link"
   >;
 };
-
 type VariantPropType = keyof PlasmicButton__VariantsArgs;
 export const PlasmicButton__VariantProps = new Array<VariantPropType>(
   "showStartIcon",
@@ -104,7 +103,6 @@ export type PlasmicButton__ArgsType = {
   endIcon?: React.ReactNode;
   link?: string;
 };
-
 type ArgPropType = keyof PlasmicButton__ArgsType;
 export const PlasmicButton__ArgProps = new Array<ArgPropType>(
   "children",
@@ -150,15 +148,7 @@ function PlasmicButton__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -174,38 +164,32 @@ function PlasmicButton__RenderFunc(props: {
         type: "private",
         initFunc: ($props, $state) => $props.showStartIcon
       },
-
       {
         path: "showEndIcon",
         type: "private",
         initFunc: ($props, $state) => $props.showEndIcon
       },
-
       {
         path: "isDisabled",
         type: "private",
         initFunc: ($props, $state) => $props.isDisabled
       },
-
       {
         path: "shape",
         type: "private",
         initFunc: ($props, $state) => $props.shape
       },
-
       {
         path: "size",
         type: "private",
         initFunc: ($props, $state) => $props.size
       },
-
       {
         path: "color",
         type: "private",
         initFunc: ($props, $state) => $props.color
       }
     ],
-
     [$props]
   );
   const $state = p.useDollarState(stateSpecs, $props);
@@ -214,7 +198,6 @@ function PlasmicButton__RenderFunc(props: {
     useTrigger("useFocusVisibleWithin", {
       isTextInput: false
     });
-
   const triggers = {
     focusVisibleWithin_root: isRootFocusVisibleWithin
   };
@@ -659,15 +642,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicButton__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicButton__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicButton__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicButton__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

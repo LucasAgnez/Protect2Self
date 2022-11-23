@@ -1078,7 +1078,7 @@
         {
           "id": "HFMRmtiSQM",
           "name": "Fetcher",
-          "componentImportPath": "@plasmicapp/data-sources"
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ]
     }

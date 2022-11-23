@@ -17,6 +17,7 @@ import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
+
 import * as pp from "@plasmicapp/react-web";
 import {
   hasVariant,
@@ -49,14 +50,12 @@ export type PlasmicTextInput__VariantMembers = {
   isDisabled: "isDisabled";
   color: "dark";
 };
-
 export type PlasmicTextInput__VariantsArgs = {
   showStartIcon?: SingleBooleanChoiceArg<"showStartIcon">;
   showEndIcon?: SingleBooleanChoiceArg<"showEndIcon">;
   isDisabled?: SingleBooleanChoiceArg<"isDisabled">;
   color?: SingleChoiceArg<"dark">;
 };
-
 type VariantPropType = keyof PlasmicTextInput__VariantsArgs;
 export const PlasmicTextInput__VariantProps = new Array<VariantPropType>(
   "showStartIcon",
@@ -76,7 +75,6 @@ export type PlasmicTextInput__ArgsType = {
   "aria-labelledby"?: string;
   id?: string;
 };
-
 type ArgPropType = keyof PlasmicTextInput__ArgsType;
 export const PlasmicTextInput__ArgProps = new Array<ArgPropType>(
   "placeholder",
@@ -143,26 +141,22 @@ function PlasmicTextInput__RenderFunc(props: {
         type: "private",
         initFunc: ($props, $state) => $props.showStartIcon
       },
-
       {
         path: "showEndIcon",
         type: "private",
         initFunc: ($props, $state) => $props.showEndIcon
       },
-
       {
         path: "isDisabled",
         type: "private",
         initFunc: ($props, $state) => $props.isDisabled
       },
-
       {
         path: "color",
         type: "private",
         initFunc: ($props, $state) => $props.color
       }
     ],
-
     [$props]
   );
   const $state = p.useDollarState(stateSpecs, $props);
@@ -171,7 +165,6 @@ function PlasmicTextInput__RenderFunc(props: {
     useTrigger("useFocusVisibleWithin", {
       isTextInput: true
     });
-
   const triggers = {
     focusVisibleWithin_root: isRootFocusVisibleWithin
   };
@@ -373,15 +366,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicTextInput__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicTextInput__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicTextInput__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicTextInput__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

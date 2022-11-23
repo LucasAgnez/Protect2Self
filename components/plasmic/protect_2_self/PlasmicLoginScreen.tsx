@@ -50,7 +50,6 @@ import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3
 import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 
 export type PlasmicLoginScreen__VariantMembers = {};
-
 export type PlasmicLoginScreen__VariantsArgs = {};
 type VariantPropType = keyof PlasmicLoginScreen__VariantsArgs;
 export const PlasmicLoginScreen__VariantProps = new Array<VariantPropType>();
@@ -88,15 +87,7 @@ function PlasmicLoginScreen__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -602,15 +593,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicLoginScreen__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicLoginScreen__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicLoginScreen__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicLoginScreen__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

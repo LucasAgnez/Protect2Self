@@ -17,6 +17,7 @@ import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
+
 import * as pp from "@plasmicapp/react-web";
 import {
   hasVariant,
@@ -62,7 +63,6 @@ export type PlasmicSelect__VariantMembers = {
     | "clear"
     | "dark";
 };
-
 export type PlasmicSelect__VariantsArgs = {
   showPlaceholder?: SingleBooleanChoiceArg<"showPlaceholder">;
   isOpen?: SingleBooleanChoiceArg<"isOpen">;
@@ -81,7 +81,6 @@ export type PlasmicSelect__VariantsArgs = {
     | "dark"
   >;
 };
-
 type VariantPropType = keyof PlasmicSelect__VariantsArgs;
 export const PlasmicSelect__VariantProps = new Array<VariantPropType>(
   "showPlaceholder",
@@ -100,7 +99,6 @@ export type PlasmicSelect__ArgsType = {
   "aria-labelledby"?: string;
   id?: string;
 };
-
 type ArgPropType = keyof PlasmicSelect__ArgsType;
 export const PlasmicSelect__ArgProps = new Array<ArgPropType>(
   "selectedContent",
@@ -156,15 +154,7 @@ function PlasmicSelect__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -180,26 +170,22 @@ function PlasmicSelect__RenderFunc(props: {
         type: "private",
         initFunc: ($props, $state) => $props.showPlaceholder
       },
-
       {
         path: "isOpen",
         type: "private",
         initFunc: ($props, $state) => $props.isOpen
       },
-
       {
         path: "isDisabled",
         type: "private",
         initFunc: ($props, $state) => $props.isDisabled
       },
-
       {
         path: "color",
         type: "private",
         initFunc: ($props, $state) => $props.color
       }
     ],
-
     [$props]
   );
   const $state = p.useDollarState(stateSpecs, $props);
@@ -208,7 +194,6 @@ function PlasmicSelect__RenderFunc(props: {
     useTrigger("useFocusVisibleWithin", {
       isTextInput: false
     });
-
   const triggers = {
     focusVisibleWithin_root: isRootFocusVisibleWithin
   };
@@ -702,15 +687,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicSelect__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicSelect__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicSelect__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicSelect__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

@@ -43,7 +43,6 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicPaginaDeMedalhas.module.css"; // plasmic-import: Ju1A340bzB-/css
 
 export type PlasmicPaginaDeMedalhas__VariantMembers = {};
-
 export type PlasmicPaginaDeMedalhas__VariantsArgs = {};
 type VariantPropType = keyof PlasmicPaginaDeMedalhas__VariantsArgs;
 export const PlasmicPaginaDeMedalhas__VariantProps =
@@ -70,15 +69,7 @@ function PlasmicPaginaDeMedalhas__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -223,15 +214,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicPaginaDeMedalhas__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicPaginaDeMedalhas__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicPaginaDeMedalhas__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicPaginaDeMedalhas__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

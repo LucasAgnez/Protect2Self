@@ -48,7 +48,6 @@ import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1G
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
 export type PlasmicCriacaoMeta__VariantMembers = {};
-
 export type PlasmicCriacaoMeta__VariantsArgs = {};
 type VariantPropType = keyof PlasmicCriacaoMeta__VariantsArgs;
 export const PlasmicCriacaoMeta__VariantProps = new Array<VariantPropType>();
@@ -76,15 +75,7 @@ function PlasmicCriacaoMeta__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -333,15 +324,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicCriacaoMeta__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicCriacaoMeta__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicCriacaoMeta__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicCriacaoMeta__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

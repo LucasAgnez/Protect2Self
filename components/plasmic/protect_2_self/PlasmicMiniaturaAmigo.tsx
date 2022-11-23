@@ -50,11 +50,9 @@ import sty from "./PlasmicMiniaturaAmigo.module.css"; // plasmic-import: -2Az4ts
 export type PlasmicMiniaturaAmigo__VariantMembers = {
   emGrupo: "adm" | "visaoDoAdm" | "visaoMembros";
 };
-
 export type PlasmicMiniaturaAmigo__VariantsArgs = {
   emGrupo?: SingleChoiceArg<"adm" | "visaoDoAdm" | "visaoMembros">;
 };
-
 type VariantPropType = keyof PlasmicMiniaturaAmigo__VariantsArgs;
 export const PlasmicMiniaturaAmigo__VariantProps = new Array<VariantPropType>(
   "emGrupo"
@@ -65,7 +63,6 @@ export type PlasmicMiniaturaAmigo__ArgsType = {
   slot?: React.ReactNode;
   slot2?: React.ReactNode;
 };
-
 type ArgPropType = keyof PlasmicMiniaturaAmigo__ArgsType;
 export const PlasmicMiniaturaAmigo__ArgProps = new Array<ArgPropType>(
   "children",
@@ -101,15 +98,7 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -126,7 +115,6 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
         initFunc: ($props, $state) => $props.emGrupo
       }
     ],
-
     [$props]
   );
   const $state = p.useDollarState(stateSpecs, $props);
@@ -225,7 +213,6 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
 
           value: args.slot
         })}
-
         {p.renderPlasmicSlot({
           defaultContents: (
             <div
@@ -418,15 +405,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicMiniaturaAmigo__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicMiniaturaAmigo__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicMiniaturaAmigo__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicMiniaturaAmigo__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

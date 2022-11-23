@@ -45,7 +45,6 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicHeaderLogged.module.css"; // plasmic-import: gLO3qE5tA7/css
 
 export type PlasmicHeaderLogged__VariantMembers = {};
-
 export type PlasmicHeaderLogged__VariantsArgs = {};
 type VariantPropType = keyof PlasmicHeaderLogged__VariantsArgs;
 export const PlasmicHeaderLogged__VariantProps = new Array<VariantPropType>();
@@ -74,15 +73,7 @@ function PlasmicHeaderLogged__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -159,15 +150,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicHeaderLogged__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicHeaderLogged__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicHeaderLogged__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicHeaderLogged__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

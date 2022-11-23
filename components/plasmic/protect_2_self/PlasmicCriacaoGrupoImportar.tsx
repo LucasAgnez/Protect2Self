@@ -50,7 +50,6 @@ import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1G
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
 export type PlasmicCriacaoGrupoImportar__VariantMembers = {};
-
 export type PlasmicCriacaoGrupoImportar__VariantsArgs = {};
 type VariantPropType = keyof PlasmicCriacaoGrupoImportar__VariantsArgs;
 export const PlasmicCriacaoGrupoImportar__VariantProps =
@@ -59,7 +58,6 @@ export const PlasmicCriacaoGrupoImportar__VariantProps =
 export type PlasmicCriacaoGrupoImportar__ArgsType = {
   fotoGrupo?: React.ReactNode;
 };
-
 type ArgPropType = keyof PlasmicCriacaoGrupoImportar__ArgsType;
 export const PlasmicCriacaoGrupoImportar__ArgProps = new Array<ArgPropType>(
   "fotoGrupo"
@@ -91,15 +89,7 @@ function PlasmicCriacaoGrupoImportar__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -167,7 +157,6 @@ function PlasmicCriacaoGrupoImportar__RenderFunc(props: {
 
               value: args.fotoGrupo
             })}
-
             {true ? (
               <div
                 data-plasmic-name={"colunaNome"}
@@ -437,15 +426,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicCriacaoGrupoImportar__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicCriacaoGrupoImportar__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicCriacaoGrupoImportar__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicCriacaoGrupoImportar__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

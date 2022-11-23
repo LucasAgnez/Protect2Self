@@ -41,7 +41,6 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicMiniaturaGrupo.module.css"; // plasmic-import: QylFKCNC0eW/css
 
 export type PlasmicMiniaturaGrupo__VariantMembers = {};
-
 export type PlasmicMiniaturaGrupo__VariantsArgs = {};
 type VariantPropType = keyof PlasmicMiniaturaGrupo__VariantsArgs;
 export const PlasmicMiniaturaGrupo__VariantProps = new Array<VariantPropType>();
@@ -52,7 +51,6 @@ export type PlasmicMiniaturaGrupo__ArgsType = {
   slot2?: React.ReactNode;
   slot3?: React.ReactNode;
 };
-
 type ArgPropType = keyof PlasmicMiniaturaGrupo__ArgsType;
 export const PlasmicMiniaturaGrupo__ArgProps = new Array<ArgPropType>(
   "children",
@@ -83,15 +81,7 @@ function PlasmicMiniaturaGrupo__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -144,7 +134,6 @@ function PlasmicMiniaturaGrupo__RenderFunc(props: {
 
               value: args.children
             })}
-
             {p.renderPlasmicSlot({
               defaultContents: (
                 <div
@@ -280,15 +269,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicMiniaturaGrupo__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicMiniaturaGrupo__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicMiniaturaGrupo__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicMiniaturaGrupo__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

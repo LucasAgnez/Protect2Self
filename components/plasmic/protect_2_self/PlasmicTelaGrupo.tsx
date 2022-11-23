@@ -52,11 +52,9 @@ import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3
 export type PlasmicTelaGrupo__VariantMembers = {
   telaAdm: "telaAdm";
 };
-
 export type PlasmicTelaGrupo__VariantsArgs = {
   telaAdm?: SingleBooleanChoiceArg<"telaAdm">;
 };
-
 type VariantPropType = keyof PlasmicTelaGrupo__VariantsArgs;
 export const PlasmicTelaGrupo__VariantProps = new Array<VariantPropType>(
   "telaAdm"
@@ -65,7 +63,6 @@ export const PlasmicTelaGrupo__VariantProps = new Array<VariantPropType>(
 export type PlasmicTelaGrupo__ArgsType = {
   children?: React.ReactNode;
 };
-
 type ArgPropType = keyof PlasmicTelaGrupo__ArgsType;
 export const PlasmicTelaGrupo__ArgProps = new Array<ArgPropType>("children");
 
@@ -90,15 +87,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -115,7 +104,6 @@ function PlasmicTelaGrupo__RenderFunc(props: {
         initFunc: ($props, $state) => $props.telaAdm
       }
     ],
-
     [$props]
   );
   const $state = p.useDollarState(stateSpecs, $props);
@@ -515,15 +503,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicTelaGrupo__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicTelaGrupo__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicTelaGrupo__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicTelaGrupo__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

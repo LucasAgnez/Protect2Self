@@ -43,7 +43,6 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicLogo.module.css"; // plasmic-import: bEkwDYSt0b/css
 
 export type PlasmicLogo__VariantMembers = {};
-
 export type PlasmicLogo__VariantsArgs = {};
 type VariantPropType = keyof PlasmicLogo__VariantsArgs;
 export const PlasmicLogo__VariantProps = new Array<VariantPropType>();
@@ -72,15 +71,7 @@ function PlasmicLogo__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -215,15 +206,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicLogo__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicLogo__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicLogo__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicLogo__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

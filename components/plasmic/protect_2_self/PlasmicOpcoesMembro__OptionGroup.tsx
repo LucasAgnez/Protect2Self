@@ -17,6 +17,7 @@ import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
+
 import * as pp from "@plasmicapp/react-web";
 import {
   hasVariant,
@@ -47,12 +48,10 @@ export type PlasmicOpcoesMembro__OptionGroup__VariantMembers = {
   noTitle: "noTitle";
   isFirst: "isFirst";
 };
-
 export type PlasmicOpcoesMembro__OptionGroup__VariantsArgs = {
   noTitle?: SingleBooleanChoiceArg<"noTitle">;
   isFirst?: SingleBooleanChoiceArg<"isFirst">;
 };
-
 type VariantPropType = keyof PlasmicOpcoesMembro__OptionGroup__VariantsArgs;
 export const PlasmicOpcoesMembro__OptionGroup__VariantProps =
   new Array<VariantPropType>("noTitle", "isFirst");
@@ -61,7 +60,6 @@ export type PlasmicOpcoesMembro__OptionGroup__ArgsType = {
   children?: React.ReactNode;
   title?: React.ReactNode;
 };
-
 type ArgPropType = keyof PlasmicOpcoesMembro__OptionGroup__ArgsType;
 export const PlasmicOpcoesMembro__OptionGroup__ArgProps =
   new Array<ArgPropType>("children", "title");
@@ -89,15 +87,7 @@ function PlasmicOpcoesMembro__OptionGroup__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -113,14 +103,12 @@ function PlasmicOpcoesMembro__OptionGroup__RenderFunc(props: {
         type: "private",
         initFunc: ($props, $state) => $props.noTitle
       },
-
       {
         path: "isFirst",
         type: "private",
         initFunc: ($props, $state) => $props.isFirst
       }
     ],
-
     [$props]
   );
   const $state = p.useDollarState(stateSpecs, $props);
@@ -244,15 +232,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicOpcoesMembro__OptionGroup__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicOpcoesMembro__OptionGroup__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicOpcoesMembro__OptionGroup__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicOpcoesMembro__OptionGroup__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

@@ -17,6 +17,7 @@ import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
+
 import * as pp from "@plasmicapp/react-web";
 import {
   hasVariant,
@@ -50,13 +51,11 @@ export type PlasmicOpcoesMembro__VariantMembers = {
   isOpen: "isOpen";
   isDisabled: "isDisabled";
 };
-
 export type PlasmicOpcoesMembro__VariantsArgs = {
   showPlaceholder?: SingleBooleanChoiceArg<"showPlaceholder">;
   isOpen?: SingleBooleanChoiceArg<"isOpen">;
   isDisabled?: SingleBooleanChoiceArg<"isDisabled">;
 };
-
 type VariantPropType = keyof PlasmicOpcoesMembro__VariantsArgs;
 export const PlasmicOpcoesMembro__VariantProps = new Array<VariantPropType>(
   "showPlaceholder",
@@ -74,7 +73,6 @@ export type PlasmicOpcoesMembro__ArgsType = {
   "aria-labelledby"?: string;
   slot?: React.ReactNode;
 };
-
 type ArgPropType = keyof PlasmicOpcoesMembro__ArgsType;
 export const PlasmicOpcoesMembro__ArgProps = new Array<ArgPropType>(
   "selectedContent",
@@ -120,15 +118,7 @@ function PlasmicOpcoesMembro__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -144,20 +134,17 @@ function PlasmicOpcoesMembro__RenderFunc(props: {
         type: "private",
         initFunc: ($props, $state) => $props.showPlaceholder
       },
-
       {
         path: "isOpen",
         type: "private",
         initFunc: ($props, $state) => $props.isOpen
       },
-
       {
         path: "isDisabled",
         type: "private",
         initFunc: ($props, $state) => $props.isDisabled
       }
     ],
-
     [$props]
   );
   const $state = p.useDollarState(stateSpecs, $props);
@@ -166,7 +153,6 @@ function PlasmicOpcoesMembro__RenderFunc(props: {
     useTrigger("useFocusVisibleWithin", {
       isTextInput: false
     });
-
   const triggers = {
     focusVisibleWithin_root: isRootFocusVisibleWithin
   };
@@ -467,15 +453,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicOpcoesMembro__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicOpcoesMembro__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicOpcoesMembro__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicOpcoesMembro__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

@@ -49,7 +49,6 @@ import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: W
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
 
 export type PlasmicMinhasMetas__VariantMembers = {};
-
 export type PlasmicMinhasMetas__VariantsArgs = {};
 type VariantPropType = keyof PlasmicMinhasMetas__VariantsArgs;
 export const PlasmicMinhasMetas__VariantProps = new Array<VariantPropType>();
@@ -79,15 +78,7 @@ function PlasmicMinhasMetas__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
@@ -242,15 +233,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicMinhasMetas__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicMinhasMetas__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicMinhasMetas__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicMinhasMetas__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;
