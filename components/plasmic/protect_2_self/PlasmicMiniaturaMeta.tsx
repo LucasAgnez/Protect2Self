@@ -69,7 +69,7 @@ export const PlasmicMiniaturaMeta__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicMiniaturaMeta__OverridesType = {
   root?: p.Flex<"div">;
-  button?: p.Flex<typeof Button>;
+  registra?: p.Flex<typeof Button>;
 };
 
 export interface DefaultMiniaturaMetaProps {
@@ -225,9 +225,9 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
         </div>
 
         <Button
-          data-plasmic-name={"button"}
-          data-plasmic-override={overrides.button}
-          className={classNames("__wab_instance", sty.button)}
+          data-plasmic-name={"registra"}
+          data-plasmic-override={overrides.registra}
+          className={classNames("__wab_instance", sty.registra)}
           color={"yellow" as const}
         >
           {"Registrar"}
@@ -238,15 +238,15 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "button"],
-  button: ["button"]
+  root: ["root", "registra"],
+  registra: ["registra"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  button: typeof Button;
+  registra: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -310,7 +310,7 @@ export const PlasmicMiniaturaMeta = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    button: makeNodeComponent("button"),
+    registra: makeNodeComponent("registra"),
 
     // Metadata about props expected for PlasmicMiniaturaMeta
     internalVariantProps: PlasmicMiniaturaMeta__VariantProps,
