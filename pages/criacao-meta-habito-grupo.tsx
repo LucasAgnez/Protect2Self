@@ -27,7 +27,8 @@ function CriacaoMetaHabitoGrupo() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   const router = useRouter()
-  const [frequencia, setFrequencia] = useState<string>()
+  const [frequencia, setFrequencia] = useState<number>()
+  const [preenchido, setPreenchido] = useState<boolean>()
 
   function criaGrupoHabito() {
     axios.post
@@ -35,7 +36,8 @@ function CriacaoMetaHabitoGrupo() {
         nome: (document.getElementById("nomeMeta") as any).value,
         descricao: (document.getElementById("descricaoMeta")as any).value,
         tipo: "HABITO",
-        frequencia
+        frequencia,
+        objs : "3;6;9;12;15",
     })
     .then((response) => {
       axios.put("http://localhost:8080/usuario/addMeta/" + localStorage.getItem('userId') + "/" + response.data.id ,{
@@ -50,15 +52,42 @@ function CriacaoMetaHabitoGrupo() {
     });
   }
 
+  const estatdcmplt = (frequencia !== undefined) && preenchido
+
+  function checaPreenchido(){
+    if((document.getElementById("nomeMeta") as any).value && (document.getElementById("descricaoMeta") as any).value){
+      if((document.getElementById("nomeGrupo") as any).value && (document.getElementById("descricaoGrupo") as any).value){
+        setPreenchido(true);
+      }
+    }
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicCriacaoMetaHabitoGrupo 
-              confirma={{
-                props: { onClick: () => criaGrupoHabito()}
-              }}
+      <PlasmicCriacaoMetaHabitoGrupo
+            frequencia={{
+              props: { onChange: (e) => e && setFrequencia(+e)}
+            }}
+            nomeMeta={{
+              props: { onChange: () => checaPreenchido()}
+            }}
+            descricaoMeta={{
+              props: { onChange: () => checaPreenchido()}
+            }}
+            nomeGrupo={{
+              props: { onChange: () => checaPreenchido()}
+            }}
+            descricaoGrupo={{
+              props: { onChange: () => checaPreenchido()}
+            }}
+            confirma={{
+              props: { 
+                isDisabled : !estatdcmplt,
+                onClick: () => criaGrupoHabito()}
+            }} 
       />
     </ph.PageParamsProvider>
   );

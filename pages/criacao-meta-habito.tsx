@@ -28,7 +28,8 @@ function CriacaoMetaHabito() {
   // (https://nextjs.org/docs/advanced-features/custom-app).
 
   const router = useRouter()
-  const [frequencia, setFrequencia] = useState()
+  const [frequencia, setFrequencia] = useState<number>()
+  const [preenchido, setPreenchido] = useState<boolean>()
 
   function criaMetaHabito() {
     axios.post
@@ -37,14 +38,22 @@ function CriacaoMetaHabito() {
       descricao: (document.getElementById("descricao")as any).value,
       tipo: "HABITO",
       frequencia,
+      objs : "3;6;9;12;15",
     })
     .then((response) => {
       axios.put("http://localhost:8080/usuario/addMeta/" + localStorage.getItem('userId') + "/" + response.data.id ,{
       })
-      console.log(frequencia);
       console.log(JSON.stringify(response));
       router.push('/logged');
     });
+  }
+
+  const estatdcmplt = (frequencia !== undefined) && preenchido
+
+  function checaPreenchido(){
+    if((document.getElementById("nome") as any).value && (document.getElementById("descricao") as any).value){
+      setPreenchido(true);
+    }
   }
 
   return (
@@ -52,8 +61,20 @@ function CriacaoMetaHabito() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicCriacaoMetaHabito confirma={{
-          props: { onClick: () => (criaMetaHabito())}
+      <PlasmicCriacaoMetaHabito 
+      frequencia={{
+        props: { onChange: (e) => e && setFrequencia(+e)}
+      }}
+      nome={{
+        props: { onChange: () => checaPreenchido()}
+      }}
+      descricao={{
+        props: { onChange: () => checaPreenchido()}
+      }}
+      confirma={{
+          props: { 
+            isDisabled : !estatdcmplt,
+            onClick: () => criaMetaHabito()}
       }} 
       />
     </ph.PageParamsProvider>

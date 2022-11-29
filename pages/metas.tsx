@@ -32,7 +32,6 @@ function MinhasMetas() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error>();
 
-  //const data = [{nome: "Lusca"}, {nome: "Agnaldo"}];
 
   useEffect(() => {
     const getData = async () => {
@@ -57,6 +56,18 @@ function MinhasMetas() {
 		return <div>Error: {error.message}</div>
 	}
 
+  function registraMeta(metaId: any){
+    axios.put
+    ("http://localhost:8080/usuario/regMeta/" + localStorage.getItem("userId") + "/" + String(metaId), {
+        made: true,
+    }).catch(error=>{
+
+    }).then((response) => {
+      window.location.reload();
+    });
+  }
+
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
@@ -64,7 +75,9 @@ function MinhasMetas() {
     >
       <PlasmicMinhasMetas 
       container = {(loading || !dados) ? {} :{ 
-        children: dados.map(entry => <MiniaturaMeta slot={String(entry.nome)} slot2={"Atual sequência: " + String(entry.recorde)} />) 
+        children: dados.map(entry => <MiniaturaMeta slot={String(entry.nome)} 
+                                                    slot2={"Atual sequência: " + String(entry.recorde)} 
+                                                    registra={{props: { onClick: () => registraMeta(entry.id)}}}/>) 
       }}
       />
     </ph.PageParamsProvider>

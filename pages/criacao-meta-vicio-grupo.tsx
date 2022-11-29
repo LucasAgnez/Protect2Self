@@ -7,6 +7,7 @@ import axios from "axios";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicCriacaoMetaVicioGrupo } from "../components/plasmic/protect_2_self/PlasmicCriacaoMetaVicioGrupo";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 function CriacaoMetaVicioGrupo() {
   // Use PlasmicCriacaoMetaVicioGrupo to render this component as it was
@@ -26,13 +27,15 @@ function CriacaoMetaVicioGrupo() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   const router = useRouter()
+  const [preenchido, setPreenchido] = useState<boolean>()
 
   function criaGrupoVicio() {
     axios.post
     ("http://localhost:8080/meta/save/",{
         nome: (document.getElementById("nomeMeta") as any).value,
         descricao: (document.getElementById("descricaoMeta")as any).value,
-        tipo: "VICIO"
+        tipo: "VICIO",
+        objs : "3;6;9;12;15",
     })
     .then((response) => {
       axios.put("http://localhost:8080/usuario/addMeta/" + localStorage.getItem('userId') + "/" + response.data.id ,{
@@ -47,15 +50,38 @@ function CriacaoMetaVicioGrupo() {
     });
   }
 
+
+  function checaPreenchido(){
+    if((document.getElementById("nomeMeta") as any).value && (document.getElementById("descricaoMeta") as any).value){
+      if((document.getElementById("nomeGrupo") as any).value && (document.getElementById("descricaoGrupo") as any).value){
+        setPreenchido(true);
+      }
+    }
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
       <PlasmicCriacaoMetaVicioGrupo 
-        confirma={{
-          props: { onClick: () => (criaGrupoVicio())}
-        }}
+            nomeMeta={{
+              props: { onChange: () => checaPreenchido()}
+            }}
+            descricaoMeta={{
+              props: { onChange: () => checaPreenchido()}
+            }}
+            nomeGrupo={{
+              props: { onChange: () => checaPreenchido()}
+            }}
+            descricaoGrupo={{
+              props: { onChange: () => checaPreenchido()}
+            }}
+            confirma={{
+              props: { 
+                isDisabled : !preenchido,
+                onClick: () => criaGrupoVicio()}
+            }} 
       />
     </ph.PageParamsProvider>
   );

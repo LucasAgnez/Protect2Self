@@ -3,7 +3,8 @@
 import * as React from "react";
 import {
   PlasmicMiniaturaMeta,
-  DefaultMiniaturaMetaProps
+  DefaultMiniaturaMetaProps,
+  PlasmicMiniaturaMeta__OverridesType
 } from "./plasmic/protect_2_self/PlasmicMiniaturaMeta";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
@@ -20,7 +21,7 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 //
 // You can also stop extending from DefaultMiniaturaMetaProps altogether and have
 // total control over the props for your component.
-export interface MiniaturaMetaProps extends DefaultMiniaturaMetaProps {}
+export interface MiniaturaMetaProps extends DefaultMiniaturaMetaProps, PlasmicMiniaturaMeta__OverridesType {}
 
 function MiniaturaMeta_(
   props: MiniaturaMetaProps,

@@ -7,6 +7,7 @@ import axios from "axios";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicCriacaoMetaVicio } from "../components/plasmic/protect_2_self/PlasmicCriacaoMetaVicio";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 function CriacaoMetaVicio() {
   // Use PlasmicCriacaoMetaVicio to render this component as it was
@@ -27,6 +28,7 @@ function CriacaoMetaVicio() {
   // (https://nextjs.org/docs/advanced-features/custom-app).
 
   const router = useRouter()
+  const [preenchido, setPreenchido] = useState<boolean>()
 
   function criaMetaVicio() {
     axios.post
@@ -34,6 +36,7 @@ function CriacaoMetaVicio() {
       nome: (document.getElementById("nome") as any).value,
       descricao: (document.getElementById("descricao")as any).value,
       tipo: "VICIO",
+      objs : "3;6;9;12;15",
     })
     .then((response) => {
       axios.put("http://localhost:8080/usuario/addMeta/" + localStorage.getItem('userId') + "/" + response.data.id ,{
@@ -43,14 +46,29 @@ function CriacaoMetaVicio() {
     });
   }
 
+  function checaPreenchido(){
+    if((document.getElementById("nome") as any).value && (document.getElementById("descricao") as any).value){
+      setPreenchido(true);
+    }
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicCriacaoMetaVicio confirma={{
-          props: { onClick: () => (criaMetaVicio())}
-      }} 
+      <PlasmicCriacaoMetaVicio
+            nome={{
+              props: { onChange: () => checaPreenchido()}
+            }}
+            descricao={{
+              props: { onChange: () => checaPreenchido()}
+            }}
+            confirma={{
+                props: { 
+                  isDisabled : !preenchido,
+                  onClick: () => criaMetaVicio()}
+            }} 
       />
     </ph.PageParamsProvider>
   );
