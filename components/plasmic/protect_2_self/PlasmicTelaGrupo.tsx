@@ -72,6 +72,7 @@ export type PlasmicTelaGrupo__OverridesType = {
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
   img?: p.Flex<typeof p.PlasmicImg>;
+  container?: p.Flex<"div">;
   miniaturaAmigo?: p.Flex<typeof MiniaturaAmigo>;
 };
 
@@ -398,11 +399,20 @@ function PlasmicTelaGrupo__RenderFunc(props: {
 
                           value: args.children
                         })}
-                        {true ? (
+                        {(
+                          hasVariant($state, "telaAdm", "telaAdm") ? true : true
+                        ) ? (
                           <Button
                             className={classNames(
                               "__wab_instance",
-                              sty.button__dqFu5
+                              sty.button__dqFu5,
+                              {
+                                [sty.buttontelaAdm__dqFu5H6EUz]: hasVariant(
+                                  $state,
+                                  "telaAdm",
+                                  "telaAdm"
+                                )
+                              }
                             )}
                             color={"clear" as const}
                           >
@@ -429,32 +439,40 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                         ) : null}
                       </div>
                     ) : null}
-                    {(
-                      hasVariant($state, "telaAdm", "telaAdm") &&
-                      hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? true
-                        : true
-                    ) ? (
-                      <MiniaturaAmigo
-                        data-plasmic-name={"miniaturaAmigo"}
-                        data-plasmic-override={overrides.miniaturaAmigo}
-                        className={classNames(
-                          "__wab_instance",
-                          sty.miniaturaAmigo,
-                          {
-                            [sty.miniaturaAmigotelaAdm]: hasVariant(
-                              $state,
-                              "telaAdm",
-                              "telaAdm"
-                            )
-                          }
-                        )}
-                        emGrupo={
-                          hasVariant($state, "telaAdm", "telaAdm")
-                            ? ("visaoDoAdm" as const)
-                            : ("visaoMembros" as const)
-                        }
-                      />
+                    {true ? (
+                      <div
+                        data-plasmic-name={"container"}
+                        data-plasmic-override={overrides.container}
+                        className={classNames(projectcss.all, sty.container)}
+                      >
+                        {(
+                          hasVariant($state, "telaAdm", "telaAdm") &&
+                          hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? true
+                            : true
+                        ) ? (
+                          <MiniaturaAmigo
+                            data-plasmic-name={"miniaturaAmigo"}
+                            data-plasmic-override={overrides.miniaturaAmigo}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.miniaturaAmigo,
+                              {
+                                [sty.miniaturaAmigotelaAdm]: hasVariant(
+                                  $state,
+                                  "telaAdm",
+                                  "telaAdm"
+                                )
+                              }
+                            )}
+                            emGrupo={
+                              hasVariant($state, "telaAdm", "telaAdm")
+                                ? ("visaoDoAdm" as const)
+                                : ("visaoMembros" as const)
+                            }
+                          />
+                        ) : null}
+                      </div>
                     ) : null}
                   </div>
                 ) : null}
@@ -474,12 +492,14 @@ const PlasmicDescendants = {
     "columns",
     "userPhoto",
     "img",
+    "container",
     "miniaturaAmigo"
   ],
   headerLogged: ["headerLogged"],
-  columns: ["columns", "userPhoto", "img", "miniaturaAmigo"],
+  columns: ["columns", "userPhoto", "img", "container", "miniaturaAmigo"],
   userPhoto: ["userPhoto"],
   img: ["img"],
+  container: ["container", "miniaturaAmigo"],
   miniaturaAmigo: ["miniaturaAmigo"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -491,6 +511,7 @@ type NodeDefaultElementType = {
   columns: "div";
   userPhoto: typeof UserPhoto;
   img: typeof p.PlasmicImg;
+  container: "div";
   miniaturaAmigo: typeof MiniaturaAmigo;
 };
 
@@ -559,6 +580,7 @@ export const PlasmicTelaGrupo = Object.assign(
     columns: makeNodeComponent("columns"),
     userPhoto: makeNodeComponent("userPhoto"),
     img: makeNodeComponent("img"),
+    container: makeNodeComponent("container"),
     miniaturaAmigo: makeNodeComponent("miniaturaAmigo"),
 
     // Metadata about props expected for PlasmicTelaGrupo
