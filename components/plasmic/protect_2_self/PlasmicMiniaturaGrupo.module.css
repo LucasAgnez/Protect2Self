@@ -40,6 +40,7 @@
   object-fit: cover;
   max-width: 100%;
   width: 34px;
+  margin-right: 15px;
   flex-shrink: 0;
 }
 .img__kaDb > picture > img {
@@ -53,7 +54,7 @@
   white-space: pre;
   text-overflow: ellipsis;
   overflow: hidden;
-  margin-left: 15px;
+  margin-left: 0px;
 }
 .freeBox__dUsOl {
   position: relative;
