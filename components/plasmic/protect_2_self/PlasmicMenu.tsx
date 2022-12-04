@@ -57,11 +57,11 @@ export const PlasmicMenu__ArgProps = new Array<ArgPropType>("children");
 export type PlasmicMenu__OverridesType = {
   root?: p.Flex<"div">;
   antdMenu?: p.Flex<typeof Menu>;
-  antdMenuItem?: p.Flex<typeof MenuItem>;
   antdSubMenu?: p.Flex<typeof SubMenu>;
   text?: p.Flex<"div">;
   perfil?: p.Flex<typeof MenuItem>;
-  sair?: p.Flex<typeof MenuItem>;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
+  sair?: p.Flex<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultMenuProps {
@@ -134,13 +134,13 @@ function PlasmicMenu__RenderFunc(props: {
           data-plasmic-name={"antdMenu"}
           data-plasmic-override={overrides.antdMenu}
           className={classNames("__wab_instance", sty.antdMenu)}
+          defaultOpenKeys={["subMenuKey"]}
+          defaultSelectedKeys={[]}
           theme={"dark" as const}
         >
           {true ? (
             <MenuItem
-              data-plasmic-name={"antdMenuItem"}
-              data-plasmic-override={overrides.antdMenuItem}
-              className={classNames("__wab_instance", sty.antdMenuItem)}
+              className={classNames("__wab_instance", sty.antdMenuItem___5DrMq)}
               key={"menuItemKey" as const}
             >
               <div
@@ -183,11 +183,13 @@ function PlasmicMenu__RenderFunc(props: {
               key={"subMenuItemKey1" as const}
             >
               <p.PlasmicLink
+                data-plasmic-name={"link"}
+                data-plasmic-override={overrides.link}
                 className={classNames(
                   projectcss.all,
                   projectcss.a,
                   projectcss.__wab_text,
-                  sty.link__dehA0
+                  sty.link
                 )}
                 component={Link}
                 href={`/perfil`}
@@ -198,17 +200,17 @@ function PlasmicMenu__RenderFunc(props: {
             </MenuItem>
 
             <MenuItem
-              data-plasmic-name={"sair"}
-              data-plasmic-override={overrides.sair}
-              className={classNames("__wab_instance", sty.sair)}
+              className={classNames("__wab_instance", sty.antdMenuItem__teXUf)}
               key={"subMenuItemKey2" as const}
             >
               <p.PlasmicLink
+                data-plasmic-name={"sair"}
+                data-plasmic-override={overrides.sair}
                 className={classNames(
                   projectcss.all,
                   projectcss.a,
                   projectcss.__wab_text,
-                  sty.link__gmb8H
+                  sty.sair
                 )}
                 component={Link}
                 href={`/`}
@@ -225,27 +227,12 @@ function PlasmicMenu__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "antdMenu",
-    "antdMenuItem",
-    "antdSubMenu",
-    "text",
-    "perfil",
-    "sair"
-  ],
-  antdMenu: [
-    "antdMenu",
-    "antdMenuItem",
-    "antdSubMenu",
-    "text",
-    "perfil",
-    "sair"
-  ],
-  antdMenuItem: ["antdMenuItem"],
-  antdSubMenu: ["antdSubMenu", "text", "perfil", "sair"],
+  root: ["root", "antdMenu", "antdSubMenu", "text", "perfil", "link", "sair"],
+  antdMenu: ["antdMenu", "antdSubMenu", "text", "perfil", "link", "sair"],
+  antdSubMenu: ["antdSubMenu", "text", "perfil", "link", "sair"],
   text: ["text"],
-  perfil: ["perfil"],
+  perfil: ["perfil", "link"],
+  link: ["link"],
   sair: ["sair"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -254,11 +241,11 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   antdMenu: typeof Menu;
-  antdMenuItem: typeof MenuItem;
   antdSubMenu: typeof SubMenu;
   text: "div";
   perfil: typeof MenuItem;
-  sair: typeof MenuItem;
+  link: "a";
+  sair: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -323,10 +310,10 @@ export const PlasmicMenu = Object.assign(
   {
     // Helper components rendering sub-elements
     antdMenu: makeNodeComponent("antdMenu"),
-    antdMenuItem: makeNodeComponent("antdMenuItem"),
     antdSubMenu: makeNodeComponent("antdSubMenu"),
     text: makeNodeComponent("text"),
     perfil: makeNodeComponent("perfil"),
+    link: makeNodeComponent("link"),
     sair: makeNodeComponent("sair"),
 
     // Metadata about props expected for PlasmicMenu
