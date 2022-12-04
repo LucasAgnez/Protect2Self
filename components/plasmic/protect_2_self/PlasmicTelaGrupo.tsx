@@ -398,34 +398,35 @@ function PlasmicTelaGrupo__RenderFunc(props: {
 
                           value: args.children
                         })}
-
-                        <Button
-                          className={classNames(
-                            "__wab_instance",
-                            sty.button__dqFu5
-                          )}
-                          color={"clear" as const}
-                        >
-                          <p.PlasmicImg
-                            data-plasmic-name={"img"}
-                            data-plasmic-override={overrides.img}
-                            alt={""}
-                            className={classNames(sty.img)}
-                            displayHeight={"auto" as const}
-                            displayMaxHeight={"none" as const}
-                            displayMaxWidth={"100%" as const}
-                            displayMinHeight={"0" as const}
-                            displayMinWidth={"0" as const}
-                            displayWidth={"36px" as const}
-                            loading={"lazy" as const}
-                            src={{
-                              src: "/plasmic/protect_2_self/images/lapispng.png",
-                              fullWidth: 512,
-                              fullHeight: 512,
-                              aspectRatio: undefined
-                            }}
-                          />
-                        </Button>
+                        {true ? (
+                          <Button
+                            className={classNames(
+                              "__wab_instance",
+                              sty.button__dqFu5
+                            )}
+                            color={"clear" as const}
+                          >
+                            <p.PlasmicImg
+                              data-plasmic-name={"img"}
+                              data-plasmic-override={overrides.img}
+                              alt={""}
+                              className={classNames(sty.img)}
+                              displayHeight={"auto" as const}
+                              displayMaxHeight={"none" as const}
+                              displayMaxWidth={"100%" as const}
+                              displayMinHeight={"0" as const}
+                              displayMinWidth={"0" as const}
+                              displayWidth={"36px" as const}
+                              loading={"lazy" as const}
+                              src={{
+                                src: "/plasmic/protect_2_self/images/lapispng.png",
+                                fullWidth: 512,
+                                fullHeight: 512,
+                                aspectRatio: undefined
+                              }}
+                            />
+                          </Button>
+                        ) : null}
                       </div>
                     ) : null}
                     {(

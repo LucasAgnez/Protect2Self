@@ -108,6 +108,7 @@ function PlasmicMiniaturaGrupo__RenderFunc(props: {
         sty.root
       )}
       component={Link}
+      href={`/tela-grupo`}
       platform={"nextjs"}
     >
       {true ? (
