@@ -91,6 +91,8 @@ function PlasmicCriacaoMetaVicio__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const [$queries, setDollarQueries] = React.useState({});
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantswwY5HaVRu8X4()
   });

@@ -102,17 +102,19 @@ function PlasmicMedalha__RenderFunc(props: {
       {
         path: "miniatura",
         type: "private",
-        initFunc: ($props, $state) => $props.miniatura
+        initFunc: ($props, $state, $ctx) => $props.miniatura
       },
       {
         path: "cor",
         type: "private",
-        initFunc: ($props, $state) => $props.cor
+        initFunc: ($props, $state, $ctx) => $props.cor
       }
     ],
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const [isRootHover, triggerRootHoverProps] = useTrigger("useHover", {});
   const triggers = {

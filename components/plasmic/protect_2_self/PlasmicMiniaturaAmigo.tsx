@@ -112,12 +112,14 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
       {
         path: "emGrupo",
         type: "private",
-        initFunc: ($props, $state) => $props.emGrupo
+        initFunc: ($props, $state, $ctx) => $props.emGrupo
       }
     ],
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   return (
     <div

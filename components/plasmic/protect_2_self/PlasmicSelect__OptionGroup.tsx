@@ -103,17 +103,19 @@ function PlasmicSelect__OptionGroup__RenderFunc(props: {
       {
         path: "noTitle",
         type: "private",
-        initFunc: ($props, $state) => $props.noTitle
+        initFunc: ($props, $state, $ctx) => $props.noTitle
       },
       {
         path: "isFirst",
         type: "private",
-        initFunc: ($props, $state) => $props.isFirst
+        initFunc: ($props, $state, $ctx) => $props.isFirst
       }
     ],
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const superContexts = {
     Select: React.useContext(SUPER__PlasmicSelect.Context)

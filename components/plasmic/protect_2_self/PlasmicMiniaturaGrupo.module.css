@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   background: #000000;
+  margin-bottom: 40px;
   min-width: 0;
   border-radius: 6px;
   padding: 10px;
@@ -52,6 +53,7 @@
   white-space: pre;
   text-overflow: ellipsis;
   overflow: hidden;
+  margin-left: 15px;
 }
 .freeBox__dUsOl {
   position: relative;

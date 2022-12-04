@@ -101,22 +101,24 @@ function PlasmicOpcoesAdm__Option__RenderFunc(props: {
       {
         path: "isSelected",
         type: "private",
-        initFunc: ($props, $state) => $props.isSelected
+        initFunc: ($props, $state, $ctx) => $props.isSelected
       },
       {
         path: "isHighlighted",
         type: "private",
-        initFunc: ($props, $state) => $props.isHighlighted
+        initFunc: ($props, $state, $ctx) => $props.isHighlighted
       },
       {
         path: "isDisabled",
         type: "private",
-        initFunc: ($props, $state) => $props.isDisabled
+        initFunc: ($props, $state, $ctx) => $props.isDisabled
       }
     ],
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const superContexts = {
     OpcoesAdm: React.useContext(SUPER__PlasmicOpcoesAdm.Context)

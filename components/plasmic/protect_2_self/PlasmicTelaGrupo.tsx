@@ -101,12 +101,14 @@ function PlasmicTelaGrupo__RenderFunc(props: {
       {
         path: "telaAdm",
         type: "private",
-        initFunc: ($props, $state) => $props.telaAdm
+        initFunc: ($props, $state, $ctx) => $props.telaAdm
       }
     ],
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantswwY5HaVRu8X4()

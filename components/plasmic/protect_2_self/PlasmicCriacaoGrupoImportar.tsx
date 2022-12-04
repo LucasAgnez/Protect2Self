@@ -98,6 +98,8 @@ function PlasmicCriacaoGrupoImportar__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <React.Fragment>
       <Head></Head>

@@ -101,12 +101,14 @@ function PlasmicSelect__Overlay__RenderFunc(props: {
       {
         path: "relativePlacement",
         type: "private",
-        initFunc: ($props, $state) => $props.relativePlacement
+        initFunc: ($props, $state, $ctx) => $props.relativePlacement
       }
     ],
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const superContexts = {
     Select: React.useContext(SUPER__PlasmicSelect.Context)

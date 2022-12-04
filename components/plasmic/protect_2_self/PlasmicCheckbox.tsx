@@ -117,27 +117,29 @@ function PlasmicCheckbox__RenderFunc(props: {
       {
         path: "noLabel",
         type: "private",
-        initFunc: ($props, $state) => $props.noLabel
+        initFunc: ($props, $state, $ctx) => $props.noLabel
       },
       {
         path: "isDisabled",
         type: "private",
-        initFunc: ($props, $state) => $props.isDisabled
+        initFunc: ($props, $state, $ctx) => $props.isDisabled
       },
       {
         path: "isChecked",
         type: "private",
-        initFunc: ($props, $state) => $props.isChecked
+        initFunc: ($props, $state, $ctx) => $props.isChecked
       },
       {
         path: "isIndeterminate",
         type: "private",
-        initFunc: ($props, $state) => $props.isIndeterminate
+        initFunc: ($props, $state, $ctx) => $props.isIndeterminate
       }
     ],
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
     useTrigger("useFocusVisibleWithin", {

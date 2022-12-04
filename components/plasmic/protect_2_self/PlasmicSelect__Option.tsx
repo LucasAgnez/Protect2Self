@@ -108,27 +108,29 @@ function PlasmicSelect__Option__RenderFunc(props: {
       {
         path: "isSelected",
         type: "private",
-        initFunc: ($props, $state) => $props.isSelected
+        initFunc: ($props, $state, $ctx) => $props.isSelected
       },
       {
         path: "isHighlighted",
         type: "private",
-        initFunc: ($props, $state) => $props.isHighlighted
+        initFunc: ($props, $state, $ctx) => $props.isHighlighted
       },
       {
         path: "isDisabled",
         type: "private",
-        initFunc: ($props, $state) => $props.isDisabled
+        initFunc: ($props, $state, $ctx) => $props.isDisabled
       },
       {
         path: "color",
         type: "private",
-        initFunc: ($props, $state) => $props.color
+        initFunc: ($props, $state, $ctx) => $props.color
       }
     ],
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const superContexts = {
     Select: React.useContext(SUPER__PlasmicSelect.Context)

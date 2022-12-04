@@ -129,22 +129,24 @@ function PlasmicOpcoesAmigoPerfil__RenderFunc(props: {
       {
         path: "showPlaceholder",
         type: "private",
-        initFunc: ($props, $state) => $props.showPlaceholder
+        initFunc: ($props, $state, $ctx) => $props.showPlaceholder
       },
       {
         path: "isOpen",
         type: "private",
-        initFunc: ($props, $state) => $props.isOpen
+        initFunc: ($props, $state, $ctx) => $props.isOpen
       },
       {
         path: "isDisabled",
         type: "private",
-        initFunc: ($props, $state) => $props.isDisabled
+        initFunc: ($props, $state, $ctx) => $props.isDisabled
       }
     ],
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
     useTrigger("useFocusVisibleWithin", {

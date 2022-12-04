@@ -104,12 +104,14 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
       {
         path: "tipoMeta",
         type: "private",
-        initFunc: ($props, $state) => $props.tipoMeta
+        initFunc: ($props, $state, $ctx) => $props.tipoMeta
       }
     ],
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   return (
     true ? (

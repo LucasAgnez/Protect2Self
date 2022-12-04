@@ -102,17 +102,19 @@ function PlasmicHeader__RenderFunc(props: {
       {
         path: "line",
         type: "private",
-        initFunc: ($props, $state) => $props.line
+        initFunc: ($props, $state, $ctx) => $props.line
       },
       {
         path: "shortcut",
         type: "private",
-        initFunc: ($props, $state) => $props.shortcut
+        initFunc: ($props, $state, $ctx) => $props.shortcut
       }
     ],
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantswwY5HaVRu8X4()

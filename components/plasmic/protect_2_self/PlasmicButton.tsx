@@ -162,37 +162,39 @@ function PlasmicButton__RenderFunc(props: {
       {
         path: "showStartIcon",
         type: "private",
-        initFunc: ($props, $state) => $props.showStartIcon
+        initFunc: ($props, $state, $ctx) => $props.showStartIcon
       },
       {
         path: "showEndIcon",
         type: "private",
-        initFunc: ($props, $state) => $props.showEndIcon
+        initFunc: ($props, $state, $ctx) => $props.showEndIcon
       },
       {
         path: "isDisabled",
         type: "private",
-        initFunc: ($props, $state) => $props.isDisabled
+        initFunc: ($props, $state, $ctx) => $props.isDisabled
       },
       {
         path: "shape",
         type: "private",
-        initFunc: ($props, $state) => $props.shape
+        initFunc: ($props, $state, $ctx) => $props.shape
       },
       {
         path: "size",
         type: "private",
-        initFunc: ($props, $state) => $props.size
+        initFunc: ($props, $state, $ctx) => $props.size
       },
       {
         path: "color",
         type: "private",
-        initFunc: ($props, $state) => $props.color
+        initFunc: ($props, $state, $ctx) => $props.color
       }
     ],
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
     useTrigger("useFocusVisibleWithin", {

@@ -90,6 +90,8 @@ function PlasmicMiniaturaGrupo__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <p.PlasmicLink
       data-plasmic-name={"root"}
