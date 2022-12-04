@@ -134,8 +134,7 @@ function PlasmicMenu__RenderFunc(props: {
           data-plasmic-name={"antdMenu"}
           data-plasmic-override={overrides.antdMenu}
           className={classNames("__wab_instance", sty.antdMenu)}
-          defaultOpenKeys={["subMenuKey"]}
-          defaultSelectedKeys={[]}
+          defaultSelectedKeys={["subMenuItemKey1"]}
           theme={"dark" as const}
         >
           {true ? (
