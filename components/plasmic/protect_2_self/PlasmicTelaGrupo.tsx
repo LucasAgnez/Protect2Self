@@ -50,15 +50,13 @@ import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1G
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
 export type PlasmicTelaGrupo__VariantMembers = {
-  telaAdm: "telaAdm";
+  adm: "adm";
 };
 export type PlasmicTelaGrupo__VariantsArgs = {
-  telaAdm?: SingleBooleanChoiceArg<"telaAdm">;
+  adm?: SingleBooleanChoiceArg<"adm">;
 };
 type VariantPropType = keyof PlasmicTelaGrupo__VariantsArgs;
-export const PlasmicTelaGrupo__VariantProps = new Array<VariantPropType>(
-  "telaAdm"
-);
+export const PlasmicTelaGrupo__VariantProps = new Array<VariantPropType>("adm");
 
 export type PlasmicTelaGrupo__ArgsType = {
   children?: React.ReactNode;
@@ -100,9 +98,9 @@ function PlasmicTelaGrupo__RenderFunc(props: {
   const stateSpecs = React.useMemo(
     () => [
       {
-        path: "telaAdm",
+        path: "adm",
         type: "private",
-        initFunc: ($props, $state, $ctx) => $props.telaAdm
+        initFunc: ($props, $state, $ctx) => $props.adm
       }
     ],
     [$props, $ctx]
@@ -138,18 +136,14 @@ function PlasmicTelaGrupo__RenderFunc(props: {
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
             sty.root,
-            { [sty.roottelaAdm]: hasVariant($state, "telaAdm", "telaAdm") }
+            { [sty.rootadm]: hasVariant($state, "adm", "adm") }
           )}
         >
           <HeaderLogged
             data-plasmic-name={"headerLogged"}
             data-plasmic-override={overrides.headerLogged}
             className={classNames("__wab_instance", sty.headerLogged, {
-              [sty.headerLoggedtelaAdm]: hasVariant(
-                $state,
-                "telaAdm",
-                "telaAdm"
-              )
+              [sty.headerLoggedadm]: hasVariant($state, "adm", "adm")
             })}
           />
 
@@ -157,36 +151,32 @@ function PlasmicTelaGrupo__RenderFunc(props: {
             data-plasmic-name={"columns"}
             data-plasmic-override={overrides.columns}
             className={classNames(projectcss.all, sty.columns, {
-              [sty.columnstelaAdm]: hasVariant($state, "telaAdm", "telaAdm")
+              [sty.columnsadm]: hasVariant($state, "adm", "adm")
             })}
           >
             {(
-              hasVariant($state, "telaAdm", "telaAdm") &&
+              hasVariant($state, "adm", "adm") &&
               hasVariant(globalVariants, "screen", "mobileOnly")
                 ? true
                 : true
             ) ? (
               <div
                 className={classNames(projectcss.all, sty.column__nqgca, {
-                  [sty.columntelaAdm__nqgcaH6EUz]: hasVariant(
-                    $state,
-                    "telaAdm",
-                    "telaAdm"
-                  )
+                  [sty.columnadm__nqgcaH6EUz]: hasVariant($state, "adm", "adm")
                 })}
               >
                 {(
-                  hasVariant($state, "telaAdm", "telaAdm") &&
+                  hasVariant($state, "adm", "adm") &&
                   hasVariant(globalVariants, "screen", "mobileOnly")
                     ? true
                     : true
                 ) ? (
                   <div
                     className={classNames(projectcss.all, sty.freeBox__syvFn, {
-                      [sty.freeBoxtelaAdm__syvFnH6EUz]: hasVariant(
+                      [sty.freeBoxadm__syvFnH6EUz]: hasVariant(
                         $state,
-                        "telaAdm",
-                        "telaAdm"
+                        "adm",
+                        "adm"
                       )
                     })}
                   >
@@ -195,10 +185,10 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                         projectcss.all,
                         sty.freeBox___3Sqsa,
                         {
-                          [sty.freeBoxtelaAdm___3SqsaH6EUz]: hasVariant(
+                          [sty.freeBoxadm___3SqsaH6EUz]: hasVariant(
                             $state,
-                            "telaAdm",
-                            "telaAdm"
+                            "adm",
+                            "adm"
                           )
                         }
                       )}
@@ -209,23 +199,21 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                         className={classNames("__wab_instance", sty.userPhoto)}
                       />
 
-                      {(
-                        hasVariant($state, "telaAdm", "telaAdm") ? true : true
-                      ) ? (
+                      {(hasVariant($state, "adm", "adm") ? true : true) ? (
                         <Button
                           className={classNames(
                             "__wab_instance",
                             sty.button__gpQte,
                             {
-                              [sty.buttontelaAdm__gpQteh6EUz]: hasVariant(
+                              [sty.buttonadm__gpQteh6EUz]: hasVariant(
                                 $state,
-                                "telaAdm",
-                                "telaAdm"
+                                "adm",
+                                "adm"
                               )
                             }
                           )}
                         >
-                          {hasVariant($state, "telaAdm", "telaAdm") &&
+                          {hasVariant($state, "adm", "adm") &&
                           hasVariant(globalVariants, "screen", "mobileOnly")
                             ? "Editar Icone"
                             : hasVariant(globalVariants, "screen", "mobileOnly")
@@ -235,18 +223,16 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                       ) : null}
                     </div>
 
-                    {(
-                      hasVariant($state, "telaAdm", "telaAdm") ? true : true
-                    ) ? (
+                    {(hasVariant($state, "adm", "adm") ? true : true) ? (
                       <Button
                         className={classNames(
                           "__wab_instance",
                           sty.button__hjJrc,
                           {
-                            [sty.buttontelaAdm__hjJrch6EUz]: hasVariant(
+                            [sty.buttonadm__hjJrch6EUz]: hasVariant(
                               $state,
-                              "telaAdm",
-                              "telaAdm"
+                              "adm",
+                              "adm"
                             )
                           }
                         )}
@@ -254,18 +240,16 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                         {"Adicionar Participante"}
                       </Button>
                     ) : null}
-                    {(
-                      hasVariant($state, "telaAdm", "telaAdm") ? true : true
-                    ) ? (
+                    {(hasVariant($state, "adm", "adm") ? true : true) ? (
                       <Button
                         className={classNames(
                           "__wab_instance",
                           sty.button__yr5PM,
                           {
-                            [sty.buttontelaAdm__yr5PMh6EUz]: hasVariant(
+                            [sty.buttonadm__yr5PMh6EUz]: hasVariant(
                               $state,
-                              "telaAdm",
-                              "telaAdm"
+                              "adm",
+                              "adm"
                             )
                           }
                         )}
@@ -278,37 +262,33 @@ function PlasmicTelaGrupo__RenderFunc(props: {
               </div>
             ) : null}
             {(
-              hasVariant($state, "telaAdm", "telaAdm") &&
+              hasVariant($state, "adm", "adm") &&
               hasVariant(globalVariants, "screen", "mobileOnly")
                 ? true
                 : true
             ) ? (
               <div
                 className={classNames(projectcss.all, sty.column___9Gy, {
-                  [sty.columntelaAdm___9GyH6EUz]: hasVariant(
-                    $state,
-                    "telaAdm",
-                    "telaAdm"
-                  )
+                  [sty.columnadm___9GyH6EUz]: hasVariant($state, "adm", "adm")
                 })}
               >
                 {(
-                  hasVariant($state, "telaAdm", "telaAdm") &&
+                  hasVariant($state, "adm", "adm") &&
                   hasVariant(globalVariants, "screen", "mobileOnly")
                     ? true
                     : true
                 ) ? (
                   <div
                     className={classNames(projectcss.all, sty.freeBox__mMjMk, {
-                      [sty.freeBoxtelaAdm__mMjMkH6EUz]: hasVariant(
+                      [sty.freeBoxadm__mMjMkH6EUz]: hasVariant(
                         $state,
-                        "telaAdm",
-                        "telaAdm"
+                        "adm",
+                        "adm"
                       )
                     })}
                   >
                     {(
-                      hasVariant($state, "telaAdm", "telaAdm") &&
+                      hasVariant($state, "adm", "adm") &&
                       hasVariant(globalVariants, "screen", "mobileOnly")
                         ? true
                         : true
@@ -318,10 +298,10 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                           projectcss.all,
                           sty.freeBox__zRZbY,
                           {
-                            [sty.freeBoxtelaAdm__zRZbYh6EUz]: hasVariant(
+                            [sty.freeBoxadm__zRZbYh6EUz]: hasVariant(
                               $state,
-                              "telaAdm",
-                              "telaAdm"
+                              "adm",
+                              "adm"
                             )
                           }
                         )}
@@ -399,18 +379,16 @@ function PlasmicTelaGrupo__RenderFunc(props: {
 
                           value: args.children
                         })}
-                        {(
-                          hasVariant($state, "telaAdm", "telaAdm") ? true : true
-                        ) ? (
+                        {(hasVariant($state, "adm", "adm") ? true : true) ? (
                           <Button
                             className={classNames(
                               "__wab_instance",
                               sty.button__dqFu5,
                               {
-                                [sty.buttontelaAdm__dqFu5H6EUz]: hasVariant(
+                                [sty.buttonadm__dqFu5H6EUz]: hasVariant(
                                   $state,
-                                  "telaAdm",
-                                  "telaAdm"
+                                  "adm",
+                                  "adm"
                                 )
                               }
                             )}
@@ -446,7 +424,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                         className={classNames(projectcss.all, sty.container)}
                       >
                         {(
-                          hasVariant($state, "telaAdm", "telaAdm") &&
+                          hasVariant($state, "adm", "adm") &&
                           hasVariant(globalVariants, "screen", "mobileOnly")
                             ? true
                             : true
@@ -458,15 +436,15 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                               "__wab_instance",
                               sty.miniaturaAmigo,
                               {
-                                [sty.miniaturaAmigotelaAdm]: hasVariant(
+                                [sty.miniaturaAmigoadm]: hasVariant(
                                   $state,
-                                  "telaAdm",
-                                  "telaAdm"
+                                  "adm",
+                                  "adm"
                                 )
                               }
                             )}
                             emGrupo={
-                              hasVariant($state, "telaAdm", "telaAdm")
+                              hasVariant($state, "adm", "adm")
                                 ? ("visaoDoAdm" as const)
                                 : ("visaoMembros" as const)
                             }

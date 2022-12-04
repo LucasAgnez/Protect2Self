@@ -57,8 +57,11 @@ export const PlasmicMenu__ArgProps = new Array<ArgPropType>("children");
 export type PlasmicMenu__OverridesType = {
   root?: p.Flex<"div">;
   antdMenu?: p.Flex<typeof Menu>;
+  antdMenuItem?: p.Flex<typeof MenuItem>;
   antdSubMenu?: p.Flex<typeof SubMenu>;
   text?: p.Flex<"div">;
+  perfil?: p.Flex<typeof MenuItem>;
+  sair?: p.Flex<typeof MenuItem>;
 };
 
 export interface DefaultMenuProps {
@@ -135,7 +138,9 @@ function PlasmicMenu__RenderFunc(props: {
         >
           {true ? (
             <MenuItem
-              className={classNames("__wab_instance", sty.antdMenuItem___5DrMq)}
+              data-plasmic-name={"antdMenuItem"}
+              data-plasmic-override={overrides.antdMenuItem}
+              className={classNames("__wab_instance", sty.antdMenuItem)}
               key={"menuItemKey" as const}
             >
               <div
@@ -172,7 +177,9 @@ function PlasmicMenu__RenderFunc(props: {
             }
           >
             <MenuItem
-              className={classNames("__wab_instance", sty.antdMenuItem__rmfin)}
+              data-plasmic-name={"perfil"}
+              data-plasmic-override={overrides.perfil}
+              className={classNames("__wab_instance", sty.perfil)}
               key={"subMenuItemKey1" as const}
             >
               <p.PlasmicLink
@@ -191,7 +198,9 @@ function PlasmicMenu__RenderFunc(props: {
             </MenuItem>
 
             <MenuItem
-              className={classNames("__wab_instance", sty.antdMenuItem__teXUf)}
+              data-plasmic-name={"sair"}
+              data-plasmic-override={overrides.sair}
+              className={classNames("__wab_instance", sty.sair)}
               key={"subMenuItemKey2" as const}
             >
               <p.PlasmicLink
@@ -216,10 +225,28 @@ function PlasmicMenu__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "antdMenu", "antdSubMenu", "text"],
-  antdMenu: ["antdMenu", "antdSubMenu", "text"],
-  antdSubMenu: ["antdSubMenu", "text"],
-  text: ["text"]
+  root: [
+    "root",
+    "antdMenu",
+    "antdMenuItem",
+    "antdSubMenu",
+    "text",
+    "perfil",
+    "sair"
+  ],
+  antdMenu: [
+    "antdMenu",
+    "antdMenuItem",
+    "antdSubMenu",
+    "text",
+    "perfil",
+    "sair"
+  ],
+  antdMenuItem: ["antdMenuItem"],
+  antdSubMenu: ["antdSubMenu", "text", "perfil", "sair"],
+  text: ["text"],
+  perfil: ["perfil"],
+  sair: ["sair"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -227,8 +254,11 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   antdMenu: typeof Menu;
+  antdMenuItem: typeof MenuItem;
   antdSubMenu: typeof SubMenu;
   text: "div";
+  perfil: typeof MenuItem;
+  sair: typeof MenuItem;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -293,8 +323,11 @@ export const PlasmicMenu = Object.assign(
   {
     // Helper components rendering sub-elements
     antdMenu: makeNodeComponent("antdMenu"),
+    antdMenuItem: makeNodeComponent("antdMenuItem"),
     antdSubMenu: makeNodeComponent("antdSubMenu"),
     text: makeNodeComponent("text"),
+    perfil: makeNodeComponent("perfil"),
+    sair: makeNodeComponent("sair"),
 
     // Metadata about props expected for PlasmicMenu
     internalVariantProps: PlasmicMenu__VariantProps,
