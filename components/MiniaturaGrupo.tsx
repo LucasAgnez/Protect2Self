@@ -20,7 +20,9 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 //
 // You can also stop extending from DefaultMiniaturaGrupoProps altogether and have
 // total control over the props for your component.
-export interface MiniaturaGrupoProps extends DefaultMiniaturaGrupoProps {}
+export interface MiniaturaGrupoProps extends DefaultMiniaturaGrupoProps {
+  onClick ?: () => void
+}
 
 function MiniaturaGrupo_(
   props: MiniaturaGrupoProps,

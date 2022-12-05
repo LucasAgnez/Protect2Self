@@ -7,6 +7,8 @@ import axios from "axios";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicCriacaoGrupoImportar } from "../components/plasmic/protect_2_self/PlasmicCriacaoGrupoImportar";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import Select__Option from "../components/Select__Option";
 
 function CriacaoGrupoImportar() {
   // Use PlasmicCriacaoGrupoImportar to render this component as it was
@@ -28,9 +30,43 @@ function CriacaoGrupoImportar() {
   
   const router = useRouter()
 
+  const [dados, setDados] = useState<any[]>();
+  const [metaSelecionada, setMetaSelecionada] = useState<number>()
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error>();
+  const [preenchido, setPreenchido] = useState<boolean>()
+
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/usuario/getMetas/" + localStorage.getItem('userId')
+        );
+        setDados(response.data);
+        setError(undefined);
+        console.log(dados);
+      } catch (err) {
+        setError((err as any).message);
+        setDados([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+  
+  const estatdcmplt = (metaSelecionada !== undefined) && preenchido
+
+  function checaPreenchido(){
+    if((document.getElementById("nomeGrupo") as any).value && (document.getElementById("descricaoGrupo") as any).value){
+      setPreenchido(true);
+    }
+  }
+
   function criaGrupo() {
     axios.post
-    ("http://localhost:8080/grupo/save/meta/" + localStorage.getItem('userId') + "/" + (document.getElementById("idMeta") as any).value, {
+    ("http://localhost:8080/grupo/save/meta/" + localStorage.getItem('userId') + "/" +  metaSelecionada, {
       nome: (document.getElementById("nomeGrupo") as any).value,
       descricao: (document.getElementById("descricaoGrupo")as any).value,
   })
@@ -45,8 +81,15 @@ function CriacaoGrupoImportar() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicCriacaoGrupoImportar confirma={{
-          props: { onClick: () => criaGrupo()}
+      <PlasmicCriacaoGrupoImportar 
+      confirma={{
+        props: { 
+          isDisabled : !estatdcmplt,
+          onClick: () => criaGrupo()}
+      }} 
+      meta={(loading || !dados) ? {} :{
+        children: dados.map(entry => <Select__Option children={String(entry.nome)} value={String(entry.id)} />),
+        props: { onChange: (e) => e && setMetaSelecionada(+e)}
       }} />
     </ph.PageParamsProvider>
   );

@@ -52,6 +52,22 @@ function MinhasMetas() {
     getData();
   }, []);
 
+  async function mostraMetas(){
+    if (!(document.getElementById("buscaMeta")as any).value){
+      const response = await axios.get(
+        "http://localhost:8080/usuario/getMetas/" + localStorage.getItem('userId')
+      );
+      setDados(response.data);
+      console.log(dados);
+    }
+    else{
+      const resposta = await axios.get(
+          "http://localhost:8080/usuario/findMetasByNome/" + (document.getElementById("buscaMeta")as any).value)
+      setDados(resposta.data);
+      console.log(dados);
+    }
+  }
+
 	if (error) {
 		return <div>Error: {error.message}</div>
 	}
@@ -78,6 +94,9 @@ function MinhasMetas() {
         children: dados.map(entry => <MiniaturaMeta slot={String(entry.nome)} 
                                                     slot2={"Atual sequência: " + String(entry.recorde)} 
                                                     registra={{props: { onClick: () => registraMeta(entry.id)}}}/>) 
+      }}
+      buscaMeta = {{
+        onChange : () => mostraMetas()
       }}
       />
     </ph.PageParamsProvider>

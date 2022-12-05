@@ -32,16 +32,16 @@ function MeusGrupos() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error>();
 
-  //const data = [{nome: "Lusca"}, {nome: "Agnaldo"}];
+  const router = useRouter()
 
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/usuario/getGrupos/" + localStorage.getItem('userId')
+          "http://localhost:8080/grupo/getGrupos/" + localStorage.getItem('userId')
         );
         setDados(response.data);
-        setError(undefined);
+        setError(undefined);  
         console.log(dados);
       } catch (err) {
         setError((err as any).message);
@@ -52,6 +52,22 @@ function MeusGrupos() {
     };
     getData();
   }, []);
+
+  async function mostraGrupos(){
+    if (!(document.getElementById("buscaGrupo")as any).value){
+      const response = await axios.get(
+        "http://localhost:8080/grupo/getGrupos/" + localStorage.getItem('userId')
+      );
+      setDados(response.data);
+      console.log(dados);
+    }
+    else{
+      const resposta = await axios.get(
+          "http://localhost:8080/grupo/findGruposByNome/"+ localStorage.getItem('userId') + "/" + (document.getElementById("buscaGrupo")as any).value)
+      setDados(resposta.data);
+      console.log(dados);
+    }
+  }
 
 	if (error) {
 		return <div>Error: {error.message}</div>
@@ -64,7 +80,14 @@ function MeusGrupos() {
     >
       <PlasmicMeusGrupos 
       container = {(loading || !dados) ? {} :{ 
-        children: dados.map(entry => <MiniaturaGrupo slot={String(entry.nome)} slot2={String(entry.sequencia)} />) 
+        children: dados.map(entry => <MiniaturaGrupo 
+                                        onClick={() => (localStorage.setItem('grupoId', entry.id), router.push('/tela-grupo'))} 
+                                        slot={String(entry.nome)} slot3={String(entry.meta.nome)} 
+                                        slot2={"Sequencia atual: " + String(entry.meta.atual)}
+                                      />) 
+      }}
+      buscaGrupo = {{
+        onChange : () => mostraGrupos()
       }}
       />
     </ph.PageParamsProvider>

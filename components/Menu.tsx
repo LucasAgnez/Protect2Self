@@ -37,7 +37,13 @@ function Menu(props: MenuProps) {
   // By default, we are just piping all MenuProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicMenu {...props} />;
+  return (<PlasmicMenu {...props} 
+    sair={{
+      props: { onClick: () => {localStorage.removeItem('userId')} }
+    }}
+    /> );
+  /*
+  */
 }
 
 export default Menu;

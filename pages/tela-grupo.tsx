@@ -6,6 +6,9 @@ import * as ph from "@plasmicapp/host";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicTelaGrupo } from "../components/plasmic/protect_2_self/PlasmicTelaGrupo";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import MiniaturaAmigo from "../components/MiniaturaAmigo";
 
 function TelaGrupo() {
   // Use PlasmicTelaGrupo to render this component as it was
@@ -24,12 +27,49 @@ function TelaGrupo() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+
+  const [dados, setDados] = useState<any[]>();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error>();
+  const [ADM, setADM] = useState<boolean>(false);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/grupo/findById/" + localStorage.getItem('grupoId')
+        );
+        setDados(response.data.membros);
+        setError(undefined);  
+        if (localStorage.getItem('userId') == String(response.data.id)){
+            setADM(true);
+        }
+        console.log(dados);
+      } catch (err) {
+        setError((err as any).message);
+        setDados([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+	if (error) {
+		return <div>Error: {error.message}</div>
+	}
+
+  
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicTelaGrupo />
+      <PlasmicTelaGrupo
+        adm={ADM}
+        container = {(loading || !dados) ? {} :{ 
+            children: dados.map(entry => <MiniaturaAmigo slot={String(entry.username)} />) 
+          }} 
+      />
     </ph.PageParamsProvider>
   );
 }

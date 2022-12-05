@@ -38,7 +38,6 @@ function LoginScreen() {
       localStorage.setItem('userId', response.data);
       router.push('/logged');
     });
-
   }
 
   return (
@@ -46,8 +45,9 @@ function LoginScreen() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicLoginScreen       confirma={{
-        props: { onClick: () => (logaUsuario())} 
+      <PlasmicLoginScreen       
+      confirma={{
+        props: { onClick: () => logaUsuario()} 
       }} 
       />
     </ph.PageParamsProvider>

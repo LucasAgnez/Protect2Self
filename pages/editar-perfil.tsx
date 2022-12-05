@@ -71,6 +71,17 @@ function EditarPerfil() {
 		return <div>Error: {error.message}</div>
 	}
 
+  const [preenchido, setPreenchido] = useState<boolean>()
+
+  function checaPreenchido(){
+    if((document.getElementById("nome") as any).value && (document.getElementById("username") as any).value){
+      if((document.getElementById("telefone") as any).value && (document.getElementById("email") as any).value){
+        if((document.getElementById("senha") as any).value){
+          setPreenchido(true);
+        }
+      }
+    }
+  }
 
   return (
     <ph.PageParamsProvider
@@ -80,21 +91,27 @@ function EditarPerfil() {
 
       <PlasmicEditarPerfil 
 			nome={{
-				props: (loading || !dados) ? {} : { value: String((dados as any).nome), onChange: (e) => setDados({...dados, nome: e.target.value})} 
+				props: (loading || !dados) ? {} : { value: String((dados as any).nome), onChange: (e) => (setDados({...dados, nome: e.target.value}), checaPreenchido())} 
 			}}
 			username={{
-				props: (loading || !dados) ? {} : { value: String((dados as any).username), onChange: (e) => setDados({...dados, username: e.target.value})}
+				props: (loading || !dados) ? {} : { value: String((dados as any).username), onChange: (e) => (setDados({...dados, username: e.target.value}), checaPreenchido())}
 			}}
 			email={{
-				props: (loading || !dados) ? {} : { value: String((dados as any).email), onChange: (e) => setDados({...dados, email: e.target.value})}
+				props: (loading || !dados) ? {} : { value: String((dados as any).email), onChange: (e) => (setDados({...dados, email: e.target.value}), checaPreenchido())}
 			}}
 			telefone={{
-				props: (loading || !dados) ? {} : { value: String((dados as any).telefone), onChange: (e) => setDados({...dados, telefone: e.target.value})}
+				props: (loading || !dados) ? {} : { value: String((dados as any).telefone), onChange: (e) => (setDados({...dados, telefone: e.target.value}), checaPreenchido())}
 			}}
+      senha={{
+        props: { onChange: () => checaPreenchido()}
+      }}
 			/*
 			*/
         confirma={{
-          props: { onClick: () => atualizaPerfil()}
+          props: { 
+            isDisabled : !preenchido,
+            onClick: () => atualizaPerfil()
+          }
         }}
         cancela={{
           props: { onClick: () => router.push('/perfil')}

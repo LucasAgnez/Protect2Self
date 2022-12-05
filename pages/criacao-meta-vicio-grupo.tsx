@@ -80,7 +80,8 @@ function CriacaoMetaVicioGrupo() {
             confirma={{
               props: { 
                 isDisabled : !preenchido,
-                onClick: () => criaGrupoVicio()}
+                onClick: () => criaGrupoVicio()
+              }
             }} 
       />
     </ph.PageParamsProvider>
