@@ -59,7 +59,7 @@ function CriacaoGrupoImportar() {
   const estatdcmplt = (metaSelecionada !== undefined) && preenchido
 
   function checaPreenchido(){
-    if((document.getElementById("nomeGrupo") as any).value && (document.getElementById("descricaoGrupo") as any).value){
+    if((document.getElementById("nome") as any).value && (document.getElementById("descricao") as any).value){
       setPreenchido(true);
     }
   }
@@ -67,8 +67,8 @@ function CriacaoGrupoImportar() {
   function criaGrupo() {
     axios.post
     ("http://localhost:8080/grupo/save/meta/" + localStorage.getItem('userId') + "/" +  metaSelecionada, {
-      nome: (document.getElementById("nomeGrupo") as any).value,
-      descricao: (document.getElementById("descricaoGrupo")as any).value,
+      nome: (document.getElementById("nome") as any).value,
+      descricao: (document.getElementById("descricao")as any).value,
   })
     .then((response) => {
       console.log(JSON.stringify(response));
@@ -81,15 +81,20 @@ function CriacaoGrupoImportar() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicCriacaoGrupoImportar 
+      <PlasmicCriacaoGrupoImportar
+      nomeGrupo={{
+        props: { onChange: () => checaPreenchido()}
+      }}
+      descricao={{
+        props: { onChange: () => checaPreenchido()}
+      }}
       confirma={{
         props: { 
           isDisabled : !estatdcmplt,
           onClick: () => criaGrupo()}
       }} 
-      meta={(loading || !dados) ? {} :{
-        children: dados.map(entry => <Select__Option children={String(entry.nome)} value={String(entry.id)} />),
-        props: { onChange: (e) => e && setMetaSelecionada(+e)}
+      meta={(loading || !dados) ? {} :{ 
+        children: dados.map(entry => <Select__Option children={String(entry.nome)} value={String(entry.id)} color={"dark"}/>), onChange: (e) => e && setMetaSelecionada(+e)
       }} />
     </ph.PageParamsProvider>
   );
