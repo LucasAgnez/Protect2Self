@@ -1065,6 +1065,36 @@
           "id": "m8EExYHK_",
           "name": "image (2).png",
           "filePath": "../public/plasmic/protect_2_self/images/image2Png.png"
+        },
+        {
+          "id": "SXrgzyESd",
+          "name": "medalha-sem-fundo.png",
+          "filePath": "../public/plasmic/protect_2_self/images/medalhaSemFundopng.png"
+        },
+        {
+          "id": "UZiO202DI",
+          "name": "medalha bronze.png",
+          "filePath": "../public/plasmic/protect_2_self/images/medalhaBronzepng.png"
+        },
+        {
+          "id": "MhBuk2IDA",
+          "name": "medalha prata.png",
+          "filePath": "../public/plasmic/protect_2_self/images/medalhaPratapng.png"
+        },
+        {
+          "id": "3reAXIeaa",
+          "name": "medalha ouro.png",
+          "filePath": "../public/plasmic/protect_2_self/images/medalhaOuropng.png"
+        },
+        {
+          "id": "k6AHZAJzA",
+          "name": "medalha platina.png",
+          "filePath": "../public/plasmic/protect_2_self/images/medalhaPlatinapng.png"
+        },
+        {
+          "id": "x2s4EAaEj",
+          "name": "medalha diamante.png",
+          "filePath": "../public/plasmic/protect_2_self/images/medalhaDiamantepng.png"
         }
       ],
       "indirect": false,

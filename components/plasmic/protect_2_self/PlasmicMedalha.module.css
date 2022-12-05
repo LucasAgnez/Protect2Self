@@ -21,16 +21,116 @@
 .rootminiatura_unnamedVariant:hover {
   width: 77px;
 }
-.img {
+.img__ybdpd {
+  object-fit: cover;
+  width: 77px;
+}
+.img__ybdpd > picture > img {
+  object-fit: cover;
+}
+.img__ybdpd > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.imgcor_bronze__ybdpdFdRKc {
+  display: none !important;
+}
+.imgcor_prata__ybdpdN0PR {
+  display: none !important;
+}
+.imgcor_ouro__ybdpdkRo0Y {
+  display: none !important;
+}
+.imgcor_platina__ybdpdCfncs {
+  display: none !important;
+}
+.imgcor_diamante__ybdpdd0RJr {
+  display: none !important;
+}
+.img___92Nuw {
+  position: relative;
+  object-fit: cover;
+  width: 77px;
+  height: 77px;
+  flex-shrink: 0;
+  display: none !important;
+}
+.img___92Nuw > picture > img {
+  object-fit: cover;
+}
+.img___92Nuw > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.imgcor_bronze___92NuwFdRKc {
+  display: inline-block !important;
+}
+.img___6Pq8I {
+  position: relative;
   object-fit: cover;
   max-width: 100%;
   width: 77px;
+  height: 77px;
+  flex-shrink: 0;
+  display: none !important;
 }
-.img > picture > img {
+.img___6Pq8I > picture > img {
   object-fit: cover;
 }
-.img > :global(.__wab_img-spacer) > img {
+.img___6Pq8I > :global(.__wab_img-spacer) > img {
   object-fit: cover;
+}
+.imgcor_prata___6Pq8In0PR {
+  display: inline-block !important;
+}
+.img__vPqJc {
+  position: relative;
+  object-fit: cover;
+  width: 77px;
+  height: 77px;
+  flex-shrink: 0;
+  display: none !important;
+}
+.img__vPqJc > picture > img {
+  object-fit: cover;
+}
+.img__vPqJc > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.imgcor_ouro__vPqJckRo0Y {
+  display: inline-block !important;
+}
+.img__bbY1T {
+  position: relative;
+  object-fit: cover;
+  width: 77px;
+  height: 77px;
+  flex-shrink: 0;
+  display: none !important;
+}
+.img__bbY1T > picture > img {
+  object-fit: cover;
+}
+.img__bbY1T > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.imgcor_platina__bbY1TCfncs {
+  display: inline-block !important;
+}
+.img__yWxIt {
+  position: relative;
+  object-fit: cover;
+  width: 77px;
+  height: 77px;
+  flex-shrink: 0;
+  display: none !important;
+}
+.img__yWxIt > picture > img {
+  object-fit: cover;
+}
+.img__yWxIt > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.imgcor_diamante__yWxItd0RJr {
+  display: inline-block !important;
 }
 .freeBox {
   position: absolute;
@@ -39,7 +139,6 @@
   justify-content: flex-start;
   width: auto;
   height: auto;
-  max-width: 100%;
   background: #212121;
   box-shadow: 0px 4px 16px 0px #00000069;
   left: 26px;

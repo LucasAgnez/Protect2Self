@@ -66,7 +66,6 @@ export const PlasmicMedalha__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicMedalha__OverridesType = {
   root?: p.Flex<"div">;
-  img?: p.Flex<typeof p.PlasmicImg>;
   freeBox?: p.Flex<"div">;
 };
 
@@ -136,6 +135,10 @@ function PlasmicMedalha__RenderFunc(props: {
           projectcss.plasmic_tokens,
           sty.root,
           {
+            [sty.rootcor_bronze]: hasVariant($state, "cor", "bronze"),
+            [sty.rootcor_ouro]: hasVariant($state, "cor", "ouro"),
+            [sty.rootcor_platina]: hasVariant($state, "cor", "platina"),
+            [sty.rootcor_prata]: hasVariant($state, "cor", "prata"),
             [sty.rootminiatura_unnamedVariant]: hasVariant(
               $state,
               "miniatura",
@@ -145,26 +148,172 @@ function PlasmicMedalha__RenderFunc(props: {
         )}
         data-plasmic-trigger-props={[triggerRootHoverProps]}
       >
-        <p.PlasmicImg
-          data-plasmic-name={"img"}
-          data-plasmic-override={overrides.img}
-          alt={""}
-          className={classNames(sty.img)}
-          displayHeight={"auto" as const}
-          displayMaxHeight={"none" as const}
-          displayMaxWidth={"100%" as const}
-          displayMinHeight={"0" as const}
-          displayMinWidth={"0" as const}
-          displayWidth={"77px" as const}
-          loading={"lazy" as const}
-          src={{
-            src: "/plasmic/protect_2_self/images/medalhapng.png",
-            fullWidth: 225,
-            fullHeight: 225,
-            aspectRatio: undefined
-          }}
-        />
-
+        {(
+          hasVariant($state, "cor", "diamante")
+            ? true
+            : hasVariant($state, "cor", "platina")
+            ? true
+            : hasVariant($state, "cor", "ouro")
+            ? true
+            : hasVariant($state, "cor", "prata")
+            ? true
+            : hasVariant($state, "cor", "bronze")
+            ? true
+            : true
+        ) ? (
+          <p.PlasmicImg
+            alt={""}
+            className={classNames(sty.img__ybdpd, {
+              [sty.imgcor_bronze__ybdpdFdRKc]: hasVariant(
+                $state,
+                "cor",
+                "bronze"
+              ),
+              [sty.imgcor_diamante__ybdpdd0RJr]: hasVariant(
+                $state,
+                "cor",
+                "diamante"
+              ),
+              [sty.imgcor_ouro__ybdpdkRo0Y]: hasVariant($state, "cor", "ouro"),
+              [sty.imgcor_platina__ybdpdCfncs]: hasVariant(
+                $state,
+                "cor",
+                "platina"
+              ),
+              [sty.imgcor_prata__ybdpdN0PR]: hasVariant($state, "cor", "prata")
+            })}
+            displayHeight={"auto" as const}
+            displayMaxHeight={"none" as const}
+            displayMaxWidth={"none" as const}
+            displayMinHeight={"0" as const}
+            displayMinWidth={"0" as const}
+            displayWidth={"77px" as const}
+            loading={"lazy" as const}
+            src={{
+              src: "/plasmic/protect_2_self/images/medalhaSemFundopng.png",
+              fullWidth: 225,
+              fullHeight: 225,
+              aspectRatio: undefined
+            }}
+          />
+        ) : null}
+        {(hasVariant($state, "cor", "bronze") ? true : true) ? (
+          <p.PlasmicImg
+            alt={""}
+            className={classNames(sty.img___92Nuw, {
+              [sty.imgcor_bronze___92NuwFdRKc]: hasVariant(
+                $state,
+                "cor",
+                "bronze"
+              )
+            })}
+            displayHeight={"77px" as const}
+            displayMaxHeight={"none" as const}
+            displayMaxWidth={"none" as const}
+            displayMinHeight={"0" as const}
+            displayMinWidth={"0" as const}
+            displayWidth={"77px" as const}
+            loading={"lazy" as const}
+            src={{
+              src: "/plasmic/protect_2_self/images/medalhaBronzepng.png",
+              fullWidth: 225,
+              fullHeight: 225,
+              aspectRatio: undefined
+            }}
+          />
+        ) : null}
+        {(hasVariant($state, "cor", "prata") ? true : true) ? (
+          <p.PlasmicImg
+            alt={""}
+            className={classNames(sty.img___6Pq8I, {
+              [sty.imgcor_prata___6Pq8In0PR]: hasVariant($state, "cor", "prata")
+            })}
+            displayHeight={"77px" as const}
+            displayMaxHeight={"none" as const}
+            displayMaxWidth={"100%" as const}
+            displayMinHeight={"0" as const}
+            displayMinWidth={"0" as const}
+            displayWidth={"77px" as const}
+            loading={"lazy" as const}
+            src={{
+              src: "/plasmic/protect_2_self/images/medalhaPratapng.png",
+              fullWidth: 225,
+              fullHeight: 225,
+              aspectRatio: undefined
+            }}
+          />
+        ) : null}
+        {(hasVariant($state, "cor", "ouro") ? true : true) ? (
+          <p.PlasmicImg
+            alt={""}
+            className={classNames(sty.img__vPqJc, {
+              [sty.imgcor_ouro__vPqJckRo0Y]: hasVariant($state, "cor", "ouro")
+            })}
+            displayHeight={"77px" as const}
+            displayMaxHeight={"none" as const}
+            displayMaxWidth={"none" as const}
+            displayMinHeight={"0" as const}
+            displayMinWidth={"0" as const}
+            displayWidth={"77px" as const}
+            loading={"lazy" as const}
+            src={{
+              src: "/plasmic/protect_2_self/images/medalhaOuropng.png",
+              fullWidth: 225,
+              fullHeight: 225,
+              aspectRatio: undefined
+            }}
+          />
+        ) : null}
+        {(hasVariant($state, "cor", "platina") ? true : true) ? (
+          <p.PlasmicImg
+            alt={""}
+            className={classNames(sty.img__bbY1T, {
+              [sty.imgcor_platina__bbY1TCfncs]: hasVariant(
+                $state,
+                "cor",
+                "platina"
+              )
+            })}
+            displayHeight={"77px" as const}
+            displayMaxHeight={"none" as const}
+            displayMaxWidth={"none" as const}
+            displayMinHeight={"0" as const}
+            displayMinWidth={"0" as const}
+            displayWidth={"77px" as const}
+            loading={"lazy" as const}
+            src={{
+              src: "/plasmic/protect_2_self/images/medalhaPlatinapng.png",
+              fullWidth: 225,
+              fullHeight: 225,
+              aspectRatio: undefined
+            }}
+          />
+        ) : null}
+        {(hasVariant($state, "cor", "diamante") ? true : true) ? (
+          <p.PlasmicImg
+            alt={""}
+            className={classNames(sty.img__yWxIt, {
+              [sty.imgcor_diamante__yWxItd0RJr]: hasVariant(
+                $state,
+                "cor",
+                "diamante"
+              )
+            })}
+            displayHeight={"77px" as const}
+            displayMaxHeight={"none" as const}
+            displayMaxWidth={"none" as const}
+            displayMinHeight={"0" as const}
+            displayMinWidth={"0" as const}
+            displayWidth={"77px" as const}
+            loading={"lazy" as const}
+            src={{
+              src: "/plasmic/protect_2_self/images/medalhaDiamantepng.png",
+              fullWidth: 225,
+              fullHeight: 225,
+              aspectRatio: undefined
+            }}
+          />
+        ) : null}
         {(
           hasVariant($state, "miniatura", "unnamedVariant") &&
           triggers.hover_root
@@ -236,8 +385,7 @@ function PlasmicMedalha__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img", "freeBox"],
-  img: ["img"],
+  root: ["root", "freeBox"],
   freeBox: ["freeBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -245,7 +393,6 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  img: typeof p.PlasmicImg;
   freeBox: "div";
 };
 
@@ -310,7 +457,6 @@ export const PlasmicMedalha = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    img: makeNodeComponent("img"),
     freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicMedalha
