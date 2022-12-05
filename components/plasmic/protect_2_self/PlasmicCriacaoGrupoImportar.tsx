@@ -37,7 +37,6 @@ import {
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
 import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
 import Select from "../../Select"; // plasmic-import: JvLnzcKYZbb/component
-import Select__Option from "../../Select__Option"; // plasmic-import: MXYniCeie3G/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -322,21 +321,7 @@ function PlasmicCriacaoGrupoImportar__RenderFunc(props: {
                   className={classNames("__wab_instance", sty.meta)}
                   color={"dark" as const}
                 >
-                  <Select__Option
-                    className={classNames("__wab_instance", sty.option__kfpKz)}
-                    color={"dark" as const}
-                    value={"value1" as const}
-                  >
-                    {"Criar"}
-                  </Select__Option>
-
-                  <Select__Option
-                    className={classNames("__wab_instance", sty.option__pu2Zv)}
-                    color={"dark" as const}
-                    value={"value2" as const}
-                  >
-                    {"Importar"}
-                  </Select__Option>
+                  {null}
                 </Select>
               </div>
             </div>
