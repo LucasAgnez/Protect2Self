@@ -318,6 +318,7 @@ function PlasmicCriacaoGrupoImportar__RenderFunc(props: {
                 <Select
                   data-plasmic-name={"meta"}
                   data-plasmic-override={overrides.meta}
+                  aria-label={"Seleciona Meta" as const}
                   className={classNames("__wab_instance", sty.meta)}
                   color={"dark" as const}
                 >
