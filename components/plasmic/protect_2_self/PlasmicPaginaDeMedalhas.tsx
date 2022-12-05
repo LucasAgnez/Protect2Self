@@ -55,6 +55,7 @@ export const PlasmicPaginaDeMedalhas__ArgProps = new Array<ArgPropType>();
 export type PlasmicPaginaDeMedalhas__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
+  container?: p.Flex<"div">;
 };
 
 export interface DefaultPaginaDeMedalhasProps {}
@@ -111,7 +112,11 @@ function PlasmicPaginaDeMedalhas__RenderFunc(props: {
             className={classNames("__wab_instance", sty.headerLogged)}
           />
 
-          <div className={classNames(projectcss.all, sty.columns__qSb7M)}>
+          <div
+            data-plasmic-name={"container"}
+            data-plasmic-override={overrides.container}
+            className={classNames(projectcss.all, sty.container)}
+          >
             <div className={classNames(projectcss.all, sty.column__jZlL)}>
               <Medalha
                 className={classNames("__wab_instance", sty.medalha__gtMio)}
@@ -148,44 +153,6 @@ function PlasmicPaginaDeMedalhas__RenderFunc(props: {
               />
             </div>
           </div>
-
-          <div className={classNames(projectcss.all, sty.columns__nvFmq)}>
-            <div className={classNames(projectcss.all, sty.column__oEe1H)}>
-              <Medalha
-                className={classNames("__wab_instance", sty.medalha__et6Lc)}
-              />
-            </div>
-
-            <div className={classNames(projectcss.all, sty.column__eaS9K)}>
-              <Medalha
-                className={classNames("__wab_instance", sty.medalha__dfvej)}
-              />
-            </div>
-
-            <div className={classNames(projectcss.all, sty.column__vKSh)}>
-              <Medalha
-                className={classNames("__wab_instance", sty.medalha__fJbWo)}
-              />
-            </div>
-
-            <div className={classNames(projectcss.all, sty.column___2FUz)}>
-              <Medalha
-                className={classNames("__wab_instance", sty.medalha__ux9E)}
-              />
-            </div>
-
-            <div className={classNames(projectcss.all, sty.column__hmikX)}>
-              <Medalha
-                className={classNames("__wab_instance", sty.medalha__seRTw)}
-              />
-            </div>
-
-            <div className={classNames(projectcss.all, sty.column__vqqWb)}>
-              <Medalha
-                className={classNames("__wab_instance", sty.medalha__nwnkw)}
-              />
-            </div>
-          </div>
         </div>
       </div>
     </React.Fragment>
@@ -193,8 +160,9 @@ function PlasmicPaginaDeMedalhas__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "headerLogged"],
-  headerLogged: ["headerLogged"]
+  root: ["root", "headerLogged", "container"],
+  headerLogged: ["headerLogged"],
+  container: ["container"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -202,6 +170,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
+  container: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -266,6 +235,7 @@ export const PlasmicPaginaDeMedalhas = Object.assign(
   {
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
+    container: makeNodeComponent("container"),
 
     // Metadata about props expected for PlasmicPaginaDeMedalhas
     internalVariantProps: PlasmicPaginaDeMedalhas__VariantProps,
