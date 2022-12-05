@@ -37,7 +37,6 @@ import {
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
 import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
-import MiniaturaAmigo from "../../MiniaturaAmigo"; // plasmic-import: -2Az4tsp3u/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
@@ -70,8 +69,8 @@ export type PlasmicTelaGrupo__OverridesType = {
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
   img?: p.Flex<typeof p.PlasmicImg>;
+  admin?: p.Flex<"div">;
   container?: p.Flex<"div">;
-  miniaturaAmigo?: p.Flex<typeof MiniaturaAmigo>;
 };
 
 export interface DefaultTelaGrupoProps {}
@@ -417,40 +416,19 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                         ) : null}
                       </div>
                     ) : null}
+
+                    <div
+                      data-plasmic-name={"admin"}
+                      data-plasmic-override={overrides.admin}
+                      className={classNames(projectcss.all, sty.admin)}
+                    />
+
                     {true ? (
                       <div
                         data-plasmic-name={"container"}
                         data-plasmic-override={overrides.container}
                         className={classNames(projectcss.all, sty.container)}
-                      >
-                        {(
-                          hasVariant($state, "adm", "adm") &&
-                          hasVariant(globalVariants, "screen", "mobileOnly")
-                            ? true
-                            : true
-                        ) ? (
-                          <MiniaturaAmigo
-                            data-plasmic-name={"miniaturaAmigo"}
-                            data-plasmic-override={overrides.miniaturaAmigo}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.miniaturaAmigo,
-                              {
-                                [sty.miniaturaAmigoadm]: hasVariant(
-                                  $state,
-                                  "adm",
-                                  "adm"
-                                )
-                              }
-                            )}
-                            emGrupo={
-                              hasVariant($state, "adm", "adm")
-                                ? ("visaoDoAdm" as const)
-                                : ("visaoMembros" as const)
-                            }
-                          />
-                        ) : null}
-                      </div>
+                      />
                     ) : null}
                   </div>
                 ) : null}
@@ -470,15 +448,15 @@ const PlasmicDescendants = {
     "columns",
     "userPhoto",
     "img",
-    "container",
-    "miniaturaAmigo"
+    "admin",
+    "container"
   ],
   headerLogged: ["headerLogged"],
-  columns: ["columns", "userPhoto", "img", "container", "miniaturaAmigo"],
+  columns: ["columns", "userPhoto", "img", "admin", "container"],
   userPhoto: ["userPhoto"],
   img: ["img"],
-  container: ["container", "miniaturaAmigo"],
-  miniaturaAmigo: ["miniaturaAmigo"]
+  admin: ["admin"],
+  container: ["container"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -489,8 +467,8 @@ type NodeDefaultElementType = {
   columns: "div";
   userPhoto: typeof UserPhoto;
   img: typeof p.PlasmicImg;
+  admin: "div";
   container: "div";
-  miniaturaAmigo: typeof MiniaturaAmigo;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -558,8 +536,8 @@ export const PlasmicTelaGrupo = Object.assign(
     columns: makeNodeComponent("columns"),
     userPhoto: makeNodeComponent("userPhoto"),
     img: makeNodeComponent("img"),
+    admin: makeNodeComponent("admin"),
     container: makeNodeComponent("container"),
-    miniaturaAmigo: makeNodeComponent("miniaturaAmigo"),
 
     // Metadata about props expected for PlasmicTelaGrupo
     internalVariantProps: PlasmicTelaGrupo__VariantProps,
