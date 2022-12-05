@@ -35,7 +35,6 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import Medalha from "../../Medalha"; // plasmic-import: OOiN6jLpGW/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -116,43 +115,7 @@ function PlasmicPaginaDeMedalhas__RenderFunc(props: {
             data-plasmic-name={"container"}
             data-plasmic-override={overrides.container}
             className={classNames(projectcss.all, sty.container)}
-          >
-            <div className={classNames(projectcss.all, sty.column__jZlL)}>
-              <Medalha
-                className={classNames("__wab_instance", sty.medalha__gtMio)}
-              />
-            </div>
-
-            <div className={classNames(projectcss.all, sty.column__zr5AU)}>
-              <Medalha
-                className={classNames("__wab_instance", sty.medalha__mrIqA)}
-              />
-            </div>
-
-            <div className={classNames(projectcss.all, sty.column__h3HtH)}>
-              <Medalha
-                className={classNames("__wab_instance", sty.medalha___0C7Zk)}
-              />
-            </div>
-
-            <div className={classNames(projectcss.all, sty.column__a63RL)}>
-              <Medalha
-                className={classNames("__wab_instance", sty.medalha__g3O)}
-              />
-            </div>
-
-            <div className={classNames(projectcss.all, sty.column__jaXuC)}>
-              <Medalha
-                className={classNames("__wab_instance", sty.medalha___7QrZ)}
-              />
-            </div>
-
-            <div className={classNames(projectcss.all, sty.column__zuEGs)}>
-              <Medalha
-                className={classNames("__wab_instance", sty.medalha__kaC4O)}
-              />
-            </div>
-          </div>
+          />
         </div>
       </div>
     </React.Fragment>
