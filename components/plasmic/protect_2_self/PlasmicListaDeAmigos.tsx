@@ -35,7 +35,6 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import MiniaturaAmigo from "../../MiniaturaAmigo"; // plasmic-import: -2Az4tsp3u/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -115,18 +114,7 @@ function PlasmicListaDeAmigos__RenderFunc(props: {
             data-plasmic-name={"container"}
             data-plasmic-override={overrides.container}
             className={classNames(projectcss.all, sty.container)}
-          >
-            <MiniaturaAmigo
-              className={classNames("__wab_instance", sty.miniaturaAmigo__hgvh)}
-            />
-
-            <MiniaturaAmigo
-              className={classNames(
-                "__wab_instance",
-                sty.miniaturaAmigo__qfhIp
-              )}
-            />
-          </div>
+          />
         </div>
       </div>
     </React.Fragment>

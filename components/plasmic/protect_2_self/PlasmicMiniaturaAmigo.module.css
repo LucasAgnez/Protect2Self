@@ -167,6 +167,9 @@
   align-self: flex-start;
   min-width: 0;
 }
+.medalhanaLista_sim:global(.__wab_instance) {
+  display: none;
+}
 .text__uDlIv {
   padding-left: 8px;
 }

@@ -49,13 +49,16 @@ import sty from "./PlasmicMiniaturaAmigo.module.css"; // plasmic-import: -2Az4ts
 
 export type PlasmicMiniaturaAmigo__VariantMembers = {
   emGrupo: "adm" | "visaoDoAdm" | "visaoMembros";
+  naLista: "sim";
 };
 export type PlasmicMiniaturaAmigo__VariantsArgs = {
   emGrupo?: SingleChoiceArg<"adm" | "visaoDoAdm" | "visaoMembros">;
+  naLista?: SingleChoiceArg<"sim">;
 };
 type VariantPropType = keyof PlasmicMiniaturaAmigo__VariantsArgs;
 export const PlasmicMiniaturaAmigo__VariantProps = new Array<VariantPropType>(
-  "emGrupo"
+  "emGrupo",
+  "naLista"
 );
 
 export type PlasmicMiniaturaAmigo__ArgsType = {
@@ -85,6 +88,7 @@ export interface DefaultMiniaturaAmigoProps {
   slot?: React.ReactNode;
   slot2?: React.ReactNode;
   emGrupo?: SingleChoiceArg<"adm" | "visaoDoAdm" | "visaoMembros">;
+  naLista?: SingleChoiceArg<"sim">;
   className?: string;
 }
 
@@ -113,6 +117,11 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
         path: "emGrupo",
         type: "private",
         initFunc: ($props, $state, $ctx) => $props.emGrupo
+      },
+      {
+        path: "naLista",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.naLista
       }
     ],
     [$props, $ctx]
@@ -176,7 +185,9 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
       <div
         data-plasmic-name={"freeBox"}
         data-plasmic-override={overrides.freeBox}
-        className={classNames(projectcss.all, sty.freeBox)}
+        className={classNames(projectcss.all, sty.freeBox, {
+          [sty.freeBoxnaLista_sim]: hasVariant($state, "naLista", "sim")
+        })}
       >
         {p.renderPlasmicSlot({
           defaultContents: (
@@ -215,43 +226,47 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
 
           value: args.slot
         })}
-        {p.renderPlasmicSlot({
-          defaultContents: (
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__mvQWr
-              )}
-            >
-              <React.Fragment>
-                <React.Fragment>{""}</React.Fragment>
-                {
-                  <h6
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h6,
-                      projectcss.__wab_text,
-                      sty.h6__vLz3T
-                    )}
-                  >
-                    <React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ color: "#A9A9A9" }}
+        {(hasVariant($state, "naLista", "sim") ? false : true)
+          ? p.renderPlasmicSlot({
+              defaultContents: (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__mvQWr
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h6
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h6,
+                          projectcss.__wab_text,
+                          sty.h6__vLz3T
+                        )}
                       >
-                        {"Meta amigo"}
-                      </span>
-                    </React.Fragment>
-                  </h6>
-                }
-                <React.Fragment>{""}</React.Fragment>
-              </React.Fragment>
-            </div>
-          ),
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ color: "#A9A9A9" }}
+                          >
+                            {"Meta amigo"}
+                          </span>
+                        </React.Fragment>
+                      </h6>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+              ),
 
-          value: args.slot2
-        })}
+              value: args.slot2
+            })
+          : null}
       </div>
 
       {(hasVariant($state, "emGrupo", "adm") ? true : true) ? (
@@ -331,6 +346,11 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
               $state,
               "emGrupo",
               "visaoMembros"
+            ),
+            [sty.opcoesAmigoPerfilnaLista_sim]: hasVariant(
+              $state,
+              "naLista",
+              "sim"
             )
           })}
         />
@@ -348,19 +368,21 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
           })}
         />
       ) : null}
-
-      <Medalha
-        data-plasmic-name={"medalha"}
-        data-plasmic-override={overrides.medalha}
-        className={classNames("__wab_instance", sty.medalha, {
-          [sty.medalhaemGrupo_adm]: hasVariant($state, "emGrupo", "adm"),
-          [sty.medalhaemGrupo_visaoDoAdm]: hasVariant(
-            $state,
-            "emGrupo",
-            "visaoDoAdm"
-          )
-        })}
-      />
+      {(hasVariant($state, "naLista", "sim") ? true : true) ? (
+        <Medalha
+          data-plasmic-name={"medalha"}
+          data-plasmic-override={overrides.medalha}
+          className={classNames("__wab_instance", sty.medalha, {
+            [sty.medalhaemGrupo_adm]: hasVariant($state, "emGrupo", "adm"),
+            [sty.medalhaemGrupo_visaoDoAdm]: hasVariant(
+              $state,
+              "emGrupo",
+              "visaoDoAdm"
+            ),
+            [sty.medalhanaLista_sim]: hasVariant($state, "naLista", "sim")
+          })}
+        />
+      ) : null}
     </div>
   ) as React.ReactElement | null;
 }
