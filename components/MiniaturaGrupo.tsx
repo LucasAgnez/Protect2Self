@@ -26,7 +26,7 @@ export interface MiniaturaGrupoProps extends DefaultMiniaturaGrupoProps {
 
 function MiniaturaGrupo_(
   props: MiniaturaGrupoProps,
-  ref: HTMLElementRefOf<"a">
+  ref: HTMLElementRefOf<"div">
 ) {
   // Use PlasmicMiniaturaGrupo to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
