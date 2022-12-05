@@ -63,103 +63,6 @@
 .imgemGrupo_adm {
   display: inline-block !important;
 }
-.opcoesMembro:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  width: 58px;
-  align-self: flex-start;
-  height: auto;
-  flex-shrink: 0;
-  display: none;
-}
-.opcoesMembroemGrupo_adm:global(.__wab_instance) {
-  display: flex;
-}
-.opcoesMembroemGrupo_visaoDoAdm:global(.__wab_instance) {
-  display: none;
-}
-.opcoesMembroemGrupo_visaoMembros:global(.__wab_instance) {
-  display: flex;
-}
-.img___6XF8B {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 50px;
-}
-.img___6XF8B > picture > img {
-  object-fit: cover;
-}
-.img___6XF8B > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
-.option__dPTT:global(.__wab_instance) {
-  position: relative;
-}
-.opcoes:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  width: 58px;
-  height: auto;
-  align-self: flex-start;
-  flex-shrink: 0;
-  display: flex;
-}
-.opcoesemGrupo_adm:global(.__wab_instance) {
-  display: none;
-}
-.opcoesemGrupo_visaoDoAdm:global(.__wab_instance) {
-  display: none;
-}
-.opcoesemGrupo_visaoMembros:global(.__wab_instance) {
-  display: none;
-}
-.img__egs8P {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 50px;
-}
-.img__egs8P > picture > img {
-  object-fit: cover;
-}
-.img__egs8P > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
-.remove:global(.__wab_instance) {
-  position: relative;
-}
-.opcoesAdm:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  height: auto;
-  width: 58px;
-  align-self: flex-start;
-  flex-shrink: 0;
-  display: none;
-}
-.opcoesAdmemGrupo_visaoDoAdm:global(.__wab_instance) {
-  display: flex;
-}
-.img__xcC23 {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 50px;
-}
-.img__xcC23 > picture > img {
-  object-fit: cover;
-}
-.img__xcC23 > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
-.option__tieKg:global(.__wab_instance) {
-  position: relative;
-}
-.option___68RR2:global(.__wab_instance) {
-  position: relative;
-  margin-bottom: 0px;
-}
 .medalha:global(.__wab_instance) {
   position: relative;
   width: 100%;
@@ -176,4 +79,29 @@
 .text__zIf2C {
   padding-right: 14px;
   padding-left: 8px;
+}
+.remove:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  align-self: flex-start;
+  margin-left: 80px;
+  display: none;
+}
+.removeemGrupo_visaoDoAdm:global(.__wab_instance) {
+  display: flex;
+}
+.removenaLista_sim:global(.__wab_instance) {
+  display: flex;
+}
+.svg__crbGq {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg___0M4Ta {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
 }
