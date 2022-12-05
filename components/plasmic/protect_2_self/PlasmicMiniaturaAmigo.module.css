@@ -96,7 +96,7 @@
 .option__dPTT:global(.__wab_instance) {
   position: relative;
 }
-.opcoesAmigoPerfil:global(.__wab_instance) {
+.opcoes:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   width: 58px;
@@ -105,13 +105,13 @@
   flex-shrink: 0;
   display: flex;
 }
-.opcoesAmigoPerfilemGrupo_adm:global(.__wab_instance) {
+.opcoesemGrupo_adm:global(.__wab_instance) {
   display: none;
 }
-.opcoesAmigoPerfilemGrupo_visaoDoAdm:global(.__wab_instance) {
+.opcoesemGrupo_visaoDoAdm:global(.__wab_instance) {
   display: none;
 }
-.opcoesAmigoPerfilemGrupo_visaoMembros:global(.__wab_instance) {
+.opcoesemGrupo_visaoMembros:global(.__wab_instance) {
   display: none;
 }
 .img__egs8P {
@@ -126,7 +126,7 @@
 .img__egs8P > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
-.option__mbRKw:global(.__wab_instance) {
+.remove:global(.__wab_instance) {
   position: relative;
 }
 .opcoesAdm:global(.__wab_instance) {

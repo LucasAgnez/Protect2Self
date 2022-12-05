@@ -78,7 +78,8 @@ export type PlasmicMiniaturaAmigo__OverridesType = {
   freeBox?: p.Flex<"div">;
   img?: p.Flex<typeof p.PlasmicImg>;
   opcoesMembro?: p.Flex<typeof OpcoesMembro>;
-  opcoesAmigoPerfil?: p.Flex<typeof OpcoesAmigoPerfil>;
+  opcoes?: p.Flex<typeof OpcoesAmigoPerfil>;
+  remove?: p.Flex<typeof OpcoesAmigoPerfil__Option>;
   opcoesAdm?: p.Flex<typeof OpcoesAdm>;
   medalha?: p.Flex<typeof Medalha>;
 };
@@ -329,31 +330,32 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
           : true
       ) ? (
         <OpcoesAmigoPerfil
-          data-plasmic-name={"opcoesAmigoPerfil"}
-          data-plasmic-override={overrides.opcoesAmigoPerfil}
-          className={classNames("__wab_instance", sty.opcoesAmigoPerfil, {
-            [sty.opcoesAmigoPerfilemGrupo_adm]: hasVariant(
-              $state,
-              "emGrupo",
-              "adm"
-            ),
-            [sty.opcoesAmigoPerfilemGrupo_visaoDoAdm]: hasVariant(
+          data-plasmic-name={"opcoes"}
+          data-plasmic-override={overrides.opcoes}
+          className={classNames("__wab_instance", sty.opcoes, {
+            [sty.opcoesemGrupo_adm]: hasVariant($state, "emGrupo", "adm"),
+            [sty.opcoesemGrupo_visaoDoAdm]: hasVariant(
               $state,
               "emGrupo",
               "visaoDoAdm"
             ),
-            [sty.opcoesAmigoPerfilemGrupo_visaoMembros]: hasVariant(
+            [sty.opcoesemGrupo_visaoMembros]: hasVariant(
               $state,
               "emGrupo",
               "visaoMembros"
             ),
-            [sty.opcoesAmigoPerfilnaLista_sim]: hasVariant(
-              $state,
-              "naLista",
-              "sim"
-            )
+            [sty.opcoesnaLista_sim]: hasVariant($state, "naLista", "sim")
           })}
-        />
+        >
+          <OpcoesAmigoPerfil__Option
+            data-plasmic-name={"remove"}
+            data-plasmic-override={overrides.remove}
+            className={classNames("__wab_instance", sty.remove)}
+            value={"value1" as const}
+          >
+            {"Remover Amigo"}
+          </OpcoesAmigoPerfil__Option>
+        </OpcoesAmigoPerfil>
       ) : null}
       {(hasVariant($state, "emGrupo", "visaoDoAdm") ? true : true) ? (
         <OpcoesAdm
@@ -393,14 +395,16 @@ const PlasmicDescendants = {
     "freeBox",
     "img",
     "opcoesMembro",
-    "opcoesAmigoPerfil",
+    "opcoes",
+    "remove",
     "opcoesAdm",
     "medalha"
   ],
   freeBox: ["freeBox"],
   img: ["img"],
   opcoesMembro: ["opcoesMembro"],
-  opcoesAmigoPerfil: ["opcoesAmigoPerfil"],
+  opcoes: ["opcoes", "remove"],
+  remove: ["remove"],
   opcoesAdm: ["opcoesAdm"],
   medalha: ["medalha"]
 } as const;
@@ -412,7 +416,8 @@ type NodeDefaultElementType = {
   freeBox: "div";
   img: typeof p.PlasmicImg;
   opcoesMembro: typeof OpcoesMembro;
-  opcoesAmigoPerfil: typeof OpcoesAmigoPerfil;
+  opcoes: typeof OpcoesAmigoPerfil;
+  remove: typeof OpcoesAmigoPerfil__Option;
   opcoesAdm: typeof OpcoesAdm;
   medalha: typeof Medalha;
 };
@@ -481,7 +486,8 @@ export const PlasmicMiniaturaAmigo = Object.assign(
     freeBox: makeNodeComponent("freeBox"),
     img: makeNodeComponent("img"),
     opcoesMembro: makeNodeComponent("opcoesMembro"),
-    opcoesAmigoPerfil: makeNodeComponent("opcoesAmigoPerfil"),
+    opcoes: makeNodeComponent("opcoes"),
+    remove: makeNodeComponent("remove"),
     opcoesAdm: makeNodeComponent("opcoesAdm"),
     medalha: makeNodeComponent("medalha"),
 
