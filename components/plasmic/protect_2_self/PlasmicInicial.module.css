@@ -160,53 +160,17 @@
   position: relative;
   display: none;
 }
-.img___518By {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 34px;
-}
-.img___518By > picture > img {
-  object-fit: cover;
-}
-.img___518By > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
 .miniaturaMeta__qmnXn:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin-bottom: 55px;
   display: none;
 }
-.img__xsDBh {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 34px;
-}
-.img__xsDBh > picture > img {
-  object-fit: cover;
-}
-.img__xsDBh > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
 .miniaturaMeta__gmczo:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin-bottom: 55px;
   display: none;
-}
-.img__eogs {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 34px;
-}
-.img__eogs > picture > img {
-  object-fit: cover;
-}
-.img__eogs > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
 }
 .miniaturaGrupo___7Rd5L:global(.__wab_instance) {
   max-width: 100%;

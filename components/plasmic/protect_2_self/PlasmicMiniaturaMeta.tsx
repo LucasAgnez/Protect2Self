@@ -34,6 +34,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Medalha from "../../Medalha"; // plasmic-import: OOiN6jLpGW/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -56,24 +57,22 @@ export const PlasmicMiniaturaMeta__VariantProps = new Array<VariantPropType>(
 );
 
 export type PlasmicMiniaturaMeta__ArgsType = {
-  children?: React.ReactNode;
   slot?: React.ReactNode;
   slot2?: React.ReactNode;
 };
 type ArgPropType = keyof PlasmicMiniaturaMeta__ArgsType;
 export const PlasmicMiniaturaMeta__ArgProps = new Array<ArgPropType>(
-  "children",
   "slot",
   "slot2"
 );
 
 export type PlasmicMiniaturaMeta__OverridesType = {
   root?: p.Flex<"div">;
+  medalha?: p.Flex<typeof Medalha>;
   registra?: p.Flex<typeof Button>;
 };
 
 export interface DefaultMiniaturaMetaProps {
-  children?: React.ReactNode;
   slot?: React.ReactNode;
   slot2?: React.ReactNode;
   tipoMeta?: SingleChoiceArg<"vicio" | "habito">;
@@ -174,29 +173,18 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
                 })}
               </div>
 
-              {p.renderPlasmicSlot({
-                defaultContents: (
-                  <p.PlasmicImg
-                    alt={""}
-                    className={classNames(sty.img___5MP3M)}
-                    displayHeight={"auto" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"100%" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"34px" as const}
-                    loading={"lazy" as const}
-                    src={{
-                      src: "/plasmic/protect_2_self/images/medalhapng.png",
-                      fullWidth: 225,
-                      fullHeight: 225,
-                      aspectRatio: undefined
-                    }}
-                  />
-                ),
-
-                value: args.children
-              })}
+              <Medalha
+                data-plasmic-name={"medalha"}
+                data-plasmic-override={overrides.medalha}
+                className={classNames("__wab_instance", sty.medalha, {
+                  [sty.medalhatipoMeta_habito]: hasVariant(
+                    $state,
+                    "tipoMeta",
+                    "habito"
+                  )
+                })}
+                miniatura={true}
+              />
             </div>
           ) : null}
 
@@ -240,7 +228,8 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "registra"],
+  root: ["root", "medalha", "registra"],
+  medalha: ["medalha"],
   registra: ["registra"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -248,6 +237,7 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  medalha: typeof Medalha;
   registra: typeof Button;
 };
 
@@ -312,6 +302,7 @@ export const PlasmicMiniaturaMeta = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    medalha: makeNodeComponent("medalha"),
     registra: makeNodeComponent("registra"),
 
     // Metadata about props expected for PlasmicMiniaturaMeta

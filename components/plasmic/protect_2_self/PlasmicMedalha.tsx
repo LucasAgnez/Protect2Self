@@ -41,17 +41,17 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicMedalha.module.css"; // plasmic-import: OOiN6jLpGW/css
 
 export type PlasmicMedalha__VariantMembers = {
-  miniatura: "unnamedVariant";
   cor: "bronze" | "prata" | "ouro" | "platina" | "diamante";
+  miniatura: "miniatura";
 };
 export type PlasmicMedalha__VariantsArgs = {
-  miniatura?: SingleChoiceArg<"unnamedVariant">;
   cor?: SingleChoiceArg<"bronze" | "prata" | "ouro" | "platina" | "diamante">;
+  miniatura?: SingleBooleanChoiceArg<"miniatura">;
 };
 type VariantPropType = keyof PlasmicMedalha__VariantsArgs;
 export const PlasmicMedalha__VariantProps = new Array<VariantPropType>(
-  "miniatura",
-  "cor"
+  "cor",
+  "miniatura"
 );
 
 export type PlasmicMedalha__ArgsType = {
@@ -72,8 +72,8 @@ export type PlasmicMedalha__OverridesType = {
 export interface DefaultMedalhaProps {
   children?: React.ReactNode;
   slot?: React.ReactNode;
-  miniatura?: SingleChoiceArg<"unnamedVariant">;
   cor?: SingleChoiceArg<"bronze" | "prata" | "ouro" | "platina" | "diamante">;
+  miniatura?: SingleBooleanChoiceArg<"miniatura">;
   className?: string;
 }
 
@@ -99,14 +99,14 @@ function PlasmicMedalha__RenderFunc(props: {
   const stateSpecs = React.useMemo(
     () => [
       {
-        path: "miniatura",
-        type: "private",
-        initFunc: ($props, $state, $ctx) => $props.miniatura
-      },
-      {
         path: "cor",
         type: "private",
         initFunc: ($props, $state, $ctx) => $props.cor
+      },
+      {
+        path: "miniatura",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.miniatura
       }
     ],
     [$props, $ctx]
@@ -136,14 +136,17 @@ function PlasmicMedalha__RenderFunc(props: {
           sty.root,
           {
             [sty.rootcor_bronze]: hasVariant($state, "cor", "bronze"),
+            [sty.rootcor_diamante]: hasVariant($state, "cor", "diamante"),
             [sty.rootcor_ouro]: hasVariant($state, "cor", "ouro"),
             [sty.rootcor_platina]: hasVariant($state, "cor", "platina"),
+            [sty.rootcor_platina_miniatura]:
+              hasVariant($state, "cor", "platina") &&
+              hasVariant($state, "miniatura", "miniatura"),
             [sty.rootcor_prata]: hasVariant($state, "cor", "prata"),
-            [sty.rootminiatura_unnamedVariant]: hasVariant(
-              $state,
-              "miniatura",
-              "unnamedVariant"
-            )
+            [sty.rootminiatura]: hasVariant($state, "miniatura", "miniatura"),
+            [sty.rootminiatura_cor_bronze]:
+              hasVariant($state, "miniatura", "miniatura") &&
+              hasVariant($state, "cor", "bronze")
           }
         )}
         data-plasmic-trigger-props={[triggerRootHoverProps]}
@@ -180,14 +183,23 @@ function PlasmicMedalha__RenderFunc(props: {
                 "cor",
                 "platina"
               ),
-              [sty.imgcor_prata__ybdpdN0PR]: hasVariant($state, "cor", "prata")
+              [sty.imgcor_prata__ybdpdN0PR]: hasVariant($state, "cor", "prata"),
+              [sty.imgminiatura__ybdpdCxNOa]: hasVariant(
+                $state,
+                "miniatura",
+                "miniatura"
+              )
             })}
-            displayHeight={"auto" as const}
+            displayHeight={"100%" as const}
             displayMaxHeight={"none" as const}
-            displayMaxWidth={"none" as const}
+            displayMaxWidth={"77px" as const}
             displayMinHeight={"0" as const}
-            displayMinWidth={"0" as const}
-            displayWidth={"77px" as const}
+            displayMinWidth={"30px" as const}
+            displayWidth={
+              hasVariant($state, "miniatura", "miniatura")
+                ? ("50px" as const)
+                : ("100%" as const)
+            }
             loading={"lazy" as const}
             src={{
               src: "/plasmic/protect_2_self/images/medalhaSemFundopng.png",
@@ -205,14 +217,24 @@ function PlasmicMedalha__RenderFunc(props: {
                 $state,
                 "cor",
                 "bronze"
-              )
+              ),
+              [sty.imgminiatura_cor_bronze___92NuwCxNOaFdRKc]:
+                hasVariant($state, "miniatura", "miniatura") &&
+                hasVariant($state, "cor", "bronze")
             })}
-            displayHeight={"77px" as const}
+            displayHeight={"auto" as const}
             displayMaxHeight={"none" as const}
             displayMaxWidth={"none" as const}
             displayMinHeight={"0" as const}
             displayMinWidth={"0" as const}
-            displayWidth={"77px" as const}
+            displayWidth={
+              hasVariant($state, "miniatura", "miniatura") &&
+              hasVariant($state, "cor", "bronze")
+                ? ("50px" as const)
+                : hasVariant($state, "cor", "bronze")
+                ? ("77px" as const)
+                : ("auto" as const)
+            }
             loading={"lazy" as const}
             src={{
               src: "/plasmic/protect_2_self/images/medalhaBronzepng.png",
@@ -226,14 +248,28 @@ function PlasmicMedalha__RenderFunc(props: {
           <p.PlasmicImg
             alt={""}
             className={classNames(sty.img___6Pq8I, {
-              [sty.imgcor_prata___6Pq8In0PR]: hasVariant($state, "cor", "prata")
+              [sty.imgcor_prata___6Pq8In0PR]: hasVariant(
+                $state,
+                "cor",
+                "prata"
+              ),
+              [sty.imgminiatura_cor_prata___6Pq8ICxNOaN0PR]:
+                hasVariant($state, "miniatura", "miniatura") &&
+                hasVariant($state, "cor", "prata")
             })}
-            displayHeight={"77px" as const}
+            displayHeight={"100%" as const}
             displayMaxHeight={"none" as const}
             displayMaxWidth={"100%" as const}
             displayMinHeight={"0" as const}
             displayMinWidth={"0" as const}
-            displayWidth={"77px" as const}
+            displayWidth={
+              hasVariant($state, "miniatura", "miniatura") &&
+              hasVariant($state, "cor", "prata")
+                ? ("50px" as const)
+                : hasVariant($state, "cor", "prata")
+                ? ("77px" as const)
+                : ("100%" as const)
+            }
             loading={"lazy" as const}
             src={{
               src: "/plasmic/protect_2_self/images/medalhaPratapng.png",
@@ -247,14 +283,22 @@ function PlasmicMedalha__RenderFunc(props: {
           <p.PlasmicImg
             alt={""}
             className={classNames(sty.img__vPqJc, {
-              [sty.imgcor_ouro__vPqJckRo0Y]: hasVariant($state, "cor", "ouro")
+              [sty.imgcor_ouro__vPqJckRo0Y]: hasVariant($state, "cor", "ouro"),
+              [sty.imgminiatura_cor_ouro__vPqJcCxNOaKRo0Y]:
+                hasVariant($state, "cor", "ouro") &&
+                hasVariant($state, "miniatura", "miniatura")
             })}
-            displayHeight={"77px" as const}
+            displayHeight={"100%" as const}
             displayMaxHeight={"none" as const}
             displayMaxWidth={"none" as const}
             displayMinHeight={"0" as const}
             displayMinWidth={"0" as const}
-            displayWidth={"77px" as const}
+            displayWidth={
+              hasVariant($state, "cor", "ouro") &&
+              hasVariant($state, "miniatura", "miniatura")
+                ? ("50px" as const)
+                : ("77px" as const)
+            }
             loading={"lazy" as const}
             src={{
               src: "/plasmic/protect_2_self/images/medalhaOuropng.png",
@@ -272,14 +316,22 @@ function PlasmicMedalha__RenderFunc(props: {
                 $state,
                 "cor",
                 "platina"
-              )
+              ),
+              [sty.imgcor_platina_miniatura__bbY1TCfncsCxNOa]:
+                hasVariant($state, "cor", "platina") &&
+                hasVariant($state, "miniatura", "miniatura")
             })}
-            displayHeight={"77px" as const}
+            displayHeight={"100%" as const}
             displayMaxHeight={"none" as const}
             displayMaxWidth={"none" as const}
             displayMinHeight={"0" as const}
             displayMinWidth={"0" as const}
-            displayWidth={"77px" as const}
+            displayWidth={
+              hasVariant($state, "cor", "platina") &&
+              hasVariant($state, "miniatura", "miniatura")
+                ? ("50px" as const)
+                : ("77px" as const)
+            }
             loading={"lazy" as const}
             src={{
               src: "/plasmic/protect_2_self/images/medalhaPlatinapng.png",
@@ -297,14 +349,24 @@ function PlasmicMedalha__RenderFunc(props: {
                 $state,
                 "cor",
                 "diamante"
-              )
+              ),
+              [sty.imgminiatura_cor_diamante__yWxItCxNOaD0RJr]:
+                hasVariant($state, "cor", "diamante") &&
+                hasVariant($state, "miniatura", "miniatura")
             })}
-            displayHeight={"77px" as const}
+            displayHeight={"100%" as const}
             displayMaxHeight={"none" as const}
             displayMaxWidth={"none" as const}
             displayMinHeight={"0" as const}
             displayMinWidth={"0" as const}
-            displayWidth={"77px" as const}
+            displayWidth={
+              hasVariant($state, "cor", "diamante") &&
+              hasVariant($state, "miniatura", "miniatura")
+                ? ("50px" as const)
+                : hasVariant($state, "cor", "diamante")
+                ? ("77px" as const)
+                : ("100%" as const)
+            }
             loading={"lazy" as const}
             src={{
               src: "/plasmic/protect_2_self/images/medalhaDiamantepng.png",
@@ -314,24 +376,11 @@ function PlasmicMedalha__RenderFunc(props: {
             }}
           />
         ) : null}
-        {(
-          hasVariant($state, "miniatura", "unnamedVariant") &&
-          triggers.hover_root
-            ? true
-            : triggers.hover_root
-            ? true
-            : true
-        ) ? (
+        {(triggers.hover_root ? true : true) ? (
           <div
             data-plasmic-name={"freeBox"}
             data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox, {
-              [sty.freeBoxminiatura_unnamedVariant]: hasVariant(
-                $state,
-                "miniatura",
-                "unnamedVariant"
-              )
-            })}
+            className={classNames(projectcss.all, sty.freeBox)}
           >
             {p.renderPlasmicSlot({
               defaultContents: (

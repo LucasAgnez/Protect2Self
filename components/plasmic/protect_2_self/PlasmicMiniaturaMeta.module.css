@@ -47,18 +47,15 @@
   flex-direction: row;
   min-width: 0;
 }
-.img___5MP3M {
+.medalha:global(.__wab_instance) {
   position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 34px;
-  flex-shrink: 0;
 }
-.img___5MP3M > picture > img {
-  object-fit: cover;
+.text__wSfkS {
+  padding-right: 14px;
+  padding-left: 8px;
 }
-.img___5MP3M > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
+.text__r5KcK {
+  padding-left: 8px;
 }
 .freeBox___6ExQ {
   position: relative;
