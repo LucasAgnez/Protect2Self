@@ -46,14 +46,14 @@ import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1G
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
 export type PlasmicMiniaturaMeta__VariantMembers = {
-  tipoMeta: "vicio" | "habito";
+  comMedalha: "comMedalha";
 };
 export type PlasmicMiniaturaMeta__VariantsArgs = {
-  tipoMeta?: SingleChoiceArg<"vicio" | "habito">;
+  comMedalha?: SingleBooleanChoiceArg<"comMedalha">;
 };
 type VariantPropType = keyof PlasmicMiniaturaMeta__VariantsArgs;
 export const PlasmicMiniaturaMeta__VariantProps = new Array<VariantPropType>(
-  "tipoMeta"
+  "comMedalha"
 );
 
 export type PlasmicMiniaturaMeta__ArgsType = {
@@ -75,7 +75,7 @@ export type PlasmicMiniaturaMeta__OverridesType = {
 export interface DefaultMiniaturaMetaProps {
   slot?: React.ReactNode;
   slot2?: React.ReactNode;
-  tipoMeta?: SingleChoiceArg<"vicio" | "habito">;
+  comMedalha?: SingleBooleanChoiceArg<"comMedalha">;
   className?: string;
 }
 
@@ -101,9 +101,9 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
   const stateSpecs = React.useMemo(
     () => [
       {
-        path: "tipoMeta",
+        path: "comMedalha",
         type: "private",
-        initFunc: ($props, $state, $ctx) => $props.tipoMeta
+        initFunc: ($props, $state, $ctx) => $props.comMedalha
       }
     ],
     [$props, $ctx]
@@ -173,18 +173,22 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
                 })}
               </div>
 
-              <Medalha
-                data-plasmic-name={"medalha"}
-                data-plasmic-override={overrides.medalha}
-                className={classNames("__wab_instance", sty.medalha, {
-                  [sty.medalhatipoMeta_habito]: hasVariant(
-                    $state,
-                    "tipoMeta",
-                    "habito"
-                  )
-                })}
-                miniatura={true}
-              />
+              {(
+                hasVariant($state, "comMedalha", "comMedalha") ? true : true
+              ) ? (
+                <Medalha
+                  data-plasmic-name={"medalha"}
+                  data-plasmic-override={overrides.medalha}
+                  className={classNames("__wab_instance", sty.medalha, {
+                    [sty.medalhacomMedalha]: hasVariant(
+                      $state,
+                      "comMedalha",
+                      "comMedalha"
+                    )
+                  })}
+                  miniatura={true}
+                />
+              ) : null}
             </div>
           ) : null}
 

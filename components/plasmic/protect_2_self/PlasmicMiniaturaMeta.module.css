@@ -49,6 +49,12 @@
 }
 .medalha:global(.__wab_instance) {
   position: relative;
+  width: 30px;
+  flex-shrink: 0;
+  display: none;
+}
+.medalhacomMedalha:global(.__wab_instance) {
+  display: flex;
 }
 .text__wSfkS {
   padding-right: 14px;

@@ -146,7 +146,10 @@ function PlasmicMedalha__RenderFunc(props: {
             [sty.rootminiatura]: hasVariant($state, "miniatura", "miniatura"),
             [sty.rootminiatura_cor_bronze]:
               hasVariant($state, "miniatura", "miniatura") &&
-              hasVariant($state, "cor", "bronze")
+              hasVariant($state, "cor", "bronze"),
+            [sty.rootminiatura_cor_prata]:
+              hasVariant($state, "miniatura", "miniatura") &&
+              hasVariant($state, "cor", "prata")
           }
         )}
         data-plasmic-trigger-props={[triggerRootHoverProps]}
@@ -197,7 +200,7 @@ function PlasmicMedalha__RenderFunc(props: {
             displayMinWidth={"30px" as const}
             displayWidth={
               hasVariant($state, "miniatura", "miniatura")
-                ? ("50px" as const)
+                ? ("40px" as const)
                 : ("100%" as const)
             }
             loading={"lazy" as const}
@@ -230,7 +233,7 @@ function PlasmicMedalha__RenderFunc(props: {
             displayWidth={
               hasVariant($state, "miniatura", "miniatura") &&
               hasVariant($state, "cor", "bronze")
-                ? ("50px" as const)
+                ? ("40px" as const)
                 : hasVariant($state, "cor", "bronze")
                 ? ("77px" as const)
                 : ("auto" as const)
@@ -265,7 +268,7 @@ function PlasmicMedalha__RenderFunc(props: {
             displayWidth={
               hasVariant($state, "miniatura", "miniatura") &&
               hasVariant($state, "cor", "prata")
-                ? ("50px" as const)
+                ? ("40px" as const)
                 : hasVariant($state, "cor", "prata")
                 ? ("77px" as const)
                 : ("100%" as const)
@@ -296,7 +299,7 @@ function PlasmicMedalha__RenderFunc(props: {
             displayWidth={
               hasVariant($state, "cor", "ouro") &&
               hasVariant($state, "miniatura", "miniatura")
-                ? ("50px" as const)
+                ? ("40px" as const)
                 : ("77px" as const)
             }
             loading={"lazy" as const}
@@ -329,7 +332,7 @@ function PlasmicMedalha__RenderFunc(props: {
             displayWidth={
               hasVariant($state, "cor", "platina") &&
               hasVariant($state, "miniatura", "miniatura")
-                ? ("50px" as const)
+                ? ("40px" as const)
                 : ("77px" as const)
             }
             loading={"lazy" as const}
@@ -362,7 +365,7 @@ function PlasmicMedalha__RenderFunc(props: {
             displayWidth={
               hasVariant($state, "cor", "diamante") &&
               hasVariant($state, "miniatura", "miniatura")
-                ? ("50px" as const)
+                ? ("40px" as const)
                 : hasVariant($state, "cor", "diamante")
                 ? ("77px" as const)
                 : ("100%" as const)

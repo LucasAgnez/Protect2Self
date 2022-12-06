@@ -9,6 +9,9 @@
   max-width: 100%;
   padding: 8px;
 }
+.rootminiatura {
+  padding: 0px;
+}
 .root:hover {
   width: 330px;
   justify-content: center;
@@ -44,7 +47,7 @@
   display: none !important;
 }
 .imgminiatura__ybdpdCxNOa {
-  width: 50px;
+  width: 40px;
 }
 .img___92Nuw {
   position: relative;
@@ -64,7 +67,7 @@
   display: inline-block !important;
 }
 .imgminiatura_cor_bronze___92NuwCxNOaFdRKc {
-  width: 50px;
+  width: 40px;
 }
 .img___6Pq8I {
   position: relative;
@@ -87,7 +90,7 @@
   display: inline-block !important;
 }
 .imgminiatura_cor_prata___6Pq8ICxNOaN0PR {
-  width: 50px;
+  width: 40px;
 }
 .img__vPqJc {
   position: relative;
@@ -107,7 +110,7 @@
   display: inline-block !important;
 }
 .imgminiatura_cor_ouro__vPqJcCxNOaKRo0Y {
-  width: 50px;
+  width: 40px;
 }
 .img__bbY1T {
   position: relative;
@@ -127,7 +130,7 @@
   display: inline-block !important;
 }
 .imgcor_platina_miniatura__bbY1TCfncsCxNOa {
-  width: 50px;
+  width: 40px;
 }
 .img__yWxIt {
   position: relative;
@@ -149,7 +152,7 @@
   display: inline-block !important;
 }
 .imgminiatura_cor_diamante__yWxItCxNOaD0RJr {
-  width: 50px;
+  width: 40px;
 }
 .freeBox {
   position: absolute;
