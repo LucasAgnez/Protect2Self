@@ -26,6 +26,9 @@
   border-radius: 6px;
   padding: 10px;
 }
+.freeBoxcomMedalha__cowRfyJuMv {
+  z-index: 6;
+}
 .freeBox__noCej {
   display: flex;
   position: relative;
@@ -84,7 +87,7 @@
 }
 .registracomMedalha:global(.__wab_instance) {
   margin-left: 0px;
-  z-index: 8;
+  z-index: 5;
 }
 .svg__bwbxV {
   position: relative;

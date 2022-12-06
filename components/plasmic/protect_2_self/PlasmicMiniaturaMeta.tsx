@@ -128,7 +128,15 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
           sty.root
         )}
       >
-        <div className={classNames(projectcss.all, sty.freeBox__cowRf)}>
+        <div
+          className={classNames(projectcss.all, sty.freeBox__cowRf, {
+            [sty.freeBoxcomMedalha__cowRfyJuMv]: hasVariant(
+              $state,
+              "comMedalha",
+              "comMedalha"
+            )
+          })}
+        >
           {true ? (
             <div className={classNames(projectcss.all, sty.freeBox__noCej)}>
               <div className={classNames(projectcss.all, sty.freeBox__mfpq)}>
