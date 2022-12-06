@@ -221,7 +221,13 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
         <Button
           data-plasmic-name={"registra"}
           data-plasmic-override={overrides.registra}
-          className={classNames("__wab_instance", sty.registra)}
+          className={classNames("__wab_instance", sty.registra, {
+            [sty.registracomMedalha]: hasVariant(
+              $state,
+              "comMedalha",
+              "comMedalha"
+            )
+          })}
           color={"yellow" as const}
         >
           {"Registrar"}

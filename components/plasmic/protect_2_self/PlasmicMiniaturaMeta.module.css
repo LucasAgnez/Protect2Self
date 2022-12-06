@@ -50,6 +50,7 @@
 .medalha:global(.__wab_instance) {
   position: relative;
   width: 30px;
+  margin-left: 60px;
   flex-shrink: 0;
   display: none;
 }
@@ -78,6 +79,9 @@
   width: 78px;
   height: 48px;
   flex-shrink: 0;
+}
+.registracomMedalha:global(.__wab_instance) {
+  margin-left: 0px;
 }
 .svg__bwbxV {
   position: relative;
