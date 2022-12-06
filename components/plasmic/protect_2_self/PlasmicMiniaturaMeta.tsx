@@ -125,7 +125,10 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
           projectcss.plasmic_default_styles,
           projectcss.plasmic_mixins,
           projectcss.plasmic_tokens,
-          sty.root
+          sty.root,
+          {
+            [sty.rootcomMedalha]: hasVariant($state, "comMedalha", "comMedalha")
+          }
         )}
       >
         <div
