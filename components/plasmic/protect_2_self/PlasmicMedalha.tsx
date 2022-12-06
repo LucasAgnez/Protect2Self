@@ -154,58 +154,6 @@ function PlasmicMedalha__RenderFunc(props: {
         )}
         data-plasmic-trigger-props={[triggerRootHoverProps]}
       >
-        {(triggers.hover_root ? true : true) ? (
-          <div
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
-          >
-            {p.renderPlasmicSlot({
-              defaultContents: (
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__vuFop
-                  )}
-                >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "#CCCCCC" }}
-                    >
-                      {"Meta Relacionada"}
-                    </span>
-                  </React.Fragment>
-                </div>
-              ),
-
-              value: args.slot
-            })}
-            {p.renderPlasmicSlot({
-              defaultContents: (
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qjYsr
-                  )}
-                >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "#8D8D8D", fontStyle: "italic" }}
-                    >
-                      {"dd/mm/aaaa"}
-                    </span>
-                  </React.Fragment>
-                </div>
-              ),
-
-              value: args.children
-            })}
-          </div>
-        ) : null}
         {(
           hasVariant($state, "cor", "diamante")
             ? true
@@ -430,6 +378,58 @@ function PlasmicMedalha__RenderFunc(props: {
               aspectRatio: undefined
             }}
           />
+        ) : null}
+        {(triggers.hover_root ? true : true) ? (
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
+          >
+            {p.renderPlasmicSlot({
+              defaultContents: (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__vuFop
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#CCCCCC" }}
+                    >
+                      {"Meta Relacionada"}
+                    </span>
+                  </React.Fragment>
+                </div>
+              ),
+
+              value: args.slot
+            })}
+            {p.renderPlasmicSlot({
+              defaultContents: (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__qjYsr
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#8D8D8D", fontStyle: "italic" }}
+                    >
+                      {"dd/mm/aaaa"}
+                    </span>
+                  </React.Fragment>
+                </div>
+              ),
+
+              value: args.children
+            })}
+          </div>
         ) : null}
       </div>
     ) : null

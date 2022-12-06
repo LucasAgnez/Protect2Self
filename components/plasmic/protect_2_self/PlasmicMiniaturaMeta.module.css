@@ -51,6 +51,7 @@
   position: relative;
   width: 30px;
   margin-left: 60px;
+  z-index: 8;
   flex-shrink: 0;
   display: none;
 }
@@ -83,6 +84,7 @@
 }
 .registracomMedalha:global(.__wab_instance) {
   margin-left: 0px;
+  z-index: 8;
 }
 .svg__bwbxV {
   position: relative;
