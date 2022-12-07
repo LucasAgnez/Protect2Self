@@ -61,19 +61,17 @@ export const PlasmicMiniaturaAmigo__VariantProps = new Array<VariantPropType>(
 
 export type PlasmicMiniaturaAmigo__ArgsType = {
   children?: React.ReactNode;
-  slot?: React.ReactNode;
-  slot2?: React.ReactNode;
 };
 type ArgPropType = keyof PlasmicMiniaturaAmigo__ArgsType;
 export const PlasmicMiniaturaAmigo__ArgProps = new Array<ArgPropType>(
-  "children",
-  "slot",
-  "slot2"
+  "children"
 );
 
 export type PlasmicMiniaturaAmigo__OverridesType = {
   root?: p.Flex<"div">;
   freeBox?: p.Flex<"div">;
+  nomeUsuario?: p.Flex<"h4">;
+  metaUsuario?: p.Flex<"h6">;
   img?: p.Flex<typeof p.PlasmicImg>;
   medalha?: p.Flex<typeof Medalha>;
   remove?: p.Flex<typeof Button>;
@@ -81,8 +79,6 @@ export type PlasmicMiniaturaAmigo__OverridesType = {
 
 export interface DefaultMiniaturaAmigoProps {
   children?: React.ReactNode;
-  slot?: React.ReactNode;
-  slot2?: React.ReactNode;
   emGrupo?: SingleChoiceArg<"adm" | "visaoDoAdm" | "visaoMembros">;
   naLista?: SingleChoiceArg<"sim">;
   className?: string;
@@ -186,84 +182,73 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
           [sty.freeBoxnaLista_sim]: hasVariant($state, "naLista", "sim")
         })}
       >
-        {p.renderPlasmicSlot({
-          defaultContents: (
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__oTYaS
-              )}
-            >
-              <React.Fragment>
-                <React.Fragment>{""}</React.Fragment>
-                {
-                  <h4
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h4,
-                      projectcss.__wab_text,
-                      sty.h4___62ARo
-                    )}
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text__oTYaS
+          )}
+        >
+          <React.Fragment>
+            <React.Fragment>{""}</React.Fragment>
+            {
+              <h4
+                data-plasmic-name={"nomeUsuario"}
+                data-plasmic-override={overrides.nomeUsuario}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h4,
+                  projectcss.__wab_text,
+                  sty.nomeUsuario
+                )}
+              >
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#FFFFFF" }}
                   >
-                    <React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ color: "#FFFFFF" }}
-                      >
-                        {"Nome Amigo"}
-                      </span>
-                    </React.Fragment>
-                  </h4>
-                }
-                <React.Fragment>{""}</React.Fragment>
-              </React.Fragment>
-            </div>
-          ),
+                    {"Nome Amigo"}
+                  </span>
+                </React.Fragment>
+              </h4>
+            }
+            <React.Fragment>{""}</React.Fragment>
+          </React.Fragment>
+        </div>
 
-          value: args.slot
-        })}
-        {(hasVariant($state, "naLista", "sim") ? false : true)
-          ? p.renderPlasmicSlot({
-              defaultContents: (
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__mvQWr
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <h6
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h6,
-                          projectcss.__wab_text,
-                          sty.h6__vLz3T
-                        )}
-                      >
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ color: "#A9A9A9" }}
-                          >
-                            {"Meta amigo"}
-                          </span>
-                        </React.Fragment>
-                      </h6>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                </div>
-              ),
-
-              value: args.slot2
-            })
-          : null}
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text__mvQWr
+          )}
+        >
+          <React.Fragment>
+            <React.Fragment>{""}</React.Fragment>
+            {
+              <h6
+                data-plasmic-name={"metaUsuario"}
+                data-plasmic-override={overrides.metaUsuario}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h6,
+                  projectcss.__wab_text,
+                  sty.metaUsuario
+                )}
+              >
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#A9A9A9" }}
+                  >
+                    {"Meta amigo"}
+                  </span>
+                </React.Fragment>
+              </h6>
+            }
+            <React.Fragment>{""}</React.Fragment>
+          </React.Fragment>
+        </div>
       </div>
 
       {(hasVariant($state, "emGrupo", "adm") ? true : true) ? (
@@ -336,8 +321,18 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "img", "medalha", "remove"],
-  freeBox: ["freeBox"],
+  root: [
+    "root",
+    "freeBox",
+    "nomeUsuario",
+    "metaUsuario",
+    "img",
+    "medalha",
+    "remove"
+  ],
+  freeBox: ["freeBox", "nomeUsuario", "metaUsuario"],
+  nomeUsuario: ["nomeUsuario"],
+  metaUsuario: ["metaUsuario"],
   img: ["img"],
   medalha: ["medalha"],
   remove: ["remove"]
@@ -348,6 +343,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   freeBox: "div";
+  nomeUsuario: "h4";
+  metaUsuario: "h6";
   img: typeof p.PlasmicImg;
   medalha: typeof Medalha;
   remove: typeof Button;
@@ -415,6 +412,8 @@ export const PlasmicMiniaturaAmigo = Object.assign(
   {
     // Helper components rendering sub-elements
     freeBox: makeNodeComponent("freeBox"),
+    nomeUsuario: makeNodeComponent("nomeUsuario"),
+    metaUsuario: makeNodeComponent("metaUsuario"),
     img: makeNodeComponent("img"),
     medalha: makeNodeComponent("medalha"),
     remove: makeNodeComponent("remove"),
