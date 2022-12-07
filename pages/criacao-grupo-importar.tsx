@@ -30,7 +30,7 @@ function CriacaoGrupoImportar() {
   
   const router = useRouter()
 
-  const [dados, setDados] = useState<any[]>();
+  const [metas, setMetas] = useState<any[]>();
   const [metaSelecionada, setMetaSelecionada] = useState<number>()
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error>();
@@ -43,18 +43,23 @@ function CriacaoGrupoImportar() {
         const response = await axios.get(
           "http://localhost:8080/usuario/getMetas/" + localStorage.getItem('userId')
         );
-        setDados(response.data);
+        setMetas(response.data);
         setError(undefined);
-        console.log(dados);
+        console.log(metas);
       } catch (err) {
         setError((err as any).message);
-        setDados([]);
+        setMetas([]);
       } finally {
-        setLoading(false);
+        setLoading(false);if (error) {
+          return <div>Error: {error.message}</div>
+        }
       }
     };
     getData();
   }, []);
+  if (error) {
+		return <div>Error: {error.message}</div>
+	}
   
   const estatdcmplt = (metaSelecionada !== undefined) && preenchido
 
@@ -66,7 +71,8 @@ function CriacaoGrupoImportar() {
 
   function criaGrupo() {
     axios.post
-    ("http://localhost:8080/grupo/save/meta/" + localStorage.getItem('userId') + "/" +  metaSelecionada, {
+    ("http://localhost:8080/grupo/save/meta/" + 
+    localStorage.getItem('userId') + "/" +  metaSelecionada, {
       nome: (document.getElementById("nome") as any).value,
       descricao: (document.getElementById("descricao")as any).value,
   })
@@ -93,8 +99,12 @@ function CriacaoGrupoImportar() {
           isDisabled : !estatdcmplt,
           onClick: () => criaGrupo()}
       }} 
-      meta={(loading || !dados) ? {} :{ 
-        children: dados.map(entry => <Select__Option children={String(entry.nome)} value={String(entry.id)} color={"dark"}/>), onChange: (e) => e && setMetaSelecionada(+e)
+      meta={(loading || !metas) ? {} :{ 
+        children: metas.map(entry => <Select__Option 
+                                        children={String(entry.nome)} 
+                                        value={String(entry.id)} 
+                                        color={"dark"}/>),
+                  onChange: (e) => e && setMetaSelecionada(+e)
       }} />
     </ph.PageParamsProvider>
   );

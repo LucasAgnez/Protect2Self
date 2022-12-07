@@ -6,6 +6,9 @@ import * as ph from "@plasmicapp/host";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicPaginaDeMedalhas } from "../components/plasmic/protect_2_self/PlasmicPaginaDeMedalhas";
 import { useRouter } from "next/router";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Medalha from "../components/Medalha";
 
 function PaginaDeMedalhas() {
   // Use PlasmicPaginaDeMedalhas to render this component as it was
@@ -24,12 +27,61 @@ function PaginaDeMedalhas() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+
+  const [medalhas, setMedalhas] = useState<any[]>();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error>();
+
+  const router = useRouter()
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/usuario/getMedalhas/" + localStorage.getItem('userId')
+        );
+        setMedalhas(response.data);
+        setError(undefined);  
+        console.log(medalhas);
+      } catch (err) {
+        setError((err as any).message);
+        setMedalhas([]); 
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+  if (error) {
+		return <div>Error: {error.message}</div>
+	}
+
+  function tipoMedalha(rank: any){
+    if(rank)
+      return String(rank).toLowerCase()
+    return false as any
+  } 
+
+  function formata(data: Date){
+    var dia = new Date(data)
+    if(data)
+      return dia.toLocaleDateString("en-GB")
+    return false as any
+  }
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicPaginaDeMedalhas />
+      <PlasmicPaginaDeMedalhas 
+            container = {(loading || !medalhas) ? {} :{ 
+              children: medalhas.map(entry => <Medalha 
+                slot={String(entry.nome)}
+                children={String(formata(entry.dataObtencao))}
+                cor={tipoMedalha(entry.tipo)}
+              />) 
+              }}
+            />
     </ph.PageParamsProvider>
   );
 }

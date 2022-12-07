@@ -28,26 +28,35 @@ function TelaGrupo() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
 
-  const [dados, setDados] = useState<any[]>();
+  const [membros, setMembros] = useState<any[]>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error>();
   const [ADM, setADM] = useState<boolean>(false);
+  const [admin, setAdmin] = useState<any>();
+  const [grupo, setGrupo] = useState<any>(null);
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(
+        const responseMembros = await axios.get(
+          "http://localhost:8080/grupo/getMembros/" + localStorage.getItem('grupoId')
+        );
+        setMembros(responseMembros.data);
+        const responseAdmin = await axios.get(
+          "http://localhost:8080/grupo/getAdm/" + localStorage.getItem('grupoId')
+        );
+        setAdmin(responseAdmin.data)
+        const responseGrupo = await axios.get(
           "http://localhost:8080/grupo/findById/" + localStorage.getItem('grupoId')
         );
-        setDados(response.data.membros);
+        setGrupo(responseGrupo.data)
         setError(undefined);  
-        if (localStorage.getItem('userId') == String(response.data.id)){
+        if (localStorage.getItem('userId') == String(responseAdmin.data.id)){
             setADM(true);
         }
-        console.log(dados);
       } catch (err) {
         setError((err as any).message);
-        setDados([]);
+        setMembros([]);
       } finally {
         setLoading(false);
       }
@@ -58,17 +67,90 @@ function TelaGrupo() {
 		return <div>Error: {error.message}</div>
 	}
 
+  function expulsa(friendId: any){
+    axios.delete("http://localhost:8080/removeUser/" + localStorage.getItem('grupoId') + "/" + friendId)
+  }
   
+  function metaADM(){
+    for (var i in admin.metas){
+      if(admin.metas[i].id == grupo.meta.id)
+        return grupo.meta.nome
+    }
+  }
+
+  function nomeADM(){
+    return admin.nome
+  }
+
+  function medalhaADM(){
+    for (var i in admin.metas){
+      if(admin.metas[i].id == grupo.meta.id)
+        return grupo.meta.rank
+    }
+    return false as any
+  }
+
+  function obtencaoRank(){
+    for (var i in admin.metas){
+      if(admin.metas[i].id == grupo.meta.id)
+        return grupo.meta.obtencaoRank
+    }
+    return false as any
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
       <PlasmicTelaGrupo
+        nomeGrupo={(loading || !grupo ) ? {} : {
+          render: (props, Comp) => <Comp {...props}>{grupo.nome}</Comp>,
+        }}
+        nomeGrupoAdm={(loading || !grupo ) ? {} : {
+          render: (props, Comp) => <Comp {...props}>{grupo.nome}</Comp>,
+        }}
         adm={ADM}
-        container = {(loading || !dados) ? {} :{ 
-            children: dados.map(entry => <MiniaturaAmigo slot={String(entry.username)} />) 
-          }} 
+        container = {(loading || !membros ) ? {} :  (ADM) ? {
+          children: membros.map(entry => <MiniaturaAmigo 
+            nomeUsuario={{
+              render: (props, Comp) => <Comp {...props}>{entry.username}</Comp>,
+            }}
+            medalha={{cor: entry.tipo}}
+            emGrupo={"visaoDoAdm"}
+            remove={{
+              props: {
+                onClick: () => expulsa(entry.id)
+              }                                              
+            }}
+          />) 
+        } : {
+          children: membros.map(entry => <MiniaturaAmigo 
+            nomeUsuario={{
+              render: (props, Comp) => <Comp {...props}>{entry.username}</Comp>,
+            }}
+            medalha={{cor: entry.tipo}}
+            emGrupo={"visaoMembros"}
+          />)
+        }}
+        admin = {(loading || !admin) ? {} :{ 
+            children: <MiniaturaAmigo 
+              nomeUsuario={{
+                render: (props, Comp) => <Comp {...props}>{nomeADM()}</Comp>,
+              }}
+              metaUsuario={{
+                render: (props, Comp) => <Comp {...props}>{metaADM()}</Comp>,
+              }}
+              medalha={ medalhaADM() ?  {
+                cor: medalhaADM().toLowerCase(),
+                slot: String(grupo.meta.nome),
+                //children: 
+              } : {
+                style:{display: "none"} 
+              }}
+              emGrupo={"adm"}
+            />
+        }} 
       />
     </ph.PageParamsProvider>
   );

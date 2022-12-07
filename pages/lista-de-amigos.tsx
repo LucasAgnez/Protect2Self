@@ -6,6 +6,9 @@ import * as ph from "@plasmicapp/host";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicListaDeAmigos } from "../components/plasmic/protect_2_self/PlasmicListaDeAmigos";
 import { useRouter } from "next/router";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import MiniaturaAmigo from "../components/MiniaturaAmigo";
 
 function ListaDeAmigos() {
   // Use PlasmicListaDeAmigos to render this component as it was
@@ -24,12 +27,58 @@ function ListaDeAmigos() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+
+  const [amigos, setAmigos] = useState<any[]>();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error>();
+
+  const router = useRouter()
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/usuario/getAmigos/" + localStorage.getItem('userId')
+        );
+        setAmigos(response.data);
+        setError(undefined);  
+        console.log(amigos);
+      } catch (err) {
+        setError((err as any).message);
+        setAmigos([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+  if (error) {
+		return <div>Error: {error.message}</div>
+	}
+  
+  function removeAmigo(friendId: any){
+    axios.delete("http://localhost:8080/usuario/removeFriend/" + localStorage.getItem('userId') + "/" + friendId)
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicListaDeAmigos />
+      <PlasmicListaDeAmigos 
+              container = {(loading || !amigos) ? {} :{ 
+                children: amigos.map(entry => <MiniaturaAmigo
+                  nomeUsuario={{
+                    render: (props, Comp) => <Comp {...props}>{entry.username}</Comp>,
+                  }}
+                  naLista={"sim"}
+                  remove={{
+                    props: {
+                      onClick: () => removeAmigo(entry.id)
+                    }
+                  }}
+                />) 
+              }} />
     </ph.PageParamsProvider>
   );
 }

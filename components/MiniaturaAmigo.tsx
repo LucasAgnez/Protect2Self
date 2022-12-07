@@ -3,7 +3,8 @@
 import * as React from "react";
 import {
   PlasmicMiniaturaAmigo,
-  DefaultMiniaturaAmigoProps
+  DefaultMiniaturaAmigoProps,
+  PlasmicMiniaturaAmigo__OverridesType
 } from "./plasmic/protect_2_self/PlasmicMiniaturaAmigo";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
@@ -20,7 +21,7 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 //
 // You can also stop extending from DefaultMiniaturaAmigoProps altogether and have
 // total control over the props for your component.
-export interface MiniaturaAmigoProps extends DefaultMiniaturaAmigoProps {}
+export interface MiniaturaAmigoProps extends DefaultMiniaturaAmigoProps, PlasmicMiniaturaAmigo__OverridesType{}
 
 function MiniaturaAmigo_(
   props: MiniaturaAmigoProps,

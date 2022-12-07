@@ -28,7 +28,7 @@ function MinhasMetas() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   
-  const [dados, setDados] = useState<any[]>();
+  const [metas, setMetas] = useState<any[]>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error>();
 
@@ -39,12 +39,12 @@ function MinhasMetas() {
         const response = await axios.get(
           "http://localhost:8080/usuario/getMetas/" + localStorage.getItem('userId')
         );
-        setDados(response.data);
+        setMetas(response.data);
         setError(undefined);
-        console.log(dados);
+        console.log(metas);
       } catch (err) {
         setError((err as any).message);
-        setDados([]);
+        setMetas([]);
       } finally {
         setLoading(false);
       }
@@ -57,14 +57,17 @@ function MinhasMetas() {
       const response = await axios.get(
         "http://localhost:8080/usuario/getMetas/" + localStorage.getItem('userId')
       );
-      setDados(response.data);
-      console.log(dados);
+      console.log(response);
+      setMetas(response.data);
+      console.log(metas);
     }
     else{
       const resposta = await axios.get(
-          "http://localhost:8080/usuario/findMetasByNome/" + (document.getElementById("buscaMeta")as any).value)
-      setDados(resposta.data);
-      console.log(dados);
+          "http://localhost:8080/usuario/findMetaByNome/" + 
+          localStorage.getItem('userId') + "/" + 
+          (document.getElementById("buscaMeta")as any).value);
+      setMetas(resposta.data);
+      console.log(metas);
     }
   }
 
@@ -83,6 +86,64 @@ function MinhasMetas() {
     });
   }
 
+  function estaNaData(ultimaData: Date, frequencia: any){
+    var dia = new Date("2013-02-20T12:01:04.753Z").getTime() - 
+              new Date("2013-02-21T12:01:04.753Z").getTime();
+    var semana = new Date("2013-02-20T12:01:04.753Z").getTime() - 
+                 new Date("2013-02-27T12:01:04.753Z").getTime();
+    var mes = new Date("2013-01-20T12:01:04.753Z").getTime() - 
+              new Date("2013-02-20T12:01:04.753Z").getTime();
+    var data = new Date(ultimaData)
+    var time = new Date().getTime() - data.getTime()
+    if(!frequencia){
+      return true
+    }
+    if(!ultimaData)
+      return true;
+    if(frequencia == "DIARIO"){
+      if(time >= dia){
+          if(time <= 2*dia )
+            //zerar contador
+        return true
+      }
+    }
+    if(frequencia == "SEMANAL"){
+      if(time >= semana){
+        if(time <= 2*semana  )
+          //zerar
+        return true
+      }
+    }
+    if(frequencia == "MENSAL"){
+      if(time >= mes){
+        if(time <= 2*mes)
+          //zerar
+        return true
+      }
+    }
+    return false
+  }
+
+  /*
+  */
+  function temRank(rank: any){
+    if(rank)
+      return true
+    return false
+  }
+
+  function tipoMedalha(rank: any){
+    if(rank)
+      return String(rank).toLowerCase()
+    return false as any
+  } 
+
+  function formata(data: Date){
+    var dia = new Date(data)
+    if(data)
+      return dia.toLocaleDateString("en-GB")
+    return false as any
+  }
 
   return (
     <ph.PageParamsProvider
@@ -90,13 +151,28 @@ function MinhasMetas() {
       query={useRouter()?.query}
     >
       <PlasmicMinhasMetas 
-      container = {(loading || !dados) ? {} :{ 
-        children: dados.map(entry => <MiniaturaMeta slot={String(entry.nome)} 
-                                                    slot2={"Atual sequência: " + String(entry.recorde)} 
-                                                    registra={{props: { onClick: () => registraMeta(entry.id)}}}/>) 
-      }}
       buscaMeta = {{
         onChange : () => mostraMetas()
+      }}
+      container = {(loading || !metas) ? {} :{ 
+        children: metas.map(entry => <MiniaturaMeta                                               
+          slot={String(entry.nome)} 
+          slot2={"Atual sequência: " + String(entry.recorde)}
+          comMedalha={temRank(entry.rank)}
+          medalha={{
+            cor: tipoMedalha(entry.rank),
+            slot: entry.nome,
+            children: formata(entry.data)
+          }}
+          registra={{
+            props: {
+              isDisabled : !estaNaData(entry.data, entry.frequencia),
+              onClick: () => registraMeta(entry.id)
+            }
+          }}
+          /*
+          */
+        />) 
       }}
       />
     </ph.PageParamsProvider>

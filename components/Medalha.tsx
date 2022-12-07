@@ -3,9 +3,11 @@
 import * as React from "react";
 import {
   PlasmicMedalha,
-  DefaultMedalhaProps
+  DefaultMedalhaProps,
+  PlasmicMedalha__OverridesType
 } from "./plasmic/protect_2_self/PlasmicMedalha";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
+import { CSSProperties } from "@plasmicapp/host/registerComponent/dist/element-types";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -20,7 +22,9 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 //
 // You can also stop extending from DefaultMedalhaProps altogether and have
 // total control over the props for your component.
-export interface MedalhaProps extends DefaultMedalhaProps {}
+export interface MedalhaProps extends DefaultMedalhaProps, PlasmicMedalha__OverridesType {
+  style?: CSSProperties,
+}
 
 function Medalha_(props: MedalhaProps, ref: HTMLElementRefOf<"div">) {
   // Use PlasmicMedalha to render this component as it was

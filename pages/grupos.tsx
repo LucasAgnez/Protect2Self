@@ -28,7 +28,7 @@ function MeusGrupos() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
 
-  const [dados, setDados] = useState<any[]>();
+  const [grupos, setGrupos] = useState<any[]>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error>();
 
@@ -40,38 +40,38 @@ function MeusGrupos() {
         const response = await axios.get(
           "http://localhost:8080/grupo/getGrupos/" + localStorage.getItem('userId')
         );
-        setDados(response.data);
+        setGrupos(response.data);
         setError(undefined);  
-        console.log(dados);
+        console.log(grupos);
       } catch (err) {
         setError((err as any).message);
-        setDados([]);
+        setGrupos([]);
       } finally {
         setLoading(false);
       }
     };
     getData();
   }, []);
+  if (error) {
+    return <div>Error: {error.message}</div>
+  }
 
   async function mostraGrupos(){
     if (!(document.getElementById("buscaGrupo")as any).value){
       const response = await axios.get(
         "http://localhost:8080/grupo/getGrupos/" + localStorage.getItem('userId')
       );
-      setDados(response.data);
-      console.log(dados);
+      setGrupos(response.data);
+      console.log(grupos);
     }
     else{
       const resposta = await axios.get(
           "http://localhost:8080/grupo/findGruposByNome/"+ localStorage.getItem('userId') + "/" + (document.getElementById("buscaGrupo")as any).value)
-      setDados(resposta.data);
-      console.log(dados);
+      setGrupos(resposta.data);
+      console.log(grupos);
     }
   }
 
-	if (error) {
-		return <div>Error: {error.message}</div>
-	}
 
   return (
     <ph.PageParamsProvider
@@ -79,8 +79,8 @@ function MeusGrupos() {
       query={useRouter()?.query}
     >
       <PlasmicMeusGrupos 
-      container = {(loading || !dados) ? {} :{ 
-        children: dados.map(entry => <MiniaturaGrupo 
+      container = {(loading || !grupos) ? {} :{ 
+        children: grupos.map(entry => <MiniaturaGrupo 
                                         onClick={() => (localStorage.setItem('grupoId', entry.id), router.push('/tela-grupo'))} 
                                         slot={String(entry.nome)} slot3={String(entry.meta.nome)} 
                                         slot2={"Sequencia atual: " + String(entry.meta.atual)}
