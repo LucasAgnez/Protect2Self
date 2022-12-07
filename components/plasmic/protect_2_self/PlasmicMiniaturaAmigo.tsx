@@ -179,6 +179,7 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
         data-plasmic-name={"freeBox"}
         data-plasmic-override={overrides.freeBox}
         className={classNames(projectcss.all, sty.freeBox, {
+          [sty.freeBoxemGrupo_adm]: hasVariant($state, "emGrupo", "adm"),
           [sty.freeBoxnaLista_sim]: hasVariant($state, "naLista", "sim")
         })}
       >
@@ -186,7 +187,14 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
           className={classNames(
             projectcss.all,
             projectcss.__wab_text,
-            sty.text__oTYaS
+            sty.text__oTYaS,
+            {
+              [sty.textnaLista_sim__oTYaSdxs8M]: hasVariant(
+                $state,
+                "naLista",
+                "sim"
+              )
+            }
           )}
         >
           <React.Fragment>
@@ -199,7 +207,19 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
                   projectcss.all,
                   projectcss.h4,
                   projectcss.__wab_text,
-                  sty.nomeUsuario
+                  sty.nomeUsuario,
+                  {
+                    [sty.nomeUsuarioemGrupo_adm]: hasVariant(
+                      $state,
+                      "emGrupo",
+                      "adm"
+                    ),
+                    [sty.nomeUsuarionaLista_sim]: hasVariant(
+                      $state,
+                      "naLista",
+                      "sim"
+                    )
+                  }
                 )}
               >
                 <React.Fragment>
@@ -216,39 +236,48 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
           </React.Fragment>
         </div>
 
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__mvQWr
-          )}
-        >
-          <React.Fragment>
-            <React.Fragment>{""}</React.Fragment>
-            {
-              <h6
-                data-plasmic-name={"metaUsuario"}
-                data-plasmic-override={overrides.metaUsuario}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h6,
-                  projectcss.__wab_text,
-                  sty.metaUsuario
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#A9A9A9" }}
-                  >
-                    {"Meta amigo"}
-                  </span>
-                </React.Fragment>
-              </h6>
-            }
-            <React.Fragment>{""}</React.Fragment>
-          </React.Fragment>
-        </div>
+        {(hasVariant($state, "naLista", "sim") ? true : true) ? (
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__mvQWr,
+              {
+                [sty.textnaLista_sim__mvQWrdxs8M]: hasVariant(
+                  $state,
+                  "naLista",
+                  "sim"
+                )
+              }
+            )}
+          >
+            <React.Fragment>
+              <React.Fragment>{""}</React.Fragment>
+              {
+                <h6
+                  data-plasmic-name={"metaUsuario"}
+                  data-plasmic-override={overrides.metaUsuario}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h6,
+                    projectcss.__wab_text,
+                    sty.metaUsuario
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#A9A9A9" }}
+                    >
+                      {"Meta amigo"}
+                    </span>
+                  </React.Fragment>
+                </h6>
+              }
+              <React.Fragment>{""}</React.Fragment>
+            </React.Fragment>
+          </div>
+        ) : null}
       </div>
 
       {(hasVariant($state, "emGrupo", "adm") ? true : true) ? (

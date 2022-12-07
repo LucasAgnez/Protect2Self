@@ -33,17 +33,23 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 178px;
   height: auto;
   max-width: 100%;
-  flex-shrink: 0;
+  width: auto;
+  min-width: 170px;
   padding: 8px 0px 8px 8px;
 }
 .text__oTYaS {
   border-bottom: 1px solid #ababab;
 }
+.textnaLista_sim__oTYaSdxs8M {
+  border-bottom-style: none;
+}
 .nomeUsuario {
-  text-decoration-line: underline;
+  color: #ffffff;
+}
+.textnaLista_sim__mvQWrdxs8M {
+  display: none;
 }
 .img {
   position: relative;
