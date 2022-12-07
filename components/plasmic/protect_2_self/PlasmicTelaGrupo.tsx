@@ -37,6 +37,7 @@ import {
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
 import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
+import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
@@ -47,30 +48,39 @@ import sty from "./PlasmicTelaGrupo.module.css"; // plasmic-import: bfV7oLmQIs/c
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
+import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 
 export type PlasmicTelaGrupo__VariantMembers = {
   adm: "adm";
+  editar: "editar";
 };
 export type PlasmicTelaGrupo__VariantsArgs = {
   adm?: SingleBooleanChoiceArg<"adm">;
+  editar?: SingleBooleanChoiceArg<"editar">;
 };
 type VariantPropType = keyof PlasmicTelaGrupo__VariantsArgs;
-export const PlasmicTelaGrupo__VariantProps = new Array<VariantPropType>("adm");
+export const PlasmicTelaGrupo__VariantProps = new Array<VariantPropType>(
+  "adm",
+  "editar"
+);
 
-export type PlasmicTelaGrupo__ArgsType = {
-  children?: React.ReactNode;
-};
+export type PlasmicTelaGrupo__ArgsType = {};
 type ArgPropType = keyof PlasmicTelaGrupo__ArgsType;
-export const PlasmicTelaGrupo__ArgProps = new Array<ArgPropType>("children");
+export const PlasmicTelaGrupo__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicTelaGrupo__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
+  text?: p.Flex<"div">;
+  nomeGrupo?: p.Flex<"h2">;
+  nomeGrupoAdm?: p.Flex<"h2">;
   img?: p.Flex<typeof p.PlasmicImg>;
+  textInput?: p.Flex<typeof TextInput>;
   admin?: p.Flex<"div">;
   container?: p.Flex<"div">;
+  textbox?: p.Flex<typeof TextInput>;
 };
 
 export interface DefaultTelaGrupoProps {}
@@ -100,6 +110,11 @@ function PlasmicTelaGrupo__RenderFunc(props: {
         path: "adm",
         type: "private",
         initFunc: ($props, $state, $ctx) => $props.adm
+      },
+      {
+        path: "editar",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.editar
       }
     ],
     [$props, $ctx]
@@ -135,7 +150,10 @@ function PlasmicTelaGrupo__RenderFunc(props: {
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
             sty.root,
-            { [sty.rootadm]: hasVariant($state, "adm", "adm") }
+            {
+              [sty.rootadm]: hasVariant($state, "adm", "adm"),
+              [sty.rooteditar]: hasVariant($state, "editar", "editar")
+            }
           )}
         >
           <HeaderLogged
@@ -150,7 +168,8 @@ function PlasmicTelaGrupo__RenderFunc(props: {
             data-plasmic-name={"columns"}
             data-plasmic-override={overrides.columns}
             className={classNames(projectcss.all, sty.columns, {
-              [sty.columnsadm]: hasVariant($state, "adm", "adm")
+              [sty.columnsadm]: hasVariant($state, "adm", "adm"),
+              [sty.columnseditar]: hasVariant($state, "editar", "editar")
             })}
           >
             {(
@@ -268,7 +287,12 @@ function PlasmicTelaGrupo__RenderFunc(props: {
             ) ? (
               <div
                 className={classNames(projectcss.all, sty.column___9Gy, {
-                  [sty.columnadm___9GyH6EUz]: hasVariant($state, "adm", "adm")
+                  [sty.columnadm___9GyH6EUz]: hasVariant($state, "adm", "adm"),
+                  [sty.columneditar___9GyTSpDr]: hasVariant(
+                    $state,
+                    "editar",
+                    "editar"
+                  )
                 })}
               >
                 {(
@@ -301,83 +325,111 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                               $state,
                               "adm",
                               "adm"
+                            ),
+                            [sty.freeBoxeditar__zRZbYtSpDr]: hasVariant(
+                              $state,
+                              "editar",
+                              "editar"
                             )
                           }
                         )}
                       >
-                        {p.renderPlasmicSlot({
-                          defaultContents: (
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text___0TpaN
-                              )}
-                            >
+                        {(
+                          hasVariant($state, "editar", "editar")
+                            ? true
+                            : hasVariant($state, "adm", "adm")
+                            ? true
+                            : true
+                        ) ? (
+                          <div
+                            data-plasmic-name={"text"}
+                            data-plasmic-override={overrides.text}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text,
+                              {
+                                [sty.textadm]: hasVariant($state, "adm", "adm"),
+                                [sty.texteditar]: hasVariant(
+                                  $state,
+                                  "editar",
+                                  "editar"
+                                )
+                              }
+                            )}
+                          >
+                            {hasVariant($state, "adm", "adm") ? (
                               <React.Fragment>
                                 <React.Fragment>{""}</React.Fragment>
                                 {
                                   <h2
+                                    data-plasmic-name={"nomeGrupoAdm"}
+                                    data-plasmic-override={
+                                      overrides.nomeGrupoAdm
+                                    }
                                     className={classNames(
                                       projectcss.all,
                                       projectcss.h2,
                                       projectcss.__wab_text,
-                                      sty.h2__xZnN
+                                      sty.nomeGrupoAdm,
+                                      {
+                                        [sty.nomeGrupoAdmadm]: hasVariant(
+                                          $state,
+                                          "adm",
+                                          "adm"
+                                        )
+                                      }
+                                    )}
+                                  >
+                                    {hasVariant($state, "adm", "adm") ? (
+                                      <React.Fragment>
+                                        <span
+                                          className={
+                                            "plasmic_default__all plasmic_default__span"
+                                          }
+                                          style={{ color: "#FFFFFF" }}
+                                        >
+                                          {"Nome Grupo"}
+                                        </span>
+                                      </React.Fragment>
+                                    ) : (
+                                      "Enter some text"
+                                    )}
+                                  </h2>
+                                }
+                                <React.Fragment>{""}</React.Fragment>
+                              </React.Fragment>
+                            ) : (
+                              <React.Fragment>
+                                <React.Fragment>{""}</React.Fragment>
+                                {
+                                  <h2
+                                    data-plasmic-name={"nomeGrupo"}
+                                    data-plasmic-override={overrides.nomeGrupo}
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.h2,
+                                      projectcss.__wab_text,
+                                      sty.nomeGrupo
                                     )}
                                   >
                                     <React.Fragment>
-                                      <React.Fragment>{""}</React.Fragment>
-                                      {
-                                        <h4
-                                          className={classNames(
-                                            projectcss.all,
-                                            projectcss.h4,
-                                            projectcss.__wab_text,
-                                            sty.h4__k9Mou
-                                          )}
-                                        >
-                                          <React.Fragment>
-                                            <React.Fragment>
-                                              {""}
-                                            </React.Fragment>
-                                            {
-                                              <h2
-                                                className={classNames(
-                                                  projectcss.all,
-                                                  projectcss.h2,
-                                                  projectcss.__wab_text,
-                                                  sty.h2__hwqQ2
-                                                )}
-                                              >
-                                                <React.Fragment>
-                                                  <span
-                                                    className={
-                                                      "plasmic_default__all plasmic_default__span"
-                                                    }
-                                                    style={{ color: "#FFFFFF" }}
-                                                  >
-                                                    {"Nome Do Grupo"}
-                                                  </span>
-                                                </React.Fragment>
-                                              </h2>
-                                            }
-                                            <React.Fragment>
-                                              {""}
-                                            </React.Fragment>
-                                          </React.Fragment>
-                                        </h4>
-                                      }
-                                      <React.Fragment>{""}</React.Fragment>
+                                      <span
+                                        className={
+                                          "plasmic_default__all plasmic_default__span"
+                                        }
+                                        style={{ color: "#FFFFFF" }}
+                                      >
+                                        {"Nome Grupo"}
+                                      </span>
                                     </React.Fragment>
                                   </h2>
                                 }
                                 <React.Fragment>{""}</React.Fragment>
                               </React.Fragment>
-                            </div>
-                          ),
-
-                          value: args.children
-                        })}
+                            )}
+                          </div>
+                        ) : null}
                         {(hasVariant($state, "adm", "adm") ? true : true) ? (
                           <Button
                             className={classNames(
@@ -414,6 +466,27 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                             />
                           </Button>
                         ) : null}
+                        {(
+                          hasVariant($state, "editar", "editar") ? true : true
+                        ) ? (
+                          <TextInput
+                            data-plasmic-name={"textInput"}
+                            data-plasmic-override={overrides.textInput}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.textInput,
+                              {
+                                [sty.textInputeditar]: hasVariant(
+                                  $state,
+                                  "editar",
+                                  "editar"
+                                )
+                              }
+                            )}
+                            color={"dark" as const}
+                            id={"novoNome" as const}
+                          />
+                        ) : null}
                       </div>
                     ) : null}
 
@@ -447,14 +520,34 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "userPhoto",
+    "text",
+    "nomeGrupo",
+    "nomeGrupoAdm",
     "img",
+    "textInput",
+    "textbox",
     "admin",
     "container"
   ],
   headerLogged: ["headerLogged"],
-  columns: ["columns", "userPhoto", "img", "admin", "container"],
+  columns: [
+    "columns",
+    "userPhoto",
+    "text",
+    "nomeGrupo",
+    "nomeGrupoAdm",
+    "img",
+    "textInput",
+    "textbox",
+    "admin",
+    "container"
+  ],
   userPhoto: ["userPhoto"],
+  text: ["text", "nomeGrupo", "nomeGrupoAdm"],
+  nomeGrupo: ["nomeGrupo"],
+  nomeGrupoAdm: ["nomeGrupoAdm"],
   img: ["img"],
+  textInput: ["textInput", "textbox"],
   admin: ["admin"],
   container: ["container"]
 } as const;
@@ -466,7 +559,11 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   userPhoto: typeof UserPhoto;
+  text: "div";
+  nomeGrupo: "h2";
+  nomeGrupoAdm: "h2";
   img: typeof p.PlasmicImg;
+  textInput: typeof TextInput;
   admin: "div";
   container: "div";
 };
@@ -535,7 +632,11 @@ export const PlasmicTelaGrupo = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     userPhoto: makeNodeComponent("userPhoto"),
+    text: makeNodeComponent("text"),
+    nomeGrupo: makeNodeComponent("nomeGrupo"),
+    nomeGrupoAdm: makeNodeComponent("nomeGrupoAdm"),
     img: makeNodeComponent("img"),
+    textInput: makeNodeComponent("textInput"),
     admin: makeNodeComponent("admin"),
     container: makeNodeComponent("container"),
 
