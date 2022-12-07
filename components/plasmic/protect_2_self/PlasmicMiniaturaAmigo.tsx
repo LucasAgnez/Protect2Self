@@ -261,17 +261,35 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
                     projectcss.all,
                     projectcss.h6,
                     projectcss.__wab_text,
-                    sty.metaUsuario
+                    sty.metaUsuario,
+                    {
+                      [sty.metaUsuarioemGrupo_adm]: hasVariant(
+                        $state,
+                        "emGrupo",
+                        "adm"
+                      )
+                    }
                   )}
                 >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "#A9A9A9" }}
-                    >
-                      {"Meta amigo"}
-                    </span>
-                  </React.Fragment>
+                  {hasVariant($state, "emGrupo", "adm") ? (
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#A9A9A9" }}
+                      >
+                        {"Meta amigo"}
+                      </span>
+                    </React.Fragment>
+                  ) : (
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#A9A9A9" }}
+                      >
+                        {"Meta amigo"}
+                      </span>
+                    </React.Fragment>
+                  )}
                 </h6>
               }
               <React.Fragment>{""}</React.Fragment>
