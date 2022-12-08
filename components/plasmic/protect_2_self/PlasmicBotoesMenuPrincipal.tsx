@@ -34,7 +34,8 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import SinoNotificacao from "../../SinoNotificacao"; // plasmic-import: aegxh_farI/component
+import Sino from "../../Sino"; // plasmic-import: 8ffeYo97RRO/component
+import Sino__Option from "../../Sino__Option"; // plasmic-import: jPpxgeQY5Gm/component
 import MainPageButton from "../../MainPageButton"; // plasmic-import: hF66z6g8PUp/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
@@ -60,7 +61,7 @@ export const PlasmicBotoesMenuPrincipal__ArgProps = new Array<ArgPropType>();
 export type PlasmicBotoesMenuPrincipal__OverridesType = {
   root?: p.Flex<"div">;
   freeBox?: p.Flex<"div">;
-  sinoNotificacao?: p.Flex<typeof SinoNotificacao>;
+  sino?: p.Flex<typeof Sino>;
   minhasMetas?: p.Flex<typeof MainPageButton>;
   meusGrupos?: p.Flex<typeof MainPageButton>;
   criarMeta?: p.Flex<typeof MainPageButton>;
@@ -114,19 +115,18 @@ function PlasmicBotoesMenuPrincipal__RenderFunc(props: {
           sty.root
         )}
       >
-        {true ? (
-          <div
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
-          >
-            <SinoNotificacao
-              data-plasmic-name={"sinoNotificacao"}
-              data-plasmic-override={overrides.sinoNotificacao}
-              className={classNames("__wab_instance", sty.sinoNotificacao)}
-            />
-          </div>
-        ) : null}
+        <div
+          data-plasmic-name={"freeBox"}
+          data-plasmic-override={overrides.freeBox}
+          className={classNames(projectcss.all, sty.freeBox)}
+        >
+          <Sino
+            data-plasmic-name={"sino"}
+            data-plasmic-override={overrides.sino}
+            className={classNames("__wab_instance", sty.sino)}
+            color={"dark" as const}
+          />
+        </div>
 
         <MainPageButton
           data-plasmic-name={"minhasMetas"}
@@ -304,14 +304,14 @@ const PlasmicDescendants = {
   root: [
     "root",
     "freeBox",
-    "sinoNotificacao",
+    "sino",
     "minhasMetas",
     "meusGrupos",
     "criarMeta",
     "criarGrupo"
   ],
-  freeBox: ["freeBox", "sinoNotificacao"],
-  sinoNotificacao: ["sinoNotificacao"],
+  freeBox: ["freeBox", "sino"],
+  sino: ["sino"],
   minhasMetas: ["minhasMetas"],
   meusGrupos: ["meusGrupos"],
   criarMeta: ["criarMeta"],
@@ -323,7 +323,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   freeBox: "div";
-  sinoNotificacao: typeof SinoNotificacao;
+  sino: typeof Sino;
   minhasMetas: typeof MainPageButton;
   meusGrupos: typeof MainPageButton;
   criarMeta: typeof MainPageButton;
@@ -392,7 +392,7 @@ export const PlasmicBotoesMenuPrincipal = Object.assign(
   {
     // Helper components rendering sub-elements
     freeBox: makeNodeComponent("freeBox"),
-    sinoNotificacao: makeNodeComponent("sinoNotificacao"),
+    sino: makeNodeComponent("sino"),
     minhasMetas: makeNodeComponent("minhasMetas"),
     meusGrupos: makeNodeComponent("meusGrupos"),
     criarMeta: makeNodeComponent("criarMeta"),

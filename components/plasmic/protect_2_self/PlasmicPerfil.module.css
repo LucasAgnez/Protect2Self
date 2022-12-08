@@ -46,13 +46,19 @@
   width: calc((100% - 2 * 0px) * 9 / 12);
 }
 @media (max-width: 1029px) {
+  .columns {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 1029px) {
   .columns > :nth-child(2n + 1) {
-    width: calc((100% - 2 * 0px) * 3 / 12);
+    width: calc((100% - 2 * 0px) * 4 / 12);
   }
 }
 @media (max-width: 1029px) {
   .columns > :nth-child(2n + 2) {
-    width: calc((100% - 2 * 0px) * 9 / 12);
+    width: calc((100% - 2 * 0px) * 8 / 12);
   }
 }
 @media (min-width: 0px) and (max-width: 768px) {
