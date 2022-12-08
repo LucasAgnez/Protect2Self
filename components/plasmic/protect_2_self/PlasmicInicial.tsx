@@ -35,6 +35,8 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
+import Sino from "../../Sino"; // plasmic-import: 8ffeYo97RRO/component
+import Sino__Option from "../../Sino__Option"; // plasmic-import: jPpxgeQY5Gm/component
 import BotoesMenuPrincipal from "../../BotoesMenuPrincipal"; // plasmic-import: 8PboOpLyrBm/component
 import MiniaturaMeta from "../../MiniaturaMeta"; // plasmic-import: LQeW26Vvq3/component
 import MiniaturaGrupo from "../../MiniaturaGrupo"; // plasmic-import: QylFKCNC0eW/component
@@ -59,8 +61,8 @@ export type PlasmicInicial__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
+  sino?: p.Flex<typeof Sino>;
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
-  freeBox?: p.Flex<"div">;
   text?: p.Flex<"div">;
 };
 
@@ -146,6 +148,17 @@ function PlasmicInicial__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.columns)}
               >
                 <div className={classNames(projectcss.all, sty.column__xzDzp)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__cVohZ)}
+                  >
+                    <Sino
+                      data-plasmic-name={"sino"}
+                      data-plasmic-override={overrides.sino}
+                      className={classNames("__wab_instance", sty.sino)}
+                      color={"dark" as const}
+                    />
+                  </div>
+
                   <BotoesMenuPrincipal
                     data-plasmic-name={"botoesMenuPrincipal"}
                     data-plasmic-override={overrides.botoesMenuPrincipal}
@@ -170,9 +183,10 @@ function PlasmicInicial__RenderFunc(props: {
                         : true
                     ) ? (
                       <div
-                        data-plasmic-name={"freeBox"}
-                        data-plasmic-override={overrides.freeBox}
-                        className={classNames(projectcss.all, sty.freeBox)}
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__kXoCy
+                        )}
                       >
                         {true ? (
                           <MiniaturaMeta
@@ -262,14 +276,14 @@ const PlasmicDescendants = {
     "root",
     "headerLogged",
     "columns",
+    "sino",
     "botoesMenuPrincipal",
-    "freeBox",
     "text"
   ],
   headerLogged: ["headerLogged"],
-  columns: ["columns", "botoesMenuPrincipal", "freeBox", "text"],
+  columns: ["columns", "sino", "botoesMenuPrincipal", "text"],
+  sino: ["sino"],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
-  freeBox: ["freeBox", "text"],
   text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -279,8 +293,8 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   columns: "div";
+  sino: typeof Sino;
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
-  freeBox: "div";
   text: "div";
 };
 
@@ -347,8 +361,8 @@ export const PlasmicInicial = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
+    sino: makeNodeComponent("sino"),
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
-    freeBox: makeNodeComponent("freeBox"),
     text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicInicial
