@@ -43,17 +43,22 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicMiniaturaMeta.module.css"; // plasmic-import: LQeW26Vvq3/css
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
+import ThumbDownSvgrepoCom2SvgIcon from "./icons/PlasmicIcon__ThumbDownSvgrepoCom2Svg"; // plasmic-import: GIzEWcU_Lc/icon
+import ThumbUpSvgrepoCom1SvgIcon from "./icons/PlasmicIcon__ThumbUpSvgrepoCom1Svg"; // plasmic-import: _Too7mk-Tm/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
 export type PlasmicMiniaturaMeta__VariantMembers = {
   comMedalha: "comMedalha";
+  tipo: "habito" | "vicio";
 };
 export type PlasmicMiniaturaMeta__VariantsArgs = {
   comMedalha?: SingleBooleanChoiceArg<"comMedalha">;
+  tipo?: MultiChoiceArg<"habito" | "vicio">;
 };
 type VariantPropType = keyof PlasmicMiniaturaMeta__VariantsArgs;
 export const PlasmicMiniaturaMeta__VariantProps = new Array<VariantPropType>(
-  "comMedalha"
+  "comMedalha",
+  "tipo"
 );
 
 export type PlasmicMiniaturaMeta__ArgsType = {
@@ -76,6 +81,7 @@ export interface DefaultMiniaturaMetaProps {
   slot?: React.ReactNode;
   slot2?: React.ReactNode;
   comMedalha?: SingleBooleanChoiceArg<"comMedalha">;
+  tipo?: MultiChoiceArg<"habito" | "vicio">;
   className?: string;
 }
 
@@ -104,6 +110,11 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
         path: "comMedalha",
         type: "private",
         initFunc: ($props, $state, $ctx) => $props.comMedalha
+      },
+      {
+        path: "tipo",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.tipo
       }
     ],
     [$props, $ctx]
@@ -237,11 +248,54 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
               $state,
               "comMedalha",
               "comMedalha"
-            )
+            ),
+            [sty.registratipo_habito]: hasVariant($state, "tipo", "habito"),
+            [sty.registratipo_vicio]: hasVariant($state, "tipo", "vicio")
           })}
-          color={"yellow" as const}
+          color={
+            hasVariant($state, "tipo", "vicio")
+              ? ("red" as const)
+              : hasVariant($state, "tipo", "habito")
+              ? ("yellow" as const)
+              : ("yellow" as const)
+          }
+          shape={"round" as const}
         >
-          {"Registrar"}
+          {(hasVariant($state, "tipo", "vicio") ? true : true) ? (
+            <ThumbDownSvgrepoCom2SvgIcon
+              className={classNames(projectcss.all, sty.svg___2ZnNy, {
+                [sty.svgtipo_vicio___2ZnNy54S]: hasVariant(
+                  $state,
+                  "tipo",
+                  "vicio"
+                )
+              })}
+              role={"img"}
+            />
+          ) : null}
+          {(
+            hasVariant($state, "tipo", "vicio")
+              ? true
+              : hasVariant($state, "tipo", "habito")
+              ? true
+              : true
+          ) ? (
+            <ThumbUpSvgrepoCom1SvgIcon
+              className={classNames(projectcss.all, sty.svg___0Fz3K, {
+                [sty.svgtipo_habito___0Fz3KFpvrz]: hasVariant(
+                  $state,
+                  "tipo",
+                  "habito"
+                ),
+                [sty.svgtipo_vicio___0Fz3K54S]: hasVariant(
+                  $state,
+                  "tipo",
+                  "vicio"
+                )
+              })}
+              role={"img"}
+            />
+          ) : null}
         </Button>
       </div>
     ) : null

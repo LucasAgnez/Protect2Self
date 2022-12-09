@@ -81,8 +81,8 @@
 .registra:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
-  width: 78px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   flex-shrink: 0;
 }
 .registracomMedalha:global(.__wab_instance) {
@@ -94,6 +94,31 @@
   object-fit: cover;
   width: 1em;
   height: 1em;
+}
+.svg___2ZnNy {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 1em;
+  height: 1em;
+  display: none;
+}
+.svgtipo_vicio___2ZnNy54S {
+  display: block;
+}
+.svg___0Fz3K {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 1em;
+  height: 1em;
+  display: none;
+}
+.svgtipo_habito___0Fz3KFpvrz {
+  display: block;
+}
+.svgtipo_vicio___0Fz3K54S {
+  display: none;
 }
 .svg__zu6Lk {
   position: relative;

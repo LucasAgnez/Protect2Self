@@ -1096,6 +1096,16 @@
           "id": "px9Wc5QC812",
           "name": "SquareMinussvgIcon",
           "moduleFilePath": "plasmic/protect_2_self/icons/PlasmicIcon__SquareMinussvg.tsx"
+        },
+        {
+          "id": "GIzEWcU_Lc",
+          "name": "ThumbDownSvgrepoCom2SvgIcon",
+          "moduleFilePath": "plasmic/protect_2_self/icons/PlasmicIcon__ThumbDownSvgrepoCom2Svg.tsx"
+        },
+        {
+          "id": "_Too7mk-Tm",
+          "name": "ThumbUpSvgrepoCom1SvgIcon",
+          "moduleFilePath": "plasmic/protect_2_self/icons/PlasmicIcon__ThumbUpSvgrepoCom1Svg.tsx"
         }
       ],
       "images": [
