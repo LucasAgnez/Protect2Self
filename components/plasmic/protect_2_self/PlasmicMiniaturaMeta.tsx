@@ -61,25 +61,20 @@ export const PlasmicMiniaturaMeta__VariantProps = new Array<VariantPropType>(
   "tipo"
 );
 
-export type PlasmicMiniaturaMeta__ArgsType = {
-  slot?: React.ReactNode;
-  slot2?: React.ReactNode;
-};
+export type PlasmicMiniaturaMeta__ArgsType = {};
 type ArgPropType = keyof PlasmicMiniaturaMeta__ArgsType;
-export const PlasmicMiniaturaMeta__ArgProps = new Array<ArgPropType>(
-  "slot",
-  "slot2"
-);
+export const PlasmicMiniaturaMeta__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicMiniaturaMeta__OverridesType = {
   root?: p.Flex<"div">;
+  text?: p.Flex<"div">;
+  nomeMeta?: p.Flex<"h4">;
   medalha?: p.Flex<typeof Medalha>;
+  sequenciaMeta?: p.Flex<"div">;
   registra?: p.Flex<typeof Button>;
 };
 
 export interface DefaultMiniaturaMetaProps {
-  slot?: React.ReactNode;
-  slot2?: React.ReactNode;
   comMedalha?: SingleBooleanChoiceArg<"comMedalha">;
   tipo?: MultiChoiceArg<"habito" | "vicio">;
   className?: string;
@@ -154,45 +149,43 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
           {true ? (
             <div className={classNames(projectcss.all, sty.freeBox__noCej)}>
               <div className={classNames(projectcss.all, sty.freeBox__mfpq)}>
-                {p.renderPlasmicSlot({
-                  defaultContents: (
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___2QyHl
-                      )}
-                    >
-                      <React.Fragment>
-                        <React.Fragment>{""}</React.Fragment>
-                        {
-                          <h4
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.h4,
-                              projectcss.__wab_text,
-                              sty.h4__cOk5
-                            )}
+                <div
+                  data-plasmic-name={"text"}
+                  data-plasmic-override={overrides.text}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h4
+                        data-plasmic-name={"nomeMeta"}
+                        data-plasmic-override={overrides.nomeMeta}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h4,
+                          projectcss.__wab_text,
+                          sty.nomeMeta
+                        )}
+                      >
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ color: "#FFFFFF" }}
                           >
-                            <React.Fragment>
-                              <span
-                                className={
-                                  "plasmic_default__all plasmic_default__span"
-                                }
-                                style={{ color: "#FFFFFF" }}
-                              >
-                                {"Meta"}
-                              </span>
-                            </React.Fragment>
-                          </h4>
-                        }
-                        <React.Fragment>{""}</React.Fragment>
-                      </React.Fragment>
-                    </div>
-                  ),
-
-                  value: args.slot
-                })}
+                            {"Meta"}
+                          </span>
+                        </React.Fragment>
+                      </h4>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
               </div>
 
               {(
@@ -214,29 +207,40 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
             </div>
           ) : null}
 
-          <div className={classNames(projectcss.all, sty.freeBox___6ExQ)}>
-            {p.renderPlasmicSlot({
-              defaultContents: (
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__fMtNj
-                  )}
-                >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "#D3D3D3" }}
-                    >
-                      {"Sequencia"}
-                    </span>
-                  </React.Fragment>
-                </div>
-              ),
-
-              value: args.slot2
+          <div
+            className={classNames(projectcss.all, sty.freeBox___6ExQ, {
+              [sty.freeBoxtipo_habito___6ExQfpvrz]: hasVariant(
+                $state,
+                "tipo",
+                "habito"
+              )
             })}
+          >
+            <div
+              data-plasmic-name={"sequenciaMeta"}
+              data-plasmic-override={overrides.sequenciaMeta}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.sequenciaMeta,
+                {
+                  [sty.sequenciaMetatipo_habito]: hasVariant(
+                    $state,
+                    "tipo",
+                    "habito"
+                  )
+                }
+              )}
+            >
+              <React.Fragment>
+                <span
+                  className={"plasmic_default__all plasmic_default__span"}
+                  style={{ color: "#D3D3D3" }}
+                >
+                  {"Sequencia"}
+                </span>
+              </React.Fragment>
+            </div>
           </div>
         </div>
 
@@ -303,8 +307,11 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "medalha", "registra"],
+  root: ["root", "text", "nomeMeta", "medalha", "sequenciaMeta", "registra"],
+  text: ["text", "nomeMeta"],
+  nomeMeta: ["nomeMeta"],
   medalha: ["medalha"],
+  sequenciaMeta: ["sequenciaMeta"],
   registra: ["registra"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -312,7 +319,10 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  text: "div";
+  nomeMeta: "h4";
   medalha: typeof Medalha;
+  sequenciaMeta: "div";
   registra: typeof Button;
 };
 
@@ -377,7 +387,10 @@ export const PlasmicMiniaturaMeta = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    text: makeNodeComponent("text"),
+    nomeMeta: makeNodeComponent("nomeMeta"),
     medalha: makeNodeComponent("medalha"),
+    sequenciaMeta: makeNodeComponent("sequenciaMeta"),
     registra: makeNodeComponent("registra"),
 
     // Metadata about props expected for PlasmicMiniaturaMeta
