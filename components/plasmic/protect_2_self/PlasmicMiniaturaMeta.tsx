@@ -67,7 +67,7 @@ export const PlasmicMiniaturaMeta__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicMiniaturaMeta__OverridesType = {
   root?: p.Flex<"div">;
-  text?: p.Flex<"div">;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
   nomeMeta?: p.Flex<"h4">;
   medalha?: p.Flex<typeof Medalha>;
   sequenciaHabito?: p.Flex<"div">;
@@ -163,14 +163,24 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
                   )
                 })}
               >
-                <div
-                  data-plasmic-name={"text"}
-                  data-plasmic-override={overrides.text}
+                <p.PlasmicLink
+                  data-plasmic-name={"link"}
+                  data-plasmic-override={overrides.link}
                   className={classNames(
                     projectcss.all,
+                    projectcss.a,
                     projectcss.__wab_text,
-                    sty.text
+                    sty.link,
+                    {
+                      [sty.linkcomMedalha]: hasVariant(
+                        $state,
+                        "comMedalha",
+                        "comMedalha"
+                      )
+                    }
                   )}
+                  component={Link}
+                  platform={"nextjs"}
                 >
                   <React.Fragment>
                     <React.Fragment>{""}</React.Fragment>
@@ -182,7 +192,14 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
                           projectcss.all,
                           projectcss.h4,
                           projectcss.__wab_text,
-                          sty.nomeMeta
+                          sty.nomeMeta,
+                          {
+                            [sty.nomeMetacomMedalha]: hasVariant(
+                              $state,
+                              "comMedalha",
+                              "comMedalha"
+                            )
+                          }
                         )}
                       >
                         <React.Fragment>
@@ -199,7 +216,7 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
                     }
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
-                </div>
+                </p.PlasmicLink>
               </div>
 
               {(
@@ -357,14 +374,14 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "text",
+    "link",
     "nomeMeta",
     "medalha",
     "sequenciaHabito",
     "sequenciaVicio",
     "registra"
   ],
-  text: ["text", "nomeMeta"],
+  link: ["link", "nomeMeta"],
   nomeMeta: ["nomeMeta"],
   medalha: ["medalha"],
   sequenciaHabito: ["sequenciaHabito"],
@@ -376,7 +393,7 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  text: "div";
+  link: "a";
   nomeMeta: "h4";
   medalha: typeof Medalha;
   sequenciaHabito: "div";
@@ -445,7 +462,7 @@ export const PlasmicMiniaturaMeta = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    text: makeNodeComponent("text"),
+    link: makeNodeComponent("link"),
     nomeMeta: makeNodeComponent("nomeMeta"),
     medalha: makeNodeComponent("medalha"),
     sequenciaHabito: makeNodeComponent("sequenciaHabito"),
