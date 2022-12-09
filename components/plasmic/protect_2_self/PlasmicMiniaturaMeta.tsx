@@ -70,7 +70,8 @@ export type PlasmicMiniaturaMeta__OverridesType = {
   text?: p.Flex<"div">;
   nomeMeta?: p.Flex<"h4">;
   medalha?: p.Flex<typeof Medalha>;
-  sequenciaMeta?: p.Flex<"div">;
+  sequenciaHabito?: p.Flex<"div">;
+  sequenciaVicio?: p.Flex<"div">;
   registra?: p.Flex<typeof Button>;
 };
 
@@ -143,12 +144,25 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
               $state,
               "comMedalha",
               "comMedalha"
+            ),
+            [sty.freeBoxtipo_habito__cowRfFpvrz]: hasVariant(
+              $state,
+              "tipo",
+              "habito"
             )
           })}
         >
           {true ? (
             <div className={classNames(projectcss.all, sty.freeBox__noCej)}>
-              <div className={classNames(projectcss.all, sty.freeBox__mfpq)}>
+              <div
+                className={classNames(projectcss.all, sty.freeBox__mfpq, {
+                  [sty.freeBoxtipo_vicio__mfpq54S]: hasVariant(
+                    $state,
+                    "tipo",
+                    "vicio"
+                  )
+                })}
+              >
                 <div
                   data-plasmic-name={"text"}
                   data-plasmic-override={overrides.text}
@@ -216,31 +230,65 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
               )
             })}
           >
-            <div
-              data-plasmic-name={"sequenciaMeta"}
-              data-plasmic-override={overrides.sequenciaMeta}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.sequenciaMeta,
-                {
-                  [sty.sequenciaMetatipo_habito]: hasVariant(
-                    $state,
-                    "tipo",
-                    "habito"
-                  )
-                }
-              )}
-            >
-              <React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ color: "#D3D3D3" }}
-                >
-                  {"Sequencia"}
-                </span>
-              </React.Fragment>
-            </div>
+            {(hasVariant($state, "tipo", "habito") ? true : true) ? (
+              <div
+                data-plasmic-name={"sequenciaHabito"}
+                data-plasmic-override={overrides.sequenciaHabito}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.sequenciaHabito,
+                  {
+                    [sty.sequenciaHabitotipo_habito]: hasVariant(
+                      $state,
+                      "tipo",
+                      "habito"
+                    )
+                  }
+                )}
+              >
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#D3D3D3" }}
+                  >
+                    {"Sequencia"}
+                  </span>
+                </React.Fragment>
+              </div>
+            ) : null}
+            {(hasVariant($state, "tipo", "vicio") ? true : true) ? (
+              <div
+                data-plasmic-name={"sequenciaVicio"}
+                data-plasmic-override={overrides.sequenciaVicio}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.sequenciaVicio,
+                  {
+                    [sty.sequenciaViciotipo_habito]: hasVariant(
+                      $state,
+                      "tipo",
+                      "habito"
+                    ),
+                    [sty.sequenciaViciotipo_vicio]: hasVariant(
+                      $state,
+                      "tipo",
+                      "vicio"
+                    )
+                  }
+                )}
+              >
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#D3D3D3" }}
+                  >
+                    {"Sequencia"}
+                  </span>
+                </React.Fragment>
+              </div>
+            ) : null}
           </div>
         </div>
 
@@ -307,11 +355,20 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "text", "nomeMeta", "medalha", "sequenciaMeta", "registra"],
+  root: [
+    "root",
+    "text",
+    "nomeMeta",
+    "medalha",
+    "sequenciaHabito",
+    "sequenciaVicio",
+    "registra"
+  ],
   text: ["text", "nomeMeta"],
   nomeMeta: ["nomeMeta"],
   medalha: ["medalha"],
-  sequenciaMeta: ["sequenciaMeta"],
+  sequenciaHabito: ["sequenciaHabito"],
+  sequenciaVicio: ["sequenciaVicio"],
   registra: ["registra"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -322,7 +379,8 @@ type NodeDefaultElementType = {
   text: "div";
   nomeMeta: "h4";
   medalha: typeof Medalha;
-  sequenciaMeta: "div";
+  sequenciaHabito: "div";
+  sequenciaVicio: "div";
   registra: typeof Button;
 };
 
@@ -390,7 +448,8 @@ export const PlasmicMiniaturaMeta = Object.assign(
     text: makeNodeComponent("text"),
     nomeMeta: makeNodeComponent("nomeMeta"),
     medalha: makeNodeComponent("medalha"),
-    sequenciaMeta: makeNodeComponent("sequenciaMeta"),
+    sequenciaHabito: makeNodeComponent("sequenciaHabito"),
+    sequenciaVicio: makeNodeComponent("sequenciaVicio"),
     registra: makeNodeComponent("registra"),
 
     // Metadata about props expected for PlasmicMiniaturaMeta

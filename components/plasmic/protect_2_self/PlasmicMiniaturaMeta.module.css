@@ -83,6 +83,18 @@
   flex-direction: row;
   min-width: 0;
 }
+.sequenciaHabito {
+  display: none;
+}
+.sequenciaHabitotipo_habito {
+  display: block;
+}
+.sequenciaVicio {
+  display: none;
+}
+.sequenciaViciotipo_vicio {
+  display: block;
+}
 .registra:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
