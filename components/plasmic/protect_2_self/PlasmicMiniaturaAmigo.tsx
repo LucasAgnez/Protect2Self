@@ -231,6 +231,11 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
                       "emGrupo",
                       "adm"
                     ),
+                    [sty.nomeUsuarionaLista_adicionar]: hasVariant(
+                      $state,
+                      "naLista",
+                      "adicionar"
+                    ),
                     [sty.nomeUsuarionaLista_sim]: hasVariant(
                       $state,
                       "naLista",
