@@ -35,7 +35,8 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import SinoNoti from "../../SinoNoti"; // plasmic-import: AxoJF9EP_M/component
+import Menu from "antd/lib/menu/index"; // plasmic-import: Iz_hLKpHZDg/codeComponent
+import SubMenu from "antd/lib/menu/SubMenu"; // plasmic-import: DSwQm8gUYob/codeComponent
 import BotoesMenuPrincipal from "../../BotoesMenuPrincipal"; // plasmic-import: 8PboOpLyrBm/component
 import MiniaturaMeta from "../../MiniaturaMeta"; // plasmic-import: LQeW26Vvq3/component
 import MiniaturaGrupo from "../../MiniaturaGrupo"; // plasmic-import: QylFKCNC0eW/component
@@ -60,7 +61,9 @@ export type PlasmicInicial__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
-  sinoNoti?: p.Flex<typeof SinoNoti>;
+  sinoNoti?: p.Flex<typeof Menu>;
+  submenu?: p.Flex<typeof SubMenu>;
+  img?: p.Flex<typeof p.PlasmicImg>;
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
   text?: p.Flex<"div">;
 };
@@ -150,11 +153,42 @@ function PlasmicInicial__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__cVohZ)}
                   >
-                    <SinoNoti
+                    <Menu
                       data-plasmic-name={"sinoNoti"}
                       data-plasmic-override={overrides.sinoNoti}
                       className={classNames("__wab_instance", sty.sinoNoti)}
-                    />
+                      theme={"dark" as const}
+                    >
+                      <SubMenu
+                        data-plasmic-name={"submenu"}
+                        data-plasmic-override={overrides.submenu}
+                        className={classNames("__wab_instance", sty.submenu)}
+                        key={"subMenuKey" as const}
+                        title={
+                          <p.PlasmicImg
+                            data-plasmic-name={"img"}
+                            data-plasmic-override={overrides.img}
+                            alt={""}
+                            className={classNames(sty.img)}
+                            displayHeight={"116px" as const}
+                            displayMaxHeight={"none" as const}
+                            displayMaxWidth={"100%" as const}
+                            displayMinHeight={"0" as const}
+                            displayMinWidth={"0" as const}
+                            displayWidth={"auto" as const}
+                            loading={"lazy" as const}
+                            src={{
+                              src: "/plasmic/protect_2_self/images/sinopng.png",
+                              fullWidth: 4096,
+                              fullHeight: 4096,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        }
+                      >
+                        {null}
+                      </SubMenu>
+                    </Menu>
                   </div>
 
                   <BotoesMenuPrincipal
@@ -275,12 +309,23 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "sinoNoti",
+    "submenu",
+    "img",
     "botoesMenuPrincipal",
     "text"
   ],
   headerLogged: ["headerLogged"],
-  columns: ["columns", "sinoNoti", "botoesMenuPrincipal", "text"],
-  sinoNoti: ["sinoNoti"],
+  columns: [
+    "columns",
+    "sinoNoti",
+    "submenu",
+    "img",
+    "botoesMenuPrincipal",
+    "text"
+  ],
+  sinoNoti: ["sinoNoti", "submenu", "img"],
+  submenu: ["submenu", "img"],
+  img: ["img"],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
   text: ["text"]
 } as const;
@@ -291,7 +336,9 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   columns: "div";
-  sinoNoti: typeof SinoNoti;
+  sinoNoti: typeof Menu;
+  submenu: typeof SubMenu;
+  img: typeof p.PlasmicImg;
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
   text: "div";
 };
@@ -360,6 +407,8 @@ export const PlasmicInicial = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     sinoNoti: makeNodeComponent("sinoNoti"),
+    submenu: makeNodeComponent("submenu"),
+    img: makeNodeComponent("img"),
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
     text: makeNodeComponent("text"),
 
