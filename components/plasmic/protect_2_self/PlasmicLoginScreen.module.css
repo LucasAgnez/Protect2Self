@@ -301,55 +301,6 @@
   width: 1em;
   height: 1em;
 }
-.freeBox___8Hi2A {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-  padding: 8px;
-}
-.text__wRhle {
-  width: auto;
-  height: auto;
-  max-width: 54px;
-}
-.entraComGoogle:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  width: 200px;
-  height: 70px;
-  flex-shrink: 0;
-  display: flex;
-}
-.svg__gFRv {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.img {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 26px;
-}
-.img > picture > img {
-  object-fit: cover;
-}
-.img > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
-.svg__qWsZg {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
 .text__xpxS5 {
   position: relative;
   width: 100%;

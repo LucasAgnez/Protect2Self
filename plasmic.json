@@ -1054,6 +1054,19 @@
           "cssFilePath": "plasmic/protect_2_self/PlasmicNotificacao.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "MD4kMKQvpO",
+          "name": "TelaMeta",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicTelaMeta.tsx",
+          "importSpec": {
+            "modulePath": "../pages/tela-meta.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicTelaMeta.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
@@ -1106,6 +1119,11 @@
           "id": "_Too7mk-Tm",
           "name": "ThumbUpSvgrepoCom1SvgIcon",
           "moduleFilePath": "plasmic/protect_2_self/icons/PlasmicIcon__ThumbUpSvgrepoCom1Svg.tsx"
+        },
+        {
+          "id": "fmFspLMBVy",
+          "name": "LeftArrowSvgrepoComsvgIcon",
+          "moduleFilePath": "plasmic/protect_2_self/icons/PlasmicIcon__LeftArrowSvgrepoComsvg.tsx"
         }
       ],
       "images": [

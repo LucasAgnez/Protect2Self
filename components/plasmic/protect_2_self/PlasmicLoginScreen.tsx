@@ -70,8 +70,6 @@ export type PlasmicLoginScreen__OverridesType = {
   email?: p.Flex<typeof TextInput>;
   senha?: p.Flex<typeof PasswordInput>;
   confirma?: p.Flex<typeof Button>;
-  entraComGoogle?: p.Flex<typeof Button>;
-  img?: p.Flex<typeof p.PlasmicImg>;
   link?: p.Flex<"a"> & Partial<LinkProps>;
 };
 
@@ -382,73 +380,6 @@ function PlasmicLoginScreen__RenderFunc(props: {
                               {"Entrar"}
                             </Button>
                           ) : null}
-                          {true ? (
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox___8Hi2A
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__wRhle
-                                )}
-                              >
-                                <React.Fragment>
-                                  <span
-                                    className={
-                                      "plasmic_default__all plasmic_default__span"
-                                    }
-                                    style={{ color: "#FFFFFF" }}
-                                  >
-                                    {"Ou"}
-                                  </span>
-                                </React.Fragment>
-                              </div>
-                            </div>
-                          ) : null}
-                          {true ? (
-                            <Button
-                              data-plasmic-name={"entraComGoogle"}
-                              data-plasmic-override={overrides.entraComGoogle}
-                              className={classNames(
-                                "__wab_instance",
-                                sty.entraComGoogle
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__jX1Zi
-                                )}
-                              >
-                                {"Entrar com "}
-                              </div>
-
-                              <p.PlasmicImg
-                                data-plasmic-name={"img"}
-                                data-plasmic-override={overrides.img}
-                                alt={""}
-                                className={classNames(sty.img)}
-                                displayHeight={"auto" as const}
-                                displayMaxHeight={"none" as const}
-                                displayMaxWidth={"100%" as const}
-                                displayMinHeight={"0" as const}
-                                displayMinWidth={"0" as const}
-                                displayWidth={"26px" as const}
-                                loading={"lazy" as const}
-                                src={{
-                                  src: "/plasmic/protect_2_self/images/googleGLogosvgpng.png",
-                                  fullWidth: 768,
-                                  fullHeight: 768,
-                                  aspectRatio: undefined
-                                }}
-                              />
-                            </Button>
-                          ) : null}
 
                           <div
                             className={classNames(
@@ -532,8 +463,6 @@ const PlasmicDescendants = {
     "email",
     "senha",
     "confirma",
-    "entraComGoogle",
-    "img",
     "link"
   ],
   header: ["header"],
@@ -547,8 +476,6 @@ const PlasmicDescendants = {
     "email",
     "senha",
     "confirma",
-    "entraComGoogle",
-    "img",
     "link"
   ],
   helpingHand: ["helpingHand"],
@@ -559,8 +486,6 @@ const PlasmicDescendants = {
   email: ["email"],
   senha: ["senha"],
   confirma: ["confirma"],
-  entraComGoogle: ["entraComGoogle", "img"],
-  img: ["img"],
   link: ["link"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -578,8 +503,6 @@ type NodeDefaultElementType = {
   email: typeof TextInput;
   senha: typeof PasswordInput;
   confirma: typeof Button;
-  entraComGoogle: typeof Button;
-  img: typeof p.PlasmicImg;
   link: "a";
 };
 
@@ -654,8 +577,6 @@ export const PlasmicLoginScreen = Object.assign(
     email: makeNodeComponent("email"),
     senha: makeNodeComponent("senha"),
     confirma: makeNodeComponent("confirma"),
-    entraComGoogle: makeNodeComponent("entraComGoogle"),
-    img: makeNodeComponent("img"),
     link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicLoginScreen
