@@ -35,8 +35,6 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import Menu from "antd/lib/menu/index"; // plasmic-import: Iz_hLKpHZDg/codeComponent
-import SubMenu from "antd/lib/menu/SubMenu"; // plasmic-import: DSwQm8gUYob/codeComponent
 import BotoesMenuPrincipal from "../../BotoesMenuPrincipal"; // plasmic-import: 8PboOpLyrBm/component
 import MiniaturaMeta from "../../MiniaturaMeta"; // plasmic-import: LQeW26Vvq3/component
 import MiniaturaGrupo from "../../MiniaturaGrupo"; // plasmic-import: QylFKCNC0eW/component
@@ -61,10 +59,8 @@ export type PlasmicInicial__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
-  sinoNoti?: p.Flex<typeof Menu>;
-  submenu?: p.Flex<typeof SubMenu>;
-  img?: p.Flex<typeof p.PlasmicImg>;
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
+  freeBox?: p.Flex<"div">;
   text?: p.Flex<"div">;
 };
 
@@ -150,47 +146,6 @@ function PlasmicInicial__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.columns)}
               >
                 <div className={classNames(projectcss.all, sty.column__xzDzp)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__cVohZ)}
-                  >
-                    <Menu
-                      data-plasmic-name={"sinoNoti"}
-                      data-plasmic-override={overrides.sinoNoti}
-                      className={classNames("__wab_instance", sty.sinoNoti)}
-                      theme={"dark" as const}
-                    >
-                      <SubMenu
-                        data-plasmic-name={"submenu"}
-                        data-plasmic-override={overrides.submenu}
-                        className={classNames("__wab_instance", sty.submenu)}
-                        key={"subMenuKey" as const}
-                        title={
-                          <p.PlasmicImg
-                            data-plasmic-name={"img"}
-                            data-plasmic-override={overrides.img}
-                            alt={""}
-                            className={classNames(sty.img)}
-                            displayHeight={"116px" as const}
-                            displayMaxHeight={"none" as const}
-                            displayMaxWidth={"100%" as const}
-                            displayMinHeight={"0" as const}
-                            displayMinWidth={"0" as const}
-                            displayWidth={"auto" as const}
-                            loading={"lazy" as const}
-                            src={{
-                              src: "/plasmic/protect_2_self/images/sinopng.png",
-                              fullWidth: 4096,
-                              fullHeight: 4096,
-                              aspectRatio: undefined
-                            }}
-                          />
-                        }
-                      >
-                        {null}
-                      </SubMenu>
-                    </Menu>
-                  </div>
-
                   <BotoesMenuPrincipal
                     data-plasmic-name={"botoesMenuPrincipal"}
                     data-plasmic-override={overrides.botoesMenuPrincipal}
@@ -215,10 +170,9 @@ function PlasmicInicial__RenderFunc(props: {
                         : true
                     ) ? (
                       <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__kXoCy
-                        )}
+                        data-plasmic-name={"freeBox"}
+                        data-plasmic-override={overrides.freeBox}
+                        className={classNames(projectcss.all, sty.freeBox)}
                       >
                         {true ? (
                           <MiniaturaMeta
@@ -308,25 +262,14 @@ const PlasmicDescendants = {
     "root",
     "headerLogged",
     "columns",
-    "sinoNoti",
-    "submenu",
-    "img",
     "botoesMenuPrincipal",
+    "freeBox",
     "text"
   ],
   headerLogged: ["headerLogged"],
-  columns: [
-    "columns",
-    "sinoNoti",
-    "submenu",
-    "img",
-    "botoesMenuPrincipal",
-    "text"
-  ],
-  sinoNoti: ["sinoNoti", "submenu", "img"],
-  submenu: ["submenu", "img"],
-  img: ["img"],
+  columns: ["columns", "botoesMenuPrincipal", "freeBox", "text"],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
+  freeBox: ["freeBox", "text"],
   text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -336,10 +279,8 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   columns: "div";
-  sinoNoti: typeof Menu;
-  submenu: typeof SubMenu;
-  img: typeof p.PlasmicImg;
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
+  freeBox: "div";
   text: "div";
 };
 
@@ -406,10 +347,8 @@ export const PlasmicInicial = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
-    sinoNoti: makeNodeComponent("sinoNoti"),
-    submenu: makeNodeComponent("submenu"),
-    img: makeNodeComponent("img"),
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
+    freeBox: makeNodeComponent("freeBox"),
     text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicInicial
