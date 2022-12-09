@@ -6,6 +6,10 @@ import * as ph from "@plasmicapp/host";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicAdicionaAmigo } from "../components/plasmic/protect_2_self/PlasmicAdicionaAmigo";
 import { useRouter } from "next/router";
+import MiniaturaAmigo from "../components/MiniaturaAmigo";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { NOMEM } from "dns";
 
 function AdicionaAmigo() {
   // Use PlasmicAdicionaAmigo to render this component as it was
@@ -24,12 +28,76 @@ function AdicionaAmigo() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  const [nome, setNome] = useState<string>();
+  const [vazio, setVazio] = useState<boolean>(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error>();
+  const router = useRouter()
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const nomeUsuario = await axios.get(
+          "http://localhost:8080/usuario/findById/"+ localStorage.getItem("userId"))
+        setNome(nomeUsuario.data.nome)
+        setError(undefined);  
+      } catch (err) {
+        setError((err as any).message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+  if (error) {
+    return <div>Error: {error.message}</div>
+  }
+
+  async function buscaUsuarios(){
+    try{
+        var nome = String((document.getElementById("buscaAmigo")as any).value)
+        if(nome.includes('@')){
+          const resposta = await axios.get(
+            "http://localhost:8080/usuario/findByEmail/"+ nome)
+            adicionaAmigo(resposta.data.id);
+          }
+          else {
+            const resposta = await axios.get(
+              "http://localhost:8080/usuario/findByName/" + nome)
+              adicionaAmigo(resposta.data.id);
+            }
+          }catch (err) {
+            setVazio(true)
+          } finally {
+            setLoading(false);
+          }
+        }
+        
+        function adicionaAmigo(friendId: any){
+          console.log(nome)
+          console.log(friendId)
+    axios.post
+    ("http://localhost:8080/solicitacaoAmizade/save",{
+      nomeAmigo: nome,
+			userId: localStorage.getItem('userId'),
+      friendId: friendId
+    })
+
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicAdicionaAmigo />
+      <PlasmicAdicionaAmigo 
+        confirma={nome ? {
+          onClick : () => buscaUsuarios()
+        } : {}}
+        usuarios={vazio ? {
+          children: "Não encontramos ninguém com esse nome"
+        } : {}}
+      />
     </ph.PageParamsProvider>
   );
 }

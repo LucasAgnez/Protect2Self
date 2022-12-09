@@ -38,7 +38,7 @@ function ListaDeAmigos() {
     const getData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/usuario/getAmigos/" + localStorage.getItem('userId')
+          "http://localhost:8080/usuario/friends/" + localStorage.getItem('userId')
         );
         setAmigos(response.data);
         setError(undefined);  
