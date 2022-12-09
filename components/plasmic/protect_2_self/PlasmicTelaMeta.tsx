@@ -50,10 +50,16 @@ import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1G
 import LeftArrowSvgrepoComsvgIcon from "./icons/PlasmicIcon__LeftArrowSvgrepoComsvg"; // plasmic-import: fmFspLMBVy/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
-export type PlasmicTelaMeta__VariantMembers = {};
-export type PlasmicTelaMeta__VariantsArgs = {};
+export type PlasmicTelaMeta__VariantMembers = {
+  semRank: "semRank";
+};
+export type PlasmicTelaMeta__VariantsArgs = {
+  semRank?: SingleBooleanChoiceArg<"semRank">;
+};
 type VariantPropType = keyof PlasmicTelaMeta__VariantsArgs;
-export const PlasmicTelaMeta__VariantProps = new Array<VariantPropType>();
+export const PlasmicTelaMeta__VariantProps = new Array<VariantPropType>(
+  "semRank"
+);
 
 export type PlasmicTelaMeta__ArgsType = {};
 type ArgPropType = keyof PlasmicTelaMeta__ArgsType;
@@ -93,6 +99,18 @@ function PlasmicTelaMeta__RenderFunc(props: {
   };
 
   const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "semRank",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.semRank
+      }
+    ],
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
 
   const [$queries, setDollarQueries] = React.useState({});
 
@@ -136,7 +154,8 @@ function PlasmicTelaMeta__RenderFunc(props: {
               projectcss.plasmic_default_styles,
               projectcss.plasmic_mixins,
               projectcss.plasmic_tokens,
-              sty.root
+              sty.root,
+              { [sty.rootsemRank]: hasVariant($state, "semRank", "semRank") }
             )}
           >
             {true ? (
@@ -262,14 +281,28 @@ function PlasmicTelaMeta__RenderFunc(props: {
                           <div
                             className={classNames(
                               projectcss.all,
-                              sty.freeBox___2VQma
+                              sty.freeBox___2VQma,
+                              {
+                                [sty.freeBoxsemRank___2VQmaTs1B2]: hasVariant(
+                                  $state,
+                                  "semRank",
+                                  "semRank"
+                                )
+                              }
                             )}
                           >
                             <div
                               className={classNames(
                                 projectcss.all,
                                 projectcss.__wab_text,
-                                sty.text__gAc0O
+                                sty.text__gAc0O,
+                                {
+                                  [sty.textsemRank__gAc0OTs1B2]: hasVariant(
+                                    $state,
+                                    "semRank",
+                                    "semRank"
+                                  )
+                                }
                               )}
                             >
                               <React.Fragment>
@@ -282,7 +315,14 @@ function PlasmicTelaMeta__RenderFunc(props: {
                                       projectcss.all,
                                       projectcss.h2,
                                       projectcss.__wab_text,
-                                      sty.nomeMeta
+                                      sty.nomeMeta,
+                                      {
+                                        [sty.nomeMetasemRank]: hasVariant(
+                                          $state,
+                                          "semRank",
+                                          "semRank"
+                                        )
+                                      }
                                     )}
                                   >
                                     <React.Fragment>
@@ -301,14 +341,27 @@ function PlasmicTelaMeta__RenderFunc(props: {
                               </React.Fragment>
                             </div>
 
-                            <Medalha
-                              data-plasmic-name={"medalha"}
-                              data-plasmic-override={overrides.medalha}
-                              className={classNames(
-                                "__wab_instance",
-                                sty.medalha
-                              )}
-                            />
+                            {(
+                              hasVariant($state, "semRank", "semRank")
+                                ? true
+                                : true
+                            ) ? (
+                              <Medalha
+                                data-plasmic-name={"medalha"}
+                                data-plasmic-override={overrides.medalha}
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.medalha,
+                                  {
+                                    [sty.medalhasemRank]: hasVariant(
+                                      $state,
+                                      "semRank",
+                                      "semRank"
+                                    )
+                                  }
+                                )}
+                              />
+                            ) : null}
                           </div>
                         ) : null}
                       </div>

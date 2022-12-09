@@ -225,6 +225,10 @@
   min-width: 0;
   padding: 8px;
 }
+.freeBoxsemRank___2VQmaTs1B2 {
+  height: 85px;
+  flex-shrink: 0;
+}
 .text__gAc0O {
   width: 100%;
   height: auto;
@@ -234,6 +238,9 @@
 .medalha:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
+}
+.medalhasemRank:global(.__wab_instance) {
+  display: none;
 }
 .text__suS0O {
   padding-right: 14px;
