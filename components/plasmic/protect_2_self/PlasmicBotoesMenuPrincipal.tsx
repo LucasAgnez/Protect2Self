@@ -34,6 +34,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import SinoNoti from "../../SinoNoti"; // plasmic-import: AxoJF9EP_M/component
 import MainPageButton from "../../MainPageButton"; // plasmic-import: hF66z6g8PUp/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
@@ -59,6 +60,7 @@ export const PlasmicBotoesMenuPrincipal__ArgProps = new Array<ArgPropType>();
 export type PlasmicBotoesMenuPrincipal__OverridesType = {
   root?: p.Flex<"div">;
   freeBox?: p.Flex<"div">;
+  sinoNoti?: p.Flex<typeof SinoNoti>;
   minhasMetas?: p.Flex<typeof MainPageButton>;
   meusGrupos?: p.Flex<typeof MainPageButton>;
   criarMeta?: p.Flex<typeof MainPageButton>;
@@ -116,7 +118,13 @@ function PlasmicBotoesMenuPrincipal__RenderFunc(props: {
           data-plasmic-name={"freeBox"}
           data-plasmic-override={overrides.freeBox}
           className={classNames(projectcss.all, sty.freeBox)}
-        />
+        >
+          <SinoNoti
+            data-plasmic-name={"sinoNoti"}
+            data-plasmic-override={overrides.sinoNoti}
+            className={classNames("__wab_instance", sty.sinoNoti)}
+          />
+        </div>
 
         <MainPageButton
           data-plasmic-name={"minhasMetas"}
@@ -294,12 +302,14 @@ const PlasmicDescendants = {
   root: [
     "root",
     "freeBox",
+    "sinoNoti",
     "minhasMetas",
     "meusGrupos",
     "criarMeta",
     "criarGrupo"
   ],
-  freeBox: ["freeBox"],
+  freeBox: ["freeBox", "sinoNoti"],
+  sinoNoti: ["sinoNoti"],
   minhasMetas: ["minhasMetas"],
   meusGrupos: ["meusGrupos"],
   criarMeta: ["criarMeta"],
@@ -311,6 +321,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   freeBox: "div";
+  sinoNoti: typeof SinoNoti;
   minhasMetas: typeof MainPageButton;
   meusGrupos: typeof MainPageButton;
   criarMeta: typeof MainPageButton;
@@ -379,6 +390,7 @@ export const PlasmicBotoesMenuPrincipal = Object.assign(
   {
     // Helper components rendering sub-elements
     freeBox: makeNodeComponent("freeBox"),
+    sinoNoti: makeNodeComponent("sinoNoti"),
     minhasMetas: makeNodeComponent("minhasMetas"),
     meusGrupos: makeNodeComponent("meusGrupos"),
     criarMeta: makeNodeComponent("criarMeta"),

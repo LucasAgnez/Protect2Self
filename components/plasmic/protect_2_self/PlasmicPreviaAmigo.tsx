@@ -35,7 +35,6 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import SinoNoti from "../../SinoNoti"; // plasmic-import: AxoJF9EP_M/component
 import BotoesMenuPrincipal from "../../BotoesMenuPrincipal"; // plasmic-import: 8PboOpLyrBm/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
@@ -61,7 +60,6 @@ export const PlasmicPreviaAmigo__ArgProps = new Array<ArgPropType>();
 export type PlasmicPreviaAmigo__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
-  sinoNoti?: p.Flex<typeof SinoNoti>;
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
   fotoPerfil?: p.Flex<typeof p.PlasmicImg>;
   nomeUsuario?: p.Flex<"h2">;
@@ -148,16 +146,6 @@ function PlasmicPreviaAmigo__RenderFunc(props: {
             ) ? (
               <div className={classNames(projectcss.all, sty.columns__oBgJx)}>
                 <div className={classNames(projectcss.all, sty.column__hqZwv)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__fiYjk)}
-                  >
-                    <SinoNoti
-                      data-plasmic-name={"sinoNoti"}
-                      data-plasmic-override={overrides.sinoNoti}
-                      className={classNames("__wab_instance", sty.sinoNoti)}
-                    />
-                  </div>
-
                   <BotoesMenuPrincipal
                     data-plasmic-name={"botoesMenuPrincipal"}
                     data-plasmic-override={overrides.botoesMenuPrincipal}
@@ -382,7 +370,6 @@ const PlasmicDescendants = {
   root: [
     "root",
     "headerLogged",
-    "sinoNoti",
     "botoesMenuPrincipal",
     "fotoPerfil",
     "nomeUsuario",
@@ -391,7 +378,6 @@ const PlasmicDescendants = {
     "button"
   ],
   headerLogged: ["headerLogged"],
-  sinoNoti: ["sinoNoti"],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
   fotoPerfil: ["fotoPerfil"],
   nomeUsuario: ["nomeUsuario"],
@@ -405,7 +391,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
-  sinoNoti: typeof SinoNoti;
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
   fotoPerfil: typeof p.PlasmicImg;
   nomeUsuario: "h2";
@@ -476,7 +461,6 @@ export const PlasmicPreviaAmigo = Object.assign(
   {
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
-    sinoNoti: makeNodeComponent("sinoNoti"),
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
     fotoPerfil: makeNodeComponent("fotoPerfil"),
     nomeUsuario: makeNodeComponent("nomeUsuario"),

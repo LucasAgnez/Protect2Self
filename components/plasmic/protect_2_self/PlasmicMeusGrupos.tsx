@@ -35,7 +35,6 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import SinoNoti from "../../SinoNoti"; // plasmic-import: AxoJF9EP_M/component
 import BotoesMenuPrincipal from "../../BotoesMenuPrincipal"; // plasmic-import: 8PboOpLyrBm/component
 import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
 
@@ -62,8 +61,6 @@ export type PlasmicMeusGrupos__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
-  freeBox?: p.Flex<"div">;
-  sinoNoti?: p.Flex<typeof SinoNoti>;
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
   buscaGrupo?: p.Flex<typeof TextInput>;
   container?: p.Flex<"div">;
@@ -151,18 +148,6 @@ function PlasmicMeusGrupos__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.columns)}
               >
                 <div className={classNames(projectcss.all, sty.column__eZJtJ)}>
-                  <div
-                    data-plasmic-name={"freeBox"}
-                    data-plasmic-override={overrides.freeBox}
-                    className={classNames(projectcss.all, sty.freeBox)}
-                  >
-                    <SinoNoti
-                      data-plasmic-name={"sinoNoti"}
-                      data-plasmic-override={overrides.sinoNoti}
-                      className={classNames("__wab_instance", sty.sinoNoti)}
-                    />
-                  </div>
-
                   <BotoesMenuPrincipal
                     data-plasmic-name={"botoesMenuPrincipal"}
                     data-plasmic-override={overrides.botoesMenuPrincipal}
@@ -216,23 +201,12 @@ const PlasmicDescendants = {
     "root",
     "headerLogged",
     "columns",
-    "freeBox",
-    "sinoNoti",
     "botoesMenuPrincipal",
     "buscaGrupo",
     "container"
   ],
   headerLogged: ["headerLogged"],
-  columns: [
-    "columns",
-    "freeBox",
-    "sinoNoti",
-    "botoesMenuPrincipal",
-    "buscaGrupo",
-    "container"
-  ],
-  freeBox: ["freeBox", "sinoNoti"],
-  sinoNoti: ["sinoNoti"],
+  columns: ["columns", "botoesMenuPrincipal", "buscaGrupo", "container"],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
   buscaGrupo: ["buscaGrupo"],
   container: ["container"]
@@ -244,8 +218,6 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   columns: "div";
-  freeBox: "div";
-  sinoNoti: typeof SinoNoti;
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
   buscaGrupo: typeof TextInput;
   container: "div";
@@ -314,8 +286,6 @@ export const PlasmicMeusGrupos = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
-    freeBox: makeNodeComponent("freeBox"),
-    sinoNoti: makeNodeComponent("sinoNoti"),
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
     buscaGrupo: makeNodeComponent("buscaGrupo"),
     container: makeNodeComponent("container"),

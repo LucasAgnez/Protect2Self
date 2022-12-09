@@ -34,14 +34,15 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Menu from "antd/lib/menu/index"; // plasmic-import: Iz_hLKpHZDg/codeComponent
-import SubMenu from "antd/lib/menu/SubMenu"; // plasmic-import: DSwQm8gUYob/codeComponent
-import MenuItem from "antd/lib/menu/MenuItem"; // plasmic-import: HZ6EmQgIQJr/codeComponent
+import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import: 8XuJZfnuNd7UvNkkshapC6/projectcss
 import sty from "./PlasmicSinoNoti.module.css"; // plasmic-import: AxoJF9EP_M/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
 export type PlasmicSinoNoti__VariantMembers = {};
 export type PlasmicSinoNoti__VariantsArgs = {};
@@ -54,11 +55,8 @@ export const PlasmicSinoNoti__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSinoNoti__OverridesType = {
   root?: p.Flex<"div">;
-  antdMenu?: p.Flex<typeof Menu>;
-  submenu?: p.Flex<typeof SubMenu>;
+  button?: p.Flex<typeof Button>;
   img?: p.Flex<typeof p.PlasmicImg>;
-  antdMenuItem?: p.Flex<typeof MenuItem>;
-  text?: p.Flex<"div">;
 };
 
 export interface DefaultSinoNotiProps {
@@ -101,81 +99,50 @@ function PlasmicSinoNoti__RenderFunc(props: {
         sty.root
       )}
     >
-      <Menu
-        data-plasmic-name={"antdMenu"}
-        data-plasmic-override={overrides.antdMenu}
-        className={classNames("__wab_instance", sty.antdMenu)}
-        theme={"dark" as const}
+      <Button
+        data-plasmic-name={"button"}
+        data-plasmic-override={overrides.button}
+        className={classNames("__wab_instance", sty.button)}
+        color={"black" as const}
+        link={`/notificacoes`}
+        shape={"round" as const}
       >
-        <SubMenu
-          data-plasmic-name={"submenu"}
-          data-plasmic-override={overrides.submenu}
-          className={classNames("__wab_instance", sty.submenu)}
-          key={"subMenuKey" as const}
-          title={
-            <p.PlasmicImg
-              data-plasmic-name={"img"}
-              data-plasmic-override={overrides.img}
-              alt={""}
-              className={classNames(sty.img)}
-              displayHeight={"116px" as const}
-              displayMaxHeight={"none" as const}
-              displayMaxWidth={"100%" as const}
-              displayMinHeight={"0" as const}
-              displayMinWidth={"0" as const}
-              displayWidth={"auto" as const}
-              loading={"lazy" as const}
-              src={{
-                src: "/plasmic/protect_2_self/images/sinopng.png",
-                fullWidth: 4096,
-                fullHeight: 4096,
-                aspectRatio: undefined
-              }}
-            />
-          }
-        >
-          <MenuItem
-            data-plasmic-name={"antdMenuItem"}
-            data-plasmic-override={overrides.antdMenuItem}
-            className={classNames("__wab_instance", sty.antdMenuItem)}
-            key={"subMenuItemKey1" as const}
-          >
-            <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text
-              )}
-            >
-              {"Sub-menu item 1"}
-            </div>
-          </MenuItem>
-        </SubMenu>
-      </Menu>
+        <p.PlasmicImg
+          data-plasmic-name={"img"}
+          data-plasmic-override={overrides.img}
+          alt={""}
+          className={classNames(sty.img)}
+          displayHeight={"35px" as const}
+          displayMaxHeight={"none" as const}
+          displayMaxWidth={"100%" as const}
+          displayMinHeight={"0" as const}
+          displayMinWidth={"0" as const}
+          displayWidth={"auto" as const}
+          loading={"lazy" as const}
+          src={{
+            src: "/plasmic/protect_2_self/images/sinopng.png",
+            fullWidth: 4096,
+            fullHeight: 4096,
+            aspectRatio: undefined
+          }}
+        />
+      </Button>
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "antdMenu", "submenu", "img", "antdMenuItem", "text"],
-  antdMenu: ["antdMenu", "submenu", "img", "antdMenuItem", "text"],
-  submenu: ["submenu", "img", "antdMenuItem", "text"],
-  img: ["img"],
-  antdMenuItem: ["antdMenuItem", "text"],
-  text: ["text"]
+  root: ["root", "button", "img"],
+  button: ["button", "img"],
+  img: ["img"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  antdMenu: typeof Menu;
-  submenu: typeof SubMenu;
+  button: typeof Button;
   img: typeof p.PlasmicImg;
-  antdMenuItem: typeof MenuItem;
-  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -239,11 +206,8 @@ export const PlasmicSinoNoti = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    antdMenu: makeNodeComponent("antdMenu"),
-    submenu: makeNodeComponent("submenu"),
+    button: makeNodeComponent("button"),
     img: makeNodeComponent("img"),
-    antdMenuItem: makeNodeComponent("antdMenuItem"),
-    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicSinoNoti
     internalVariantProps: PlasmicSinoNoti__VariantProps,

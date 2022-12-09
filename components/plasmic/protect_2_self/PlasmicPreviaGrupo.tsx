@@ -35,7 +35,6 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import SinoNoti from "../../SinoNoti"; // plasmic-import: AxoJF9EP_M/component
 import BotoesMenuPrincipal from "../../BotoesMenuPrincipal"; // plasmic-import: 8PboOpLyrBm/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
@@ -62,7 +61,6 @@ export type PlasmicPreviaGrupo__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
-  sinoNoti?: p.Flex<typeof SinoNoti>;
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
   fotoPerfil?: p.Flex<typeof p.PlasmicImg>;
   nomeGrupo?: p.Flex<"h2">;
@@ -153,16 +151,6 @@ function PlasmicPreviaGrupo__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.columns)}
               >
                 <div className={classNames(projectcss.all, sty.column__i9PRf)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__ryWz5)}
-                  >
-                    <SinoNoti
-                      data-plasmic-name={"sinoNoti"}
-                      data-plasmic-override={overrides.sinoNoti}
-                      className={classNames("__wab_instance", sty.sinoNoti)}
-                    />
-                  </div>
-
                   <BotoesMenuPrincipal
                     data-plasmic-name={"botoesMenuPrincipal"}
                     data-plasmic-override={overrides.botoesMenuPrincipal}
@@ -383,7 +371,6 @@ const PlasmicDescendants = {
     "root",
     "headerLogged",
     "columns",
-    "sinoNoti",
     "botoesMenuPrincipal",
     "fotoPerfil",
     "nomeGrupo",
@@ -394,7 +381,6 @@ const PlasmicDescendants = {
   headerLogged: ["headerLogged"],
   columns: [
     "columns",
-    "sinoNoti",
     "botoesMenuPrincipal",
     "fotoPerfil",
     "nomeGrupo",
@@ -402,7 +388,6 @@ const PlasmicDescendants = {
     "membros",
     "button"
   ],
-  sinoNoti: ["sinoNoti"],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
   fotoPerfil: ["fotoPerfil"],
   nomeGrupo: ["nomeGrupo"],
@@ -417,7 +402,6 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   columns: "div";
-  sinoNoti: typeof SinoNoti;
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
   fotoPerfil: typeof p.PlasmicImg;
   nomeGrupo: "h2";
@@ -489,7 +473,6 @@ export const PlasmicPreviaGrupo = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
-    sinoNoti: makeNodeComponent("sinoNoti"),
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
     fotoPerfil: makeNodeComponent("fotoPerfil"),
     nomeGrupo: makeNodeComponent("nomeGrupo"),

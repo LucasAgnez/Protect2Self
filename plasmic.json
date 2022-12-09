@@ -1028,6 +1028,32 @@
           "cssFilePath": "plasmic/protect_2_self/PlasmicSinoNoti.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "lsH7Q2uTocp",
+          "name": "Notificacoes",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicNotificacoes.tsx",
+          "importSpec": {
+            "modulePath": "../pages/notificacoes.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicNotificacoes.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "aLWT0HE8Zu",
+          "name": "Notificacao",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicNotificacao.tsx",
+          "importSpec": {
+            "modulePath": "Notificacao.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicNotificacao.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
