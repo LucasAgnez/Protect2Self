@@ -169,6 +169,7 @@ function PlasmicPerfil__RenderFunc(props: {
                         "__wab_instance",
                         sty.button___4TgY3
                       )}
+                      link={`/adiciona-amigo`}
                     >
                       {"Adicionar Amigo"}
                     </Button>
