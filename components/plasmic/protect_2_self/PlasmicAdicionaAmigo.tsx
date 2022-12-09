@@ -64,8 +64,10 @@ export type PlasmicAdicionaAmigo__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
+  text?: p.Flex<"div">;
   h4?: p.Flex<"h4">;
   busca?: p.Flex<typeof TextInput>;
+  confirma?: p.Flex<typeof Button>;
   usuarios?: p.Flex<"div">;
 };
 
@@ -199,10 +201,12 @@ function PlasmicAdicionaAmigo__RenderFunc(props: {
               {true ? (
                 <div className={classNames(projectcss.all, sty.column__dj7Ep)}>
                   <div
+                    data-plasmic-name={"text"}
+                    data-plasmic-override={overrides.text}
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__olXoE
+                      sty.text
                     )}
                   >
                     <React.Fragment>
@@ -234,24 +238,32 @@ function PlasmicAdicionaAmigo__RenderFunc(props: {
                     </React.Fragment>
                   </div>
 
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__rYzBc
-                    )}
-                  >
-                    {"Você pode adicionar amigos pelo nome de usuário ou email"}
-                  </div>
+                  {true ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__yU1Po)}
+                    >
+                      <TextInput
+                        data-plasmic-name={"busca"}
+                        data-plasmic-override={overrides.busca}
+                        className={classNames("__wab_instance", sty.busca)}
+                        color={"dark" as const}
+                        id={"buscaAmigo" as const}
+                        placeholder={
+                          "Você pode adicionar amigos pelo nome de usuário ou email" as const
+                        }
+                        showStartIcon={true}
+                      />
 
-                  <TextInput
-                    data-plasmic-name={"busca"}
-                    data-plasmic-override={overrides.busca}
-                    className={classNames("__wab_instance", sty.busca)}
-                    color={"dark" as const}
-                    id={"buscaAmigo" as const}
-                    showStartIcon={true}
-                  />
+                      <Button
+                        data-plasmic-name={"confirma"}
+                        data-plasmic-override={overrides.confirma}
+                        className={classNames("__wab_instance", sty.confirma)}
+                        color={"yellow" as const}
+                      >
+                        {"Buscar"}
+                      </Button>
+                    </div>
+                  ) : null}
 
                   <div
                     data-plasmic-name={"usuarios"}
@@ -274,15 +286,27 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "userPhoto",
+    "text",
     "h4",
     "busca",
+    "confirma",
     "usuarios"
   ],
   headerLogged: ["headerLogged"],
-  columns: ["columns", "userPhoto", "h4", "busca", "usuarios"],
+  columns: [
+    "columns",
+    "userPhoto",
+    "text",
+    "h4",
+    "busca",
+    "confirma",
+    "usuarios"
+  ],
   userPhoto: ["userPhoto"],
+  text: ["text", "h4"],
   h4: ["h4"],
   busca: ["busca"],
+  confirma: ["confirma"],
   usuarios: ["usuarios"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -293,8 +317,10 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   userPhoto: typeof UserPhoto;
+  text: "div";
   h4: "h4";
   busca: typeof TextInput;
+  confirma: typeof Button;
   usuarios: "div";
 };
 
@@ -362,8 +388,10 @@ export const PlasmicAdicionaAmigo = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     userPhoto: makeNodeComponent("userPhoto"),
+    text: makeNodeComponent("text"),
     h4: makeNodeComponent("h4"),
     busca: makeNodeComponent("busca"),
+    confirma: makeNodeComponent("confirma"),
     usuarios: makeNodeComponent("usuarios"),
 
     // Metadata about props expected for PlasmicAdicionaAmigo
