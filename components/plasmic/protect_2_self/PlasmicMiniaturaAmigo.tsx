@@ -47,11 +47,11 @@ import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3
 
 export type PlasmicMiniaturaAmigo__VariantMembers = {
   emGrupo: "adm" | "visaoDoAdm" | "visaoMembros";
-  naLista: "sim";
+  naLista: "sim" | "adicionar";
 };
 export type PlasmicMiniaturaAmigo__VariantsArgs = {
   emGrupo?: SingleChoiceArg<"adm" | "visaoDoAdm" | "visaoMembros">;
-  naLista?: SingleChoiceArg<"sim">;
+  naLista?: SingleChoiceArg<"sim" | "adicionar">;
 };
 type VariantPropType = keyof PlasmicMiniaturaAmigo__VariantsArgs;
 export const PlasmicMiniaturaAmigo__VariantProps = new Array<VariantPropType>(
@@ -75,12 +75,14 @@ export type PlasmicMiniaturaAmigo__OverridesType = {
   img?: p.Flex<typeof p.PlasmicImg>;
   medalha?: p.Flex<typeof Medalha>;
   remove?: p.Flex<typeof Button>;
+  adiciona?: p.Flex<typeof Button>;
+  svg?: p.Flex<"svg">;
 };
 
 export interface DefaultMiniaturaAmigoProps {
   children?: React.ReactNode;
   emGrupo?: SingleChoiceArg<"adm" | "visaoDoAdm" | "visaoMembros">;
-  naLista?: SingleChoiceArg<"sim">;
+  naLista?: SingleChoiceArg<"sim" | "adicionar">;
   className?: string;
 }
 
@@ -147,6 +149,11 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
             "emGrupo",
             "visaoMembros"
           ),
+          [sty.rootnaLista_adicionar]: hasVariant(
+            $state,
+            "naLista",
+            "adicionar"
+          ),
           [sty.rootnaLista_sim]: hasVariant($state, "naLista", "sim")
         }
       )}
@@ -180,6 +187,11 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
         data-plasmic-override={overrides.freeBox}
         className={classNames(projectcss.all, sty.freeBox, {
           [sty.freeBoxemGrupo_adm]: hasVariant($state, "emGrupo", "adm"),
+          [sty.freeBoxnaLista_adicionar]: hasVariant(
+            $state,
+            "naLista",
+            "adicionar"
+          ),
           [sty.freeBoxnaLista_sim]: hasVariant($state, "naLista", "sim")
         })}
       >
@@ -189,6 +201,11 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
             projectcss.__wab_text,
             sty.text__oTYaS,
             {
+              [sty.textnaLista_adicionar__oTYaSnwqZk]: hasVariant(
+                $state,
+                "naLista",
+                "adicionar"
+              ),
               [sty.textnaLista_sim__oTYaSdxs8M]: hasVariant(
                 $state,
                 "naLista",
@@ -236,13 +253,24 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
           </React.Fragment>
         </div>
 
-        {(hasVariant($state, "naLista", "sim") ? true : true) ? (
+        {(
+          hasVariant($state, "naLista", "adicionar")
+            ? true
+            : hasVariant($state, "naLista", "sim")
+            ? true
+            : true
+        ) ? (
           <div
             className={classNames(
               projectcss.all,
               projectcss.__wab_text,
               sty.text__mvQWr,
               {
+                [sty.textnaLista_adicionar__mvQWrnwqZk]: hasVariant(
+                  $state,
+                  "naLista",
+                  "adicionar"
+                ),
                 [sty.textnaLista_sim__mvQWrdxs8M]: hasVariant(
                   $state,
                   "naLista",
@@ -321,7 +349,13 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
           }}
         />
       ) : null}
-      {(hasVariant($state, "naLista", "sim") ? true : true) ? (
+      {(
+        hasVariant($state, "naLista", "adicionar")
+          ? true
+          : hasVariant($state, "naLista", "sim")
+          ? true
+          : true
+      ) ? (
         <Medalha
           data-plasmic-name={"medalha"}
           data-plasmic-override={overrides.medalha}
@@ -336,6 +370,11 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
               $state,
               "emGrupo",
               "visaoMembros"
+            ),
+            [sty.medalhanaLista_adicionar]: hasVariant(
+              $state,
+              "naLista",
+              "adicionar"
             ),
             [sty.medalhanaLista_sim]: hasVariant($state, "naLista", "sim")
           })}
@@ -357,10 +396,56 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
               "emGrupo",
               "visaoDoAdm"
             ),
+            [sty.removenaLista_adicionar]: hasVariant(
+              $state,
+              "naLista",
+              "adicionar"
+            ),
             [sty.removenaLista_sim]: hasVariant($state, "naLista", "sim")
           })}
         >
           {"X"}
+        </Button>
+      ) : null}
+      {(
+        hasVariant($state, "naLista", "adicionar")
+          ? true
+          : hasVariant($state, "naLista", "sim")
+          ? true
+          : hasVariant($state, "emGrupo", "visaoDoAdm")
+          ? true
+          : false
+      ) ? (
+        <Button
+          data-plasmic-name={"adiciona"}
+          data-plasmic-override={overrides.adiciona}
+          className={classNames("__wab_instance", sty.adiciona, {
+            [sty.adicionaemGrupo_visaoDoAdm]: hasVariant(
+              $state,
+              "emGrupo",
+              "visaoDoAdm"
+            ),
+            [sty.adicionanaLista_adicionar]: hasVariant(
+              $state,
+              "naLista",
+              "adicionar"
+            ),
+            [sty.adicionanaLista_sim]: hasVariant($state, "naLista", "sim")
+          })}
+          color={"yellow" as const}
+        >
+          <ChecksvgIcon
+            data-plasmic-name={"svg"}
+            data-plasmic-override={overrides.svg}
+            className={classNames(projectcss.all, sty.svg, {
+              [sty.svgnaLista_adicionar]: hasVariant(
+                $state,
+                "naLista",
+                "adicionar"
+              )
+            })}
+            role={"img"}
+          />
         </Button>
       ) : null}
     </div>
@@ -375,14 +460,18 @@ const PlasmicDescendants = {
     "metaUsuario",
     "img",
     "medalha",
-    "remove"
+    "remove",
+    "adiciona",
+    "svg"
   ],
   freeBox: ["freeBox", "nomeUsuario", "metaUsuario"],
   nomeUsuario: ["nomeUsuario"],
   metaUsuario: ["metaUsuario"],
   img: ["img"],
   medalha: ["medalha"],
-  remove: ["remove"]
+  remove: ["remove"],
+  adiciona: ["adiciona", "svg"],
+  svg: ["svg"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -395,6 +484,8 @@ type NodeDefaultElementType = {
   img: typeof p.PlasmicImg;
   medalha: typeof Medalha;
   remove: typeof Button;
+  adiciona: typeof Button;
+  svg: "svg";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -464,6 +555,8 @@ export const PlasmicMiniaturaAmigo = Object.assign(
     img: makeNodeComponent("img"),
     medalha: makeNodeComponent("medalha"),
     remove: makeNodeComponent("remove"),
+    adiciona: makeNodeComponent("adiciona"),
+    svg: makeNodeComponent("svg"),
 
     // Metadata about props expected for PlasmicMiniaturaAmigo
     internalVariantProps: PlasmicMiniaturaAmigo__VariantProps,

@@ -14,6 +14,10 @@
   padding: 8px;
   border: 1px solid #ababab;
 }
+.rootnaLista_adicionar {
+  align-items: center;
+  justify-content: flex-start;
+}
 .img___2FjJ {
   position: relative;
   object-fit: cover;
@@ -45,10 +49,16 @@
 .textnaLista_sim__oTYaSdxs8M {
   border-bottom-style: none;
 }
+.textnaLista_adicionar__oTYaSnwqZk {
+  border-bottom-style: none;
+}
 .nomeUsuario {
   color: #ffffff;
 }
 .textnaLista_sim__mvQWrdxs8M {
+  display: none;
+}
+.textnaLista_adicionar__mvQWrnwqZk {
   display: none;
 }
 .metaUsuario {
@@ -82,6 +92,9 @@
 .medalhanaLista_sim:global(.__wab_instance) {
   display: none;
 }
+.medalhanaLista_adicionar:global(.__wab_instance) {
+  display: none;
+}
 .text__uDlIv {
   padding-left: 8px;
 }
@@ -110,6 +123,42 @@
   height: 1em;
 }
 .svg___0M4Ta {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.adiciona:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  align-self: auto;
+  margin-left: 80px;
+  plasmic-display-none: true;
+}
+.adicionaemGrupo_visaoDoAdm:global(.__wab_instance) {
+  display: none;
+}
+.adicionanaLista_sim:global(.__wab_instance) {
+  display: none;
+}
+.adicionanaLista_adicionar:global(.__wab_instance) {
+  display: flex;
+}
+.svg___4LwZf {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  color: #000000;
+  width: 1em;
+  height: 1em;
+}
+.svg__eHrgj {
   position: relative;
   object-fit: cover;
   width: 1em;
