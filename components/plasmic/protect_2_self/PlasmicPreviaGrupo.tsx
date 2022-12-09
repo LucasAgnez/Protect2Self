@@ -64,9 +64,9 @@ export type PlasmicPreviaGrupo__OverridesType = {
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
   fotoPerfil?: p.Flex<typeof p.PlasmicImg>;
   nomeGrupo?: p.Flex<"h2">;
-  descricao?: p.Flex<"div">;
+  descricaoGrupo?: p.Flex<"div">;
   membros?: p.Flex<"div">;
-  button?: p.Flex<typeof Button>;
+  entrar?: p.Flex<typeof Button>;
 };
 
 export interface DefaultPreviaGrupoProps {}
@@ -210,7 +210,7 @@ function PlasmicPreviaGrupo__RenderFunc(props: {
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__cvWzn
+                              sty.text__tgnin
                             )}
                           >
                             <React.Fragment>
@@ -242,67 +242,75 @@ function PlasmicPreviaGrupo__RenderFunc(props: {
                             </React.Fragment>
                           </div>
 
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__vyguU
-                            )}
-                          >
-                            <React.Fragment>
-                              <React.Fragment>{""}</React.Fragment>
-                              {
-                                <h5
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.h5,
-                                    projectcss.__wab_text,
-                                    sty.h5__pLsbi
-                                  )}
-                                >
-                                  <React.Fragment>
-                                    <span
-                                      className={
-                                        "plasmic_default__all plasmic_default__span"
-                                      }
-                                      style={{ color: "#FFFFFF" }}
-                                    >
-                                      {"Descrição:"}
-                                    </span>
-                                  </React.Fragment>
-                                </h5>
-                              }
-                              <React.Fragment>{""}</React.Fragment>
-                            </React.Fragment>
-                          </div>
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__ygGp3
-                            )}
-                          >
+                          {(
+                            hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? true
+                              : true
+                          ) ? (
                             <div
-                              data-plasmic-name={"descricao"}
-                              data-plasmic-override={overrides.descricao}
                               className={classNames(
                                 projectcss.all,
-                                projectcss.__wab_text,
-                                sty.descricao
+                                sty.freeBox__mqV65
                               )}
                             >
-                              <React.Fragment>
-                                <span
-                                  className={
-                                    "plasmic_default__all plasmic_default__span"
-                                  }
-                                  style={{ color: "#C9C9C9" }}
+                              {true ? (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__t5CIi
+                                  )}
                                 >
-                                  {"Enter some text"}
-                                </span>
-                              </React.Fragment>
+                                  <div
+                                    data-plasmic-name={"descricaoGrupo"}
+                                    data-plasmic-override={
+                                      overrides.descricaoGrupo
+                                    }
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.descricaoGrupo
+                                    )}
+                                  >
+                                    {"texto"}
+                                  </div>
+                                </div>
+                              ) : null}
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__ryqci
+                                )}
+                              >
+                                <React.Fragment>
+                                  <React.Fragment>{""}</React.Fragment>
+                                  {
+                                    <h5
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.h5,
+                                        projectcss.__wab_text,
+                                        sty.h5__xna8F
+                                      )}
+                                    >
+                                      <React.Fragment>
+                                        <span
+                                          className={
+                                            "plasmic_default__all plasmic_default__span"
+                                          }
+                                          style={{ color: "#757575" }}
+                                        >
+                                          {"Descrição:"}
+                                        </span>
+                                      </React.Fragment>
+                                    </h5>
+                                  }
+                                  <React.Fragment>{""}</React.Fragment>
+                                </React.Fragment>
+                              </div>
                             </div>
-                          </div>
+                          ) : null}
 
                           <div
                             className={classNames(
@@ -345,12 +353,12 @@ function PlasmicPreviaGrupo__RenderFunc(props: {
                           />
 
                           <Button
-                            data-plasmic-name={"button"}
-                            data-plasmic-override={overrides.button}
-                            className={classNames("__wab_instance", sty.button)}
+                            data-plasmic-name={"entrar"}
+                            data-plasmic-override={overrides.entrar}
+                            className={classNames("__wab_instance", sty.entrar)}
                             color={"yellow" as const}
                           >
-                            {"Adicionar"}
+                            {"Entrar"}
                           </Button>
                         </div>
                       </div>
@@ -374,9 +382,9 @@ const PlasmicDescendants = {
     "botoesMenuPrincipal",
     "fotoPerfil",
     "nomeGrupo",
-    "descricao",
+    "descricaoGrupo",
     "membros",
-    "button"
+    "entrar"
   ],
   headerLogged: ["headerLogged"],
   columns: [
@@ -384,16 +392,16 @@ const PlasmicDescendants = {
     "botoesMenuPrincipal",
     "fotoPerfil",
     "nomeGrupo",
-    "descricao",
+    "descricaoGrupo",
     "membros",
-    "button"
+    "entrar"
   ],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
   fotoPerfil: ["fotoPerfil"],
   nomeGrupo: ["nomeGrupo"],
-  descricao: ["descricao"],
+  descricaoGrupo: ["descricaoGrupo"],
   membros: ["membros"],
-  button: ["button"]
+  entrar: ["entrar"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -405,9 +413,9 @@ type NodeDefaultElementType = {
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
   fotoPerfil: typeof p.PlasmicImg;
   nomeGrupo: "h2";
-  descricao: "div";
+  descricaoGrupo: "div";
   membros: "div";
-  button: typeof Button;
+  entrar: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -476,9 +484,9 @@ export const PlasmicPreviaGrupo = Object.assign(
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
     fotoPerfil: makeNodeComponent("fotoPerfil"),
     nomeGrupo: makeNodeComponent("nomeGrupo"),
-    descricao: makeNodeComponent("descricao"),
+    descricaoGrupo: makeNodeComponent("descricaoGrupo"),
     membros: makeNodeComponent("membros"),
-    button: makeNodeComponent("button"),
+    entrar: makeNodeComponent("entrar"),
 
     // Metadata about props expected for PlasmicPreviaGrupo
     internalVariantProps: PlasmicPreviaGrupo__VariantProps,

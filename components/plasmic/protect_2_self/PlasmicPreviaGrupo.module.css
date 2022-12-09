@@ -180,23 +180,34 @@
   min-width: 0;
   padding: 8px;
 }
-.text__cvWzn {
-  position: relative;
-  width: auto;
-  height: auto;
-  max-width: 800px;
-}
-.nomeGrupo {
-  width: auto;
-}
-.text__vyguU {
-  position: relative;
+.text__tgnin {
   width: 100%;
   height: auto;
   max-width: 800px;
   min-width: 0;
 }
-.freeBox__ygGp3 {
+.freeBox__mqV65 {
+  display: flex;
+  position: relative;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  overflow: auto;
+  background: #000000;
+  min-width: 0;
+  padding: 8px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox__mqV65 {
+    height: auto;
+    display: flex;
+    padding: 18px 0px 38px;
+  }
+}
+.freeBox__t5CIi {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -205,12 +216,19 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  background: #1a1a1a;
+  background: #9d9d9d;
   min-width: 0;
-  border-radius: 6px;
+  border-radius: 10px;
   padding: 8px;
 }
-.descricao {
+.descricaoGrupo {
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  color: #2b2b2b;
+  min-width: 0;
+}
+.text__ryqci {
   position: relative;
   width: 100%;
   height: auto;
@@ -237,7 +255,7 @@
   min-width: 0;
   padding: 8px;
 }
-.button:global(.__wab_instance) {
+.entrar:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin-top: 30px;

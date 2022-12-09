@@ -131,7 +131,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .column__h8E8X {
-    display: none;
+    display: flex;
   }
 }
 .freeBox__t9X30 {
@@ -148,6 +148,11 @@
   min-width: 0;
   flex-shrink: 0;
   padding: 50px 90px;
+}
+@media (max-width: 1029px) {
+  .freeBox__t9X30 {
+    padding: 50px;
+  }
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .freeBox__t9X30 {
