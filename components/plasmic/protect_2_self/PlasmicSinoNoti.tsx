@@ -55,7 +55,7 @@ export const PlasmicSinoNoti__ArgProps = new Array<ArgPropType>();
 export type PlasmicSinoNoti__OverridesType = {
   root?: p.Flex<"div">;
   antdMenu?: p.Flex<typeof Menu>;
-  antdSubMenu?: p.Flex<typeof SubMenu>;
+  submenu?: p.Flex<typeof SubMenu>;
   img?: p.Flex<typeof p.PlasmicImg>;
   antdMenuItem?: p.Flex<typeof MenuItem>;
   text?: p.Flex<"div">;
@@ -108,9 +108,9 @@ function PlasmicSinoNoti__RenderFunc(props: {
         theme={"dark" as const}
       >
         <SubMenu
-          data-plasmic-name={"antdSubMenu"}
-          data-plasmic-override={overrides.antdSubMenu}
-          className={classNames("__wab_instance", sty.antdSubMenu)}
+          data-plasmic-name={"submenu"}
+          data-plasmic-override={overrides.submenu}
+          className={classNames("__wab_instance", sty.submenu)}
           key={"subMenuKey" as const}
           title={
             <p.PlasmicImg
@@ -159,9 +159,9 @@ function PlasmicSinoNoti__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "antdMenu", "antdSubMenu", "img", "antdMenuItem", "text"],
-  antdMenu: ["antdMenu", "antdSubMenu", "img", "antdMenuItem", "text"],
-  antdSubMenu: ["antdSubMenu", "img", "antdMenuItem", "text"],
+  root: ["root", "antdMenu", "submenu", "img", "antdMenuItem", "text"],
+  antdMenu: ["antdMenu", "submenu", "img", "antdMenuItem", "text"],
+  submenu: ["submenu", "img", "antdMenuItem", "text"],
   img: ["img"],
   antdMenuItem: ["antdMenuItem", "text"],
   text: ["text"]
@@ -172,7 +172,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   antdMenu: typeof Menu;
-  antdSubMenu: typeof SubMenu;
+  submenu: typeof SubMenu;
   img: typeof p.PlasmicImg;
   antdMenuItem: typeof MenuItem;
   text: "div";
@@ -240,7 +240,7 @@ export const PlasmicSinoNoti = Object.assign(
   {
     // Helper components rendering sub-elements
     antdMenu: makeNodeComponent("antdMenu"),
-    antdSubMenu: makeNodeComponent("antdSubMenu"),
+    submenu: makeNodeComponent("submenu"),
     img: makeNodeComponent("img"),
     antdMenuItem: makeNodeComponent("antdMenuItem"),
     text: makeNodeComponent("text"),

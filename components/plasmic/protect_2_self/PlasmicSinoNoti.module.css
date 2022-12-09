@@ -12,7 +12,7 @@
   object-fit: cover;
   position: relative;
 }
-.antdSubMenu:global(.__wab_instance) {
+.submenu:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   background: #000000;
