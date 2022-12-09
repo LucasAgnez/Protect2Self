@@ -1,11 +1,12 @@
 .root {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   position: relative;
-  width: auto;
+  width: 100%;
   height: auto;
   justify-content: flex-start;
   align-items: center;
+  min-width: 0;
 }
 .freeBox {
   display: flex;
@@ -63,6 +64,12 @@
 }
 .adicionatipo_amizade:global(.__wab_instance) {
   display: flex;
+}
+.adicionatipo_grupo:global(.__wab_instance) {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  margin: 0px;
 }
 .svg___9WsTc {
   position: relative;

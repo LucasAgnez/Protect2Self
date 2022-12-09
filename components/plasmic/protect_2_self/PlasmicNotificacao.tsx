@@ -268,7 +268,8 @@ function PlasmicNotificacao__RenderFunc(props: {
             data-plasmic-name={"adiciona"}
             data-plasmic-override={overrides.adiciona}
             className={classNames("__wab_instance", sty.adiciona, {
-              [sty.adicionatipo_amizade]: hasVariant($state, "tipo", "amizade")
+              [sty.adicionatipo_amizade]: hasVariant($state, "tipo", "amizade"),
+              [sty.adicionatipo_grupo]: hasVariant($state, "tipo", "grupo")
             })}
             color={"yellow" as const}
             shape={"round" as const}
