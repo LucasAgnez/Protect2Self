@@ -35,11 +35,20 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
+import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
+import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
+import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
+
+import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import: 8XuJZfnuNd7UvNkkshapC6/projectcss
 import sty from "./PlasmicListaDeAmigos.module.css"; // plasmic-import: hXP-9YKRw2/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
+import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 
 export type PlasmicListaDeAmigos__VariantMembers = {};
 export type PlasmicListaDeAmigos__VariantsArgs = {};
@@ -53,6 +62,11 @@ export const PlasmicListaDeAmigos__ArgProps = new Array<ArgPropType>();
 export type PlasmicListaDeAmigos__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
+  columns?: p.Flex<"div">;
+  userPhoto?: p.Flex<typeof UserPhoto>;
+  text?: p.Flex<"div">;
+  h2?: p.Flex<"h2">;
+  busca?: p.Flex<typeof TextInput>;
   container?: p.Flex<"div">;
 };
 
@@ -78,6 +92,10 @@ function PlasmicListaDeAmigos__RenderFunc(props: {
   const currentUser = p.useCurrentUser?.() || {};
 
   const [$queries, setDollarQueries] = React.useState({});
+
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantswwY5HaVRu8X4()
+  });
 
   return (
     <React.Fragment>
@@ -110,11 +128,144 @@ function PlasmicListaDeAmigos__RenderFunc(props: {
             className={classNames("__wab_instance", sty.headerLogged)}
           />
 
-          <div
-            data-plasmic-name={"container"}
-            data-plasmic-override={overrides.container}
-            className={classNames(projectcss.all, sty.container)}
-          />
+          {true ? (
+            <div
+              data-plasmic-name={"columns"}
+              data-plasmic-override={overrides.columns}
+              className={classNames(projectcss.all, sty.columns)}
+            >
+              {true ? (
+                <div className={classNames(projectcss.all, sty.column__l3PCv)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__szAmg)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__pAtGo)}
+                    >
+                      <UserPhoto
+                        data-plasmic-name={"userPhoto"}
+                        data-plasmic-override={overrides.userPhoto}
+                        className={classNames("__wab_instance", sty.userPhoto)}
+                      />
+
+                      <Button
+                        className={classNames(
+                          "__wab_instance",
+                          sty.button__fEy8S
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Editar Perfil"
+                          : "Editar Foto"}
+                      </Button>
+                    </div>
+
+                    <Button
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button__r481Y
+                      )}
+                    >
+                      {"Adicionar Amigo"}
+                    </Button>
+
+                    <Button
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button___9FKkI
+                      )}
+                    >
+                      {"Meus Recordes"}
+                    </Button>
+
+                    <Button
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button___6BqP
+                      )}
+                    >
+                      {"Medalhas"}
+                    </Button>
+
+                    <Button
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button__aAZy2
+                      )}
+                    >
+                      {"Contatos"}
+                    </Button>
+                  </div>
+                </div>
+              ) : null}
+              {true ? (
+                <div className={classNames(projectcss.all, sty.column___00Tkd)}>
+                  <div
+                    data-plasmic-name={"text"}
+                    data-plasmic-override={overrides.text}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <h2
+                          data-plasmic-name={"h2"}
+                          data-plasmic-override={overrides.h2}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h2,
+                            projectcss.__wab_text,
+                            sty.h2
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "#FFFFFF" }}
+                            >
+                              {"Contatos:"}
+                            </span>
+                          </React.Fragment>
+                        </h2>
+                      }
+                      <React.Fragment>{""}</React.Fragment>
+                    </React.Fragment>
+                  </div>
+
+                  {true ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___0YtkZ
+                      )}
+                    >
+                      <TextInput
+                        data-plasmic-name={"busca"}
+                        data-plasmic-override={overrides.busca}
+                        className={classNames("__wab_instance", sty.busca)}
+                        color={"dark" as const}
+                        id={"buscaAmigo" as const}
+                        placeholder={"Busque seus amigos" as const}
+                        showStartIcon={true}
+                      />
+                    </div>
+                  ) : null}
+
+                  <div
+                    data-plasmic-name={"container"}
+                    data-plasmic-override={overrides.container}
+                    className={classNames(projectcss.all, sty.container)}
+                  />
+                </div>
+              ) : null}
+            </div>
+          ) : null}
         </div>
       </div>
     </React.Fragment>
@@ -122,8 +273,22 @@ function PlasmicListaDeAmigos__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "headerLogged", "container"],
+  root: [
+    "root",
+    "headerLogged",
+    "columns",
+    "userPhoto",
+    "text",
+    "h2",
+    "busca",
+    "container"
+  ],
   headerLogged: ["headerLogged"],
+  columns: ["columns", "userPhoto", "text", "h2", "busca", "container"],
+  userPhoto: ["userPhoto"],
+  text: ["text", "h2"],
+  h2: ["h2"],
+  busca: ["busca"],
   container: ["container"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -132,6 +297,11 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
+  columns: "div";
+  userPhoto: typeof UserPhoto;
+  text: "div";
+  h2: "h2";
+  busca: typeof TextInput;
   container: "div";
 };
 
@@ -197,6 +367,11 @@ export const PlasmicListaDeAmigos = Object.assign(
   {
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
+    columns: makeNodeComponent("columns"),
+    userPhoto: makeNodeComponent("userPhoto"),
+    text: makeNodeComponent("text"),
+    h2: makeNodeComponent("h2"),
+    busca: makeNodeComponent("busca"),
     container: makeNodeComponent("container"),
 
     // Metadata about props expected for PlasmicListaDeAmigos
