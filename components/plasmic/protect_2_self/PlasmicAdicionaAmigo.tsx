@@ -161,16 +161,13 @@ function PlasmicAdicionaAmigo__RenderFunc(props: {
                           ? "Editar Perfil"
                           : "Editar Foto"}
                       </Button>
-
-                      <BotoesPerfil
-                        data-plasmic-name={"botoesPerfil"}
-                        data-plasmic-override={overrides.botoesPerfil}
-                        className={classNames(
-                          "__wab_instance",
-                          sty.botoesPerfil
-                        )}
-                      />
                     </div>
+
+                    <BotoesPerfil
+                      data-plasmic-name={"botoesPerfil"}
+                      data-plasmic-override={overrides.botoesPerfil}
+                      className={classNames("__wab_instance", sty.botoesPerfil)}
+                    />
                   </div>
                 </div>
               ) : null}
