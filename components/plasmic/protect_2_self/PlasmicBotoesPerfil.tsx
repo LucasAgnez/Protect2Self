@@ -44,10 +44,16 @@ import sty from "./PlasmicBotoesPerfil.module.css"; // plasmic-import: RmM8H_pqL
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
-export type PlasmicBotoesPerfil__VariantMembers = {};
-export type PlasmicBotoesPerfil__VariantsArgs = {};
+export type PlasmicBotoesPerfil__VariantMembers = {
+  pagina: "perfil" | "medalhas" | "amigos" | "adicionarAmigo";
+};
+export type PlasmicBotoesPerfil__VariantsArgs = {
+  pagina?: MultiChoiceArg<"perfil" | "medalhas" | "amigos" | "adicionarAmigo">;
+};
 type VariantPropType = keyof PlasmicBotoesPerfil__VariantsArgs;
-export const PlasmicBotoesPerfil__VariantProps = new Array<VariantPropType>();
+export const PlasmicBotoesPerfil__VariantProps = new Array<VariantPropType>(
+  "pagina"
+);
 
 export type PlasmicBotoesPerfil__ArgsType = {};
 type ArgPropType = keyof PlasmicBotoesPerfil__ArgsType;
@@ -58,6 +64,7 @@ export type PlasmicBotoesPerfil__OverridesType = {
 };
 
 export interface DefaultBotoesPerfilProps {
+  pagina?: MultiChoiceArg<"perfil" | "medalhas" | "amigos" | "adicionarAmigo">;
   className?: string;
 }
 
@@ -80,6 +87,18 @@ function PlasmicBotoesPerfil__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "pagina",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.pagina
+      }
+    ],
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
   const [$queries, setDollarQueries] = React.useState({});
 
   return (
@@ -95,29 +114,79 @@ function PlasmicBotoesPerfil__RenderFunc(props: {
           projectcss.plasmic_default_styles,
           projectcss.plasmic_mixins,
           projectcss.plasmic_tokens,
-          sty.root
+          sty.root,
+          {
+            [sty.rootpagina_amigos]: hasVariant($state, "pagina", "amigos"),
+            [sty.rootpagina_medalhas]: hasVariant($state, "pagina", "medalhas")
+          }
         )}
       >
-        <Button
-          className={classNames("__wab_instance", sty.button__ntRu)}
-          link={`/adiciona-amigo`}
-        >
-          {"Adicionar Amigo"}
-        </Button>
-
-        <Button
-          className={classNames("__wab_instance", sty.button__hLi1V)}
-          link={`/pagina-de-medalhas`}
-        >
-          {"Medalhas"}
-        </Button>
-
-        <Button
-          className={classNames("__wab_instance", sty.button__j5Wgz)}
-          link={`/lista-de-amigos`}
-        >
-          {"Contatos"}
-        </Button>
+        {(hasVariant($state, "pagina", "adicionarAmigo") ? true : true) ? (
+          <Button
+            className={classNames("__wab_instance", sty.button__ntRu, {
+              [sty.buttonpagina_adicionarAmigo__ntRUcQq72]: hasVariant(
+                $state,
+                "pagina",
+                "adicionarAmigo"
+              ),
+              [sty.buttonpagina_medalhas__ntRUin8Q9]: hasVariant(
+                $state,
+                "pagina",
+                "medalhas"
+              )
+            })}
+            link={`/adiciona-amigo`}
+          >
+            {"Adicionar Amigo"}
+          </Button>
+        ) : null}
+        {(hasVariant($state, "pagina", "medalhas") ? true : true) ? (
+          <Button
+            className={classNames("__wab_instance", sty.button__hLi1V, {
+              [sty.buttonpagina_medalhas__hLi1Vin8Q9]: hasVariant(
+                $state,
+                "pagina",
+                "medalhas"
+              )
+            })}
+            link={`/pagina-de-medalhas`}
+          >
+            {"Medalhas"}
+          </Button>
+        ) : null}
+        {(hasVariant($state, "pagina", "amigos") ? true : true) ? (
+          <Button
+            className={classNames("__wab_instance", sty.button__j5Wgz, {
+              [sty.buttonpagina_amigos__j5WgzDExTi]: hasVariant(
+                $state,
+                "pagina",
+                "amigos"
+              )
+            })}
+            link={`/lista-de-amigos`}
+          >
+            {"Contatos"}
+          </Button>
+        ) : null}
+        {(hasVariant($state, "pagina", "perfil") ? true : true) ? (
+          <Button
+            className={classNames("__wab_instance", sty.button__ebof0, {
+              [sty.buttonpagina_adicionarAmigo__ebof0CQq72]: hasVariant(
+                $state,
+                "pagina",
+                "adicionarAmigo"
+              ),
+              [sty.buttonpagina_perfil__ebof0Zmald]: hasVariant(
+                $state,
+                "pagina",
+                "perfil"
+              )
+            })}
+            link={`/perfil`}
+          >
+            {"Perfil"}
+          </Button>
+        ) : null}
       </div>
     ) : null
   ) as React.ReactElement | null;

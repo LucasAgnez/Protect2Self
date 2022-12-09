@@ -224,6 +224,11 @@ function PlasmicNotificacao__RenderFunc(props: {
                     projectcss.__wab_text,
                     sty.nomeUsuario,
                     {
+                      [sty.nomeUsuariotipo_amizade]: hasVariant(
+                        $state,
+                        "tipo",
+                        "amizade"
+                      ),
                       [sty.nomeUsuariotipo_grupo]: hasVariant(
                         $state,
                         "tipo",

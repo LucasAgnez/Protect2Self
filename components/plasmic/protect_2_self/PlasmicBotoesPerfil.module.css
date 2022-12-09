@@ -13,6 +13,9 @@
 .button__ntRu:global(.__wab_instance) {
   max-width: 100%;
 }
+.buttonpagina_adicionarAmigo__ntRUcQq72:global(.__wab_instance) {
+  display: none;
+}
 .svg__ifYyH {
   position: relative;
   object-fit: cover;
@@ -29,6 +32,9 @@
   max-width: 100%;
   position: relative;
   margin-top: 25px;
+}
+.buttonpagina_medalhas__hLi1Vin8Q9:global(.__wab_instance) {
+  display: none;
 }
 .svg___4LegK {
   position: relative;
@@ -47,6 +53,9 @@
   position: relative;
   margin-top: 25px;
 }
+.buttonpagina_amigos__j5WgzDExTi:global(.__wab_instance) {
+  display: none;
+}
 .svg__wvLq7 {
   position: relative;
   object-fit: cover;
@@ -54,6 +63,26 @@
   height: 1em;
 }
 .svg__hsVdb {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.button__ebof0:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  margin: 25px 0px 0px;
+}
+.buttonpagina_perfil__ebof0Zmald:global(.__wab_instance) {
+  display: none;
+}
+.svg__yxrnr {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__wGsfu {
   position: relative;
   object-fit: cover;
   width: 1em;
