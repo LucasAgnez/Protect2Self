@@ -50,6 +50,11 @@
   flex-direction: row;
   min-width: 0;
 }
+.nomeMeta {
+  color: #ffffff;
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .medalha:global(.__wab_instance) {
   position: relative;
   width: 30px;
