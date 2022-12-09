@@ -31,8 +31,6 @@ function MeusGrupos() {
   const [grupos, setGrupos] = useState<any[]>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error>();
-  const [notificacoes, setNotificacoes] = useState<any[]>();
-  const [notiSelecionada, setNotiSelecionada] = useState<number>()
 
   const router = useRouter()
 
@@ -43,10 +41,6 @@ function MeusGrupos() {
           "http://localhost:8080/grupo/getGrupos/" + localStorage.getItem('userId')
         );
         setGrupos(response.data);
-        const notis = await axios.get(
-          "http://localhost:8080/usuario/solicitacoesAmizade/" + localStorage.getItem('userId')
-        );
-        setNotificacoes(notis.data);
         setError(undefined);  
         console.log(grupos);
       } catch (err) {
@@ -87,10 +81,10 @@ function MeusGrupos() {
       <PlasmicMeusGrupos 
       container = {(loading || !grupos) ? {} :{ 
         children: grupos.map(entry => <MiniaturaGrupo 
-                                        onClick={() => (localStorage.setItem('grupoId', entry.id), router.push('/tela-grupo'))} 
-                                        slot={String(entry.nome)} slot3={String(entry.meta.nome)} 
-                                        slot2={"Sequencia atual: " + String(entry.meta.atual)}
-                                      />) 
+          onClick={() => (localStorage.setItem('grupoId', entry.id), router.push('/tela-grupo'))} 
+          slot={String(entry.nome)} slot3={String(entry.meta.nome)} 
+          slot2={"Sequencia atual: " + String(entry.meta.atual)}
+        />) 
       }}
       buscaGrupo = {{
         onChange : () => mostraGrupos()

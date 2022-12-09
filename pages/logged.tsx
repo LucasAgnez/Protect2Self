@@ -6,10 +6,6 @@ import * as ph from "@plasmicapp/host";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicInicial } from "../components/plasmic/protect_2_self/PlasmicInicial";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Sino__Option from "../components/Sino__Option";
-import { userAgent } from "next/server";
 
 function Inicial() {
   // Use PlasmicInicial to render this component as it was
@@ -28,49 +24,13 @@ function Inicial() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error>();
-  const [notificacoes, setNotificacoes] = useState<any[]>();
-  const [friend, setFriend] = useState();
-  const [notiSelecionada, setNotiSelecionada] = useState<number>()
-
-  const router = useRouter()
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const notis = await axios.get(
-          "http://localhost:8080/usuario/solicitacoesAmizade/" + localStorage.getItem('userId')
-);
-        setNotificacoes(notis.data);
-        setError(undefined);  
-      } catch (err) {
-        setError((err as any).message);
-        setNotificacoes([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-    getData();
-  }, []);
-  if (error) {
-    return <div>Error: {error.message}</div>
-  }
 
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-    <PlasmicInicial 
-      sino={(loading || !notificacoes) ? {} :{ 
-        children: notificacoes.map(entry => <Sino__Option 
-          children={String(entry.nomeAmigo) + " quer ser seu amigo!"} //texto 
-          value={String(entry.id)} 
-          color={"dark"}/>),
-          onChange: (e) => ((e && setNotiSelecionada(+e)), router.push('/previa-amigo'))
-      }}
-    />
+    <PlasmicInicial/>
     </ph.PageParamsProvider>
   );
 }

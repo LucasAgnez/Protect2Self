@@ -68,7 +68,7 @@ function TelaGrupo() {
 	}
 
   function expulsa(friendId: any){
-    axios.delete("http://localhost:8080/removeUser/" + localStorage.getItem('grupoId') + "/" + friendId)
+    axios.delete("http://localhost:8080/grupo/removeUser/" + localStorage.getItem('grupoId') + "/" + friendId)
   }
   
   function metaADM(){
