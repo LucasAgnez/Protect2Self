@@ -1,0 +1,41 @@
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  height: auto;
+  justify-content: flex-start;
+  align-items: center;
+}
+.antdMenu:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.antdSubMenu:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  background: #000000;
+}
+.img {
+  object-fit: cover;
+  max-width: 100%;
+  height: 116px;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+.img > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.antdMenuItem:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
+}

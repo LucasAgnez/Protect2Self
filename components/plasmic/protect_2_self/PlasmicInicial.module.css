@@ -119,14 +119,8 @@
   min-width: 0;
   padding: 8px;
 }
-.sino:global(.__wab_instance) {
+.sinoNoti:global(.__wab_instance) {
   max-width: 100%;
-  position: relative;
-}
-.option___0PcOc:global(.__wab_instance) {
-  position: relative;
-}
-.option__ulkB9:global(.__wab_instance) {
   position: relative;
 }
 .botoesMenuPrincipal:global(.__wab_instance) {

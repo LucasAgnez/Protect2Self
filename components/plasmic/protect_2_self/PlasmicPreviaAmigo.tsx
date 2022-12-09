@@ -35,8 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import Sino from "../../Sino"; // plasmic-import: 8ffeYo97RRO/component
-import Sino__Option from "../../Sino__Option"; // plasmic-import: jPpxgeQY5Gm/component
+import SinoNoti from "../../SinoNoti"; // plasmic-import: AxoJF9EP_M/component
 import BotoesMenuPrincipal from "../../BotoesMenuPrincipal"; // plasmic-import: 8PboOpLyrBm/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
@@ -62,7 +61,7 @@ export const PlasmicPreviaAmigo__ArgProps = new Array<ArgPropType>();
 export type PlasmicPreviaAmigo__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
-  sino?: p.Flex<typeof Sino>;
+  sinoNoti?: p.Flex<typeof SinoNoti>;
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
   fotoPerfil?: p.Flex<typeof p.PlasmicImg>;
   nomeUsuario?: p.Flex<"h2">;
@@ -152,11 +151,10 @@ function PlasmicPreviaAmigo__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__fiYjk)}
                   >
-                    <Sino
-                      data-plasmic-name={"sino"}
-                      data-plasmic-override={overrides.sino}
-                      className={classNames("__wab_instance", sty.sino)}
-                      color={"dark" as const}
+                    <SinoNoti
+                      data-plasmic-name={"sinoNoti"}
+                      data-plasmic-override={overrides.sinoNoti}
+                      className={classNames("__wab_instance", sty.sinoNoti)}
                     />
                   </div>
 
@@ -384,7 +382,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "headerLogged",
-    "sino",
+    "sinoNoti",
     "botoesMenuPrincipal",
     "fotoPerfil",
     "nomeUsuario",
@@ -393,7 +391,7 @@ const PlasmicDescendants = {
     "button"
   ],
   headerLogged: ["headerLogged"],
-  sino: ["sino"],
+  sinoNoti: ["sinoNoti"],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
   fotoPerfil: ["fotoPerfil"],
   nomeUsuario: ["nomeUsuario"],
@@ -407,7 +405,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
-  sino: typeof Sino;
+  sinoNoti: typeof SinoNoti;
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
   fotoPerfil: typeof p.PlasmicImg;
   nomeUsuario: "h2";
@@ -478,7 +476,7 @@ export const PlasmicPreviaAmigo = Object.assign(
   {
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
-    sino: makeNodeComponent("sino"),
+    sinoNoti: makeNodeComponent("sinoNoti"),
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
     fotoPerfil: makeNodeComponent("fotoPerfil"),
     nomeUsuario: makeNodeComponent("nomeUsuario"),

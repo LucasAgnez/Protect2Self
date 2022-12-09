@@ -35,8 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import Sino from "../../Sino"; // plasmic-import: 8ffeYo97RRO/component
-import Sino__Option from "../../Sino__Option"; // plasmic-import: jPpxgeQY5Gm/component
+import SinoNoti from "../../SinoNoti"; // plasmic-import: AxoJF9EP_M/component
 import BotoesMenuPrincipal from "../../BotoesMenuPrincipal"; // plasmic-import: 8PboOpLyrBm/component
 import MiniaturaMeta from "../../MiniaturaMeta"; // plasmic-import: LQeW26Vvq3/component
 import MiniaturaGrupo from "../../MiniaturaGrupo"; // plasmic-import: QylFKCNC0eW/component
@@ -61,7 +60,7 @@ export type PlasmicInicial__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
-  sino?: p.Flex<typeof Sino>;
+  sinoNoti?: p.Flex<typeof SinoNoti>;
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
   text?: p.Flex<"div">;
 };
@@ -151,11 +150,10 @@ function PlasmicInicial__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__cVohZ)}
                   >
-                    <Sino
-                      data-plasmic-name={"sino"}
-                      data-plasmic-override={overrides.sino}
-                      className={classNames("__wab_instance", sty.sino)}
-                      color={"dark" as const}
+                    <SinoNoti
+                      data-plasmic-name={"sinoNoti"}
+                      data-plasmic-override={overrides.sinoNoti}
+                      className={classNames("__wab_instance", sty.sinoNoti)}
                     />
                   </div>
 
@@ -276,13 +274,13 @@ const PlasmicDescendants = {
     "root",
     "headerLogged",
     "columns",
-    "sino",
+    "sinoNoti",
     "botoesMenuPrincipal",
     "text"
   ],
   headerLogged: ["headerLogged"],
-  columns: ["columns", "sino", "botoesMenuPrincipal", "text"],
-  sino: ["sino"],
+  columns: ["columns", "sinoNoti", "botoesMenuPrincipal", "text"],
+  sinoNoti: ["sinoNoti"],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
   text: ["text"]
 } as const;
@@ -293,7 +291,7 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   columns: "div";
-  sino: typeof Sino;
+  sinoNoti: typeof SinoNoti;
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
   text: "div";
 };
@@ -361,7 +359,7 @@ export const PlasmicInicial = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
-    sino: makeNodeComponent("sino"),
+    sinoNoti: makeNodeComponent("sinoNoti"),
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
     text: makeNodeComponent("text"),
 

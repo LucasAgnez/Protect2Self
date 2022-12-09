@@ -978,62 +978,6 @@
           "componentType": "page"
         },
         {
-          "id": "8ffeYo97RRO",
-          "name": "Sino",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicSino.tsx",
-          "importSpec": {
-            "modulePath": "Sino.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicSino.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "select"
-        },
-        {
-          "id": "jPpxgeQY5Gm",
-          "name": "Sino__Option",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicSino__Option.tsx",
-          "importSpec": {
-            "modulePath": "Sino__Option.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicSino__Option.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "select-option"
-        },
-        {
-          "id": "9AcmA_j1nRh",
-          "name": "Sino__OptionGroup",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicSino__OptionGroup.tsx",
-          "importSpec": {
-            "modulePath": "Sino__OptionGroup.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicSino__OptionGroup.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "select-option-group"
-        },
-        {
-          "id": "q50cH6iT0uW",
-          "name": "Sino__Overlay",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicSino__Overlay.tsx",
-          "importSpec": {
-            "modulePath": "Sino__Overlay.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicSino__Overlay.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "triggered-overlay"
-        },
-        {
           "id": "RmM8H_pqLGC",
           "name": "BotoesPerfil",
           "type": "managed",
@@ -1071,6 +1015,19 @@
           "cssFilePath": "plasmic/protect_2_self/PlasmicPreviaGrupo.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "AxoJF9EP_M",
+          "name": "SinoNoti",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicSinoNoti.tsx",
+          "importSpec": {
+            "modulePath": "SinoNoti.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicSinoNoti.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
