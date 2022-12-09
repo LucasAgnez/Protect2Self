@@ -37,6 +37,7 @@ import {
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
 import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
+import BotoesPerfil from "../../BotoesPerfil"; // plasmic-import: RmM8H_pqLGC/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
@@ -63,6 +64,8 @@ export type PlasmicPaginaDeMedalhas__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
+  button?: p.Flex<typeof Button>;
+  botoesPerfil?: p.Flex<typeof BotoesPerfil>;
   text?: p.Flex<"div">;
   h2?: p.Flex<"h2">;
   container?: p.Flex<"div">;
@@ -147,10 +150,9 @@ function PlasmicPaginaDeMedalhas__RenderFunc(props: {
                       />
 
                       <Button
-                        className={classNames(
-                          "__wab_instance",
-                          sty.button__gFdHy
-                        )}
+                        data-plasmic-name={"button"}
+                        data-plasmic-override={overrides.button}
+                        className={classNames("__wab_instance", sty.button)}
                       >
                         {hasVariant(globalVariants, "screen", "mobileOnly")
                           ? "Editar Perfil"
@@ -158,41 +160,16 @@ function PlasmicPaginaDeMedalhas__RenderFunc(props: {
                       </Button>
                     </div>
 
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__p8Awh
-                      )}
-                    >
-                      {"Adicionar Amigo"}
-                    </Button>
-
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__weXgp
-                      )}
-                    >
-                      {"Meus Recordes"}
-                    </Button>
-
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__rysSr
-                      )}
-                    >
-                      {"Medalhas"}
-                    </Button>
-
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__w2Jsj
-                      )}
-                    >
-                      {"Contatos"}
-                    </Button>
+                    {true ? (
+                      <BotoesPerfil
+                        data-plasmic-name={"botoesPerfil"}
+                        data-plasmic-override={overrides.botoesPerfil}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.botoesPerfil
+                        )}
+                      />
+                    ) : null}
                   </div>
                 </div>
               ) : null}
@@ -257,13 +234,25 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "userPhoto",
+    "button",
+    "botoesPerfil",
     "text",
     "h2",
     "container"
   ],
   headerLogged: ["headerLogged"],
-  columns: ["columns", "userPhoto", "text", "h2", "container"],
+  columns: [
+    "columns",
+    "userPhoto",
+    "button",
+    "botoesPerfil",
+    "text",
+    "h2",
+    "container"
+  ],
   userPhoto: ["userPhoto"],
+  button: ["button"],
+  botoesPerfil: ["botoesPerfil"],
   text: ["text", "h2"],
   h2: ["h2"],
   container: ["container"]
@@ -276,6 +265,8 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   userPhoto: typeof UserPhoto;
+  button: typeof Button;
+  botoesPerfil: typeof BotoesPerfil;
   text: "div";
   h2: "h2";
   container: "div";
@@ -345,6 +336,8 @@ export const PlasmicPaginaDeMedalhas = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     userPhoto: makeNodeComponent("userPhoto"),
+    button: makeNodeComponent("button"),
+    botoesPerfil: makeNodeComponent("botoesPerfil"),
     text: makeNodeComponent("text"),
     h2: makeNodeComponent("h2"),
     container: makeNodeComponent("container"),

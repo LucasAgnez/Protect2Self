@@ -1032,6 +1032,45 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "triggered-overlay"
+        },
+        {
+          "id": "RmM8H_pqLGC",
+          "name": "BotoesPerfil",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicBotoesPerfil.tsx",
+          "importSpec": {
+            "modulePath": "BotoesPerfil.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicBotoesPerfil.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "gEkBigb_MQN",
+          "name": "PreviaAmigo",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicPreviaAmigo.tsx",
+          "importSpec": {
+            "modulePath": "../pages/previa-amigo.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicPreviaAmigo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "ZRQuop94HB5",
+          "name": "PreviaGrupo",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicPreviaGrupo.tsx",
+          "importSpec": {
+            "modulePath": "../pages/previa-grupo.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicPreviaGrupo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [

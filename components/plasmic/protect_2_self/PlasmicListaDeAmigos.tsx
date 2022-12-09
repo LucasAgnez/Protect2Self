@@ -37,6 +37,7 @@ import {
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
 import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
+import BotoesPerfil from "../../BotoesPerfil"; // plasmic-import: RmM8H_pqLGC/component
 import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
@@ -64,6 +65,8 @@ export type PlasmicListaDeAmigos__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
+  button?: p.Flex<typeof Button>;
+  botoesPerfil?: p.Flex<typeof BotoesPerfil>;
   text?: p.Flex<"div">;
   h2?: p.Flex<"h2">;
   busca?: p.Flex<typeof TextInput>;
@@ -149,53 +152,22 @@ function PlasmicListaDeAmigos__RenderFunc(props: {
                       />
 
                       <Button
-                        className={classNames(
-                          "__wab_instance",
-                          sty.button__fEy8S
-                        )}
+                        data-plasmic-name={"button"}
+                        data-plasmic-override={overrides.button}
+                        className={classNames("__wab_instance", sty.button)}
                       >
                         {hasVariant(globalVariants, "screen", "mobileOnly")
                           ? "Editar Perfil"
                           : "Editar Foto"}
                       </Button>
                     </div>
-
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__r481Y
-                      )}
-                    >
-                      {"Adicionar Amigo"}
-                    </Button>
-
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button___9FKkI
-                      )}
-                    >
-                      {"Meus Recordes"}
-                    </Button>
-
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button___6BqP
-                      )}
-                    >
-                      {"Medalhas"}
-                    </Button>
-
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__aAZy2
-                      )}
-                    >
-                      {"Contatos"}
-                    </Button>
                   </div>
+
+                  <BotoesPerfil
+                    data-plasmic-name={"botoesPerfil"}
+                    data-plasmic-override={overrides.botoesPerfil}
+                    className={classNames("__wab_instance", sty.botoesPerfil)}
+                  />
                 </div>
               ) : null}
               {true ? (
@@ -278,14 +250,27 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "userPhoto",
+    "button",
+    "botoesPerfil",
     "text",
     "h2",
     "busca",
     "container"
   ],
   headerLogged: ["headerLogged"],
-  columns: ["columns", "userPhoto", "text", "h2", "busca", "container"],
+  columns: [
+    "columns",
+    "userPhoto",
+    "button",
+    "botoesPerfil",
+    "text",
+    "h2",
+    "busca",
+    "container"
+  ],
   userPhoto: ["userPhoto"],
+  button: ["button"],
+  botoesPerfil: ["botoesPerfil"],
   text: ["text", "h2"],
   h2: ["h2"],
   busca: ["busca"],
@@ -299,6 +284,8 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   userPhoto: typeof UserPhoto;
+  button: typeof Button;
+  botoesPerfil: typeof BotoesPerfil;
   text: "div";
   h2: "h2";
   busca: typeof TextInput;
@@ -369,6 +356,8 @@ export const PlasmicListaDeAmigos = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     userPhoto: makeNodeComponent("userPhoto"),
+    button: makeNodeComponent("button"),
+    botoesPerfil: makeNodeComponent("botoesPerfil"),
     text: makeNodeComponent("text"),
     h2: makeNodeComponent("h2"),
     busca: makeNodeComponent("busca"),

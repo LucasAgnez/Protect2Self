@@ -133,13 +133,13 @@
 .img__oCgMo > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
-.button__fEy8S:global(.__wab_instance) {
+.button:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin-top: 5px;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .button__fEy8S:global(.__wab_instance) {
+  .button:global(.__wab_instance) {
     width: 130px;
   }
 }
@@ -155,73 +155,9 @@
   width: 1em;
   height: 1em;
 }
-.button__r481Y:global(.__wab_instance) {
+.botoesPerfil:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
-  margin-top: 25px;
-}
-.svg__hluDu {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__cluh0 {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.button___9FKkI:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  margin-top: 30px;
-}
-.svg__ljDfi {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__kBDnZ {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.button___6BqP:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  margin-top: 25px;
-}
-.svg__lZu6Q {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__zIJy {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.button__aAZy2:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  margin-top: 25px;
-}
-.svg__o2YrU {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__uc1K {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
 }
 .column___00Tkd {
   display: flex;

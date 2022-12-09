@@ -37,6 +37,7 @@ import {
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
 import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
+import BotoesPerfil from "../../BotoesPerfil"; // plasmic-import: RmM8H_pqLGC/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
@@ -62,6 +63,8 @@ export type PlasmicPerfil__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
+  button?: p.Flex<typeof Button>;
+  botoesPerfil?: p.Flex<typeof BotoesPerfil>;
   campoUsername?: p.Flex<"div">;
   username?: p.Flex<"h4">;
   botaoEditar?: p.Flex<typeof Button>;
@@ -153,10 +156,9 @@ function PlasmicPerfil__RenderFunc(props: {
                       />
 
                       <Button
-                        className={classNames(
-                          "__wab_instance",
-                          sty.button___0ScVj
-                        )}
+                        data-plasmic-name={"button"}
+                        data-plasmic-override={overrides.button}
+                        className={classNames("__wab_instance", sty.button)}
                       >
                         {hasVariant(globalVariants, "screen", "mobileOnly")
                           ? "Editar Perfil"
@@ -164,44 +166,11 @@ function PlasmicPerfil__RenderFunc(props: {
                       </Button>
                     </div>
 
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button___4TgY3
-                      )}
-                      link={`/adiciona-amigo`}
-                    >
-                      {"Adicionar Amigo"}
-                    </Button>
-
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__xvJuO
-                      )}
-                    >
-                      {"Meus Recordes"}
-                    </Button>
-
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__hFbzL
-                      )}
-                      link={`/pagina-de-medalhas`}
-                    >
-                      {"Medalhas"}
-                    </Button>
-
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button___57AUc
-                      )}
-                      link={`/lista-de-amigos`}
-                    >
-                      {"Contatos"}
-                    </Button>
+                    <BotoesPerfil
+                      data-plasmic-name={"botoesPerfil"}
+                      data-plasmic-override={overrides.botoesPerfil}
+                      className={classNames("__wab_instance", sty.botoesPerfil)}
+                    />
                   </div>
                 </div>
               ) : null}
@@ -469,6 +438,8 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "userPhoto",
+    "button",
+    "botoesPerfil",
     "campoUsername",
     "username",
     "botaoEditar",
@@ -484,6 +455,8 @@ const PlasmicDescendants = {
   columns: [
     "columns",
     "userPhoto",
+    "button",
+    "botoesPerfil",
     "campoUsername",
     "username",
     "botaoEditar",
@@ -496,6 +469,8 @@ const PlasmicDescendants = {
     "telefone"
   ],
   userPhoto: ["userPhoto"],
+  button: ["button"],
+  botoesPerfil: ["botoesPerfil"],
   campoUsername: ["campoUsername", "username", "botaoEditar", "iconEditar"],
   username: ["username"],
   botaoEditar: ["botaoEditar", "iconEditar"],
@@ -515,6 +490,8 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   userPhoto: typeof UserPhoto;
+  button: typeof Button;
+  botoesPerfil: typeof BotoesPerfil;
   campoUsername: "div";
   username: "h4";
   botaoEditar: typeof Button;
@@ -591,6 +568,8 @@ export const PlasmicPerfil = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     userPhoto: makeNodeComponent("userPhoto"),
+    button: makeNodeComponent("button"),
+    botoesPerfil: makeNodeComponent("botoesPerfil"),
     campoUsername: makeNodeComponent("campoUsername"),
     username: makeNodeComponent("username"),
     botaoEditar: makeNodeComponent("botaoEditar"),
