@@ -6,6 +6,8 @@ import * as ph from "@plasmicapp/host";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicPreviaGrupo } from "../components/plasmic/protect_2_self/PlasmicPreviaGrupo";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function PreviaGrupo() {
   // Use PlasmicPreviaGrupo to render this component as it was
@@ -24,12 +26,65 @@ function PreviaGrupo() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  const [notis, setNotis] = useState<any[]>();
+  const [group, setGroup] = useState<any[]>();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error>();
+
+  function aceitaConviteGrupo(id: any){
+    axios.put("http://localhost:8080/usuario/aceitarGrupo/" +
+    localStorage.getItem("userId") + "/" + id)
+    window.location.reload();
+  }
+
+  function rejeitaConviteGrupo(id: any){
+    axios.put("http://localhost:8080/solicitacoesGrupo/remove/" + id)
+    window.location.reload();
+  }
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        //const grupo = await axios.get("http://localhost:8080/usuario/solicitacoesGrupos/" + localStorage.getItem('userId'));
+        const grupo = await axios.get("http://localhost:8080/grupo/findById" + localStorage.getItem("grupoId"))
+        setGroup(grupo.data)
+        setError(undefined);  
+        console.log(notis);
+      } catch (err) {
+        setError((err as any).message);
+        setNotis([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+  if (error) {
+    return <div>Error: {error.message}</div>
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicPreviaGrupo />
+      <PlasmicPreviaGrupo 
+        voltar={{
+          onClick: () => localStorage.removeItem("groupId")
+        }}
+        nomeGrupo={loading || !group ? {} : {
+          render: (props, Comp) => <Comp {...props}>{(group as any).nome}</Comp>,
+        }}
+        descricaoGrupo={loading || !group ? {} : {
+          render: (props, Comp) => <Comp {...props}>{(group as any).descricao}</Comp>,
+        }}
+        aceitar={loading || !group ? {} : {
+          onClick: () => aceitaConviteGrupo((group as any).id)
+        }}
+        recusar={loading || !group ? {} : {
+          onClick: () => rejeitaConviteGrupo((group as any).id)
+        }}
+      />
     </ph.PageParamsProvider>
   );
 }

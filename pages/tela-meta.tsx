@@ -84,7 +84,6 @@ function TelaMeta() {
         descricaoMeta={{
           render: (props, Comp) => <Comp {...props}>{(meta as any).descricao}</Comp>,
         }}
-
         medalha={{
             cor: tipoMedalha((meta as any).rank),
             slot: (meta as any).nome,

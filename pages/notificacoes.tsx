@@ -28,29 +28,44 @@ function Notificacoes() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   const [notis, setNotis] = useState<any[]>();
+  const [notisGrupos, setNotisGrupos] = useState<any[]>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error>();
 
   const router = useRouter()
 
-  function aceitaConvite(id: any){
+  function aceitaConviteAmizade(id: any){
     axios.put("http://localhost:8080/usuario/aceitarAmizade/" +
     localStorage.getItem("userId") + "/" + id)
     window.location.reload();
   }
 
-  function rejeitaConvite(id: any){
+  function rejeitaConviteAmizade(id: any){
     axios.put("http://localhost:8080/solicitacoesAmizade/remove/" + id)
+    window.location.reload();
+  }
+
+  function aceitaConviteGrupo(id: any){
+    axios.put("http://localhost:8080/usuario/aceitarGrupo/" +
+    localStorage.getItem("userId") + "/" + id)
+    window.location.reload();
+  }
+
+  function rejeitaConviteGrupo(id: any){
+    axios.put("http://localhost:8080/solicitacoesGrupo/remove/" + id)
     window.location.reload();
   }
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(
+        const notisAmigos = await axios.get(
           "http://localhost:8080/usuario/solicitacoesAmizade/" + localStorage.getItem('userId')
         );
-        setNotis(response.data);
+        setNotis(notisAmigos.data);
+        //const notisGrupos = await axios.get("http://localhost:8080/usuario/solicitacoesGrupos/" + localStorage.getItem('userId'));
+        //const notisGrupos = await axios.get("http://localhost:8080/solicitacaoGrupo/findAll")
+        //setNotisGrupos(notisGrupos.data)
         setError(undefined);  
         console.log(notis);
       } catch (err) {
@@ -73,23 +88,46 @@ function Notificacoes() {
     >
       <PlasmicNotificacoes 
       notis = {(loading || !notis) ? {} : { 
-      children: notis.map(entry => <Notificacao 
+      children: notis.map(entry => <Notificacao
+        onClick={() => (localStorage.setItem('friendId', entry.friendId), router.push('/previa-amigo'))} 
         nomeUsuario={{
           render: (props, Comp) => <Comp {...props}>{entry.nomeAmigo} quer ser seu amigo</Comp>,
         }}
         tipo={"amizade"} 
         adiciona={{
           props: {
-            onClick: () => aceitaConvite(entry.id)
+            onClick: () => aceitaConviteAmizade(entry.id)
           }
         }}
         remove={{
           props: {
-            onClick: () => rejeitaConvite(entry.id)
+            onClick: () => rejeitaConviteAmizade(entry.id)
           }
         }}
       />) 
     }}
+    notiGrupo = {(loading || !notisGrupos) ? {} : { 
+      children: notisGrupos.map(entry => <Notificacao 
+        onClick={() => (localStorage.setItem('grupoId', entry.id), router.push('/previa-grupo'))} 
+        nomeUsuario={{
+          render: (props, Comp) => <Comp {...props}>{entry.nomeAmigo} convidou você a um grupo!</Comp>,
+        }}
+        tipo={"grupo"} 
+        adiciona={{
+          props: {
+            onClick: () => aceitaConviteGrupo(entry.id)
+          }
+        }}
+        remove={{
+          props: {
+            onClick: () => rejeitaConviteGrupo(entry.id)
+          }
+        }}
+        />) 
+      }}
+      /*
+    */
+    
       />
     </ph.PageParamsProvider>
   );

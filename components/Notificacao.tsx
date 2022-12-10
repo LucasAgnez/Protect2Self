@@ -21,7 +21,9 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 //
 // You can also stop extending from DefaultNotificacaoProps altogether and have
 // total control over the props for your component.
-export interface NotificacaoProps extends DefaultNotificacaoProps, PlasmicNotificacao__OverridesType {}
+export interface NotificacaoProps extends DefaultNotificacaoProps, PlasmicNotificacao__OverridesType {
+  onClick ?: () => void
+}
 
 function Notificacao_(props: NotificacaoProps, ref: HTMLElementRefOf<"div">) {
   // Use PlasmicNotificacao to render this component as it was

@@ -6,6 +6,8 @@ import * as ph from "@plasmicapp/host";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicPreviaAmigo } from "../components/plasmic/protect_2_self/PlasmicPreviaAmigo";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function PreviaAmigo() {
   // Use PlasmicPreviaAmigo to render this component as it was
@@ -24,12 +26,64 @@ function PreviaAmigo() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  const [friend, setFriend] = useState();
+  const [friendGrupos, setFriendGrupos] = useState<any[]>();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error>();
+
+  const router = useRouter()
+
+  function aceitaConviteAmizade(id: any){
+    axios.put("http://localhost:8080/usuario/aceitarAmizade/" +
+    localStorage.getItem("userId") + "/" + id)
+    window.location.reload();
+  }
+
+  function rejeitaConviteAmizade(id: any){
+    axios.put("http://localhost:8080/solicitacoesAmizade/remove/" + id)
+    window.location.reload();
+  }
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const amigo = await axios.get(
+          "http://localhost:8080/usuario/findById/" + localStorage.getItem('friendId')
+        );
+        setFriend(amigo.data);
+        setError(undefined);  
+        console.log(friend);
+      } catch (err) {
+        setError((err as any).message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+  if (error) {
+    return <div>Error: {error.message}</div>
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicPreviaAmigo />
+      <PlasmicPreviaAmigo 
+        voltar={{
+          onClick: () => localStorage.removeItem("friendId")
+        }}
+        nomeUsuario={loading || !friend ? {} : {
+          render: (props, Comp) => <Comp {...props}>{(friend as any).nome}</Comp>,
+        }}
+        aceitar={loading || !friend ? {} : {
+          onClick: () => aceitaConviteAmizade((friend as any).id)
+        }}
+        recusar={loading || !friend ? {} : {
+          onClick: () => rejeitaConviteAmizade((friend as any).id)
+        }}
+      />
     </ph.PageParamsProvider>
   );
 }
