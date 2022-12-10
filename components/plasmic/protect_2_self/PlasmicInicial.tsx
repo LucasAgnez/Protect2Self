@@ -61,7 +61,6 @@ export type PlasmicInicial__OverridesType = {
   columns?: p.Flex<"div">;
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
   freeBox?: p.Flex<"div">;
-  text?: p.Flex<"div">;
 };
 
 export interface DefaultInicialProps {}
@@ -220,28 +219,6 @@ function PlasmicInicial__RenderFunc(props: {
                               "__wab_instance",
                               sty.miniaturaGrupo__vkx0G
                             )}
-                            slot2={
-                              <div
-                                data-plasmic-name={"text"}
-                                data-plasmic-override={overrides.text}
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text
-                                )}
-                              >
-                                <React.Fragment>
-                                  <span
-                                    className={
-                                      "plasmic_default__all plasmic_default__span"
-                                    }
-                                    style={{ color: "#D3D3D3" }}
-                                  >
-                                    {"Sequencia"}
-                                  </span>
-                                </React.Fragment>
-                              </div>
-                            }
                           />
                         ) : null}
                       </div>
@@ -258,19 +235,11 @@ function PlasmicInicial__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "headerLogged",
-    "columns",
-    "botoesMenuPrincipal",
-    "freeBox",
-    "text"
-  ],
+  root: ["root", "headerLogged", "columns", "botoesMenuPrincipal", "freeBox"],
   headerLogged: ["headerLogged"],
-  columns: ["columns", "botoesMenuPrincipal", "freeBox", "text"],
+  columns: ["columns", "botoesMenuPrincipal", "freeBox"],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
-  freeBox: ["freeBox", "text"],
-  text: ["text"]
+  freeBox: ["freeBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -281,7 +250,6 @@ type NodeDefaultElementType = {
   columns: "div";
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
   freeBox: "div";
-  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -349,7 +317,6 @@ export const PlasmicInicial = Object.assign(
     columns: makeNodeComponent("columns"),
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
     freeBox: makeNodeComponent("freeBox"),
-    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicInicial
     internalVariantProps: PlasmicInicial__VariantProps,

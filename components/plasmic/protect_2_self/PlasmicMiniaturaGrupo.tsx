@@ -46,27 +46,18 @@ type VariantPropType = keyof PlasmicMiniaturaGrupo__VariantsArgs;
 export const PlasmicMiniaturaGrupo__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicMiniaturaGrupo__ArgsType = {
-  children?: React.ReactNode;
-  slot?: React.ReactNode;
-  slot2?: React.ReactNode;
   slot3?: React.ReactNode;
 };
 type ArgPropType = keyof PlasmicMiniaturaGrupo__ArgsType;
-export const PlasmicMiniaturaGrupo__ArgProps = new Array<ArgPropType>(
-  "children",
-  "slot",
-  "slot2",
-  "slot3"
-);
+export const PlasmicMiniaturaGrupo__ArgProps = new Array<ArgPropType>("slot3");
 
 export type PlasmicMiniaturaGrupo__OverridesType = {
   root?: p.Flex<"div">;
+  img?: p.Flex<typeof p.PlasmicImg>;
+  nomeGrupo?: p.Flex<"h4">;
 };
 
 export interface DefaultMiniaturaGrupoProps {
-  children?: React.ReactNode;
-  slot?: React.ReactNode;
-  slot2?: React.ReactNode;
   slot3?: React.ReactNode;
   className?: string;
 }
@@ -111,68 +102,61 @@ function PlasmicMiniaturaGrupo__RenderFunc(props: {
         {true ? (
           <div className={classNames(projectcss.all, sty.freeBox__xvt3I)}>
             <div className={classNames(projectcss.all, sty.freeBox__s0Mnq)}>
-              {p.renderPlasmicSlot({
-                defaultContents: (
-                  <p.PlasmicImg
-                    alt={""}
-                    className={classNames(sty.img__kaDb)}
-                    displayHeight={"auto" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"100%" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"34px" as const}
-                    loading={"lazy" as const}
-                    src={{
-                      src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
-                      fullWidth: 2048,
-                      fullHeight: 2048,
-                      aspectRatio: undefined
-                    }}
-                  />
-                ),
+              <p.PlasmicImg
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
+                alt={""}
+                className={classNames(sty.img)}
+                displayHeight={"auto" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"34px" as const}
+                loading={"lazy" as const}
+                src={{
+                  src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
+                  fullWidth: 2048,
+                  fullHeight: 2048,
+                  aspectRatio: undefined
+                }}
+              />
 
-                value: args.children
-              })}
-              {p.renderPlasmicSlot({
-                defaultContents: (
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zqbYt
-                    )}
-                  >
-                    <React.Fragment>
-                      <React.Fragment>{""}</React.Fragment>
-                      {
-                        <h4
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.h4,
-                            projectcss.__wab_text,
-                            sty.h4__vzOvD
-                          )}
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__zqbYt
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <h4
+                      data-plasmic-name={"nomeGrupo"}
+                      data-plasmic-override={overrides.nomeGrupo}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h4,
+                        projectcss.__wab_text,
+                        sty.nomeGrupo
+                      )}
+                    >
+                      <React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ color: "#FFFFFF" }}
                         >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "#FFFFFF" }}
-                            >
-                              {"Nome Grupo"}
-                            </span>
-                          </React.Fragment>
-                        </h4>
-                      }
-                      <React.Fragment>{""}</React.Fragment>
-                    </React.Fragment>
-                  </div>
-                ),
-
-                value: args.slot
-              })}
+                          {"Nome Grupo"}
+                        </span>
+                      </React.Fragment>
+                    </h4>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
             </div>
           </div>
         ) : null}
@@ -220,28 +204,22 @@ function PlasmicMiniaturaGrupo__RenderFunc(props: {
             })}
           </div>
 
-          {p.renderPlasmicSlot({
-            defaultContents: (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__eaFwx
-                )}
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__eaFwx
+            )}
+          >
+            <React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ color: "#D3D3D3" }}
               >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#D3D3D3" }}
-                  >
-                    {"Sequencia"}
-                  </span>
-                </React.Fragment>
-              </div>
-            ),
-
-            value: args.slot2
-          })}
+                {"Sequencia"}
+              </span>
+            </React.Fragment>
+          </div>
         </div>
       </div>
     ) : null
@@ -249,13 +227,17 @@ function PlasmicMiniaturaGrupo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "img", "nomeGrupo"],
+  img: ["img"],
+  nomeGrupo: ["nomeGrupo"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  img: typeof p.PlasmicImg;
+  nomeGrupo: "h4";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -319,6 +301,8 @@ export const PlasmicMiniaturaGrupo = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    img: makeNodeComponent("img"),
+    nomeGrupo: makeNodeComponent("nomeGrupo"),
 
     // Metadata about props expected for PlasmicMiniaturaGrupo
     internalVariantProps: PlasmicMiniaturaGrupo__VariantProps,

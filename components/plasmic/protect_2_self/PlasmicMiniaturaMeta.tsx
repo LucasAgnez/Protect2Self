@@ -66,7 +66,7 @@ type ArgPropType = keyof PlasmicMiniaturaMeta__ArgsType;
 export const PlasmicMiniaturaMeta__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicMiniaturaMeta__OverridesType = {
-  root?: p.Flex<"div">;
+  stack?: p.Flex<"div">;
   link?: p.Flex<"a"> & Partial<LinkProps>;
   nomeMeta?: p.Flex<"h4">;
   medalha?: p.Flex<typeof Medalha>;
@@ -122,8 +122,8 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
   return (
     true ? (
       <div
-        data-plasmic-name={"root"}
-        data-plasmic-override={overrides.root}
+        data-plasmic-name={"stack"}
+        data-plasmic-override={overrides.stack}
         data-plasmic-root={true}
         data-plasmic-for-node={forNode}
         className={classNames(
@@ -132,9 +132,13 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
           projectcss.plasmic_default_styles,
           projectcss.plasmic_mixins,
           projectcss.plasmic_tokens,
-          sty.root,
+          sty.stack,
           {
-            [sty.rootcomMedalha]: hasVariant($state, "comMedalha", "comMedalha")
+            [sty.stackcomMedalha]: hasVariant(
+              $state,
+              "comMedalha",
+              "comMedalha"
+            )
           }
         )}
       >
@@ -372,8 +376,8 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
+  stack: [
+    "stack",
     "link",
     "nomeMeta",
     "medalha",
@@ -392,7 +396,7 @@ type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
-  root: "div";
+  stack: "div";
   link: "a";
   nomeMeta: "h4";
   medalha: typeof Medalha;
@@ -449,7 +453,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "root") {
+  if (nodeName === "stack") {
     func.displayName = "PlasmicMiniaturaMeta";
   } else {
     func.displayName = `PlasmicMiniaturaMeta.${nodeName}`;
@@ -459,7 +463,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicMiniaturaMeta = Object.assign(
   // Top-level PlasmicMiniaturaMeta renders the root element
-  makeNodeComponent("root"),
+  makeNodeComponent("stack"),
   {
     // Helper components rendering sub-elements
     link: makeNodeComponent("link"),
