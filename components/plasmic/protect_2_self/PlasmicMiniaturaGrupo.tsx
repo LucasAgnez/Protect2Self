@@ -45,20 +45,19 @@ export type PlasmicMiniaturaGrupo__VariantsArgs = {};
 type VariantPropType = keyof PlasmicMiniaturaGrupo__VariantsArgs;
 export const PlasmicMiniaturaGrupo__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicMiniaturaGrupo__ArgsType = {
-  slot3?: React.ReactNode;
-};
+export type PlasmicMiniaturaGrupo__ArgsType = {};
 type ArgPropType = keyof PlasmicMiniaturaGrupo__ArgsType;
-export const PlasmicMiniaturaGrupo__ArgProps = new Array<ArgPropType>("slot3");
+export const PlasmicMiniaturaGrupo__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicMiniaturaGrupo__OverridesType = {
   root?: p.Flex<"div">;
   img?: p.Flex<typeof p.PlasmicImg>;
   nomeGrupo?: p.Flex<"h4">;
+  metaGrupo?: p.Flex<"h5">;
+  sequencia?: p.Flex<"div">;
 };
 
 export interface DefaultMiniaturaGrupoProps {
-  slot3?: React.ReactNode;
   className?: string;
 }
 
@@ -163,52 +162,48 @@ function PlasmicMiniaturaGrupo__RenderFunc(props: {
 
         <div className={classNames(projectcss.all, sty.freeBox__dUsOl)}>
           <div className={classNames(projectcss.all, sty.freeBox__pMsdh)}>
-            {p.renderPlasmicSlot({
-              defaultContents: (
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ozcSt
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <h5
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h5,
-                          projectcss.__wab_text,
-                          sty.h5__qn8E5
-                        )}
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ozcSt
+              )}
+            >
+              <React.Fragment>
+                <React.Fragment>{""}</React.Fragment>
+                {
+                  <h5
+                    data-plasmic-name={"metaGrupo"}
+                    data-plasmic-override={overrides.metaGrupo}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h5,
+                      projectcss.__wab_text,
+                      sty.metaGrupo
+                    )}
+                  >
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#B2B2B2" }}
                       >
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ color: "#B2B2B2" }}
-                          >
-                            {"Meta"}
-                          </span>
-                        </React.Fragment>
-                      </h5>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                </div>
-              ),
-
-              value: args.slot3
-            })}
+                        {"Meta"}
+                      </span>
+                    </React.Fragment>
+                  </h5>
+                }
+                <React.Fragment>{""}</React.Fragment>
+              </React.Fragment>
+            </div>
           </div>
 
           <div
+            data-plasmic-name={"sequencia"}
+            data-plasmic-override={overrides.sequencia}
             className={classNames(
               projectcss.all,
               projectcss.__wab_text,
-              sty.text__eaFwx
+              sty.sequencia
             )}
           >
             <React.Fragment>
@@ -227,9 +222,11 @@ function PlasmicMiniaturaGrupo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img", "nomeGrupo"],
+  root: ["root", "img", "nomeGrupo", "metaGrupo", "sequencia"],
   img: ["img"],
-  nomeGrupo: ["nomeGrupo"]
+  nomeGrupo: ["nomeGrupo"],
+  metaGrupo: ["metaGrupo"],
+  sequencia: ["sequencia"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -238,6 +235,8 @@ type NodeDefaultElementType = {
   root: "div";
   img: typeof p.PlasmicImg;
   nomeGrupo: "h4";
+  metaGrupo: "h5";
+  sequencia: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -303,6 +302,8 @@ export const PlasmicMiniaturaGrupo = Object.assign(
     // Helper components rendering sub-elements
     img: makeNodeComponent("img"),
     nomeGrupo: makeNodeComponent("nomeGrupo"),
+    metaGrupo: makeNodeComponent("metaGrupo"),
+    sequencia: makeNodeComponent("sequencia"),
 
     // Metadata about props expected for PlasmicMiniaturaGrupo
     internalVariantProps: PlasmicMiniaturaGrupo__VariantProps,
