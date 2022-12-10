@@ -3,7 +3,8 @@
 import * as React from "react";
 import {
   PlasmicMiniaturaGrupo,
-  DefaultMiniaturaGrupoProps
+  DefaultMiniaturaGrupoProps,
+  PlasmicMiniaturaGrupo__OverridesType
 } from "./plasmic/protect_2_self/PlasmicMiniaturaGrupo";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
@@ -20,7 +21,7 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 //
 // You can also stop extending from DefaultMiniaturaGrupoProps altogether and have
 // total control over the props for your component.
-export interface MiniaturaGrupoProps extends DefaultMiniaturaGrupoProps {
+export interface MiniaturaGrupoProps extends DefaultMiniaturaGrupoProps, PlasmicMiniaturaGrupo__OverridesType {
   onClick ?: () => void
 }
 

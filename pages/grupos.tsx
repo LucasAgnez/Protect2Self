@@ -72,6 +72,19 @@ function MeusGrupos() {
     }
   }
 
+  function calculaTempo(meta: any){
+    if(String(meta.tipo).toLowerCase() == "vicio"){
+      var ultimoDia = new Date(meta.data).toLocaleDateString()
+      var hoje = new Date().toLocaleDateString()
+      const diffInMs   = new Date(hoje).getTime() - new Date(ultimoDia).getTime()
+      const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+      return diffInDays
+    }
+    else{
+      return meta.atual
+    }
+  }
+
 
   return (
     <ph.PageParamsProvider
@@ -80,12 +93,18 @@ function MeusGrupos() {
     >
       <PlasmicMeusGrupos 
       container = {(loading || !grupos) ? {} :{ 
-        children: grupos.map(entry => <MiniaturaGrupo 
-          onClick={() => (localStorage.setItem('grupoId', entry.id), router.push('/tela-grupo'))} 
-          slot={String(entry.nome)} slot3={String(entry.meta.nome)} 
-          slot2={"Sequencia atual: " + String(entry.meta.atual)}
-        />) 
-      }}
+        children: grupos.map(entry => <MiniaturaGrupo
+          nomeGrupo={{
+            render: (props, Comp) => <Comp {...props}>{entry.meta.nome}</Comp>,
+          }}
+          metaGrupo={{
+            render: (props, Comp) => <Comp {...props}>{String(entry.meta.atual)}</Comp>,
+          }}
+          sequencia={{
+            render: (props, Comp) => <Comp {...props}>Atual sequência: {String(calculaTempo(entry.meta))}</Comp>,
+          }}
+          />) 
+        }}
       buscaGrupo = {{
         onChange : () => mostraGrupos()
       }}
