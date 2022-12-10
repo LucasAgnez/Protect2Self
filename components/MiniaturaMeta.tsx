@@ -21,7 +21,9 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 //
 // You can also stop extending from DefaultMiniaturaMetaProps altogether and have
 // total control over the props for your component.
-export interface MiniaturaMetaProps extends DefaultMiniaturaMetaProps, PlasmicMiniaturaMeta__OverridesType {}
+export interface MiniaturaMetaProps extends DefaultMiniaturaMetaProps, PlasmicMiniaturaMeta__OverridesType {
+  onClick ?: () => void
+}
 
 function MiniaturaMeta_(
   props: MiniaturaMetaProps,

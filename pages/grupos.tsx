@@ -92,13 +92,14 @@ function MeusGrupos() {
       query={useRouter()?.query}
     >
       <PlasmicMeusGrupos 
-      container = {(loading || !grupos) ? {} :{ 
+      container = {(loading || !grupos) ? {} :{
         children: grupos.map(entry => <MiniaturaGrupo
+          onClick={() => (localStorage.setItem('grupoId', entry.id), router.push('/tela-grupo'))} 
           nomeGrupo={{
-            render: (props, Comp) => <Comp {...props}>{entry.meta.nome}</Comp>,
+            render: (props, Comp) => <Comp {...props}>{entry.nome}</Comp>,
           }}
           metaGrupo={{
-            render: (props, Comp) => <Comp {...props}>{String(entry.meta.atual)}</Comp>,
+            render: (props, Comp) => <Comp {...props}>{String(entry.meta.nome)}</Comp>,
           }}
           sequencia={{
             render: (props, Comp) => <Comp {...props}>Atual sequência: {String(calculaTempo(entry.meta))}</Comp>,
