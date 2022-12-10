@@ -55,6 +55,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   margin-left: 0px;
+  color: #ffffff;
 }
 .freeBox__dUsOl {
   position: relative;
@@ -73,4 +74,8 @@
   display: flex;
   flex-direction: row;
   min-width: 0;
+}
+.metaGrupo {
+  padding-top: 0px;
+  color: #b2b2b2;
 }
