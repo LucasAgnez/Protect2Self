@@ -75,7 +75,7 @@
     width: calc((100% - 1 * 0px) * 12 / 12);
   }
 }
-.column__oy7Bu {
+.column__gwKzA {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -87,7 +87,7 @@
   min-width: 0;
   padding: 8px;
 }
-.freeBox__yD5VN {
+.freeBox__gCvqZ {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,11 +101,11 @@
   border-right: 1px solid #ffffff;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .freeBox__yD5VN {
+  .freeBox__gCvqZ {
     border-right-style: none;
   }
 }
-.freeBox__kgTg {
+.freeBox__kGjV {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -130,16 +130,16 @@
   min-height: 175px;
   flex-grow: 1;
 }
-.img__sute6 {
+.img__xBrq {
   position: relative;
   object-fit: cover;
   max-width: 100%;
   width: 115px;
 }
-.img__sute6 > picture > img {
+.img__xBrq > picture > img {
   object-fit: cover;
 }
-.img__sute6 > :global(.__wab_img-spacer) > img {
+.img__xBrq > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .button:global(.__wab_instance) {
@@ -152,23 +152,19 @@
     width: 130px;
   }
 }
-.svg__wQpwS {
+.svg__qTpc8 {
   position: relative;
   object-fit: cover;
   width: 1em;
   height: 1em;
 }
-.svg__oIvBg {
+.svg__mD2C {
   position: relative;
   object-fit: cover;
   width: 1em;
   height: 1em;
 }
-.botoesPerfil:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-}
-.column__dj7Ep {
+.column__ym9YV {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -180,7 +176,7 @@
   min-width: 0;
   padding: 8px;
 }
-.freeBox__vFvI3 {
+.freeBox__rjSon {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -196,7 +192,7 @@
 .voltar:global(.__wab_instance) {
   max-width: 100%;
 }
-.svg__lGHs {
+.svg__zEdS5 {
   position: relative;
   object-fit: cover;
   width: 1em;
@@ -210,7 +206,7 @@
   width: 1em;
   height: 1em;
 }
-.svg___0Y75B {
+.svg__ylew {
   position: relative;
   object-fit: cover;
   width: 1em;
@@ -224,7 +220,7 @@
   margin-bottom: 10px;
   min-width: 0;
 }
-.freeBox__yU1Po {
+.freeBox___2XpmM {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -244,13 +240,13 @@
   margin-right: 50px;
   min-width: 0;
 }
-.svg__jc7FX {
+.svg__hjd65 {
   position: relative;
   object-fit: cover;
   width: 1em;
   height: 1em;
 }
-.svg__it6M7 {
+.svg__sf59L {
   position: relative;
   object-fit: cover;
   width: 1em;
@@ -261,13 +257,13 @@
   position: relative;
   margin-right: 26px;
 }
-.svg__pEmik {
+.svg___3WrOg {
   position: relative;
   object-fit: cover;
   width: 1em;
   height: 1em;
 }
-.svg__bKyxh {
+.svg__sUUgu {
   position: relative;
   object-fit: cover;
   width: 1em;

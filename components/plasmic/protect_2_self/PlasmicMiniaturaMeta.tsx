@@ -67,7 +67,7 @@ export const PlasmicMiniaturaMeta__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicMiniaturaMeta__OverridesType = {
   stack?: p.Flex<"div">;
-  link?: p.Flex<"div">;
+  text?: p.Flex<"div">;
   nomeMeta?: p.Flex<"h4">;
   medalha?: p.Flex<typeof Medalha>;
   sequenciaHabito?: p.Flex<"div">;
@@ -168,14 +168,14 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
                 })}
               >
                 <div
-                  data-plasmic-name={"link"}
-                  data-plasmic-override={overrides.link}
+                  data-plasmic-name={"text"}
+                  data-plasmic-override={overrides.text}
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.link,
+                    sty.text,
                     {
-                      [sty.linkcomMedalha]: hasVariant(
+                      [sty.textcomMedalha]: hasVariant(
                         $state,
                         "comMedalha",
                         "comMedalha"
@@ -375,14 +375,14 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
 const PlasmicDescendants = {
   stack: [
     "stack",
-    "link",
+    "text",
     "nomeMeta",
     "medalha",
     "sequenciaHabito",
     "sequenciaVicio",
     "registra"
   ],
-  link: ["link", "nomeMeta"],
+  text: ["text", "nomeMeta"],
   nomeMeta: ["nomeMeta"],
   medalha: ["medalha"],
   sequenciaHabito: ["sequenciaHabito"],
@@ -394,7 +394,7 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   stack: "div";
-  link: "div";
+  text: "div";
   nomeMeta: "h4";
   medalha: typeof Medalha;
   sequenciaHabito: "div";
@@ -463,7 +463,7 @@ export const PlasmicMiniaturaMeta = Object.assign(
   makeNodeComponent("stack"),
   {
     // Helper components rendering sub-elements
-    link: makeNodeComponent("link"),
+    text: makeNodeComponent("text"),
     nomeMeta: makeNodeComponent("nomeMeta"),
     medalha: makeNodeComponent("medalha"),
     sequenciaHabito: makeNodeComponent("sequenciaHabito"),

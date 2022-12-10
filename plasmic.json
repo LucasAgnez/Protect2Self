@@ -1067,6 +1067,19 @@
           "cssFilePath": "plasmic/protect_2_self/PlasmicTelaMeta.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "VacVjAesWbY",
+          "name": "AdicionaAGrupo",
+          "type": "managed",
+          "projectId": "8XuJZfnuNd7UvNkkshapC6",
+          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicAdicionaAGrupo.tsx",
+          "importSpec": {
+            "modulePath": "../pages/adiciona-a-grupo.tsx"
+          },
+          "cssFilePath": "plasmic/protect_2_self/PlasmicAdicionaAGrupo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [

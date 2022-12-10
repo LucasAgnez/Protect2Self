@@ -89,7 +89,7 @@
   min-width: 320px;
   min-height: 0;
   padding: 8px;
-  border-right: 1px solid #ffffff;
+  border-right: 1px none #ffffff;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .freeBox__szAmg {
@@ -170,6 +170,7 @@
   align-items: center;
   min-width: 0;
   padding: 8px;
+  border-left: 1px solid #d3d3d3;
 }
 .text {
   position: relative;

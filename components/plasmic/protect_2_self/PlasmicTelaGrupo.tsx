@@ -48,6 +48,7 @@ import sty from "./PlasmicTelaGrupo.module.css"; // plasmic-import: bfV7oLmQIs/c
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
+import LeftArrowSvgrepoComsvgIcon from "./icons/PlasmicIcon__LeftArrowSvgrepoComsvg"; // plasmic-import: fmFspLMBVy/icon
 import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 
 export type PlasmicTelaGrupo__VariantMembers = {
@@ -73,6 +74,8 @@ export type PlasmicTelaGrupo__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
+  voltar?: p.Flex<typeof Button>;
+  svg?: p.Flex<"svg">;
   text?: p.Flex<"div">;
   nomeGrupo?: p.Flex<"h2">;
   nomeGrupoAdm?: p.Flex<"h2">;
@@ -254,6 +257,11 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                             )
                           }
                         )}
+                        link={
+                          hasVariant($state, "adm", "adm")
+                            ? `/adiciona-a-grupo`
+                            : undefined
+                        }
                       >
                         {"Adicionar Participante"}
                       </Button>
@@ -295,6 +303,26 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                   )
                 })}
               >
+                {true ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__rYLoL)}
+                  >
+                    <Button
+                      data-plasmic-name={"voltar"}
+                      data-plasmic-override={overrides.voltar}
+                      className={classNames("__wab_instance", sty.voltar)}
+                      color={"clear" as const}
+                      shape={"round" as const}
+                    >
+                      <LeftArrowSvgrepoComsvgIcon
+                        data-plasmic-name={"svg"}
+                        data-plasmic-override={overrides.svg}
+                        className={classNames(projectcss.all, sty.svg)}
+                        role={"img"}
+                      />
+                    </Button>
+                  </div>
+                ) : null}
                 {(
                   hasVariant($state, "adm", "adm") &&
                   hasVariant(globalVariants, "screen", "mobileOnly")
@@ -520,6 +548,8 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "userPhoto",
+    "voltar",
+    "svg",
     "text",
     "nomeGrupo",
     "nomeGrupoAdm",
@@ -533,6 +563,8 @@ const PlasmicDescendants = {
   columns: [
     "columns",
     "userPhoto",
+    "voltar",
+    "svg",
     "text",
     "nomeGrupo",
     "nomeGrupoAdm",
@@ -543,6 +575,8 @@ const PlasmicDescendants = {
     "container"
   ],
   userPhoto: ["userPhoto"],
+  voltar: ["voltar", "svg"],
+  svg: ["svg"],
   text: ["text", "nomeGrupo", "nomeGrupoAdm"],
   nomeGrupo: ["nomeGrupo"],
   nomeGrupoAdm: ["nomeGrupoAdm"],
@@ -559,6 +593,8 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   userPhoto: typeof UserPhoto;
+  voltar: typeof Button;
+  svg: "svg";
   text: "div";
   nomeGrupo: "h2";
   nomeGrupoAdm: "h2";
@@ -632,6 +668,8 @@ export const PlasmicTelaGrupo = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     userPhoto: makeNodeComponent("userPhoto"),
+    voltar: makeNodeComponent("voltar"),
+    svg: makeNodeComponent("svg"),
     text: makeNodeComponent("text"),
     nomeGrupo: makeNodeComponent("nomeGrupo"),
     nomeGrupoAdm: makeNodeComponent("nomeGrupoAdm"),
