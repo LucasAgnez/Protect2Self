@@ -46,6 +46,8 @@ function MinhasMetas() {
         setMetas([]);
       } finally {
         setLoading(false);
+        console.log(metas)
+
       }
     };
     getData();

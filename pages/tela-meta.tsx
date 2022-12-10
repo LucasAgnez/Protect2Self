@@ -81,10 +81,10 @@ function TelaMeta() {
         nomeMeta={loading || !meta ? {} : {
           render: (props, Comp) => <Comp {...props}>{(meta as any).nome}</Comp>,
         }}
-        descricaoMeta={{
+        descricaoMeta={loading || !meta ? {} : {
           render: (props, Comp) => <Comp {...props}>{(meta as any).descricao}</Comp>,
         }}
-        medalha={{
+        medalha={loading || !meta ? {} : {
             cor: tipoMedalha((meta as any).rank),
             slot: (meta as any).nome,
             children: formata((meta as any).data)
