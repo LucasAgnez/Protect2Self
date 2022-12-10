@@ -42,18 +42,15 @@
   padding: 8px 8px 0px;
   border-bottom: 1px solid #ffffff;
 }
-.freeBox__mfpq {
+.text {
+  position: relative;
   width: 100%;
   height: auto;
   max-width: 800px;
-  display: flex;
-  flex-direction: row;
   min-width: 0;
 }
-.nomeMeta {
+.h3 {
   color: #ffffff;
-  padding-left: 0px;
-  padding-right: 0px;
 }
 .medalha:global(.__wab_instance) {
   position: relative;

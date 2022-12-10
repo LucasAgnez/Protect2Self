@@ -132,136 +132,88 @@ function PlasmicNotificacao__RenderFunc(props: {
           [sty.freeBoxtipo_amizade]: hasVariant($state, "tipo", "amizade")
         })}
       >
-        <p.PlasmicLink
-          className={classNames(projectcss.all, projectcss.a, sty.link__hpSOr, {
-            [sty.linktipo_amizade__hpSOrqITjt]: hasVariant(
-              $state,
-              "tipo",
-              "amizade"
-            ),
-            [sty.linktipo_grupo__hpSOrzVo08]: hasVariant(
-              $state,
-              "tipo",
-              "grupo"
-            )
-          })}
-          component={Link}
-          href={
-            hasVariant($state, "tipo", "grupo")
-              ? `/previa-grupo`
-              : hasVariant($state, "tipo", "amizade")
-              ? `/previa-amigo`
-              : undefined
-          }
-          platform={"nextjs"}
-        >
-          {p.renderPlasmicSlot({
-            defaultContents: (
-              <p.PlasmicImg
-                alt={""}
-                className={classNames(sty.img__qUfq0)}
-                displayHeight={"auto" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"100%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"57px" as const}
-                loading={"lazy" as const}
-                src={{
-                  src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
-                  fullWidth: 2048,
-                  fullHeight: 2048,
-                  aspectRatio: undefined
-                }}
-              />
-            ),
+        {p.renderPlasmicSlot({
+          defaultContents: (
+            <p.PlasmicImg
+              alt={""}
+              className={classNames(sty.img__qUfq0)}
+              displayHeight={"auto" as const}
+              displayMaxHeight={"none" as const}
+              displayMaxWidth={"100%" as const}
+              displayMinHeight={"0" as const}
+              displayMinWidth={"0" as const}
+              displayWidth={"57px" as const}
+              loading={"lazy" as const}
+              src={{
+                src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
+                fullWidth: 2048,
+                fullHeight: 2048,
+                aspectRatio: undefined
+              }}
+            />
+          ),
 
-            value: args.children
-          })}
-        </p.PlasmicLink>
+          value: args.children
+        })}
 
-        <p.PlasmicLink
-          className={classNames(projectcss.all, projectcss.a, sty.link__s4SrL, {
-            [sty.linktipo_amizade__s4SrLqITjt]: hasVariant(
-              $state,
-              "tipo",
-              "amizade"
-            ),
-            [sty.linktipo_grupo__s4SrLzVo08]: hasVariant(
-              $state,
-              "tipo",
-              "grupo"
-            )
-          })}
-          component={Link}
-          href={
-            hasVariant($state, "tipo", "grupo")
-              ? `/previa-grupo`
-              : hasVariant($state, "tipo", "amizade")
-              ? `/previa-amigo`
-              : undefined
-          }
-          platform={"nextjs"}
+        <div
+          data-plasmic-name={"text"}
+          data-plasmic-override={overrides.text}
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text
+          )}
         >
-          <div
-            data-plasmic-name={"text"}
-            data-plasmic-override={overrides.text}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text
-            )}
-          >
-            <React.Fragment>
-              <React.Fragment>{""}</React.Fragment>
-              {
-                <h4
-                  data-plasmic-name={"nomeUsuario"}
-                  data-plasmic-override={overrides.nomeUsuario}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h4,
-                    projectcss.__wab_text,
-                    sty.nomeUsuario,
-                    {
-                      [sty.nomeUsuariotipo_amizade]: hasVariant(
-                        $state,
-                        "tipo",
-                        "amizade"
-                      ),
-                      [sty.nomeUsuariotipo_grupo]: hasVariant(
-                        $state,
-                        "tipo",
-                        "grupo"
-                      )
-                    }
-                  )}
-                >
-                  {hasVariant($state, "tipo", "grupo") ? (
-                    <React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ color: "#FFFFFF" }}
-                      >
-                        {"Nome Grupo"}
-                      </span>
-                    </React.Fragment>
-                  ) : (
-                    <React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ color: "#FFFFFF" }}
-                      >
-                        {"Nome Amigo"}
-                      </span>
-                    </React.Fragment>
-                  )}
-                </h4>
-              }
-              <React.Fragment>{""}</React.Fragment>
-            </React.Fragment>
-          </div>
-        </p.PlasmicLink>
+          <React.Fragment>
+            <React.Fragment>{""}</React.Fragment>
+            {
+              <h4
+                data-plasmic-name={"nomeUsuario"}
+                data-plasmic-override={overrides.nomeUsuario}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h4,
+                  projectcss.__wab_text,
+                  sty.nomeUsuario,
+                  {
+                    [sty.nomeUsuariotipo_amizade]: hasVariant(
+                      $state,
+                      "tipo",
+                      "amizade"
+                    ),
+                    [sty.nomeUsuariotipo_grupo]: hasVariant(
+                      $state,
+                      "tipo",
+                      "grupo"
+                    )
+                  }
+                )}
+              >
+                {hasVariant($state, "tipo", "grupo") ? (
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#FFFFFF" }}
+                    >
+                      {"Nome Grupo"}
+                    </span>
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#FFFFFF" }}
+                    >
+                      {"Nome Amigo"}
+                    </span>
+                  </React.Fragment>
+                )}
+              </h4>
+            }
+            <React.Fragment>{""}</React.Fragment>
+          </React.Fragment>
+        </div>
 
         {(hasVariant($state, "tipo", "amizade") ? true : true) ? (
           <Button

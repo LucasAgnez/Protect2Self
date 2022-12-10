@@ -68,7 +68,8 @@ export const PlasmicMiniaturaMeta__ArgProps = new Array<ArgPropType>();
 export type PlasmicMiniaturaMeta__OverridesType = {
   stack?: p.Flex<"div">;
   text?: p.Flex<"div">;
-  nomeMeta?: p.Flex<"h4">;
+  h3?: p.Flex<"h3">;
+  nomeMeta?: p.Flex<"h3">;
   medalha?: p.Flex<typeof Medalha>;
   sequenciaHabito?: p.Flex<"div">;
   sequenciaVicio?: p.Flex<"div">;
@@ -157,41 +158,45 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
           })}
         >
           {true ? (
-            <div className={classNames(projectcss.all, sty.freeBox__noCej)}>
+            <div
+              className={classNames(projectcss.all, sty.freeBox__noCej, {
+                [sty.freeBoxtipo_habito__noCejFpvrz]: hasVariant(
+                  $state,
+                  "tipo",
+                  "habito"
+                ),
+                [sty.freeBoxtipo_habito_comMedalha__noCejFpvrzYJuMv]:
+                  hasVariant($state, "comMedalha", "comMedalha") &&
+                  hasVariant($state, "tipo", "habito")
+              })}
+            >
               <div
-                className={classNames(projectcss.all, sty.freeBox__mfpq, {
-                  [sty.freeBoxtipo_vicio__mfpq54S]: hasVariant(
-                    $state,
-                    "tipo",
-                    "vicio"
-                  )
-                })}
+                data-plasmic-name={"text"}
+                data-plasmic-override={overrides.text}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text,
+                  {
+                    [sty.textcomMedalha]: hasVariant(
+                      $state,
+                      "comMedalha",
+                      "comMedalha"
+                    ),
+                    [sty.texttipo_habito]: hasVariant($state, "tipo", "habito")
+                  }
+                )}
               >
-                <div
-                  data-plasmic-name={"text"}
-                  data-plasmic-override={overrides.text}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text,
-                    {
-                      [sty.textcomMedalha]: hasVariant(
-                        $state,
-                        "comMedalha",
-                        "comMedalha"
-                      )
-                    }
-                  )}
-                >
+                {hasVariant($state, "comMedalha", "comMedalha") ? (
                   <React.Fragment>
                     <React.Fragment>{""}</React.Fragment>
                     {
-                      <h4
+                      <h3
                         data-plasmic-name={"nomeMeta"}
                         data-plasmic-override={overrides.nomeMeta}
                         className={classNames(
                           projectcss.all,
-                          projectcss.h4,
+                          projectcss.h3,
                           projectcss.__wab_text,
                           sty.nomeMeta,
                           {
@@ -203,21 +208,44 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
                           }
                         )}
                       >
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ color: "#FFFFFF" }}
-                          >
-                            {"Meta"}
-                          </span>
-                        </React.Fragment>
-                      </h4>
+                        {hasVariant($state, "comMedalha", "comMedalha") ? (
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "#FFFFFF" }}
+                            >
+                              {"Meta"}
+                            </span>
+                          </React.Fragment>
+                        ) : (
+                          "Meta"
+                        )}
+                      </h3>
                     }
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
-                </div>
+                ) : (
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h3
+                        data-plasmic-name={"h3"}
+                        data-plasmic-override={overrides.h3}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h3,
+                          projectcss.__wab_text,
+                          sty.h3
+                        )}
+                      >
+                        {"Meta"}
+                      </h3>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                )}
               </div>
 
               {(
@@ -376,13 +404,15 @@ const PlasmicDescendants = {
   stack: [
     "stack",
     "text",
+    "h3",
     "nomeMeta",
     "medalha",
     "sequenciaHabito",
     "sequenciaVicio",
     "registra"
   ],
-  text: ["text", "nomeMeta"],
+  text: ["text", "h3", "nomeMeta"],
+  h3: ["h3"],
   nomeMeta: ["nomeMeta"],
   medalha: ["medalha"],
   sequenciaHabito: ["sequenciaHabito"],
@@ -395,7 +425,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   stack: "div";
   text: "div";
-  nomeMeta: "h4";
+  h3: "h3";
+  nomeMeta: "h3";
   medalha: typeof Medalha;
   sequenciaHabito: "div";
   sequenciaVicio: "div";
@@ -464,6 +495,7 @@ export const PlasmicMiniaturaMeta = Object.assign(
   {
     // Helper components rendering sub-elements
     text: makeNodeComponent("text"),
+    h3: makeNodeComponent("h3"),
     nomeMeta: makeNodeComponent("nomeMeta"),
     medalha: makeNodeComponent("medalha"),
     sequenciaHabito: makeNodeComponent("sequenciaHabito"),
