@@ -36,6 +36,7 @@ import {
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
 import BotoesMenuPrincipal from "../../BotoesMenuPrincipal"; // plasmic-import: 8PboOpLyrBm/component
+import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
 import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
@@ -43,6 +44,10 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import: 8XuJZfnuNd7UvNkkshapC6/projectcss
 import sty from "./PlasmicNotificacoes.module.css"; // plasmic-import: lsH7Q2uTocp/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
+import LeftArrowSvgrepoComsvgIcon from "./icons/PlasmicIcon__LeftArrowSvgrepoComsvg"; // plasmic-import: fmFspLMBVy/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
 export type PlasmicNotificacoes__VariantMembers = {};
 export type PlasmicNotificacoes__VariantsArgs = {};
@@ -58,9 +63,11 @@ export type PlasmicNotificacoes__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
-  text?: p.Flex<"div">;
+  button?: p.Flex<typeof Button>;
+  svg?: p.Flex<"svg">;
   h3?: p.Flex<"h3">;
   notis?: p.Flex<"div">;
+  notiGrupo?: p.Flex<"div">;
 };
 
 export interface DefaultNotificacoesProps {}
@@ -164,12 +171,29 @@ function PlasmicNotificacoes__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.column__hu61X)}
                   >
                     <div
-                      data-plasmic-name={"text"}
-                      data-plasmic-override={overrides.text}
+                      className={classNames(projectcss.all, sty.freeBox__eTeX)}
+                    >
+                      <Button
+                        data-plasmic-name={"button"}
+                        data-plasmic-override={overrides.button}
+                        className={classNames("__wab_instance", sty.button)}
+                        color={"clear" as const}
+                        shape={"round" as const}
+                      >
+                        <LeftArrowSvgrepoComsvgIcon
+                          data-plasmic-name={"svg"}
+                          data-plasmic-override={overrides.svg}
+                          className={classNames(projectcss.all, sty.svg)}
+                          role={"img"}
+                        />
+                      </Button>
+                    </div>
+
+                    <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text
+                        sty.text___89QXx
                       )}
                     >
                       <React.Fragment>
@@ -201,11 +225,114 @@ function PlasmicNotificacoes__RenderFunc(props: {
                       </React.Fragment>
                     </div>
 
-                    <div
-                      data-plasmic-name={"notis"}
-                      data-plasmic-override={overrides.notis}
-                      className={classNames(projectcss.all, sty.notis)}
-                    />
+                    {true ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__yDhzW
+                        )}
+                      >
+                        {true ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__geGyr
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__hpygs
+                              )}
+                            >
+                              <React.Fragment>
+                                <React.Fragment>{""}</React.Fragment>
+                                {
+                                  <h6
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.h6,
+                                      projectcss.__wab_text,
+                                      sty.h6__yEwN
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      <span
+                                        className={
+                                          "plasmic_default__all plasmic_default__span"
+                                        }
+                                        style={{ color: "#888888" }}
+                                      >
+                                        {"Solicitações de amizade:"}
+                                      </span>
+                                    </React.Fragment>
+                                  </h6>
+                                }
+                                <React.Fragment>{""}</React.Fragment>
+                              </React.Fragment>
+                            </div>
+
+                            <div
+                              data-plasmic-name={"notis"}
+                              data-plasmic-override={overrides.notis}
+                              className={classNames(projectcss.all, sty.notis)}
+                            />
+                          </div>
+                        ) : null}
+                        {true ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__kj1ON
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__aEWlj
+                              )}
+                            >
+                              <React.Fragment>
+                                <React.Fragment>{""}</React.Fragment>
+                                {
+                                  <h6
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.h6,
+                                      projectcss.__wab_text,
+                                      sty.h6__i8Ihu
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      <span
+                                        className={
+                                          "plasmic_default__all plasmic_default__span"
+                                        }
+                                        style={{ color: "#888888" }}
+                                      >
+                                        {"Convites de grupo"}
+                                      </span>
+                                    </React.Fragment>
+                                  </h6>
+                                }
+                                <React.Fragment>{""}</React.Fragment>
+                              </React.Fragment>
+                            </div>
+
+                            <div
+                              data-plasmic-name={"notiGrupo"}
+                              data-plasmic-override={overrides.notiGrupo}
+                              className={classNames(
+                                projectcss.all,
+                                sty.notiGrupo
+                              )}
+                            />
+                          </div>
+                        ) : null}
+                      </div>
+                    ) : null}
                   </div>
                 ) : null}
               </div>
@@ -223,16 +350,28 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "botoesMenuPrincipal",
-    "text",
+    "button",
+    "svg",
     "h3",
-    "notis"
+    "notis",
+    "notiGrupo"
   ],
   headerLogged: ["headerLogged"],
-  columns: ["columns", "botoesMenuPrincipal", "text", "h3", "notis"],
+  columns: [
+    "columns",
+    "botoesMenuPrincipal",
+    "button",
+    "svg",
+    "h3",
+    "notis",
+    "notiGrupo"
+  ],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
-  text: ["text", "h3"],
+  button: ["button", "svg"],
+  svg: ["svg"],
   h3: ["h3"],
-  notis: ["notis"]
+  notis: ["notis"],
+  notiGrupo: ["notiGrupo"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -242,9 +381,11 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
-  text: "div";
+  button: typeof Button;
+  svg: "svg";
   h3: "h3";
   notis: "div";
+  notiGrupo: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -311,9 +452,11 @@ export const PlasmicNotificacoes = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
-    text: makeNodeComponent("text"),
+    button: makeNodeComponent("button"),
+    svg: makeNodeComponent("svg"),
     h3: makeNodeComponent("h3"),
     notis: makeNodeComponent("notis"),
+    notiGrupo: makeNodeComponent("notiGrupo"),
 
     // Metadata about props expected for PlasmicNotificacoes
     internalVariantProps: PlasmicNotificacoes__VariantProps,
