@@ -6,6 +6,8 @@ import * as ph from "@plasmicapp/host";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicTelaMeta } from "../components/plasmic/protect_2_self/PlasmicTelaMeta";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function TelaMeta() {
   // Use PlasmicTelaMeta to render this component as it was
@@ -24,12 +26,71 @@ function TelaMeta() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  const [meta, setMeta] = useState();
+  const [loading, setLoading] = useState(true);
+  const [semRank, setSemRank] = useState(true);
+  const [error, setError] = useState<Error>();
+
+  const router = useRouter()
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/meta/findById/" + localStorage.getItem('metaId')
+        );
+        setMeta(response.data);
+        if(response.data.rank){
+          setSemRank(false)
+        }
+        setError(undefined);  
+        console.log(meta);
+      } catch (err) {
+        setError((err as any).message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+  if (error) {
+		return <div>Error: {error.message}</div>
+	}
+
+  function tipoMedalha(rank: any){
+    if(rank)
+      return String(rank).toLowerCase()
+    return false as any
+  } 
+
+  function formata(data: Date){
+    var dia = new Date(data)
+    if(data)
+      return dia.toLocaleDateString("en-GB")
+    return false as any
+  }
+
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicTelaMeta />
+      <PlasmicTelaMeta
+        semRank = {semRank}
+        nomeMeta={loading || !meta ? {} : {
+          render: (props, Comp) => <Comp {...props}>{(meta as any).nome}</Comp>,
+        }}
+        descricaoMeta={{
+          render: (props, Comp) => <Comp {...props}>{(meta as any).descricao}</Comp>,
+        }}
+
+        medalha={{
+            cor: tipoMedalha((meta as any).rank),
+            slot: (meta as any).nome,
+            children: formata((meta as any).data)
+        }}
+      />
     </ph.PageParamsProvider>
   );
 }

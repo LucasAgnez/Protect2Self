@@ -45,7 +45,6 @@ function MinhasMetas() {
         setError((err as any).message);
         setMetas([]);
       } finally {
-        console.log(metas)
         setLoading(false);
       }
     };
@@ -83,7 +82,14 @@ function MinhasMetas() {
     });
   }
 
-  function estaNaData(ultimaData: Date, frequencia: any){
+  function registraFracasso(metaId: any){
+    axios.put
+    ("http://localhost:8080/usuario/regMeta/" + localStorage.getItem("userId") + "/" + String(metaId), {
+        made: false,
+    })
+  }
+
+  function estaNaData(ultimaData: Date, frequencia: any, id: any){
     var dia = new Date("2013-02-21T12:01:04.753Z").getTime() -
       new Date("2013-02-20T12:01:04.753Z").getTime();
     var semana = new Date("2013-02-27T12:01:04.753Z").getTime()-
@@ -97,10 +103,10 @@ function MinhasMetas() {
     }
     if(!ultimaData)
       return true;
-      if(frequencia == "DIARIO"){
+    if(frequencia == "DIARIO"){
       if(time >= dia){
         if(time >= 2*dia ){
-          //zerar contador
+          registraFracasso(id)
         }
         return true
       }
@@ -108,7 +114,7 @@ function MinhasMetas() {
     if(frequencia == "SEMANAL"){
       if(time >= semana){
         if(time >= 2*semana  ){
-          //zerar
+          registraFracasso(id)
         }
         return true
       }
@@ -116,7 +122,7 @@ function MinhasMetas() {
     if(frequencia == "MENSAL"){
       if(time >= mes){
         if(time >= 2*mes){
-          //zerar
+          registraFracasso(id)
         }
         return true
       }
@@ -145,6 +151,14 @@ function MinhasMetas() {
     return false as any
   }
 
+  function calculaTempo(data: Date){
+    var ultimoDia = new Date(data).toLocaleDateString()
+    var hoje = new Date().toLocaleDateString()
+    const diffInMs   = new Date(hoje).getTime() - new Date(ultimoDia).getTime()
+    const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+    return diffInDays
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
@@ -159,8 +173,11 @@ function MinhasMetas() {
           nomeMeta={{
             render: (props, Comp) => <Comp {...props}>{entry.nome}</Comp>,
           }}
-          sequenciaMeta={{
-            render: (props, Comp) => <Comp {...props}>Atual sequência: {String(entry.recorde)}</Comp>,
+          sequenciaHabito={{
+            render: (props, Comp) => <Comp {...props}>Atual sequência: {String(entry.atual)}</Comp>,
+          }}
+          sequenciaVicio={{
+            render: (props, Comp) => <Comp {...props}>Atual sequência: {String(calculaTempo(entry.data))}</Comp>,
           }}
           comMedalha={temRank(entry.rank)}
           tipo={(String(entry.tipo).toLowerCase()) as any}
@@ -171,7 +188,7 @@ function MinhasMetas() {
           }}
           registra={{
             props: {
-              isDisabled : !estaNaData(entry.data, entry.frequencia),
+              isDisabled : !estaNaData(entry.data, entry.frequencia, entry.id),
               onClick: () => registraMeta(entry.id)
             }
           }}
