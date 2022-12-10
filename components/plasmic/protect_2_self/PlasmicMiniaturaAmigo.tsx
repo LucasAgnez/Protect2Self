@@ -48,15 +48,18 @@ import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3
 export type PlasmicMiniaturaAmigo__VariantMembers = {
   emGrupo: "adm" | "visaoDoAdm" | "visaoMembros";
   naLista: "sim" | "adicionar";
+  semMedalha: "semMedalha";
 };
 export type PlasmicMiniaturaAmigo__VariantsArgs = {
   emGrupo?: SingleChoiceArg<"adm" | "visaoDoAdm" | "visaoMembros">;
   naLista?: SingleChoiceArg<"sim" | "adicionar">;
+  semMedalha?: SingleBooleanChoiceArg<"semMedalha">;
 };
 type VariantPropType = keyof PlasmicMiniaturaAmigo__VariantsArgs;
 export const PlasmicMiniaturaAmigo__VariantProps = new Array<VariantPropType>(
   "emGrupo",
-  "naLista"
+  "naLista",
+  "semMedalha"
 );
 
 export type PlasmicMiniaturaAmigo__ArgsType = {};
@@ -78,6 +81,7 @@ export type PlasmicMiniaturaAmigo__OverridesType = {
 export interface DefaultMiniaturaAmigoProps {
   emGrupo?: SingleChoiceArg<"adm" | "visaoDoAdm" | "visaoMembros">;
   naLista?: SingleChoiceArg<"sim" | "adicionar">;
+  semMedalha?: SingleBooleanChoiceArg<"semMedalha">;
   className?: string;
 }
 
@@ -111,6 +115,11 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
         path: "naLista",
         type: "private",
         initFunc: ($props, $state, $ctx) => $props.naLista
+      },
+      {
+        path: "semMedalha",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.semMedalha
       }
     ],
     [$props, $ctx]
@@ -149,7 +158,8 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
             "naLista",
             "adicionar"
           ),
-          [sty.rootnaLista_sim]: hasVariant($state, "naLista", "sim")
+          [sty.rootnaLista_sim]: hasVariant($state, "naLista", "sim"),
+          [sty.rootsemMedalha]: hasVariant($state, "semMedalha", "semMedalha")
         }
       )}
     >
@@ -326,7 +336,9 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
         />
       ) : null}
       {(
-        hasVariant($state, "naLista", "adicionar")
+        hasVariant($state, "semMedalha", "semMedalha")
+          ? true
+          : hasVariant($state, "naLista", "adicionar")
           ? true
           : hasVariant($state, "naLista", "sim")
           ? true
@@ -352,7 +364,12 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
               "naLista",
               "adicionar"
             ),
-            [sty.medalhanaLista_sim]: hasVariant($state, "naLista", "sim")
+            [sty.medalhanaLista_sim]: hasVariant($state, "naLista", "sim"),
+            [sty.medalhasemMedalha]: hasVariant(
+              $state,
+              "semMedalha",
+              "semMedalha"
+            )
           })}
         />
       ) : null}

@@ -82,6 +82,9 @@
 .medalhanaLista_adicionar:global(.__wab_instance) {
   display: none;
 }
+.medalhasemMedalha:global(.__wab_instance) {
+  display: none;
+}
 .text__uDlIv {
   padding-left: 8px;
 }
