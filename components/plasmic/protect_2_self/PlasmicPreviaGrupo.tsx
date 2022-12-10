@@ -68,7 +68,7 @@ export type PlasmicPreviaGrupo__OverridesType = {
   fotoPerfil?: p.Flex<typeof p.PlasmicImg>;
   nomeGrupo?: p.Flex<"h2">;
   descricaoGrupo?: p.Flex<"div">;
-  membros?: p.Flex<"div">;
+  h5?: p.Flex<"h5">;
   aceitar?: p.Flex<typeof Button>;
   recusar?: p.Flex<typeof Button>;
 };
@@ -311,11 +311,13 @@ function PlasmicPreviaGrupo__RenderFunc(props: {
                                   <React.Fragment>{""}</React.Fragment>
                                   {
                                     <h5
+                                      data-plasmic-name={"h5"}
+                                      data-plasmic-override={overrides.h5}
                                       className={classNames(
                                         projectcss.all,
                                         projectcss.h5,
                                         projectcss.__wab_text,
-                                        sty.h5__xna8F
+                                        sty.h5
                                       )}
                                     >
                                       <React.Fragment>
@@ -335,46 +337,6 @@ function PlasmicPreviaGrupo__RenderFunc(props: {
                               </div>
                             </div>
                           ) : null}
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__dyYkB
-                            )}
-                          >
-                            <React.Fragment>
-                              <React.Fragment>{""}</React.Fragment>
-                              {
-                                <h5
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.h5,
-                                    projectcss.__wab_text,
-                                    sty.h5__h4MTl
-                                  )}
-                                >
-                                  <React.Fragment>
-                                    <span
-                                      className={
-                                        "plasmic_default__all plasmic_default__span"
-                                      }
-                                      style={{ color: "#FFFFFF" }}
-                                    >
-                                      {"Membros:"}
-                                    </span>
-                                  </React.Fragment>
-                                </h5>
-                              }
-                              <React.Fragment>{""}</React.Fragment>
-                            </React.Fragment>
-                          </div>
-
-                          <div
-                            data-plasmic-name={"membros"}
-                            data-plasmic-override={overrides.membros}
-                            className={classNames(projectcss.all, sty.membros)}
-                          />
                         </div>
 
                         {true ? (
@@ -433,7 +395,7 @@ const PlasmicDescendants = {
     "fotoPerfil",
     "nomeGrupo",
     "descricaoGrupo",
-    "membros",
+    "h5",
     "aceitar",
     "recusar"
   ],
@@ -446,7 +408,7 @@ const PlasmicDescendants = {
     "fotoPerfil",
     "nomeGrupo",
     "descricaoGrupo",
-    "membros",
+    "h5",
     "aceitar",
     "recusar"
   ],
@@ -456,7 +418,7 @@ const PlasmicDescendants = {
   fotoPerfil: ["fotoPerfil"],
   nomeGrupo: ["nomeGrupo"],
   descricaoGrupo: ["descricaoGrupo"],
-  membros: ["membros"],
+  h5: ["h5"],
   aceitar: ["aceitar"],
   recusar: ["recusar"]
 } as const;
@@ -473,7 +435,7 @@ type NodeDefaultElementType = {
   fotoPerfil: typeof p.PlasmicImg;
   nomeGrupo: "h2";
   descricaoGrupo: "div";
-  membros: "div";
+  h5: "h5";
   aceitar: typeof Button;
   recusar: typeof Button;
 };
@@ -547,7 +509,7 @@ export const PlasmicPreviaGrupo = Object.assign(
     fotoPerfil: makeNodeComponent("fotoPerfil"),
     nomeGrupo: makeNodeComponent("nomeGrupo"),
     descricaoGrupo: makeNodeComponent("descricaoGrupo"),
-    membros: makeNodeComponent("membros"),
+    h5: makeNodeComponent("h5"),
     aceitar: makeNodeComponent("aceitar"),
     recusar: makeNodeComponent("recusar"),
 

@@ -209,18 +209,6 @@
 .fotoPerfil > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
-.freeBox__dy5Bt {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-  padding: 8px;
-}
 .text__rxyjA {
   position: relative;
   width: auto;
@@ -230,8 +218,19 @@
 .nomeUsuario {
   width: auto;
 }
+.freeBox__dy5Bt {
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  display: none;
+  padding: 8px;
+}
 .columns__tAGxh {
-  display: flex;
   position: relative;
   width: 100%;
   height: auto;
@@ -240,6 +239,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .columns__tAGxh > :nth-child(2n + 1) {
@@ -335,7 +335,7 @@
   max-width: 100%;
   min-width: 0;
   padding: 8px;
-  margin: 0px;
+  margin: 53px 0px 0px;
 }
 .aceitar:global(.__wab_instance) {
   max-width: 100%;

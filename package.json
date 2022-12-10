@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@plasmicapp/cli": "^0.1.188",
+    "@plasmicapp/cli": "^0.1.189",
     "@plasmicapp/host": "^1.0.79",
     "@plasmicapp/react-web": "^0.2.122",
     "@plasmicpkgs/antd": "^0.0.94",

@@ -66,9 +66,9 @@ type ArgPropType = keyof PlasmicMiniaturaMeta__ArgsType;
 export const PlasmicMiniaturaMeta__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicMiniaturaMeta__OverridesType = {
-  stack?: p.Flex<"div">;
+  root?: p.Flex<"div">;
   text?: p.Flex<"div">;
-  h3?: p.Flex<"h3">;
+  nomeMeta2?: p.Flex<"h3">;
   nomeMeta?: p.Flex<"h3">;
   medalha?: p.Flex<typeof Medalha>;
   sequenciaHabito?: p.Flex<"div">;
@@ -123,8 +123,8 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
   return (
     true ? (
       <div
-        data-plasmic-name={"stack"}
-        data-plasmic-override={overrides.stack}
+        data-plasmic-name={"root"}
+        data-plasmic-override={overrides.root}
         data-plasmic-root={true}
         data-plasmic-for-node={forNode}
         className={classNames(
@@ -133,13 +133,9 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
           projectcss.plasmic_default_styles,
           projectcss.plasmic_mixins,
           projectcss.plasmic_tokens,
-          sty.stack,
+          sty.root,
           {
-            [sty.stackcomMedalha]: hasVariant(
-              $state,
-              "comMedalha",
-              "comMedalha"
-            )
+            [sty.rootcomMedalha]: hasVariant($state, "comMedalha", "comMedalha")
           }
         )}
       >
@@ -231,13 +227,13 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
                     <React.Fragment>{""}</React.Fragment>
                     {
                       <h3
-                        data-plasmic-name={"h3"}
-                        data-plasmic-override={overrides.h3}
+                        data-plasmic-name={"nomeMeta2"}
+                        data-plasmic-override={overrides.nomeMeta2}
                         className={classNames(
                           projectcss.all,
                           projectcss.h3,
                           projectcss.__wab_text,
-                          sty.h3
+                          sty.nomeMeta2
                         )}
                       >
                         {"Meta"}
@@ -401,18 +397,18 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  stack: [
-    "stack",
+  root: [
+    "root",
     "text",
-    "h3",
+    "nomeMeta2",
     "nomeMeta",
     "medalha",
     "sequenciaHabito",
     "sequenciaVicio",
     "registra"
   ],
-  text: ["text", "h3", "nomeMeta"],
-  h3: ["h3"],
+  text: ["text", "nomeMeta2", "nomeMeta"],
+  nomeMeta2: ["nomeMeta2"],
   nomeMeta: ["nomeMeta"],
   medalha: ["medalha"],
   sequenciaHabito: ["sequenciaHabito"],
@@ -423,9 +419,9 @@ type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
-  stack: "div";
+  root: "div";
   text: "div";
-  h3: "h3";
+  nomeMeta2: "h3";
   nomeMeta: "h3";
   medalha: typeof Medalha;
   sequenciaHabito: "div";
@@ -481,7 +477,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "stack") {
+  if (nodeName === "root") {
     func.displayName = "PlasmicMiniaturaMeta";
   } else {
     func.displayName = `PlasmicMiniaturaMeta.${nodeName}`;
@@ -491,11 +487,11 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicMiniaturaMeta = Object.assign(
   // Top-level PlasmicMiniaturaMeta renders the root element
-  makeNodeComponent("stack"),
+  makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
     text: makeNodeComponent("text"),
-    h3: makeNodeComponent("h3"),
+    nomeMeta2: makeNodeComponent("nomeMeta2"),
     nomeMeta: makeNodeComponent("nomeMeta"),
     medalha: makeNodeComponent("medalha"),
     sequenciaHabito: makeNodeComponent("sequenciaHabito"),

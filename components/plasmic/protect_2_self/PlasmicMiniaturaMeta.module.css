@@ -1,4 +1,4 @@
-.stack {
+.root {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -49,7 +49,7 @@
   max-width: 800px;
   min-width: 0;
 }
-.h3 {
+.nomeMeta2 {
   color: #ffffff;
 }
 .medalha:global(.__wab_instance) {

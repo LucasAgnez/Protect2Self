@@ -222,185 +222,190 @@ function PlasmicPreviaAmigo__RenderFunc(props: {
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__dy5Bt
+                            projectcss.__wab_text,
+                            sty.text__rxyjA
                           )}
                         >
+                          <React.Fragment>
+                            <React.Fragment>{""}</React.Fragment>
+                            {
+                              <h2
+                                data-plasmic-name={"nomeUsuario"}
+                                data-plasmic-override={overrides.nomeUsuario}
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.h2,
+                                  projectcss.__wab_text,
+                                  sty.nomeUsuario
+                                )}
+                              >
+                                <React.Fragment>
+                                  <span
+                                    className={
+                                      "plasmic_default__all plasmic_default__span"
+                                    }
+                                    style={{ color: "#FFFFFF" }}
+                                  >
+                                    {"Nome Usuario"}
+                                  </span>
+                                </React.Fragment>
+                              </h2>
+                            }
+                            <React.Fragment>{""}</React.Fragment>
+                          </React.Fragment>
+                        </div>
+
+                        {true ? (
                           <div
                             className={classNames(
                               projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__rxyjA
+                              sty.freeBox__dy5Bt
                             )}
                           >
-                            <React.Fragment>
-                              <React.Fragment>{""}</React.Fragment>
-                              {
-                                <h2
-                                  data-plasmic-name={"nomeUsuario"}
-                                  data-plasmic-override={overrides.nomeUsuario}
+                            {true ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.columns__tAGxh
+                                )}
+                              >
+                                <div
                                   className={classNames(
                                     projectcss.all,
-                                    projectcss.h2,
-                                    projectcss.__wab_text,
-                                    sty.nomeUsuario
+                                    sty.column___17R9
                                   )}
                                 >
-                                  <React.Fragment>
-                                    <span
-                                      className={
-                                        "plasmic_default__all plasmic_default__span"
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__ylIi
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      <React.Fragment>{""}</React.Fragment>
+                                      {
+                                        <h5
+                                          className={classNames(
+                                            projectcss.all,
+                                            projectcss.h5,
+                                            projectcss.__wab_text,
+                                            sty.h5__sZQf
+                                          )}
+                                        >
+                                          <React.Fragment>
+                                            <span
+                                              className={
+                                                "plasmic_default__all plasmic_default__span"
+                                              }
+                                              style={{ color: "#C9C9C9" }}
+                                            >
+                                              {"Grupos em Comum:"}
+                                            </span>
+                                          </React.Fragment>
+                                        </h5>
                                       }
-                                      style={{ color: "#FFFFFF" }}
-                                    >
-                                      {"Nome Usuario"}
-                                    </span>
-                                  </React.Fragment>
-                                </h2>
-                              }
-                              <React.Fragment>{""}</React.Fragment>
-                            </React.Fragment>
-                          </div>
+                                      <React.Fragment>{""}</React.Fragment>
+                                    </React.Fragment>
+                                  </div>
 
+                                  <div
+                                    data-plasmic-name={"grupoComum"}
+                                    data-plasmic-override={overrides.grupoComum}
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.grupoComum
+                                    )}
+                                  />
+                                </div>
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.column__fiAlx
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text___04HzK
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      <React.Fragment>{""}</React.Fragment>
+                                      {
+                                        <h5
+                                          className={classNames(
+                                            projectcss.all,
+                                            projectcss.h5,
+                                            projectcss.__wab_text,
+                                            sty.h5__qbjhq
+                                          )}
+                                        >
+                                          <React.Fragment>
+                                            <span
+                                              className={
+                                                "plasmic_default__all plasmic_default__span"
+                                              }
+                                              style={{ color: "#C9C9C9" }}
+                                            >
+                                              {"Amigos em Comum:"}
+                                            </span>
+                                          </React.Fragment>
+                                        </h5>
+                                      }
+                                      <React.Fragment>{""}</React.Fragment>
+                                    </React.Fragment>
+                                  </div>
+
+                                  <div
+                                    data-plasmic-name={"amigosComum"}
+                                    data-plasmic-override={
+                                      overrides.amigosComum
+                                    }
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.amigosComum
+                                    )}
+                                  />
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        ) : null}
+                        {true ? (
                           <div
                             className={classNames(
                               projectcss.all,
-                              sty.columns__tAGxh
+                              sty.freeBox__xPkXv
                             )}
                           >
-                            <div
+                            <Button
+                              data-plasmic-name={"aceitar"}
+                              data-plasmic-override={overrides.aceitar}
                               className={classNames(
-                                projectcss.all,
-                                sty.column___17R9
+                                "__wab_instance",
+                                sty.aceitar
                               )}
+                              color={"yellow" as const}
                             >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__ylIi
-                                )}
-                              >
-                                <React.Fragment>
-                                  <React.Fragment>{""}</React.Fragment>
-                                  {
-                                    <h5
-                                      className={classNames(
-                                        projectcss.all,
-                                        projectcss.h5,
-                                        projectcss.__wab_text,
-                                        sty.h5__sZQf
-                                      )}
-                                    >
-                                      <React.Fragment>
-                                        <span
-                                          className={
-                                            "plasmic_default__all plasmic_default__span"
-                                          }
-                                          style={{ color: "#C9C9C9" }}
-                                        >
-                                          {"Grupos em Comum:"}
-                                        </span>
-                                      </React.Fragment>
-                                    </h5>
-                                  }
-                                  <React.Fragment>{""}</React.Fragment>
-                                </React.Fragment>
-                              </div>
+                              {"Adicionar"}
+                            </Button>
 
-                              <div
-                                data-plasmic-name={"grupoComum"}
-                                data-plasmic-override={overrides.grupoComum}
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.grupoComum
-                                )}
-                              />
-                            </div>
-
-                            <div
+                            <Button
+                              data-plasmic-name={"recusar"}
+                              data-plasmic-override={overrides.recusar}
                               className={classNames(
-                                projectcss.all,
-                                sty.column__fiAlx
+                                "__wab_instance",
+                                sty.recusar
                               )}
+                              color={"red" as const}
                             >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text___04HzK
-                                )}
-                              >
-                                <React.Fragment>
-                                  <React.Fragment>{""}</React.Fragment>
-                                  {
-                                    <h5
-                                      className={classNames(
-                                        projectcss.all,
-                                        projectcss.h5,
-                                        projectcss.__wab_text,
-                                        sty.h5__qbjhq
-                                      )}
-                                    >
-                                      <React.Fragment>
-                                        <span
-                                          className={
-                                            "plasmic_default__all plasmic_default__span"
-                                          }
-                                          style={{ color: "#C9C9C9" }}
-                                        >
-                                          {"Amigos em Comum:"}
-                                        </span>
-                                      </React.Fragment>
-                                    </h5>
-                                  }
-                                  <React.Fragment>{""}</React.Fragment>
-                                </React.Fragment>
-                              </div>
-
-                              <div
-                                data-plasmic-name={"amigosComum"}
-                                data-plasmic-override={overrides.amigosComum}
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.amigosComum
-                                )}
-                              />
-                            </div>
+                              {"Recusar"}
+                            </Button>
                           </div>
-
-                          {true ? (
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__xPkXv
-                              )}
-                            >
-                              <Button
-                                data-plasmic-name={"aceitar"}
-                                data-plasmic-override={overrides.aceitar}
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.aceitar
-                                )}
-                                color={"yellow" as const}
-                              >
-                                {"Adicionar"}
-                              </Button>
-
-                              <Button
-                                data-plasmic-name={"recusar"}
-                                data-plasmic-override={overrides.recusar}
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.recusar
-                                )}
-                                color={"red" as const}
-                              >
-                                {"Recusar"}
-                              </Button>
-                            </div>
-                          ) : null}
-                        </div>
+                        ) : null}
                       </div>
                     ) : null}
                   </div>
