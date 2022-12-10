@@ -441,10 +441,11 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
                     <Select__Option
                       className={classNames(
                         "__wab_instance",
-                        sty.option__eobbL
+                        sty.option__vha5Y
                       )}
                       color={"dark" as const}
-                      value={"Diario" as const}
+                      textValue={"DIARIO" as const}
+                      value={"0" as const}
                     >
                       {"Diário"}
                     </Select__Option>
@@ -452,18 +453,23 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
                     <Select__Option
                       className={classNames(
                         "__wab_instance",
-                        sty.option___3PSUr
+                        sty.option__a5Ltd
                       )}
                       color={"dark" as const}
-                      value={"Semanal" as const}
+                      textValue={"SEMANAL" as const}
+                      value={"1" as const}
                     >
                       {"Semanal"}
                     </Select__Option>
 
                     <Select__Option
-                      className={classNames("__wab_instance", sty.option__rpOJ)}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.option__naxyr
+                      )}
                       color={"dark" as const}
-                      value={"Mensal" as const}
+                      textValue={"MENSAL" as const}
+                      value={"2" as const}
                     >
                       {"Mensal"}
                     </Select__Option>
