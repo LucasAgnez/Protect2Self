@@ -76,10 +76,8 @@ export type PlasmicTelaGrupo__OverridesType = {
   userPhoto?: p.Flex<typeof UserPhoto>;
   voltar?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
-  text?: p.Flex<"div">;
   nomeGrupo?: p.Flex<"h2">;
   nomeGrupoAdm?: p.Flex<"h2">;
-  img?: p.Flex<typeof p.PlasmicImg>;
   textInput?: p.Flex<typeof TextInput>;
   admin?: p.Flex<"div">;
   container?: p.Flex<"div">;
@@ -303,26 +301,26 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                   )
                 })}
               >
-                {true ? (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__rYLoL)}
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___852Xr)}
+                >
+                  <Button
+                    data-plasmic-name={"voltar"}
+                    data-plasmic-override={overrides.voltar}
+                    className={classNames("__wab_instance", sty.voltar)}
+                    color={"clear" as const}
+                    link={`/grupos`}
+                    shape={"round" as const}
                   >
-                    <Button
-                      data-plasmic-name={"voltar"}
-                      data-plasmic-override={overrides.voltar}
-                      className={classNames("__wab_instance", sty.voltar)}
-                      color={"clear" as const}
-                      shape={"round" as const}
-                    >
-                      <LeftArrowSvgrepoComsvgIcon
-                        data-plasmic-name={"svg"}
-                        data-plasmic-override={overrides.svg}
-                        className={classNames(projectcss.all, sty.svg)}
-                        role={"img"}
-                      />
-                    </Button>
-                  </div>
-                ) : null}
+                    <LeftArrowSvgrepoComsvgIcon
+                      data-plasmic-name={"svg"}
+                      data-plasmic-override={overrides.svg}
+                      className={classNames(projectcss.all, sty.svg)}
+                      role={"img"}
+                    />
+                  </Button>
+                </div>
+
                 {(
                   hasVariant($state, "adm", "adm") &&
                   hasVariant(globalVariants, "screen", "mobileOnly")
@@ -370,15 +368,17 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                             : true
                         ) ? (
                           <div
-                            data-plasmic-name={"text"}
-                            data-plasmic-override={overrides.text}
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text,
+                              sty.text__xf5Hc,
                               {
-                                [sty.textadm]: hasVariant($state, "adm", "adm"),
-                                [sty.texteditar]: hasVariant(
+                                [sty.textadm__xf5HcH6EUz]: hasVariant(
+                                  $state,
+                                  "adm",
+                                  "adm"
+                                ),
+                                [sty.texteditar__xf5HcTSpDr]: hasVariant(
                                   $state,
                                   "editar",
                                   "editar"
@@ -458,42 +458,6 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                             )}
                           </div>
                         ) : null}
-                        {(hasVariant($state, "adm", "adm") ? true : true) ? (
-                          <Button
-                            className={classNames(
-                              "__wab_instance",
-                              sty.button__dqFu5,
-                              {
-                                [sty.buttonadm__dqFu5H6EUz]: hasVariant(
-                                  $state,
-                                  "adm",
-                                  "adm"
-                                )
-                              }
-                            )}
-                            color={"clear" as const}
-                          >
-                            <p.PlasmicImg
-                              data-plasmic-name={"img"}
-                              data-plasmic-override={overrides.img}
-                              alt={""}
-                              className={classNames(sty.img)}
-                              displayHeight={"auto" as const}
-                              displayMaxHeight={"none" as const}
-                              displayMaxWidth={"100%" as const}
-                              displayMinHeight={"0" as const}
-                              displayMinWidth={"0" as const}
-                              displayWidth={"36px" as const}
-                              loading={"lazy" as const}
-                              src={{
-                                src: "/plasmic/protect_2_self/images/lapispng.png",
-                                fullWidth: 512,
-                                fullHeight: 512,
-                                aspectRatio: undefined
-                              }}
-                            />
-                          </Button>
-                        ) : null}
                         {(
                           hasVariant($state, "editar", "editar") ? true : true
                         ) ? (
@@ -517,6 +481,39 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                         ) : null}
                       </div>
                     ) : null}
+                    {(hasVariant($state, "adm", "adm") ? true : true) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__ikPBy,
+                          {
+                            [sty.textadm__ikPByH6EUz]: hasVariant(
+                              $state,
+                              "adm",
+                              "adm"
+                            )
+                          }
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <h6
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.h6,
+                                projectcss.__wab_text,
+                                sty.h6__hVmM
+                              )}
+                            >
+                              {"Administrador"}
+                            </h6>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
+                    ) : null}
 
                     <div
                       data-plasmic-name={"admin"}
@@ -524,6 +521,39 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.admin)}
                     />
 
+                    {(hasVariant($state, "adm", "adm") ? true : true) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___25Wii,
+                          {
+                            [sty.textadm___25WiiH6EUz]: hasVariant(
+                              $state,
+                              "adm",
+                              "adm"
+                            )
+                          }
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <h6
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.h6,
+                                projectcss.__wab_text,
+                                sty.h6__evDp
+                              )}
+                            >
+                              {"Membros"}
+                            </h6>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
+                    ) : null}
                     {true ? (
                       <div
                         data-plasmic-name={"container"}
@@ -550,10 +580,8 @@ const PlasmicDescendants = {
     "userPhoto",
     "voltar",
     "svg",
-    "text",
     "nomeGrupo",
     "nomeGrupoAdm",
-    "img",
     "textInput",
     "textbox",
     "admin",
@@ -565,10 +593,8 @@ const PlasmicDescendants = {
     "userPhoto",
     "voltar",
     "svg",
-    "text",
     "nomeGrupo",
     "nomeGrupoAdm",
-    "img",
     "textInput",
     "textbox",
     "admin",
@@ -577,10 +603,8 @@ const PlasmicDescendants = {
   userPhoto: ["userPhoto"],
   voltar: ["voltar", "svg"],
   svg: ["svg"],
-  text: ["text", "nomeGrupo", "nomeGrupoAdm"],
   nomeGrupo: ["nomeGrupo"],
   nomeGrupoAdm: ["nomeGrupoAdm"],
-  img: ["img"],
   textInput: ["textInput", "textbox"],
   admin: ["admin"],
   container: ["container"]
@@ -595,10 +619,8 @@ type NodeDefaultElementType = {
   userPhoto: typeof UserPhoto;
   voltar: typeof Button;
   svg: "svg";
-  text: "div";
   nomeGrupo: "h2";
   nomeGrupoAdm: "h2";
-  img: typeof p.PlasmicImg;
   textInput: typeof TextInput;
   admin: "div";
   container: "div";
@@ -670,10 +692,8 @@ export const PlasmicTelaGrupo = Object.assign(
     userPhoto: makeNodeComponent("userPhoto"),
     voltar: makeNodeComponent("voltar"),
     svg: makeNodeComponent("svg"),
-    text: makeNodeComponent("text"),
     nomeGrupo: makeNodeComponent("nomeGrupo"),
     nomeGrupoAdm: makeNodeComponent("nomeGrupoAdm"),
-    img: makeNodeComponent("img"),
     textInput: makeNodeComponent("textInput"),
     admin: makeNodeComponent("admin"),
     container: makeNodeComponent("container"),
