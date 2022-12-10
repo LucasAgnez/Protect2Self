@@ -36,10 +36,10 @@ function MinhasMetas() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(
+        const resposta = await axios.get(
           "http://localhost:8080/usuario/getMetas/" + localStorage.getItem('userId')
         );
-        setMetas(response.data);
+        setMetas(resposta.data);
         setError(undefined);
       } catch (err) {
         setError((err as any).message);
@@ -155,9 +155,11 @@ function MinhasMetas() {
     var ultimoDia = new Date(data).toLocaleDateString()
     var hoje = new Date().toLocaleDateString()
     const diffInMs   = new Date(hoje).getTime() - new Date(ultimoDia).getTime()
-    const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+    const diffInDays = diffInMs / (1000 * 60 * 60 * 24)
     return diffInDays
   }
+
+  const router = useRouter()
 
   return (
     <ph.PageParamsProvider
@@ -169,8 +171,9 @@ function MinhasMetas() {
         onChange : () => mostraMetas()
       }}
       container = {(loading || !metas) ? {} :{ 
-        children: metas.map(entry => <MiniaturaMeta                                               
-          nomeMeta={{
+        children: metas.map(entry => <MiniaturaMeta
+          onClick={() => (localStorage.setItem('metaId', entry.id), router.push('/tela-meta'))} 
+          nome={{
             render: (props, Comp) => <Comp {...props}>{entry.nome}</Comp>,
           }}
           sequenciaHabito={{
@@ -192,8 +195,6 @@ function MinhasMetas() {
               onClick: () => registraMeta(entry.id)
             }
           }}
-          /*
-          */
         />) 
       }}
       />

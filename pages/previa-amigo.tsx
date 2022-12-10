@@ -72,16 +72,16 @@ function PreviaAmigo() {
     >
       <PlasmicPreviaAmigo 
         voltar={{
-          onClick: () => localStorage.removeItem("friendId")
+          onClick: () => (localStorage.removeItem("friendId"), router.push("/notificacoes"))
         }}
         nomeUsuario={loading || !friend ? {} : {
           render: (props, Comp) => <Comp {...props}>{(friend as any).nome}</Comp>,
         }}
         aceitar={loading || !friend ? {} : {
-          onClick: () => aceitaConviteAmizade((friend as any).id)
+          onClick: () => (aceitaConviteAmizade((friend as any).id), router.push("/notificacoes"))
         }}
         recusar={loading || !friend ? {} : {
-          onClick: () => rejeitaConviteAmizade((friend as any).id)
+          onClick: () => (rejeitaConviteAmizade((friend as any).id), router.push("/notificacoes"))
         }}
       />
     </ph.PageParamsProvider>
