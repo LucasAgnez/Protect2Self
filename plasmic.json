@@ -428,19 +428,6 @@
           "componentType": "component"
         },
         {
-          "id": "605FdbX2DfO",
-          "name": "EntrarGrupo",
-          "type": "managed",
-          "projectId": "8XuJZfnuNd7UvNkkshapC6",
-          "renderModuleFilePath": "plasmic/protect_2_self/PlasmicEntrarGrupo.tsx",
-          "importSpec": {
-            "modulePath": "../pages/entrar-grupo.tsx"
-          },
-          "cssFilePath": "plasmic/protect_2_self/PlasmicEntrarGrupo.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "QeX4Yp4ozGm",
           "name": "CriarConta",
           "type": "managed",

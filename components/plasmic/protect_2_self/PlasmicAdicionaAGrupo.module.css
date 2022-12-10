@@ -142,13 +142,13 @@
 .img__xBrq > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
-.button:global(.__wab_instance) {
+.button__uMnqH:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin-top: 5px;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .button:global(.__wab_instance) {
+  .button__uMnqH:global(.__wab_instance) {
     width: 130px;
   }
 }
@@ -176,7 +176,7 @@
   min-width: 0;
   padding: 8px;
 }
-.freeBox__rjSon {
+.freeBox__fiCx {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -185,14 +185,14 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  margin-top: 30px;
   min-width: 0;
   padding: 8px;
 }
-.voltar:global(.__wab_instance) {
+.button__vKyB7:global(.__wab_instance) {
   max-width: 100%;
+  position: relative;
 }
-.svg__zEdS5 {
+.svg__vQaa6 {
   position: relative;
   object-fit: cover;
   width: 1em;
@@ -203,10 +203,10 @@
   object-fit: cover;
   max-width: 100%;
   color: #ffff16;
-  width: 1em;
-  height: 1em;
+  width: 80px;
+  height: 30px;
 }
-.svg__ylew {
+.svg__wPoBo {
   position: relative;
   object-fit: cover;
   width: 1em;

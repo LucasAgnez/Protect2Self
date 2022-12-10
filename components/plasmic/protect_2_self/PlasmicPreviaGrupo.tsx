@@ -46,6 +46,7 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicPreviaGrupo.module.css"; // plasmic-import: ZRQuop94HB5/css
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
+import LeftArrowSvgrepoComsvgIcon from "./icons/PlasmicIcon__LeftArrowSvgrepoComsvg"; // plasmic-import: fmFspLMBVy/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
 export type PlasmicPreviaGrupo__VariantMembers = {};
@@ -62,11 +63,14 @@ export type PlasmicPreviaGrupo__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
+  voltar?: p.Flex<typeof Button>;
+  svg?: p.Flex<"svg">;
   fotoPerfil?: p.Flex<typeof p.PlasmicImg>;
   nomeGrupo?: p.Flex<"h2">;
   descricaoGrupo?: p.Flex<"div">;
   membros?: p.Flex<"div">;
-  entrar?: p.Flex<typeof Button>;
+  aceitar?: p.Flex<typeof Button>;
+  recusar?: p.Flex<typeof Button>;
 };
 
 export interface DefaultPreviaGrupoProps {}
@@ -169,6 +173,26 @@ function PlasmicPreviaGrupo__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.column__zcO1G)}
                   >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__lGp7A)}
+                    >
+                      <Button
+                        data-plasmic-name={"voltar"}
+                        data-plasmic-override={overrides.voltar}
+                        className={classNames("__wab_instance", sty.voltar)}
+                        color={"clear" as const}
+                        link={`/notificacoes`}
+                        shape={"round" as const}
+                      >
+                        <LeftArrowSvgrepoComsvgIcon
+                          data-plasmic-name={"svg"}
+                          data-plasmic-override={overrides.svg}
+                          className={classNames(projectcss.all, sty.svg)}
+                          role={"img"}
+                        />
+                      </Button>
+                    </div>
+
                     {(
                       hasVariant(globalVariants, "screen", "mobileOnly")
                         ? true
@@ -351,16 +375,40 @@ function PlasmicPreviaGrupo__RenderFunc(props: {
                             data-plasmic-override={overrides.membros}
                             className={classNames(projectcss.all, sty.membros)}
                           />
-
-                          <Button
-                            data-plasmic-name={"entrar"}
-                            data-plasmic-override={overrides.entrar}
-                            className={classNames("__wab_instance", sty.entrar)}
-                            color={"yellow" as const}
-                          >
-                            {"Entrar"}
-                          </Button>
                         </div>
+
+                        {true ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__fYn2E
+                            )}
+                          >
+                            <Button
+                              data-plasmic-name={"aceitar"}
+                              data-plasmic-override={overrides.aceitar}
+                              className={classNames(
+                                "__wab_instance",
+                                sty.aceitar
+                              )}
+                              color={"yellow" as const}
+                            >
+                              {"Entrar"}
+                            </Button>
+
+                            <Button
+                              data-plasmic-name={"recusar"}
+                              data-plasmic-override={overrides.recusar}
+                              className={classNames(
+                                "__wab_instance",
+                                sty.recusar
+                              )}
+                              color={"red" as const}
+                            >
+                              {"Recusar"}
+                            </Button>
+                          </div>
+                        ) : null}
                       </div>
                     ) : null}
                   </div>
@@ -380,28 +428,37 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "botoesMenuPrincipal",
+    "voltar",
+    "svg",
     "fotoPerfil",
     "nomeGrupo",
     "descricaoGrupo",
     "membros",
-    "entrar"
+    "aceitar",
+    "recusar"
   ],
   headerLogged: ["headerLogged"],
   columns: [
     "columns",
     "botoesMenuPrincipal",
+    "voltar",
+    "svg",
     "fotoPerfil",
     "nomeGrupo",
     "descricaoGrupo",
     "membros",
-    "entrar"
+    "aceitar",
+    "recusar"
   ],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
+  voltar: ["voltar", "svg"],
+  svg: ["svg"],
   fotoPerfil: ["fotoPerfil"],
   nomeGrupo: ["nomeGrupo"],
   descricaoGrupo: ["descricaoGrupo"],
   membros: ["membros"],
-  entrar: ["entrar"]
+  aceitar: ["aceitar"],
+  recusar: ["recusar"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -411,11 +468,14 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
+  voltar: typeof Button;
+  svg: "svg";
   fotoPerfil: typeof p.PlasmicImg;
   nomeGrupo: "h2";
   descricaoGrupo: "div";
   membros: "div";
-  entrar: typeof Button;
+  aceitar: typeof Button;
+  recusar: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -482,11 +542,14 @@ export const PlasmicPreviaGrupo = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
+    voltar: makeNodeComponent("voltar"),
+    svg: makeNodeComponent("svg"),
     fotoPerfil: makeNodeComponent("fotoPerfil"),
     nomeGrupo: makeNodeComponent("nomeGrupo"),
     descricaoGrupo: makeNodeComponent("descricaoGrupo"),
     membros: makeNodeComponent("membros"),
-    entrar: makeNodeComponent("entrar"),
+    aceitar: makeNodeComponent("aceitar"),
+    recusar: makeNodeComponent("recusar"),
 
     // Metadata about props expected for PlasmicPreviaGrupo
     internalVariantProps: PlasmicPreviaGrupo__VariantProps,

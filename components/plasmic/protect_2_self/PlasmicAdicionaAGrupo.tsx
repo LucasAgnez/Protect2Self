@@ -65,8 +65,6 @@ export type PlasmicAdicionaAGrupo__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
-  button?: p.Flex<typeof Button>;
-  voltar?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
   text?: p.Flex<"div">;
   h4?: p.Flex<"h4">;
@@ -154,9 +152,10 @@ function PlasmicAdicionaAGrupo__RenderFunc(props: {
                       />
 
                       <Button
-                        data-plasmic-name={"button"}
-                        data-plasmic-override={overrides.button}
-                        className={classNames("__wab_instance", sty.button)}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.button__uMnqH
+                        )}
                       >
                         {hasVariant(globalVariants, "screen", "mobileOnly")
                           ? "Editar Perfil"
@@ -168,26 +167,26 @@ function PlasmicAdicionaAGrupo__RenderFunc(props: {
               ) : null}
               {true ? (
                 <div className={classNames(projectcss.all, sty.column__ym9YV)}>
-                  {true ? (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__rjSon)}
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__fiCx)}
+                  >
+                    <Button
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button__vKyB7
+                      )}
+                      color={"clear" as const}
+                      link={`/tela-grupo`}
+                      shape={"round" as const}
                     >
-                      <Button
-                        data-plasmic-name={"voltar"}
-                        data-plasmic-override={overrides.voltar}
-                        className={classNames("__wab_instance", sty.voltar)}
-                        color={"clear" as const}
-                        shape={"round" as const}
-                      >
-                        <LeftArrowSvgrepoComsvgIcon
-                          data-plasmic-name={"svg"}
-                          data-plasmic-override={overrides.svg}
-                          className={classNames(projectcss.all, sty.svg)}
-                          role={"img"}
-                        />
-                      </Button>
-                    </div>
-                  ) : null}
+                      <LeftArrowSvgrepoComsvgIcon
+                        data-plasmic-name={"svg"}
+                        data-plasmic-override={overrides.svg}
+                        className={classNames(projectcss.all, sty.svg)}
+                        role={"img"}
+                      />
+                    </Button>
+                  </div>
 
                   <div
                     data-plasmic-name={"text"}
@@ -278,8 +277,6 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "userPhoto",
-    "button",
-    "voltar",
     "svg",
     "text",
     "h4",
@@ -291,8 +288,6 @@ const PlasmicDescendants = {
   columns: [
     "columns",
     "userPhoto",
-    "button",
-    "voltar",
     "svg",
     "text",
     "h4",
@@ -301,8 +296,6 @@ const PlasmicDescendants = {
     "usuarios"
   ],
   userPhoto: ["userPhoto"],
-  button: ["button"],
-  voltar: ["voltar", "svg"],
   svg: ["svg"],
   text: ["text", "h4"],
   h4: ["h4"],
@@ -318,8 +311,6 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   userPhoto: typeof UserPhoto;
-  button: typeof Button;
-  voltar: typeof Button;
   svg: "svg";
   text: "div";
   h4: "h4";
@@ -392,8 +383,6 @@ export const PlasmicAdicionaAGrupo = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     userPhoto: makeNodeComponent("userPhoto"),
-    button: makeNodeComponent("button"),
-    voltar: makeNodeComponent("voltar"),
     svg: makeNodeComponent("svg"),
     text: makeNodeComponent("text"),
     h4: makeNodeComponent("h4"),

@@ -66,9 +66,7 @@ export type PlasmicAdicionaAmigo__OverridesType = {
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
   userPhoto?: p.Flex<typeof UserPhoto>;
-  button?: p.Flex<typeof Button>;
   botoesPerfil?: p.Flex<typeof BotoesPerfil>;
-  voltar?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
   text?: p.Flex<"div">;
   h4?: p.Flex<"h4">;
@@ -156,9 +154,10 @@ function PlasmicAdicionaAmigo__RenderFunc(props: {
                       />
 
                       <Button
-                        data-plasmic-name={"button"}
-                        data-plasmic-override={overrides.button}
-                        className={classNames("__wab_instance", sty.button)}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.button__iToYj
+                        )}
                       >
                         {hasVariant(globalVariants, "screen", "mobileOnly")
                           ? "Editar Perfil"
@@ -176,26 +175,23 @@ function PlasmicAdicionaAmigo__RenderFunc(props: {
               ) : null}
               {true ? (
                 <div className={classNames(projectcss.all, sty.column__dj7Ep)}>
-                  {true ? (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__vFvI3)}
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__rwCsa)}
+                  >
+                    <Button
+                      className={classNames("__wab_instance", sty.button__cKfe)}
+                      color={"clear" as const}
+                      link={`/perfil`}
+                      shape={"round" as const}
                     >
-                      <Button
-                        data-plasmic-name={"voltar"}
-                        data-plasmic-override={overrides.voltar}
-                        className={classNames("__wab_instance", sty.voltar)}
-                        color={"clear" as const}
-                        shape={"round" as const}
-                      >
-                        <LeftArrowSvgrepoComsvgIcon
-                          data-plasmic-name={"svg"}
-                          data-plasmic-override={overrides.svg}
-                          className={classNames(projectcss.all, sty.svg)}
-                          role={"img"}
-                        />
-                      </Button>
-                    </div>
-                  ) : null}
+                      <LeftArrowSvgrepoComsvgIcon
+                        data-plasmic-name={"svg"}
+                        data-plasmic-override={overrides.svg}
+                        className={classNames(projectcss.all, sty.svg)}
+                        role={"img"}
+                      />
+                    </Button>
+                  </div>
 
                   <div
                     data-plasmic-name={"text"}
@@ -283,9 +279,7 @@ const PlasmicDescendants = {
     "headerLogged",
     "columns",
     "userPhoto",
-    "button",
     "botoesPerfil",
-    "voltar",
     "svg",
     "text",
     "h4",
@@ -297,9 +291,7 @@ const PlasmicDescendants = {
   columns: [
     "columns",
     "userPhoto",
-    "button",
     "botoesPerfil",
-    "voltar",
     "svg",
     "text",
     "h4",
@@ -308,9 +300,7 @@ const PlasmicDescendants = {
     "usuarios"
   ],
   userPhoto: ["userPhoto"],
-  button: ["button"],
   botoesPerfil: ["botoesPerfil"],
-  voltar: ["voltar", "svg"],
   svg: ["svg"],
   text: ["text", "h4"],
   h4: ["h4"],
@@ -326,9 +316,7 @@ type NodeDefaultElementType = {
   headerLogged: typeof HeaderLogged;
   columns: "div";
   userPhoto: typeof UserPhoto;
-  button: typeof Button;
   botoesPerfil: typeof BotoesPerfil;
-  voltar: typeof Button;
   svg: "svg";
   text: "div";
   h4: "h4";
@@ -401,9 +389,7 @@ export const PlasmicAdicionaAmigo = Object.assign(
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
     userPhoto: makeNodeComponent("userPhoto"),
-    button: makeNodeComponent("button"),
     botoesPerfil: makeNodeComponent("botoesPerfil"),
-    voltar: makeNodeComponent("voltar"),
     svg: makeNodeComponent("svg"),
     text: makeNodeComponent("text"),
     h4: makeNodeComponent("h4"),

@@ -46,6 +46,7 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicPreviaAmigo.module.css"; // plasmic-import: gEkBigb_MQN/css
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
+import LeftArrowSvgrepoComsvgIcon from "./icons/PlasmicIcon__LeftArrowSvgrepoComsvg"; // plasmic-import: fmFspLMBVy/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
 export type PlasmicPreviaAmigo__VariantMembers = {};
@@ -61,11 +62,14 @@ export type PlasmicPreviaAmigo__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
+  voltar?: p.Flex<typeof Button>;
+  svg?: p.Flex<"svg">;
   fotoPerfil?: p.Flex<typeof p.PlasmicImg>;
   nomeUsuario?: p.Flex<"h2">;
   grupoComum?: p.Flex<"div">;
   amigosComum?: p.Flex<"div">;
-  button?: p.Flex<typeof Button>;
+  aceitar?: p.Flex<typeof Button>;
+  recusar?: p.Flex<typeof Button>;
 };
 
 export interface DefaultPreviaAmigoProps {}
@@ -164,6 +168,26 @@ function PlasmicPreviaAmigo__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.column__h8E8X)}
                   >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__zmEav)}
+                    >
+                      <Button
+                        data-plasmic-name={"voltar"}
+                        data-plasmic-override={overrides.voltar}
+                        className={classNames("__wab_instance", sty.voltar)}
+                        color={"clear" as const}
+                        link={`/notificacoes`}
+                        shape={"round" as const}
+                      >
+                        <LeftArrowSvgrepoComsvgIcon
+                          data-plasmic-name={"svg"}
+                          data-plasmic-override={overrides.svg}
+                          className={classNames(projectcss.all, sty.svg)}
+                          role={"img"}
+                        />
+                      </Button>
+                    </div>
+
                     {(
                       hasVariant(globalVariants, "screen", "mobileOnly")
                         ? true
@@ -344,14 +368,38 @@ function PlasmicPreviaAmigo__RenderFunc(props: {
                             </div>
                           </div>
 
-                          <Button
-                            data-plasmic-name={"button"}
-                            data-plasmic-override={overrides.button}
-                            className={classNames("__wab_instance", sty.button)}
-                            color={"yellow" as const}
-                          >
-                            {"Adicionar"}
-                          </Button>
+                          {true ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__xPkXv
+                              )}
+                            >
+                              <Button
+                                data-plasmic-name={"aceitar"}
+                                data-plasmic-override={overrides.aceitar}
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.aceitar
+                                )}
+                                color={"yellow" as const}
+                              >
+                                {"Adicionar"}
+                              </Button>
+
+                              <Button
+                                data-plasmic-name={"recusar"}
+                                data-plasmic-override={overrides.recusar}
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.recusar
+                                )}
+                                color={"red" as const}
+                              >
+                                {"Recusar"}
+                              </Button>
+                            </div>
+                          ) : null}
                         </div>
                       </div>
                     ) : null}
@@ -371,19 +419,25 @@ const PlasmicDescendants = {
     "root",
     "headerLogged",
     "botoesMenuPrincipal",
+    "voltar",
+    "svg",
     "fotoPerfil",
     "nomeUsuario",
     "grupoComum",
     "amigosComum",
-    "button"
+    "aceitar",
+    "recusar"
   ],
   headerLogged: ["headerLogged"],
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
+  voltar: ["voltar", "svg"],
+  svg: ["svg"],
   fotoPerfil: ["fotoPerfil"],
   nomeUsuario: ["nomeUsuario"],
   grupoComum: ["grupoComum"],
   amigosComum: ["amigosComum"],
-  button: ["button"]
+  aceitar: ["aceitar"],
+  recusar: ["recusar"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -392,11 +446,14 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
+  voltar: typeof Button;
+  svg: "svg";
   fotoPerfil: typeof p.PlasmicImg;
   nomeUsuario: "h2";
   grupoComum: "div";
   amigosComum: "div";
-  button: typeof Button;
+  aceitar: typeof Button;
+  recusar: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -462,11 +519,14 @@ export const PlasmicPreviaAmigo = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
+    voltar: makeNodeComponent("voltar"),
+    svg: makeNodeComponent("svg"),
     fotoPerfil: makeNodeComponent("fotoPerfil"),
     nomeUsuario: makeNodeComponent("nomeUsuario"),
     grupoComum: makeNodeComponent("grupoComum"),
     amigosComum: makeNodeComponent("amigosComum"),
-    button: makeNodeComponent("button"),
+    aceitar: makeNodeComponent("aceitar"),
+    recusar: makeNodeComponent("recusar"),
 
     // Metadata about props expected for PlasmicPreviaAmigo
     internalVariantProps: PlasmicPreviaAmigo__VariantProps,

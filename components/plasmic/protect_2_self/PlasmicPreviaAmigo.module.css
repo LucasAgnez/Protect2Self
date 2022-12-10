@@ -134,6 +134,42 @@
     display: flex;
   }
 }
+.freeBox__zmEav {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.voltar:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__yAv0 {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  color: #ffff16;
+  width: 80px;
+  height: 30px;
+}
+.svg__zfiar {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
 .freeBox__t9X30 {
   display: flex;
   position: relative;
@@ -288,17 +324,47 @@
   min-width: 0;
   padding: 8px;
 }
-.button:global(.__wab_instance) {
-  max-width: 100%;
+.freeBox__xPkXv {
+  display: flex;
   position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+  margin: 0px;
 }
-.svg__sNNp {
+.aceitar:global(.__wab_instance) {
+  max-width: 100%;
+  margin: 0px 40px 0px 0px;
+}
+.svg__tkCvn {
   position: relative;
   object-fit: cover;
   width: 1em;
   height: 1em;
 }
-.svg___14Xy {
+.svg__vwHle {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.recusar:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  margin: 0px 0px 0px 40px;
+}
+.svg__t8HzO {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__e0Eb1 {
   position: relative;
   object-fit: cover;
   width: 1em;
