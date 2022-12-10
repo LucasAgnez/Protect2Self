@@ -14,22 +14,19 @@
   padding: 8px;
   border: 1px solid #d3d3d3;
 }
-.freeBox__cowRf {
+.freeBox__j9ScW {
   display: flex;
+  position: relative;
   flex-direction: column;
-  width: 100%;
-  height: 80px;
-  justify-content: center;
   align-items: center;
-  background: none;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
   min-width: 0;
-  border-radius: 6px;
-  padding: 10px;
+  padding: 8px;
 }
-.freeBoxcomMedalha__cowRfyJuMv {
-  z-index: 6;
-}
-.freeBox__noCej {
+.freeBox___5FjU {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -39,8 +36,8 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 8px 8px 0px;
-  border-bottom: 1px solid #ffffff;
+  padding: 8px;
+  border-bottom: 1px solid #d3d3d3;
 }
 .text {
   position: relative;
@@ -49,47 +46,54 @@
   max-width: 800px;
   min-width: 0;
 }
-.nomeMeta2 {
+.nome {
   color: #ffffff;
 }
 .medalha:global(.__wab_instance) {
+  max-width: 100%;
   position: relative;
-  width: 30px;
-  margin-left: 60px;
-  z-index: 8;
-  flex-shrink: 0;
   display: none;
 }
 .medalhacomMedalha:global(.__wab_instance) {
   display: flex;
 }
-.text__d3Lw8 {
+.text__rt8Av {
   padding-right: 14px;
   padding-left: 8px;
   color: #ffffff;
 }
-.text__r5KcK {
+.text__ydVU {
   padding-left: 8px;
 }
-.freeBox___6ExQ {
+.sequenciaHabito {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 800px;
-  display: flex;
-  flex-direction: row;
+  color: #888888;
   min-width: 0;
 }
-.sequenciaHabito {
+.sequenciaHabitocomMedalha {
   display: none;
 }
-.sequenciaHabitotipo_habito {
+.sequenciaHabitotipo_habito_comMedalha {
   display: block;
 }
 .sequenciaVicio {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  color: #888888;
+  min-width: 0;
+}
+.sequenciaViciotipo_habito {
   display: none;
 }
-.sequenciaViciotipo_vicio {
+.sequenciaViciocomMedalha {
+  display: none;
+}
+.sequenciaViciotipo_vicio_comMedalha {
   display: block;
 }
 .registra:global(.__wab_instance) {
@@ -99,17 +103,13 @@
   height: 50px;
   flex-shrink: 0;
 }
-.registracomMedalha:global(.__wab_instance) {
-  margin-left: 0px;
-  z-index: 5;
-}
-.svg__bwbxV {
+.svg__lvP4F {
   position: relative;
   object-fit: cover;
   width: 1em;
   height: 1em;
 }
-.svg___2ZnNy {
+.svg__dMbt8 {
   position: relative;
   object-fit: cover;
   max-width: 100%;
@@ -117,10 +117,10 @@
   height: 1em;
   display: none;
 }
-.svgtipo_vicio___2ZnNy54S {
+.svgtipo_vicio__dMbt854S {
   display: block;
 }
-.svg___0Fz3K {
+.svg__nhJiK {
   position: relative;
   object-fit: cover;
   max-width: 100%;
@@ -128,13 +128,13 @@
   height: 1em;
   display: none;
 }
-.svgtipo_habito___0Fz3KFpvrz {
+.svgtipo_habito__nhJiKfpvrz {
   display: block;
 }
-.svgtipo_vicio___0Fz3K54S {
+.svgtipo_vicio__nhJiK54S {
   display: none;
 }
-.svg__zu6Lk {
+.svg__gsMA {
   position: relative;
   object-fit: cover;
   width: 1em;
