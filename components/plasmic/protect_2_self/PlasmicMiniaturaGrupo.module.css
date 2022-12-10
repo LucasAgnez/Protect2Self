@@ -35,20 +35,6 @@
   overflow: hidden;
   min-width: 0;
 }
-.img {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 34px;
-  margin-right: 15px;
-  flex-shrink: 0;
-}
-.img > picture > img {
-  object-fit: cover;
-}
-.img > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
 .nomeGrupo {
   padding-left: 16px;
   white-space: pre;

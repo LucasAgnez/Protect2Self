@@ -65,7 +65,6 @@ export type PlasmicCriacaoMetaHabitoGrupo__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   dados?: p.Flex<"div">;
-  img?: p.Flex<typeof p.PlasmicImg>;
   colunaNomeGrupo?: p.Flex<"div">;
   nomeGrupo?: p.Flex<typeof TextInput>;
   descricao2?: p.Flex<"div">;
@@ -142,26 +141,6 @@ function PlasmicCriacaoMetaHabitoGrupo__RenderFunc(props: {
             data-plasmic-override={overrides.dados}
             className={classNames(projectcss.all, sty.dados)}
           >
-            <p.PlasmicImg
-              data-plasmic-name={"img"}
-              data-plasmic-override={overrides.img}
-              alt={""}
-              className={classNames(sty.img)}
-              displayHeight={"200px" as const}
-              displayMaxHeight={"none" as const}
-              displayMaxWidth={"100%" as const}
-              displayMinHeight={"0" as const}
-              displayMinWidth={"0" as const}
-              displayWidth={"auto" as const}
-              loading={"lazy" as const}
-              src={{
-                src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
-                fullWidth: 2048,
-                fullHeight: 2048,
-                aspectRatio: undefined
-              }}
-            />
-
             {true ? (
               <div
                 data-plasmic-name={"colunaNomeGrupo"}
@@ -506,7 +485,6 @@ const PlasmicDescendants = {
     "root",
     "headerLogged",
     "dados",
-    "img",
     "colunaNomeGrupo",
     "nomeGrupo",
     "descricao2",
@@ -522,7 +500,6 @@ const PlasmicDescendants = {
   headerLogged: ["headerLogged"],
   dados: [
     "dados",
-    "img",
     "colunaNomeGrupo",
     "nomeGrupo",
     "descricao2",
@@ -535,7 +512,6 @@ const PlasmicDescendants = {
     "frequencia",
     "confirma"
   ],
-  img: ["img"],
   colunaNomeGrupo: ["colunaNomeGrupo", "nomeGrupo"],
   nomeGrupo: ["nomeGrupo"],
   descricao2: ["descricao2", "descricaoGrupo"],
@@ -555,7 +531,6 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   dados: "div";
-  img: typeof p.PlasmicImg;
   colunaNomeGrupo: "div";
   nomeGrupo: typeof TextInput;
   descricao2: "div";
@@ -632,7 +607,6 @@ export const PlasmicCriacaoMetaHabitoGrupo = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     dados: makeNodeComponent("dados"),
-    img: makeNodeComponent("img"),
     colunaNomeGrupo: makeNodeComponent("colunaNomeGrupo"),
     nomeGrupo: makeNodeComponent("nomeGrupo"),
     descricao2: makeNodeComponent("descricao2"),

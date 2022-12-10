@@ -51,7 +51,6 @@ export const PlasmicMiniaturaGrupo__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicMiniaturaGrupo__OverridesType = {
   root?: p.Flex<"div">;
-  img?: p.Flex<typeof p.PlasmicImg>;
   nomeGrupo?: p.Flex<"h4">;
   metaGrupo?: p.Flex<"h5">;
   sequencia?: p.Flex<"div">;
@@ -101,26 +100,6 @@ function PlasmicMiniaturaGrupo__RenderFunc(props: {
         {true ? (
           <div className={classNames(projectcss.all, sty.freeBox__xvt3I)}>
             <div className={classNames(projectcss.all, sty.freeBox__s0Mnq)}>
-              <p.PlasmicImg
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
-                alt={""}
-                className={classNames(sty.img)}
-                displayHeight={"auto" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"100%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"34px" as const}
-                loading={"lazy" as const}
-                src={{
-                  src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
-                  fullWidth: 2048,
-                  fullHeight: 2048,
-                  aspectRatio: undefined
-                }}
-              />
-
               <div
                 className={classNames(
                   projectcss.all,
@@ -222,8 +201,7 @@ function PlasmicMiniaturaGrupo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img", "nomeGrupo", "metaGrupo", "sequencia"],
-  img: ["img"],
+  root: ["root", "nomeGrupo", "metaGrupo", "sequencia"],
   nomeGrupo: ["nomeGrupo"],
   metaGrupo: ["metaGrupo"],
   sequencia: ["sequencia"]
@@ -233,7 +211,6 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  img: typeof p.PlasmicImg;
   nomeGrupo: "h4";
   metaGrupo: "h5";
   sequencia: "div";
@@ -300,7 +277,6 @@ export const PlasmicMiniaturaGrupo = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    img: makeNodeComponent("img"),
     nomeGrupo: makeNodeComponent("nomeGrupo"),
     metaGrupo: makeNodeComponent("metaGrupo"),
     sequencia: makeNodeComponent("sequencia"),

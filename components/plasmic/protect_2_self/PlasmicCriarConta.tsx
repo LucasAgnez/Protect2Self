@@ -35,19 +35,18 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: Cew9iEQBJMu/component
-import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
-import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
 import PasswordInput from "../../PasswordInput"; // plasmic-import: s963UX2uFqp/component
+import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import: 8XuJZfnuNd7UvNkkshapC6/projectcss
 import sty from "./PlasmicCriarConta.module.css"; // plasmic-import: QeX4Yp4ozGm/css
 
+import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 
 export type PlasmicCriarConta__VariantMembers = {};
 export type PlasmicCriarConta__VariantsArgs = {};
@@ -61,10 +60,8 @@ export const PlasmicCriarConta__ArgProps = new Array<ArgPropType>();
 export type PlasmicCriarConta__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
-  colunaFoto?: p.Flex<"div">;
-  userPhoto?: p.Flex<typeof UserPhoto>;
-  button?: p.Flex<typeof Button>;
   dadosCadastro?: p.Flex<"div">;
+  freeBox?: p.Flex<"div">;
   nomeCompleto?: p.Flex<typeof TextInput>;
   confirma?: p.Flex<typeof Button>;
 };
@@ -127,37 +124,15 @@ function PlasmicCriarConta__RenderFunc(props: {
           {true ? (
             <div className={classNames(projectcss.all, sty.columns__qyVw)}>
               <div
-                data-plasmic-name={"colunaFoto"}
-                data-plasmic-override={overrides.colunaFoto}
-                className={classNames(projectcss.all, sty.colunaFoto)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__lpKDx)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__pZ8Ln)}
-                  >
-                    <UserPhoto
-                      data-plasmic-name={"userPhoto"}
-                      data-plasmic-override={overrides.userPhoto}
-                      className={classNames("__wab_instance", sty.userPhoto)}
-                    />
-
-                    <Button
-                      data-plasmic-name={"button"}
-                      data-plasmic-override={overrides.button}
-                      className={classNames("__wab_instance", sty.button)}
-                    >
-                      {"Editar Foto"}
-                    </Button>
-                  </div>
-                </div>
-              </div>
-
-              <div
                 data-plasmic-name={"dadosCadastro"}
                 data-plasmic-override={overrides.dadosCadastro}
                 className={classNames(projectcss.all, sty.dadosCadastro)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__rAt5Y)}>
+                <div
+                  data-plasmic-name={"freeBox"}
+                  data-plasmic-override={overrides.freeBox}
+                  className={classNames(projectcss.all, sty.freeBox)}
+                >
                   <div
                     className={classNames(projectcss.all, sty.columns__kb7EL)}
                   >
@@ -284,24 +259,17 @@ function PlasmicCriarConta__RenderFunc(props: {
                     <div
                       className={classNames(projectcss.all, sty.column__uhrlV)}
                     >
-                      <div
+                      <TextInput
                         className={classNames(
-                          projectcss.all,
-                          sty.freeBox__tQIn
+                          "__wab_instance",
+                          sty.textInput__hqjvl
                         )}
-                      >
-                        <TextInput
-                          className={classNames(
-                            "__wab_instance",
-                            sty.textInput__hqjvl
-                          )}
-                          color={"dark" as const}
-                          id={"email" as const}
-                          name={"email" as const}
-                          placeholder={"ex. joaosilva@email.com" as const}
-                          required={true}
-                        />
-                      </div>
+                        color={"dark" as const}
+                        id={"email" as const}
+                        name={"email" as const}
+                        placeholder={"ex. joaosilva@email.com" as const}
+                        required={true}
+                      />
                     </div>
                   </div>
 
@@ -452,18 +420,14 @@ const PlasmicDescendants = {
   root: [
     "root",
     "header",
-    "colunaFoto",
-    "userPhoto",
-    "button",
     "dadosCadastro",
+    "freeBox",
     "nomeCompleto",
     "confirma"
   ],
   header: ["header"],
-  colunaFoto: ["colunaFoto", "userPhoto", "button"],
-  userPhoto: ["userPhoto"],
-  button: ["button"],
-  dadosCadastro: ["dadosCadastro", "nomeCompleto", "confirma"],
+  dadosCadastro: ["dadosCadastro", "freeBox", "nomeCompleto", "confirma"],
+  freeBox: ["freeBox", "nomeCompleto", "confirma"],
   nomeCompleto: ["nomeCompleto"],
   confirma: ["confirma"]
 } as const;
@@ -473,10 +437,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
-  colunaFoto: "div";
-  userPhoto: typeof UserPhoto;
-  button: typeof Button;
   dadosCadastro: "div";
+  freeBox: "div";
   nomeCompleto: typeof TextInput;
   confirma: typeof Button;
 };
@@ -543,10 +505,8 @@ export const PlasmicCriarConta = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    colunaFoto: makeNodeComponent("colunaFoto"),
-    userPhoto: makeNodeComponent("userPhoto"),
-    button: makeNodeComponent("button"),
     dadosCadastro: makeNodeComponent("dadosCadastro"),
+    freeBox: makeNodeComponent("freeBox"),
     nomeCompleto: makeNodeComponent("nomeCompleto"),
     confirma: makeNodeComponent("confirma"),
 

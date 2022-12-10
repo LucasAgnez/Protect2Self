@@ -35,21 +35,18 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
-import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
 import PasswordInput from "../../PasswordInput"; // plasmic-import: s963UX2uFqp/component
-
-import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
+import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import: 8XuJZfnuNd7UvNkkshapC6/projectcss
 import sty from "./PlasmicEditarPerfil.module.css"; // plasmic-import: 9uhOKoIKliE/css
 
+import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 
 export type PlasmicEditarPerfil__VariantMembers = {};
 export type PlasmicEditarPerfil__VariantsArgs = {};
@@ -64,8 +61,7 @@ export type PlasmicEditarPerfil__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
-  userPhoto?: p.Flex<typeof UserPhoto>;
-  button?: p.Flex<typeof Button>;
+  column?: p.Flex<"div">;
   nome?: p.Flex<typeof TextInput>;
   username?: p.Flex<typeof TextInput>;
   email?: p.Flex<typeof TextInput>;
@@ -98,10 +94,6 @@ function PlasmicEditarPerfil__RenderFunc(props: {
   const currentUser = p.useCurrentUser?.() || {};
 
   const [$queries, setDollarQueries] = React.useState({});
-
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantswwY5HaVRu8X4()
-  });
 
   return (
     <React.Fragment>
@@ -141,34 +133,11 @@ function PlasmicEditarPerfil__RenderFunc(props: {
               className={classNames(projectcss.all, sty.columns)}
             >
               {true ? (
-                <div className={classNames(projectcss.all, sty.column__pVeu6)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__x9QZl)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__iqtHf)}
-                    >
-                      <UserPhoto
-                        data-plasmic-name={"userPhoto"}
-                        data-plasmic-override={overrides.userPhoto}
-                        className={classNames("__wab_instance", sty.userPhoto)}
-                      />
-
-                      <Button
-                        data-plasmic-name={"button"}
-                        data-plasmic-override={overrides.button}
-                        className={classNames("__wab_instance", sty.button)}
-                      >
-                        {hasVariant(globalVariants, "screen", "mobileOnly")
-                          ? "Editar Perfil"
-                          : "Editar Foto"}
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              ) : null}
-              {true ? (
-                <div className={classNames(projectcss.all, sty.column___2DfgY)}>
+                <div
+                  data-plasmic-name={"column"}
+                  data-plasmic-override={overrides.column}
+                  className={classNames(projectcss.all, sty.column)}
+                >
                   <div
                     className={classNames(projectcss.all, sty.freeBox__vR8Y)}
                   >
@@ -442,8 +411,7 @@ const PlasmicDescendants = {
     "root",
     "headerLogged",
     "columns",
-    "userPhoto",
-    "button",
+    "column",
     "nome",
     "username",
     "email",
@@ -456,8 +424,7 @@ const PlasmicDescendants = {
   headerLogged: ["headerLogged"],
   columns: [
     "columns",
-    "userPhoto",
-    "button",
+    "column",
     "nome",
     "username",
     "email",
@@ -467,8 +434,17 @@ const PlasmicDescendants = {
     "confirma",
     "cancela"
   ],
-  userPhoto: ["userPhoto"],
-  button: ["button"],
+  column: [
+    "column",
+    "nome",
+    "username",
+    "email",
+    "telefone",
+    "senha",
+    "confirmaSenha",
+    "confirma",
+    "cancela"
+  ],
   nome: ["nome"],
   username: ["username"],
   email: ["email"],
@@ -485,8 +461,7 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   columns: "div";
-  userPhoto: typeof UserPhoto;
-  button: typeof Button;
+  column: "div";
   nome: typeof TextInput;
   username: typeof TextInput;
   email: typeof TextInput;
@@ -560,8 +535,7 @@ export const PlasmicEditarPerfil = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
-    userPhoto: makeNodeComponent("userPhoto"),
-    button: makeNodeComponent("button"),
+    column: makeNodeComponent("column"),
     nome: makeNodeComponent("nome"),
     username: makeNodeComponent("username"),
     email: makeNodeComponent("email"),

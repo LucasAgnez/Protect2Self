@@ -65,7 +65,6 @@ export type PlasmicPreviaGrupo__OverridesType = {
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
   voltar?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
-  fotoPerfil?: p.Flex<typeof p.PlasmicImg>;
   nomeGrupo?: p.Flex<"h2">;
   descricaoGrupo?: p.Flex<"div">;
   h5?: p.Flex<"h5">;
@@ -204,26 +203,6 @@ function PlasmicPreviaGrupo__RenderFunc(props: {
                           sty.freeBox__x6Bwe
                         )}
                       >
-                        <p.PlasmicImg
-                          data-plasmic-name={"fotoPerfil"}
-                          data-plasmic-override={overrides.fotoPerfil}
-                          alt={""}
-                          className={classNames(sty.fotoPerfil)}
-                          displayHeight={"172px" as const}
-                          displayMaxHeight={"none" as const}
-                          displayMaxWidth={"100%" as const}
-                          displayMinHeight={"0" as const}
-                          displayMinWidth={"0" as const}
-                          displayWidth={"auto" as const}
-                          loading={"lazy" as const}
-                          src={{
-                            src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
-                            fullWidth: 2048,
-                            fullHeight: 2048,
-                            aspectRatio: undefined
-                          }}
-                        />
-
                         <div
                           className={classNames(
                             projectcss.all,
@@ -392,7 +371,6 @@ const PlasmicDescendants = {
     "botoesMenuPrincipal",
     "voltar",
     "svg",
-    "fotoPerfil",
     "nomeGrupo",
     "descricaoGrupo",
     "h5",
@@ -405,7 +383,6 @@ const PlasmicDescendants = {
     "botoesMenuPrincipal",
     "voltar",
     "svg",
-    "fotoPerfil",
     "nomeGrupo",
     "descricaoGrupo",
     "h5",
@@ -415,7 +392,6 @@ const PlasmicDescendants = {
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
   voltar: ["voltar", "svg"],
   svg: ["svg"],
-  fotoPerfil: ["fotoPerfil"],
   nomeGrupo: ["nomeGrupo"],
   descricaoGrupo: ["descricaoGrupo"],
   h5: ["h5"],
@@ -432,7 +408,6 @@ type NodeDefaultElementType = {
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
   voltar: typeof Button;
   svg: "svg";
-  fotoPerfil: typeof p.PlasmicImg;
   nomeGrupo: "h2";
   descricaoGrupo: "div";
   h5: "h5";
@@ -506,7 +481,6 @@ export const PlasmicPreviaGrupo = Object.assign(
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
     voltar: makeNodeComponent("voltar"),
     svg: makeNodeComponent("svg"),
-    fotoPerfil: makeNodeComponent("fotoPerfil"),
     nomeGrupo: makeNodeComponent("nomeGrupo"),
     descricaoGrupo: makeNodeComponent("descricaoGrupo"),
     h5: makeNodeComponent("h5"),

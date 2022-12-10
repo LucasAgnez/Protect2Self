@@ -59,13 +59,9 @@ export const PlasmicMiniaturaAmigo__VariantProps = new Array<VariantPropType>(
   "naLista"
 );
 
-export type PlasmicMiniaturaAmigo__ArgsType = {
-  children?: React.ReactNode;
-};
+export type PlasmicMiniaturaAmigo__ArgsType = {};
 type ArgPropType = keyof PlasmicMiniaturaAmigo__ArgsType;
-export const PlasmicMiniaturaAmigo__ArgProps = new Array<ArgPropType>(
-  "children"
-);
+export const PlasmicMiniaturaAmigo__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicMiniaturaAmigo__OverridesType = {
   root?: p.Flex<"div">;
@@ -80,7 +76,6 @@ export type PlasmicMiniaturaAmigo__OverridesType = {
 };
 
 export interface DefaultMiniaturaAmigoProps {
-  children?: React.ReactNode;
   emGrupo?: SingleChoiceArg<"adm" | "visaoDoAdm" | "visaoMembros">;
   naLista?: SingleChoiceArg<"sim" | "adicionar">;
   className?: string;
@@ -158,30 +153,6 @@ function PlasmicMiniaturaAmigo__RenderFunc(props: {
         }
       )}
     >
-      {p.renderPlasmicSlot({
-        defaultContents: (
-          <p.PlasmicImg
-            alt={""}
-            className={classNames(sty.img___2FjJ)}
-            displayHeight={"auto" as const}
-            displayMaxHeight={"none" as const}
-            displayMaxWidth={"100%" as const}
-            displayMinHeight={"0" as const}
-            displayMinWidth={"0" as const}
-            displayWidth={"57px" as const}
-            loading={"lazy" as const}
-            src={{
-              src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
-              fullWidth: 2048,
-              fullHeight: 2048,
-              aspectRatio: undefined
-            }}
-          />
-        ),
-
-        value: args.children
-      })}
-
       <div
         data-plasmic-name={"freeBox"}
         data-plasmic-override={overrides.freeBox}

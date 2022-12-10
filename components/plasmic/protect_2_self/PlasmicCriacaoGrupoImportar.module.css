@@ -30,18 +30,6 @@
   min-width: 0;
   padding: 8px;
 }
-.img__cnRcf {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 115px;
-}
-.img__cnRcf > picture > img {
-  object-fit: cover;
-}
-.img__cnRcf > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
 .colunaNome {
   display: flex;
   position: relative;

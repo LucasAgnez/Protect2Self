@@ -54,13 +54,9 @@ type VariantPropType = keyof PlasmicCriacaoGrupoImportar__VariantsArgs;
 export const PlasmicCriacaoGrupoImportar__VariantProps =
   new Array<VariantPropType>();
 
-export type PlasmicCriacaoGrupoImportar__ArgsType = {
-  fotoGrupo?: React.ReactNode;
-};
+export type PlasmicCriacaoGrupoImportar__ArgsType = {};
 type ArgPropType = keyof PlasmicCriacaoGrupoImportar__ArgsType;
-export const PlasmicCriacaoGrupoImportar__ArgProps = new Array<ArgPropType>(
-  "fotoGrupo"
-);
+export const PlasmicCriacaoGrupoImportar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicCriacaoGrupoImportar__OverridesType = {
   root?: p.Flex<"div">;
@@ -135,29 +131,6 @@ function PlasmicCriacaoGrupoImportar__RenderFunc(props: {
             data-plasmic-override={overrides.dados}
             className={classNames(projectcss.all, sty.dados)}
           >
-            {p.renderPlasmicSlot({
-              defaultContents: (
-                <p.PlasmicImg
-                  alt={""}
-                  className={classNames(sty.img__cnRcf)}
-                  displayHeight={"auto" as const}
-                  displayMaxHeight={"none" as const}
-                  displayMaxWidth={"100%" as const}
-                  displayMinHeight={"0" as const}
-                  displayMinWidth={"0" as const}
-                  displayWidth={"115px" as const}
-                  loading={"lazy" as const}
-                  src={{
-                    src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
-                    fullWidth: 2048,
-                    fullHeight: 2048,
-                    aspectRatio: undefined
-                  }}
-                />
-              ),
-
-              value: args.fotoGrupo
-            })}
             {true ? (
               <div
                 data-plasmic-name={"colunaNome"}

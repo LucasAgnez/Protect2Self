@@ -53,13 +53,9 @@ type VariantPropType = keyof PlasmicCriacaoMetaVicioGrupo__VariantsArgs;
 export const PlasmicCriacaoMetaVicioGrupo__VariantProps =
   new Array<VariantPropType>();
 
-export type PlasmicCriacaoMetaVicioGrupo__ArgsType = {
-  children?: React.ReactNode;
-};
+export type PlasmicCriacaoMetaVicioGrupo__ArgsType = {};
 type ArgPropType = keyof PlasmicCriacaoMetaVicioGrupo__ArgsType;
-export const PlasmicCriacaoMetaVicioGrupo__ArgProps = new Array<ArgPropType>(
-  "children"
-);
+export const PlasmicCriacaoMetaVicioGrupo__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicCriacaoMetaVicioGrupo__OverridesType = {
   root?: p.Flex<"div">;
@@ -135,29 +131,6 @@ function PlasmicCriacaoMetaVicioGrupo__RenderFunc(props: {
             data-plasmic-override={overrides.dados}
             className={classNames(projectcss.all, sty.dados)}
           >
-            {p.renderPlasmicSlot({
-              defaultContents: (
-                <p.PlasmicImg
-                  alt={""}
-                  className={classNames(sty.img__rGMao)}
-                  displayHeight={"200px" as const}
-                  displayMaxHeight={"none" as const}
-                  displayMaxWidth={"100%" as const}
-                  displayMinHeight={"0" as const}
-                  displayMinWidth={"0" as const}
-                  displayWidth={"auto" as const}
-                  loading={"lazy" as const}
-                  src={{
-                    src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
-                    fullWidth: 2048,
-                    fullHeight: 2048,
-                    aspectRatio: undefined
-                  }}
-                />
-              ),
-
-              value: args.children
-            })}
             {true ? (
               <div
                 data-plasmic-name={"colunaNomeGrupo"}

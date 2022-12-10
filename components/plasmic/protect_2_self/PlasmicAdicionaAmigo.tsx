@@ -35,12 +35,9 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
-import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 import BotoesPerfil from "../../BotoesPerfil"; // plasmic-import: RmM8H_pqLGC/component
+import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
-
-import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -48,8 +45,8 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicAdicionaAmigo.module.css"; // plasmic-import: KPpoVpAQVdw/css
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 import LeftArrowSvgrepoComsvgIcon from "./icons/PlasmicIcon__LeftArrowSvgrepoComsvg"; // plasmic-import: fmFspLMBVy/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 
 export type PlasmicAdicionaAmigo__VariantMembers = {};
@@ -65,8 +62,8 @@ export type PlasmicAdicionaAmigo__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
-  userPhoto?: p.Flex<typeof UserPhoto>;
   botoesPerfil?: p.Flex<typeof BotoesPerfil>;
+  button?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
   text?: p.Flex<"div">;
   h4?: p.Flex<"h4">;
@@ -97,10 +94,6 @@ function PlasmicAdicionaAmigo__RenderFunc(props: {
   const currentUser = p.useCurrentUser?.() || {};
 
   const [$queries, setDollarQueries] = React.useState({});
-
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantswwY5HaVRu8X4()
-  });
 
   return (
     <React.Fragment>
@@ -144,27 +137,6 @@ function PlasmicAdicionaAmigo__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__yD5VN)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__kgTg)}
-                    >
-                      <UserPhoto
-                        data-plasmic-name={"userPhoto"}
-                        data-plasmic-override={overrides.userPhoto}
-                        className={classNames("__wab_instance", sty.userPhoto)}
-                      />
-
-                      <Button
-                        className={classNames(
-                          "__wab_instance",
-                          sty.button__iToYj
-                        )}
-                      >
-                        {hasVariant(globalVariants, "screen", "mobileOnly")
-                          ? "Editar Perfil"
-                          : "Editar Foto"}
-                      </Button>
-                    </div>
-
                     <BotoesPerfil
                       data-plasmic-name={"botoesPerfil"}
                       data-plasmic-override={overrides.botoesPerfil}
@@ -179,7 +151,9 @@ function PlasmicAdicionaAmigo__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.freeBox__rwCsa)}
                   >
                     <Button
-                      className={classNames("__wab_instance", sty.button__cKfe)}
+                      data-plasmic-name={"button"}
+                      data-plasmic-override={overrides.button}
+                      className={classNames("__wab_instance", sty.button)}
                       color={"clear" as const}
                       link={`/perfil`}
                       shape={"round" as const}
@@ -278,8 +252,8 @@ const PlasmicDescendants = {
     "root",
     "headerLogged",
     "columns",
-    "userPhoto",
     "botoesPerfil",
+    "button",
     "svg",
     "text",
     "h4",
@@ -290,8 +264,8 @@ const PlasmicDescendants = {
   headerLogged: ["headerLogged"],
   columns: [
     "columns",
-    "userPhoto",
     "botoesPerfil",
+    "button",
     "svg",
     "text",
     "h4",
@@ -299,8 +273,8 @@ const PlasmicDescendants = {
     "confirma",
     "usuarios"
   ],
-  userPhoto: ["userPhoto"],
   botoesPerfil: ["botoesPerfil"],
+  button: ["button", "svg"],
   svg: ["svg"],
   text: ["text", "h4"],
   h4: ["h4"],
@@ -315,8 +289,8 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   columns: "div";
-  userPhoto: typeof UserPhoto;
   botoesPerfil: typeof BotoesPerfil;
+  button: typeof Button;
   svg: "svg";
   text: "div";
   h4: "h4";
@@ -388,8 +362,8 @@ export const PlasmicAdicionaAmigo = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
-    userPhoto: makeNodeComponent("userPhoto"),
     botoesPerfil: makeNodeComponent("botoesPerfil"),
+    button: makeNodeComponent("button"),
     svg: makeNodeComponent("svg"),
     text: makeNodeComponent("text"),
     h4: makeNodeComponent("h4"),

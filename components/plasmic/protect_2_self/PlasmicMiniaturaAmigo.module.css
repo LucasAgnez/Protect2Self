@@ -18,19 +18,6 @@
   align-items: center;
   justify-content: flex-start;
 }
-.img___2FjJ {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 57px;
-  flex-shrink: 0;
-}
-.img___2FjJ > picture > img {
-  object-fit: cover;
-}
-.img___2FjJ > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
 .freeBox {
   display: flex;
   position: relative;

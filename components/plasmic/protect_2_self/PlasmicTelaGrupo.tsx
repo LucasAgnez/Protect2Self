@@ -35,7 +35,6 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
 import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 import TextInput from "../../TextInput"; // plasmic-import: 7q4dYfz6E__/component
 
@@ -47,23 +46,18 @@ import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import:
 import sty from "./PlasmicTelaGrupo.module.css"; // plasmic-import: bfV7oLmQIs/css
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 import LeftArrowSvgrepoComsvgIcon from "./icons/PlasmicIcon__LeftArrowSvgrepoComsvg"; // plasmic-import: fmFspLMBVy/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: WK-uNEKVCw3/icon
 
 export type PlasmicTelaGrupo__VariantMembers = {
   adm: "adm";
-  editar: "editar";
 };
 export type PlasmicTelaGrupo__VariantsArgs = {
   adm?: SingleBooleanChoiceArg<"adm">;
-  editar?: SingleBooleanChoiceArg<"editar">;
 };
 type VariantPropType = keyof PlasmicTelaGrupo__VariantsArgs;
-export const PlasmicTelaGrupo__VariantProps = new Array<VariantPropType>(
-  "adm",
-  "editar"
-);
+export const PlasmicTelaGrupo__VariantProps = new Array<VariantPropType>("adm");
 
 export type PlasmicTelaGrupo__ArgsType = {};
 type ArgPropType = keyof PlasmicTelaGrupo__ArgsType;
@@ -73,14 +67,17 @@ export type PlasmicTelaGrupo__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
-  userPhoto?: p.Flex<typeof UserPhoto>;
+  column?: p.Flex<"div">;
   voltar?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
+  button?: p.Flex<typeof Button>;
   nomeGrupo?: p.Flex<"h2">;
   nomeGrupoAdm?: p.Flex<"h2">;
   textInput?: p.Flex<typeof TextInput>;
   admin?: p.Flex<"div">;
   container?: p.Flex<"div">;
+  excluir?: p.Flex<typeof Button>;
+  sair?: p.Flex<typeof Button>;
   textbox?: p.Flex<typeof TextInput>;
 };
 
@@ -111,11 +108,6 @@ function PlasmicTelaGrupo__RenderFunc(props: {
         path: "adm",
         type: "private",
         initFunc: ($props, $state, $ctx) => $props.adm
-      },
-      {
-        path: "editar",
-        type: "private",
-        initFunc: ($props, $state, $ctx) => $props.editar
       }
     ],
     [$props, $ctx]
@@ -151,10 +143,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
             sty.root,
-            {
-              [sty.rootadm]: hasVariant($state, "adm", "adm"),
-              [sty.rooteditar]: hasVariant($state, "editar", "editar")
-            }
+            { [sty.rootadm]: hasVariant($state, "adm", "adm") }
           )}
         >
           <HeaderLogged
@@ -169,8 +158,7 @@ function PlasmicTelaGrupo__RenderFunc(props: {
             data-plasmic-name={"columns"}
             data-plasmic-override={overrides.columns}
             className={classNames(projectcss.all, sty.columns, {
-              [sty.columnsadm]: hasVariant($state, "adm", "adm"),
-              [sty.columnseditar]: hasVariant($state, "editar", "editar")
+              [sty.columnsadm]: hasVariant($state, "adm", "adm")
             })}
           >
             {(
@@ -180,129 +168,20 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                 : true
             ) ? (
               <div
-                className={classNames(projectcss.all, sty.column__nqgca, {
-                  [sty.columnadm__nqgcaH6EUz]: hasVariant($state, "adm", "adm")
-                })}
-              >
-                {(
-                  hasVariant($state, "adm", "adm") &&
-                  hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? true
-                    : true
-                ) ? (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__syvFn, {
-                      [sty.freeBoxadm__syvFnH6EUz]: hasVariant(
-                        $state,
-                        "adm",
-                        "adm"
-                      )
-                    })}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___3Sqsa,
-                        {
-                          [sty.freeBoxadm___3SqsaH6EUz]: hasVariant(
-                            $state,
-                            "adm",
-                            "adm"
-                          )
-                        }
-                      )}
-                    >
-                      <UserPhoto
-                        data-plasmic-name={"userPhoto"}
-                        data-plasmic-override={overrides.userPhoto}
-                        className={classNames("__wab_instance", sty.userPhoto)}
-                      />
-
-                      {(hasVariant($state, "adm", "adm") ? true : true) ? (
-                        <Button
-                          className={classNames(
-                            "__wab_instance",
-                            sty.button__gpQte,
-                            {
-                              [sty.buttonadm__gpQteh6EUz]: hasVariant(
-                                $state,
-                                "adm",
-                                "adm"
-                              )
-                            }
-                          )}
-                        >
-                          {hasVariant($state, "adm", "adm") &&
-                          hasVariant(globalVariants, "screen", "mobileOnly")
-                            ? "Editar Icone"
-                            : hasVariant(globalVariants, "screen", "mobileOnly")
-                            ? "Editar Perfil"
-                            : "Editar Icone"}
-                        </Button>
-                      ) : null}
-                    </div>
-
-                    {(hasVariant($state, "adm", "adm") ? true : true) ? (
-                      <Button
-                        className={classNames(
-                          "__wab_instance",
-                          sty.button__hjJrc,
-                          {
-                            [sty.buttonadm__hjJrch6EUz]: hasVariant(
-                              $state,
-                              "adm",
-                              "adm"
-                            )
-                          }
-                        )}
-                        link={
-                          hasVariant($state, "adm", "adm")
-                            ? `/adiciona-a-grupo`
-                            : undefined
-                        }
-                      >
-                        {"Adicionar Participante"}
-                      </Button>
-                    ) : null}
-                    {(hasVariant($state, "adm", "adm") ? true : true) ? (
-                      <Button
-                        className={classNames(
-                          "__wab_instance",
-                          sty.button__yr5PM,
-                          {
-                            [sty.buttonadm__yr5PMh6EUz]: hasVariant(
-                              $state,
-                              "adm",
-                              "adm"
-                            )
-                          }
-                        )}
-                      >
-                        {"Editar Meta"}
-                      </Button>
-                    ) : null}
-                  </div>
-                ) : null}
-              </div>
-            ) : null}
-            {(
-              hasVariant($state, "adm", "adm") &&
-              hasVariant(globalVariants, "screen", "mobileOnly")
-                ? true
-                : true
-            ) ? (
-              <div
-                className={classNames(projectcss.all, sty.column___9Gy, {
-                  [sty.columnadm___9GyH6EUz]: hasVariant($state, "adm", "adm"),
-                  [sty.columneditar___9GyTSpDr]: hasVariant(
-                    $state,
-                    "editar",
-                    "editar"
-                  )
+                data-plasmic-name={"column"}
+                data-plasmic-override={overrides.column}
+                className={classNames(projectcss.all, sty.column, {
+                  [sty.columnadm]: hasVariant($state, "adm", "adm")
                 })}
               >
                 <div
-                  className={classNames(projectcss.all, sty.freeBox___852Xr)}
+                  className={classNames(projectcss.all, sty.freeBox___852Xr, {
+                    [sty.freeBoxadm___852Xrh6EUz]: hasVariant(
+                      $state,
+                      "adm",
+                      "adm"
+                    )
+                  })}
                 >
                   <Button
                     data-plasmic-name={"voltar"}
@@ -319,6 +198,35 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                       role={"img"}
                     />
                   </Button>
+
+                  {(hasVariant($state, "adm", "adm") ? true : true) ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__xAYt, {
+                        [sty.freeBoxadm__xAYth6EUz]: hasVariant(
+                          $state,
+                          "adm",
+                          "adm"
+                        )
+                      })}
+                    >
+                      {(hasVariant($state, "adm", "adm") ? true : true) ? (
+                        <Button
+                          data-plasmic-name={"button"}
+                          data-plasmic-override={overrides.button}
+                          className={classNames("__wab_instance", sty.button, {
+                            [sty.buttonadm]: hasVariant($state, "adm", "adm")
+                          })}
+                          link={
+                            hasVariant($state, "adm", "adm")
+                              ? `/adiciona-a-grupo`
+                              : undefined
+                          }
+                        >
+                          {"Adicionar Participante"}
+                        </Button>
+                      ) : null}
+                    </div>
+                  ) : null}
                 </div>
 
                 {(
@@ -351,22 +259,11 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                               $state,
                               "adm",
                               "adm"
-                            ),
-                            [sty.freeBoxeditar__zRZbYtSpDr]: hasVariant(
-                              $state,
-                              "editar",
-                              "editar"
                             )
                           }
                         )}
                       >
-                        {(
-                          hasVariant($state, "editar", "editar")
-                            ? true
-                            : hasVariant($state, "adm", "adm")
-                            ? true
-                            : true
-                        ) ? (
+                        {(hasVariant($state, "adm", "adm") ? true : true) ? (
                           <div
                             className={classNames(
                               projectcss.all,
@@ -377,11 +274,6 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                                   $state,
                                   "adm",
                                   "adm"
-                                ),
-                                [sty.texteditar__xf5HcTSpDr]: hasVariant(
-                                  $state,
-                                  "editar",
-                                  "editar"
                                 )
                               }
                             )}
@@ -458,22 +350,13 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                             )}
                           </div>
                         ) : null}
-                        {(
-                          hasVariant($state, "editar", "editar") ? true : true
-                        ) ? (
+                        {true ? (
                           <TextInput
                             data-plasmic-name={"textInput"}
                             data-plasmic-override={overrides.textInput}
                             className={classNames(
                               "__wab_instance",
-                              sty.textInput,
-                              {
-                                [sty.textInputeditar]: hasVariant(
-                                  $state,
-                                  "editar",
-                                  "editar"
-                                )
-                              }
+                              sty.textInput
                             )}
                             color={"dark" as const}
                             id={"novoNome" as const}
@@ -563,6 +446,42 @@ function PlasmicTelaGrupo__RenderFunc(props: {
                     ) : null}
                   </div>
                 ) : null}
+                {(hasVariant($state, "adm", "adm") ? true : true) ? (
+                  <Button
+                    data-plasmic-name={"excluir"}
+                    data-plasmic-override={overrides.excluir}
+                    className={classNames("__wab_instance", sty.excluir, {
+                      [sty.excluiradm]: hasVariant($state, "adm", "adm")
+                    })}
+                    color={
+                      hasVariant($state, "adm", "adm")
+                        ? ("red" as const)
+                        : undefined
+                    }
+                  >
+                    {hasVariant($state, "adm", "adm")
+                      ? "Excluir Grupo"
+                      : "Button"}
+                  </Button>
+                ) : null}
+                {(hasVariant($state, "adm", "adm") ? true : true) ? (
+                  <Button
+                    data-plasmic-name={"sair"}
+                    data-plasmic-override={overrides.sair}
+                    className={classNames("__wab_instance", sty.sair, {
+                      [sty.sairadm]: hasVariant($state, "adm", "adm")
+                    })}
+                    color={
+                      hasVariant($state, "adm", "adm")
+                        ? ("red" as const)
+                        : ("red" as const)
+                    }
+                  >
+                    {hasVariant($state, "adm", "adm")
+                      ? "Excluir Grupo"
+                      : "Sair"}
+                  </Button>
+                ) : null}
               </div>
             ) : null}
           </div>
@@ -577,37 +496,59 @@ const PlasmicDescendants = {
     "root",
     "headerLogged",
     "columns",
-    "userPhoto",
+    "column",
     "voltar",
     "svg",
+    "button",
     "nomeGrupo",
     "nomeGrupoAdm",
     "textInput",
     "textbox",
     "admin",
-    "container"
+    "container",
+    "excluir",
+    "sair"
   ],
   headerLogged: ["headerLogged"],
   columns: [
     "columns",
-    "userPhoto",
+    "column",
     "voltar",
     "svg",
+    "button",
     "nomeGrupo",
     "nomeGrupoAdm",
     "textInput",
     "textbox",
     "admin",
-    "container"
+    "container",
+    "excluir",
+    "sair"
   ],
-  userPhoto: ["userPhoto"],
+  column: [
+    "column",
+    "voltar",
+    "svg",
+    "button",
+    "nomeGrupo",
+    "nomeGrupoAdm",
+    "textInput",
+    "textbox",
+    "admin",
+    "container",
+    "excluir",
+    "sair"
+  ],
   voltar: ["voltar", "svg"],
   svg: ["svg"],
+  button: ["button"],
   nomeGrupo: ["nomeGrupo"],
   nomeGrupoAdm: ["nomeGrupoAdm"],
   textInput: ["textInput", "textbox"],
   admin: ["admin"],
-  container: ["container"]
+  container: ["container"],
+  excluir: ["excluir"],
+  sair: ["sair"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -616,14 +557,17 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   columns: "div";
-  userPhoto: typeof UserPhoto;
+  column: "div";
   voltar: typeof Button;
   svg: "svg";
+  button: typeof Button;
   nomeGrupo: "h2";
   nomeGrupoAdm: "h2";
   textInput: typeof TextInput;
   admin: "div";
   container: "div";
+  excluir: typeof Button;
+  sair: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -689,14 +633,17 @@ export const PlasmicTelaGrupo = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
-    userPhoto: makeNodeComponent("userPhoto"),
+    column: makeNodeComponent("column"),
     voltar: makeNodeComponent("voltar"),
     svg: makeNodeComponent("svg"),
+    button: makeNodeComponent("button"),
     nomeGrupo: makeNodeComponent("nomeGrupo"),
     nomeGrupoAdm: makeNodeComponent("nomeGrupoAdm"),
     textInput: makeNodeComponent("textInput"),
     admin: makeNodeComponent("admin"),
     container: makeNodeComponent("container"),
+    excluir: makeNodeComponent("excluir"),
+    sair: makeNodeComponent("sair"),
 
     // Metadata about props expected for PlasmicTelaGrupo
     internalVariantProps: PlasmicTelaGrupo__VariantProps,

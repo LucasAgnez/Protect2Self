@@ -64,7 +64,6 @@ export type PlasmicPreviaAmigo__OverridesType = {
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
   voltar?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
-  fotoPerfil?: p.Flex<typeof p.PlasmicImg>;
   nomeUsuario?: p.Flex<"h2">;
   grupoComum?: p.Flex<"div">;
   amigosComum?: p.Flex<"div">;
@@ -199,26 +198,6 @@ function PlasmicPreviaAmigo__RenderFunc(props: {
                           sty.freeBox__t9X30
                         )}
                       >
-                        <p.PlasmicImg
-                          data-plasmic-name={"fotoPerfil"}
-                          data-plasmic-override={overrides.fotoPerfil}
-                          alt={""}
-                          className={classNames(sty.fotoPerfil)}
-                          displayHeight={"172px" as const}
-                          displayMaxHeight={"none" as const}
-                          displayMaxWidth={"100%" as const}
-                          displayMinHeight={"0" as const}
-                          displayMinWidth={"0" as const}
-                          displayWidth={"auto" as const}
-                          loading={"lazy" as const}
-                          src={{
-                            src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
-                            fullWidth: 2048,
-                            fullHeight: 2048,
-                            aspectRatio: undefined
-                          }}
-                        />
-
                         <div
                           className={classNames(
                             projectcss.all,
@@ -426,7 +405,6 @@ const PlasmicDescendants = {
     "botoesMenuPrincipal",
     "voltar",
     "svg",
-    "fotoPerfil",
     "nomeUsuario",
     "grupoComum",
     "amigosComum",
@@ -437,7 +415,6 @@ const PlasmicDescendants = {
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
   voltar: ["voltar", "svg"],
   svg: ["svg"],
-  fotoPerfil: ["fotoPerfil"],
   nomeUsuario: ["nomeUsuario"],
   grupoComum: ["grupoComum"],
   amigosComum: ["amigosComum"],
@@ -453,7 +430,6 @@ type NodeDefaultElementType = {
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
   voltar: typeof Button;
   svg: "svg";
-  fotoPerfil: typeof p.PlasmicImg;
   nomeUsuario: "h2";
   grupoComum: "div";
   amigosComum: "div";
@@ -526,7 +502,6 @@ export const PlasmicPreviaAmigo = Object.assign(
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
     voltar: makeNodeComponent("voltar"),
     svg: makeNodeComponent("svg"),
-    fotoPerfil: makeNodeComponent("fotoPerfil"),
     nomeUsuario: makeNodeComponent("nomeUsuario"),
     grupoComum: makeNodeComponent("grupoComum"),
     amigosComum: makeNodeComponent("amigosComum"),

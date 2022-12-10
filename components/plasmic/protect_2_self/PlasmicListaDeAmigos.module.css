@@ -78,83 +78,6 @@
   min-width: 0;
   padding: 8px;
 }
-.freeBox__szAmg {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: 100%;
-  max-width: 320px;
-  min-width: 320px;
-  min-height: 0;
-  padding: 8px;
-  border-right: 1px none #ffffff;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .freeBox__szAmg {
-    border-right-style: none;
-  }
-}
-.freeBox__pAtGo {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-  border-radius: 0px;
-  padding: 8px;
-  border-bottom: 1px solid #ffffff;
-}
-.userPhoto:global(.__wab_instance) {
-  max-width: 200px;
-  position: relative;
-  min-width: 175px;
-  width: 100%;
-  height: 68px;
-  flex-shrink: 0;
-  max-height: 200px;
-  min-height: 175px;
-  flex-grow: 1;
-}
-.img__oCgMo {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 115px;
-}
-.img__oCgMo > picture > img {
-  object-fit: cover;
-}
-.img__oCgMo > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
-.button:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  margin-top: 5px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .button:global(.__wab_instance) {
-    width: 130px;
-  }
-}
-.svg___2FAi5 {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__vlKYm {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
 .botoesPerfil:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
@@ -183,7 +106,7 @@
 .h2 {
   height: auto;
 }
-.freeBox___0YtkZ {
+.freeBox {
   display: flex;
   position: relative;
   flex-direction: row;

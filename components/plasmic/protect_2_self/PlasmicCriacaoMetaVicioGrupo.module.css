@@ -30,20 +30,6 @@
   min-width: 0;
   padding: 8px;
 }
-.img__rGMao {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  height: 200px;
-  margin-top: 40px;
-  flex-shrink: 0;
-}
-.img__rGMao > picture > img {
-  object-fit: cover;
-}
-.img__rGMao > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
 .colunaNomeGrupo {
   display: flex;
   position: relative;

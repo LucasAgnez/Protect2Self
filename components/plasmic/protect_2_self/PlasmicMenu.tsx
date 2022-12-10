@@ -107,26 +107,7 @@ function PlasmicMenu__RenderFunc(props: {
         )}
       >
         {p.renderPlasmicSlot({
-          defaultContents: (
-            <p.PlasmicImg
-              alt={""}
-              className={classNames(sty.img___31CLa)}
-              displayHeight={"70px" as const}
-              displayMaxHeight={"none" as const}
-              displayMaxWidth={"100%" as const}
-              displayMinHeight={"0" as const}
-              displayMinWidth={"0" as const}
-              displayWidth={"auto" as const}
-              loading={"lazy" as const}
-              src={{
-                src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
-                fullWidth: 2048,
-                fullHeight: 2048,
-                aspectRatio: undefined
-              }}
-            />
-          ),
-
+          defaultContents: null,
           value: args.children
         })}
 
@@ -134,7 +115,8 @@ function PlasmicMenu__RenderFunc(props: {
           data-plasmic-name={"antdMenu"}
           data-plasmic-override={overrides.antdMenu}
           className={classNames("__wab_instance", sty.antdMenu)}
-          defaultSelectedKeys={["subMenuItemKey1"]}
+          defaultOpenKeys={[]}
+          defaultSelectedKeys={[]}
           theme={"dark" as const}
         >
           {true ? (

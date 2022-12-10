@@ -35,11 +35,8 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
-import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 import BotoesPerfil from "../../BotoesPerfil"; // plasmic-import: RmM8H_pqLGC/component
-
-import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
+import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -62,8 +59,6 @@ export type PlasmicPerfil__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
-  userPhoto?: p.Flex<typeof UserPhoto>;
-  button?: p.Flex<typeof Button>;
   botoesPerfil?: p.Flex<typeof BotoesPerfil>;
   campoUsername?: p.Flex<"div">;
   username?: p.Flex<"h4">;
@@ -99,10 +94,6 @@ function PlasmicPerfil__RenderFunc(props: {
   const currentUser = p.useCurrentUser?.() || {};
 
   const [$queries, setDollarQueries] = React.useState({});
-
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantswwY5HaVRu8X4()
-  });
 
   return (
     <React.Fragment>
@@ -146,26 +137,6 @@ function PlasmicPerfil__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__xuZzA)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__jjdkp)}
-                    >
-                      <UserPhoto
-                        data-plasmic-name={"userPhoto"}
-                        data-plasmic-override={overrides.userPhoto}
-                        className={classNames("__wab_instance", sty.userPhoto)}
-                      />
-
-                      <Button
-                        data-plasmic-name={"button"}
-                        data-plasmic-override={overrides.button}
-                        className={classNames("__wab_instance", sty.button)}
-                      >
-                        {hasVariant(globalVariants, "screen", "mobileOnly")
-                          ? "Editar Perfil"
-                          : "Editar Foto"}
-                      </Button>
-                    </div>
-
                     <BotoesPerfil
                       data-plasmic-name={"botoesPerfil"}
                       data-plasmic-override={overrides.botoesPerfil}
@@ -437,8 +408,6 @@ const PlasmicDescendants = {
     "root",
     "headerLogged",
     "columns",
-    "userPhoto",
-    "button",
     "botoesPerfil",
     "campoUsername",
     "username",
@@ -454,8 +423,6 @@ const PlasmicDescendants = {
   headerLogged: ["headerLogged"],
   columns: [
     "columns",
-    "userPhoto",
-    "button",
     "botoesPerfil",
     "campoUsername",
     "username",
@@ -468,8 +435,6 @@ const PlasmicDescendants = {
     "campoTelefone",
     "telefone"
   ],
-  userPhoto: ["userPhoto"],
-  button: ["button"],
   botoesPerfil: ["botoesPerfil"],
   campoUsername: ["campoUsername", "username", "botaoEditar", "iconEditar"],
   username: ["username"],
@@ -489,8 +454,6 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   columns: "div";
-  userPhoto: typeof UserPhoto;
-  button: typeof Button;
   botoesPerfil: typeof BotoesPerfil;
   campoUsername: "div";
   username: "h4";
@@ -567,8 +530,6 @@ export const PlasmicPerfil = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
-    userPhoto: makeNodeComponent("userPhoto"),
-    button: makeNodeComponent("button"),
     botoesPerfil: makeNodeComponent("botoesPerfil"),
     campoUsername: makeNodeComponent("campoUsername"),
     username: makeNodeComponent("username"),
