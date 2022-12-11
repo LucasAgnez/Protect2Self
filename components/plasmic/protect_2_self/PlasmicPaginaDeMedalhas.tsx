@@ -35,19 +35,12 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLogged from "../../HeaderLogged"; // plasmic-import: gLO3qE5tA7/component
-import UserPhoto from "../../UserPhoto"; // plasmic-import: iFRyT7eXLH/component
-import Button from "../../Button"; // plasmic-import: CJ-3PKujtR-/component
 import BotoesPerfil from "../../BotoesPerfil"; // plasmic-import: RmM8H_pqLGC/component
-
-import { useScreenVariants as useScreenVariantswwY5HaVRu8X4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WwY5HA-vRU8x4/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_protect_2_self.module.css"; // plasmic-import: 8XuJZfnuNd7UvNkkshapC6/projectcss
 import sty from "./PlasmicPaginaDeMedalhas.module.css"; // plasmic-import: Ju1A340bzB-/css
-
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: H1GZJxswewQ/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hCPX34t0fK3/icon
 
 export type PlasmicPaginaDeMedalhas__VariantMembers = {};
 export type PlasmicPaginaDeMedalhas__VariantsArgs = {};
@@ -63,8 +56,7 @@ export type PlasmicPaginaDeMedalhas__OverridesType = {
   root?: p.Flex<"div">;
   headerLogged?: p.Flex<typeof HeaderLogged>;
   columns?: p.Flex<"div">;
-  userPhoto?: p.Flex<typeof UserPhoto>;
-  button?: p.Flex<typeof Button>;
+  freeBox?: p.Flex<"div">;
   botoesPerfil?: p.Flex<typeof BotoesPerfil>;
   text?: p.Flex<"div">;
   h2?: p.Flex<"h2">;
@@ -93,10 +85,6 @@ function PlasmicPaginaDeMedalhas__RenderFunc(props: {
   const currentUser = p.useCurrentUser?.() || {};
 
   const [$queries, setDollarQueries] = React.useState({});
-
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantswwY5HaVRu8X4()
-  });
 
   return (
     <React.Fragment>
@@ -138,28 +126,10 @@ function PlasmicPaginaDeMedalhas__RenderFunc(props: {
               {true ? (
                 <div className={classNames(projectcss.all, sty.column___3D71)}>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox___92R2O)}
+                    data-plasmic-name={"freeBox"}
+                    data-plasmic-override={overrides.freeBox}
+                    className={classNames(projectcss.all, sty.freeBox)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__jsvwd)}
-                    >
-                      <UserPhoto
-                        data-plasmic-name={"userPhoto"}
-                        data-plasmic-override={overrides.userPhoto}
-                        className={classNames("__wab_instance", sty.userPhoto)}
-                      />
-
-                      <Button
-                        data-plasmic-name={"button"}
-                        data-plasmic-override={overrides.button}
-                        className={classNames("__wab_instance", sty.button)}
-                      >
-                        {hasVariant(globalVariants, "screen", "mobileOnly")
-                          ? "Editar Perfil"
-                          : "Editar Foto"}
-                      </Button>
-                    </div>
-
                     {true ? (
                       <BotoesPerfil
                         data-plasmic-name={"botoesPerfil"}
@@ -233,25 +203,15 @@ const PlasmicDescendants = {
     "root",
     "headerLogged",
     "columns",
-    "userPhoto",
-    "button",
+    "freeBox",
     "botoesPerfil",
     "text",
     "h2",
     "container"
   ],
   headerLogged: ["headerLogged"],
-  columns: [
-    "columns",
-    "userPhoto",
-    "button",
-    "botoesPerfil",
-    "text",
-    "h2",
-    "container"
-  ],
-  userPhoto: ["userPhoto"],
-  button: ["button"],
+  columns: ["columns", "freeBox", "botoesPerfil", "text", "h2", "container"],
+  freeBox: ["freeBox", "botoesPerfil"],
   botoesPerfil: ["botoesPerfil"],
   text: ["text", "h2"],
   h2: ["h2"],
@@ -264,8 +224,7 @@ type NodeDefaultElementType = {
   root: "div";
   headerLogged: typeof HeaderLogged;
   columns: "div";
-  userPhoto: typeof UserPhoto;
-  button: typeof Button;
+  freeBox: "div";
   botoesPerfil: typeof BotoesPerfil;
   text: "div";
   h2: "h2";
@@ -335,8 +294,7 @@ export const PlasmicPaginaDeMedalhas = Object.assign(
     // Helper components rendering sub-elements
     headerLogged: makeNodeComponent("headerLogged"),
     columns: makeNodeComponent("columns"),
-    userPhoto: makeNodeComponent("userPhoto"),
-    button: makeNodeComponent("button"),
+    freeBox: makeNodeComponent("freeBox"),
     botoesPerfil: makeNodeComponent("botoesPerfil"),
     text: makeNodeComponent("text"),
     h2: makeNodeComponent("h2"),
