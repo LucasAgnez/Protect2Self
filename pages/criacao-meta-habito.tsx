@@ -41,8 +41,7 @@ function CriacaoMetaHabito() {
       objs : "3;6;9;12;15",
     })
     .then((response) => {
-      axios.put("http://localhost:8080/usuario/addMeta/" + localStorage.getItem('userId') + "/" + response.data.id ,{
-      })
+      axios.put("http://localhost:8080/usuario/addMeta/" + localStorage.getItem('userId') + "/" + response.data.id)
       console.log(JSON.stringify(response));
       router.push('/logged');
     });

@@ -98,6 +98,25 @@ function TelaGrupo() {
     return false as any
   }
 
+  function temRank(rank: any){
+    if(rank)
+      return true
+    return false
+  }
+
+  function tipoMedalha(rank: any){
+    if(rank)
+      return String(rank).toLowerCase()
+    return false as any
+  } 
+
+  function formata(data: Date){
+    var dia = new Date(data)
+    if(data)
+      return dia.toLocaleDateString("en-GB")
+    return false as any
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
@@ -116,7 +135,12 @@ function TelaGrupo() {
             nomeUsuario={{
               render: (props, Comp) => <Comp {...props}>{entry.username}</Comp>,
             }}
-            medalha={{cor: entry.tipo}}
+            semMedalha={!temRank(entry.meta.rank)}
+            medalha={{
+              cor: tipoMedalha(entry.meta.rank),
+              slot: entry.meta.nome,
+              children: formata(entry.meta.data)
+            }}
             emGrupo={"visaoDoAdm"}
             remove={{
               props: {
@@ -129,7 +153,15 @@ function TelaGrupo() {
             nomeUsuario={{
               render: (props, Comp) => <Comp {...props}>{entry.username}</Comp>,
             }}
-            medalha={{cor: entry.tipo}}
+            metaUsuario={{
+              render: (props, Comp) => <Comp {...props}>{entry.username}</Comp>,
+            }}
+            semMedalha={!temRank(entry.meta.rank)}
+            medalha={{
+              cor: tipoMedalha(entry.meta.rank),
+              slot: entry.meta.nome,
+              children: formata(entry.meta.data)
+            }}
             emGrupo={"visaoMembros"}
           />)
         }}
@@ -144,7 +176,7 @@ function TelaGrupo() {
               medalha={ medalhaADM() ?  {
                 cor: medalhaADM().toLowerCase(),
                 slot: String(grupo.meta.nome),
-                //children: 
+                children: formata(grupo.meta.data)
               } : {
                 style:{display: "none"} 
               }}

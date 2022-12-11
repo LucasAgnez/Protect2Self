@@ -6,6 +6,9 @@ import * as ph from "@plasmicapp/host";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicEntrarGrupo } from "../components/plasmic/protect_2_self/PlasmicEntrarGrupo";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Select__Option from "../components/Select__Option";
 
 function EntrarGrupo() {
   // Use PlasmicEntrarGrupo to render this component as it was
@@ -24,12 +27,99 @@ function EntrarGrupo() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  const [metas, setMetas] = useState<any[]>();
+  const [grupo, setGrupo] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error>();
+  const [metaSelecionada, setMetaSelecionada] = useState<number>()
+  const [importa, setImporta] = useState<boolean>(false);
+
+  const router = useRouter()
+
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const metaResponse = await axios.get(
+          "http://localhost:8080/usuario/getMetas/" + localStorage.getItem('userId')
+        );
+        setMetas(metaResponse.data);
+        const grupoResponse = await axios.get(
+          "http://localhost:8080/grupo/findById/" + localStorage.getItem('grupoId')
+        );
+        setGrupo(grupoResponse.data);
+        setError(undefined);  
+        console.log(metas);
+      } catch (err) {
+        setError((err as any).message);
+        setMetas([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+  if (error) {
+    return <div>Error: {error.message}</div>
+  }
+
+  function entraGrupo(){
+    try{
+      axios.put("http://localhost:8080/usuario/aceitarGrupo/" +
+        localStorage.getItem("userId") + "/" + 
+        localStorage.getItem("grupoId"))
+    }catch(err){
+      setError((err as any).message);
+    }finally{
+      if(importa){
+        axios.put("http://localhost:8080/grupo/save/meta/" + 
+          localStorage.getItem('userId') + "/" + metaSelecionada)
+        router.push("/tela-grupo")
+      }
+      else{
+        axios.put("http://localhost:8080/grupo/save/meta/" + 
+          localStorage.getItem('userId') + "/" + grupo.meta.id)
+        router.push("/tela-grupo")
+      }
+    }
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicEntrarGrupo />
+      <PlasmicEntrarGrupo
+      importar={importa}
+      nomeGrupo={(loading || !grupo ) ? {} : {
+        render: (props, Comp) => <Comp {...props}>{grupo.nome}</Comp>,
+      }}
+      descricaoGrupo={(loading || !grupo ) ? {} : {
+        render: (props, Comp) => <Comp {...props}>{grupo.descricao}</Comp>,
+      }}
+      metaGrupo={(loading || !grupo ) ? {} : {
+        render: (props, Comp) => <Comp {...props}>{grupo.meta.nome}</Comp>,
+      }}
+      descricaoMeta={(loading || !grupo ) ? {} : {
+        render: (props, Comp) => <Comp {...props}>{grupo.meta.descricao}</Comp>,
+      }}
+      meta={(loading || !metas) ? {} :{ 
+        children: metas.map(entry => <Select__Option 
+          children={String(entry.nome)} 
+          value={String(entry.id)} 
+          color={"dark"}/>),
+          onChange: (e) => e && setMetaSelecionada(+e)
+      }}
+      aceitar={{
+        onClick: () => entraGrupo()
+      }}
+      aceitar2={{
+        onClick: () => setImporta(true)
+      }}
+      entrar={{ 
+        onClick: () => entraGrupo()
+      }}
+      />
     </ph.PageParamsProvider>
   );
 }

@@ -36,23 +36,25 @@ function Notificacoes() {
 
   function aceitaConviteAmizade(id: any){
     axios.put("http://localhost:8080/usuario/aceitarAmizade/" +
-    localStorage.getItem("userId") + "/" + id)
+      localStorage.getItem("userId") + "/" + id)
     window.location.reload();
   }
 
   function rejeitaConviteAmizade(id: any){
-    axios.put("http://localhost:8080/solicitacoesAmizade/remove/" + id)
+    axios.put("http://localhost:8080/usuario/rejeitarAmizade/" +
+     localStorage.getItem("userId")  + "/" + id)
     window.location.reload();
   }
 
   function aceitaConviteGrupo(id: any){
-    axios.put("http://localhost:8080/usuario/aceitarGrupo/" +
-    localStorage.getItem("userId") + "/" + id)
-    window.location.reload();
+    localStorage.setItem('grupoId', id)
+    router.push("/entrar-grupo")
+
   }
 
   function rejeitaConviteGrupo(id: any){
-    axios.put("http://localhost:8080/solicitacoesGrupo/remove/" + id)
+    axios.put("http://localhost:8080/usuario/rejeitarGrupo/" +
+     localStorage.getItem("userId")  + "/" + id)
     window.location.reload();
   }
 
@@ -63,9 +65,8 @@ function Notificacoes() {
           "http://localhost:8080/usuario/solicitacoesAmizade/" + localStorage.getItem('userId')
         );
         setNotis(notisAmigos.data);
-        //const notisGrupos = await axios.get("http://localhost:8080/usuario/solicitacoesGrupos/" + localStorage.getItem('userId'));
-        //const notisGrupos = await axios.get("http://localhost:8080/solicitacaoGrupo/findAll")
-        //setNotisGrupos(notisGrupos.data)
+        const notisGrupos = await axios.get("http://localhost:8080/solicitacaoGrupo/solicitacoes/" + localStorage.getItem("userId"))
+        setNotisGrupos(notisGrupos.data)
         setError(undefined);  
         console.log(notis);
       } catch (err) {
@@ -108,19 +109,19 @@ function Notificacoes() {
     }}
     notiGrupo = {(loading || !notisGrupos) ? {} : { 
       children: notisGrupos.map(entry => <Notificacao 
-        onClick={() => (localStorage.setItem('grupoId', entry.id), router.push('/previa-grupo'))} 
+        onClick={() => (localStorage.setItem('grupoId', entry.grupoId), router.push('/previa-grupo'))} 
         nomeUsuario={{
           render: (props, Comp) => <Comp {...props}>{entry.nomeAmigo} convidou você a um grupo!</Comp>,
         }}
         tipo={"grupo"} 
         adiciona={{
           props: {
-            onClick: () => aceitaConviteGrupo(entry.id)
+            onClick: () => aceitaConviteGrupo(entry.grupoId)
           }
         }}
         remove={{
           props: {
-            onClick: () => rejeitaConviteGrupo(entry.id)
+            onClick: () => rejeitaConviteGrupo(entry.grupoId)
           }
         }}
         />) 

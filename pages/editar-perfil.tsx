@@ -26,28 +26,34 @@ function EditarPerfil() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
-  const router = useRouter()
-
-  function atualizaPerfil(){
-    axios.put
-    ("http://localhost:8080/usuario/update/",{
-			id: localStorage.getItem('userId'),
-			nome: (document.getElementById("nome") as any).value,
-      username: (document.getElementById("username")as any).value,
-      telefone: (document.getElementById("telefone")as any).value,
-      email:(document.getElementById("email")as any).value,
-      senha: (document.getElementById("senha")as any).value,
-    })
-    .then((response) => {
-      console.log(JSON.stringify(response));
-      router.push('/perfil');
-    });
-  }
-
+  
   const [dados, setDados] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error>();
- 
+  const [preenchido, setPreenchido] = useState<boolean>()
+
+  const router = useRouter()
+
+  function atualizaPerfil(){
+    try{
+      axios.put
+      ("http://localhost:8080/usuario/update/",{
+        id: localStorage.getItem('userId'),
+        nome: (document.getElementById("nome") as any).value,
+        username: (document.getElementById("username")as any).value,
+        telefone: (document.getElementById("telefone")as any).value,
+        email:(document.getElementById("email")as any).value,
+        senha: (document.getElementById("senha")as any).value,
+      })
+      .then((response) => {
+        console.log(JSON.stringify(response));
+      });}catch(err){
+        setError((err as any).message);
+      }finally{      
+        router.push('/perfil');
+    }
+  }
+  
   useEffect(() => {
     const getData = async () => {
       try {
@@ -66,13 +72,7 @@ function EditarPerfil() {
     };
     getData();
   }, []);
-
-	if (error) {
-		return <div>Error: {error.message}</div>
-	}
-
-  const [preenchido, setPreenchido] = useState<boolean>()
-
+  
   function checaPreenchido(){
     if((document.getElementById("nome") as any).value && (document.getElementById("username") as any).value){
       if((document.getElementById("telefone") as any).value && (document.getElementById("email") as any).value){
@@ -82,6 +82,50 @@ function EditarPerfil() {
       }
     }
   }
+
+	if (error) {
+    return (
+      <ph.PageParamsProvider
+        params={useRouter()?.query}
+        query={useRouter()?.query}
+      >
+  
+        <PlasmicEditarPerfil 
+        erro={{
+          children: "verifique se os dados estão no formato correto"
+        }}
+        nome={{
+          props: (loading || !dados) ? {} : { value: String((dados as any).nome), onChange: (e) => (setDados({...dados, nome: e.target.value}), checaPreenchido())} 
+        }}
+        username={{
+          props: (loading || !dados) ? {} : { value: String((dados as any).username), onChange: (e) => (setDados({...dados, username: e.target.value}), checaPreenchido())}
+        }}
+        email={{
+          props: (loading || !dados) ? {} : { value: String((dados as any).email), onChange: (e) => (setDados({...dados, email: e.target.value}), checaPreenchido())}
+        }}
+        telefone={{
+          props: (loading || !dados) ? {} : { value: String((dados as any).telefone), onChange: (e) => (setDados({...dados, telefone: e.target.value}), checaPreenchido())}
+        }}
+        senha={{
+          props: { onChange: () => checaPreenchido()}
+        }}
+        /*
+        */
+          confirma={{
+            props: { 
+              isDisabled : !preenchido,
+              onClick: () => atualizaPerfil()
+            }
+          }}
+          cancela={{
+            props: { onClick: () => router.push('/perfil')}
+          }}
+        />
+      </ph.PageParamsProvider>
+    );
+	}
+
+
 
   return (
     <ph.PageParamsProvider

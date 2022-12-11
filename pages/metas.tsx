@@ -92,19 +92,16 @@ function MinhasMetas() {
   }
 
   function estaNaData(ultimaData: Date, frequencia: any, id: any){
-    var dia = new Date("2013-02-21T12:01:04.753Z").getTime() -
-      new Date("2013-02-20T12:01:04.753Z").getTime();
-    var semana = new Date("2013-02-27T12:01:04.753Z").getTime()-
-      new Date("2013-02-20T12:01:04.753Z").getTime();
-    var mes = new Date("2013-02-20T12:01:04.753Z").getTime() -
-      new Date("2013-01-20T12:01:04.753Z").getTime();
+    var dia = 86400000
+    var semana = 604800000
+    var mes = 2592000000
     var data = new Date(ultimaData)
     var time = new Date().getTime() - data.getTime()
     if(!frequencia){
       return true
     }
     if(!ultimaData)
-      return true;
+    return true;
     if(frequencia == "DIARIO"){
       if(time >= dia){
         if(time >= 2*dia ){
@@ -161,6 +158,41 @@ function MinhasMetas() {
     return diffInDays
   }
 
+  function tempoRestante(ultimaData: Date, frequencia: any){
+    const agora = new Date().getTime()
+    var tempoDecorrido   = agora - new Date(ultimaData).getTime()
+    var tempoRestanteMs = 0
+    if(frequencia == "DIARIO"){
+      var dia = 86400000
+      tempoRestanteMs = dia - tempoDecorrido
+    }
+    if(frequencia == "SEMANAL"){
+      var semana = 604800000
+      tempoRestanteMs = semana - tempoDecorrido
+    }
+    if(frequencia == "MENSAL"){
+      var mes = 2592000000
+      tempoRestanteMs = mes - tempoDecorrido
+    }
+    var cd = 24 * 60 * 60 * 1000,
+      ch = 60 * 60 * 1000,
+      d = Math.floor(tempoRestanteMs / cd),
+      h = Math.floor( (tempoRestanteMs - d * cd) / ch),
+      m = Math.round( (tempoRestanteMs - d * cd - h * ch) / 60000),
+      pad = function(n: any){ return n < 10 ? '0' + n : n; };
+      if( m === 60 ){
+        h++;
+        m = 0;
+      }
+      if( h === 24 ){
+        d++;
+        h = 0;
+      }
+      if(d == 0)
+        return [pad(h), pad(m)].join(':');
+      return [d, pad(h), pad(m)].join(':');
+  }
+
   const router = useRouter()
 
   return (
@@ -191,6 +223,14 @@ function MinhasMetas() {
             slot: entry.nome,
             children: formata(entry.data)
           }}
+          disponibilidade={!estaNaData(entry.data, entry.frequencia, entry.id) ? 
+            {
+            render: (props, Comp) => <Comp {...props}>
+                Disponivel em: {String(tempoRestante(entry.data, entry.frequencia))}
+              </Comp>
+              } : {
+                style:{display: "none"} 
+            }}
           registra={{
             props: {
               isDisabled : !estaNaData(entry.data, entry.frequencia, entry.id),

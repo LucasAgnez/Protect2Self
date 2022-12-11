@@ -68,6 +68,7 @@ function AdicionaAGrupo() {
           }catch (err) {
             setVazio(true)
           } finally {
+            setVazio(false)
             setLoading(false);
           }
         }
@@ -79,7 +80,7 @@ function AdicionaAGrupo() {
     try{
     axios.post
     ("http://localhost:8080/solicitacaoGrupo/save",{
-      //nomeAmigo: nome,
+      nomeAmigo: nome,
 			grupoId: localStorage.getItem('grupoId'),
       userId: friendId
     })}catch (err) {

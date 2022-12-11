@@ -7,6 +7,7 @@ import axios from "axios";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicCriarConta } from "../components/plasmic/protect_2_self/PlasmicCriarConta";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 function CriarConta() {
   // Use PlasmicCriarConta to render this component as it was
@@ -25,11 +26,11 @@ function CriarConta() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
-  
+  const [error, setError] = useState<Error>();
   const router = useRouter()
 
   function criaUsuario() {
-    axios.post
+    try{axios.post
     ("http://localhost:8080/usuario/save  ", {
       nome: (document.getElementById("nomeCompleto") as any).value,
       username: (document.getElementById("nomeUsuario")as any).value,
@@ -39,16 +40,36 @@ function CriarConta() {
     })
     .then((response) => {
       console.log(JSON.stringify(response));
-    });
+    });}catch(err){
+      setError((err as any).message);
+    }finally{
+      router.push('/')
+    }
   }
-
+  if(error){
+    return (
+      <ph.PageParamsProvider
+        params={useRouter()?.query}
+        query={useRouter()?.query}
+      >
+        <PlasmicCriarConta
+        erro={{
+          children: "verifique se os dados estão no formato correto"
+        }}
+        confirma={{
+            props: { onClick: () => (criaUsuario())}
+        }} 
+        />
+      </ph.PageParamsProvider>
+    );
+  }
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
       <PlasmicCriarConta confirma={{
-          props: { onClick: () => (criaUsuario() , router.push('/'))}
+          props: { onClick: () => (criaUsuario())}
       }} 
       />
     </ph.PageParamsProvider>

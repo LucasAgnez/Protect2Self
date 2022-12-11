@@ -7,6 +7,7 @@ import axios from 'axios'
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicLoginScreen } from "../components/plasmic/protect_2_self/PlasmicLoginScreen";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 function LoginScreen() {
   // Use PlasmicLoginScreen to render this component as it was
@@ -25,20 +26,44 @@ function LoginScreen() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  const [error, setError] = useState<Error>();
 
   const router = useRouter()
 
   function logaUsuario() {
-    axios.post
-    ("http://localhost:8080/usuario/login/",{
-      senha: (document.getElementById("senha")as any).value,
-      email:(document.getElementById("email")as any).value,
-    }).then((response) => {
-      console.log(response);
-      localStorage.setItem('userId', response.data);
+    try{
+      axios.post
+      ("http://localhost:8080/usuario/login/",{
+        senha: (document.getElementById("senha")as any).value,
+        email:(document.getElementById("email")as any).value,
+      }).then((response) => {
+        console.log(response);
+        localStorage.setItem('userId', response.data);
+      });
+    }catch(err){
+      setError((err as any).message);
+    }finally{      
       router.push('/logged');
-    });
+    }
   }
+
+  if (error) {
+		return (
+      <ph.PageParamsProvider
+      params={useRouter()?.query}
+      query={useRouter()?.query}
+    >
+      <PlasmicLoginScreen
+      erro={{
+        children: "email ou senha não encontrados"
+      }}   
+      confirma={{
+        props: { onClick: () => logaUsuario()} 
+      }} 
+      />
+    </ph.PageParamsProvider>
+  );
+	}
 
   return (
     <ph.PageParamsProvider
