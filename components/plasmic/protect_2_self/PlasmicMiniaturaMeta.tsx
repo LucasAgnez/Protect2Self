@@ -72,6 +72,7 @@ export type PlasmicMiniaturaMeta__OverridesType = {
   medalha?: p.Flex<typeof Medalha>;
   sequenciaHabito?: p.Flex<"div">;
   sequenciaVicio?: p.Flex<"div">;
+  disponibilidade?: p.Flex<"div">;
   registra?: p.Flex<typeof Button>;
 };
 
@@ -234,88 +235,121 @@ function PlasmicMiniaturaMeta__RenderFunc(props: {
             ) : null}
           </div>
 
-          {(
-            hasVariant($state, "comMedalha", "comMedalha") &&
-            hasVariant($state, "tipo", "habito")
-              ? true
-              : hasVariant($state, "comMedalha", "comMedalha")
-              ? true
-              : hasVariant($state, "tipo", "habito")
-              ? true
-              : false
-          ) ? (
+          {true ? (
             <div
-              data-plasmic-name={"sequenciaHabito"}
-              data-plasmic-override={overrides.sequenciaHabito}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.sequenciaHabito,
-                {
-                  [sty.sequenciaHabitocomMedalha]: hasVariant(
-                    $state,
-                    "comMedalha",
-                    "comMedalha"
-                  ),
-                  [sty.sequenciaHabitotipo_habito]: hasVariant(
-                    $state,
-                    "tipo",
-                    "habito"
-                  ),
-                  [sty.sequenciaHabitotipo_habito_comMedalha]:
-                    hasVariant($state, "comMedalha", "comMedalha") &&
-                    hasVariant($state, "tipo", "habito"),
-                  [sty.sequenciaHabitotipo_vicio]: hasVariant(
-                    $state,
-                    "tipo",
-                    "vicio"
-                  )
-                }
-              )}
+              className={classNames(projectcss.all, sty.freeBox__fRHbH, {
+                [sty.freeBoxtipo_habito__fRHbHfpvrz]: hasVariant(
+                  $state,
+                  "tipo",
+                  "habito"
+                )
+              })}
             >
-              {"Sequencia"}
-            </div>
-          ) : null}
-          {(
-            hasVariant($state, "comMedalha", "comMedalha") &&
-            hasVariant($state, "tipo", "vicio")
-              ? true
-              : hasVariant($state, "comMedalha", "comMedalha")
-              ? true
-              : hasVariant($state, "tipo", "habito")
-              ? true
-              : true
-          ) ? (
-            <div
-              data-plasmic-name={"sequenciaVicio"}
-              data-plasmic-override={overrides.sequenciaVicio}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.sequenciaVicio,
-                {
-                  [sty.sequenciaViciocomMedalha]: hasVariant(
-                    $state,
-                    "comMedalha",
-                    "comMedalha"
-                  ),
-                  [sty.sequenciaViciotipo_habito]: hasVariant(
-                    $state,
-                    "tipo",
-                    "habito"
-                  ),
-                  [sty.sequenciaViciotipo_vicio]: hasVariant(
-                    $state,
-                    "tipo",
-                    "vicio"
-                  ),
-                  [sty.sequenciaViciotipo_vicio_comMedalha]:
-                    hasVariant($state, "comMedalha", "comMedalha") &&
-                    hasVariant($state, "tipo", "vicio")
-                }
-              )}
-            >
-              {"Sequencia"}
+              {(
+                hasVariant($state, "comMedalha", "comMedalha") &&
+                hasVariant($state, "tipo", "habito")
+                  ? true
+                  : hasVariant($state, "comMedalha", "comMedalha")
+                  ? true
+                  : hasVariant($state, "tipo", "habito")
+                  ? true
+                  : false
+              ) ? (
+                <div
+                  data-plasmic-name={"sequenciaHabito"}
+                  data-plasmic-override={overrides.sequenciaHabito}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.sequenciaHabito,
+                    {
+                      [sty.sequenciaHabitocomMedalha]: hasVariant(
+                        $state,
+                        "comMedalha",
+                        "comMedalha"
+                      ),
+                      [sty.sequenciaHabitotipo_habito]: hasVariant(
+                        $state,
+                        "tipo",
+                        "habito"
+                      ),
+                      [sty.sequenciaHabitotipo_habito_comMedalha]:
+                        hasVariant($state, "comMedalha", "comMedalha") &&
+                        hasVariant($state, "tipo", "habito"),
+                      [sty.sequenciaHabitotipo_vicio]: hasVariant(
+                        $state,
+                        "tipo",
+                        "vicio"
+                      )
+                    }
+                  )}
+                >
+                  {"Sequencia"}
+                </div>
+              ) : null}
+              {(
+                hasVariant($state, "comMedalha", "comMedalha") &&
+                hasVariant($state, "tipo", "vicio")
+                  ? true
+                  : hasVariant($state, "comMedalha", "comMedalha")
+                  ? true
+                  : hasVariant($state, "tipo", "habito")
+                  ? true
+                  : true
+              ) ? (
+                <div
+                  data-plasmic-name={"sequenciaVicio"}
+                  data-plasmic-override={overrides.sequenciaVicio}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.sequenciaVicio,
+                    {
+                      [sty.sequenciaViciocomMedalha]: hasVariant(
+                        $state,
+                        "comMedalha",
+                        "comMedalha"
+                      ),
+                      [sty.sequenciaViciotipo_habito]: hasVariant(
+                        $state,
+                        "tipo",
+                        "habito"
+                      ),
+                      [sty.sequenciaViciotipo_vicio]: hasVariant(
+                        $state,
+                        "tipo",
+                        "vicio"
+                      ),
+                      [sty.sequenciaViciotipo_vicio_comMedalha]:
+                        hasVariant($state, "comMedalha", "comMedalha") &&
+                        hasVariant($state, "tipo", "vicio")
+                    }
+                  )}
+                >
+                  {"Sequencia"}
+                </div>
+              ) : null}
+
+              <div
+                data-plasmic-name={"disponibilidade"}
+                data-plasmic-override={overrides.disponibilidade}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.disponibilidade,
+                  {
+                    [sty.disponibilidadetipo_habito]: hasVariant(
+                      $state,
+                      "tipo",
+                      "habito"
+                    )
+                  }
+                )}
+              >
+                {hasVariant($state, "tipo", "habito")
+                  ? "Disponivel em"
+                  : "Enter some text"}
+              </div>
             </div>
           ) : null}
         </div>
@@ -385,6 +419,7 @@ const PlasmicDescendants = {
     "medalha",
     "sequenciaHabito",
     "sequenciaVicio",
+    "disponibilidade",
     "registra"
   ],
   text: ["text", "nome"],
@@ -392,6 +427,7 @@ const PlasmicDescendants = {
   medalha: ["medalha"],
   sequenciaHabito: ["sequenciaHabito"],
   sequenciaVicio: ["sequenciaVicio"],
+  disponibilidade: ["disponibilidade"],
   registra: ["registra"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -404,6 +440,7 @@ type NodeDefaultElementType = {
   medalha: typeof Medalha;
   sequenciaHabito: "div";
   sequenciaVicio: "div";
+  disponibilidade: "div";
   registra: typeof Button;
 };
 
@@ -473,6 +510,7 @@ export const PlasmicMiniaturaMeta = Object.assign(
     medalha: makeNodeComponent("medalha"),
     sequenciaHabito: makeNodeComponent("sequenciaHabito"),
     sequenciaVicio: makeNodeComponent("sequenciaVicio"),
+    disponibilidade: makeNodeComponent("disponibilidade"),
     registra: makeNodeComponent("registra"),
 
     // Metadata about props expected for PlasmicMiniaturaMeta
