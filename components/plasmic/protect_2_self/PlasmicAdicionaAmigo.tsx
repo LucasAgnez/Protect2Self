@@ -70,6 +70,7 @@ export type PlasmicAdicionaAmigo__OverridesType = {
   busca?: p.Flex<typeof TextInput>;
   confirma?: p.Flex<typeof Button>;
   usuarios?: p.Flex<"div">;
+  amigosFora?: p.Flex<"div">;
 };
 
 export interface DefaultAdicionaAmigoProps {}
@@ -237,6 +238,12 @@ function PlasmicAdicionaAmigo__RenderFunc(props: {
                     data-plasmic-override={overrides.usuarios}
                     className={classNames(projectcss.all, sty.usuarios)}
                   />
+
+                  <div
+                    data-plasmic-name={"amigosFora"}
+                    data-plasmic-override={overrides.amigosFora}
+                    className={classNames(projectcss.all, sty.amigosFora)}
+                  />
                 </div>
               ) : null}
             </div>
@@ -259,7 +266,8 @@ const PlasmicDescendants = {
     "h4",
     "busca",
     "confirma",
-    "usuarios"
+    "usuarios",
+    "amigosFora"
   ],
   headerLogged: ["headerLogged"],
   columns: [
@@ -271,7 +279,8 @@ const PlasmicDescendants = {
     "h4",
     "busca",
     "confirma",
-    "usuarios"
+    "usuarios",
+    "amigosFora"
   ],
   botoesPerfil: ["botoesPerfil"],
   button: ["button", "svg"],
@@ -280,7 +289,8 @@ const PlasmicDescendants = {
   h4: ["h4"],
   busca: ["busca"],
   confirma: ["confirma"],
-  usuarios: ["usuarios"]
+  usuarios: ["usuarios"],
+  amigosFora: ["amigosFora"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -297,6 +307,7 @@ type NodeDefaultElementType = {
   busca: typeof TextInput;
   confirma: typeof Button;
   usuarios: "div";
+  amigosFora: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -370,6 +381,7 @@ export const PlasmicAdicionaAmigo = Object.assign(
     busca: makeNodeComponent("busca"),
     confirma: makeNodeComponent("confirma"),
     usuarios: makeNodeComponent("usuarios"),
+    amigosFora: makeNodeComponent("amigosFora"),
 
     // Metadata about props expected for PlasmicAdicionaAmigo
     internalVariantProps: PlasmicAdicionaAmigo__VariantProps,
