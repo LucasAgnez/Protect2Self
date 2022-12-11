@@ -72,7 +72,6 @@ export type PlasmicEntrarGrupo__OverridesType = {
   botoesMenuPrincipal?: p.Flex<typeof BotoesMenuPrincipal>;
   voltar?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
-  fotoPerfil?: p.Flex<typeof p.PlasmicImg>;
   nomeGrupo?: p.Flex<"h2">;
   descricaoGrupo?: p.Flex<"div">;
   metaGrupo?: p.Flex<"h3">;
@@ -222,38 +221,6 @@ function PlasmicEntrarGrupo__RenderFunc(props: {
                           }
                         )}
                       >
-                        {(
-                          hasVariant($state, "importar", "importar")
-                            ? true
-                            : true
-                        ) ? (
-                          <p.PlasmicImg
-                            data-plasmic-name={"fotoPerfil"}
-                            data-plasmic-override={overrides.fotoPerfil}
-                            alt={""}
-                            className={classNames(sty.fotoPerfil, {
-                              [sty.fotoPerfilimportar]: hasVariant(
-                                $state,
-                                "importar",
-                                "importar"
-                              )
-                            })}
-                            displayHeight={"172px" as const}
-                            displayMaxHeight={"none" as const}
-                            displayMaxWidth={"100%" as const}
-                            displayMinHeight={"0" as const}
-                            displayMinWidth={"0" as const}
-                            displayWidth={"auto" as const}
-                            loading={"lazy" as const}
-                            src={{
-                              src: "/plasmic/protect_2_self/images/defaultPfpsvgpng.png",
-                              fullWidth: 2048,
-                              fullHeight: 2048,
-                              aspectRatio: undefined
-                            }}
-                          />
-                        ) : null}
-
                         <div
                           className={classNames(
                             projectcss.all,
@@ -464,42 +431,43 @@ function PlasmicEntrarGrupo__RenderFunc(props: {
                               }
                             )}
                           >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text___9B0Jy
-                              )}
-                            >
-                              <React.Fragment>
-                                <React.Fragment>{""}</React.Fragment>
-                                {
-                                  <h5
-                                    className={classNames(
-                                      projectcss.all,
-                                      projectcss.h5,
-                                      projectcss.__wab_text,
-                                      sty.h5__zQv2O
-                                    )}
-                                  >
-                                    <React.Fragment>
-                                      <span
-                                        className={
-                                          "plasmic_default__all plasmic_default__span"
-                                        }
-                                        style={{ color: "#757575" }}
-                                      >
-                                        {
-                                          "Quer usar meta do grupo ou  importar uma própria?"
-                                        }
-                                      </span>
-                                    </React.Fragment>
-                                  </h5>
-                                }
-                                <React.Fragment>{""}</React.Fragment>
-                              </React.Fragment>
-                            </div>
-
+                            {true ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___9B0Jy
+                                )}
+                              >
+                                <React.Fragment>
+                                  <React.Fragment>{""}</React.Fragment>
+                                  {
+                                    <h5
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.h5,
+                                        projectcss.__wab_text,
+                                        sty.h5__zQv2O
+                                      )}
+                                    >
+                                      <React.Fragment>
+                                        <span
+                                          className={
+                                            "plasmic_default__all plasmic_default__span"
+                                          }
+                                          style={{ color: "#757575" }}
+                                        >
+                                          {
+                                            "Quer usar meta do grupo ou  importar uma própria?"
+                                          }
+                                        </span>
+                                      </React.Fragment>
+                                    </h5>
+                                  }
+                                  <React.Fragment>{""}</React.Fragment>
+                                </React.Fragment>
+                              </div>
+                            ) : null}
                             {true ? (
                               <div
                                 className={classNames(
@@ -520,20 +488,22 @@ function PlasmicEntrarGrupo__RenderFunc(props: {
                                   )}
                                   color={"yellow" as const}
                                 >
-                                  {"Grupo"}
+                                  {"Entrar"}
                                 </Button>
 
-                                <Button
-                                  data-plasmic-name={"aceitar2"}
-                                  data-plasmic-override={overrides.aceitar2}
-                                  className={classNames(
-                                    "__wab_instance",
-                                    sty.aceitar2
-                                  )}
-                                  color={"yellow" as const}
-                                >
-                                  {"Importar"}
-                                </Button>
+                                {true ? (
+                                  <Button
+                                    data-plasmic-name={"aceitar2"}
+                                    data-plasmic-override={overrides.aceitar2}
+                                    className={classNames(
+                                      "__wab_instance",
+                                      sty.aceitar2
+                                    )}
+                                    color={"yellow" as const}
+                                  >
+                                    {"Importar"}
+                                  </Button>
+                                ) : null}
                               </div>
                             ) : null}
                           </div>
@@ -666,7 +636,6 @@ const PlasmicDescendants = {
     "botoesMenuPrincipal",
     "voltar",
     "svg",
-    "fotoPerfil",
     "nomeGrupo",
     "descricaoGrupo",
     "metaGrupo",
@@ -683,7 +652,6 @@ const PlasmicDescendants = {
     "botoesMenuPrincipal",
     "voltar",
     "svg",
-    "fotoPerfil",
     "nomeGrupo",
     "descricaoGrupo",
     "metaGrupo",
@@ -697,7 +665,6 @@ const PlasmicDescendants = {
   botoesMenuPrincipal: ["botoesMenuPrincipal"],
   voltar: ["voltar", "svg"],
   svg: ["svg"],
-  fotoPerfil: ["fotoPerfil"],
   nomeGrupo: ["nomeGrupo"],
   descricaoGrupo: ["descricaoGrupo"],
   metaGrupo: ["metaGrupo"],
@@ -718,7 +685,6 @@ type NodeDefaultElementType = {
   botoesMenuPrincipal: typeof BotoesMenuPrincipal;
   voltar: typeof Button;
   svg: "svg";
-  fotoPerfil: typeof p.PlasmicImg;
   nomeGrupo: "h2";
   descricaoGrupo: "div";
   metaGrupo: "h3";
@@ -796,7 +762,6 @@ export const PlasmicEntrarGrupo = Object.assign(
     botoesMenuPrincipal: makeNodeComponent("botoesMenuPrincipal"),
     voltar: makeNodeComponent("voltar"),
     svg: makeNodeComponent("svg"),
-    fotoPerfil: makeNodeComponent("fotoPerfil"),
     nomeGrupo: makeNodeComponent("nomeGrupo"),
     descricaoGrupo: makeNodeComponent("descricaoGrupo"),
     metaGrupo: makeNodeComponent("metaGrupo"),
