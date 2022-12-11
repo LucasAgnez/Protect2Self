@@ -27,12 +27,9 @@ function EntrarGrupo() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
-  const [metas, setMetas] = useState<any[]>();
   const [grupo, setGrupo] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error>();
-  const [metaSelecionada, setMetaSelecionada] = useState<number>()
-  const [importa, setImporta] = useState<boolean>(false);
 
   const router = useRouter()
 
@@ -40,19 +37,13 @@ function EntrarGrupo() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const metaResponse = await axios.get(
-          "http://localhost:8080/usuario/getMetas/" + localStorage.getItem('userId')
-        );
-        setMetas(metaResponse.data);
         const grupoResponse = await axios.get(
           "http://localhost:8080/grupo/findById/" + localStorage.getItem('grupoId')
         );
         setGrupo(grupoResponse.data);
         setError(undefined);  
-        console.log(metas);
       } catch (err) {
         setError((err as any).message);
-        setMetas([]);
       } finally {
         setLoading(false);
       }
@@ -63,18 +54,12 @@ function EntrarGrupo() {
     return <div>Error: {error.message}</div>
   }
 
-  function entraGrupo(){
-
-      axios.put("http://localhost:8080/usuario/aceitarGrupo/" +
-        localStorage.getItem("userId") + "/" + 
-        localStorage.getItem("grupoId")
-      )
-      axios.put("http://localhost:8080/grupo/importaMeta/" +
-        localStorage.getItem("grupoId") + "/" + 
-        localStorage.getItem("userId") + "/" + 
-        grupo.meta.id
-      )
-      router.push("/grupos")
+  function entra(){
+    axios.put("http://localhost:8080/usuario/aceitarGrupo/" +
+      localStorage.getItem("userId") + "/" + 
+      localStorage.getItem("grupoId")
+    )
+    router.push("/grupos")
   }
 
   return (
@@ -95,17 +80,9 @@ function EntrarGrupo() {
       descricaoMeta={(loading || !grupo ) ? {} : {
         render: (props, Comp) => <Comp {...props}>{grupo.meta.descricao}</Comp>,
       }}
-      aceitar={{
-        onClick: () => entraGrupo()
+      aceitar={(loading || !grupo ) ? {} : {
+        onClick: () => entra()
       }}
-      /*
-      aceitar2={{
-        onClick: () => setImporta(true)
-      }}
-      entrar={{ 
-        onClick: () => entraGrupo()
-      }}
-      */
       />
     </ph.PageParamsProvider>
   );

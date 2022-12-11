@@ -45,7 +45,6 @@ function PreviaGrupo() {
   useEffect(() => {
     const getData = async () => {
       try {
-        //const grupo = await axios.get("http://localhost:8080/usuario/solicitacoesGrupos/" + localStorage.getItem('userId'));
         const grupo = await axios.get("http://localhost:8080/grupo/findById" + localStorage.getItem("grupoId"))
         setGroup(grupo.data)
         setError(undefined);  

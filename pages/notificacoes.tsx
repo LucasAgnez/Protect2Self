@@ -47,6 +47,7 @@ function Notificacoes() {
   }
 
   function aceitaConviteGrupo(id: any){
+    console.log("grupoId: " + id)
     localStorage.setItem('grupoId', id)
     router.push("/entrar-grupo")
 
@@ -109,7 +110,6 @@ function Notificacoes() {
     }}
     notiGrupo = {(loading || !notisGrupos) ? {} : { 
       children: notisGrupos.map(entry => <Notificacao 
-        onClick={() => (localStorage.setItem('grupoId', entry.grupoId), router.push('/previa-grupo'))} 
         nomeUsuario={{
           render: (props, Comp) => <Comp {...props}>{entry.nomeAmigo} convidou você a um grupo!</Comp>,
         }}
