@@ -35,23 +35,26 @@ function EditarPerfil() {
   const router = useRouter()
 
   function atualizaPerfil(){
-    try{
-      axios.put
-      ("http://localhost:8080/usuario/update/",{
-        id: localStorage.getItem('userId'),
-        nome: (document.getElementById("nome") as any).value,
-        username: (document.getElementById("username")as any).value,
-        telefone: (document.getElementById("telefone")as any).value,
-        email:(document.getElementById("email")as any).value,
-        senha: (document.getElementById("senha")as any).value,
-      })
-      .then((response) => {
+    var er = false
+    axios.put
+    ("http://localhost:8080/usuario/update/",{
+      id: localStorage.getItem('userId'),
+      nome: (document.getElementById("nome") as any).value,
+      username: (document.getElementById("username")as any).value,
+      telefone: (document.getElementById("telefone")as any).value,
+      email:(document.getElementById("email")as any).value,
+      senha: (document.getElementById("senha")as any).value,
+    }).catch(error => {
+      setError((error as any).message);
+      er = true
+      return error;
+    })
+    .then((response) => {
+      if(!er){
         console.log(JSON.stringify(response));
-      });}catch(err){
-        setError((err as any).message);
-      }finally{      
-        router.push('/perfil');
-    }
+        router.push('/perfil')
+      }
+    });
   }
   
   useEffect(() => {

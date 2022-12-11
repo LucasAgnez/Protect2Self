@@ -30,22 +30,27 @@ function CriarConta() {
   const router = useRouter()
 
   function criaUsuario() {
-    try{axios.post
+    var er = false
+    axios.post
     ("http://localhost:8080/usuario/save  ", {
       nome: (document.getElementById("nomeCompleto") as any).value,
       username: (document.getElementById("nomeUsuario")as any).value,
       telefone: (document.getElementById("telefone")as any).value,
       senha: (document.getElementById("senha")as any).value,
       email:(document.getElementById("email")as any).value,
+    }).catch(error => {
+      setError((error as any).message);
+      er = true
+      return error;
     })
     .then((response) => {
-      console.log(JSON.stringify(response));
-    });}catch(err){
-      setError((err as any).message);
-    }finally{
-      router.push('/')
-    }
+      if(!er){
+        console.log(JSON.stringify(response));
+        router.push('/')
+      }
+    });
   }
+  
   if(error){
     return (
       <ph.PageParamsProvider

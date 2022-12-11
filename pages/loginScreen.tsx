@@ -27,24 +27,27 @@ function LoginScreen() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   const [error, setError] = useState<Error>();
+  const [user, setUser] = useState<any>(null);
 
   const router = useRouter()
 
   function logaUsuario() {
-    try{
-      axios.post
-      ("http://localhost:8080/usuario/login/",{
-        senha: (document.getElementById("senha")as any).value,
-        email:(document.getElementById("email")as any).value,
-      }).then((response) => {
-        console.log(response);
+    var er = false
+    axios.post
+    ("http://localhost:8080/usuario/login/",{
+      senha: (document.getElementById("senha")as any).value,
+      email:(document.getElementById("email")as any).value,
+    }).catch(error => {
+      setError((error as any).message);
+      er = true
+      return error;
+    }).then((response) => {
+      console.log(response);
+      if(!er){
         localStorage.setItem('userId', response.data);
-      });
-    }catch(err){
-      setError((err as any).message);
-    }finally{      
-      router.push('/logged');
-    }
+        router.push('/logged');
+      }
+    });
   }
 
   if (error) {
