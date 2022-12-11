@@ -200,6 +200,7 @@ function PlasmicTelaMeta__RenderFunc(props: {
                         data-plasmic-override={overrides.button}
                         className={classNames("__wab_instance", sty.button)}
                         color={"clear" as const}
+                        link={`/metas`}
                       >
                         <LeftArrowSvgrepoComsvgIcon
                           data-plasmic-name={"svg"}
@@ -218,26 +219,67 @@ function PlasmicTelaMeta__RenderFunc(props: {
                       <div
                         data-plasmic-name={"container"}
                         data-plasmic-override={overrides.container}
-                        className={classNames(projectcss.all, sty.container)}
+                        className={classNames(projectcss.all, sty.container, {
+                          [sty.containersemRank]: hasVariant(
+                            $state,
+                            "semRank",
+                            "semRank"
+                          )
+                        })}
                       >
-                        {true ? (
+                        {(
+                          hasVariant($state, "semRank", "semRank") ? true : true
+                        ) ? (
                           <div
                             className={classNames(
                               projectcss.all,
-                              sty.freeBox__usfcQ
+                              sty.freeBox__qq4MB,
+                              {
+                                [sty.freeBoxsemRank__qq4MBts1B2]: hasVariant(
+                                  $state,
+                                  "semRank",
+                                  "semRank"
+                                )
+                              }
                             )}
                           >
-                            <div
-                              data-plasmic-name={"descricaoMeta"}
-                              data-plasmic-override={overrides.descricaoMeta}
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.descricaoMeta
-                              )}
-                            >
-                              {"texto"}
-                            </div>
+                            {(
+                              hasVariant($state, "semRank", "semRank")
+                                ? true
+                                : true
+                            ) ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__usfcQ,
+                                  {
+                                    [sty.freeBoxsemRank__usfcQts1B2]:
+                                      hasVariant($state, "semRank", "semRank")
+                                  }
+                                )}
+                              >
+                                <div
+                                  data-plasmic-name={"descricaoMeta"}
+                                  data-plasmic-override={
+                                    overrides.descricaoMeta
+                                  }
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.descricaoMeta,
+                                    {
+                                      [sty.descricaoMetasemRank]: hasVariant(
+                                        $state,
+                                        "semRank",
+                                        "semRank"
+                                      )
+                                    }
+                                  )}
+                                >
+                                  {"texto"}
+                                </div>
+                              </div>
+                            ) : null}
                           </div>
                         ) : null}
 

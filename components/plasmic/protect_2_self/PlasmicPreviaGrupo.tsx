@@ -260,22 +260,31 @@ function PlasmicPreviaGrupo__RenderFunc(props: {
                                 <div
                                   className={classNames(
                                     projectcss.all,
-                                    sty.freeBox__t5CIi
+                                    sty.freeBox__zn1DP
                                   )}
                                 >
-                                  <div
-                                    data-plasmic-name={"descricaoGrupo"}
-                                    data-plasmic-override={
-                                      overrides.descricaoGrupo
-                                    }
-                                    className={classNames(
-                                      projectcss.all,
-                                      projectcss.__wab_text,
-                                      sty.descricaoGrupo
-                                    )}
-                                  >
-                                    {"texto"}
-                                  </div>
+                                  {true ? (
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        sty.freeBox__t5CIi
+                                      )}
+                                    >
+                                      <div
+                                        data-plasmic-name={"descricaoGrupo"}
+                                        data-plasmic-override={
+                                          overrides.descricaoGrupo
+                                        }
+                                        className={classNames(
+                                          projectcss.all,
+                                          projectcss.__wab_text,
+                                          sty.descricaoGrupo
+                                        )}
+                                      >
+                                        {"texto"}
+                                      </div>
+                                    </div>
+                                  ) : null}
                                 </div>
                               ) : null}
 

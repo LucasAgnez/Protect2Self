@@ -209,6 +209,9 @@
   max-width: 800px;
   min-width: 0;
 }
+.nomeGrupo {
+  color: #ffffff;
+}
 .freeBox__mqV65 {
   display: flex;
   position: relative;
@@ -230,19 +233,29 @@
     padding: 18px 0px 38px;
   }
 }
-.freeBox__t5CIi {
+.freeBox__zn1DP {
   display: flex;
   position: relative;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: stretch;
   justify-content: flex-start;
   width: 100%;
   height: auto;
   max-width: 100%;
-  background: #9d9d9d;
   min-width: 0;
-  border-radius: 10px;
   padding: 8px;
+}
+.freeBox__t5CIi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  background: #9d9d9d;
+  border-radius: 10px;
+  padding: 16px;
 }
 .descricaoGrupo {
   width: 100%;
