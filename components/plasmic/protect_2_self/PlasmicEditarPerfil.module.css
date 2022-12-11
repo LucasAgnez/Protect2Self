@@ -315,6 +315,18 @@
   width: 1em;
   height: 1em;
 }
+.erro {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
 .freeBox__cKCg3 {
   display: flex;
   position: relative;

@@ -63,6 +63,7 @@ export type PlasmicCriarConta__OverridesType = {
   dadosCadastro?: p.Flex<"div">;
   freeBox?: p.Flex<"div">;
   nomeCompleto?: p.Flex<typeof TextInput>;
+  erro?: p.Flex<"div">;
   confirma?: p.Flex<typeof Button>;
 };
 
@@ -398,6 +399,14 @@ function PlasmicCriarConta__RenderFunc(props: {
                     </div>
                   </div>
 
+                  {true ? (
+                    <div
+                      data-plasmic-name={"erro"}
+                      data-plasmic-override={overrides.erro}
+                      className={classNames(projectcss.all, sty.erro)}
+                    />
+                  ) : null}
+
                   <Button
                     data-plasmic-name={"confirma"}
                     data-plasmic-override={overrides.confirma}
@@ -423,12 +432,20 @@ const PlasmicDescendants = {
     "dadosCadastro",
     "freeBox",
     "nomeCompleto",
+    "erro",
     "confirma"
   ],
   header: ["header"],
-  dadosCadastro: ["dadosCadastro", "freeBox", "nomeCompleto", "confirma"],
-  freeBox: ["freeBox", "nomeCompleto", "confirma"],
+  dadosCadastro: [
+    "dadosCadastro",
+    "freeBox",
+    "nomeCompleto",
+    "erro",
+    "confirma"
+  ],
+  freeBox: ["freeBox", "nomeCompleto", "erro", "confirma"],
   nomeCompleto: ["nomeCompleto"],
+  erro: ["erro"],
   confirma: ["confirma"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -440,6 +457,7 @@ type NodeDefaultElementType = {
   dadosCadastro: "div";
   freeBox: "div";
   nomeCompleto: typeof TextInput;
+  erro: "div";
   confirma: typeof Button;
 };
 
@@ -508,6 +526,7 @@ export const PlasmicCriarConta = Object.assign(
     dadosCadastro: makeNodeComponent("dadosCadastro"),
     freeBox: makeNodeComponent("freeBox"),
     nomeCompleto: makeNodeComponent("nomeCompleto"),
+    erro: makeNodeComponent("erro"),
     confirma: makeNodeComponent("confirma"),
 
     // Metadata about props expected for PlasmicCriarConta

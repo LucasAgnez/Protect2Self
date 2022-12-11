@@ -68,6 +68,7 @@ export type PlasmicEditarPerfil__OverridesType = {
   telefone?: p.Flex<typeof TextInput>;
   senha?: p.Flex<typeof PasswordInput>;
   confirmaSenha?: p.Flex<typeof PasswordInput>;
+  erro?: p.Flex<"div">;
   confirma?: p.Flex<typeof Button>;
   cancela?: p.Flex<typeof Button>;
 };
@@ -360,6 +361,13 @@ function PlasmicEditarPerfil__RenderFunc(props: {
                         />
                       </div>
                     ) : null}
+
+                    <div
+                      data-plasmic-name={"erro"}
+                      data-plasmic-override={overrides.erro}
+                      className={classNames(projectcss.all, sty.erro)}
+                    />
+
                     {true ? (
                       <div
                         className={classNames(
@@ -418,6 +426,7 @@ const PlasmicDescendants = {
     "telefone",
     "senha",
     "confirmaSenha",
+    "erro",
     "confirma",
     "cancela"
   ],
@@ -431,6 +440,7 @@ const PlasmicDescendants = {
     "telefone",
     "senha",
     "confirmaSenha",
+    "erro",
     "confirma",
     "cancela"
   ],
@@ -442,6 +452,7 @@ const PlasmicDescendants = {
     "telefone",
     "senha",
     "confirmaSenha",
+    "erro",
     "confirma",
     "cancela"
   ],
@@ -451,6 +462,7 @@ const PlasmicDescendants = {
   telefone: ["telefone"],
   senha: ["senha"],
   confirmaSenha: ["confirmaSenha"],
+  erro: ["erro"],
   confirma: ["confirma"],
   cancela: ["cancela"]
 } as const;
@@ -468,6 +480,7 @@ type NodeDefaultElementType = {
   telefone: typeof TextInput;
   senha: typeof PasswordInput;
   confirmaSenha: typeof PasswordInput;
+  erro: "div";
   confirma: typeof Button;
   cancela: typeof Button;
 };
@@ -542,6 +555,7 @@ export const PlasmicEditarPerfil = Object.assign(
     telefone: makeNodeComponent("telefone"),
     senha: makeNodeComponent("senha"),
     confirmaSenha: makeNodeComponent("confirmaSenha"),
+    erro: makeNodeComponent("erro"),
     confirma: makeNodeComponent("confirma"),
     cancela: makeNodeComponent("cancela"),
 

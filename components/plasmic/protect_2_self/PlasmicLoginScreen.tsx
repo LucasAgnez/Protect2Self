@@ -69,6 +69,7 @@ export type PlasmicLoginScreen__OverridesType = {
   button?: p.Flex<typeof Button>;
   email?: p.Flex<typeof TextInput>;
   senha?: p.Flex<typeof PasswordInput>;
+  erro?: p.Flex<"div">;
   confirma?: p.Flex<typeof Button>;
   link?: p.Flex<"a"> & Partial<LinkProps>;
 };
@@ -367,6 +368,12 @@ function PlasmicLoginScreen__RenderFunc(props: {
                             id={"senha" as const}
                           />
 
+                          <div
+                            data-plasmic-name={"erro"}
+                            data-plasmic-override={overrides.erro}
+                            className={classNames(projectcss.all, sty.erro)}
+                          />
+
                           {true ? (
                             <Button
                               data-plasmic-name={"confirma"}
@@ -462,6 +469,7 @@ const PlasmicDescendants = {
     "button",
     "email",
     "senha",
+    "erro",
     "confirma",
     "link"
   ],
@@ -475,6 +483,7 @@ const PlasmicDescendants = {
     "button",
     "email",
     "senha",
+    "erro",
     "confirma",
     "link"
   ],
@@ -485,6 +494,7 @@ const PlasmicDescendants = {
   button: ["button"],
   email: ["email"],
   senha: ["senha"],
+  erro: ["erro"],
   confirma: ["confirma"],
   link: ["link"]
 } as const;
@@ -502,6 +512,7 @@ type NodeDefaultElementType = {
   button: typeof Button;
   email: typeof TextInput;
   senha: typeof PasswordInput;
+  erro: "div";
   confirma: typeof Button;
   link: "a";
 };
@@ -576,6 +587,7 @@ export const PlasmicLoginScreen = Object.assign(
     button: makeNodeComponent("button"),
     email: makeNodeComponent("email"),
     senha: makeNodeComponent("senha"),
+    erro: makeNodeComponent("erro"),
     confirma: makeNodeComponent("confirma"),
     link: makeNodeComponent("link"),
 
