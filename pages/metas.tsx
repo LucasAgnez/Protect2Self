@@ -41,11 +41,11 @@ function MinhasMetas() {
         );
         setMetas(response.data);
         setError(undefined);
-        console.log(metas);
       } catch (err) {
         setError((err as any).message);
         setMetas([]);
       } finally {
+        console.log(metas)
         setLoading(false);
       }
     };
@@ -57,9 +57,7 @@ function MinhasMetas() {
       const response = await axios.get(
         "http://localhost:8080/usuario/getMetas/" + localStorage.getItem('userId')
       );
-      console.log(response);
       setMetas(response.data);
-      console.log(metas);
     }
     else{
       const resposta = await axios.get(
@@ -67,7 +65,6 @@ function MinhasMetas() {
           localStorage.getItem('userId') + "/" + 
           (document.getElementById("buscaMeta")as any).value);
       setMetas(resposta.data);
-      console.log(metas);
     }
   }
 
@@ -87,12 +84,12 @@ function MinhasMetas() {
   }
 
   function estaNaData(ultimaData: Date, frequencia: any){
-    var dia = new Date("2013-02-20T12:01:04.753Z").getTime() - 
-              new Date("2013-02-21T12:01:04.753Z").getTime();
-    var semana = new Date("2013-02-20T12:01:04.753Z").getTime() - 
-                 new Date("2013-02-27T12:01:04.753Z").getTime();
-    var mes = new Date("2013-01-20T12:01:04.753Z").getTime() - 
-              new Date("2013-02-20T12:01:04.753Z").getTime();
+    var dia = new Date("2013-02-21T12:01:04.753Z").getTime() -
+      new Date("2013-02-20T12:01:04.753Z").getTime();
+    var semana = new Date("2013-02-27T12:01:04.753Z").getTime()-
+      new Date("2013-02-20T12:01:04.753Z").getTime();
+    var mes = new Date("2013-02-20T12:01:04.753Z").getTime() -
+      new Date("2013-01-20T12:01:04.753Z").getTime();
     var data = new Date(ultimaData)
     var time = new Date().getTime() - data.getTime()
     if(!frequencia){
@@ -100,24 +97,27 @@ function MinhasMetas() {
     }
     if(!ultimaData)
       return true;
-    if(frequencia == "DIARIO"){
+      if(frequencia == "DIARIO"){
       if(time >= dia){
-          if(time <= 2*dia )
-            //zerar contador
+        if(time >= 2*dia ){
+          //zerar contador
+        }
         return true
       }
     }
     if(frequencia == "SEMANAL"){
       if(time >= semana){
-        if(time <= 2*semana  )
+        if(time >= 2*semana  ){
           //zerar
+        }
         return true
       }
     }
     if(frequencia == "MENSAL"){
       if(time >= mes){
-        if(time <= 2*mes)
+        if(time >= 2*mes){
           //zerar
+        }
         return true
       }
     }
@@ -156,9 +156,14 @@ function MinhasMetas() {
       }}
       container = {(loading || !metas) ? {} :{ 
         children: metas.map(entry => <MiniaturaMeta                                               
-          slot={String(entry.nome)} 
-          slot2={"Atual sequência: " + String(entry.recorde)}
+          nomeMeta={{
+            render: (props, Comp) => <Comp {...props}>{entry.nome}</Comp>,
+          }}
+          sequenciaMeta={{
+            render: (props, Comp) => <Comp {...props}>Atual sequência: {String(entry.recorde)}</Comp>,
+          }}
           comMedalha={temRank(entry.rank)}
+          tipo={(String(entry.tipo).toLowerCase()) as any}
           medalha={{
             cor: tipoMedalha(entry.rank),
             slot: entry.nome,

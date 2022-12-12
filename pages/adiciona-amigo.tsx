@@ -30,6 +30,7 @@ function AdicionaAmigo() {
   // (https://nextjs.org/docs/advanced-features/custom-app).
   const [nome, setNome] = useState<string>();
   const [vazio, setVazio] = useState<boolean>(false);
+  const [enviado, setEnviado] = useState<boolean>(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error>();
   const router = useRouter()
@@ -73,15 +74,16 @@ function AdicionaAmigo() {
           }
         }
         
-        function adicionaAmigo(friendId: any){
-          console.log(nome)
-          console.log(friendId)
+  function adicionaAmigo(friendId: any){
+    console.log(nome)
+    console.log(friendId)
     axios.post
     ("http://localhost:8080/solicitacaoAmizade/save",{
       nomeAmigo: nome,
 			userId: localStorage.getItem('userId'),
       friendId: friendId
     })
+    setEnviado(true);
 
   }
 
@@ -90,12 +92,17 @@ function AdicionaAmigo() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicAdicionaAmigo 
+      <PlasmicAdicionaAmigo
+        botoesPerfil={{
+          pagina: "adicionarAmigo"
+        }}
         confirma={nome ? {
           onClick : () => buscaUsuarios()
         } : {}}
         usuarios={vazio ? {
           children: "Não encontramos ninguém com esse nome"
+        } : enviado ? {
+          children: "Pedido de Amizade enviado!"
         } : {}}
       />
     </ph.PageParamsProvider>

@@ -73,15 +73,18 @@ function PaginaDeMedalhas() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicPaginaDeMedalhas 
-            container = {(loading || !medalhas) ? {} :{ 
-              children: medalhas.map(entry => <Medalha 
-                slot={String(entry.nome)}
-                children={String(formata(entry.dataObtencao))}
-                cor={tipoMedalha(entry.tipo)}
-              />) 
-              }}
-            />
+      <PlasmicPaginaDeMedalhas
+        botoesPerfil={{
+          pagina: "medalhas"
+        }}
+        container = {(loading || !medalhas) ? {} :{ 
+          children: medalhas.map(entry => <Medalha 
+            slot={String(entry.nome)}
+            children={String(formata(entry.dataObtencao))}
+            cor={tipoMedalha(entry.tipo)}
+          />) 
+        }}
+      />
     </ph.PageParamsProvider>
   );
 }

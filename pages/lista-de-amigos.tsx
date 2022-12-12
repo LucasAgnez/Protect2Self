@@ -58,6 +58,7 @@ function ListaDeAmigos() {
   
   function removeAmigo(friendId: any){
     axios.delete("http://localhost:8080/usuario/removeFriend/" + localStorage.getItem('userId') + "/" + friendId)
+    window.location.reload();
   }
 
   return (
@@ -65,20 +66,23 @@ function ListaDeAmigos() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicListaDeAmigos 
-              container = {(loading || !amigos) ? {} :{ 
-                children: amigos.map(entry => <MiniaturaAmigo
-                  nomeUsuario={{
-                    render: (props, Comp) => <Comp {...props}>{entry.username}</Comp>,
-                  }}
-                  naLista={"sim"}
-                  remove={{
-                    props: {
-                      onClick: () => removeAmigo(entry.id)
-                    }
-                  }}
-                />) 
-              }} />
+      <PlasmicListaDeAmigos
+        botoesPerfil={{
+          pagina: "amigos"
+        }}
+        container = {(loading || !amigos) ? {} :   { 
+          children: amigos.map(entry => <MiniaturaAmigo
+            nomeUsuario={{
+              render: (props, Comp) => <Comp {...props}>{entry.username}</Comp>,
+            }}
+            naLista={"sim"}
+            remove={{
+              props: {
+                onClick: () => removeAmigo(entry.id)
+              }
+            }}
+          />) 
+        }} />
     </ph.PageParamsProvider>
   );
 }

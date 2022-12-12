@@ -60,18 +60,21 @@ function Perfil() {
       query={useRouter()?.query}
     >
       <PlasmicPerfil
-      			nome={(loading || !dados) ? {} : {
-              render: (props, Comp) => <Comp {...props}>{dados.nome}</Comp>,
-            }}
-            username={(loading || !dados) ? {} : {
-              render: (props, Comp) => <Comp {...props}>{dados.username}</Comp>,
-            }}
-            campoEmail={(loading || !dados) ? {} : {
-              render: (props, Comp) => <Comp {...props}>{dados.email}</Comp>,
-            }}
-            campoTelefone={(loading || !dados) ? {} : {
-              render: (props, Comp) => <Comp {...props}>{dados.telefone}</Comp>,
-            }}
+        botoesPerfil={{
+          pagina: "perfil"
+        }}
+        nome={(loading || !dados) ? {} : {
+          render: (props, Comp) => <Comp {...props}>{dados.nome}</Comp>,
+        }}
+        username={(loading || !dados) ? {} : {
+          render: (props, Comp) => <Comp {...props}>{dados.username}</Comp>,
+        }}
+        campoEmail={(loading || !dados) ? {} : {
+          render: (props, Comp) => <Comp {...props}>{dados.email}</Comp>,
+        }}
+        campoTelefone={(loading || !dados) ? {} : {
+          render: (props, Comp) => <Comp {...props}>{dados.telefone}</Comp>,
+        }}
       />
     </ph.PageParamsProvider>
   );

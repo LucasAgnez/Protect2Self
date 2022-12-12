@@ -6,6 +6,9 @@ import * as ph from "@plasmicapp/host";
 import { ScreenVariantProvider } from "../components/plasmic/protect_2_self/PlasmicGlobalVariant__Screen";
 import { PlasmicNotificacoes } from "../components/plasmic/protect_2_self/PlasmicNotificacoes";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Notificacao from "../components/Notificacao";
 
 function Notificacoes() {
   // Use PlasmicNotificacoes to render this component as it was
@@ -24,12 +27,70 @@ function Notificacoes() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  const [notis, setNotis] = useState<any[]>();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error>();
+
+  const router = useRouter()
+
+  function aceitaConvite(id: any){
+    axios.put("http://localhost:8080/usuario/aceitarAmizade/" +
+    localStorage.getItem("userId") + "/" + id)
+    window.location.reload();
+  }
+
+  function rejeitaConvite(id: any){
+    axios.put("http://localhost:8080/solicitacoesAmizade/remove/" + id)
+    window.location.reload();
+  }
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/usuario/solicitacoesAmizade/" + localStorage.getItem('userId')
+        );
+        setNotis(response.data);
+        setError(undefined);  
+        console.log(notis);
+      } catch (err) {
+        setError((err as any).message);
+        setNotis([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+  if (error) {
+    return <div>Error: {error.message}</div>
+  }
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicNotificacoes />
+      <PlasmicNotificacoes 
+      notis = {(loading || !notis) ? {} : { 
+      children: notis.map(entry => <Notificacao 
+        nomeUsuario={{
+          render: (props, Comp) => <Comp {...props}>{entry.nomeAmigo} quer ser seu amigo</Comp>,
+        }}
+        tipo={"amizade"} 
+        adiciona={{
+          props: {
+            onClick: () => aceitaConvite(entry.id)
+          }
+        }}
+        remove={{
+          props: {
+            onClick: () => rejeitaConvite(entry.id)
+          }
+        }}
+      />) 
+    }}
+      />
     </ph.PageParamsProvider>
   );
 }
