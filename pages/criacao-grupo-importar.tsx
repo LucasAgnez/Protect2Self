@@ -101,10 +101,10 @@ function CriacaoGrupoImportar() {
       }} 
       meta={(loading || !metas) ? {} :{ 
         children: metas.map(entry => <Select__Option 
-                                        children={String(entry.nome)} 
-                                        value={String(entry.id)} 
-                                        color={"dark"}/>),
-                  onChange: (e) => e && setMetaSelecionada(+e)
+          children={String(entry.nome)} 
+          value={String(entry.id)} 
+          color={"dark"}/>),
+          onChange: (e) => e && setMetaSelecionada(+e)
       }} />
     </ph.PageParamsProvider>
   );

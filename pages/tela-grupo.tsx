@@ -133,7 +133,10 @@ function TelaGrupo() {
         container = {(loading || !membros ) ? {} :  (ADM) ? {
           children: membros.map(entry => <MiniaturaAmigo 
             nomeUsuario={{
-              render: (props, Comp) => <Comp {...props}>{entry.username}</Comp>,
+              render: (props, Comp) => <Comp {...props}>{entry.user.username}</Comp>,
+            }}
+            metaUsuario={{
+              render: (props, Comp) => <Comp {...props}>{entry.meta.nome}</Comp>,
             }}
             semMedalha={!temRank(entry.meta.rank)}
             medalha={{
@@ -151,10 +154,10 @@ function TelaGrupo() {
         } : {
           children: membros.map(entry => <MiniaturaAmigo 
             nomeUsuario={{
-              render: (props, Comp) => <Comp {...props}>{entry.username}</Comp>,
+              render: (props, Comp) => <Comp {...props}>{entry.user.username}</Comp>,
             }}
             metaUsuario={{
-              render: (props, Comp) => <Comp {...props}>{entry.username}</Comp>,
+              render: (props, Comp) => <Comp {...props}>{entry.meta.nome}</Comp>,
             }}
             semMedalha={!temRank(entry.meta.rank)}
             medalha={{

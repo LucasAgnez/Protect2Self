@@ -64,24 +64,17 @@ function EntrarGrupo() {
   }
 
   function entraGrupo(){
-    try{
+
       axios.put("http://localhost:8080/usuario/aceitarGrupo/" +
         localStorage.getItem("userId") + "/" + 
-        localStorage.getItem("grupoId"))
-    }catch(err){
-      setError((err as any).message);
-    }finally{
-      if(importa){
-        axios.put("http://localhost:8080/grupo/save/meta/" + 
-          localStorage.getItem('userId') + "/" + metaSelecionada)
-        router.push("/tela-grupo")
-      }
-      else{
-        axios.put("http://localhost:8080/grupo/save/meta/" + 
-          localStorage.getItem('userId') + "/" + grupo.meta.id)
-        router.push("/tela-grupo")
-      }
-    }
+        localStorage.getItem("grupoId")
+      )
+      axios.put("http://localhost:8080/grupo/importaMeta/" +
+        localStorage.getItem("grupoId") + "/" + 
+        localStorage.getItem("userId") + "/" + 
+        grupo.meta.id
+      )
+      router.push("/grupos")
   }
 
   return (
@@ -90,7 +83,6 @@ function EntrarGrupo() {
       query={useRouter()?.query}
     >
       <PlasmicEntrarGrupo
-      importar={importa}
       nomeGrupo={(loading || !grupo ) ? {} : {
         render: (props, Comp) => <Comp {...props}>{grupo.nome}</Comp>,
       }}
@@ -103,22 +95,17 @@ function EntrarGrupo() {
       descricaoMeta={(loading || !grupo ) ? {} : {
         render: (props, Comp) => <Comp {...props}>{grupo.meta.descricao}</Comp>,
       }}
-      meta={(loading || !metas) ? {} :{ 
-        children: metas.map(entry => <Select__Option 
-          children={String(entry.nome)} 
-          value={String(entry.id)} 
-          color={"dark"}/>),
-          onChange: (e) => e && setMetaSelecionada(+e)
-      }}
       aceitar={{
         onClick: () => entraGrupo()
       }}
+      /*
       aceitar2={{
         onClick: () => setImporta(true)
       }}
       entrar={{ 
         onClick: () => entraGrupo()
       }}
+      */
       />
     </ph.PageParamsProvider>
   );
