@@ -37,17 +37,18 @@ function CriacaoMetaVicioGrupo() {
         tipo: "VICIO",
         objs : "3;6;9;12;15",
     })
-    .then((response) => {
-      axios.put("http://localhost:8080/usuario/addMeta/" + localStorage.getItem('userId') + "/" + response.data.id ,{
-      })
+    .then((responseMeta) => {
       axios.post
-      ("http://localhost:8080/grupo/save/meta/" + localStorage.getItem('userId') + "/" + response.data.id, {
-          nome: (document.getElementById("nomeGrupo") as any).value,
-          descricao: (document.getElementById("descricaoGrupo")as any).value,
+        ("http://localhost:8080/grupo/save/meta/" + localStorage.getItem('userId') + "/" + responseMeta.data.id, {
+      nome: (document.getElementById("nomeGrupo") as any).value,
+      descricao: (document.getElementById("descricaoGrupo")as any).value,
+    }).
+      then((responseGrupo) => {
+        axios.put("http://localhost:8080/grupo/meta/define/" + responseGrupo.data.id + "/" + responseMeta.data.id)
+        console.log(JSON.stringify(responseGrupo));
+        router.push('/logged');
       })
-      console.log(JSON.stringify(response));
-      router.push('/logged');
-    });
+  });
   }
 
 

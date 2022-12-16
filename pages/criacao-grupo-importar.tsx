@@ -69,18 +69,20 @@ function CriacaoGrupoImportar() {
     }
   }
 
+
+    
   function criaGrupo() {
     axios.post
     ("http://localhost:8080/grupo/save/meta/" + 
     localStorage.getItem('userId') + "/" +  metaSelecionada, {
       nome: (document.getElementById("nome") as any).value,
       descricao: (document.getElementById("descricao")as any).value,
-  })
-    .then((response) => {
-      console.log(JSON.stringify(response));
+    }).then((responseGrupo) => {
+      axios.put("http://localhost:8080/grupo/meta/define/" + responseGrupo.data.id + "/" + metaSelecionada)
+      console.log(JSON.stringify(responseGrupo));
       router.push('/logged');
-    });
-  }
+    })
+}
   
   return (
     <ph.PageParamsProvider
